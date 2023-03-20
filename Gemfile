@@ -2,6 +2,7 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.1"
+gem "faraday"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.2"
@@ -51,6 +52,13 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "pry"
+  gem 'rspec-rails'
+  gem 'simplecov'
+  gem "capybara"
+  gem "launchy"
+  gem "orderly"
+  gem 'shoulda-matchers'
+  gem "rubocop", require: false
 end
 
 group :development do
