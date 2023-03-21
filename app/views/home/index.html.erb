@@ -1,0 +1,9 @@
+<%= button_to "Create New User" %>
+
+<h3>Existing Users</h3>
+
+<% @users.each do |user| %>
+  <div id ="user_<%= user.id %>">
+    <%= link_to "#{user.name} - #{user.email}" %>
+  </div>
+<% end %>
