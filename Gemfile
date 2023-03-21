@@ -50,11 +50,13 @@ gem "bootsnap", require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "factory_bot_rails" # !!RAILS HELPER ADD!! https://github.com/thoughtbot/factory_bot_rails
-  gem "faker" # https://github.com/faker-ruby/faker
+  gem 'pry'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails' # !!RAILS HELPER ADD!! https://github.com/thoughtbot/factory_bot_rails
+  gem 'faker' # https://github.com/faker-ruby/faker
   gem "launchy"
-  gem "pry"
-  gem "rspec-rails"
+  gem 'shoulda-matchers'
+
 end
 
 group :development do
