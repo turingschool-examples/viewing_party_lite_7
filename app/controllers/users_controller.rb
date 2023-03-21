@@ -12,6 +12,10 @@ class UsersController <ApplicationController
     redirect_to user_path(user)
   end
 
+  def discover
+    
+  end
+
   private
   def user_params
     params.permit(:name, :email)
