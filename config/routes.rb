@@ -3,4 +3,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  get "/", to: "landing#index"
+  resources :users, only: [:new, :create, :show] do 
+    get 'dashboard', on: :member
+  end 
 end
