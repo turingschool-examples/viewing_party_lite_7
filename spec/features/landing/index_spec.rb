@@ -32,7 +32,7 @@ RSpec.describe 'landing page, index', type: :feature do
         
         within("#existing_users") do 
           click_link("#{@user1.name}'s Dashboard")
-          expect(current_path).to eq("/users/#{@user1.id}/dashboard")
+          expect(current_path).to eq("/users/#{@user1.id}")
         end
 
        end
