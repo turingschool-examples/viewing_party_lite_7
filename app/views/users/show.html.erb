@@ -1,1 +1,14 @@
-<%= "Hello, #{@user.name}" %>
+<h2><%= "#{@user.name}'s "%>Dashboard</h2>
+
+<%= button_to "Discover Movies", "/users/#{@user.id}/discover" %>
+
+<section class = "viewing_parties">
+  <ul>
+    <% @user.viewing_parties.each do |party| %>
+      <li>
+        <%= party.when %>
+        <%= party.start_time %>
+      </li>
+    <% end %>
+  </ul>
+</section>
