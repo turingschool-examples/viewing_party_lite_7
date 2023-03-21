@@ -8,4 +8,8 @@ class UsersController < ApplicationController
     @parties = @user.matched_parties
   end
 
+  def discover
+    
+  end
+
 end
