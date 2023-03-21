@@ -54,6 +54,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails' # !!RAILS HELPER ADD!! https://github.com/thoughtbot/factory_bot_rails
   gem 'faker' # https://github.com/faker-ruby/faker
+  gem 'launchy'
 end
 
 group :development do
