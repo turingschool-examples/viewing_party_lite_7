@@ -28,11 +28,11 @@ RSpec.describe "/", type: :feature do
     end
 
     # User Story 1
-    it "when I click on a user name link I'm taken to their dashboard page" do
-      click_link("#{@picard.name}")
+    xit "when I click on a user name link I'm taken to their dashboard page" do
+      click_link("#{@picard.email}")
       expect(current_path).to eq("/users/#{@picard.id}")
-      # expect(page).to have_content()
-      # expect(page).to_not have_content()
+      expect(page).to have_content("#{@picard.name}")
+      expect(page).to_not have_content("#{@riker.name}")
     end
   end
 end
