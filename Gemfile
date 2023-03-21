@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.1"
 
+gem "faraday"
+gem "figaro"
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 
@@ -51,6 +54,10 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "pry"
+  gem "simplecov"
+  gem "webmock"
+  gem "vcr"
+  gem "shoulda-matchers"
 end
 
 group :development do
@@ -70,4 +77,7 @@ group :test do
   gem "capybara"
   gem "launchy"
   gem "simplecov"
+  gem "orderly"
+  gem "shoulda-matchers"
+
 end
