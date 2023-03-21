@@ -24,13 +24,18 @@ RSpec.describe "Dashboard Page" do
     end
 
     it "And has a section that lists viewing parties" do 
-      save_and_open_page
       within(".viewing_parties") do
         expect(page).to have_content("2023-12-25")
         expect(page).to have_content("10:10")
         expect(page).to have_content("2439-10-31")
         expect(page).to have_content("11:48")
       end
+    end
+
+    it "Redirects to the discover page after clicking 'Discover Movies'" do
+      click_button "Discover Movies"
+      
+      expect(current_path).to eq("/users/#{@user_1.id}/discover")
     end
   end
 end
