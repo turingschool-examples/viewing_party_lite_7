@@ -16,6 +16,10 @@ describe "when I visit the user dashboard page" do
 
     it "a button to discover movies" do
       expect(page).to have_button("Discover Movies")
+
+      click_button "Discover Movies"
+
+      expect(page).to have_current_path("/users/#{@user.id}/discover")
     end
 
     it "a section that lists viewing parties" do
