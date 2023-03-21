@@ -53,10 +53,6 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'orderly'
   gem 'pry'
-<<<<<<< HEAD
-  gem 'rubocop', require: false
-=======
->>>>>>> ecd45337e4eb19c2fea9f883ffddcd106142b132
   gem 'shoulda-matchers'
 end
 
@@ -69,11 +65,7 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-<<<<<<< HEAD
-  gem 'rubocop-rails'
-=======
   gem 'rubocop-rails', require: false
->>>>>>> ecd45337e4eb19c2fea9f883ffddcd106142b132
 end
 
 group :test do
