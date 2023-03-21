@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   get "/", to: "landing#index"
 
   resources :users, only: [:new, :show]
+
+  get "/register", to: "users#new"
+  post "/register", to: "users#create"
 end
