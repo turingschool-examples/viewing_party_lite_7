@@ -35,3 +35,4 @@ module ViewingPartyLite7
     config.generators.system_tests = nil
   end
 end
+
