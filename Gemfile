@@ -76,8 +76,5 @@ group :test do
   gem "rspec-rails"
   gem "capybara"
   gem "launchy"
-  gem "simplecov"
   gem "orderly"
-  gem "shoulda-matchers"
-
 end
