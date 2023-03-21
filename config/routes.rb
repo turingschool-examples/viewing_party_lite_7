@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show] do 
     get 'dashboard', on: :member
   end 
+
+  get "/users/:id/discover", to: "discover#index"
 end
