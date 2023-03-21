@@ -1,1 +1,8 @@
+<%= link_to "Landing Page", root_path, local: true %>
 <h1>Viewing Party</h1>
+<ul>
+  <% @users.each do |user| %>
+   <li> <%= link_to "#{user.name}", user_path(user), local: true %></li>
+  <% end %>
+</ul>
+<%= button_to "Create New User", users_path, method: :create, local: true %>
