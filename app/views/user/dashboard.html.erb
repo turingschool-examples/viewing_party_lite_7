@@ -3,3 +3,9 @@
 <%= button_to "Discover Movies" %>
 
 <%= "#{@user.name}'s Viewing Parties" %>
+<% @viewing_parties.each do |party| %>
+  <%= "Movie: #{party.movie_id}" %>
+  <%= "Duration: #{party.duration}" %>
+  <%= "Date: #{party.date}" %>
+  <%= "Time: #{party.time}" %>
+<% end %>
