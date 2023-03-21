@@ -1,6 +1,6 @@
-require "rails_helper"
+require 'rails_helper'
 
-RSpec.describe User, type: :model do
+RSpec.describe "User Show Page", type: :feature do
   let!(:andra) { User.create!(name: "Andra", email: "andra@turing.edu") }
   let!(:hady) { User.create!(name: "Hady", email: "hady@turing.edu") }
 
@@ -12,18 +12,32 @@ RSpec.describe User, type: :model do
   let!(:usp1) { UserParty.create!(user_id: andra.id, party_id: halloween.id) }
   let!(:usp2) { UserParty.create!(user_id: andra.id, party_id: girls_night.id) }
   let!(:usp3) { UserParty.create!(user_id: andra.id, party_id: eighties.id) }
-  let!(:usp4) { UserParty.create!(user_id: hady.id, party_id: eighties.id) }
-
-
-  describe "relationships" do
-    it { should have_many :user_parties }
-    it { should have_many(:parties).through(:user_parties) }
+  
+  before do
+    visit "/users/#{andra.id}"
   end
 
-  describe "instance methods" do
-    it "matched_parties" do
-      expect(andra.matched_parties).to eq([halloween, girls_night, eighties])
-      expect(andra.matched_parties).to_not eq([other])
+  describe "When I visit '/users/:id'" do
+    it "I see user's name at the top of the page" do
+      expect(page).to have_content("Andra's Info")
+    end
+
+    it "I see a button to Discover Movies that directs to a discover page" do
+      expect(page).to have_button("Discover Movies")
+
+      click_button("Discover Movies")
+      expect(current_path).to eq("/users/#{andra.id}/discover")
+    end
+
+    it "I see a section that lists viewing parties they've been invited to" do
+      within "#viewing_parties" do
+        expect(page).to have_content("Andra's Viewing Parties")
+
+        expect(page).to have_content("Halloween Party")
+        expect(page).to have_content("Girl's Night")
+        expect(page).to have_content("Eighties Themed")
+        expect(page).to_not have_content("Other")
+      end
     end
   end
 end
