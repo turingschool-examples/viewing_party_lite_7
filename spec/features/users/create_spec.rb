@@ -24,7 +24,7 @@ RSpec.describe 'User Registration Page' do
 
     click_button 'Register'
     new_user = User.last
-    save_and_open_page
+  
     expect(current_path).to eq('/register')
     expect(page).to have_content("Name can't be blank")
   end
