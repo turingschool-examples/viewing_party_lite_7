@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def show
-    
+    @user = User.find(params[:id])
   end
   
   def new
@@ -11,10 +11,10 @@ class UsersController < ApplicationController
     user = User.new
     if user.save
       flash.notice = 'User has been created!'
-      # redirect_to dashboard_path
+      redirect_to dashboard_path
     else
       flash[:error] = user.errors.full_messages.to_sentence
-      # redirect_to register_path
+      redirect_to register_path
     end
   end
   

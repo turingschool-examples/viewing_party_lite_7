@@ -14,7 +14,7 @@ RSpec.describe "user registration page" do
       expect(page).to have_field("Name")
       expect(page).to have_field("Email")
       expect(page).to have_button("Create New User")
-      save_and_open_page
+      # save_and_open_page
     end
     
     it "takes input to create a new user" do
