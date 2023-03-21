@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   
   resources :user, only: [:show, :new, :create] do
     member do 
-      get 'dashboard'
       get 'discover'
     end
   end
