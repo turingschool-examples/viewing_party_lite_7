@@ -1,6 +1,6 @@
 <%= "#{@user.name}'s Dashboard" %>
 
-<%= button_to "Discover Movies" %>
+<%= button_to "Discover Movies", discover_user_path, method: :get %>
 
 <%= "#{@user.name}'s Viewing Parties" %>
 <% @viewing_parties.each do |party| %>
