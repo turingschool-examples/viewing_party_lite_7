@@ -19,7 +19,6 @@ RSpec.describe 'Landing', type: :feature do
       within("#user_#{user_1.id}") { expect(page).to have_link("#{user_1.name} - #{user_1.email}"), href: dashboard_path(user_1.id) }
       within("#user_#{user_2.id}") { expect(page).to have_link("#{user_2.name} - #{user_2.email}"), href: dashboard_path(user_2.id) }
       within("#user_#{user_3.id}") { expect(page).to have_link("#{user_3.name} - #{user_3.email}"), href: dashboard_path(user_3.id) }
-      end
     end
 
     it 'has a link to the landing page' do
