@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :show]
 
   get "/register", to: "users#new"
-  post "/register", to: "users#show"
+  post "/register", to: "users#create"
 end

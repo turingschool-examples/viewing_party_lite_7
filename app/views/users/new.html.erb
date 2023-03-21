@@ -2,10 +2,10 @@
 
 <%= form_with url: "/register", method: :post, local: :true do |form|%>
   <%= form.label :name%>
-  <%= form.text_field :name%>
+  <%= form.text_field :name, required: true %>
 
   <%= form.label :email%>
-  <%= form.text_field :email%>
+  <%= form.text_field :email, required: true, uniqueness: true%>
 
   <%= form.submit "Submit"%>
 <%end%>
