@@ -72,4 +72,6 @@ group :test do
   gem 'launchy'
   gem 'rspec-rails'
   gem 'simplecov'
+  gem 'vcr'
+  gem 'webmock'
 end
