@@ -8,10 +8,10 @@ class UsersController < ApplicationController
   end
   
   def create
-    user = User.new
+    user = User.new(user_params)
     if user.save
       flash.notice = 'User has been created!'
-      redirect_to dashboard_path
+      redirect_to "/"
     else
       flash[:error] = user.errors.full_messages.to_sentence
       redirect_to register_path
