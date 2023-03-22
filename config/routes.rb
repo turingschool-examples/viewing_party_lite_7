@@ -1,6 +1,13 @@
-Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+Rails.application.routes.draw do\
+ root "home#index"
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+ resources :users, only: [:create, :show] do
+  get "discover", on: :member
+ end
+
+#  resources :register, only: [:new], controller: :users
+
+ get '/register', to: 'users#new'
+ 
+ get "users/:id/discover", to: "discover#index"
 end
