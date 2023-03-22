@@ -1,0 +1,16 @@
+<% if ?? %>
+  <body>
+    <center><h3>Movie Results for: <%= @keyword %></h3></center>
+    <br>
+    <center><%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %></center>
+    <br>
+  </body>
+
+<% else %>
+  <body>
+    <center><h3>Top Rated Movies</h3></center>
+    <br>
+    <center><%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %></center>
+    <br>
+  </body>
+<% end %>

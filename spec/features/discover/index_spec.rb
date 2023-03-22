@@ -38,7 +38,7 @@ RSpec.describe "/users/:id/discover", type: :feature do
       expect(current_path).to eq("/users/#{@picard.id}/movies")
     end
 
-    # User Story 5 - Sad Path Test ??? how ???
+    # User Story 5 - Sad Path Test ??? how ??? -> empty space/nil
 
   end
 end
