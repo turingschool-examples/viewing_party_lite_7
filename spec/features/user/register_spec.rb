@@ -20,5 +20,13 @@ describe 'register page' do
 
 			expect(current_path).to eq(user_path(User.all.first))
 		end
+
+		it "will not allow a user to create account if email is invalid" do
+			fill_in "Name", with: "John Doe"
+			fill_in "Email", with: "johndoe"
+			click_button "Register"
+			
+			expect(page).to have_content("Email is invalid")
+		end
 	end
 end

@@ -12,6 +12,9 @@ describe User do
 		it "should validate that it's an email" do
 			john = User.new(name: "John Smith", email: "jsmith@gmail.com")
 			expect(john.valid?).to be(true)
+
+			john = User.new(name: "John Smith", email: "fasd324223")
+			expect(john.valid?).to be(false)
 		end
 	end
 end
