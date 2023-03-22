@@ -1,8 +1,5 @@
 class UserController < ApplicationController
-
-  def discover
-  end
-
+  
   def new
   end
 

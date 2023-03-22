@@ -13,7 +13,7 @@ RSpec.describe 'User Discover' do
   describe 'As a user when I visit my dashboard and click the discover movies button' do
     it 'I am taken to the discover page' do
       click_button('Discover Movies')
-      expect(current_path).to eq(discover_user_path(@user1))
+      expect(current_path).to eq(user_discover_path(@user1))
 
     end
   end
