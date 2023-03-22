@@ -12,19 +12,23 @@ RSpec.describe "/users/:id/discover", type: :feature do
     it "exists and should display page details" do
       expect(page).to have_content("Discover Movies")
       expect(page).to have_button("Find Top Rated Movies")
-      expect(page).to have_field(:search, :with => "search")
+      expect(page).to have_field("Movie Title", :with => "search")
       expect(page).to have_button("Search by Movie Title")
     end
     
     # User Story 5
     it "can accept movie names & redirect to result page" do
       fill_in(:search, with: "2001: A Space Odyssey")
+      click_button("Search by Movie Title")
+
       expect(current_path).to eq("/users/#{@picard.id}/movies")
     end
 
     # User Story 5
     it "can accept partial keywords & redirect to result page" do
       fill_in(:search, with: "space")
+      click_button("Search by Movie Title")
+
       expect(current_path).to eq("/users/#{@picard.id}/movies")
     end
 
@@ -39,6 +43,5 @@ RSpec.describe "/users/:id/discover", type: :feature do
       click_button("Search by Movie Title")
       expect(current_path).to eq("/users/#{@picard.id}/movies")
     end
-
   end
 end
