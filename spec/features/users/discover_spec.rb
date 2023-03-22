@@ -1,5 +1,15 @@
-# As a user,
-# When I go to a user dashbaord,
-# and click "Discover Movies" button,
-# I am redirected to a discover page '/users/:id/discover', 
-# where :id is the user id of the user who's dashboard I was just on.
+# As an user,
+# When I visit the '/users/:id/discover' path, where :id, is the id of a valid user,
+# I should see
+
+#  Button to Discover Top Rated Movies
+#  A text field to enter keyword(s) to search by movie title
+#  A Button to Search by Movie Title
+# Details When the user clicks on the Top Rated Movies OR the search button,
+# they should be taken to the movies results page (more details of this on the Movies Results Page issue.
+
+require 'rails_helper'
+
+RSpec.describe 'user discover page' do
+  
+end
