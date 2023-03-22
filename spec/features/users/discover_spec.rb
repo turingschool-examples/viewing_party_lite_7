@@ -17,6 +17,12 @@ RSpec.describe "/users/:id/discover", type: :feature do
     end
     
     # User Story 5
+    it "click Top Rated Movies button, redirected to '/users/:id/movies' (movies result page) " do
+      click_button("Find Top Rated Movies")
+      expect(current_path).to eq("/users/#{@picard.id}/movies")
+    end
+    
+    # User Story 5
     it "can accept movie names & redirect to result page" do
       fill_in(:search, with: "2001: A Space Odyssey")
       click_button("Search by Movie Title")
@@ -32,16 +38,7 @@ RSpec.describe "/users/:id/discover", type: :feature do
       expect(current_path).to eq("/users/#{@picard.id}/movies")
     end
 
-    # User Story 5
-    it "click Top Rated Movies button, redirected to '/users/:id/movies' (movies result page) " do
-      click_button("Find Top Rated Movies")
-      expect(current_path).to eq("/users/#{@picard.id}/movies")
-    end
+    # User Story 5 - Sad Path Test ??? how ???
 
-    # User Story 5
-    it "click Search Movie Title button, redirected to '/users/:id/movies' (movies result page)" do
-      click_button("Search by Movie Title")
-      expect(current_path).to eq("/users/#{@picard.id}/movies")
-    end
   end
 end
