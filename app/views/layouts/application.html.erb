@@ -13,9 +13,15 @@
   <body>
   <div class="links">
     <nav>
-      <%= link_to "Home Page", "/" %>
+      <%= link_to "Home Page", root_path %>
     </nav>
   </div>
+    <% flash.each do |type, msg| %>
+      <div>
+        <%= msg %>
+      </div>
+      <%end%>
+    </div>
     <%= yield %>
   </body>
 </html>
