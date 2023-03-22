@@ -21,6 +21,12 @@ RSpec.describe "User Registration", type: :feature do
           expect(page).to have_content("Viewing Parties")
         end
       end
+
+      it "when I click the 'Discover Movies' button, I am routed to the discover page" do
+        click_button "Discover Movies"
+
+        expect(current_path).to eq("/users/#{@stan.id}/discover")
+      end
     end
   end
 end
