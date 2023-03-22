@@ -3,7 +3,9 @@ require 'rails_helper'
 describe MovieService do
   describe "#top_rated_movies" do
     before(:each) do
-      @top_rated_movies = MovieService.new.top_rated_movies
+      VCR.use_cassette(:top_rated_movies, serialize_with: :json) do
+        @top_rated_movies = MovieService.new.top_rated_movies
+      end
     end
     
     it "returns all expected attributes and data types" do
