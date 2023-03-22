@@ -5,4 +5,16 @@ class User < ApplicationRecord
 										presence: true,
 										format: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 
+	def host?(party)
+		user_party = UserParty.find_by(party: party)
+		user_party.user_id == self.id
+	end
+
+	def my_parties
+		parties.joins(:user_parties).where(user_parties: {host: true}).distinct
+	end
+
+	def party_invites
+		parties.joins(:user_parties).where(user_parties: {host: false}).distinct
+	end
 end

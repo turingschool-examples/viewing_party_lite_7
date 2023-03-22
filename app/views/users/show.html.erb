@@ -2,16 +2,51 @@
 
   <p class= "title has-test_centered"><%= @user.name %>'s Dashboard</p>
 
-	<%= button_to "Discover Movies", user_discover_index_path(@user) %>
+	<%= button_to "Discover Movies", user_discover_index_path(@user), method: :get %>
 
   <section class="section">
     <p class="title">Viewing Parties</p>
     <div class="row">
       <div class="col-12">
-        <p>Upcoming Parties</p>
+        <h3>Party Invites:</h3>
         <ul>
-          <% @parties.each do |party| %>
-            <li><%= link_to "Party ##{party.id}", party_path(party)%></li>
+          <% @party_invites.each do |party| %>
+            <li id=<%= party.id %>>
+							<h4><%= link_to "Party ##{party.id}", party_path(party)%></h4>
+							<%#= party.movie.image %>
+							<%#= party.movie.title %>
+							<p>Date: <%= party.date %></p>
+							<p>Time: <%= party.time.to_s(:time) %></p>
+							<p>Host: <%= party.host.name %></p>
+							<p><b>Attendees:</b></p>
+							<% party.users.each do |user| %>
+								<% if user == @user %>
+									<p><b><%= user.name %></b></p>
+								<% else %>
+									<%= user.name %>
+								<% end %>
+							<% end %>
+						</li>
+          <% end %>
+        </ul>
+      </div>
+
+      <div class="col-12">
+        <h3>My Parties:</h3>
+        <ul>
+          <% @my_parties.each do |party| %>
+            <li id=<%= party.id %>>
+							<h4><%= link_to "Party ##{party.id}", party_path(party)%></h4>
+							<%#= party.movie.image %>
+							<%#= party.movie.title %>
+							<p>Date: <%= party.date %></p>
+							<p>Time: <%= party.time.to_s(:time) %></p>
+							<p>Host: <%= party.host.name %></p>
+							<p><b>Attendees:</b></p>
+							<% party.users.each do |user| %>
+								<p><%= user.name unless user.name == @user.name%></p>
+							<% end %>
+						</li>
           <% end %>
         </ul>
       </div>
