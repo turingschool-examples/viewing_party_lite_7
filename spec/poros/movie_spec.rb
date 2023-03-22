@@ -10,10 +10,9 @@ RSpec.describe Movie do
         {"id": 53, "name": "Thriller"},
         {"id": 35, "name": "Comedy"}
       ],
-      summary: "A mockumentary about a fictional British heavy metal band.",
-      cast: ["Rob Reiner", "Michael McKean", "Christopher Guest"],
+      overview: "A mockumentary about a fictional British heavy metal band.",
       vote_average: 8.7,
-      image_url: "/9E2y5Q7WlCVNEhP5GiVTjhEhx1o.jpg"
+      poster_path: "/9E2y5Q7WlCVNEhP5GiVTjhEhx1o.jpg"
     }
 
     @movie = Movie.new(@spinal_tap)
@@ -24,9 +23,8 @@ RSpec.describe Movie do
     expect(@movie.title).to eq("Spinal Tap")
     expect(@movie.run_time).to eq(100)
     expect(@movie.genre).to eq(["Drama", "Thriller", "Comedy"])
-    expect(@movie.summary).to eq("A mockumentary about a fictional British heavy metal band.")
-    expect(@movie.cast).to eq(["Rob Reiner", "Michael McKean", "Christopher Guest"])
+    expect(@movie.overview).to eq("A mockumentary about a fictional British heavy metal band.")
     expect(@movie.vote_average).to eq(8.7)
-    expect(@movie.image_url).to eq("/9E2y5Q7WlCVNEhP5GiVTjhEhx1o.jpg")
+    expect(@movie.poster_path).to eq("/9E2y5Q7WlCVNEhP5GiVTjhEhx1o.jpg")
   end
 end
