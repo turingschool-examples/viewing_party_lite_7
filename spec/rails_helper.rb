@@ -1,4 +1,4 @@
-require 'simplecov'
+require "simplecov"
 SimpleCov.start
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require "spec_helper"
@@ -72,12 +72,12 @@ Shoulda::Matchers.configure do |config|
 end
 
 VCR.configure do |config|
-  config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
   config.hook_into :webmock
-  config.filter_sensitive_data('DONT_LOOK_AT_MY_JUNK') { ENV['movie_token'] }
+  config.filter_sensitive_data("DONT_LOOK_AT_MY_JUNK") { ENV["movie_token"] }
   config.default_cassette_options = { re_record_interval: 7.days }
   config.configure_rspec_metadata!
-    config.before_record do |i|
-      i.response.body.force_encoding("UTF-8")
-    end
+  config.before_record do |i|
+    i.response.body.force_encoding("UTF-8")
+  end
 end
