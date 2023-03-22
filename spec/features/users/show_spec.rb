@@ -20,7 +20,7 @@ describe "User Show Page" do
 
   it "list viewing parties" do
     visit user_path(@user_1)
-    @user_1.parties.create(movie_title: "The Matrix", duration: 120, start_time: "2021-08-01 12:00:00", host: true)
+    @user_1.parties.create(duration: 120, time: "12:00:00", date: "2021-08-01")
 
     expect(page).to have_content("Viewing Parties")
   end
