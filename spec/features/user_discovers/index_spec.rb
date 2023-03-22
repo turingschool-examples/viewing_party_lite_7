@@ -1,12 +1,3 @@
-# As an user,
-# When I visit the '/users/:id/discover' path, where :id, is the id of a valid user,
-# I should see
-
-#  Button to Discover Top Rated Movies
-#  A text field to enter keyword(s) to search by movie title
-#  A Button to Search by Movie Title
-# Details When the user clicks on the Top Rated Movies OR the search button,
-# they should be taken to the movies results page (more details of this on the Movies Results Page issue.
 
 require 'rails_helper'
 
@@ -36,4 +27,27 @@ RSpec.describe 'user discover page' do
 
     expect(current_path).to eq("/users/#{@user_1.id}/movies")
   end
+
+  it 'works to find movies when a valid movie title is input in the search bar' do
+    visit "/users/#{@user_1.id}/discover"
+
+    within '#search_movies' do
+      fill_in :search, with: 'Godfather'
+      click_button('Find Movies')
+      expect(current_path).to eq("/users/#{@user_1.id}/movies")
+    end
+  end
+
+  # it 'has a search field that redirects back to itself if no input exists' do
+
+  #   within '#search_movies' do
+    
+  #     expect(page).to have_field :search
+  #     expect(page).to have_button('Find Movies')
+
+  #     click_button('Find Movies')
+  #     expect(current_path).to eq("/users/#{@user_1.id}/discover")
+  #   end
+  #   expect(page).to have_content('No Results Found')
+  # end
 end
