@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   get "register", to: "user#new"
   
   resources :user, only: [:show, :new, :create] do
-    member do 
-      get 'discover'
-    end
+    get "/discover", to: "discover#index"
   end
 end
