@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   post "/register", to: "users#create"
 
   resources :users, only: [:create, :show] do
+    resources :discover, only: [:index]
   end
 end
