@@ -2,7 +2,7 @@
 
   <p class= "title has-test_centered"><%= @user.name %>'s Dashboard</p>
 
-  <button type="button">Discover Movies</button>
+	<%= button_to "Discover Movies", user_discover_index_path(@user) %>
 
   <section class="section">
     <p class="title">Viewing Parties</p>
@@ -11,7 +11,7 @@
         <p>Upcoming Parties</p>
         <ul>
           <% @parties.each do |party| %>
-            <li><%= link_to "Party ##{party.movie_title}", party_path(party)%></li>
+            <li><%= link_to "Party ##{party.id}", party_path(party)%></li>
           <% end %>
         </ul>
       </div>
