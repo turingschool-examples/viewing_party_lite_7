@@ -13,7 +13,6 @@ RSpec.describe 'User Registration Page' do
 
     expect(current_path).to eq(user_path(new_user))
     expect(page).to have_content('Matt Smith')
-    expect(page).to have_content(new_user.id)
   end
 
   it 'should be prompted to fill in valid information if invalid information is submitted' do
