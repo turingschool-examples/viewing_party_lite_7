@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "landing#index"
 
+  get "/users/:id/discover", to: "discover#new"
   resources :users, only: %i[show create]
+  resources :discover, only: :new
 end
