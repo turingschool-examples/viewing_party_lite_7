@@ -2,7 +2,7 @@
 
   <p class= "title has-test_centered"><%= @user.name %>'s Dashboard</p>
 
-  <button type="button">Discover Movies</button>
+	<%= button_to "Discover Movies", user_discover_index_path(@user) %>
 
   <section class="section">
     <p class="title">Viewing Parties</p>
