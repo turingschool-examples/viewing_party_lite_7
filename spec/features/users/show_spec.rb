@@ -40,7 +40,7 @@ RSpec.describe "/users/:id", type: :feature do
       expect(page).to_not have_content("#{@riker.name}")
     end
 
-    # User Story 3
+    # User Story 3 & 4
     it "when I click the discover button, I'm redirected to '/users/:id/discover' page" do
       click_button("Discover Movies")
       expect(current_path).to eq("/users/#{@picard.id}/discover")
