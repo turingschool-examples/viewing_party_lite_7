@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/keyword?api_key=<MOVIEDB_API_KEY>&query=Bear
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 22 Mar 2023 23:11:34 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 584fd3a0f046393ca45f1684387b8314
+      X-Memc-Age:
+      - '17160'
+      X-Memc-Expires:
+      - '4440'
+      Etag:
+      - W/"0a196de07adee6636436c15963903832"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 b13f158bdf9805ca47e07c0c35870c12.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SEA73-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 6iQu59ujyyPJsX6PSwtkzvdQlhtKtIOI3o6RXEi60gZa8GkkRaiTEw==
+      Age:
+      - '602'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"page":1,"results":[{"id":10468,"name":"bear"},{"id":3247,"name":"cuddle
+        bear"},{"id":197345,"name":"cartoon bear"},{"id":33678,"name":"beard"},{"id":155353,"name":"fozzie
+        bear"},{"id":282172,"name":"berenstain bears"},{"id":282173,"name":"country
+        bears"},{"id":217056,"name":"bear cub"},{"id":282855,"name":"panda bear"},{"id":227863,"name":"bearer
+        bonds"},{"id":262975,"name":"bear trainer"},{"id":235598,"name":"bearded lady"},{"id":268050,"name":"great
+        bear rainforest"},{"id":294082,"name":"polar bear swim"},{"id":2522,"name":"grizzly
+        bear"},{"id":272472,"name":"bears"},{"id":6678,"name":"polar bear"},{"id":280502,"name":"care
+        bears"},{"id":237156,"name":"bear snores on"},{"id":6533,"name":"kodiak bear"}],"total_pages":3,"total_results":41}'
+  recorded_at: Wed, 22 Mar 2023 23:21:36 GMT
+recorded_with: VCR 6.1.0

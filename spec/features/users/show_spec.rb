@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "User Show Page", :vcr do
+describe "User Show Page" do
   before(:each) do
     @user_1 = User.create(name: "Bob", email: "bob@myemail.com")
 		@party = @user_1.parties.create!(duration: 120, time: "12:00:00", date: "2021-08-01")
@@ -58,7 +58,7 @@ describe "User Show Page", :vcr do
 			visit user_path(@user_1)
 			# save_and_open_page
 			movie = double("Cocaine Bear")
-			allow(movie).to receive(:iamge).and_return("image")
+			allow(movie).to receive(:image).and_return("image")
 			allow(movie).to receive(:title).and_return("title")
 			
 			expect(page).to have_content("Cocaine Bear")

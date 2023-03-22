@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/keyword?api_key=<MOVIEDB_API_KEY>&query=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 22 Mar 2023 23:23:29 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 33bcc342a2701590475b25019f50e4a1
+      X-Memc-Age:
+      - '20684'
+      X-Memc-Expires:
+      - '916'
+      Etag:
+      - W/"0e23279b004381f72a34159d5c7dfd1f"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 91356d2137f5a7345e93da4516c49ec4.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SEA73-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - OWrNh6Kh2phIOCrk2UjtMhmQV8z8zrlexTIYruJFi-IowF1X3aB1yQ==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"page":1,"results":[],"total_pages":1,"total_results":0}'
+  recorded_at: Wed, 22 Mar 2023 23:23:29 GMT
+recorded_with: VCR 6.1.0
