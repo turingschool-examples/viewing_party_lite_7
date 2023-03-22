@@ -32,7 +32,7 @@ RSpec.describe "user registration page" do
       visit register_path
       
       fill_in('Name', with: 'Chick Hicks')
-      fill_in('Email', with: 'Kachow@cars.net')
+      fill_in('Email', with: 'kachow@cars.net')
       click_on("Create New User")
 
       expect(current_path).to eq(register_path)
