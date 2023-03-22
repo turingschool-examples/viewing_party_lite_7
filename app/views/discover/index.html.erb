@@ -1,8 +1,10 @@
 
-<%= button_to "Discover Top Rated Movies", user_movies_path(@user), method: :get, local: true %>
+<%= button_to "Discover Top Rated Movies", user_movies_path(@user), method: :get, params: { q: "top_20_rated" }, local: true %>
 
-<%=form_with url: "/users/:id/discover", method: :get, local: true do |f|%>
+<%=form_with url: "/users/#{@user.id}/movies", method: :get, local: true do |f|%>
   <%= f.label :title %>
   <%=f.text_field :title%>
-  <%=f.submit "Discover Movies" %>
+  <%=f.hidden_field :q, value: "keyword"  %>
+  <%=f.submit "Find Movies" %>
 <% end %>
+
