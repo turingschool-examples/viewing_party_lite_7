@@ -14,6 +14,6 @@ class MovieFacade
 
   def cast
     cast = @service.cast(movie_id)
-    cast.map { |cast_member| cast_member[:name], cast_member[:character] }
+    cast.map { |cast_member| {name: cast_member[:name], character: cast_member[:character]} }
   end
 end

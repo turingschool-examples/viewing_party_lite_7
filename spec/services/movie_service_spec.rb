@@ -60,5 +60,28 @@ describe MovieService do
       expect(@movie).to have_key(:poster_path)
       expect(@movie[:poster_path]).to be_a(String)
     end
+
+    it "returns the correct movie" do
+      expect(@movie[:title]).to eq("Fight Club")
+    end
+  end
+
+  describe "#cast" do
+    before(:each) do
+      VCR.use_cassette(:cast_info, serialize_with: :json) do
+        @movie = MovieService.new.cast(550)
+        @cast = @movie[:cast]
+      end
+    end
+
+    it "returns all expected attributes and data types" do
+      expect(@cast).to be_a(Array)
+
+      expect(@cast.first).to have_key(:name)
+      expect(@cast.first[:name]).to be_a(String)
+
+      expect(@cast.first).to have_key(:character)
+      expect(@cast.first[:character]).to be_a(String)
+    end
   end
 end
