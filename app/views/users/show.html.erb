@@ -4,5 +4,11 @@
 <br>
 <% @user_all_parites.each do |party| %>
   <p><%= party.date.strftime("%B %-d, %Y") %></p>
-  <p><%= party.time.strftime("%I:%M %p") %></p>
+  <p><%= party.start_time.strftime("%I:%M %p") %></p>
+  <% if @user.id == party.host_id %>
+    <p>Hosting</p>
+  <% else %>
+    <p>Invited</p>
+  <% end %>
+    <br>
 <% end %>

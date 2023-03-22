@@ -14,7 +14,7 @@ RSpec.describe "/", type: :feature do
     it "should display title of app, button to create new user, list of existing users, link to landing page" do
       expect(page).to have_content("Viewing Party")
       expect(page).to have_link("Home")
-      
+
       expect(page).to have_button("Create a New User")
       expect(page).to have_content("Existing Users:")
       expect(page).to have_link("#{@picard.email}", href: "/users/#{@picard.id}")
@@ -23,13 +23,13 @@ RSpec.describe "/", type: :feature do
     end
 
     # User Story 1
-    it "when I click on the button I'm taken to '/register' page" do
+    it "when I click on the button I'm redirected to '/register' page" do
       click_button("Create a New User")
       expect(current_path).to eq("/register")
     end
 
     # User Story 1
-    xit "when I click on a user name link I'm taken to their dashboard page" do
+    it "when I click on a user name link I'm redirected to '/users/:id' page" do
       click_link("#{@picard.email}")
       expect(current_path).to eq("/users/#{@picard.id}")
       expect(page).to have_content("#{@picard.name}")

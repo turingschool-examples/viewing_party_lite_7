@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   post "/register", to: "users#create"
 
   get "/users/:id", to: "users#show"
+
+  get "/users/:user_id/discover", to: "users/movies#index"
 end
