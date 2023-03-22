@@ -7,7 +7,7 @@ RSpec.describe 'User Discover' do
 
     ViewingPartyUser.create!(user_id: @user1.id, viewing_party_id: @viewing_party.id, host: true)
 
-    visit dashboard_user_path(@user1)
+    visit user_path(@user1)
   end
 
   describe 'As a user when I visit my dashboard and click the discover movies button' do
