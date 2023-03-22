@@ -13,7 +13,7 @@ describe "Welcome Index Page" do
     expect(page).to have_button("Create New User")
   end
 
-  xit "list existing users" do
+  it "list existing users" do
     user_1 = User.create(name: "Bob", email: "bob@myemail.com")
     user_2 = User.create(name: "Sally", email: "sally@myemail.com")  
     visit root_path   
