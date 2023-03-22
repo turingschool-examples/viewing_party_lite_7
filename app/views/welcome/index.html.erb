@@ -1,0 +1,17 @@
+<h1>Welcome to Viewing Party</h1>
+
+<%= render "welcome_page_nav" %>
+
+<button type="button">Create New User</button>
+
+ <body>
+  <div class="row">
+    <p class='col-12'>Existing Users</p> 
+  </div> 
+  <% @users.each do |user| %> 
+    <li><%= link_to "User ##{user.name}", user_path(user)%></li> 
+  <% end %>
+ </body> 
+
+
+
