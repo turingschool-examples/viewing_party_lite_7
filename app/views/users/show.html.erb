@@ -1,0 +1,10 @@
+<h1><%= @user.name %>'s Dashboard</h1>
+<%= button_to "Discover Movies", local: true %>
+<h3>Viewing Parties:</h3>
+  <div id="parties">
+    <% @user.viewing_parties.each do |party| %>
+      <p>Movie id: <%= party.movie_id %> </p>
+      <p>Date: <%= party.date %> </p>
+      <p>Start time: <%= party.start_time.strftime("%I:%M") %> </p>
+      <p>Duration: <%= party.duration %> </p>
+    <% end %>
