@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 
   get "/register", controller: "users", to: "users#new"
 	resources :users, only: [:create, :show]
+	resources :party, only: :show
 end
