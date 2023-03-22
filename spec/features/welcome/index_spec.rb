@@ -15,6 +15,11 @@ RSpec.describe "Landing Page" do
       expect(page).to have_button("Create a New User")
     end
 
+    it "goes to the register page when clicking register user" do 
+      click_button "Create a New User"
+      expect(current_path).to eq("/register")
+    end
+
     it " has a list of existing users, which links to the users dashboard" do 
      
       within(".users") do 
