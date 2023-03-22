@@ -8,8 +8,9 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create] 
   
   get "/users/:id", to: "users#dashboard"
-  # get "/users/:id/discover", to: "discover#index"
   get "/users/:id/discover", to: "users#discover"
+
+  get "/users/:user_id/movies", to: "user_movies#index"
 
   get "/register", to: "register#new"
   post "/register", to: "register#create"
