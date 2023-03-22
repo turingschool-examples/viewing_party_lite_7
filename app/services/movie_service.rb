@@ -4,7 +4,11 @@ class MovieService
   end
 
   def top_rated_movies
-    get_url("/3/movie/top_rated")[:results]
+    get_url("/3/movie/top_rated")
+  end
+
+  def cast(movie_id)
+    get_url("/3/movie/#{movie_id}/credits")
   end
   
   def get_url(url)

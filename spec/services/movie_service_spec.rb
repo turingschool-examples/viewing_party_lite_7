@@ -4,7 +4,8 @@ describe MovieService do
   describe "#top_rated_movies" do
     before(:each) do
       VCR.use_cassette(:top_rated_movies, serialize_with: :json) do
-        @top_rated_movies = MovieService.new.top_rated_movies
+        @api_call_result = MovieService.new.top_rated_movies
+        @top_rated_movies = @api_call_result[:results]
       end
     end
     
@@ -25,6 +26,39 @@ describe MovieService do
       expect(@top_rated_movies.count).to eq(20)
       expect(@top_rated_movies.first[:title]).to eq("The Godfather")
       expect(@top_rated_movies.first[:vote_average]).to eq(8.7)
+    end
+  end
+
+  describe "#movie_by_id" do
+    before(:each) do
+      VCR.use_cassette(:movie_by_id_info, serialize_with: :json) do
+        @movie = MovieService.new.movie_by_id(550)
+      end
+    end
+
+    it "returns all expected attributes and data types" do
+      expect(@movie).to be_a(Hash)
+
+      expect(@movie).to have_key(:genres)
+      expect(@movie[:genres]).to be_a(Array)
+
+      expect(@movie).to have_key(:overview)
+      expect(@movie[:overview]).to be_a(String)
+
+      expect(@movie).to have_key(:id)
+      expect(@movie[:id]).to be_a(Integer)
+
+      expect(@movie).to have_key(:title)
+      expect(@movie[:title]).to be_a(String)
+
+      expect(@movie).to have_key(:vote_average)
+      expect(@movie[:vote_average]).to be_a(Float)
+
+      expect(@movie).to have_key(:runtime)
+      expect(@movie[:runtime]).to be_a(Integer)
+
+      expect(@movie).to have_key(:poster_path)
+      expect(@movie[:poster_path]).to be_a(String)
     end
   end
 end
