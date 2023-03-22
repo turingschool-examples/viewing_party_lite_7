@@ -59,7 +59,6 @@ group :development, :test do
   gem "shoulda-matchers"
   gem "simplecov"
   gem "timecop"
-  gem "vcr"
   gem "webmock"
 end
 
@@ -80,4 +79,5 @@ group :test do
   gem "launchy"
   gem "orderly"
   gem "rspec-rails"
+  gem "vcr"
 end

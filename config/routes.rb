@@ -1,17 +1,13 @@
-# frozen_string_literal: true
-
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   root "landing#index"
 
-  get "/users/:id/discover", to: "discover#new"
-  
-  resources :users, only: %i[show create]
+  resources :users, only: %i[show create] do
+    resources :discover, only: [:index]
+    resources :movies, only: [:index]
+  end
 
-  resources :discover, only: :new
-
-  get '/register', to: 'users#new'
-
+  get "/register", to: "users#new"
 end
