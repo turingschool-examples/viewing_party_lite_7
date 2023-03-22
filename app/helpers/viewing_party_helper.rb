@@ -1,0 +1,2 @@
+module ViewingPartyHelper
+end
