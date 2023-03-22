@@ -14,7 +14,7 @@ RSpec.describe "User Registration", type: :feature do
         end
       end
 
-      xit "will be routed to the new user's dashboard page after submitting" do
+      it "will be routed to the new user's dashboard page after submitting" do
         within "#new_user" do
           fill_in "Name", with: "Stan Smith"
           fill_in "Email", with: "stan@example.com"
@@ -24,7 +24,7 @@ RSpec.describe "User Registration", type: :feature do
 
         expect(current_path).to eq("/users/#{User.last.id}")
         expect(page).to have_content("User successfully created")
-        expect(page).to have_content("Stan's Dashboard")
+        expect(page).to have_content("Stan Smith's Dashboard")
       end
 
       it "will only accept unique email addresses" do
