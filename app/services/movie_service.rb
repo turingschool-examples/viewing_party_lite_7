@@ -3,6 +3,10 @@ class MovieService
     get_url("movie/#{id}")
   end
   
+  def self.get_cast(id)
+    get_url("movie/#{id}/credits")
+  end
+  
   def self.get_url(url)
     response = conn.get(url)
     JSON.parse(response.body, symbolize_names: true)
