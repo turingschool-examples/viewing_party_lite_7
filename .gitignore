@@ -32,3 +32,4 @@
 
 #Simplecov
 /coverage
+/.DS_Store

@@ -1,0 +1,8 @@
+
+<%= button_to "Discover Top Rated Movies", local: true %>
+
+<%=form_with url: "/users/:id/discover", method: :get, local: true do |f|%>
+  <%= f.label :title %>
+  <%=f.text_field :title%>
+  <%=f.submit "Discover Movies" %>
+<% end %>
