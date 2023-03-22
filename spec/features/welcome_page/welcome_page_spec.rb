@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "Welcome Page" do
+RSpec.describe "Welcome Page", type: :feature do
   before :each do
     @user = create(:user)
     visit "/"
@@ -11,8 +11,8 @@ RSpec.describe "Welcome Page" do
       expect(page).to have_content("Viewing Party Lite")
     end
 
-    it "Has a Button to Create a New User" do
-      expect(page).to have_button("Create New User")
+    it "Has a Button to Register a New User" do
+      expect(page).to have_button("Register New User")
     end
 
     it "has a List of Existing Users" do
