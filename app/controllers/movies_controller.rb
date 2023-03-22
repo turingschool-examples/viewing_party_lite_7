@@ -1,16 +1,12 @@
+# require './facade/top_movies_facade.rb'
 class MoviesController < ApplicationController
-  # def search
-  # end
-
   def index
-    conn = Faraday.new(url: "https://api.themoviedb.org", headers: {"Authorization" => "Bearer #{ENV["movie_token"]}"}) do |faraday|
-      # faraday.headers["api_key"] = 
-      # faraday.headers["page"] = "1"
-      # faraday.headers["language"] = 'en-US'
+    require 'pry'; binding.pry
+    @user = User.find(params[:user_id])
+    if params[:q] == "keyword"
+      @keyword_movies
+    else
+      @top_rated_movies = TopMoviesFacade.top_rated_info
     end
-    response = conn.get("/3/movie/top_rated")
-
-    data = JSON.parse(response.body, symbolize_names: true)
   end
-
 end
