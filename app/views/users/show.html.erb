@@ -1,2 +1,19 @@
-<h1><%= @user.name %></h1>
-<p><%= @user.email %></p>
+  <%= render "welcome/welcome_page_nav" %>
+
+  <p class= "title has-test_centered"><%= @user.name %>'s Dashboard</p>
+
+  <button type="button">Discover Movies</button>
+
+  <section class="section">
+    <p class="title">Viewing Parties</p>
+    <div class="row">
+      <div class="col-12">
+        <p>Upcoming Parties</p>
+        <ul>
+          <% @parties.each do |party| %>
+            <li><%= link_to "Party ##{party.movie_title}", party_path(party)%></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </section>
