@@ -16,7 +16,8 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
-    @parties = @user.parties
+    @my_parties = @user.my_parties
+		@party_invites = @user.party_invites
 	end
 
 	private

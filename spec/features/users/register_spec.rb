@@ -1,7 +1,6 @@
 require "rails_helper"
 
-describe 'register page' do
-
+describe 'register page', :vcr do
 	before do
 		visit register_path
 	end
@@ -12,7 +11,8 @@ describe 'register page' do
 			expect(page).to have_field("Email")
 			expect(page).to have_button("Register")
 		end
-
+		
+		# VCR.use_cassette(:movies, serialize_with: :json) do
 		it "can register a new user" do
 			fill_in "Name", with: "John Doe"
 			fill_in "Email", with: "johndoe@email.com"
@@ -20,6 +20,7 @@ describe 'register page' do
 
 			expect(current_path).to eq(user_path(User.all.first))
 		end
+	# end
 
 		it "will not allow a user to create account if email is invalid" do
 			fill_in "Name", with: "John Doe"

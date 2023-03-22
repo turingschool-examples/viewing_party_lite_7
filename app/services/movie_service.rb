@@ -1,6 +1,6 @@
 class MovieService
-	def top_rated
-		get_url("/3/movie/top_rated")
+	def popular
+		get_url("/3/movie/popular")
 	end
 
 	def get_url(url)
