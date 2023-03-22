@@ -8,15 +8,19 @@ RSpec.describe "User Registration", type: :feature do
   describe "User Story 5" do
     describe "As a user, when I visit the user registration page(/register)" do
       it "I should see a form to register" do
-        expect(page).to have_field("Name")
-        expect(page).to have_field("Email")
+        within "#new_user" do
+          expect(page).to have_field("Name")
+          expect(page).to have_field("Email")
+        end
       end
 
       xit "will be routed to the new user's dashboard page after submitting" do
-        fill_in "Name", with: "Stan Smith"
-        fill_in "Email", with: "stan@example.com"
+        within "#new_user" do
+          fill_in "Name", with: "Stan Smith"
+          fill_in "Email", with: "stan@example.com"
 
-        click_button "Create New User"
+          click_button "Create New User"
+        end
 
         expect(current_path).to eq("/users/#{User.last.id}")
         expect(page).to have_content("User successfully created")
@@ -26,20 +30,24 @@ RSpec.describe "User Registration", type: :feature do
       it "will only accept unique email addresses" do
         User.create!(name: "Stan Johnson", email: "stan@example.com")
         
-        fill_in "Name", with: "Stan Smith"
-        fill_in "Email", with: "stan@example.com"
+        within "#new_user" do
+          fill_in "Name", with: "Stan Smith"
+          fill_in "Email", with: "stan@example.com"
 
-        click_button "Create New User"
+          click_button "Create New User"
+        end
 
         expect(current_path).to eq("/register")
         expect(page).to have_content("Email has already been taken")
       end
 
       it "sad path for creating a new user" do
-        fill_in "Name", with: "Stan Smith"
-        fill_in "Email", with: " "
+        within "#new_user" do
+          fill_in "Name", with: "Stan Smith"
+          fill_in "Email", with: " "
 
-        click_button "Create New User"
+          click_button "Create New User"
+        end
 
         expect(current_path).to eq("/register")
         expect(page).to have_content("Email can't be blank")
