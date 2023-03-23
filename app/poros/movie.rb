@@ -6,5 +6,4 @@ class Movie
     @title = attributes[:title]
     @vote_average = attributes[:vote_average]
   end
-
 end

@@ -1,5 +1,7 @@
 <% @movies.each do |movie| %>
-  <%= movie.title %><br>
-  <%= movie.vote_average %>
-  <br><br>
+  <ul class="movie">
+    <%= movie.title %><br>
+    <%= movie.vote_average %>
+    <br><br>
+  </ul>
 <% end %>
