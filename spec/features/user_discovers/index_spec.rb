@@ -17,6 +17,9 @@ RSpec.describe 'user discover page' do
     stub_request(:get, "https://api.themoviedb.org/3/search/movie?query=Godfather&api_key=#{ENV['MOVIE_DB_KEY']}")
       .to_return(status: 200, body: search_results)
 
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['MOVIE_DB_KEY']}&query=")
+      .to_return(status: 200, body: '{"results": []}')
+
     visit "/users/#{@user_1.id}/discover"
   end
 
