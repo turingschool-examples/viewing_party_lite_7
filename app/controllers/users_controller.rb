@@ -8,8 +8,13 @@ class UsersController <ApplicationController
   end
 
   def create
-    user = User.create!(user_params)
-    redirect_to user_path(user)
+    user = User.create_new_user(user_params)
+    if user.save
+      redirect_to user_path(user)
+    else
+      flash[:error] = "Error: Invalid form entry"
+      redirect_to "/register"
+    end
   end
 
   def discover
