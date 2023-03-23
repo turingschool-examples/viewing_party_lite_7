@@ -8,8 +8,6 @@ RSpec.describe MovieService do
   end
 
   it 'returns top 20 rated movies' do
-
-
     top_movies = MovieService.top_rated_movies
     
     expect(top_movies).to be_a(Hash)
