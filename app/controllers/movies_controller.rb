@@ -10,4 +10,8 @@ class MoviesController < ApplicationController
       flash[:notice] = "No movie results found for '#{@facade.movie_results}'"
     end
   end
+
+  def show
+    
+  end
 end

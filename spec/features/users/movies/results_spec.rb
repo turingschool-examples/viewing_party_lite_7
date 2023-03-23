@@ -12,26 +12,31 @@ describe "When I visit the discover movies page, and click on either the Top Mov
       end
 
       it 'Title of each movie' do
-        expect(page).to have_content('The Godfather')
-        expect(page).to have_content('The Shawshank Redemption')
-        expect(page).to have_content('Cuando Sea Joven')
-        expect(page).to have_content('The Godfather Part II')
-        expect(page).to have_content("Schindler's List")
-        expect(page).to have_content('Dilwale Dulhania Le Jayenge')
-        expect(page).to have_content('Spirited Away')
-        expect(page).to have_content('12 Angry Men')
-        expect(page).to have_content('Your Name.')
-        expect(page).to have_content('Parasite')
-        expect(page).to have_content('The Dark Knight')
-        expect(page).to have_content('The Boy, the Mole, the Fox and the Horse')
-        expect(page).to have_content('The Green Mile')
-        expect(page).to have_content('Pulp Fiction')
-        expect(page).to have_content("Dou kyu sei")
-        expect(page).to have_content('The Good, the Bad and the Ugly')
-        expect(page).to have_content('Forrest Gump')
-        expect(page).to have_content('The Lord of the Rings: The Return of the King')
-        expect(page).to have_content('Primal: Tales of Savagery')
-        expect(page).to have_content("GoodFellas")
+        expect(page).to have_link('The Godfather')
+        expect(page).to have_link('The Shawshank Redemption')
+        expect(page).to have_link('Cuando Sea Joven')
+        expect(page).to have_link('The Godfather Part II')
+        expect(page).to have_link("Schindler's List")
+        expect(page).to have_link('Dilwale Dulhania Le Jayenge')
+        expect(page).to have_link('Spirited Away')
+        expect(page).to have_link('12 Angry Men')
+        expect(page).to have_link('Your Name.')
+        expect(page).to have_link('Parasite')
+        expect(page).to have_link('The Dark Knight')
+        expect(page).to have_link('The Boy, the Mole, the Fox and the Horse')
+        expect(page).to have_link('The Green Mile')
+        expect(page).to have_link('Pulp Fiction')
+        expect(page).to have_link("Dou kyu sei")
+        expect(page).to have_link('The Good, the Bad and the Ugly')
+        expect(page).to have_link('Forrest Gump')
+        expect(page).to have_link('The Lord of the Rings: The Return of the King')
+        expect(page).to have_link('Primal: Tales of Savagery')
+        expect(page).to have_link("GoodFellas")
+      end
+
+      it "can click the link" do
+        click_link("The Godfather")
+        expect(current_path).to eq(user_movie_path(@user, 238))
       end
 
       it 'vote average of each movie' do
@@ -67,10 +72,15 @@ describe "When I visit the discover movies page, and click on either the Top Mov
       end
 
       it 'Title of each movie' do
-        expect(page).to have_content('Despicable Me')
-        expect(page).to have_content('Despicable Me 2')
-        expect(page).to have_content('Despicable Me 3')
-        expect(page).to have_content('Despicable Me 4')
+        expect(page).to have_link('Despicable Me')
+        expect(page).to have_link('Despicable Me 2')
+        expect(page).to have_link('Despicable Me 3')
+        expect(page).to have_link('Despicable Me 4')
+      end
+
+      it 'Can click the link' do
+        click_link('Despicable Me')
+        expect(current_path).to eq(user_movie_path(@user, 20352))
       end
 
       it 'vote average of each movie' do
