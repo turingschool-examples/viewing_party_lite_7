@@ -11,6 +11,7 @@ class MoviedbService
     end
   end
 
+  # for V4 Bearer Token API key:
   # def self.connection
   #   url = "https://api.themoviedb.org/3"
   #   Faraday.new(url: url, headers: { "Authorization" => ENV["MOVIEDB_API_KEY"] })

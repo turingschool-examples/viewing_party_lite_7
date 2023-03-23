@@ -2,16 +2,18 @@
 
 class MoviedbFacade
 
-  # def self.movie_search(keyword)
+  # def self.movie_search
   #   movie_list = {
-  #     movies: get_movies(keyword)
+  #     movies: get_movies
+  #     cast: get_cast
+  #     comments: get_comments
   #   }
-  #   MovieInfo.new(movie_list)
+  #   Movie.new(movie_list)
   # end
+
 
   # def get_movies(keyword)
   #   top_20 = MoviedbService.fetch_api("")
-
   # end
 
   #####
@@ -24,9 +26,8 @@ class MoviedbFacade
   #   require 'pry'; binding.pry
   # end
 
-  def self.get_movie_search(keyword)
-    search_results = MoviedbService.fetch_api("/search/movie?query=#{keyword}&include_adult=false")
-
+  def self.get_movie_search(word)
+    search_results = MoviedbService.fetch_api("/search/movie?query=#{word}&include_adult=false")
     search_results["results"].map do |movie|
       Movie.new(movie)
     end
@@ -35,7 +36,6 @@ class MoviedbFacade
 
   def self.get_top_movies
     search_results = MoviedbService.fetch_api("movie/top_rated?include_adult=false")
-
     search_results["results"].map do |movie|
       Movie.new(movie)
     end
