@@ -1,32 +1,54 @@
 # require 'ostruct'
 
 class MoviedbFacade
-
-  def initialize
-    @movie_service = MoviedbService.new # could use memorization so it only uses resources when you need it
-  #   # make keyword an instance here (then can call it later in the view/controller)
-  end
-
-  # def movie_service
-  #   @_movie_service ||= MoviedbService.new
+  # attr_reader :word
+    
+  # def initialize
+  #   @movie_service = MoviedbService.new # could use memorization so it only uses resources when you need it
+  # #   # make keyword an instance here (then can call it later in the view/controller)
   # end
 
-  #private <- for later muahaha
+  def initialize(params)
+      if params[:search].present?
+        @word = params[:search] 
+      end
+  end
 
-  def get_movie_search(word)
-    search_results = @movie_service.fetch_api("/search/movie?query=#{word}&include_adult=false")
+  def movie_service
+    @_movie_service ||= MoviedbService.new
+  end
+
+  def get_movies_search
+    search_results = movie_service.fetch_api("/search/movie?query=#{@word}&include_adult=false")
     search_results["results"].map do |movie|
       Movie.new(movie)
     end
   end
-
 
   def get_top_movies
-    search_results = @movie_service.fetch_api("/movie/top_rated?include_adult=false")
+    search_results = movie_service.fetch_api("/movie/top_rated?include_adult=false")
     search_results["results"].map do |movie|
       Movie.new(movie)
     end
   end
+
+
+  ############## REFACTORED: 
+  #private <- for later muahaha
+
+  # def get_movie_search(word)
+  #   search_results = movie_service.fetch_api("/search/movie?query=#{word}&include_adult=false")
+  #   search_results["results"].map do |movie|
+  #     Movie.new(movie)
+  #   end
+  # end
+
+  # def get_top_movies
+  #   search_results = movie_service.fetch_api("/movie/top_rated?include_adult=false")
+  #   search_results["results"].map do |movie|
+  #     Movie.new(movie)
+  #   end
+  # end
 
     # def self.call
   #   movie_list = {
