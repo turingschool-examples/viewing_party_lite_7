@@ -8,8 +8,10 @@ RSpec.describe MovieService do
   end
 
   it 'returns top 20 rated movies' do
-    top_movies = MovieService.top_rated_movies
 
+
+    top_movies = MovieService.top_rated_movies
+    
     expect(top_movies).to be_a(Hash)
     expect(top_movies[:results].count).to eq(20)
     expect(top_movies[:results][0][:title]).to eq("The Godfather")
