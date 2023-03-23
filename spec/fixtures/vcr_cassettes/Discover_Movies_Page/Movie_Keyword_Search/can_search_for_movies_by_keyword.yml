@@ -46,15 +46,17 @@ http_interactions:
       - Accept-Encoding
       - Origin
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 d4fb3448d1a8d3229dcf0a89f4bbe7e8.cloudfront.net (CloudFront)
+      - 1.1 96725c0e4ced177a38df871e7cc48a4a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - dT5nvjs-O7knTbWKuOgmWIVtufdQ-Lyms9r7-sUzaC8CuwO0jw1eUw==
+      - I7tChMW-7M6l_cEsdGf2rXbp53aPkjKKPNkbSmruGXslP_zpd6VaBA==
+      Age:
+      - '5544'
     body:
       encoding: UTF-8
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","genre_ids":[18,80],"id":238,"original_language":"en","original_title":"The
@@ -176,5 +178,5 @@ http_interactions:
         shut their operation down.  Betrayals and divided loyalties lead to a  final,
         bloody confrontation in America.","popularity":2.35,"poster_path":"/n8ZKrhC2zJCsOMPel882EPMDZyj.jpg","release_date":"1979-08-24","title":"The
         New Godfathers","video":false,"vote_average":6.5,"vote_count":3}],"total_pages":5,"total_results":88}'
-  recorded_at: Thu, 23 Mar 2023 17:40:05 GMT
+  recorded_at: Thu, 23 Mar 2023 19:12:30 GMT
 recorded_with: VCR 6.1.0

@@ -36,15 +36,17 @@ http_interactions:
       - Accept-Encoding,Accept-Encoding
       - Origin
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 025e84e972a461c1dd140ac5fbbbd0aa.cloudfront.net (CloudFront)
+      - 1.1 a70648d67d4a5a7f7eed7b14595ab4fe.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - OmVh4rqg9j_IyL28Hwpka7PCE0_XfKwc5MsvbWuJ_v1TKjQJLYl8ww==
+      - E6yA2_i7nMF3lSrg6wwjAXNclWT2PhL69djhTJflEZjLAjAgxvI4Bw==
+      Age:
+      - '5544'
     body:
       encoding: UTF-8
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","genre_ids":[18,80],"id":238,"original_language":"en","original_title":"The
@@ -152,5 +154,5 @@ http_interactions:
         true story of Henry Hill, a half-Irish, half-Sicilian Brooklyn kid who is
         adopted by neighbourhood gangsters at an early age and climbs the ranks of
         a Mafia family under the guidance of Jimmy Conway.","popularity":43.625,"poster_path":"/aKuFiU82s5ISJpGZp7YkIr3kCUd.jpg","release_date":"1990-09-12","title":"GoodFellas","video":false,"vote_average":8.5,"vote_count":11096}],"total_pages":546,"total_results":10912}'
-  recorded_at: Thu, 23 Mar 2023 17:40:05 GMT
+  recorded_at: Thu, 23 Mar 2023 19:12:30 GMT
 recorded_with: VCR 6.1.0
