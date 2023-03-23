@@ -3,7 +3,8 @@ class MovieInfo
               :vote_avg,
               :runtime,
               :summary,
-              :genre
+              :genre,
+              :movie_id
   
   def initialize(response)
     @title = response[:title]
@@ -11,6 +12,7 @@ class MovieInfo
     @runtime = response[:runtime]
     @summary = response[:overview]
     @genre = response[:genres]
+    @movie_id = response[:id]
   end
   
   def list_genres
