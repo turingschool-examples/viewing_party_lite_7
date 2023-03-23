@@ -10,7 +10,7 @@ class Movie
   def initialize(movie_data)
     @title = movie_data[:title]
     @runtime = movie_data[:runtime]
-    @genres = movie_data[:genres]#.map { |genre| genre[:name] }
+    @genres = movie_data[:genres] # .map { |genre| genre[:name] }
     @overview = movie_data[:overview]
     @vote_average = movie_data[:vote_average]
     @poster_path = movie_data[:poster_path]

@@ -46,7 +46,9 @@ RSpec.describe 'User Story 10' do
       VCR.use_cassette(:top_rated_movies, serialize_with: :json) do
         click_button "Find Top Rated Movies"
         expect(current_path).to eq(user_movies_path(@stan))
+        expect(page).to have_content("The Godfather - Vote Average: 8.7")
         expect(page).to have_content("Shawshank Redemption - Vote Average: 8.7")
+        expect(page).to have_content("The Dark Knight - Vote Average: 8.5")
       end
     end
   end

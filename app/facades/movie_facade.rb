@@ -7,14 +7,14 @@ class MovieFacade
   def movie
     movie = @service.movie_by_id(@movie_id)
   end
-  
+
   # def search(query)
   #   @service.movie_search(query)
   # end
 
   def cast
     cast = @service.cast(@movie_id)
-    cast.map { |cast_member| {name: cast_member[:name], character: cast_member[:character]} }
+    cast.map { |cast_member| { name: cast_member[:name], character: cast_member[:character] } }
   end
 end
 
