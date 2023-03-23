@@ -7,6 +7,11 @@ class PartiesController < ApplicationController
     @party = Party.find(params[:id])
   end
 
+	def new
+		@party = Party.new
+		@movie = MovieFacade.new.movie_details(params[:id])
+	end
+
   private
 
   def party_params

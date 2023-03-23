@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 describe "Welcome Index Page" do
+	let(:user_3) { User.create!(name: "Marco", email: "polo@email.com") }
+	
   it "can see a welcome message" do
     visit root_path
 
