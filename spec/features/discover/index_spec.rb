@@ -28,6 +28,20 @@ RSpec.describe '/discover', type: :feature do
 
         expect(current_path).to eq(user_movies_path(@steve.id))
       end
+
+      describe "when I click on 'Find Top Rated Movies', I am taken to movies index (/users/:user_id/movies)" do
+        before do
+          click_button "Find Top Rated Movies"
+        end
+        xit 'I should see title (as a link to the movie details page), vote average of the movie, and only 20 results' do
+
+        end
+
+        it 'I should see a button to return to the Discover page' do
+          expect(current_path).to eq(user_movies_path(@steve.id))
+          expect(page).to have_button("Return to Discover Page")
+        end
+      end
     end
   end
 end
