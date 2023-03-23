@@ -25,5 +25,40 @@ RSpec.describe "Registration Page" do
 
       expect(current_path).to eq(user_path(user))
     end
+
+    it "Get an error message and return to '/register' with no new user created" do 
+      within(".register_user") do
+        fill_in(:name, with: '')
+        fill_in(:email, with: "not_a_real_email@napster.com")
+        click_button("Create New User")
+      end
+
+      user = User.last
+
+      expect(current_path).to eq("/register")
+      expect(user).to eq(nil)
+      expect(page).to have_content("Error: Invalid form entry")
+    end
+
+    it "Get an error message and return to '/register' when a second user is made that is using an email that already exists and isn't made" do 
+      user_1 = User.create!(name: "Bob", email: "bob@builder.com")
+      
+      within(".register_user") do
+        fill_in(:name, with: "Rob")
+        fill_in(:email, with: "bob@builder.com")
+        click_button("Create New User")
+      end
+
+      user_2 = User.last
+
+      expect(current_path).to eq("/register")
+      expect(User.count).to eq(1)
+      expect(User.count).to_not eq(2)
+      expect(user_2.email).to eq("bob@builder.com")
+      expect(user_2.name).to eq("Bob")
+      expect(user_2.name).to_not eq("Rob")
+      expect(user_2).to eq(user_1)
+      expect(page).to have_content("Error: Invalid form entry")
+    end
   end
 end
