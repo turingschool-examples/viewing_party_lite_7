@@ -77,9 +77,6 @@ end
 
 group :test do
   gem "capybara"
-  gem "launchy"
-  gem "rspec-rails"
-  gem "simplecov"
   gem "vcr"
   gem "webmock"
 end
