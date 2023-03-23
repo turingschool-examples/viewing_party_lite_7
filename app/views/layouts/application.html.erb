@@ -11,6 +11,7 @@
 
   <body>
   <p><%= link_to 'Home', "/" %></p>
+  <%= flash[:alert] %>
     <%= yield %>
   </body>
 </html>

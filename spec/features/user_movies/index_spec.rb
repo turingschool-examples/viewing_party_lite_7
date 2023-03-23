@@ -37,6 +37,8 @@ RSpec.describe 'user movies page' do
       expect(page).to have_content('Teen Wolf: The Movie')
       expect(page).to have_content('8.5')
     end
+
+    expect(page).to_not have_content('Tokyo Godfathers')
   end
 
   it 'displays the search results' do
@@ -56,5 +58,7 @@ RSpec.describe 'user movies page' do
       expect(page).to have_content('Onimasa: A Japanese Godfather')
       expect(page).to have_content('6.4')
     end
+
+    expect(page).to_not have_content('Teen Wolf: The Movie')
   end
 end
