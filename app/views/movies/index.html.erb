@@ -1,0 +1,11 @@
+<ol>
+<% if params[:top_rated] %>
+    <% @movies.top_rated.each do |movie| %>
+      <li><%= movie.title %> <%= movie.vote_average %></li>
+    <% end %>
+  <% elsif params[:search] %>
+    <% @movies.search(params[:search]).each do |movie| %>
+      <li><%= movie.title %> <%= movie.vote_average %></li>
+    <% end %>
+  <% end %>
+</ol>
