@@ -25,7 +25,7 @@ RSpec.describe "User's Discover Index", type: :feature do
         end
       end
 
-     it "I see a button to search by movie title, that routes me to the movies index page" do
+    it "I see a button to search by movie title, that routes me to the movies index page" do
         VCR.use_cassette(:find_movies, serialize_with: :json) do
           within "#search_form" do
             expect(page).to have_button "Find Movies"

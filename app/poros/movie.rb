@@ -4,7 +4,8 @@ class Movie
               :genres,
               :overview,
               :vote_average,
-              :poster_path
+              :poster_path,
+              :id
 
   def initialize(movie_data)
     @title = movie_data[:title]
@@ -13,5 +14,6 @@ class Movie
     @overview = movie_data[:overview]
     @vote_average = movie_data[:vote_average]
     @poster_path = movie_data[:poster_path]
+    @id = movie_data[:id]
   end
 end
