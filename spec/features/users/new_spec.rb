@@ -11,7 +11,8 @@ RSpec.describe "New User Registration Page" do
       fill_in "Email", with: "pete@email.com"
 
       click_on "Create User"
-      expect(current_path).to eq(user_path(User.last))
+
+      expect(current_path).to eq("/users/#{User.last.id}")
     end
   end
 end

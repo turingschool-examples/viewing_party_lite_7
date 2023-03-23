@@ -1,0 +1,19 @@
+<h1><%= @facade.movie_details.title %></h1>
+<%= @facade.movie_details.runtime %><br>
+<%= @facade.movie_details.vote_average %><br>
+Genres:
+<% @facade.movie_details.genres.each do |genre| %>
+  <%= genre %><br>
+<% end %>
+<%= @facade.movie_details.summary %><br><br>
+Cast:
+<% @facade.cast_members.each do |actor| %>
+  <ul class="cast_member"> 
+    <%= actor.name %><br>
+  </ul>
+<% end %><br>
+Reviews:
+<% @facade.movie_reviews.each do |review| %>
+  <%= "Author: #{review.author}" %><br>
+  <%= review.content %><br><br>
+<% end %>

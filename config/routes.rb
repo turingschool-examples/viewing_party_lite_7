@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
   root "landing#index"
-  get "register", to: "user#new"
+  get "register", to: "users#new"
   
-  resources :user, only: [:show, :new, :create] do
+  resources :users, only: [:show, :new, :create] do
     get "/discover", to: "discover#index"
     
     resources :movies, only: [:show, :index]
