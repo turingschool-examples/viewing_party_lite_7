@@ -3,8 +3,8 @@
 <%=button_to "Discover Top Rated Movies", user_movies_path(@user), method: :get%>
 <br>
 <div id="search">
-  <%= form_with url: user_movies_path(@user), local: true, method: :get, action: "results_index" do |form| %>
-    <%= form.label :movie_title, 'Enter Movie Title Keyword(s)' %>
+  <%= form_with url: user_movies_path(@user), local: true, method: :get do |form|%>
+    <%= form.label :movie_title, "Enter Movie Title Keyword(s)" %>
     <%= form.text_field :movie_title %>
     <%= form.submit 'Search by Movie Title' %>
   <% end %>

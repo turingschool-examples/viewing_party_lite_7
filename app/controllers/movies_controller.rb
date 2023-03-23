@@ -4,10 +4,12 @@ class MoviesController < ApplicationController
   end
 
   def index
-    
+    @facade = MovieFacade.new(params)
+    if @facade.request_type == "search" && @facade.search_results.empty?
+      redirect_to user_movies_discover_path(@facade.user)
+      flash[:notice] = "No movie results found for '#{@facade.movie_results}'"
+    end
   end
 
-  def results_index
-    
-  end
+  
 end

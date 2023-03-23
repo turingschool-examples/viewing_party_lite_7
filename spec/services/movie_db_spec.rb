@@ -33,7 +33,7 @@ describe MoviedbService do
         expect(@searched_movies[:results]).to be_an Array
         expect(@searched_movies[:results].count).to be <= 20
 
-        expect(@searched_movies[:results].first[:original_title]).to include("Despicable")
+        expect(@searched_movies[:results].first[:title]).to include("Despicable")
       end
 
       it "returns nil if no movies match the keyword search" do
