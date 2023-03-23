@@ -39,7 +39,7 @@ RSpec.describe MovieService do
     WebMock.disable_net_connect!
   end
   
-  xit 'returns the cast of a movie with a given id' do
+  it 'returns the cast of a movie with a given id' do
     #live call test
     WebMock.allow_net_connect!
     
@@ -47,10 +47,10 @@ RSpec.describe MovieService do
     cast = MovieService.get_cast(id)
     
     expect(cast).to be_a(Hash)
-    # expect(cast[:original_title]).to eq("The Lord of the Rings: The Return of the King")
-    # expect(cast).to have_key(:id)
-    # 
-    # expect(movie[:original_title]).to_not eq("The Godfather")
+    expect(cast[:original_title]).to eq("The Lord of the Rings: The Return of the King")
+    expect(cast).to have_key(:id)
+    
+    expect(movie[:original_title]).to_not eq("The Godfather")
     
     WebMock.disable_net_connect!
   end

@@ -5,16 +5,17 @@ class MovieInfo
               :summary,
               :genre
   
-  def initialize(result)
-    @title = result[:title]
-    @vote_avg = result[:vote_average]
-    @runtime = result[:runtime]
-    @summary = result[:overview]
-    @genre = result[:genres]
+  def initialize(response)
+    @title = response[:title]
+    @vote_avg = response[:vote_average]
+    @runtime = response[:runtime]
+    @summary = response[:overview]
+    @genre = response[:genres]
   end
   
   def list_genres
-    @genres.map
-    
+    genre.map do |g|
+      g[:name]
+    end
   end
 end
