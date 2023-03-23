@@ -2,13 +2,11 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.themoviedb.org/3/search/movie?maxResults=20&query=tobacco%20and%20worms%20for%20breakfast
+    uri: https://api.themoviedb.org/3/search/movie?api_key=ebf46d9ab88b772502128d76538d0071&include_adult=false&language=en-US&page=1&query=tobacco%20and%20worms%20for%20breakfast
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Authorization:
-      - Bearer <MOVIEDB_API_KEY>
       User-Agent:
       - Faraday v2.7.4
       Accept-Encoding:
@@ -26,20 +24,20 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
+      Date:
+      - Thu, 23 Mar 2023 21:57:30 GMT
       Server:
       - openresty
+      Cache-Control:
+      - public, max-age=28800
       X-Memc:
       - MISS, STORE
       X-Memc-Key:
-      - c18cd1b5cc643477bb84314004a3986e
+      - e8f74523ba1336403ef7e1271e72aabe
       X-Memc-Age:
       - '0'
       X-Memc-Expires:
       - '21600'
-      Date:
-      - Thu, 23 Mar 2023 17:33:50 GMT
-      Cache-Control:
-      - public, max-age=28800
       Etag:
       - W/"0e23279b004381f72a34159d5c7dfd1f"
       Vary:
@@ -48,78 +46,17 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 6b1026dc8b63f06fce4b4aec8b9a03d6.cloudfront.net (CloudFront)
+      - 1.1 f111faa3f37b2169cefb225b0f246234.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - qJyBACXa9rDeb75rdzvUcGtOtBHXK0yGI_Y2BCX58xxljBH4c1FzOA==
+      - DFgqOpGqfSFqPheyDtXy5PWgyicxBmKTm_yjwfz_0nNM2S5tYXcOUg==
       Age:
-      - '7431'
+      - '137'
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[],"total_pages":1,"total_results":0}'
-  recorded_at: Thu, 23 Mar 2023 19:37:40 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/search/movie?maxResults=20&query=tobacco%20and%20worms%20for%20breakfast
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Authorization:
-      - Bearer <MOVIEDB_API_KEY>
-      User-Agent:
-      - Faraday v2.7.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Server:
-      - openresty
-      X-Memc:
-      - MISS, STORE
-      X-Memc-Key:
-      - c18cd1b5cc643477bb84314004a3986e
-      X-Memc-Age:
-      - '0'
-      X-Memc-Expires:
-      - '21600'
-      Date:
-      - Thu, 23 Mar 2023 17:33:50 GMT
-      Cache-Control:
-      - public, max-age=28800
-      Etag:
-      - W/"0e23279b004381f72a34159d5c7dfd1f"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 025e84e972a461c1dd140ac5fbbbd0aa.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - DEN52-P2
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - TmdY_cwi5Xo8BGrk07tJ4V8gSalWG__JyM9bggwEFwjft3RGctlHMQ==
-      Age:
-      - '7435'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"page":1,"results":[],"total_pages":1,"total_results":0}'
-  recorded_at: Thu, 23 Mar 2023 19:37:45 GMT
+  recorded_at: Thu, 23 Mar 2023 21:59:47 GMT
 recorded_with: VCR 6.1.0
