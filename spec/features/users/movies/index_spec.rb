@@ -49,7 +49,6 @@ RSpec.describe "/users/:id/movies", type: :feature do
       end
 
       expect(page).to have_content("Vote Average:", count: 20)
-      save_and_open_page
     end      
   end
 end

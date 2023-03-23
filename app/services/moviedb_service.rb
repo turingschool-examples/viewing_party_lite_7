@@ -1,11 +1,12 @@
 class MoviedbService
 
-  def self.fetch_api(arg)
+  def fetch_api(arg)
     response = connection.get(arg)
     JSON.parse(response.body, symoblize_names: true)
   end
 
-  def self.connection
+  private
+  def connection
     Faraday.new(url: "https://api.themoviedb.org/3") do |faraday|
       faraday.headers["X-API-KEY"] = ENV["TMDB_API_KEY"]
     end
