@@ -21,8 +21,40 @@ RSpec.describe 'user movies page' do
   end
 
   it 'displays the top rated movies' do
-    visit "/users/#{@user_1.id}/movies"
+    visit "/users/#{@user_1.id}/movies?q=top_rated"
 
-    expect(page).to have_content('Top Rated Movies')
+    within "#top_rated-1" do
+      expect(page).to have_content('The Godfather')
+      expect(page).to have_content(8.7)
+    end
+
+    within "#top_rated-2" do
+      expect(page).to have_content('The Shawshank Redemption')
+      expect(page).to have_content('8.7')
+    end
+
+    within "#top_rated-20" do
+      expect(page).to have_content('Teen Wolf: The Movie')
+      expect(page).to have_content('8.5')
+    end
+  end
+
+  it 'displays the search results' do
+    visit "/users/#{@user_1.id}/movies?search=Godfather"
+    
+    within "#search_results-1" do
+      expect(page).to have_content('Godfather')
+      expect(page).to have_content('8.0')
+    end
+
+    within "#search_results-3" do
+      expect(page).to have_content('Tokyo Godfathers')
+      expect(page).to have_content('7.879')
+    end
+
+    within "#search_results-8" do
+      expect(page).to have_content('Onimasa: A Japanese Godfather')
+      expect(page).to have_content('6.4')
+    end
   end
 end
