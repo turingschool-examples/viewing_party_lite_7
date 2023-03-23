@@ -69,8 +69,8 @@ group :development do
 end
 
 group :test do
-  # gem "vcr"
-  # gem "webmock"
+  gem "vcr"
+  gem "webmock"
   gem "rspec-rails"
   gem "capybara"
   gem "launchy"

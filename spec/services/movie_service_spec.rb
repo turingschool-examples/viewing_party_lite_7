@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe MovieService  do
   context "class methods" do
     context "#top_movies" do
-      it "returns movie data" do
+      it "returns movie data", :vcr do
         get = MovieService.top_movies
         expect(get).to be_a(Hash)
         expect(get[:results].size).to eq(20)
@@ -20,7 +20,7 @@ RSpec.describe MovieService  do
     end
 
     context "#search_movies(search)" do
-      it "returns the search results from the movie database" do
+      it "returns the search results from the movie database", :vcr do
         get = MovieService.search_movies("Godfather")
         expect(get).to be_a(Hash)
         expect(get[:results].size).to eq(20)
