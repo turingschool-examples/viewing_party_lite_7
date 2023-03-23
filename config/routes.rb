@@ -9,8 +9,9 @@ Rails.application.routes.draw do
 
 	resources :users, only: [:create, :show] do
 		resources :discover, only: :index
-    resources :movies, only: [:index, :show]
+    resources :movies, only: [:index, :show] do
+			resources :parties, only: [:show, :new, :create]
+		end
 	end
 	
-	resources :party, only: :show
 end

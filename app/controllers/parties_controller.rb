@@ -7,6 +7,10 @@ class PartiesController < ApplicationController
     @party = Party.find(params[:id])
   end
 
+	def new
+		@party = Party.new
+	end
+
   private
 
   def party_params

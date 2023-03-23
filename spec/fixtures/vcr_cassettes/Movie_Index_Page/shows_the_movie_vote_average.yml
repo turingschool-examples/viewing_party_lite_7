@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 23 Mar 2023 01:12:45 GMT
+      - Thu, 23 Mar 2023 19:19:14 GMT
       Server:
       - openresty
       Cache-Control:
@@ -39,22 +39,22 @@ http_interactions:
       X-Memc-Expires:
       - '21600'
       Etag:
-      - W/"6a9c239c726b5f4cfbdd5bcf7e2d4d3f"
+      - W/"38c3af1856590955404afef20b053cc2"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 e95ec8f1dc02e32f0cb9e113963ceb4e.cloudfront.net (CloudFront)
+      - 1.1 5957ea451aa45a9d254075e89c5df686.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - SEA73-P1
+      - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - xm7CAWiFyT-t2RfOBDtfoMLfIjpapCqJsf_9DiSW5WHENWPtb2R8oQ==
+      - IBqwTJt2eposzPY5HTm-HFCSLZ1XYxGzwNYXvFJ3qhKvULMovHwrnw==
       Age:
-      - '280'
+      - '5221'
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/wPU78OPN4BYEgWYdXyg0phMee64.jpg","genre_ids":[18,80],"id":278,"original_language":"en","original_title":"The
@@ -64,7 +64,7 @@ http_interactions:
         amoral warden. During his long stretch in prison, Dufresne comes to be admired
         by the other inmates -- including an older prisoner named Red -- for his integrity
         and unquenchable sense of hope.","popularity":92.438,"poster_path":"/hBcY0fE9pfXzvVaY4GKarweriG2.jpg","release_date":"1994-09-23","title":"The
-        Shawshank Redemption","video":false,"vote_average":8.701,"vote_count":23477},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":897459,"original_language":"en","original_title":"Hope
+        Shawshank Redemption","video":false,"vote_average":8.701,"vote_count":23480},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":897459,"original_language":"en","original_title":"Hope
         Springs Eternal: A Look Back at The Shawshank Redemption","overview":"Documentary
         about the movie.","popularity":1.903,"poster_path":"/v4wcS8XwUn5zl57rYRMzMnKahmt.jpg","release_date":"2004-06-25","title":"Hope
         Springs Eternal: A Look Back at The Shawshank Redemption","video":false,"vote_average":7.7,"vote_count":3},{"adult":false,"backdrop_path":"/u6hgtSIzW8nDKKWmun9JDhZz2fp.jpg","genre_ids":[99],"id":546312,"original_language":"en","original_title":"Shawshank:
@@ -73,7 +73,7 @@ http_interactions:
         the classic The Shawshank Redemption (1994) and how its importance grew higher
         over the years despite being an overlooked film when it was released and not
         getting any Oscars victories when it was nominated as one of the Best Pictures
-        of the Year.","popularity":2.465,"poster_path":"/b7DGM74MRfiLqEveVKwh0jnQ8zX.jpg","release_date":"2001-09-08","title":"Shawshank:
+        of the Year.","popularity":1.479,"poster_path":"/b7DGM74MRfiLqEveVKwh0jnQ8zX.jpg","release_date":"2001-09-08","title":"Shawshank:
         The Redeeming Feature","video":false,"vote_average":8.7,"vote_count":14}],"total_pages":1,"total_results":3}'
-  recorded_at: Thu, 23 Mar 2023 01:17:25 GMT
+  recorded_at: Thu, 23 Mar 2023 20:46:15 GMT
 recorded_with: VCR 6.1.0

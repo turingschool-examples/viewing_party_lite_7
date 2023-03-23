@@ -12,15 +12,14 @@ describe 'register page', :vcr do
 			expect(page).to have_button("Register")
 		end
 		
-		# VCR.use_cassette(:movies, serialize_with: :json) do
 		it "can register a new user" do
 			fill_in "Name", with: "John Doe"
 			fill_in "Email", with: "johndoe@email.com"
 			click_button "Register"
 
-			expect(current_path).to eq(user_path(User.all.first))
+      user = User.find_by(email: "johndoe@email.com")
+			expect(current_path).to eq(user_path(user))
 		end
-	# end
 
 		it "will not allow a user to create account if email is invalid" do
 			fill_in "Name", with: "John Doe"
