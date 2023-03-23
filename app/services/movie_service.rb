@@ -1,6 +1,6 @@
 class MovieService
 	def search(movie_title)
-		get_url("/3/search/keyword?query=#{movie_title}")
+		get_url("/3/search/movie?query=#{movie_title}")
 	end
 
 	def get_url(url)

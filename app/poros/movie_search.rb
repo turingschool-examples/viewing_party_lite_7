@@ -1,6 +1,9 @@
 class MovieSearch
+  attr_reader :id, :title, :vote_average
+  
   def initialize(data)
     @id = data[:id]
-    @title = data[:name]
+    @title = data[:title]
+    @vote_average = data[:vote_average]
   end
 end

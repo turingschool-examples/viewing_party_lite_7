@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   def index
-    @results = MovieFacade.search_results(params[:movie_title])
-    # require 'pry'; binding.pry
+    @movies = MovieFacade.search_results(params[:movie_title])
+    @user= User.find(params[:user_id])
   end
 end
