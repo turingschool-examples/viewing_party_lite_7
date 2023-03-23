@@ -4,7 +4,9 @@ class Movie
               :summary,
               :vote_average,
               :vote_count,
-              :image_url
+              :image_url,
+              :runtime,
+              :genres
 
   def initialize(response)
     @title = response[:title]
@@ -13,5 +15,7 @@ class Movie
     @vote_average = response[:vote_average]
     @vote_count = response[:vote_count]
     @image_url = response[:backdrop_path]
+    @runtime = response[:runtime]
+    @genres = response[:genres]
   end
 end

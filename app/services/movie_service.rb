@@ -7,6 +7,14 @@ class MovieService
     JSON.parse(conn.get("search/movie?query=#{query}").body, symbolize_names: true)
   end
 
+  def self.get_movie(id)
+    JSON.parse(conn.get("movie/#{id}").body, symbolize_names: true)
+  end
+
+  def self.get_cast(id)
+    JSON.parse(conn.get("movie/#{id}/credits").body, symbolize_names: true)
+  end
+
   private
   def self.conn
     Faraday.new(

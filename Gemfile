@@ -59,7 +59,6 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 4.0'
   gem 'orderly'
   gem 'net-http'
-  gem 'webmock'
   gem 'vcr'
 end
 
@@ -81,4 +80,5 @@ group :test do
   gem "capybara"
   gem "launchy"
   gem "simplecov"
+  gem 'webmock'
 end
