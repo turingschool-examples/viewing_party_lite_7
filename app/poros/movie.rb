@@ -16,5 +16,4 @@ class Movie
     @summary = attributes[:overview]
     @id = attributes[:id]
   end
-
-end 
+end

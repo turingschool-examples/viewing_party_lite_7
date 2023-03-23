@@ -6,6 +6,7 @@ class MoviesController < ApplicationController
     #   @movies = MovieFacade.top_movies
     # elsif params[:keyword] != nil
     #   @movies = MovieFacade.movies_search(params[:keyword])
+
   end
 
     def show
