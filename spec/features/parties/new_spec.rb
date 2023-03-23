@@ -72,5 +72,20 @@ RSpec.describe "party new page", type: :feature do
         end
       end 
     end 
+
+    it "when you enter /users/:user_id/movies/:movid_id/parties/new you will see a form below the name with information to fill out" do 
+      VCR.use_cassette("party_new_spec_form", :allow_playback_repeats => true) do
+        visit "/users/#{@hady.id}/movies/#{@results[0].movie_id}/parties/new"
+ 
+        within("div#viewing_party_form") do 
+          expect(page).to have_selector("form")
+          expect(page).to have_field("duration", type: 'number')
+          expect(page).to have_field("event_date", type: 'date')
+
+        end 
+      
+      end 
+    end
+
   end 
 end 

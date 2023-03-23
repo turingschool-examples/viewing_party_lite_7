@@ -7,13 +7,15 @@ class Movies
               :description, 
               :cast_members, 
               :count_of_reviews, 
-              :author_information
+              :author_information, 
+              :raw_runtime
 
   def initialize(info, cast_info, reviews_data)
     @name = info[:original_title] unless info[:original_title].nil?
     @vote_average = info[:vote_average] unless info[:vote_average].nil?
     @movie_id = info[:id] unless info[:id].nil?
     @genres = info[:genres]&.map { |genre| genre[:name]}
+    @raw_runtime = info[:runtime]
     @runtime = info[:runtime].divmod(60) unless info[:runtime].nil? 
     @description = info[:overview] unless info[:overview].nil?
     if cast_info
