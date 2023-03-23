@@ -1,4 +1,6 @@
 class MoviesFacade
+
+
   def self.top_rated_movies
     top_rated = MoviesService.top_rated_movies
     top_rated[:results][0..19].map do |movie|
@@ -11,5 +13,12 @@ class MoviesFacade
     searched[:results][0..19].map do |movie|
       Movie.new(movie)
     end
+  end
+
+  def self.movie_details(id)
+    details = MoviesService.movie_details(id)
+    details[:id]
+    details[:genres]
+    details[:runtime]
   end
 end

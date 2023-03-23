@@ -7,4 +7,9 @@ class MoviesController < ApplicationController
                 MoviesFacade.top_rated_movies
               end
   end
+
+  def show
+   @movies =  MoviesService.movie_details(params[:id])
+    # require 'pry'; binding.pry
+  end
 end
