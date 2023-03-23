@@ -13,6 +13,9 @@ RSpec.describe "Landing", type: :feature do
     it "shows the landing page with the name of the app and a button to create a new user" do
       expect(page).to have_content("Viewing Party")
       expect(page).to have_button("Create New User")
+
+      click_button "Create New User"
+      expect(current_path).to eq(register_path)
     end
 
     it "shows the existing users as a link to their dashboard" do
