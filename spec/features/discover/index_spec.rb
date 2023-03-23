@@ -24,7 +24,7 @@ RSpec.describe 'User Discover' do
         
         click_button('Top Rated Movies')
       end
-      expect(current_path).to eq("/user/#{@user1.id}/movies")
+      expect(current_path).to eq("/users/#{@user1.id}/movies")
     end
 
     it 'I see a text field to enter keyword(s) to search by movie title' do
@@ -35,7 +35,7 @@ RSpec.describe 'User Discover' do
         click_button "Search"
       end
 
-      expect(current_path).to eq("/user/#{@user1.id}/movies")
+      expect(current_path).to eq("/users/#{@user1.id}/movies")
     end
   end
 end

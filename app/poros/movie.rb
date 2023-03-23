@@ -10,8 +10,10 @@ class Movie
     @title = attributes[:title]
     @vote_average = attributes[:vote_average]
     @runtime = attributes[:runtime]
-    @genres = attributes[:genres].map do |genre|
-      genre[:name]
+    if attributes[:genre]
+      @genres = attributes[:genres].map do |genre|
+        genre[:name]
+      end
     end
     @summary = attributes[:overview]
     @id = attributes[:id]
