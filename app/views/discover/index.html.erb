@@ -1,0 +1,10 @@
+<h1>Viewing Party</h1>
+<br>
+<h2>Discover Movies</h2>
+<%= button_to "Find Top Rated Movies", user_movies_path(@user.id), method: :get %>
+
+<%= form_with url: user_movies_path(@user), method: :get do |f| %>
+  <%= f.label :search %>
+  <%= f.text_field :search, value: params[:search] %>
+  <%= f.submit "Find Movies" %>
+<% end %>

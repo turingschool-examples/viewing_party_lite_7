@@ -19,7 +19,7 @@ RSpec.describe '/users/:id', type: :feature do
 
     it "when I click the discover movies button, I am redirected to the discover movies page (/users/:id/discover), where the :id is the user dashboard I was just on" do
       click_link "Discover Movies"
-      expect(current_path).to eq("/users/#{@steve.id}/discover")
+      expect(current_path).to eq(user_discover_index_path(@steve.id))
     end
   end
 end
