@@ -54,7 +54,6 @@ RSpec.describe "party new page", type: :feature do
       end 
     end 
 
-
     it "when you enter, you see the count of reviews, and the information about each author" do
       VCR.use_cassette("party_new_spec", :allow_playback_repeats => true) do
         visit "/users/#{@hady.id}/movies/#{@results[0].movie_id}"
@@ -73,7 +72,7 @@ RSpec.describe "party new page", type: :feature do
       end 
     end 
 
-    it "when you enter /users/:user_id/movies/:movid_id/parties/new you will see a form below the name with information to fill out" do 
+    it "when you enter /users/:user_id/movies/:movid_id/parties/new you will see a form below the name with information to fill out including duration of party, date, time, and submit button" do 
       VCR.use_cassette("party_new_spec_form", :allow_playback_repeats => true) do
         visit "/users/#{@hady.id}/movies/#{@results[0].movie_id}/parties/new"
  
@@ -81,10 +80,45 @@ RSpec.describe "party new page", type: :feature do
           expect(page).to have_selector("form")
           expect(page).to have_field("duration", type: 'number')
           expect(page).to have_field("event_date", type: 'date')
-
+          expect(page).to have_field("time_field")
+          expect(page).to have_button("Create Party")
         end 
       
       end 
+    end
+
+    it "when you enter /users/:user_id/movies/:movid_id/parties/new you will see a form below the name that includes all the current users registered in the system and a checkbox next to their name to invite them to the viewing party" do 
+      VCR.use_cassette("party_new_spec_form", :allow_playback_repeats => true) do
+        visit "/users/#{@hady.id}/movies/#{@results[0].movie_id}/parties/new"
+        within("div#viewing_party_form") do 
+          within("div#Hady") do 
+            expect(page).to have_content("Check to invite to viewing party Hady")
+            expect(page).to have_selector("input[type='checkbox']")
+          end
+
+          within("div#Andra") do 
+            expect(page).to have_content("Check to invite to viewing party Andra")
+            expect(page).to have_selector("input[type='checkbox']")
+          end
+        end 
+      end 
+    end
+
+    it "when you fill in the form on the viewing party new page, you are redirected to the user's dashboard where the new event is shown" do 
+      VCR.use_cassette("party_new_spec_form", :allow_playback_repeats => true) do
+        visit "/users/#{@hady.id}/movies/#{@results[0].movie_id}/parties/new"
+        within("div#viewing_party_form") do 
+          fill_in "Party duration (in minutes):", with: 180
+
+        end
+        save_and_open_page
+      end 
+    end 
+
+
+
+    it "the event should also be listed on any user's dashboard that were invited to the party" do 
+
     end
 
   end 

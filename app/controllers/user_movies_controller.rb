@@ -2,7 +2,6 @@ class UserMoviesController < ApplicationController
   before_action :set_user
 
   def index 
-
     if params[:search]
       @results = MoviesFacade.search_results(params[:search])
     elsif params[:top_rated]
