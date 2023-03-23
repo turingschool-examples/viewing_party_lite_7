@@ -19,6 +19,7 @@ RSpec.describe MovieService do
     expect(movie).to be_a(Hash)
     expect(movie[:original_title]).to eq("The Lord of the Rings: The Return of the King")
     expect(movie).to have_key(:id)
+    expect(movie[:id]).to eq(238)
     
     expect(movie[:original_title]).to_not eq("The Godfather")
   end

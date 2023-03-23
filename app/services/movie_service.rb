@@ -3,7 +3,7 @@ class MovieService
     get_url("movie/#{id}")
   end
   
-  def self.top_rated
+  def self.get_top_rated
     get_url("movie/top_rated")
   end
   

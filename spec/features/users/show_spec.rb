@@ -20,7 +20,6 @@ RSpec.describe "/users/:id", type: :feature do
       visit "/users/#{@picard.id}"
     end
 
-    # User Story 3
     it "I see header, button to discover movies, a section that lists viewing parties" do
       expect(page).to have_content("Viewing Party")
       expect(page).to have_link("Home")
@@ -40,7 +39,6 @@ RSpec.describe "/users/:id", type: :feature do
       expect(page).to_not have_content("#{@riker.name}")
     end
 
-    # User Story 3
     it "when I click the discover button, I'm redirected to '/users/:id/discover' page" do
       click_button("Discover Movies")
       expect(current_path).to eq("/users/#{@picard.id}/discover")

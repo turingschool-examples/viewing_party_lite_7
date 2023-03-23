@@ -1,0 +1,16 @@
+<body>
+  <center><h3>Discover Movies</h3></center>
+  <br>
+  <center><%= button_to "Find Top Rated Movies", "/users/#{@user.id}/movies", method: :get %></center>
+  <br>
+  <center><table>
+    <%= form_with url: "/users/#{@user.id}/movies", method: :get, local: true do |f| %>
+      <tr>
+        <td> <%= f.label :search, "Movie Title:" %></td>
+        <td> <%= f.text_field :search, value: "search" %> </td>
+        <td> <%= f.submit "Search by Movie Title" %> </td>
+      </tr>
+    <% end %>
+  </table></center>
+</body>
+
