@@ -7,7 +7,7 @@
     <p class='col-12'>Existing Users</p> 
   </div> 
   <% @users.each do |user| %> 
-    <li><%= link_to "User ##{user.name}", user_path(user)%></li> 
+    <li><%= link_to "#{user.name}", user_path(user)%></li> 
   <% end %>
  </body> 
 

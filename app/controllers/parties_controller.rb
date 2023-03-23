@@ -9,7 +9,6 @@ class PartiesController < ApplicationController
 
 	def new
 		@party = Party.new
-		@movie = MovieFacade.new.movie_details(params[:id])
 	end
 
   private
