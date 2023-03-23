@@ -5,7 +5,7 @@ RSpec.describe "Details Page", type: :feature do
     before :each do
       @user = create(:user)
       attrs = {
-      id: 2,
+      id: 238,
       title: "The Godfather",
       vote_average: 8.7,
       runtime: 170,
@@ -22,10 +22,16 @@ RSpec.describe "Details Page", type: :feature do
       overview: "Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge."
     }
       movie = Movie.new(attrs)
-      visit user_movie_path(@user, movie.id )
+      VCR.use_cassette("godfather_movie") do
+        visit user_movie_path(@user, movie.id)
+      end
     end
     it "A Button to create a viewing party" do
       expect(page).to have_button("Create Viewing Party")
+    end
+
+    it "Has a Button to return to the Discover page" do
+      expect(page).to have_button("Return to Discover Page")
     end
   end
 end
