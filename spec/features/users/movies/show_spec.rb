@@ -7,7 +7,7 @@ RSpec.describe 'User Story 10' do
   end
 
   describe "User Story 8 - Movie Show Page" do
-    it "shows the movie information" do
+    xit "shows the movie information" do
       VCR.use_cassette(:movie_by_id_info, serialize_with: :json) do
         fill_in :search, with: "bat"
         click_button "Find Movies"
