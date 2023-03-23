@@ -1,11 +1,15 @@
 class MovieFacade
 
   def pop_movies
-    service = MovieService.new
+    json = MovieService.top_movies
+    @movies = json[:results].map do |movie_data|
+      Movie.new(movie_data)
+    end
+  end
 
-    json = service.top_movies
-
-    json[:results].map do |movie_data|
+  def search_results(search)
+    json = MovieService.search_movies(search)
+    @movies = json[:results].map do |movie_data|
       Movie.new(movie_data)
     end
   end
