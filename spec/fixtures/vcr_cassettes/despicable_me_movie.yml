@@ -1,0 +1,133 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/20352?api_key=86f361cca6ee286354949e22ca339323&language=en-US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 23 Mar 2023 22:53:39 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 4d4d2949cc7e1e3193b9a5e697963ec1
+      X-Memc-Age:
+      - '12635'
+      X-Memc-Expires:
+      - '3110'
+      Etag:
+      - W/"ffa0232f9d7141d91b3f99a78e0f1e82"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 025e84e972a461c1dd140ac5fbbbd0aa.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - qJQ6cCRClTBXOljoBIfwlYJw78XcjQb-Dzyw0LYCzM6Dc_PuTF4TMg==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/v4W554WRfWdWn1P9WJ9XYbXz36l.jpg","belongs_to_collection":{"id":86066,"name":"Despicable
+        Me Collection","poster_path":"/95prV91f4DxkBnLU43YjLbU1m3q.jpg","backdrop_path":"/37xamYKRUGCRux532lKcZdVGYuR.jpg"},"budget":69000000,"genres":[{"id":10751,"name":"Family"},{"id":16,"name":"Animation"},{"id":35,"name":"Comedy"},{"id":80,"name":"Crime"}],"homepage":"http://www.despicable.me/","id":20352,"imdb_id":"tt1323594","original_language":"en","original_title":"Despicable
+        Me","overview":"Villainous Gru lives up to his reputation as a despicable,
+        deplorable and downright unlikable guy when he hatches a plan to steal the
+        moon from the sky. But he has a tough time staying on task after three orphans
+        land in his care.","popularity":64.184,"poster_path":"/9lOloREsAhBu0pEtU0BgeR1rHyo.jpg","production_companies":[{"id":6704,"logo_path":"/fOG2oY4m1YuYTQh4bMqqZkmgOAI.png","name":"Illumination","origin_country":"US"},{"id":33,"logo_path":"/8lvHyhjr8oUKOOy2dKXoALWKdp0.png","name":"Universal
+        Pictures","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2010-07-08","revenue":533679475,"runtime":95,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Superbad.
+        Superdad.","title":"Despicable Me","video":false,"vote_average":7.223,"vote_count":13799}'
+  recorded_at: Thu, 23 Mar 2023 22:53:39 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/20352?api_key=86f361cca6ee286354949e22ca339323&language=en-US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 23 Mar 2023 22:53:39 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 4d4d2949cc7e1e3193b9a5e697963ec1
+      X-Memc-Age:
+      - '12635'
+      X-Memc-Expires:
+      - '3110'
+      Etag:
+      - W/"ffa0232f9d7141d91b3f99a78e0f1e82"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 d898fedd2c97412525c0a8011787cf32.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - cBScG8Athb5917G5h6bNhdSlr7aFsE7RYPrTOxfRWG2EpxkoHMdP8w==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/v4W554WRfWdWn1P9WJ9XYbXz36l.jpg","belongs_to_collection":{"id":86066,"name":"Despicable
+        Me Collection","poster_path":"/95prV91f4DxkBnLU43YjLbU1m3q.jpg","backdrop_path":"/37xamYKRUGCRux532lKcZdVGYuR.jpg"},"budget":69000000,"genres":[{"id":10751,"name":"Family"},{"id":16,"name":"Animation"},{"id":35,"name":"Comedy"},{"id":80,"name":"Crime"}],"homepage":"http://www.despicable.me/","id":20352,"imdb_id":"tt1323594","original_language":"en","original_title":"Despicable
+        Me","overview":"Villainous Gru lives up to his reputation as a despicable,
+        deplorable and downright unlikable guy when he hatches a plan to steal the
+        moon from the sky. But he has a tough time staying on task after three orphans
+        land in his care.","popularity":64.184,"poster_path":"/9lOloREsAhBu0pEtU0BgeR1rHyo.jpg","production_companies":[{"id":6704,"logo_path":"/fOG2oY4m1YuYTQh4bMqqZkmgOAI.png","name":"Illumination","origin_country":"US"},{"id":33,"logo_path":"/8lvHyhjr8oUKOOy2dKXoALWKdp0.png","name":"Universal
+        Pictures","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2010-07-08","revenue":533679475,"runtime":95,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Superbad.
+        Superdad.","title":"Despicable Me","video":false,"vote_average":7.223,"vote_count":13799}'
+  recorded_at: Thu, 23 Mar 2023 22:53:39 GMT
+recorded_with: VCR 6.1.0

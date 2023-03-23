@@ -22,7 +22,8 @@ RSpec.describe "Details Page", type: :feature do
       overview: "Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge."
     }
       movie = Movie.new(attrs)
-      VCR.use_cassette("godfather_movie") do
+      # require 'pry'; binding.pry
+      VCR.use_cassette("godfather_movie_2") do
         visit user_movie_path(@user, movie.id)
       end
     end
