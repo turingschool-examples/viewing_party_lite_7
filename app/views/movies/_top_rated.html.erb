@@ -4,7 +4,7 @@
 <%@n=0%>
 <%facade.top_rated_movies.each do |movie|%>
   <div id="movie-<%=movie.id%>">
-    <h3>Result #<%=@n += 1%>:<%=movie.title%></h3>
+    <h3>Result #<%=@n += 1%>:<%=link_to movie.title, user_movie_path(facade.user, movie.id)%></h3>
     <p>Vote Average: <%=movie.vote_average%></p>
   </div>
 <%end%>
