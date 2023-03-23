@@ -59,7 +59,7 @@ group :development, :test do
   gem 'faker' # https://github.com/faker-ruby/faker
   gem "launchy"
   gem 'shoulda-matchers'
-
+  gem "simplecov"
 end
 
 group :development do
