@@ -3,8 +3,13 @@
 class MoviedbFacade
 
   def initialize
-    @movie_service = MoviedbService.new
+    @movie_service = MoviedbService.new # could use memorization so it only uses resources when you need it
+  #   # make keyword an instance here (then can call it later in the view/controller)
   end
+
+  # def movie_service
+  #   @_movie_service ||= MoviedbService.new
+  # end
 
   #private <- for later muahaha
 
@@ -17,7 +22,7 @@ class MoviedbFacade
 
 
   def get_top_movies
-    search_results = @movie_service.fetch_api("movie/top_rated?include_adult=false")
+    search_results = @movie_service.fetch_api("/movie/top_rated?include_adult=false")
     search_results["results"].map do |movie|
       Movie.new(movie)
     end
