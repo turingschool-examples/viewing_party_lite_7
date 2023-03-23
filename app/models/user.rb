@@ -4,4 +4,8 @@ class User < ApplicationRecord
 
   validates_uniqueness_of :email
   validates_presence_of :name
+
+  def self.create_new_user(user_params)
+    create(user_params)
+  end
 end
