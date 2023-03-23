@@ -4,6 +4,10 @@ class MovieService
   def self.top_movies
     get_url("/3/movie/top_rated")
   end
+
+  def self.search_movies(search)
+    get_url("/3/search/movie?query=#{search}")
+  end
   
   def self.get_url(url)
     response = conn.get(url)
