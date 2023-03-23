@@ -1,6 +1,6 @@
 <h2>Register New User</h2>
 
-<%= form_with url: user_index_path, local: :true do |form| %>
+<%= form_with url: users_path, local: :true do |form| %>
   <%= form.text_field :name %>
   <%= form.label :name, "Name" %>
   <%= form.text_field :email %>
