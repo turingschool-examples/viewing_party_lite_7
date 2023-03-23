@@ -22,5 +22,28 @@ describe MoviedbService do
         expect(movie_data[:vote_average]).to be <= movie_data_2[:vote_average]
       end
     end
+
+    describe "#search_results" do
+      it "returns movies that match the keyword search" do
+        VCR.use_cassette("search_results") do
+          @searched_movies = MoviedbService.new.search_results("Despicable")
+        end
+
+        expect(@searched_movies).to be_a Hash
+        expect(@searched_movies[:results]).to be_an Array
+        expect(@searched_movies[:results].count).to be <= 20
+
+        expect(@searched_movies[:results].first[:original_title]).to include("Despicable")
+      end
+
+      it "returns nil if no movies match the keyword search" do
+        VCR.use_cassette("bad_search_results") do
+          @searched_nothing = MoviedbService.new.search_results("tobacco and worms for breakfast")
+        end
+
+        expect(@searched_nothing).to be_a Hash
+        expect(@searched_nothing[:results].first).to be nil
+      end
+    end
   end
 end
