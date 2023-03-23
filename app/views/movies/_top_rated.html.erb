@@ -1,0 +1,10 @@
+<h1>Top Rated Movies</h2>
+<p>Showing <%=facade.top_rated_movies.count%> Results</p>
+<%=button_to "Return to Discover Page", user_movies_discover_path(facade.user)%>
+<%@n=0%>
+<%facade.top_rated_movies.each do |movie|%>
+  <div id="movie-<%=movie.id%>">
+    <h3>Result #<%=@n += 1%>:<%=movie.title%></h3>
+    <p>Vote Average: <%=movie.vote_average%></p>
+  </div>
+<%end%>

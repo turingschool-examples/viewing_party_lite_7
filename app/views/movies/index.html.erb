@@ -1,0 +1,6 @@
+<%if @facade.request_type == "top_rated"%>
+  <%=render partial: "top_rated", locals: {facade: @facade}%>
+<%elsif @facade.request_type == "search"%>
+  <%=render partial: "search", locals: {facade: @facade}%>
+<%end%>
+
