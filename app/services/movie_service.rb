@@ -3,6 +3,10 @@ class MovieService
     JSON.parse(conn.get("movie/top_rated").body, symbolize_names: true)
   end
 
+  def self.search(query)
+    JSON.parse(conn.get("search/movie?query=#{query}").body, symbolize_names: true)
+  end
+
   private
   def self.conn
     Faraday.new(

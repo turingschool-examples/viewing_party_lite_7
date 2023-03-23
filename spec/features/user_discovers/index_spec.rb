@@ -12,6 +12,10 @@ RSpec.describe 'user discover page' do
     top_20_response = File.read('spec/fixtures/top_movies.json')
     stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV['MOVIE_DB_KEY']}")
       .to_return(status: 200, body: top_20_response)
+    
+    search_results = File.read('spec/fixtures/godfather_search.json')
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?query=Godfather&api_key=#{ENV['MOVIE_DB_KEY']}")
+      .to_return(status: 200, body: search_results)
 
     visit "/users/#{@user_1.id}/discover"
   end

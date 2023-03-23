@@ -11,11 +11,15 @@ RSpec.describe 'user movies page' do
     top_20_response = File.read('spec/fixtures/top_movies.json')
     stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV['MOVIE_DB_KEY']}")
       .to_return(status: 200, body: top_20_response)
+
+    search_results = File.read('spec/fixtures/godfather_search.json')
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?query=Godfather&api_key=#{ENV['MOVIE_DB_KEY']}")
+      .to_return(status: 200, body: search_results)
   end
 
   it 'displays the top rated movies' do
     visit "/users/#{@user_1.id}/movies"
-    
+
     expect(page).to have_content('Top Rated Movies')
   end
 end

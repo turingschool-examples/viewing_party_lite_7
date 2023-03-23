@@ -1,5 +1,13 @@
 <h1>Top Rated Movies</h1>
-<% @top_movies.each.with_index(1) do |movie, index| %>
-<p><%= movie.title %></p>
-<p><%= movie.vote_average %></p>
+<% if @top_movies %>
+  <% @top_movies.each.with_index(1) do |movie, index| %>
+  <p><%= movie.title %></p>
+  <p><%= movie.vote_average %></p>
+  <% end %>
+<% end %>
+<% if @search_results %>
+<% @search_results.each.with_index(1) do |movie, index| %>
+  <p><%= movie.title %></p>
+  <p><%= movie.vote_average %></p>
+  <% end %>
 <% end %>
