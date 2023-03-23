@@ -25,12 +25,16 @@ class MovieFacade
       Movie.new(movie_data)
     end
   end
-
+  
   def search_results
     json = service.search_results(@movie_results)
-
+    
     json[:results].map do |movie_data|
       Movie.new(movie_data)
-    end
+    end    
+  end
+
+  def empty_request?
+    request_type == "search" && search_results.empty?
   end
 end

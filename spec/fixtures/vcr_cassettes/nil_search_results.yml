@@ -46,19 +46,21 @@ http_interactions:
       - Accept-Encoding
       - Origin
       X-Cache:
-      - RefreshHit from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 96725c0e4ced177a38df871e7cc48a4a.cloudfront.net (CloudFront)
+      - 1.1 6b1026dc8b63f06fce4b4aec8b9a03d6.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - RtQVV-2Ma4GBrCIEmhy9g9Ee2Zj6scf8pPJ5BeIb2Jou2OT7-9SFVA==
+      - qJyBACXa9rDeb75rdzvUcGtOtBHXK0yGI_Y2BCX58xxljBH4c1FzOA==
+      Age:
+      - '7431'
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[],"total_pages":1,"total_results":0}'
-  recorded_at: Thu, 23 Mar 2023 17:33:50 GMT
+  recorded_at: Thu, 23 Mar 2023 19:37:40 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/search/movie?maxResults=20&query=tobacco%20and%20worms%20for%20breakfast
@@ -107,15 +109,17 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 44e92eddc431cc09e1e2c5b24edc90f8.cloudfront.net (CloudFront)
+      - 1.1 025e84e972a461c1dd140ac5fbbbd0aa.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - t_vUIOsYvPKax1nQp_Ciadxg9ooB9aBGw2NsTAPoEQvfQvSFD5wPJQ==
+      - TmdY_cwi5Xo8BGrk07tJ4V8gSalWG__JyM9bggwEFwjft3RGctlHMQ==
+      Age:
+      - '7435'
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[],"total_pages":1,"total_results":0}'
-  recorded_at: Thu, 23 Mar 2023 17:33:50 GMT
+  recorded_at: Thu, 23 Mar 2023 19:37:45 GMT
 recorded_with: VCR 6.1.0

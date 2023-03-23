@@ -37,7 +37,7 @@ describe MoviedbService do
       end
 
       it "returns nil if no movies match the keyword search" do
-        VCR.use_cassette("bad_search_results") do
+        VCR.use_cassette("nil_search_results") do
           @searched_nothing = MoviedbService.new.search_results("tobacco and worms for breakfast")
         end
 
