@@ -10,7 +10,7 @@ class UserMoviesController < ApplicationController
   end
 
   def show 
-    @movie = MoviesFacade.individual_movie(params[:id])
+    @movie = MoviesFacade.new.get_all_movie_info(params[:id])
   end
 
   private 

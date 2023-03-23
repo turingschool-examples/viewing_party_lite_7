@@ -8,6 +8,18 @@ class MoviesService
     get_url("search/movie?query=#{search_query}")
   end
 
+  def individual_movie(movie_id)
+    get_url("movie/#{movie_id}")
+  end
+
+  def get_cast_members(movie_id)
+    get_url("movie/#{movie_id}/credits")
+  end
+
+  def get_review_info(movie_id)
+    get_url("movie/#{movie_id}/reviews")
+  end
+
   def get_url(url)
     response = connection.get(url)
     JSON.parse(response.body, symbolize_names: true)
