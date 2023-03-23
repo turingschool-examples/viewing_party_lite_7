@@ -1,25 +1,22 @@
 class MoviesFacade
 
-  def self.top_rated_movies
-    movies_data = get_top_rated_movies
-    movies_data[:results].map do |movie_info|
+  def top_rated_movies
+    json = top_rated_movies_results
+    json[:results].map do |movie_info|
       Movies.new(movie_info, nil, nil)
     end 
   end
 
-  def self.get_top_rated_movies
-    movies = MoviesService.fetch_api("movie/top_rated?api_key=#{ENV['MoviesDB_API_KEY']}&language=en-US&page=1")
+  def top_rated_movies_results
+    @_top_rated_movies ||= MoviesService.new.top_rated_movies
   end
 
-  def self.search_results(search_query)
-    movies_data = get_search_results_movies(search_query)
-    movies_data[:results].map do |movie_info|
+  def search_results(search_query)
+    json = MoviesService.new.search_movies(search_query)
+    
+    json[:results].map do |movie_info|
       Movies.new(movie_info, nil, nil)
     end 
-  end
-
-  def self.get_search_results_movies(search_query)
-    movies = MoviesService.fetch_api("search/movie?api_key=#{ENV['MoviesDB_API_KEY']}&language=en-US&query=#{search_query}&page=1&include_adult=false")
   end
 
   def self.individual_movie(movie_id)

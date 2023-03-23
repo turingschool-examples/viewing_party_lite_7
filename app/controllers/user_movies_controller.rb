@@ -3,9 +3,9 @@ class UserMoviesController < ApplicationController
 
   def index 
     if params[:search]
-      @results = MoviesFacade.search_results(params[:search])
+      @results = MoviesFacade.new.search_results((params[:search]))
     elsif params[:top_rated]
-      @results = MoviesFacade.top_rated_movies
+      @results = MoviesFacade.new.top_rated_movies
     end
   end
 

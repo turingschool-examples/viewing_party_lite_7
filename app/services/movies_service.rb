@@ -1,12 +1,22 @@
 class MoviesService
 
-  def self.fetch_api(arg)
-    response = connection.get(arg)
-    x = JSON.parse(response.body, symbolize_names: true)
+  def top_rated_movies
+    get_url("movie/top_rated")
   end
 
-  def self.connection
-    url = "https://api.themoviedb.org/3/"
-    Faraday.new(url: url)
+  def search_movies(search_query) 
+    get_url("search/movie?query=#{search_query}")
+  end
+
+  def get_url(url)
+    response = connection.get(url)
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def connection
+    Faraday.new(url: "https://api.themoviedb.org/3/") do |f|
+      f.params["api_key"] = ENV['MoviesDB_API_KEY']
+      f.params["language"] = 'en-US'
+    end
   end
 end
