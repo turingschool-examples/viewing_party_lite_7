@@ -24,7 +24,6 @@ RSpec.describe "User Discovery Page", type: :feature do
 
     it "should have a text field to enter keywords to search by movie title and a button to search by movie title" do 
       visit "/users/#{@hady.id}/discover"
-      save_and_open_page
       expect(page).to have_selector("form")
       expect(page).to have_field("search")
     end

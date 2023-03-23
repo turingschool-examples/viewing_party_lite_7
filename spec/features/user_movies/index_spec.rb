@@ -11,7 +11,6 @@ RSpec.describe "User_movie Index Page", type: :feature do
       VCR.use_cassette("top_rated_movies") do
         visit "/users/#{@hady.id}/discover"
           click_button("Discover Top Rated Movies")
-          save_and_open_page
           expect(page).to have_css(".movie")
 
           within(first(".movie")) do 

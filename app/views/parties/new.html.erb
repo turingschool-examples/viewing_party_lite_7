@@ -1,2 +1,61 @@
-<%binding.pry%>
 
+<%if @movie.name %>
+  <div id ="movie_title">
+    <p>"Movie Title" <%=@movie.name%> </p>
+  </div>
+<%end%>
+
+<%if @movie.vote_average%>
+  <div id ="vote_average">
+    <p>"Vote Average" <%=@movie.vote_average%> </p>
+  </div>
+<%end%>
+
+<%if @movie.runtime%>
+  <div id ="runtime">
+  <p>"Runtime" <%="#{@movie.runtime[0]} hours and #{@movie.runtime[1]} minutes"%> </p>
+  </div>
+<%end%>
+
+<%if @movie.genres%>
+  <div id ="genres">
+    <p>"Genres" <%@movie.genres.each do |genre|%>
+                  <%=genre%>
+                  <%end%>      
+    </p>
+  </div>
+<%end%>
+
+<%if @movie.description%>
+  <div id ="description">
+    <p>"Summary Description" <%=@movie.description%> </p>
+  </div>
+<%end%>
+
+<%if @movie.cast_members%>
+  <div id ="cast_members">
+    "Cast Members" 
+    <%@movie.cast_members.each do |member|%> 
+      <li> <%="#{member[1]} as #{member[0]}"%> </li>
+    <%end%>
+  </div>
+<%end%>
+
+<%if @movie.count_of_reviews%>
+  <div id ="count_of_reviews">
+    <p>"Number of Reviews" <%=@movie.count_of_reviews%> </p>
+  </div>
+<%end%>
+
+<%if @movie.author_information%>
+  <div id ="author_information">
+    <h3>"Reviewers' Information" </h3> 
+    <%@movie.author_information.each do |author|%> 
+    <li>
+      Username: <%=author.second[:username]%> 
+      <p>Avatar path: <%=author.second[:avatar_path]%> </p>
+      <p> Rating: <%=author.second[:rating]%> </p>
+    </li>
+    <%end%>
+  </div>
+<%end%>

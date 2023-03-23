@@ -11,7 +11,7 @@ RSpec.describe "User_movie Index Page", type: :feature do
   describe "when visit a movie's detail page" do 
 
     it "should show a button to create a viewing party" do
-      VCR.use_cassette("movie_id_238") do
+      VCR.use_cassette("movie_id_238_usermovie_show_spec") do
         visit "/users/#{@hady.id}/movies/#{@results[0].movie_id}"
    
       expect(page).to have_link("Return to Discover Page", href: "/users/#{@hady.id}/discover")
