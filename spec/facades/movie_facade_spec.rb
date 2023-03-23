@@ -5,7 +5,7 @@ RSpec.describe MovieFacade do
   
   before :each do
     response = File.read("spec/fixtures/get_movie.json")
-    stub_request(:get, "https://api.themoviedb.org/3/movie/119")
+    stub_request(:get, "https://api.themoviedb.org/3/movie/122")
       .with(headers: {
       'X-API-KEY' => ENV['TMDB_KEY']
       })
@@ -17,7 +17,7 @@ RSpec.describe MovieFacade do
   end
   
   it 'has attributes' do
-    movie = MovieFacade.get_movie(119)
+    movie = MovieFacade.get_movie(122)
     
     expect(movie.title).to eq("The Lord of the Rings: The Return of the King")
     # expect(movie.genre).to be_an(Array)
