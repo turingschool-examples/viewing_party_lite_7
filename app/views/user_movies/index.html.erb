@@ -1,0 +1,19 @@
+<%= link_to "Return to Discover Page", "/users/#{@user.id}/discover" %>
+
+<ol>
+
+<%if @results %>
+  <%@results.each do |movie|%>
+    <li>
+    <div class ="movie">
+      <div class ="name">
+      <%= link_to "#{movie.name}", "/users/#{@user.id}/movies/#{movie.movie_id}"  %> 
+        </div> 
+      <div class ="vote_average">
+        <%=movie.vote_average%> </p>
+       </div>
+    </div>
+    </li>
+  <%end%>
+<%end%>
+</ol>
