@@ -22,14 +22,6 @@ RSpec.describe "/users/:id/discover", type: :feature do
       click_button("Find Top Rated Movies")
       expect(current_path).to eq("/users/#{@picard.id}/movies")
     end
-    
-    # Do I really need this test?
-    xit "can accept movie names & redirect to result page" do
-      fill_in(:search, with: "2001: A Space Odyssey")
-      click_button("Search by Movie Title")
-
-      expect(current_path).to eq("/users/#{@picard.id}/movies")
-    end
 
     it "can accept partial keywords & redirect to result page" do
       fill_in(:search, with: "space od")
