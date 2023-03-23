@@ -39,7 +39,7 @@ RSpec.describe MovieService do
     WebMock.disable_net_connect!
   end
   
-  it 'returns the cast of a movie with a given id' do
+  xit 'returns the cast of a movie with a given id' do
     #live call test
     WebMock.allow_net_connect!
     

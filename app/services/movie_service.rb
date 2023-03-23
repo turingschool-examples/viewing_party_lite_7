@@ -3,6 +3,10 @@ class MovieService
     get_url("movie/#{id}")
   end
   
+  def self.top_rated
+    get_url("movie/top_rated")
+  end
+  
   def self.get_cast(id)
     get_url("movie/#{id}/credits")
   end
