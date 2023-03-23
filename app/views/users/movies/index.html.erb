@@ -4,7 +4,7 @@
     <center><%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %></center>
     <% @search_result_movies.each do |movie| %>
       <div id="top-<%= movie.movie_id %>">
-        <p><%= movie.title %></p>
+        <p><%= link_to movie.title, "/users/#{@user.id}/movies/#{movie.movie_id}", method: :get %></p>
         <p>Vote Average: <%= movie.vote_avg %></p>
       </div>
     <% end %>
@@ -18,7 +18,7 @@
     <center><%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %></center>
     <% @top_20_movies.each do |movie| %>
       <div id="top-<%= movie.movie_id %>">
-        <p><%= movie.title %></p>
+        <p><%= link_to movie.title, "/users/#{@user.id}/movies/#{movie.movie_id}", method: :get %></p>
         <p>Vote Average: <%= movie.vote_avg %></p>
       </div>
     <% end %>

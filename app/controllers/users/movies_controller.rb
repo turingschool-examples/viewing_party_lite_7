@@ -11,5 +11,9 @@ class Users::MoviesController < ApplicationController
     # else
       #flash message
     end
+
+    def show
+      
+    end
   end
 end
