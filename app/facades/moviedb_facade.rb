@@ -1,17 +1,16 @@
 # require 'ostruct'
 
 class MoviedbFacade
-  # attr_reader :word
+  attr_reader :word,
+              :movie_id
     
-  # def initialize
-  #   @movie_service = MoviedbService.new # could use memorization so it only uses resources when you need it
-  # #   # make keyword an instance here (then can call it later in the view/controller)
-  # end
-
   def initialize(params)
-      if params[:search].present?
-        @word = params[:search] 
-      end
+    if params[:search].present?
+      @word = params[:search] 
+    elsif params[:movie_id].present?
+      @movie_id = params[:movie_id]
+    # else
+    end
   end
 
   def movie_service
@@ -30,6 +29,11 @@ class MoviedbFacade
     search_results["results"].map do |movie|
       Movie.new(movie)
     end
+  end
+  
+  def get_movie_info
+    info = movie_service.get_movie(@movie_id)
+    poro = Movie.new(info)
   end
 
 
@@ -70,8 +74,13 @@ class MoviedbFacade
   #   movie_list = {
   #     top_movies: get_top_movies # [{}]
   #   }
-  #   # x = MovieInfo.new(movie_list)
+  #   # x = Movie.new(movie_list)
   #   require 'pry'; binding.pry
+  # end
+  
+  # def initialize
+  #   @movie_service = MoviedbService.new # could use memorization so it only uses resources when you need it
+  # #   # make keyword an instance here (then can call it later in the view/controller)
   # end
 
 

@@ -13,7 +13,7 @@ class Users::MoviesController < ApplicationController
     end
 
     def show
-      
+      @the_movie = MoviedbFacade.new(params).get_movie_info
     end
   end
 end

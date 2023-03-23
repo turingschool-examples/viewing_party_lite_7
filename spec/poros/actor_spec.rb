@@ -17,8 +17,8 @@ RSpec.describe Actor do
         })
         .to_return(status: 200, body: pb, headers: {})
         
-      @cast1  = MovieInfo.new(JSON.parse(lotr, symbolize_names: true))
-      @cast2 = MovieInfo.new(JSON.parse(pb, symbolize_names: true))
+      @cast1  = Movie.new(JSON.parse(lotr, symbolize_names: true))
+      @cast2 = Movie.new(JSON.parse(pb, symbolize_names: true))
     end
     
     it 'exists and has attributes' do

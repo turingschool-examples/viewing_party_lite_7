@@ -4,4 +4,5 @@ class Actor
               :id
               
   def initialize(response)
+  end
 end

@@ -1,9 +1,24 @@
 class Movie
-  attr_reader :movie_id, :title, :vote_avg
-
-  def initialize(info)
-    @movie_id = info["id"]
-    @title = info["title"]
-    @vote_avg = info["vote_average"]
+  attr_reader :movie_id,
+              :title,
+              :vote_avg,
+              :runtime,
+              :summary,
+              :genres
+  
+  def initialize(response)
+    @movie_id = response["id"]
+    @title = response["title"]
+    @vote_avg = response["vote_average"]
+    
+    @runtime = response["runtime"]
+    @summary = response["overview"]
+    @genres = response["genres"]
   end
+  
+  # def list_genres
+  #   genres.map do |g|
+  #     g[:name]
+  #   end
+  # end
 end
