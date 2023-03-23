@@ -62,6 +62,11 @@ RSpec.describe "/users/:id/movies", type: :feature do
       .to_return(status: 200, body: top_movies, headers: {})
 
       visit "/users/#{@picard.id}/movies"
+      
+      godfather = File.read("spec/fixtures/moviedb/godfather.json")
+      stub_request(:get, "https://api.themoviedb.org/movie/238")
+      .to_return(status: 200, body: godfather, headers: {})
+      
       click_link("The Godfather")
 
       expect(current_path).to eq("/users/#{@picard.id}/movies/238")
@@ -77,6 +82,11 @@ RSpec.describe "/users/:id/movies", type: :feature do
       .to_return(status: 200, body: search_results, headers: {})
       
       click_button("Search by Movie Title")
+      
+      space_odyssey = File.read("spec/fixtures/moviedb/space_odyssey.json")
+      stub_request(:get, "https://api.themoviedb.org/movie/62")
+      .to_return(status: 200, body: space_odyssey, headers: {})
+      
       click_link("2001: A Space Odyssey")
 
       expect(current_path).to eq("/users/#{@picard.id}/movies/62")
