@@ -29,7 +29,7 @@ RSpec.describe "User Registration", type: :feature do
 
       it "will only accept unique email addresses" do
         User.create!(name: "Stan Johnson", email: "stan@example.com")
-        
+
         within "#new_user" do
           fill_in "Name", with: "Stan Smith"
           fill_in "Email", with: "stan@example.com"

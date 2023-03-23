@@ -10,8 +10,8 @@ Rails.application.routes.draw do
 
   post "/register", to: "users#create"
 
-  resources :users, only: [:create, :show] do
+  resources :users, only: %i[create show] do
     resources :discover, only: [:index]
-    resources :movies, only: [:index]
+    resources :movies, only: %i[index show]
   end
 end

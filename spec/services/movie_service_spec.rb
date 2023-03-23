@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe MovieService do
   describe "#top_rated_movies" do
@@ -8,7 +8,7 @@ describe MovieService do
         @top_rated_movies = @api_call_result[:results]
       end
     end
-    
+
     it "returns all expected attributes and data types" do
       expect(@top_rated_movies).to be_a(Array)
 
