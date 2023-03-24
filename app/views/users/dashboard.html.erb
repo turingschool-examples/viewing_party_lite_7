@@ -24,9 +24,9 @@
     List of Invitees:
       <%party[:list_invitees].each do |invitee|%>
         <% if invitee.name == @user.name %>
-          <b><%=invitee.name%><b>
+          <p><b><%=invitee.name%></b></p>
         <% else%>
-            <%=invitee.name%>
+            <p><%=invitee.name%></p>
         <%end%>
       <%end%>
     </div>

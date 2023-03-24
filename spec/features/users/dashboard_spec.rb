@@ -138,13 +138,13 @@ RSpec.describe "User Show Page", type: :feature do
 
       VCR.use_cassette("dashboard_spec_movie_test") do
       visit "/users/#{@andra.id}" 
-      # save_and_open_page
+      
       within("div#viewing_parties_invited") do
         within("div##{@halloween.id}") do 
           expect(page).to have_content(@halloween.party_date.strftime('%m/%d/%Y'))
           expect(page).to have_content(@halloween.party_time.strftime("%I:%M %p"))
           expect(page).to have_content("Host: #{@hady.name}")
-          expect(page).to have_selector('img[src]')
+          expect(page).to have_css("img[src*='#{@results[2].image}']")
           within("div#title") do
             expect(page).to have_content(/.*/)
             expect(page).to have_link(href: "/users/#{@hady.id}/movies/#{@results[2].movie_id}")
@@ -167,7 +167,7 @@ RSpec.describe "User Show Page", type: :feature do
           expect(page).to have_content("Host: #{@hady.name}")
           expect(page).to have_content(@halloween.party_date.strftime('%m/%d/%Y'))
           expect(page).to have_content(@halloween.party_time.strftime("%I:%M %p"))
-          expect(page).to have_selector('img[src]')
+          expect(page).to have_css("img[src*='#{@results[2].image}']")
           within("div#title") do
             expect(page).to have_content(/.*/)
             expect(page).to have_link(href: "/users/#{@hady.id}/movies/#{@results[2].movie_id}")

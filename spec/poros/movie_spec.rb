@@ -7,7 +7,7 @@ RSpec.describe Movie do
       original_title: "Godfather", 
       vote_average: 3.45, 
       id: 849, 
-      genres: ["Horror", "Romance"], 
+      genres: [{:id=>18, :name=>"Drama"}, {:id=>80, :name=>"Crime"}], 
       runtime: 181,
       overview: "A movie about love and horror", 
       cast: [{:adult=>false,
@@ -52,7 +52,7 @@ RSpec.describe Movie do
       expect(@godfather.vote_average).to be_a(Float)
       expect(@godfather.movie_id).to eq(849)
       expect(@godfather.movie_id).to be_a(Integer)
-      expect(@godfather.genres).to eq(["Horror", "Romance"])
+      expect(@godfather.genres).to eq(["Drama", "Crime"])
       expect(@godfather.genres).to be_a(Array)
       expect(@godfather.raw_runtime).to eq(181)
       expect(@godfather.raw_runtime).to be_a(Integer)
