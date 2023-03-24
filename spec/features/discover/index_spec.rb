@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'User Discover' do
@@ -11,7 +13,7 @@ RSpec.describe 'User Discover' do
   describe 'As a user when I visit my dashboard and click the discover movies button' do
     it 'I am taken to the discover page' do
       visit user_path(@user1)
-      
+
       click_button('Discover Movies')
       expect(current_path).to eq(user_discover_path(@user1))
     end
@@ -21,7 +23,7 @@ RSpec.describe 'User Discover' do
     it 'I see a button to discover top rated movies' do
       VCR.use_cassette(:top_movies, serialize_with: :json) do
         visit user_discover_path(@user1)
-        
+
         click_button('Top Rated Movies')
       end
       expect(current_path).to eq("/users/#{@user1.id}/movies")
@@ -30,9 +32,9 @@ RSpec.describe 'User Discover' do
     it 'I see a text field to enter keyword(s) to search by movie title' do
       VCR.use_cassette(:movies_search, serialize_with: :json) do
         visit user_discover_path(@user1)
-        
-        fill_in :keyword, with: "The Godfather"
-        click_button "Search"
+
+        fill_in :keyword, with: 'The Godfather'
+        click_button 'Search'
       end
 
       expect(current_path).to eq("/users/#{@user1.id}/movies")

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'User Dashboard' do
@@ -8,12 +10,13 @@ RSpec.describe 'User Dashboard' do
 
     ViewingPartyUser.create!(user_id: @user1.id, viewing_party_id: @viewing_party.id, host: true)
 
-    visit user_path(@user1)
+    VCR.use_cassette(:user_dashboard, serialize_with: :json) do
+      visit user_path(@user1)
+    end
   end
 
   describe 'As a user when I visit my dashboard' do
     it 'I see my name at the top of the page' do
-
       expect(page).to have_content("#{@user1.name}'s Dashboard")
       expect(page).to_not have_content(@user2.name)
     end
@@ -23,7 +26,7 @@ RSpec.describe 'User Dashboard' do
     end
 
     it 'I see a section for viewing parties' do
-      expect(page).to have_content("Viewing Parties")
+      expect(page).to have_content('Viewing Parties')
       expect(page).to have_content("Duration: #{@viewing_party.duration}")
       expect(page).to have_content("Date: #{@viewing_party.date}")
       expect(page).to have_content("Time: #{@viewing_party.time}")
