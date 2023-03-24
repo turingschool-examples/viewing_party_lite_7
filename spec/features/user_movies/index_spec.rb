@@ -26,7 +26,11 @@ RSpec.describe 'user movies page' do
     actor_response = File.read('spec/fixtures/actors.json')
     stub_request(:get, "https://api.themoviedb.org/3/movie/238/credits?api_key=#{ENV['MOVIE_DB_KEY']}")
       .to_return(status: 200, body: actor_response)
-    
+
+    review_response = File.read('spec/fixtures/reviews.json')
+    stub_request(:get, "https://api.themoviedb.org/3/movie/238/reviews?api_key=#{ENV['MOVIE_DB_KEY']}")
+      .to_return(status: 200, body: review_response, headers: {})
+   
   end
   it 'has a button to take you back to discover page' do
     visit "/users/#{@user_1.id}/movies?q=top_rated"
