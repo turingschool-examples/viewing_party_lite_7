@@ -3,4 +3,12 @@ class Party < ApplicationRecord
 
   has_many :user_parties
   has_many :users, through: :user_parties
+
+  def host
+    self.users.where(id: self.host_id).first
+  end
+
+  def guests
+    self.users.where.not(id: self.host_id)
+  end
 end

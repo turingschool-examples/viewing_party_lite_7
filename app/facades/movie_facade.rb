@@ -1,7 +1,13 @@
 class MovieFacade
-  def initialize(movie_id)
+  def initialize(movie_id = nil)
     @movie_id = movie_id
     @service = MovieService.new
+  end
+
+  def find_movie(movie_id)
+    movie_info = @service.movie_by_id(movie_id)
+
+    Movie.new(movie_info)
   end
 
   def movie
