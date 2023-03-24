@@ -111,12 +111,10 @@ RSpec.describe "party new page", type: :feature do
     end
 
     it "when you fill in the form on the viewing party new page and click create, you create a new party and are redirected to the user's dashboard" do 
-      
-      expect(Party.count).to eq(3)
 
-      VCR.use_cassette("party_new_spec_form", :allow_playback_repeats => true) do
+      VCR.use_cassette("party_new_spec_form_fun_party", :allow_playback_repeats => true) do
         visit "/users/#{@hady.id}/movies/#{@results[0].movie_id}/parties/new"
-
+        expect(Party.count).to eq(3)
 
 
         within("div#viewing_party_form") do 

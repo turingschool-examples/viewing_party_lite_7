@@ -1,4 +1,4 @@
-<h1><%= @user.name %>'s Info</h1>
+<h1><%= @user.name %>'s Dashboard</h1>
 
 <p><%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %></p>
 
@@ -21,6 +21,7 @@
       <%= link_to "#{party[:movie_title]}", "/users/#{party[:party].user_id}/movies/#{party[:party].movie_id}"%>
     </div>  
     <div id="list_of_invitees">
+    List of Invitees:
       <%party[:list_invitees].each do |invitee|%>
         <% if invitee.name == @user.name %>
           <b><%=invitee.name%><b>
@@ -56,6 +57,7 @@
           <%= image_tag party[:movie_image], alt: "movie_picture" %>
           
           <div id="list_of_invitees">
+          List of Invitees:
             <% party[:list_invitees].each do |invitee| %>
               <p><%= invitee.name %></p>
             <%end%>
