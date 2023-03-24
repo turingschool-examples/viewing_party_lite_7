@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       flash.notice = 'User has been created!'
-      redirect_to "/"
+      redirect_to root_path
     else
       flash[:error] = user.errors.full_messages.to_sentence
       redirect_to register_path
