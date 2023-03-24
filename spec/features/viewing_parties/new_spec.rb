@@ -21,20 +21,12 @@ RSpec.describe 'New Viewing Party Page' do
       fill_in 'When', with: Date.tomorrow
       fill_in 'Start Time', with: '18:00'
       
-      expect(page).to have_selector("input[type='checkbox'][value='#{@user2.id}']")
-      expect(page).to have_selector("input[type='checkbox'][value='#{@user3.id}']")
-
-      # checkbox = find("input[type='checkbox'][value='#{@user2.id}']")
-
-      # expect(checkbox[:disabled]).to be_falsey
-
-      # check(checkbox)
-
+      check @user3.name
 
       click_on 'Create Party'
-
       expect(current_path).to eq("/users/#{@user.id}")
-      # expect(ViewingPartyUser.last).to eq(User: @user3.id, ViewParty: ViewingParty.last, host: false)
+      expect(ViewingPartyUser.last).to eq(ViewingPartyUser.find_by(user_id: @user3.id, viewing_party_id: ViewingParty.last.id))
+      expect(ViewingPartyUser.find_by(user_id: @user2.id, viewing_party_id: ViewingParty.last.id)).to eq(nil)
     end
   end
 end
