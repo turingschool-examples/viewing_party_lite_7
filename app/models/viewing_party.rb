@@ -14,4 +14,8 @@ class ViewingParty < ApplicationRecord
     # binding.pry
     host.name
   end
+
+  def guests
+    users.where(viewing_party_users: { host: false })
+  end
 end

@@ -2,29 +2,29 @@
 
 <%= button_to "Discover Movies", user_discover_path(@user), method: :get %>
 <h2><%= "#{@user.name}'s Viewing Parties" %></h2>
-<div id="hosting">
 <% @viewing_parties.each do |party| %>
+<div id="<%="#{party.id}"%>-party-details">
   <% if party.host == @user %>
     <p><strong>You are hosting this party:</strong></p>
   <% else %>
     <p><strong>Hosted by:</strong> <%= party.host %></p>
   <% end %>
-</div>
+
   <p><strong>Movie:</strong> <%= link_to "#{party.movie_title}", "/users/#{@user.id}/movies/#{party.movie_id}" %></p>
-  <%= image_tag "https://image.tmdb.org/t/p/w500#{@facade.movie_details.poster}" %>
-  
+  <%= image_tag "https://image.tmdb.org/t/p/w500#{party.movie_poster}" %>
+
   <p><strong>Date:</strong> <%= party.date %></p>
   <p><strong>Time:</strong> <%= party.time %></p>
   
   <p><strong>Invited:</strong></p>
-  <ul id="invited">
-    <% @other_users.each do |attendee| %>
-      <% if attendee == @user %>
-        <li><strong><%= attendee.name %></strong></li>
+    <% party.guests.each do |user| %>
+      <% if user == @user %>
+        <li><strong><%= user.name %></strong></li>
       <% else %>
-        <li><%= attendee.name %></li>
+        <li><%= user.name %></li>
       <% end %>
     <% end %>
   </ul>
   <br>
+  </div>
 <% end %>

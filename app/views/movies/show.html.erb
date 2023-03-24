@@ -1,12 +1,14 @@
 <span><h1><%= @facade.movie_details.title %></h1></span>
 <span><%= button_to "Create A Viewing Party for #{@facade.movie_details.title}", "/users/#{@user.id}/movies/#{@facade.movie_details.id}/viewing-party/new", method: :get %></span>
+<br>
 <span><%= button_to "Discover Page", user_discover_path(@user), method: :get %></span>
-<%= @facade.movie_details.runtime %><br>
-<%= @facade.movie_details.vote_average %><br>
-Genres:
+<br><br>
+Runtime: <%= @facade.movie_details.formatted_runtime %><br><br>
+Vote Rating: <%= @facade.movie_details.vote_average %><br><br>
+Genres:<br>
 <% @facade.movie_details.genres.each do |genre| %>
   <%= genre %><br>
-<% end %>
+<% end %><br>
 <%= @facade.movie_details.summary %><br><br>
 Cast:
 <% @facade.cast_members.each do |actor| %>
