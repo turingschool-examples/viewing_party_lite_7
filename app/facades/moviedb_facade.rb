@@ -5,6 +5,7 @@ class MoviedbFacade
               :movie_id
     
   def initialize(params)
+    # binding.pry
     if params[:search].present?
       @word = params[:search] 
     elsif params[:movie_id].present?
