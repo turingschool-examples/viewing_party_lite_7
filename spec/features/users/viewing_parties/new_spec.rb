@@ -25,20 +25,18 @@ RSpec.describe "/users/:id/movies/:movie_id/viewing_party/new" do
         .to_return(status: 200, body: @movie_response, headers: {})
         
       # movie_hash = (:movie => @movie_response)
-      facade = MoviedbFacade.new(movie_id: 62).find_movie_info
-      @movie = Movie.new(movie: facade)
+      # facade = MoviedbFacade.new(movie_id: 62).find_movie_info
+      # @movie = Movie.new(movie: facade)
       # binding.pry
       # @movie = Movie.new(movie: @movie_response)
       # @movie = Movie.new(JSON.parse(@movie_response, symbolize_names: true)) #doesn't pull hash with :movie as a key
       # @movie = Movie.new(JSON.parse(movie: @movie_response, symbolize_names: true))
     
       visit "/users/#{@user1.id}/movies/62/viewing_party/new"
-      # save_and_open_page
-      # binding.pry
     end
     
     describe "should render a create page" do
-      it "has the following fields" do
+      it "has the following information" do
         binding.pry
         expect(page).to have_content("Viewing Party")
         expect(page).to have_content("Create a Movie Party for 2001: A Space Odyssey")
@@ -74,6 +72,7 @@ RSpec.describe "/users/:id/movies/:movie_id/viewing_party/new" do
         check(@user2.name)
         
         click_button("Create Party")
+        expect(current_path).to eq("/users/#{@user1.id}")
       end
     end
   end

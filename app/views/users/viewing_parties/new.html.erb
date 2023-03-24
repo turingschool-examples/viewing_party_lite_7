@@ -1,0 +1,43 @@
+<h3> Create a Movie Party for <%= "#{@movie.title}" %> </h3>
+
+<body>
+  <center><table>
+    <%= form_with url: "/users/#{@user.id}movies/#{@movie.id}/viewing_parties/new", method: :post, local: true do |f| %>
+    <tr>
+        <center><td> <%= f.label :header, "Viewing Party Details" %></td></center>
+    </tr>
+    <tr>
+      <center><td> <%= f.label :movie_title, "Movie Title: #{@movie.title}"  %> </td></center>
+    </tr>
+    <tr>
+      <td> <%= f.label :duration, "Duration of Party" %> </td>
+      <td> <%= f.number_field :duration, value: @movie.runtime %> </td>
+    </tr>
+    <tr>
+      <td> <%= f.label :day, "Day" %> </td>
+      <td> <%= f.date_field :party_date, min: Date.today %> </td>
+    </tr>
+    <tr>
+      <td> <%= f.label :time, "Start Time" %> </td>
+      <td> <%= f.time_field :start_time, min: Time.now.strftime("%H:%M") %> </td>
+    </tr>
+    <tr>
+      <td> <%= f.label :time, "Duration of Party" %> </td>
+      <td> <%= f.number_field :, value: @movie.runtime %> </td>
+    </tr>
+    <tr>
+      <td> 
+        <td><%= f.label :check_boxes, "Invite Other Users" %></td><br>
+        <td><%= f.collection_check_boxes(:user_ids, @users, :id, :name_with_email) %></td>
+      <tr>
+      <%= f.hidden_field :host_id, value: @user.id %>
+      <%= f.hidden_field :movie_id, value: @movie.id %>
+        <td><%= f.submit "Create Party" %></td>
+      <% end %></td>
+    </tr>
+    <tr>
+      <td> <%= f.submit "Create New User" %> </td>
+    </tr>
+    <% end %>
+  </table> </center>
+</body>
