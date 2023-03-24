@@ -4,7 +4,7 @@ class Users::MoviesController < ApplicationController
     movie_facade = MoviedbFacade.new(params)
     if params[:search].present?
       @user = User.find(params[:id])
-      @keyword = params[:search] # refactor - now part of params
+      @keyword = params[:search] 
       @search_result_movies = movie_facade.movies_keyword_search
     elsif
       @user = User.find(params[:id])
