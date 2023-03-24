@@ -16,8 +16,6 @@ RSpec.describe 'User Story 12' do
     describe "happy path" do
       it "shows the name of the movie title" do
         expect(page).to have_content("Batman: The Doom That Came to Gotham")
-
-        # VCR.eject_cassette(:batman_doom)
       end
 
       it "has a form to create a new viewing party (Duration, Day, and Start Time)" do
@@ -28,12 +26,23 @@ RSpec.describe 'User Story 12' do
           expect(page).to have_field("Day")
           expect(page).to have_field("Start Time")
         end
-
-        # VCR.eject_cassette(:batman_doom)
       end
 
-      xit "has Checkboxes next to each existing user in the system to select invitees" do
+      it "has each existing user in the system with checkboxes to select invitees" do
+        within "#user_#{@friend_1.id}" do
+          expect(page).to have_content("#{@friend_1.name} (#{@friend_1.email})")
+          check :user_id
+        end
 
+        within "#user_#{@friend_2.id}" do
+          expect(page).to have_content("#{@friend_2.name} (#{@friend_2.email})")
+          check :user_id
+        end
+
+        within "#user_#{@friend_3.id}" do
+          expect(page).to have_content("#{@friend_3.name} (#{@friend_3.email})")
+          check :user_id
+        end
       end
     end
 

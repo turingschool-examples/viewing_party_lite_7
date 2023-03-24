@@ -1,5 +1,7 @@
 <center><h4>Create a Movie Party for <%= @movie_facade.movie.title %></h4></center>
 
+<h1>Insert Discover Page Button Here</h1>
+
 <center><div id="party_form">
   <strong>Viewing Party Details</strong>
   
@@ -9,7 +11,16 @@
     <%= f.label :date, "Day" %>
     <%= f.text_field :date %><br>
     <%= f.label :time, "Start Time" %>
-    <%= f.text_field :time %><br>
+    <%= f.text_field :time %><br><br>
+
+    <strong>Invite Other Users</strong><br>
+    <% @users.each do |user| %>
+      <div id=<%="user_#{user.id}"%>>  
+        <%= f.check_box :user_id %>
+        <%= "#{user.name} (#{user.email})" %><br>
+      </div>
+    <% end %>
+
     <%= f.submit "Create Party" %>
   <% end %>
 
