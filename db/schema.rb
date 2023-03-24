@@ -20,6 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_22_203116) do
     t.time "time"
     t.string "image_path"
     t.string "title"
+    t.integer "runtime"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "movie_id"

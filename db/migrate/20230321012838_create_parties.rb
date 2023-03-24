@@ -6,6 +6,7 @@ class CreateParties < ActiveRecord::Migration[7.0]
       t.time :time
 			t.string :image_path
 			t.string :title
+			t.integer :runtime
 			
       t.timestamps
     end

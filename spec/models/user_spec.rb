@@ -23,10 +23,10 @@ describe User do
 		let!(:user_2) { User.create!(name: "Mary", email: "mary@email.com") }
 		let!(:user_3) { User.create!(name: "Lisa", email: "lisa@email.com") }
 
-		let!(:party_1) { Party.create!(duration: 120, date: "4/4/2023", time: "4:00", movie_id: 76341) }
-		let!(:party_2) { Party.create!(duration: 136, date: "4/7/2023", time: "5:00", movie_id: 76342) }
-		let!(:party_3) { Party.create!(duration: 127, date: "4/2/2023", time: "6:00", movie_id: 76343) }
-		let!(:party_4) { Party.create!(duration: 111, date: "3/29/2023", time: "7:00", movie_id: 76344) }
+		let!(:party_1) { Party.create!(runtime: 100, duration: 120, date: "4/4/2023", time: "4:00", movie_id: 76341) }
+		let!(:party_2) { Party.create!(runtime: 100, duration: 136, date: "4/7/2023", time: "5:00", movie_id: 76342) }
+		let!(:party_3) { Party.create!(runtime: 100, duration: 127, date: "4/2/2023", time: "6:00", movie_id: 76343) }
+		let!(:party_4) { Party.create!(runtime: 100, duration: 111, date: "3/29/2023", time: "7:00", movie_id: 76344) }
 
 		let!(:user_party_1) { UserParty.create!(user: user_1, party: party_1, host: true) }
 		let!(:user_party_2) { UserParty.create!(user: user_2, party: party_1, host: false) }
