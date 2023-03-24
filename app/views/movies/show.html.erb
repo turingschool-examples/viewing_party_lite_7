@@ -1,5 +1,5 @@
 <%= link_to "Back", "/users/#{@user.id}/discover" %>
-<%= button_to "Create Viewing Party", "/users/#{@user.id}/movies/#{@movie.id}/viewing_party/new" %>
+<%= link_to "Create Viewing Party", "/users/#{@user.id}/movies/#{@movie.id}/viewing_party/new", method: :get %>
 <h2>Title: <%= @movie.title %></h2>
 <p>Vote Average: <%= @movie.vote_average %></p>
 <p>Run Time: <%= @movie.runtime %></p>

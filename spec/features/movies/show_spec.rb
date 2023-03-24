@@ -42,7 +42,7 @@ RSpec.describe 'movies show page' do
   it 'has a button to create a viewing party' do
     visit "/users/#{@user_1.id}/movies/#{@movie.id}"
 
-    expect(page).to have_button('Create Viewing Party')
+    expect(page).to have_link("Create Viewing Party")
   end
 
   it 'has the movie attributes' do
