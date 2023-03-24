@@ -30,9 +30,10 @@ describe "Discover Index Page" do
   it "takes us to the movie index page when the search button is pressed", :vcr do
     visit user_discover_index_path(@user_1)
 
-    fill_in :movie_title, with: "Bear"
-    click_button "Search"
-
+    within "#search" do
+      fill_in :movie_title, with: "Bear"
+      click_button "Search"
+    end
     expect(current_path).to eq(user_movies_path(@user_1))
   end
 end

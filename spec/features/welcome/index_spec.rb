@@ -27,6 +27,6 @@ describe "Welcome Index Page" do
   it "has a link to return to the welcome page" do
     visit root_path
 
-    expect(page).to have_link("Welcome Page")
+    expect(page).to have_link("Viewing Party")
   end
 end
