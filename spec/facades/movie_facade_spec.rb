@@ -9,6 +9,7 @@ RSpec.describe MoviesFacade do
   it 'creates movies objects of the top rated movies' do 
 
     VCR.use_cassette("top_rated_movies") do
+      require 'pry'; binding.pry
       expect(@facade.top_rated_movies.first).to be_a(Movie)
     end
   end 
