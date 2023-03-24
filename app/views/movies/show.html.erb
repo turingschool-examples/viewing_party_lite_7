@@ -1,0 +1,14 @@
+<h1><%= @movie.detailed_movie.title_show %></h1>
+
+<%= button_to "Discover Movies", user_discover_index_path(@user), method: :get, local: true %>
+<%= button_to "Create Viewing Party", new_user_movie_viewing_party_path(@user, @movie.detailed_movie.movie_id_show), method: :get, local: true %>
+<ul>
+<li>Title: <%= @movie.detailed_movie.title_show %></li>
+<li>Movie Summary: <%= @movie.detailed_movie.summary %></li>
+<li>Vote Average: <%= @movie.detailed_movie.vote_average_show %></li>
+<li>Runtime: <%= @movie.detailed_movie.runtime %> min</li>
+<li>Genres: <%= @movie.detailed_movie.genres %></li>
+<li>Cast: <%= @movie.detailed_movie.cast %></li>
+<li>Total Count of Reviews: <%= @movie.detailed_movie.total_review_count %></li>
+<li>Review Info: <%= @movie.detailed_movie.review_info %></li>
+</ul>

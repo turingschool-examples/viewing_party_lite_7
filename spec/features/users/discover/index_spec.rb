@@ -7,14 +7,22 @@ RSpec.describe type: :feature do
       before :each do
         visit "/users/#{zoidberg.id}/discover"
       end
-      it "displays a button to discover top rated movies" do
+      it "displays a button to discover top rated movies", :vcr do
         expect(page).to have_button("Discover Top Rated Movies")
-        # add redirect to this when api is consumed
+        click_button "Discover Top Rated Movies"
+        expect(current_path).to eq(user_movies_path(zoidberg))
+        expect(page).to have_content("Title", count: 20)
       end
 
-      it "displays a form to enter keywords to search by movie title" do
+      it "displays a form to enter keywords to search by movie title", :vcr do
         expect(page).to have_field("title")
-        # add redirect to this when api is consumed
+        expect(page).to have_button("Find Movies")
+
+        fill_in "title", with: "God"
+        click_button "Find Movies"
+
+        expect(current_path).to eq(user_movies_path(zoidberg))
+        expect(page).to have_content("Title", count: 20)
       end
     end
   end

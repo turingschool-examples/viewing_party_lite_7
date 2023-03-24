@@ -17,4 +17,16 @@ class MoviesService
   def self.top_rated_movies
     parse_api("/3/movie/top_rated")
   end
+
+  def self.movie_details(id)
+    parse_api("/3/movie/#{id}")
+  end
+
+  def self.credits(id)
+    parse_api("/3/movie/#{id}/credits")
+  end
+
+  def self.reviews(id)
+    parse_api("/3/movie/#{id}/reviews")
+  end
 end
