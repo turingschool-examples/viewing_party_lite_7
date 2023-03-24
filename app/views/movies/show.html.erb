@@ -2,3 +2,11 @@
 <%= button_to "Create Viewing Party", new_user_movie_viewing_party_path(@facade.user, @facade.movie), method: :get%>
 
 <%=button_to "Return to Discover Page", user_movies_discover_path(@facade.user)%>
+
+<div id="movie-info">
+  <h3>Movie Information</h3>
+  <p>Movie Title: <%=@facade.movie.title%></p>
+  <p>Movie Vote Average: <%=@facade.movie.vote_average%></p>
+  <p>Movie Run-Time: <%=@facade.movie.runtime/60%> hours and <%=@facade.movie.runtime%60%> minutes</p>
+  <p>Movie Title: <%=@facade.movie.genres.each {|genre| genre}%></p>
+  <p>Movie Summary: <%=@facade.movie.summary%></p>

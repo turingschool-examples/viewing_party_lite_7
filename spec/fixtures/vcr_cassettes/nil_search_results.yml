@@ -44,17 +44,19 @@ http_interactions:
       - Accept-Encoding
       - Origin
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 f6992241dd15e99fe1ce21d807856f16.cloudfront.net (CloudFront)
+      - 1.1 1c80fe425edf82026702c486fb324fd0.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - vMeU5fKMdsnxU47LChqS7Zp_NX5DgQk8zglYmqL_CdWkzpnPZonQfg==
+      - UEmgo5TlrdzkfyP97iFtBSg6d2xCUzKdRuJpTvsGnSggF02WDWtSAw==
+      Age:
+      - '5058'
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[],"total_pages":1,"total_results":0}'
-  recorded_at: Thu, 23 Mar 2023 22:41:17 GMT
+  recorded_at: Fri, 24 Mar 2023 00:05:34 GMT
 recorded_with: VCR 6.1.0

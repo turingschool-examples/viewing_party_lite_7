@@ -11,6 +11,14 @@ class MoviedbService
     get_url("/3/movie/top_rated?api_key=#{ENV['TMDB_API_KEY']}&language=en-US&page=1")
   end
 
+  def movie_cast(id)
+    get_url("/3/movie/#{id}/credits?api_key=#{ENV['TMDB_API_KEY']}&language=en-US&page=1")
+  end
+
+  def movie_reviews(id)
+    get_url("/3/movie/#{id}/reviews?api_key=#{ENV['TMDB_API_KEY']}&language=en-US&page=1")
+  end
+
   def get_url(url)
     response = conn.get(url)
     JSON.parse(response.body, symbolize_names: true)
