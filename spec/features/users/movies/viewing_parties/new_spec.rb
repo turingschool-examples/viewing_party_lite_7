@@ -17,16 +17,27 @@ RSpec.describe "Viewing Party New Page" do
     end
 
     it "should have a form with fields to fill in viewing party attributes" do
-      save_and_open_page
       expect(page).to have_field("Duration")
       expect(page).to have_field("When")
       expect(page).to have_field("Start time")
     end
 
-    # it "should have checkboxes in the form for each user in the system" do
-    #   expect(page).to have_field("Duration")
-    #   expect(page).to have_field("When")
-    #   expect(page).to have_field("Start time")
-    # end
+    it "should redirect to the user dashboard" do
+      fill_in "Duration", with: "120"
+      fill_in "When", with: "Feb 25"
+      fill_in "Start time", with: "3:00pm"
+      click_button "Create Party"
+
+      expect(current_path).to eq(user_path(phil))
+    end
+
+    it "should remain on the same page and notify the user if invalid information is entered" do
+      fill_in "Duration", with: ""
+      fill_in "When", with: "Feb 25"
+      fill_in "Start time", with: "3:00pm"
+      click_button "Create Party"
+
+      expect(page).to have_content("Duration can't be blank")
+    end
   end
 end
