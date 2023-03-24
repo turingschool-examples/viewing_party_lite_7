@@ -40,7 +40,7 @@ RSpec.describe "New Viewing Party Page" do
       expect(current_path).to eq(user_path(@user_2))
       expect(ViewingParty.count).to eq(1)
       expect(ViewingPartyUser.count).to eq(2)
-      expect(page).to have_content(viewing_party.when)
+      expect(page).to have_content(viewing_party.when.to_date.strftime("%d/%m/%Y"))
     end
 
     it "Get an error message and return to the new viewing part page when the duration of the party is less than the duration of the film" do 
