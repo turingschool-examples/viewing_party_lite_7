@@ -1,4 +1,4 @@
-class Movies 
+class Movie
   attr_reader :name, 
               :vote_average, 
               :movie_id, 
@@ -14,14 +14,20 @@ class Movies
     @name = info[:original_title]
     @vote_average = info[:vote_average]
     @movie_id = info[:id]
-    @genres = info[:genres]&.map { |genre| genre[:name]}
+    @genres = info[:genres]
     @raw_runtime = info[:runtime]
-    @runtime = info[:runtime].divmod(60)
+    @runtime = divmod_to_sixty(info[:runtime]) unless info[:runtime].nil?
     @description = info[:overview]
-    @cast_members = get_cast(info[:cast])
-    @count_of_reviews = info[:total_results]
-    @author_information = author_hash(info[:results])
+    @cast_members = get_cast(info[:cast]) unless info[:cast].nil?
+    @count_of_reviews = info[:total_results] unless info[:total_results].nil?
+    @author_information = author_hash(info[:results]) unless info[:results].nil?
   end
+
+  def divmod_to_sixty(info)
+    info.divmod(60)
+  end
+
+
 
   def get_cast(cast_info)
     hash = {}
