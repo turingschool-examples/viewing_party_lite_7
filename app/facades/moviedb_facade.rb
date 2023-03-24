@@ -42,6 +42,14 @@ class MoviedbFacade
     Movie.new(movie_list)
   end
   
+  def movie_title_image
+    movie_list = {
+      movie: find_movie_info,
+      images: find_movie_image,
+    }
+    Movie.new(movie_list)
+  end
+
   # Helper methods: 
   def find_movie_info
     info = movie_service.get_movie(@movie_id)

@@ -7,6 +7,7 @@ RSpec.describe Movie do
         id: 55,
         title: "Interstellar",
         vote_average: 9.0,
+        poster_path: "/ABcdeFGHIjklmnopQRSTuvWxYZ.jpg",
         runtime: 185,
         overview: "Man goes to space, chaos ensues",
         genres: [{id: 1, name: "Drama"}, {id: 2, name: "Science Fiction"}]
@@ -22,6 +23,8 @@ RSpec.describe Movie do
     expect(movie.movie_id).to eq(55)
     expect(movie.title).to eq("Interstellar")
     expect(movie.vote_avg).to eq(9.0)
+    expect(movie.image).to eq("/ABcdeFGHIjklmnopQRSTuvWxYZ.jpg")
+
     expect(movie.runtime).to eq(185)
     expect(movie.summary).to eq("Man goes to space, chaos ensues")
     expect(movie.genres).to eq([{id: 1, name: "Drama"}, {id: 2, name: "Science Fiction"}])

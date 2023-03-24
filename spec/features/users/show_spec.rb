@@ -7,15 +7,15 @@ RSpec.describe "/users/:id", type: :feature do
       @riker = User.create!(name: "William Riker", email: "number2@uss-enterprise.com")
       @data = User.create!(name: "Data", email: "data@uss-enterprise.com")
 
-      @party1 = Party.create!(duration_minutes: 143, start_time: "08:00", date: Date.parse("2023-01-01"), movie_id: 2001, host_id: @picard.id)
-      @party2 = Party.create!(duration_minutes: 90, start_time: "10:30", date: Date.parse("2023-02-02"), movie_id: 1999, host_id: @riker.id)
+      # @party1 = Party.create!(duration_minutes: 143, start_time: "08:00", date: Date.parse("2023-01-01"), movie_id: 2001, host_id: @picard.id)
+      # @party2 = Party.create!(duration_minutes: 90, start_time: "10:30", date: Date.parse("2023-02-02"), movie_id: 1999, host_id: @riker.id)
 
-      PartyUser.create!(party_id: @party1.id, user_id: @picard.id, host_id: @party1.host_id)
-      PartyUser.create!(party_id: @party1.id, user_id: @data.id, host_id: @party1.host_id)
+      # PartyUser.create!(party_id: @party1.id, user_id: @picard.id, host_id: @party1.host_id)
+      # PartyUser.create!(party_id: @party1.id, user_id: @data.id, host_id: @party1.host_id)
 
-      PartyUser.create!(party_id: @party2.id, user_id: @picard.id, host_id: @party2.host_id)
-      PartyUser.create!(party_id: @party2.id, user_id: @riker.id, host_id: @party2.host_id)
-      PartyUser.create!(party_id: @party2.id, user_id: @data.id, host_id: @party2.host_id)
+      # PartyUser.create!(party_id: @party2.id, user_id: @picard.id, host_id: @party2.host_id)
+      # PartyUser.create!(party_id: @party2.id, user_id: @riker.id, host_id: @party2.host_id)
+      # PartyUser.create!(party_id: @party2.id, user_id: @data.id, host_id: @party2.host_id)
 
       visit "/users/#{@picard.id}"
     end
@@ -26,7 +26,6 @@ RSpec.describe "/users/:id", type: :feature do
 
       expect(page).to have_content("#{@picard.name}'s Dashboard")
       expect(page).to have_button("Discover Movies")
-      #Need to Add a Test: that I see an image from an API call
 
       expect(page).to have_content(@party1.start_time.strftime("%I:%M %p"))
       expect(page).to have_content(@party1.date.strftime("%B %-d, %Y"))
@@ -43,5 +42,7 @@ RSpec.describe "/users/:id", type: :feature do
       click_button("Discover Movies")
       expect(current_path).to eq("/users/#{@picard.id}/discover")
     end
+
+    # Need to Add a Test: that I see an image from an API call
   end
 end
