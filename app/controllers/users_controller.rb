@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   def show
+   
     @user = User.find(params[:id])
+    # @viewing_parties = ViewingParties.where("viewing_parties.id = #{@user.id}")
   end
 
   def new
