@@ -10,11 +10,11 @@
         <ul>
           <% @party_invites.each do |party| %>
             <li id=<%= party.id %>>
-							<h4><%= link_to "Party ##{party.id}", party_path(party)%></h4>
-							<%#= party.movie.image %>
-							<%#= party.movie.title %>
+							<h4><%= link_to "Party ##{party.id}", user_movie_party_path(@user, party.movie_id, party)%></h4>
+							<img src=<%= "https://image.tmdb.org/t/p/w300#{party.image_path}"  %>>
+							<p><%= party.title %></p>
 							<p>Date: <%= party.date %></p>
-							<p>Time: <%= party.time.to_s(:time) %></p>
+							<p>Time: <%= party.time.strftime("%H:%M") %></p>
 							<p>Host: <%= party.host.name %></p>
 							<p><b>Attendees:</b></p>
 							<% party.users.each do |user| %>
@@ -34,11 +34,11 @@
         <ul>
           <% @my_parties.each do |party| %>
             <li id=<%= party.id %>>
-							<h4><%= link_to "Party ##{party.id}", party_path(party)%></h4>
-							<%#= party.movie.image %>
-							<%#= party.movie.title %>
+							<h4><%= link_to "Party ##{party.id}",user_movie_party_path(@user, party.movie_id, party)%></h4>
+							<img src=<%= "https://image.tmdb.org/t/p/w300#{party.image_path}" %>>
+							<p><%= party.title %></p>
 							<p>Date: <%= party.date %></p>
-							<p>Time: <%= party.time.to_s(:time) %></p>
+							<p>Time: <%= party.time.strftime("%H:%M") %></p>
 							<p>Host: <%= party.host.name %></p>
 							<p><b>Attendees:</b></p>
 							<% party.users.each do |user| %>

@@ -7,10 +7,6 @@ class MovieService
 		get_url("3/movie/#{movie_id}")
 	end
 
-	def reviews(movie_id)
-		get_url("3/movie/#{movie_id}/reviews")
-	end
-
 	def top_rated
 		get_url("3/movie/popular")
 	end
