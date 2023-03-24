@@ -16,9 +16,10 @@ RSpec.describe 'User Story 12' do
     describe "happy path" do
       it "shows the name of the movie title" do
         expect(page).to have_content("Batman: The Doom That Came to Gotham")
+        VCR.eject_cassette(:batman_doom)
       end
 
-      xit "has a form to create a new viewing party (Duration, Day, and Start Time)" do
+      it "has a form to create a new viewing party (Duration, Day, and Start Time)" do
         within "#party_form" do
           expect(page).to have_field("Duration of Party", value => 86)
           expect(page).to have_field("Day")
