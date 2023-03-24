@@ -27,6 +27,13 @@ RSpec.describe ViewingParty do
     it {should have_many(:users).through(:viewing_party_users)}
   end
 
+  describe "validations" do 
+    it {should validate_presence_of :duration_of_party}
+    it {should validate_presence_of :start_time}
+    it {should validate_presence_of :when}
+    it {should validate_presence_of :movie_id}
+  end
+
   describe "party_host" do 
     it "is the host of the viewing party" do 
       expect(@viewing_party_1.party_host).to eq(@user_2)
