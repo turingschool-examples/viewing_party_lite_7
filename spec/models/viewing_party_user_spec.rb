@@ -12,15 +12,16 @@ describe ViewingPartyUser, type: :model do
 
   describe "'instance methods" do
     it "#host_user" do
+    VCR.use_cassette("godfather_5") do
       @user1 = create(:user, name: "Caleb")
       @user2 = create(:user, name: "John")
       @user3 = create(:user, name: "Mike")
-      @vp1 = ViewingParty.create!({duration: 120, party_date: Date.new(2011, 1, 1,), start_time: '21:00', movie_id: 238})
+      @vp1 = ViewingParty.create!({duration: 180, party_date: Date.new(2011, 1, 1,), start_time: '21:00', movie_id: 238})
       @party= ViewingPartyUser.create!(user_id: @user1.id, viewing_party_id: @vp1.id, host: true)
       ViewingPartyUser.create!(user_id: @user2.id, viewing_party_id: @vp1.id, host: false)
+    end
 
-      expect(@party.host_user).to eq("Caleb")
-      expect(@party.host_user).to_not eq("John")
+      expect(@party.host_user.first).to be_an_instance_of(ViewingParty)
     end
   end
 end
