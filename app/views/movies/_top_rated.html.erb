@@ -1,6 +1,6 @@
 <h1>Top Rated Movies</h2>
 <p>Showing <%=facade.top_rated_movies.count%> Results</p>
-<%=button_to "Return to Discover Page", user_movies_discover_path(facade.user)%>
+<%=button_to "Return to Discover Page", user_movies_discover_path(facade.user), method: :get%>
 <%@n=0%>
 <%facade.top_rated_movies.each do |movie|%>
   <div id="movie-<%=movie.id%>">
