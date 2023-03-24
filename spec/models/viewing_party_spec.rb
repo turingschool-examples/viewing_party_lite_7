@@ -11,4 +11,30 @@ RSpec.describe ViewingParty, type: :model do
   it { should validate_presence_of :movie_id }
   it { should validate_presence_of :date }
   it { should validate_presence_of :time }
+
+  describe 'instance methods' do
+    describe '#host' do
+      it 'returns the name of the host' do
+        user = User.create!(name: 'Bob', email: 'bob@bob.bob')
+        party = ViewingParty.create!(duration: 240, date: Date.tomorrow, time: '18:00', movie_id: 238, movie_title: 'The Godfather', movie_poster: 'poster')
+        ViewingPartyUser.create!(user: user, viewing_party: party, host: true)
+        expect(party.host).to eq(user.name)
+      end
+    end
+
+    describe '#guests' do
+    it 'returns all the guests' do
+      user = User.create!(name: 'Bob', email: 'bob@bob.bob')
+      user2 = User.create!(name: 'Rob', email: 'blob@bob.bob')
+      user3 = User.create!(name: 'Cob', email: 'brob@bob.bob')
+      party = ViewingParty.create!(duration: 240, date: Date.tomorrow, time: '18:00', movie_id: 238, movie_title: 'The Godfather', movie_poster: 'poster')
+      ViewingPartyUser.create!(user: user, viewing_party: party, host: true)
+      ViewingPartyUser.create!(user: user2, viewing_party: party)
+      ViewingPartyUser.create!(user: user3, viewing_party: party)
+
+      expect(party.guests).to eq([user2, user3])
+    end
+
+  end
+  end
 end

@@ -14,6 +14,8 @@
   <p><%= form.collection_check_boxes :user_ids, @other_users, :id, :name %></p>
 
   <p><%= form.hidden_field :movie_id, value: @facade.movie_details.id %></p>
+  <p><%= form.hidden_field :movie_title, value: @facade.movie_details.title %></p>
+  <p><%= form.hidden_field :movie_poster, value: @facade.movie_details.poster %></p>
 
   <p><%= form.submit "Create Party" %></p>
 <% end %>

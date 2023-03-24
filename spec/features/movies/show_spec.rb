@@ -14,7 +14,7 @@ RSpec.describe 'Movie Show Page' do
     describe 'I should see the movie details' do
       it 'should have a title, runtime, vote_average, genres, and summary' do
         expect(page).to have_content('The Godfather')
-        expect(page).to have_content('175')
+        expect(page).to have_content('2h 55m')
         expect(page).to have_content('8.7')
         expect(page).to have_content('Drama')
         expect(page).to have_content('Crime')
