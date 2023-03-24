@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to "/users/#{@user.id}"
     else
-      flash[:alert] = @user.errors.full_messages.join(", ")
+      # flash[:alert] = @user.errors.full_messages.join(", ")
       render :new
     end
   end
