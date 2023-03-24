@@ -1,20 +1,21 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe MovieService do
-
-  context "class methods" do
-    context "#top_movies" do
-      it "returns top movie hash" do
+  context 'class methods' do
+    context '#top_movies' do
+      it 'returns top movie hash' do
         VCR.use_cassette(:top_movies, serialize_with: :json) do
           top_movies = MovieService.top_movies
           expect(top_movies).to be_a Hash
         end
       end
     end
-    context "#movies_by_title" do
-      it "returns movie data" do
+    context '#movies_by_title' do
+      it 'returns movie data' do
         VCR.use_cassette(:movies_search, serialize_with: :json) do
-          search = MovieService.movies_search("Fight Club")
+          search = MovieService.movies_search('Fight Club')
           expect(search).to be_a Hash
           expect(search[:results]).to be_an Array
           movie_data = search[:results].first

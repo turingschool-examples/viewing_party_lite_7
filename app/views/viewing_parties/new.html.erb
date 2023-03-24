@@ -12,9 +12,9 @@
 
   <p><%= form.hidden_field :movie_id, value: @facade.movie_details.id %></p>
 
-  <p><% @users.each do |user| %>
+  <p><% @other_users.each do |user| %>
       <div>
-        <%= form.check_box :user_ids, { multiple: true }, user.id, nil %>
+        <%= form.check_box :user_ids, { multiple: true, disabled: false }, user.id, nil %>
         <%= user.name %>
       </div>
     <% end %></p>

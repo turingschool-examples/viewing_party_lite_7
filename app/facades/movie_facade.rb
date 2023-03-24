@@ -1,12 +1,15 @@
+# frozen_string_literal: true
+
 class MovieFacade
   attr_reader :keyword
+
   def initialize(params)
     @keyword = params[:keyword]
     @movie_id = params[:id]
   end
 
   def movies
-    if @keyword == "top rated"
+    if @keyword == 'top rated'
       top_movies
     else
       movies_search
@@ -15,7 +18,7 @@ class MovieFacade
 
   def movie_details
     movie = MovieService.movie_details(@movie_id)
-   
+
     Movie.new(movie)
   end
 
