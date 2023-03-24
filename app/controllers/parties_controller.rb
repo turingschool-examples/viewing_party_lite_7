@@ -12,9 +12,12 @@ class PartiesController < ApplicationController
 
     if @party.duration >= @movie.raw_runtime
       @party.save
-      params[:invites].each do |user_id|
-        UserParty.create!(party_id: Party.all.last.id, user_id: user_id)
+      if params[:invites].present?
+        params[:invites].each do |user_id|
+          UserParty.create!(party_id: Party.all.last.id, user_id: user_id)
+        end
       end
+      flash[:notice] = "Party successfully created"
       redirect_to "/users/#{@user.id}"
     else
       flash[:notice] = "Duration is less than actual play time"
