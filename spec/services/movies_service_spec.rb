@@ -1,14 +1,14 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe MoviesService do 
-  describe "#class methods" do 
+RSpec.describe MoviesService do
+  describe "#class methods" do
     describe "#parse_api" do
-      it "returns a json object", :vcr do 
+      it "returns a json object", :vcr do
         expect(MoviesService.parse_api("/3/movie/top_rated")).to be_a(Hash)
       end
     end
 
-    describe "searched_movies", :vcr do 
+    describe "searched_movies", :vcr do
       it "keyword search" do
         keyword_search = MoviesService.searched_movies("God")
         shazam = keyword_search[:results].first
@@ -26,12 +26,12 @@ RSpec.describe MoviesService do
       end
     end
 
-    describe "top_rated_moves" do 
-      it "top rated movies json" do 
-        VCR.use_cassette('returns_a_json_object') do 
+    describe "top_rated_moves" do
+      it "top rated movies json" do
+        VCR.use_cassette("returns_a_json_object") do
           top_rated_movies = MoviesService.top_rated_movies
           the_godfather = top_rated_movies[:results].first
-        
+
           expect(top_rated_movies).to be_a(Hash)
 
           expect(the_godfather).to have_key(:id)
@@ -46,8 +46,8 @@ RSpec.describe MoviesService do
       end
     end
 
-    describe "movie_details", :vcr do 
-      it "movie details" do 
+    describe "movie_details", :vcr do
+      it "movie details" do
         the_godfather = MoviesService.movie_details(238)
         expect(the_godfather).to be_a(Hash)
 
@@ -71,7 +71,7 @@ RSpec.describe MoviesService do
       end
     end
 
-    describe "credits", :vcr do 
+    describe "credits", :vcr do
       it "returns a json objects containing movie credits" do
         credits = MoviesService.credits(238)
         cast_member = credits[:cast].first
@@ -80,14 +80,14 @@ RSpec.describe MoviesService do
 
         expect(cast_member).to have_key(:name)
         expect(cast_member[:name]).to be_a(String)
-        
+
         expect(cast_member).to have_key(:name)
         expect(cast_member[:name]).to be_a(String)
       end
     end
 
-    describe "reviews", :vcr do 
-      it "returns a json object containing a movies reviews" do 
+    describe "reviews", :vcr do
+      it "returns a json object containing a movies reviews" do
         reviews = MoviesService.reviews(238)
         first_review = reviews[:results].first
         expect(reviews).to be_a(Hash)
@@ -102,6 +102,5 @@ RSpec.describe MoviesService do
         expect(first_review[:content]).to be_a(String)
       end
     end
-  
   end
 end

@@ -88,7 +88,7 @@ class MoviesFacade
     @details_hash["vote_average2"] = get_details[:vote_average]
   end
 
-  def get_image(id)
+  def get_image(_id)
     @details_hash["poster_path"] = "http://image.tmb.org/t/p/w500#{get_details[:poster_path]}"
   end
 

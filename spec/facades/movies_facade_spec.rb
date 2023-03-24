@@ -1,11 +1,11 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe MoviesFacade do 
+RSpec.describe MoviesFacade do
   before :each do
     @facade = MoviesFacade.new(nil)
   end
   describe "#initialize" do
-    it "exists" do 
+    it "exists" do
       expect(@facade).to be_an_instance_of(MoviesFacade)
     end
   end
@@ -20,7 +20,7 @@ RSpec.describe MoviesFacade do
 
     it "returns a top rated search" do
       VCR.use_cassette("returns_a_json_object") do
-         facade_1 = MoviesFacade.new(q: "top_rated")
+        facade_1 = MoviesFacade.new(q: "top_rated")
         expect(facade_1.search_method).to be_a(Array)
       end
     end
@@ -30,7 +30,7 @@ RSpec.describe MoviesFacade do
     it "returns new movie objects" do
       VCR.use_cassette("can_search_for_movies_by_key_word") do
         facade_1 = MoviesFacade.new(nil)
-        
+
         movies = facade_1.searched_movies("god")
         expect(movies.count).to eq(20)
         expect(movies.first).to be_an_instance_of(Movie)
@@ -39,7 +39,7 @@ RSpec.describe MoviesFacade do
   end
 
   describe "#get_details" do
-    before :each do 
+    before :each do
       @facade_1 = MoviesFacade.new(238)
     end
     it "returns a json object" do
@@ -72,7 +72,7 @@ RSpec.describe MoviesFacade do
     it "#vote_average" do
       VCR.use_cassette("movie_details") do
         movie_vote_average = @facade_1.vote_average(238)
-       
+
         expect(movie_vote_average).to be_a(Float)
         expect(movie_vote_average).to eq(8.712)
       end
@@ -81,7 +81,7 @@ RSpec.describe MoviesFacade do
     it "#summary" do
       VCR.use_cassette("movie_details") do
         movie_summary = @facade_1.summary(238)
-       
+
         expect(movie_summary).to be_a(String)
       end
     end
@@ -89,17 +89,17 @@ RSpec.describe MoviesFacade do
     it "#get_genres" do
       VCR.use_cassette("movie_details") do
         movie_summary = @facade_1.get_genres(238)
-       
+
         expect(movie_summary).to be_a(Array)
       end
     end
   end
 
-  describe "#get_reviews" do 
+  describe "#get_reviews" do
     it "returns reviews for a single movie" do
       VCR.use_cassette("returns_a_json_object_containing_a_movies_reviews") do
         facade = MoviesFacade.new(238)
-         reviews = facade.get_reviews(238)
+        reviews = facade.get_reviews(238)
 
         expect(reviews).to be_a(Array)
         expect(reviews.count).to eq(2)
@@ -107,12 +107,12 @@ RSpec.describe MoviesFacade do
     end
   end
 
-  describe "#get_review_count" do 
+  describe "#get_review_count" do
     it "returns the count of reviews for a single movie" do
       VCR.use_cassette("returns_a_json_object_containing_a_movies_reviews") do
         facade = MoviesFacade.new(238)
         review_count = facade.get_review_count(238)
-      
+
         expect(review_count).to be_a(Integer)
         expect(review_count).to eq(2)
       end
@@ -121,21 +121,21 @@ RSpec.describe MoviesFacade do
 
   describe "#get_cast" do
     it "it returns the first ten cast members for a single movie" do
-      VCR.use_cassette("returns_a_json_objects_containing_movie_credits") do 
+      VCR.use_cassette("returns_a_json_objects_containing_movie_credits") do
         facade = MoviesFacade.new(238)
         cast = facade.get_cast(238)
-      
+
         expect(cast).to be_a(Array)
         expect(cast.count).to eq(10)
       end
     end
   end
 
-  describe "#detailed_movie" do 
-    it "returns a new movie object with all details", :vcr do 
+  describe "#detailed_movie" do
+    it "returns a new movie object with all details", :vcr do
       facade = MoviesFacade.new(238)
       movie_details = facade.detailed_movie
- 
+
       expect(movie_details).to be_an_instance_of(Movie)
       expect(movie_details.cast).to be_a(Hash)
       expect(movie_details.genres).to be_a(Array)
@@ -147,7 +147,6 @@ RSpec.describe MoviesFacade do
       expect(movie_details.total_review_count).to be_a(Integer)
       expect(movie_details.title_show).to be_a(String)
       expect(movie_details.vote_average_show).to be_a(Float)
-    
     end
   end
 end
