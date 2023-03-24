@@ -22,11 +22,15 @@ RSpec.describe 'movies show page' do
     movie_response = File.read('spec/fixtures/movie.json')
     stub_request(:get, "https://api.themoviedb.org/3/movie/238?api_key=#{ENV['MOVIE_DB_KEY']}")
       .to_return(status: 200, body: movie_response)
+    @movie = Movie.new(JSON.parse(movie_response, symbolize_names: true))
 
     actor_response = File.read('spec/fixtures/actors.json')
     stub_request(:get, "https://api.themoviedb.org/3/movie/238/credits?api_key=#{ENV['MOVIE_DB_KEY']}")
       .to_return(status: 200, body: actor_response)
-    @movie = Movie.new(JSON.parse(movie_response, symbolize_names: true))
+
+    review_response = File.read('spec/fixtures/reviews.json')
+    stub_request(:get, "https://api.themoviedb.org/3/movie/238/reviews?api_key=#{ENV['MOVIE_DB_KEY']}")
+      .to_return(status: 200, body: review_response)
   end
 
   it 'has a back button' do
@@ -74,10 +78,17 @@ RSpec.describe 'movies show page' do
   it 'it has the total count of reviews' do
     visit "/users/#{@user_1.id}/movies/#{@movie.id}"
 
-    
-  end
+      within '#reviews' do
+        expect(page).to have_content("Author: futuretv")
+        expect(page).to have_content("The casting for this film has been considered by many to be the best")
+        expect(page).to have_content("Rating: 10.0")
 
-  it 'it has every author of each review' do
+        expect(page).to have_content("Author: crastana")
+        expect(page).to have_content("A masterpiece by the young and talented Francis Ford")
+        expect(page).to have_content("Rating: 10.0")
 
+        expect(page).to have_content("Total Reviews: 2")
+      end
+    expect(page).to_not have_content("Author: jason")
   end
 end
