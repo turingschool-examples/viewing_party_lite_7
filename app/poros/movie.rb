@@ -4,10 +4,11 @@ class Movie
               :vote_avg,
               :runtime,
               :summary,
-              :genres
+              :genres, 
+              :cast,
+              :reviews
   
   def initialize(response)
-    # require 'pry'; binding.pry
     @movie_id = response[:movie][:id]
     @title = response[:movie][:title]
     @vote_avg = response[:movie][:vote_average]
@@ -16,7 +17,12 @@ class Movie
     @summary = response[:movie][:overview]
     @genres = response[:movie][:genres]
 
-    # @cast = response
+    @cast = response[:cast]
+    @reviews = response[:reviews]
+  end
+
+  def review_count
+    reviews.size
   end
   
   # def list_genres

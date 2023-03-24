@@ -4,31 +4,28 @@ class MoviedbService
     JSON.parse(response.body, symbolize_names: true)
   end
   
-  
+  def get_top_20
+    fetch_api("movie/top_rated?include_adult=false")
+  end
+
+  def get_movie_by_word(word)
+    fetch_api("search/movie?query=#{word}&include_adult=false")
+  end
+
   def get_movie(id)
-    fetch_api("/movie/#{id}")
+    fetch_api("movie/#{id}")
   end
   
   def get_cast(id)
-    fetch_api("/movie/#{id}/credits")
+    fetch_api("movie/#{id}/credits")
+  end
+
+  def get_reviews(id)
+    fetch_api("movie/#{id}/reviews")
   end
   
   private
-  # def get_top_rated
-  #   fetch_api("/movie/top_rated")
-  # end
-  
   def connection
-    Faraday.new(url: "https://api.themoviedb.org/3") do |faraday|
-      faraday.headers["X-API-KEY"] = ENV["TMDB_API_KEY"]
-    end
+    Faraday.new(url: "https://api.themoviedb.org/3/", params: { api_key: ENV["TMDB_API_KEY"] })
   end
-
-  # for V4 Bearer Token API key:
-  # def connection
-  #   url = "https://api.themoviedb.org/3"
-  #   Faraday.new(url: url, headers: { "Authorization" => "Bearer #{ENV["MOVIEDB_API_KEY"]}" })
-  # end
-
-
 end

@@ -5,10 +5,10 @@ RSpec.describe "/users/:id/movies", type: :feature do
     before :each do
       @picard = User.create!(name: "Jean-Luc Picard", email: "captain@uss-enterprise.com")
     end
-
+    
     it "displays the first 20 top movies & vote average" do
       top_movies = File.read("spec/fixtures/moviedb/top_movies.json")
-      stub_request(:get, "https://api.themoviedb.org/movie/top_rated?include_adult=false")
+      stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV["TMDB_API_KEY"]}&include_adult=false")
       .to_return(status: 200, body: top_movies, headers: {})
 
       visit "/users/#{@picard.id}/movies"
@@ -29,13 +29,12 @@ RSpec.describe "/users/:id/movies", type: :feature do
       expect(page).to have_content("Vote Average:", count: 20)
     end
 
-    # Need to Refactor: 
     it "displays max 20 movies with those keywords & vote average" do
       visit "/users/#{@picard.id}/discover"
       fill_in(:search, with: "space od")
       
       search_results = File.read("spec/fixtures/moviedb/search_results.json")
-      stub_request(:get, "https://api.themoviedb.org/search/movie?include_adult=false&query=space%20od")
+      stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV["TMDB_API_KEY"]}&include_adult=false&query=space%20od")
       .to_return(status: 200, body: search_results, headers: {})
       
       click_button("Search by Movie Title")
@@ -58,40 +57,57 @@ RSpec.describe "/users/:id/movies", type: :feature do
        
     it "displays the first 20 top movies & vote average" do
       top_movies = File.read("spec/fixtures/moviedb/top_movies.json")
-      stub_request(:get, "https://api.themoviedb.org/movie/top_rated?include_adult=false")
+      stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV["TMDB_API_KEY"]}&include_adult=false")
       .to_return(status: 200, body: top_movies, headers: {})
 
       visit "/users/#{@picard.id}/movies"
       
       godfather = File.read("spec/fixtures/moviedb/godfather.json")
-      stub_request(:get, "https://api.themoviedb.org/movie/238")
+      stub_request(:get, "https://api.themoviedb.org/3/movie/238?api_key=#{ENV["TMDB_API_KEY"]}")
       .to_return(status: 200, body: godfather, headers: {})
-      
+
+      cast_response = File.read("spec/fixtures/moviedb/space_cast.json")
+      stub_request(:get, "https://api.themoviedb.org/3/movie/238/credits?api_key=#{ENV["TMDB_API_KEY"]}")
+      .to_return(status: 200, body: cast_response, headers: {})
+
+      reviews_response = File.read("spec/fixtures/moviedb/space_reviews.json")
+      stub_request(:get, "https://api.themoviedb.org/3/movie/238/reviews?api_key=#{ENV["TMDB_API_KEY"]}")
+      .to_return(status: 200, body: reviews_response, headers: {})
+      film = MoviedbFacade.new(movie_id: 62)
+
       click_link("The Godfather")
 
       expect(current_path).to eq("/users/#{@picard.id}/movies/238")
     end
 
-     # Need to Refactor: 
+
     it "displays max 20 movies with those keywords & vote average" do
       visit "/users/#{@picard.id}/discover"
       fill_in(:search, with: "space od")
       
       search_results = File.read("spec/fixtures/moviedb/search_results.json")
-      stub_request(:get, "https://api.themoviedb.org/search/movie?include_adult=false&query=space%20od")
+      stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV["TMDB_API_KEY"]}&include_adult=false&query=space%20od")
       .to_return(status: 200, body: search_results, headers: {})
-      
+
       click_button("Search by Movie Title")
       
       space_odyssey = File.read("spec/fixtures/moviedb/space_odyssey.json")
-      stub_request(:get, "https://api.themoviedb.org/movie/62")
+      stub_request(:get, "https://api.themoviedb.org/3/movie/62?api_key=#{ENV["TMDB_API_KEY"]}")
       .to_return(status: 200, body: space_odyssey, headers: {})
+
+      cast_response = File.read("spec/fixtures/moviedb/space_cast.json")
+      stub_request(:get, "https://api.themoviedb.org/3/movie/62/credits?api_key=#{ENV["TMDB_API_KEY"]}")
+      .to_return(status: 200, body: cast_response, headers: {})
+
+      reviews_response = File.read("spec/fixtures/moviedb/space_reviews.json")
+      stub_request(:get, "https://api.themoviedb.org/3/movie/62/reviews?api_key=#{ENV["TMDB_API_KEY"]}")
+      .to_return(status: 200, body: reviews_response, headers: {})
+      film = MoviedbFacade.new(movie_id: 62)
       
       click_link("2001: A Space Odyssey")
 
       expect(current_path).to eq("/users/#{@picard.id}/movies/62")
     end
-
   end
 end
 
