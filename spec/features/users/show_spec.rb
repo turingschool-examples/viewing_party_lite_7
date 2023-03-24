@@ -38,6 +38,13 @@ RSpec.describe "/users/:id", type: :feature do
 
       expect(page).to_not have_content("#{@riker.name}")
     end
+    
+    it 'has a link to home that returns to the landing page' do
+      visit "/users/#{@picard.id}"
+      click_link("Home")
+      
+      expect(current_path).to eq(root_path)
+    end
 
     it "when I click the discover button, I'm redirected to '/users/:id/discover' page" do
       click_button("Discover Movies")
