@@ -35,6 +35,5 @@ RSpec.describe "/users/:id/discover", type: :feature do
     end
 
     # User Story 5 - Sad Path Test ??? how ??? -> empty space/nil
-
   end
 end

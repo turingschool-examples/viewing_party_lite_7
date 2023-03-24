@@ -25,9 +25,17 @@ class Movie
     reviews.size
   end
   
-  # def list_genres
-  #   genres.map do |g|
-  #     g[:name]
-  #   end
-  # end
+  # This was not needed because it could be considered view logic
+  # did this function in the movies show view page
+    # def format_runtime
+    #   "#{@runtime / 60} hrs #{@runtime % 60} mins"
+    # end
+    # <%= @the_movie.format_runtime %> minutes</p> 
+
+    # Same reason as above, this was not needed: 
+      # def list_genres
+      #   genres.map do |g|
+      #     g[:name]
+      #   end
+      # end
 end
