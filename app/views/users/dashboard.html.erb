@@ -8,3 +8,10 @@
     <p><%= party.name %></p>
   <%end%>
 </div>
+
+<div id="host_parties">
+  <h3><%= @user.name %>'s Hosting Parties:</h3>
+    <% @all_user_parties_host.each do |party| %>
+    <p><%= party.name %></p>
+  <%end%>
+</div>

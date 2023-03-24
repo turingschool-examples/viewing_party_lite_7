@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create] do 
     resources :movies, only: [:index, :show], controller: 'user_movies' do 
-      resources :parties, only: [:new]
+      resources :parties, only: [:new, :create]
     end
   end
   
