@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   post '/register', to: 'users#create'
 
   resources :users, only: [:show] do
-    resources :movies, only: [:show]
+    resources :movies, only: [:show] do
+      resources :viewing_parties, only: %i[new create]
+    end
   end
   
 
