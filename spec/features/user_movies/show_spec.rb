@@ -5,7 +5,7 @@ RSpec.describe "User_movie Index Page", type: :feature do
     @andra = User.create!(name: "Andra", email: "andra@turing.edu")
     @hady = User.create!(name: "Hady", email: "hady@turing.edu")
     VCR.use_cassette("top_rated_movies") do
-      @results = MoviesFacade.top_rated_movies
+      @results = MoviesFacade.new.top_rated_movies
     end
   end 
   describe "when visit a movie's detail page" do 

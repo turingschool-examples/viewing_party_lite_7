@@ -5,7 +5,7 @@ RSpec.describe "party new page", type: :feature do
     @andra = User.create!(name: "Andra", email: "andra@turing.edu")
     @hady = User.create!(name: "Hady", email: "hady@turing.edu")
     VCR.use_cassette("top_rated_movies") do
-      @results = MoviesFacade.top_rated_movies
+      @results = MoviesFacade.new.top_rated_movies
     end
   end 
   describe "when visit the viewing party page" do 
@@ -117,9 +117,9 @@ RSpec.describe "party new page", type: :feature do
 
 
 
-    it "the event should also be listed on any user's dashboard that were invited to the party" do 
+    # it "the event should also be listed on any user's dashboard that were invited to the party" do 
 
-    end
+    # end
 
   end 
 end 
