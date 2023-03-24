@@ -40,7 +40,7 @@ describe ViewingParty, type: :model do
 
     describe 'invited_viewing_parties()' do
       it 'lists all viewing parties a user is hosting' do
-        expect(ViewingParty.invited_viewing_parties(@user1)).to eq([@viewing_party4])
+        expect(ViewingParty.invited_viewing_parties(@user1)).to match_array([@viewing_party4])
 
         ViewingPartyUser.create!(user_id: @user1.id, viewing_party_id: @viewing_party3.id, user_type: 0)
 
