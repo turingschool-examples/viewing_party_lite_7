@@ -26,7 +26,7 @@ RSpec.describe 'Movie Details Page' do
               click_button "Discover Page"
               
               expect(current_path).to eq(user_discover_index_path(@stan))
-              save_and_open_page
+              
             end
           end
         end
@@ -38,7 +38,7 @@ RSpec.describe 'Movie Details Page' do
             VCR.insert_cassette(:review_info, serialize_with: :json) do
               visit user_movie_path(@stan, 550)
               click_button "Create Viewing Party for Fight Club"
-              require 'pry'; binding.pry
+              
 
               expect(current_path).to eq("/users/#{@stan.id}/movies/550/viewing_party/new")
             end
@@ -68,7 +68,7 @@ RSpec.describe 'Movie Details Page' do
       end
 
       it "shows movie reviews" do
-        # save_and_open_page
+        # 
         VCR.insert_cassette(:movie_by_id_info, serialize_with: :json) do
           VCR.insert_cassette(:cast_info, serialize_with: :json) do
             VCR.insert_cassette(:review_info, serialize_with: :json) do

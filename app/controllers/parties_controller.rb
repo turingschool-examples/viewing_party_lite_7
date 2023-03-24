@@ -7,7 +7,6 @@ class PartiesController < ApplicationController
 
   def create
     party = Party.new(party_params)
-    require 'pry'; binding.pry
   end
 
   private
