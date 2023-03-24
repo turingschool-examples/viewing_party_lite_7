@@ -11,7 +11,6 @@ class PartiesController < ApplicationController
 		@party = Party.new
 		@movie = movie_params
 		@users = User.all
-		@movie_id = params[:movie_id]
 	end
 
 	def create
@@ -29,11 +28,11 @@ class PartiesController < ApplicationController
   private
 
   def movie_params
-    params.permit(:title, :runtime, :movie_id)
+    params.permit(:title, :runtime, :movie_id, :image_path)
   end
 
 	def party_params
-		params.require(:party).permit(:duration, :date, :time, :movie_id)
+		params.require(:party).permit(:duration, :date, :time, :title, :movie_id, :image_path)
 	end
 end
 

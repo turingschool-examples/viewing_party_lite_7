@@ -36,6 +36,5 @@ describe "Parties New Page", :vcr do
 		click_button "Create Party"
 
 		expect(current_path).to eq(user_path(@user_1))
-		save_and_open_page
 	end
 end
