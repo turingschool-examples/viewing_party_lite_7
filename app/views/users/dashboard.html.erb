@@ -12,8 +12,8 @@
   <div id="<%= party[:party].id %>">
     <h4><%= party[:party].name %></h4>
     <p><%= image_tag party[:movie_image], alt: "Movie Picture" %>
-    <p>Party Date:<%= party[:party].party_date %> </p>
-    <p>Party Time: <%= party[:party].party_time %> </p>
+    <p>Party Date:<%= party[:party].party_date.strftime('%m/%d/%Y') %> </p>
+    <p>Party Time: <%= party[:party].party_time.strftime("%I:%M %p") %> </p>
     <p>Host: <%=party[:host] %>
     <p>Movie Title:</p>
     <div id="title">
@@ -22,7 +22,11 @@
     </div>  
     <div id="list_of_invitees">
       <%party[:list_invitees].each do |invitee|%>
-        <%=invitee.name%>
+        <% if invitee.name == @user.name %>
+          <b><%=invitee.name%><b>
+        <% else%>
+            <%=invitee.name%>
+        <%end%>
       <%end%>
     </div>
 
@@ -36,11 +40,32 @@
 <%end%>
 
 <% if @all_user_parties_host %>
-<div id="host_parties">
-  <h3><%= @user.name %>'s Hosting Parties:</h3>
-    <% @all_user_parties_host.each do |party| %>
-    <p><%= party.name %></p>
-  <%end%>
-</div>
+  <div id="host_parties">
+    <h3><%= @user.name %>'s Hosting Parties:</h3>
+      <% @all_user_parties_host.each do |party| %>
+        <div id=<%="#{party[:party].id}"%>>
+          <h3><%= party[:party].name%></h3>
+
+          <div id="title">
+            <p><%= link_to "#{party[:movie_title]}", "/users/#{party[:party].user_id}/movies/#{party[:party].movie_id}" %></p>
+          </div>
+
+          <p>Host: <%= party[:host] %></p>
+          <p>Party Date: <%= party[:party].party_date.strftime('%m/%d/%Y') %></p>
+          <p>Party Time: <%= party[:party].party_time.strftime("%I:%M %p") %></p>
+          <%= image_tag party[:movie_image], alt: "movie_picture" %>
+          
+          <div id="list_of_invitees">
+            <% party[:list_invitees].each do |invitee| %>
+              <p><%= invitee.name %></p>
+            <%end%>
+          </div>
+
+        </div>
+      <%end%>
+  </div>
+
+  <div id="title">
+  </div>
 
 <%end%>
