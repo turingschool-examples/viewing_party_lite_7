@@ -1,12 +1,13 @@
 class Users::ViewingPartiesController < ApplicationController
 
   def new
-    binding.pry
-    @user = User.find(params[:user_id].to_i)
+    # binding.pry
+    @user = User.find(params[:user_id])
+    # binding.pry
     facade = MoviedbFacade.new(movie_id: params[:movie_id]).find_movie_info
     @movie = Movie.new(movie: facade)
     @party = Party.new
-    binding.pry
+    # binding.pry
   end
   
   # def create
