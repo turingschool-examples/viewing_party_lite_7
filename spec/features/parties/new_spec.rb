@@ -110,34 +110,62 @@ RSpec.describe "party new page", type: :feature do
       end 
     end
 
-    it "when you fill in the form on the viewing party new page and click create, you create a new party and are redirected to the user's dashboard" do 
+    describe "when you fill in the form on the viewing party new page and click create" do
+      it "if you fill in valid info, you successfully create a new party and are redirected to the user's dashboard" do 
 
-      VCR.use_cassette("party_new_spec_form_fun_party", :allow_playback_repeats => true) do
-        visit "/users/#{@hady.id}/movies/#{@results[0].movie_id}/parties/new"
-        expect(Party.count).to eq(3)
+        VCR.use_cassette("party_new_spec_form_fun_party", :allow_playback_repeats => true) do
+          visit "/users/#{@hady.id}/movies/#{@results[0].movie_id}/parties/new"
+          expect(Party.count).to eq(3)
 
 
-        within("div#viewing_party_form") do 
-          fill_in :name, with: "Fun Party"
-          fill_in :duration, with: 180
-          fill_in :party_date, with: "2023/01/01"
-          fill_in :party_time, with: "10:00"
+          within("div#viewing_party_form") do 
+            fill_in :name, with: "Fun Party"
+            fill_in :duration, with: 180
+            fill_in :party_date, with: "2023/01/01"
+            fill_in :party_time, with: "10:00"
 
-          within("div##{@hady.name}") do
-            check("invites[]", option: @hady.id)
+            within("div##{@hady.name}") do
+              check("invites[]", option: @hady.id)
+            end
+            
+            within("div##{@mike.name}") do
+              check("invites[]", option: @mike.id)
+            end
+
+            click_button "Create Party"
+
+            expect(Party.count).to eq(4)
+
+            expect(current_path).to eq("/users/#{@hady.id}")
           end
-          
-          within("div##{@mike.name}") do
-            check("invites[]", option: @mike.id)
-          end
-
-          click_button "Create Party"
-
-          expect(Party.count).to eq(4)
-
-          expect(current_path).to eq("/users/#{@hady.id}")
-        end
+        end 
       end 
-    end 
+
+      it "if you fill in invalid info, you're unsuccessful and dashboard is refreshed with error msg" do 
+
+        VCR.use_cassette("party_new_spec_form_fun_party", :allow_playback_repeats => true) do
+          visit "/users/#{@hady.id}/movies/#{@results[0].movie_id}/parties/new"
+
+          within("div#viewing_party_form") do 
+            fill_in :name, with: "Fun Party"
+            fill_in :duration, with: 1
+            fill_in :party_date, with: "2023/01/01"
+            fill_in :party_time, with: "10:00"
+            
+            within("div##{@hady.name}") do
+              check("invites[]", option: @hady.id)
+            end
+            
+            within("div##{@mike.name}") do
+              check("invites[]", option: @mike.id)
+            end
+            
+            click_button "Create Party"
+          end
+          expect(current_path).to eq("/users/#{@hady.id}/movies/#{@results[0].movie_id}/parties/new")
+          expect(page).to have_content("Duration is less than actual play time")
+        end 
+      end 
+    end
   end 
 end 

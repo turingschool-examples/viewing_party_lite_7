@@ -6,10 +6,10 @@ RSpec.describe Party, type: :model do
   let!(:mike) { User.create!(name: "Mike", email: "mike@turing.edu") }
 
 
-  let!(:halloween) { Party.create!(name: "Halloween Party", user_id: andra.id, party_date: "10/31/2023", party_time: "10:30", duration: 123) }
-  let!(:girls_night) { Party.create!(name: "Girl's Night", user_id: hady.id, party_date: "01/01/2023", party_time: "02:00", duration: 210) }
-  let!(:eighties) { Party.create!(name: "Eighties Themed", user_id: hady.id, party_date: "01/01/2023", party_time: "02:00", duration: 210) }
-  let!(:other) { Party.create!(name: "Other", user_id: hady.id, party_date: "01/01/2023", party_time: "02:00", duration: 210) }
+  let!(:halloween) { Party.create!(name: "Halloween Party", user_id: andra.id, party_date: "Thu, 23 Mar 2023", party_time: "10:30", duration: 123) }
+  let!(:girls_night) { Party.create!(name: "Girl's Night", user_id: hady.id, party_date: "Thu, 23 Mar 2023", party_time: "02:00", duration: 210) }
+  let!(:eighties) { Party.create!(name: "Eighties Themed", user_id: hady.id, party_date: "Thu, 23 Mar 20233", party_time: "02:00", duration: 210) }
+  let!(:other) { Party.create!(name: "Other", user_id: hady.id, party_date: "Thu, 23 Mar 2023", party_time: "02:00", duration: 210) }
 
   let!(:usp1) { UserParty.create!(user_id: andra.id, party_id: halloween.id, invite_status: 0) }
   let!(:usp2) { UserParty.create!(user_id: andra.id, party_id: girls_night.id, invite_status: 0) }
@@ -19,6 +19,14 @@ RSpec.describe Party, type: :model do
   describe "relationships" do
     it { should have_many :user_parties }
     it { should have_many(:users).through(:user_parties) }
+  end
+
+  describe "validations" do
+    it { should validate_presence_of :name }
+    it { should validate_presence_of :party_date }
+    it { should validate_presence_of :party_time }
+    it { should validate_presence_of :user_id }
+    it { should validate_presence_of :duration }
   end
 
   describe "instance methods" do
