@@ -22,6 +22,6 @@ RSpec.describe Movie do
     expect(movie.runtime).to eq(100)
     expect(movie.genres).to eq("comedy")
     expect(movie.cast).to eq({ "Bob"=>"Hot Dog", "Leonardo Dicaprio"=>"Hot Dog 2" })
-    expect(movie.author_info).to eq({ "steve"=>"This movie is great" })
+    expect(movie.reviews).to eq({ "steve"=>"This movie is great" })
   end
 end
