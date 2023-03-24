@@ -24,13 +24,10 @@ class MoviesService
 
   def self.credits(id)
     parse_api("/3/movie/#{id}/credits")
+    require 'pry'; binding.pry
   end
 
   def self.reviews(id)
     parse_api("/3/movie/#{id}/reviews")
   end
-
-  
-
-
 end

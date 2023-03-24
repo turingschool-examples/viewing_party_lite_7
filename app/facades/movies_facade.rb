@@ -8,8 +8,6 @@ class MoviesFacade
   def search_method
     if @params[:q] == "keyword"
       searched_movies(@params[:title])   
-    elsif @params[:q] == "details"
-      movie_details(params[:id])
     else
       top_rated_movies
     end
@@ -30,52 +28,58 @@ class MoviesFacade
   end
 
   def get_details
-    @details ||= MovieService.movie_details(id)
+    @details ||= MoviesService.movie_details(@params)
   end
 
-  def self.runtime(id)
+  def runtime(id)
     @details_hash["runtime"] = get_details[:runtime]
   end
 
-  def self.title(id)
+  def title(id)
     @details_hash["title"] = get_details[:title]
   end
 
-  def self.vote_average(id)
+  def vote_average(id)
     @details_hash["vote_average"] = get_details[:vote_average]
   end
 
-  def self.summary(id)
+  def summary(id)
     @details_hash["summary"] = get_details[:overview]
   end
 
-  def self.get_genres(id)
+  def get_genres(id)
     @details_hash["genres"] = []
     get_details[:genres].each do |genre|
       @details_hash["genres"] << genre[:name]
     end
   end
 
-  def self.get_reviews(id)
-    reviews = MovieService.reviews(id)
+  def get_reviews(id)
+    reviews = MoviesService.reviews(id)
     reviews[:results].each do |review|
        @details_hash["review_info"][review[:author]] = [review[:content], review[:author_details][:rating]]
      end
   end
 
-  def self.get_review_count(id)
-    review_count = MovieService.reviews(id)
+  def get_review_count(id)
+    review_count = MoviesService.reviews(id)
     @details_hash["total_reivews_count"] = review_count[:total_results]
   end
 
-  def self.get_cast(id)
-    cast = MovieService.credits(id)
+  def get_cast(id)
+    cast = MoviesService.credits(id)
     cast[:cast][0..9].each do |person|
       @details_hash["cast"][person[:character]] = person[:name]
     end
   end
 
   def detailed_movie
+    get_details
+    get_cast(@params)
+    get_review_count(@params)
+    get_reviews(@params)
+    get_genres(@params)
+    runtime(@params)
     Movie.new(@details_hash)
   end
 end

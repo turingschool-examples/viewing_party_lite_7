@@ -3,7 +3,8 @@
 
 <%= button_to "Discover Page", user_discover_index_path(@user), method: :get, local: true %>
 
-<% @movies.search_method().each do |movie| %>
-  <h3>Title: <%= link_to "#{movie.title}", user_movie_path(@user, id: movie.movie_id), method: :get, local: true %></h3>
+
+<% @movies.search_method.each do |movie| %>
+  <h3>Title: <%= link_to "#{movie.title}", user_movie_path(@user, id: movie.movie_id), method: :get, params: {q: "details"}, local: true %></h3>
   <p>Vote Average: <%= movie.vote_average %></p>
 <% end %>
