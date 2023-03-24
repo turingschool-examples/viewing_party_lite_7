@@ -11,7 +11,7 @@ RSpec.describe 'Landing Page Index' do
   end
   context 'As a user when I visit the landing page' do
     it 'I see the title of the application' do
-      expect(page).to have_content('Viewing Party Lite')
+      expect(page).to have_content('Viewing Party')
     end
 
     it 'I see a button to create a new user' do
