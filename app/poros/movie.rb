@@ -35,9 +35,7 @@ class Movie
       genre[:name]
     end
   end
-
-
-
+  
   def get_cast(cast_info)
     hash = {}
     cast_info.each do |indiv|
