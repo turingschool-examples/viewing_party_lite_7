@@ -3909,6 +3909,95 @@
         }
       },
       "recorded_at": "Fri, 24 Mar 2023 20:05:15 GMT"
+    },
+    {
+      "request": {
+        "method": "get",
+        "uri": "https://api.themoviedb.org/3/search/movie?api_key=api_key&query=batman",
+        "body": {
+          "encoding": "US-ASCII",
+          "string": ""
+        },
+        "headers": {
+          "User-Agent": [
+            "Faraday v2.7.4"
+          ],
+          "Accept-Encoding": [
+            "gzip;q=1.0,deflate;q=0.6,identity;q=0.3"
+          ],
+          "Accept": [
+            "*/*"
+          ]
+        }
+      },
+      "response": {
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "headers": {
+          "Content-Type": [
+            "application/json;charset=utf-8"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Date": [
+            "Fri, 24 Mar 2023 15:07:54 GMT"
+          ],
+          "Server": [
+            "openresty"
+          ],
+          "Cache-Control": [
+            "public, max-age=28800"
+          ],
+          "X-Memc": [
+            "HIT"
+          ],
+          "X-Memc-Key": [
+            "1c52f154e97603f7925abead3a072b11"
+          ],
+          "X-Memc-Age": [
+            "13302"
+          ],
+          "X-Memc-Expires": [
+            "8298"
+          ],
+          "Etag": [
+            "W/\"4efc8ba03e8f24a0b8489d4c51787357\""
+          ],
+          "Vary": [
+            "Accept-Encoding",
+            "Origin"
+          ],
+          "X-Cache": [
+            "Hit from cloudfront"
+          ],
+          "Via": [
+            "1.1 372deb5f83b842f053e1134e15f5a6cc.cloudfront.net (CloudFront)"
+          ],
+          "X-Amz-Cf-Pop": [
+            "DFW57-P2"
+          ],
+          "Alt-Svc": [
+            "h3=\":443\"; ma=86400"
+          ],
+          "X-Amz-Cf-Id": [
+            "ft3Dia0EwBdd_zuoGV58Z2uVss_Ttj2rg45pumLAATiY6FRoD_-Ihw=="
+          ],
+          "Age": [
+            "21226"
+          ]
+        },
+        "body": {
+          "encoding": "ASCII-8BIT",
+          "string": "{\"page\":1,\"results\":[{\"adult\":false,\"backdrop_path\":\"/2va32apQP97gvUxaMnL5wYt4CRB.jpg\",\"genre_ids\":[14,28,80],\"id\":268,\"original_language\":\"en\",\"original_title\":\"Batman\",\"overview\":\"Batman must face his most ruthless nemesis when a deformed madman calling himself \\\"The Joker\\\" seizes control of Gotham's criminal underworld.\",\"popularity\":43.4,\"poster_path\":\"/cij4dd21v2Rk2YtUQbV5kW69WB2.jpg\",\"release_date\":\"1989-06-23\",\"title\":\"Batman\",\"video\":false,\"vote_average\":7.214,\"vote_count\":6816},{\"adult\":false,\"backdrop_path\":\"/bxxupqG6TBLKC60M6L8iOvbQEr6.jpg\",\"genre_ids\":[28,35,80],\"id\":2661,\"original_language\":\"en\",\"original_title\":\"Batman\",\"overview\":\"The Dynamic Duo faces four super-villains who plan to hold the world for ransom with the help of a secret invention that instantly dehydrates people.\",\"popularity\":20.207,\"poster_path\":\"/zzoPxWHnPa0eyfkMLgwbNvdEcVF.jpg\",\"release_date\":\"1966-07-30\",\"title\":\"Batman\",\"video\":false,\"vote_average\":6.294,\"vote_count\":723},{\"adult\":false,\"backdrop_path\":\"/xEG5iP1qZCiDt4BefSpLy1d54zE.jpg\",\"genre_ids\":[28,12,80,878,53,10752],\"id\":125249,\"original_language\":\"en\",\"original_title\":\"Batman\",\"overview\":\"Japanese master spy Daka operates a covert espionage-sabotage organization located in Gotham City's now-deserted Little Tokyo, which turns American scientists into pliable zombies. The great crime-fighters Batman and Robin, with the help of their allies, are in pursuit.\",\"popularity\":6.236,\"poster_path\":\"/6XYL5JRHxaLLd0ZwsBugaAuGHTa.jpg\",\"release_date\":\"1943-07-16\",\"title\":\"Batman\",\"video\":false,\"vote_average\":6.6,\"vote_count\":42},{\"adult\":false,\"backdrop_path\":\"/7eccX0xay9pDj6ZQvU4cu3whw18.jpg\",\"genre_ids\":[16,9648,14,28,27],\"id\":1003579,\"original_language\":\"en\",\"original_title\":\"Batman: The Doom That Came to Gotham\",\"overview\":\"Explorer Bruce Wayne accidentally unleashes an ancient evil, and returns to Gotham after being away for two decades. There, Batman battles Lovecraftian supernatural forces and encounters allies and enemies such as Green Arrow, Ra's al Ghul, Mr. Freeze, Killer Croc, Two-Face and James Gordon.\",\"popularity\":1012.789,\"poster_path\":\"/hrATQE8ScQceohwInaMluluNEaf.jpg\",\"release_date\":\"2023-03-10\",\"title\":\"Batman: The Doom That Came to Gotham\",\"video\":false,\"vote_average\":6.734,\"vote_count\":32},{\"adult\":false,\"backdrop_path\":\"/b0PlSFdDwbyK0cf5RxwDpaOJQvQ.jpg\",\"genre_ids\":[80,9648,53],\"id\":414906,\"original_language\":\"en\",\"original_title\":\"The Batman\",\"overview\":\"In his second year of fighting crime, Batman uncovers corruption in Gotham City that connects to his own family while facing a serial killer known as the Riddler.\",\"popularity\":231.724,\"poster_path\":\"/74xTEgt7R36Fpooo50r9T25onhq.jpg\",\"release_date\":\"2022-03-01\",\"title\":\"The Batman\",\"video\":false,\"vote_average\":7.71,\"vote_count\":7700},{\"adult\":false,\"backdrop_path\":\"/8VSaa8ZCy43zm7aRzsyCnKOfarm.jpg\",\"genre_ids\":[16,28,878],\"id\":886396,\"original_language\":\"en\",\"original_title\":\"Batman and Superman: Battle of the Super Sons\",\"overview\":\"After discovering he has powers, 11-year-old Jonathan Kent and assassin-turned-Boy-Wonder Damian Wayne must join forces to rescue their fathers (Superman \\u0026 Batman) and save the planet from the malevolent alien force known as Starro.\",\"popularity\":81.593,\"poster_path\":\"/mvffaexT5kA3chOnGxwBSlRoshh.jpg\",\"release_date\":\"2022-10-18\",\"title\":\"Batman and Superman: Battle of the Super Sons\",\"video\":false,\"vote_average\":7.9,\"vote_count\":186},{\"adult\":false,\"backdrop_path\":\"/5fX1oSGuYdKgwWmUTAN5MNSQGzr.jpg\",\"genre_ids\":[28,12,14],\"id\":209112,\"original_language\":\"en\",\"original_title\":\"Batman v Superman: Dawn of Justice\",\"overview\":\"Fearing the actions of a god-like Super Hero left unchecked, Gotham City’s own formidable, forceful vigilante takes on Metropolis’s most revered, modern-day savior, while the world wrestles with what sort of hero it really needs. And with Batman and Superman at war with one another, a new threat quickly arises, putting mankind in greater danger than it’s ever known before.\",\"popularity\":70.436,\"poster_path\":\"/5UsK3grJvtQrtzEgqNlDljJW96w.jpg\",\"release_date\":\"2016-03-23\",\"title\":\"Batman v Superman: Dawn of Justice\",\"video\":false,\"vote_average\":5.941,\"vote_count\":16614},{\"adult\":false,\"backdrop_path\":\"/8pOUmMgVnl1tYNtTRTE5TeyGBGD.jpg\",\"genre_ids\":[16,28,878],\"id\":485942,\"original_language\":\"ja\",\"original_title\":\"ニンジャバットマン\",\"overview\":\"Batman, along with many of his allies and adversaries, finds himself transported to feudal Japan by Gorilla Grodd's time displacement machine.\",\"popularity\":18.22,\"poster_path\":\"/5xSB0Npkc9Fd9kahKBsq9P4Cdzp.jpg\",\"release_date\":\"2018-03-24\",\"title\":\"Batman Ninja\",\"video\":false,\"vote_average\":5.805,\"vote_count\":840},{\"adult\":false,\"backdrop_path\":\"/ew5FcYiRhTYNJAkxoVPMNlCOdVn.jpg\",\"genre_ids\":[28,80,18],\"id\":272,\"original_language\":\"en\",\"original_title\":\"Batman Begins\",\"overview\":\"Driven by tragedy, billionaire Bruce Wayne dedicates his life to uncovering and defeating the corruption that plagues his home, Gotham City.  Unable to work within the system, he instead creates a new identity, a symbol of fear for the criminal underworld - The Batman.\",\"popularity\":54.047,\"poster_path\":\"/8RW2runSEc34IwKN2D1aPcJd2UL.jpg\",\"release_date\":\"2005-06-10\",\"title\":\"Batman Begins\",\"video\":false,\"vote_average\":7.695,\"vote_count\":18850},{\"adult\":false,\"backdrop_path\":\"/3WP0RObZ2t7ShHfqQpKPljF9B22.jpg\",\"genre_ids\":[28,14],\"id\":364,\"original_language\":\"en\",\"original_title\":\"Batman Returns\",\"overview\":\"While Batman deals with a deformed man calling himself the Penguin, an employee of a corrupt businessman transforms into the Catwoman.\",\"popularity\":36.087,\"poster_path\":\"/jKBjeXM7iBBV9UkUcOXx3m7FSHY.jpg\",\"release_date\":\"1992-06-19\",\"title\":\"Batman Returns\",\"video\":false,\"vote_average\":6.9,\"vote_count\":5702},{\"adult\":false,\"backdrop_path\":\"/eoMushgujydxFplE9yPZ54lwOvo.jpg\",\"genre_ids\":[16,28,35,10751],\"id\":324849,\"original_language\":\"en\",\"original_title\":\"The Lego Batman Movie\",\"overview\":\"A cooler-than-ever Bruce Wayne must deal with the usual suspects as they plan to rule Gotham City, while discovering that he has accidentally adopted a teenage orphan who wishes to become his sidekick.\",\"popularity\":35.062,\"poster_path\":\"/snGwr2gag4Fcgx2OGmH9otl6ofW.jpg\",\"release_date\":\"2017-02-08\",\"title\":\"The Lego Batman Movie\",\"video\":false,\"vote_average\":7.2,\"vote_count\":4384},{\"adult\":false,\"backdrop_path\":\"/kU7ZiyeUwcpTkYj3UcxSqGdZmxY.jpg\",\"genre_ids\":[16,28],\"id\":618353,\"original_language\":\"en\",\"original_title\":\"Batman: Death in the Family\",\"overview\":\"Tragedy strikes the Batman's life again when Robin Jason Todd tracks down his birth mother only to run afoul of the Joker. An adaptation of the 1988 comic book storyline of the same name.\",\"popularity\":35.059,\"poster_path\":\"/k8Q9ulyRE8fkvZMkAM9LPYMKctb.jpg\",\"release_date\":\"2020-10-13\",\"title\":\"Batman: Death in the Family\",\"video\":false,\"vote_average\":7.196,\"vote_count\":365},{\"adult\":false,\"backdrop_path\":\"/ymX3MnaxAO3jJ6EQnuNBRWJYiPC.jpg\",\"genre_ids\":[16,9648,28,80],\"id\":736074,\"original_language\":\"en\",\"original_title\":\"Batman: The Long Halloween, Part Two\",\"overview\":\"As Gotham City's young vigilante, the Batman, struggles to pursue a brutal serial killer, district attorney Harvey Dent gets caught in a feud involving the criminal family of the Falcones.\",\"popularity\":30.935,\"poster_path\":\"/f46QMSo2wAVY1ywrNc9yZv0rkNy.jpg\",\"release_date\":\"2021-07-26\",\"title\":\"Batman: The Long Halloween, Part Two\",\"video\":false,\"vote_average\":7.5,\"vote_count\":407},{\"adult\":false,\"backdrop_path\":\"/uS9apevOgs2fuYghf9szOoK1u63.jpg\",\"genre_ids\":[16,9648,28,80],\"id\":736073,\"original_language\":\"en\",\"original_title\":\"Batman: The Long Halloween, Part One\",\"overview\":\"Following a brutal series of murders taking place on Halloween, Thanksgiving, and Christmas, Gotham City's young vigilante known as the Batman sets out to pursue the mysterious serial killer alongside police officer James Gordon and district attorney Harvey Dent.\",\"popularity\":25.728,\"poster_path\":\"/fvaB0jrzFXq07bUpox03k6qOAJu.jpg\",\"release_date\":\"2021-06-21\",\"title\":\"Batman: The Long Halloween, Part One\",\"video\":false,\"vote_average\":7.5,\"vote_count\":487},{\"adult\":false,\"backdrop_path\":\"/m4UT6yKXhXgbzxpeV35L4jLoJoP.jpg\",\"genre_ids\":[28,878,12,35],\"id\":415,\"original_language\":\"en\",\"original_title\":\"Batman \\u0026 Robin\",\"overview\":\"Batman and Robin deal with relationship issues while preventing Mr. Freeze and Poison Ivy from attacking Gotham City.\",\"popularity\":33.6,\"poster_path\":\"/cGRDufDDSrFrv7VI4YnmWnslne0.jpg\",\"release_date\":\"1997-06-20\",\"title\":\"Batman \\u0026 Robin\",\"video\":false,\"vote_average\":4.3,\"vote_count\":4449},{\"adult\":false,\"backdrop_path\":\"/9Eh5xzWTpJeZM1FGCblWKZ8GTpw.jpg\",\"genre_ids\":[878,28,16,9648],\"id\":142061,\"original_language\":\"en\",\"original_title\":\"Batman: The Dark Knight Returns, Part 2\",\"overview\":\"Batman has stopped the reign of terror that The Mutants had cast upon his city.  Now an old foe wants a reunion and the government wants The Man of Steel to put a stop to Batman.\",\"popularity\":29.738,\"poster_path\":\"/arEZYd6uMOFTILne9Ux0A8qctMe.jpg\",\"release_date\":\"2013-01-03\",\"title\":\"Batman: The Dark Knight Returns, Part 2\",\"video\":false,\"vote_average\":7.971,\"vote_count\":1253},{\"adult\":false,\"backdrop_path\":\"/snlu32RmjldF9b068UURJg8sQtn.jpg\",\"genre_ids\":[28,80,14],\"id\":414,\"original_language\":\"en\",\"original_title\":\"Batman Forever\",\"overview\":\"Batman must battle a disfigured district attorney and a disgruntled former employee with help from an amorous psychologist and a young circus acrobat.\",\"popularity\":29.37,\"poster_path\":\"/mzzNBVwTiiY94xAXDMWJpNPW2US.jpg\",\"release_date\":\"1995-06-16\",\"title\":\"Batman Forever\",\"video\":false,\"vote_average\":5.4,\"vote_count\":4592},{\"adult\":false,\"backdrop_path\":\"/scNssnn5PN99fBODNzxF5qN4Iw8.jpg\",\"genre_ids\":[16,10751,28,878],\"id\":16234,\"original_language\":\"en\",\"original_title\":\"Batman Beyond: Return of the Joker\",\"overview\":\"The Joker is back with a vengeance, and Gotham's newest Dark Knight, Terry McGinnis, needs answers as he stands alone to face Gotham's most infamous Clown Prince of Crime.\",\"popularity\":22.773,\"poster_path\":\"/7RlBs0An83fqAuKfwH5gKMcqgMc.jpg\",\"release_date\":\"2000-12-12\",\"title\":\"Batman Beyond: Return of the Joker\",\"video\":false,\"vote_average\":7.312,\"vote_count\":979},{\"adult\":false,\"backdrop_path\":\"/1YaG52CwGY3pKh76OBlwX0ymncg.jpg\",\"genre_ids\":[878,28,16,9648],\"id\":123025,\"original_language\":\"en\",\"original_title\":\"Batman: The Dark Knight Returns, Part 1\",\"overview\":\"Batman has not been seen for ten years. A new breed of criminal ravages Gotham City, forcing 55-year-old Bruce Wayne back into the cape and cowl. But, does he still have what it takes to fight crime in a new era?\",\"popularity\":27.092,\"poster_path\":\"/kkjTbwV1Xnj8wBL52PjOcXzTbnb.jpg\",\"release_date\":\"2012-08-21\",\"title\":\"Batman: The Dark Knight Returns, Part 1\",\"video\":false,\"vote_average\":7.745,\"vote_count\":1367},{\"adult\":false,\"backdrop_path\":\"/jvRewPpawHAfBW38EzHoFdTVEez.jpg\",\"genre_ids\":[16,28,12,80,14],\"id\":732450,\"original_language\":\"en\",\"original_title\":\"Batman: Soul of the Dragon\",\"overview\":\"Bruce Wayne faces a deadly menace from his past, with the help of three former classmates: world-renowned martial artists Richard Dragon, Ben Turner and Lady Shiva.\",\"popularity\":22.711,\"poster_path\":\"/uDhnTtSxU5a8DtZdbbin3aZmkmU.jpg\",\"release_date\":\"2021-01-12\",\"title\":\"Batman: Soul of the Dragon\",\"video\":false,\"vote_average\":6.938,\"vote_count\":282}],\"total_pages\":8,\"total_results\":147}"
+        }
+      },
+      "recorded_at": "Fri, 24 Mar 2023 21:01:40 GMT"
     }
   ],
   "recorded_with": "VCR 6.1.0"

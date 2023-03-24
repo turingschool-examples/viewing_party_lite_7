@@ -26,9 +26,22 @@ RSpec.describe 'New Viewing Party Page' do
       VCR.use_cassette(:create_party, serialize_with: :json) do
         click_on 'Create Party'
       end
+
+      expect(page).to have_content("Party has been Created!")
       expect(current_path).to eq("/users/#{@user.id}")
       expect(ViewingPartyUser.last).to eq(ViewingPartyUser.find_by(user_id: @user3.id, viewing_party_id: ViewingParty.last.id))
       expect(ViewingPartyUser.find_by(user_id: @user2.id, viewing_party_id: ViewingParty.last.id)).to eq(nil)
+    end
+
+    it 'If I do not fill out the form and try to submit, I should stay on the create page' do
+      fill_in 'Duration of Party', with: nil
+      fill_in 'When', with: nil
+      fill_in 'Start Time', with: nil
+      
+      VCR.use_cassette(:create_party, serialize_with: :json) do
+        click_on 'Create Party'
+      end
+      expect(current_path).to eq("/users/#{@user.id}/movies/238/viewing-party/new")
     end
   end
 end

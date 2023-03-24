@@ -38,7 +38,6 @@ RSpec.describe 'User Discover' do
         fill_in :keyword, with: 'The Godfather'
         click_button 'Search'
       end
-
       expect(current_path).to eq("/users/#{@user1.id}/movies")
     end
   end

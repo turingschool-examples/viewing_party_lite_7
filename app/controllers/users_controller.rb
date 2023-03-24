@@ -6,10 +6,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:notice] = "#{@user.name} has been Created!"
+      flash[:notice] = "#{@user.name} has been created!"
       redirect_to user_path(@user)
     else
-      render :new
+      flash[:notice] = "Cannot create! Please fill out all fields"
+      redirect_to register_path
     end
   end
 
