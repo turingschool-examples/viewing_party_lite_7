@@ -8,13 +8,13 @@ RSpec.describe 'User Story 12' do
     @friend_3 = create(:user)
 
     VCR.insert_cassette(:batman_doom, serialize_with: :json)
-    # visit /users/:user_id/movies/:movid_id/viewing-party/new, where :user_id is a valid user's id)
+
     visit new_user_movie_viewing_party_path(@user, 1003579)
   end
 
   describe "New Viewing Party Page" do
     describe "happy path" do
-      xit "shows the name of the movie title" do
+      it "shows the name of the movie title" do
         expect(page).to have_content("Batman: The Doom That Came to Gotham")
       end
 
