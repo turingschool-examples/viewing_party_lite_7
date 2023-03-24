@@ -21,6 +21,7 @@ class MovieFacade
 
   def movie_cast
     json = service.movie_cast(@movie_id)
+    json[:cast][0..9]
   end
 
   def movie_reviews
@@ -29,7 +30,7 @@ class MovieFacade
 
   def combine
     movie_hash = movie_info
-    movie_hash[:cast] = movie_cast[:cast][0..9]
+    # movie_hash[:cast] = movie_cast[:cast][0..9]
     
     reviews = movie_reviews[:results].map do |review|
       h = Hash.new

@@ -31,7 +31,7 @@ RSpec.describe MovieFacade do
       @result = @facade.movie_cast
     end
 
-    expect(@result).to be_instance_of(Hash)
+    expect(@result).to be_instance_of(Array)
   end
 
   it "can find a movie's reviews" do
@@ -48,7 +48,7 @@ RSpec.describe MovieFacade do
     end
 
     expect(@result).to be_instance_of(Hash)
-    expect(@result.keys).to include(:title, :id, :vote_average, :runtime, :genres, :overview, :cast, :reviews)
+    expect(@result.keys).to include(:title, :id, :vote_average, :runtime, :genres, :overview, :reviews)
   end
 
   it "can create a new movie object with all of the combined information" do

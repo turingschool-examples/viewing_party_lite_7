@@ -65,10 +65,27 @@ RSpec.describe "Details Page", type: :feature do
       end
     end
 
-    it "shows the first 10 cast members of the movie" 
+    it "shows the first 10 cast members of the movie" do
+      within "#cast-info" do
+        expect(page).to have_content("Cast:")
+        expect(page).to have_content("Starring: Marlon Brando")
+        expect(page).to have_content("as: Don Vito Corleone")
+      end
+    end
+    
+    it "shows the count of total reviews of the movie" do
+      within "#movie-info" do
+        expect(page).to have_content("Movie Review Count: 2")
+      end
+    end
 
-    it "shows the count of total reviews of the movie"
-
-    it "shows each review's author and information"
+    it "shows each review's author and information" do
+      within "#movie-info" do
+        expect(page).to have_content("Author: futuretv")
+        expect(page).to have_content("Review: The Godfather Review by Al Carlson")
+        expect(page).to have_content("Created at: 2014-04-10T20:09:40.500Z")
+        expect(page).to have_content("Author: crastana")
+      end
+    end
   end
 end

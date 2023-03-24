@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.themoviedb.org/3/search/movie?api_key=86f361cca6ee286354949e22ca339323&include_adult=false&language=en-US&page=1&query=tobacco%20and%20worms%20for%20breakfast
+    uri: https://api.themoviedb.org/3/search/movie?api_key=ebf46d9ab88b772502128d76538d0071&include_adult=false&language=en-US&page=1&query=tobacco%20and%20worms%20for%20breakfast
     body:
       encoding: US-ASCII
       string: ''
@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 23 Mar 2023 22:41:17 GMT
+      - Fri, 24 Mar 2023 03:05:11 GMT
       Server:
       - openresty
       Cache-Control:
@@ -35,9 +35,9 @@ http_interactions:
       X-Memc-Key:
       - e8f74523ba1336403ef7e1271e72aabe
       X-Memc-Age:
-      - '2627'
+      - '18461'
       X-Memc-Expires:
-      - '18973'
+      - '3139'
       Etag:
       - W/"0e23279b004381f72a34159d5c7dfd1f"
       Vary:
@@ -46,17 +46,17 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 1c80fe425edf82026702c486fb324fd0.cloudfront.net (CloudFront)
+      - 1.1 245a020638face38af61dc9391848c6e.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN52-P2
+      - ORD53-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - UEmgo5TlrdzkfyP97iFtBSg6d2xCUzKdRuJpTvsGnSggF02WDWtSAw==
+      - KaSANmC9VyIq0jxwJYfAijnycpYqqOXavJiNbIqvZOgpHIfbSF7HQA==
       Age:
-      - '5058'
+      - '98'
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[],"total_pages":1,"total_results":0}'
-  recorded_at: Fri, 24 Mar 2023 00:05:34 GMT
+  recorded_at: Fri, 24 Mar 2023 03:06:49 GMT
 recorded_with: VCR 6.1.0
