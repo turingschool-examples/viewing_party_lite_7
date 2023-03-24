@@ -1,0 +1,20 @@
+<h3><%= @movie.title %></h3>
+<%=button_to "Return to Discover Page", user_discover_index_path(@user), method: :get %>
+<%= button_to "Create Viewing Party for #{@movie.title}", new_user_movie_viewing_party_path(@user, @movie), method: :get %>
+<p>Vote: <%= @movie.vote_average %></p>
+<h3>Runtime: <%= "#{@movie.runtime/60}hr #{@movie.runtime % 60}min" %> </h3>
+<h3>Genre:</h3> 
+  <% @movie.genres.each do |genre| %>
+    <p><%= genre[:name] %></p>
+  <% end %>
+<p>Summary: <%= @movie.summary %></p>
+
+<p>Cast:</p> 
+  <% @movie.cast.each do |actor, character| %>
+    <p> <%= actor %>: <%= character %></p>
+  <% end %>
+<p><%= @movie.review_count%> Reviews</p>
+
+<% @movie.reviews.each do |author, review| %>
+  <p><%= author %>: <%= review %></p>
+<% end %>

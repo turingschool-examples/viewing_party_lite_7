@@ -7,4 +7,9 @@ class MoviesController < ApplicationController
       @top_movies = MovieFacade.new.pop_movies
     end
   end
+
+  def show
+    @user = User.find(params[:user_id])
+    @movie = MovieFacade.new.all_movie_info(params[:id])
+  end
 end
