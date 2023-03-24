@@ -1,0 +1,19 @@
+<%= link_to "Back", "/users/#{@user.id}/discover" %>
+
+<h1>Top Rated Movies</h1>
+<% if @top_movies %>
+  <% @top_movies.each.with_index(1) do |film, index| %>
+    <div id="top_rated-<%= index %>">
+      <p><%= link_to "#{film.title}", "/users/#{@user.id}/movies/#{film.id}" %></p>
+      <p><%= film.vote_average %></p>
+    </div>
+  <% end %>
+<% end %>
+<% if @search_results %>
+  <% @search_results.each.with_index(1) do |film, index| %>
+    <div id="search_results-<%= index %>">
+      <p><%= link_to "#{film.title}", "/users/#{@user.id}/movies/#{film.id}"%></p>
+      <p><%= film.vote_average %></p>
+    </div>
+  <% end %>
+<% end %>
