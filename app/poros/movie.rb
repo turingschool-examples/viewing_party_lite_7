@@ -6,6 +6,7 @@ class Movie
               :runtime,
               :genres,
               :summary,
+              :poster,
               :id
 
   def initialize(attributes)
@@ -18,6 +19,7 @@ class Movie
       end
     end
     @summary = attributes[:overview]
+    @poster = attributes[:poster_path]
     @id = attributes[:id]
   end
 end

@@ -8,4 +8,10 @@ class ViewingParty < ApplicationRecord
   validates :movie_id, presence: true
   validates :date, presence: true
   validates :time, presence: true
+
+  def host
+    host = User.find(viewing_party_users.where(host: "true").first.user_id)
+    # binding.pry
+    host.name
+  end
 end
