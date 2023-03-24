@@ -10,6 +10,7 @@
     <p>Movie Title: <%= link_to party.viewing_party_movie.title, user_movie_path(@facade.user.id, party.movie_id) %></p>
     <p>Date: <%=party.party_date.strftime("%A, %B %d, %Y") %> </p> 
     <p>Starting At: <%=party.start_time.strftime("%l:%M%P")%></p>
+    <p>Host:<strong> <%= @facade.user.name %></p> </strong>
     <br>
   </div>
   <%end%>
@@ -21,6 +22,8 @@
     <p>Movie Title: <%= link_to party.viewing_party_movie.title, user_movie_path(@facade.user.id, party.movie_id) %></p>
     <p>Date: <%=party.party_date.strftime("%A, %B %d, %Y") %> </p> 
     <p>Starting At: <%=party.start_time.strftime("%l:%M%P")%></p>
+    <p>Host: </p>
+    <p>Attendees:</p>
     <br>
   </div>
   <%end%>

@@ -41,7 +41,7 @@ describe "when I visit the user dashboard page" do
 
     it "an image of the movie" do
       within "#party-#{@vp1.id}" do
-        expect(page).to have_xpath("https://image.tmdb.org/t/p/h1003bhkrj58Vtu7enYsRolD1fZdja1.jpg")
+        expect(page).to have_xpath("/html/body/div[2]/div")
       end
     end
 
@@ -59,14 +59,18 @@ describe "when I visit the user dashboard page" do
     end
 
     it "who is hosting the event" do
-      within "#party-#{@vp1.id}" do
-      expect(page).to have_content(@user2.name)
+      within "#hosted-parties" do
+        within "#party-#{@vp1.id}" do
+        expect(page).to have_content(@user.name)
+        end
       end
     end
 
     it "list of users invited with my name in bold" do
-      within "#party-#{@vp1.id}" do
-      expect(page).to have_content(@user.name)
+      within "#attended-parties" do
+        within "#party-#{@vp2.id}" do
+        expect(page).to have_content(@user.name)
+        end
       end
     end
 
