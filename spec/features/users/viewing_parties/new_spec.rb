@@ -1,29 +1,79 @@
 require 'rails_helper'
 
-RSpec.describe "/users/:user_id/movies/:movid_id/viewing_party/new" do
+RSpec.describe "/users/:id/movies/:movie_id/viewing_party/new" do
   describe "as a user, when I visit the new viewing party page" do
     before :each do
       PartyUser.delete_all
       Party.delete_all
       User.delete_all
     
-      @user1 = create!(name: "", email: "captain@uss-enterprise.com")
-      @user2 = create(:user)
-      @user3 = create(:user)
-      @user4 = create(:user)
+      @user1 = User.new(id: 1,
+                        name: "Gideon Nav", 
+                        email: "cav-life@ninth.net")
+      @user2 = User.new(id: 2,
+                        name: "Harrowhark Nonagesimus", 
+                        email: "revdaughter@ninth.net")
+      @user3 = User.new(id: 3,
+                        name: "Ianthe Tridentarius", 
+                        email: "archenemy@third.com")
+      @user4 = User.new(id: 4,
+                        name: "Coronabeth Tridentarius", 
+                        email: "goldenchild@third.com")
     
-      movie_response = File.read("spec/fixtures/moviedb/space_odyssey.json")
+      @movie_response = File.read("spec/fixtures/moviedb/space_odyssey.json")
       stub_request(:get, "https://api.themoviedb.org/3/movie/62?api_key=#{ENV["TMDB_API_KEY"]}")
-        .to_return(status: 200, body: movie_response, headers: {})
+        .to_return(status: 200, body: @movie_response, headers: {})
+        
+      # movie_hash = (:movie => @movie_response)
+      facade = MoviedbFacade.new(movie_id: 62).find_movie_info
+      @movie = Movie.new(movie: facade)
+      # binding.pry
+      # @movie = Movie.new(movie: @movie_response)
+      # @movie = Movie.new(JSON.parse(@movie_response, symbolize_names: true)) #doesn't pull hash with :movie as a key
+      # @movie = Movie.new(JSON.parse(movie: @movie_response, symbolize_names: true))
     
-      @movie = Movie.new(JSON.parse, symbolize_names: true)
-    
-      visit "/users/#{@user1.id}/movies/#{@movie.id}/viewing_party/new"
+      visit "/users/#{@user1.id}/movies/62/viewing_party/new"
+      # save_and_open_page
+      # binding.pry
     end
     
-    describe "I should see the name of the movie title rendered above a form" do
+    describe "should render a create page" do
       it "has the following fields" do
-        expect(page).to have_content("2001: A Space Odyssey")
+        binding.pry
+        expect(page).to have_content("Viewing Party")
+        expect(page).to have_content("Create a Movie Party for 2001: A Space Odyssey")
+        expect(page).to have_button("Discover Page")
+        
+        expect(page).to have_content("Movie Title")
+        expect(page).to have_content(@movie.title)
+        
+        expect(page).to have_field("Duration of Party", with: @movie.runtime)
+        expect(page).to have_field("Day")
+        expect(page).to have_field("Start Time")
+        
+        expect(page).to have_field("Invite Other Users")
+        
+        expect(page).to have_unchecked_field("revdaughter@ninth.net")
+        expect(page).to have_unchecked_field("archenemy@third.com")
+        expect(page).to have_unchecked_field("goldenchild@third.com")
+        
+        expect(page).to have_button("Create Party")
+      end
+      
+      it "discover page link goes to the discover page" do
+        click_button("Discover Page")
+        
+        expect(current_path).to eq("/users/#{@user1.id}/discover")
+      end
+      
+      it "can create a new viewing party" do
+        fill_in("Duration of Party", with: 160)
+        fill_in("Day", with: Date.today)
+        fill_in("Start Time", with: Time.now + 2.hours)
+        
+        check(@user2.name)
+        
+        click_button("Create Party")
       end
     end
   end

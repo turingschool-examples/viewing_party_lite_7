@@ -7,7 +7,7 @@ RSpec.describe Movie do
         id: 55,
         title: "Interstellar",
         vote_average: 9.0,
-        runtime: 180,
+        runtime: 185,
         overview: "Man goes to space, chaos ensues",
         genres: [{id: 1, name: "Drama"}, {id: 2, name: "Science Fiction"}]
         },
@@ -22,7 +22,7 @@ RSpec.describe Movie do
     expect(movie.movie_id).to eq(55)
     expect(movie.title).to eq("Interstellar")
     expect(movie.vote_avg).to eq(9.0)
-    expect(movie.runtime).to eq(180)
+    expect(movie.runtime).to eq(185)
     expect(movie.summary).to eq("Man goes to space, chaos ensues")
     expect(movie.genres).to eq([{id: 1, name: "Drama"}, {id: 2, name: "Science Fiction"}])
     expect(movie.cast).to eq([{:actor=>"You", :character=>"Dr. Pilot"}, {:actor=>"Me", :character=>"Dr. Engineer"}])
@@ -37,7 +37,14 @@ RSpec.describe Movie do
     expect(movie.review_count).to eq(3)
   end
 
-  # it "#list_genres" do
-  #   expect(movie.list_genres).to eq(["Drama", "Science Fiction"])
-  # end
+  # This was not needed because it could be considered view logic
+  # did this function in the movies show view page
+    # it "#format_runtime" do
+    #   expect(movie.format_runtime).to eq("3 hrs 5 mins")
+    # end
+
+  # Same reason as above, this was not needed: 
+    # it "#list_genres" do
+    #   expect(movie.list_genres).to eq(["Drama", "Science Fiction"])
+    # end
 end

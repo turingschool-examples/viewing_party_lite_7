@@ -9,6 +9,7 @@ class Movie
               :reviews
   
   def initialize(response)
+    # binding.pry
     @movie_id = response[:movie][:id]
     @title = response[:movie][:title]
     @vote_avg = response[:movie][:vote_average]
@@ -24,10 +25,4 @@ class Movie
   def review_count
     reviews.size
   end
-  
-  # def list_genres
-  #   genres.map do |g|
-  #     g[:name]
-  #   end
-  # end
 end
