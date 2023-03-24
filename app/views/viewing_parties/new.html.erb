@@ -10,14 +10,10 @@
   <p><%= form.label :time, "Start Time" %></p>
   <p><%= form.time_field :time %></p>
 
-  <p><%= form.hidden_field :movie_id, value: @facade.movie_details.id %></p>
+  <p><%= form.label :users, "Invite Other Users" %></p>
+  <p><%= form.collection_check_boxes :user_ids, @other_users, :id, :name %></p>
 
-  <p><% @other_users.each do |user| %>
-      <div>
-        <%= form.check_box :user_ids, { multiple: true, disabled: false }, user.id, nil %>
-        <%= user.name %>
-      </div>
-    <% end %></p>
+  <p><%= form.hidden_field :movie_id, value: @facade.movie_details.id %></p>
 
   <p><%= form.submit "Create Party" %></p>
 <% end %>
