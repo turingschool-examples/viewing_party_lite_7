@@ -20,7 +20,7 @@ RSpec.describe type: :feature do
 
         fill_in "title", with: "God"
         click_button "Find Movies"
-        
+
         expect(current_path).to eq(user_movies_path(zoidberg))
         expect(page).to have_content("Title", count: 20)
       end
