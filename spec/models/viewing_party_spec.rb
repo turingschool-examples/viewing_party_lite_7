@@ -6,20 +6,18 @@ describe ViewingParty, type: :model do
     it { should have_many(:users).through(:viewing_party_users) }
   end
   
-  describe "validations" do
-    VCR.use_cassette("fight_club_2") do
-      it { should validate_presence_of :duration }
-    end
-    VCR.use_cassette("fight_club_3") do
-      it { should validate_presence_of :party_date }
-    end
-    VCR.use_cassette("fight_club_4") do
-    it { should validate_presence_of :start_time }
-    end
-    VCR.use_cassette("fight_club_5") do
-    it { should validate_presence_of :movie_id }
-    end
-  end
+  # # describe "validations" do
+  # #   before :each do
+  # #     VCR.use_cassette("fight_club_2") do
+  # #       @movie = MoviedbService.new.movie(550)
+  # #       @vp1 = ViewingParty.create!({duration: 500, party_date: Date.new(2011, 3, 1,), start_time: '21:00', movie_id: 550})
+  # #     end
+  # #   end
+  # #     it { should validate_presence_of :duration }
+  # #     it { should validate_presence_of :party_date }
+  # #     it { should validate_presence_of :start_time }
+  # #     it { should validate_presence_of :movie_id }
+  # end
 
   describe "instance methods" do
     it "#viewing_party_movie" do

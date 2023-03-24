@@ -30,18 +30,18 @@ describe "when I visit the user dashboard page" do
       expect(page).to have_current_path("/users/#{@user.id}/discover")
     end
 
-    it "a section that lists viewing parties" do
-      within "#viewing-parties" do
+    it "a section that lists hosted parties" do
+      within "#hosted-parties" do
         expect(page).to have_content(@vp1.start_time.strftime("%l:%M%P"))
         expect(page).to have_content(@vp2.start_time.strftime("%l:%M%P"))
         expect(page).to have_content(@vp3.start_time.strftime("%l:%M%P"))
-        expect(page).to have_content(@vp1.party_date)
+        expect(page).to have_content(@vp1.party_date.strftime("%A, %B %d, %Y"))
       end
     end
 
     it "an image of the movie" do
       within "#party-#{@vp1.id}" do
-        expect(page).to have_xpath("/3bhkrj58Vtu7enYsRolD1fZdja1.jpg")
+        expect(page).to have_xpath("https://image.tmdb.org/t/p/h1003bhkrj58Vtu7enYsRolD1fZdja1.jpg")
       end
     end
 
@@ -53,7 +53,7 @@ describe "when I visit the user dashboard page" do
 
     it "date and time of event" do
       within "#party-#{@vp1.id}" do
-      expect(page).to have_content(@vp1.party_date)
+      expect(page).to have_content(@vp1.party_date.strftime("%A, %B %d, %Y"))
       expect(page).to have_content(@vp1.start_time.strftime("%l:%M%P"))
       end
     end
@@ -67,6 +67,14 @@ describe "when I visit the user dashboard page" do
     it "list of users invited with my name in bold" do
       within "#party-#{@vp1.id}" do
       expect(page).to have_content(@user.name)
+      end
+    end
+
+    it "a section that lists attended parties" do
+      within "#attended-parties" do
+        expect(page).to have_content(@vp2.start_time.strftime("%l:%M%P"))
+        expect(page).to have_content(@vp2.start_time.strftime("%l:%M%P"))
+        expect(page).to have_content(@vp2.party_date.strftime("%A, %B %d, %Y"))
       end
     end
   end
