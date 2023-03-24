@@ -11,7 +11,6 @@ class ViewingParty < ApplicationRecord
 
   def host
     host = User.find(viewing_party_users.where(host: "true").first.user_id)
-    # binding.pry
     host.name
   end
 
