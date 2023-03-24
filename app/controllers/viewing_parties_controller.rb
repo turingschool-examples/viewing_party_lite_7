@@ -10,7 +10,7 @@ class ViewingPartiesController < ApplicationController
     @user = User.find(params[:user_id])
     viewing_party = ViewingParty.new(party_params)
     
-    if viewing_party.save && params[:duration] > params[:movie_runtime]
+    if viewing_party.save && params[:duration] >= params[:movie_runtime]
       ViewingPartyUser.create!(user: @user, viewing_party: viewing_party, host: true)
       params[:user_ids].each do |id|
         ViewingPartyUser.create!(user: User.find(id), viewing_party: viewing_party) unless id == "" 
