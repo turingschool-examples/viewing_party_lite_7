@@ -16,6 +16,7 @@
   <p><%= form.hidden_field :movie_id, value: @facade.movie_details.id %></p>
   <p><%= form.hidden_field :movie_title, value: @facade.movie_details.title %></p>
   <p><%= form.hidden_field :movie_poster, value: @facade.movie_details.poster %></p>
+  <p><%= form.hidden_field :movie_runtime, value: @facade.movie_details.runtime %></p>
 
   <p><%= form.submit "Create Party" %></p>
 <% end %>
