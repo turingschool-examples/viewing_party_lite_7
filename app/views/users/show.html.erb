@@ -2,10 +2,18 @@
 <br>
 <br>
 <%= link_to "Discover Movies", "/users/#{@user.id}/discover" %>
-<% @viewing_parties.each do |party| %> 
-  <div id="party<%= party.id%>">
-  <%= party.movie_id %><br>
-  <%= party.party_date %><br>
-  <%= party.party_time.strftime("%I:%M:%S") %><br>
-  <% end %><br><br>
-  </div>
+
+<% @parties_info.each do |info| %>
+<div id="party-<%= info[:movie_id] %>">
+  <p><img src=<%= "#{info[:image]}"%>></p>
+  <p><%= link_to "#{info[:title]}", "/users/#{@user.id}/movies/#{info[:movie_id]}" %></p>
+  <p>Date: <%= info[:date].strftime("%B %d, %Y") %></p>
+  <p>Time: <%= info[:time].strftime("%I:%M%p") %></p>
+  <p>Host: </p>
+          <b> &emsp; <%= info[:host] %></b>
+          <div id="attendees-<%= info[:movie_id] %>">
+            <p>Attendees: <% info[:attendees].each do |attendee| %></p>
+            <p> &emsp; <%= attendee.name %></p>
+          <% end %> 
+</div>
+<% end %>
