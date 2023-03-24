@@ -37,11 +37,14 @@ RSpec.describe Movie do
     expect(movie.review_count).to eq(3)
   end
 
-  it "#format_runtime" do
-    expect(movie.format_runtime).to eq("3 hrs 5 mins")
-  end
+  # This was not needed because it could be considered view logic
+  # did this function in the movies show view page
+    # it "#format_runtime" do
+    #   expect(movie.format_runtime).to eq("3 hrs 5 mins")
+    # end
 
-  # it "#list_genres" do
-  #   expect(movie.list_genres).to eq(["Drama", "Science Fiction"])
-  # end
+  # Same reason as above, this was not needed: 
+    # it "#list_genres" do
+    #   expect(movie.list_genres).to eq(["Drama", "Science Fiction"])
+    # end
 end

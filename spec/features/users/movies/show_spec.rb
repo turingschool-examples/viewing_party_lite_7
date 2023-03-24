@@ -27,7 +27,7 @@ RSpec.describe "/users/:user_id/movies/:movie_id" do
       expect(page).to have_button("Discover Page")
       expect(page).to have_button("Create Viewing Party for 2001: A Space Odyssey")
       expect(page).to have_content("Vote: 8.083")
-      expect(page).to have_content("Runtime: 149 minutes")
+      expect(page).to have_content("Runtime: 2 hrs 29 mins")
       expect(page).to have_content("Genre:")
       expect(page).to have_content("Science Fiction")
       expect(page).to have_content("Mystery")

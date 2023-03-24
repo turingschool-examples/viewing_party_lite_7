@@ -7,7 +7,7 @@
     <br>
   <p>Vote: <%= @the_movie.vote_avg %></p> 
     <br>
-  <p>Runtime: <%= @the_movie.runtime %> minutes</p> 
+  <p>Runtime: <%= (@the_movie.runtime / 60) %> hrs <%= (@the_movie.runtime % 60) %> mins</p>
     <br>
   <p>Genre:</p> 
     <% @the_movie.genres.each do |genre_hash|%>
