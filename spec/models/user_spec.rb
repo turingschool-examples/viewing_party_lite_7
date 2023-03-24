@@ -4,10 +4,10 @@ RSpec.describe User, type: :model do
   let!(:andra) { User.create!(name: "Andra", email: "andra@turing.edu") }
   let!(:hady) { User.create!(name: "Hady", email: "hady@turing.edu") }
 
-  let!(:halloween) { Party.create!(name: "Halloween Party", user_id: andra.id, party_date: "10/31/2023", party_time: "10:30", duration: 123) }
-  let!(:girls_night) { Party.create!(name: "Girl's Night", user_id: hady.id, party_date: "01/01/2023", party_time: "02:00", duration: 210) }
-  let!(:eighties) { Party.create!(name: "Eighties Themed", user_id: hady.id, party_date: "01/01/2023", party_time: "02:00", duration: 210) }
-  let!(:other) { Party.create!(name: "Other", user_id: hady.id, party_date: "01/01/2023", party_time: "02:00", duration: 210) }
+  let!(:halloween) { Party.create!(name: "Halloween Party", user_id: andra.id, party_date: "2023/10/31", party_time: "10:30", duration: 123) }
+  let!(:girls_night) { Party.create!(name: "Girl's Night", user_id: hady.id, party_date: "2023/10/31", party_time: "02:00", duration: 210) }
+  let!(:eighties) { Party.create!(name: "Eighties Themed", user_id: hady.id, party_date: "2023/10/31", party_time: "02:00", duration: 210) }
+  let!(:other) { Party.create!(name: "Other", user_id: hady.id, party_date: "2023/10/31", party_time: "02:00", duration: 210) }
 
   let!(:usp1) { UserParty.create!(user_id: andra.id, party_id: halloween.id, invite_status: 0) }
   let!(:usp2) { UserParty.create!(user_id: andra.id, party_id: girls_night.id, invite_status: 0) }

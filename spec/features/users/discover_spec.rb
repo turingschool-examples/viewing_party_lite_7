@@ -5,10 +5,10 @@ RSpec.describe "User Discovery Page", type: :feature do
   @andra = User.create!(name: "Andra", email: "andra@turing.edu")
   @hady = User.create!(name: "Hady", email: "hady@turing.edu") 
 
-  @halloween = Party.create!(name: "Halloween Party", user_id: @hady.id, movie_id: 1, party_date: "10/31/2023", party_time: "10:30", duration: 123) 
-  @girls_night = Party.create!(name: "Girl's Night", user_id: @hady.id, movie_id: 2, party_date: "01/01/2023", party_time: "02:00", duration: 210) 
-  @eighties = Party.create!(name: "Eighties Themed", user_id: @hady.id, movie_id: 3, party_date: "01/01/2023", party_time: "02:00", duration: 210) 
-  @other = Party.create!(name: "Other", user_id: @hady.id, movie_id: 4, party_date: "01/01/2023", party_time: "02:00", duration: 210) 
+  @halloween = Party.create!(name: "Halloween Party", user_id: @hady.id, movie_id: 1, party_date: "2023/10/31", party_time: "10:30", duration: 123) 
+  @girls_night = Party.create!(name: "Girl's Night", user_id: @hady.id, movie_id: 2, party_date: "2023/10/31", party_time: "02:00", duration: 210) 
+  @eighties = Party.create!(name: "Eighties Themed", user_id: @hady.id, movie_id: 3, party_date: "2023/10/31", party_time: "02:00", duration: 210) 
+  @other = Party.create!(name: "Other", user_id: @hady.id, movie_id: 4, party_date: "2023/10/31", party_time: "02:00", duration: 210) 
 
   @usp1 = UserParty.create!(user_id: @andra.id, party_id: @halloween.id) 
   @usp2 = UserParty.create!(user_id: @andra.id, party_id: @girls_night.id) 
