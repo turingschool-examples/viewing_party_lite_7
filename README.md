@@ -15,7 +15,7 @@ This project is built using Ruby on Rails and follows MVC architecture. The data
 
 ## Getting Started
 
-To view the current deployed version of this app, click here
+To view the current deployed version of this app, [click here](https://viewingparty.herokuapp.com/)
 
 To run this app on your local machine, follow these steps:
 
