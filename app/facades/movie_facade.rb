@@ -15,14 +15,14 @@ class MovieFacade
 
   def movie_details
     movie = MovieService.movie_details(@movie_id)
-    require 'pry'; binding.pry
+   
     Movie.new(movie)
   end
 
   def cast_members
     cast = MovieService.movie_cast(@movie_id)
 
-    x = cast[:cast].first(10).map do |cast_member|
+    cast[:cast].first(10).map do |cast_member|
       CastMember.new(cast_member)
     end
   end

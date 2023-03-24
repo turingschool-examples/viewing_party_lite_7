@@ -1,4 +1,6 @@
-<h1><%= @facade.movie_details.title %></h1>
+<span><h1><%= @facade.movie_details.title %></h1></span>
+<span><%= button_to "Create A Viewing Party for #{@facade.movie_details.title}", "/users/#{@user.id}/movies/#{@facade.movie_details.id}/viewing-party/new", method: :get %></span>
+<span><%= button_to "Discover Page", user_discover_path(@user), method: :get %></span>
 <%= @facade.movie_details.runtime %><br>
 <%= @facade.movie_details.vote_average %><br>
 Genres:
@@ -17,3 +19,4 @@ Reviews:
   <%= "Author: #{review.author}" %><br>
   <%= review.content %><br><br>
 <% end %>
+ 

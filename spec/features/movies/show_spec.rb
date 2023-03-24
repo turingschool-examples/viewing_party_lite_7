@@ -25,5 +25,19 @@ RSpec.describe "New User Registration Page" do
         expect(page).to have_css(".cast_member", count: 10)
       end
     end
+
+    describe 'I should see buttons to create a viewing party and to return to the Discover page' do
+      it 'should have a button that takes me to a form to create a new viewing party' do
+        click_button "Create A Viewing Party for The Godfather"
+        
+        expect(current_path).to eq("/users/#{@user.id}/movies/238/viewing-party/new")
+      end
+
+      it 'should have a button that takes me back to the discover page' do
+        click_button "Discover Page"
+
+        expect(current_path).to eq(user_discover_path(@user))
+      end
+    end
   end
 end
