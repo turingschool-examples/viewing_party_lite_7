@@ -55,5 +55,29 @@ RSpec.describe 'movies show page' do
   it 'has the first 10 actors in the cast' do
     visit "/users/#{@user_1.id}/movies/#{@movie.id}"
 
+    within '#actors' do
+      expect(page).to have_content('Marlon Brando')
+      expect(page).to have_content('Al Pacino')
+      expect(page).to have_content('James Caan')
+      expect(page).to have_content('Robert Duvall')
+      expect(page).to have_content('Richard S. Castellano')
+      expect(page).to have_content('Diane Keaton')
+      expect(page).to have_content('Talia Shire')
+      expect(page).to have_content('Gianni Russo')
+      expect(page).to have_content('Sterling Hayden')
+      expect(page).to have_content('Al Lettieri')
+    end
+
+    expect(page).to_not have_content('Abe Vigoda')
+  end
+
+  it 'it has the total count of reviews' do
+    visit "/users/#{@user_1.id}/movies/#{@movie.id}"
+
+    
+  end
+
+  it 'it has every author of each review' do
+
   end
 end
