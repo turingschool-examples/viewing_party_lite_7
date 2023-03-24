@@ -50,7 +50,7 @@ RSpec.describe "User Registration", type: :feature do
       end
 
       it "I will see my viewing parties details, details of viewing parties I am invited to, and the movie title and img" do
-        save_and_open_page
+        
         within "#party-#{@my_party.id}" do
           expect(page).to have_css("img")
           expect(page).to have_link("Fight Club")
