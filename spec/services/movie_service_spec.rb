@@ -12,10 +12,8 @@ RSpec.describe MovieService  do
         movie_data = top_movies[:results].first
 
         expect(movie_data).to have_key(:title)
-        # expect(movie_data[:title]).to be_a(String)
 
         expect(movie_data).to have_key(:vote_average)
-        # expect(movie_data[:vote_average]).to be_a(Float)
       end
     end
 
@@ -29,10 +27,8 @@ RSpec.describe MovieService  do
         movie_data = search_results[:results].first
 
         expect(movie_data).to have_key(:title)
-        # expect(movie_data[:title]).to be_a(String)
 
         expect(movie_data).to have_key(:vote_average)
-        # expect(movie_data[:vote_average]).to be_a(Float)
       end
     end
 
@@ -55,7 +51,6 @@ RSpec.describe MovieService  do
         expect(cast_details).to have_key(:cast)
         expect(cast_details[:cast].first).to have_key(:name)
         expect(cast_details[:cast].first).to have_key(:character)
-        # require 'pry'; binding.pry
       end
     end
 

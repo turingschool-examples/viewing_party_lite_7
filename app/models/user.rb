@@ -6,13 +6,11 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates_uniqueness_of :email
 
-   def hosted_parties(user_id)
-    Party.where(':host_id = ?', user_id)
-  end
+  # def hosted_parties(user_id)
+  # Party.where(':host_id = ?', user_id)
+  # end
   
   # def invited_parties
-  #   require 'pry'; binding.pry
   #   Party.all.users.where("")
-      
   # end
 end
