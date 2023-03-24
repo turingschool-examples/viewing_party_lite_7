@@ -41,6 +41,7 @@ class MovieFacade
       h
     end
     movie_hash[:reviews] = reviews
+    movie_hash[:cast] = movie_cast
 
     movie_hash
   end
