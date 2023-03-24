@@ -5,6 +5,7 @@ class ViewingPartyUser < ApplicationRecord
   validates_inclusion_of :host, in: [true, false]
 
   def host_user
+    require 'pry'; binding.pry
     user.viewing_parties.where("host = true")
     user.name
   end

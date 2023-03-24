@@ -1,14 +1,24 @@
 <h1>Create a New Viewing Party for <%=@facade.movie.title%></h1>
-<%=form_with model: @facade.new_viewing_party, local: true, url: user_movie_viewing_party_index_path(@facade.user, @facade.movie) do |form|%>
+<%=form_with model: @facade.new_viewing_party, local: true, url: user_movie_viewing_party_index_path(@facade.user, @facade.movie.id) do |form|%>
+    <%=form.label :movie_id%>
+    <%=form.hidden_field :movie_id, value:@facade.movie.id %>
+
   <%=form.label :duration%>
   <%=form.text_field :duration, value:@facade.movie.runtime %>
 
-  <p>Party Date: <%=form.date_select("date", start_year: Date.today.year, date_separator: "-")%>
-  <p>Start Time: <%=form.time_select("start_time")%>
+  <p>Party Date: <%=form.date_select("party_date", start_year: Date.today.year, date_separator: "-")%></p>
+  <p>Start Time: <%=form.time_select("start_time")%></p>
   <br>
   <br>
-  <%=form.label "#{@facade.user.name}"%>
-  <%=form.check_box "#{@facade.user.name}" %>
-
+  <% @facade.users.each do |user| %>
+      <%# <%= check_box_tag user.name, user.id %> 
+      <div id="<%=user.id%>">
+        <%= check_box_tag 'user_ids[]', user.id%>
+        <%= h user.name %>
+      </div>
+      <br>
+  <% end %>
+  <br>
+  <%=form.submit "Create Viewing Party"%>
 
 <%end%>

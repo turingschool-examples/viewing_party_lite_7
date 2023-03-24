@@ -19,4 +19,8 @@ class ViewingPartyFacade
   def new_viewing_party
     @user.viewing_parties.new
   end
+
+  def users
+    User.where("id != #{@user.id}")
+  end
 end

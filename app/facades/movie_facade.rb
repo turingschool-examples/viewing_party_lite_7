@@ -3,7 +3,7 @@ class MovieFacade
               :movie_id
 
   def initialize(params)
-    @user = User.find(params[:user_id])
+    @user = User.find(params[:user_id]) if params[:user_id] 
     @movie_id = params[:id]
   end
 
