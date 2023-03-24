@@ -19,5 +19,7 @@ RSpec.describe "User_movie Index Page", type: :feature do
       expect(page).to have_link("Create Viewing Party", href: "/users/#{@hady.id}/movies/#{@results[0].movie_id}/parties/new")
       end 
     end 
+
+    
   end 
 end 

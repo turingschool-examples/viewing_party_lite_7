@@ -8,7 +8,8 @@ class Movie
               :cast_members, 
               :count_of_reviews, 
               :author_information, 
-              :raw_runtime
+              :raw_runtime, 
+              :image 
 
   def initialize(info)
     @name = info[:original_title]
@@ -21,6 +22,8 @@ class Movie
     @cast_members = get_cast(info[:cast]) unless info[:cast].nil?
     @count_of_reviews = info[:total_results] unless info[:total_results].nil?
     @author_information = author_hash(info[:results]) unless info[:results].nil?
+    @image = info[:backdrop_path]
+
   end
 
   def divmod_to_sixty(info)

@@ -10,10 +10,36 @@ RSpec.describe Movie do
       genres: ["Horror", "Romance"], 
       runtime: 181,
       overview: "A movie about love and horror", 
-      cast: {"Al Pacino" => "Scarface", "Marlon Brando" => "The Old Man"}, 
-      count_of_reviews: 2, 
-      author_information: {}
-    })
+      cast: [{:adult=>false,
+        :gender=>2,
+        :id=>3084,
+        :known_for_department=>"Acting",
+        :name=>"Marlon Brando",
+        :original_name=>"Marlon Brando",
+        :popularity=>14.838,
+        :profile_path=>"/fuTEPMsBtV1zE98ujPONbKiYDc2.jpg",
+        :cast_id=>5,
+        :character=>"Don Vito Corleone",
+        :credit_id=>"52fe422bc3a36847f8009357",
+        :order=>0},
+       {:adult=>false,
+        :gender=>2,
+        :id=>1158,
+        :known_for_department=>"Acting",
+        :name=>"Al Pacino",
+        :original_name=>"Al Pacino",
+        :popularity=>37.187,
+        :profile_path=>"/fMDFeVf0pjopTJbyRSLFwNDm8Wr.jpg",
+        :cast_id=>6,
+        :character=>"Don Michael Corleone",
+        :credit_id=>"52fe422bc3a36847f800935b",
+        :order=>1}], 
+      total_results: 2, 
+      results: [{:author=>"futuretv",
+        :author_details=>{:name=>"", :username=>"futuretv", :avatar_path=>"/path", :rating=>10.0}}, 
+        {:author=>"hady",
+          :author_details=>{:name=>"", :username=>"hady", :avatar_path=>"/path", :rating=>8.0}}], 
+      backdrop_path: "/tmU7GeKVybMWFButWEGl2M4GeiP.jpg" })
   end 
 
     it "is a Movie Object" do 
@@ -34,37 +60,16 @@ RSpec.describe Movie do
       expect(@godfather.runtime).to be_a(Array)
       expect(@godfather.description).to eq("A movie about love and horror")
       expect(@godfather.description).to be_a(String)
-      expect(@godfather.cast_members).to eq({"Al Pacino" => "Scarface", "Marlon Brando" => "The Old Man"})
+      expect(@godfather.cast_members).to eq({"Al Pacino" => "Don Michael Corleone", "Marlon Brando" => "Don Vito Corleone"})
       expect(@godfather.cast_members).to be_a(Hash)
       expect(@godfather.count_of_reviews).to eq(2)
       expect(@godfather.count_of_reviews).to be_a(Integer)
-      # expect(@godfather.author_information).to eq(2)
-      # expect(@godfather.author_information).to be_a(Hash)
+      expect(@godfather.author_information).to be_a(Hash)
+      expect(@godfather.image).to be_a(String)
+      expect(@godfather.image).to include(".jpg")
 
     end
   end
 end 
 
-
-
-
-
-
-
-
-
-  # it 'creates movies objects of the top rated movies' do 
-  #   VCR.use_cassette("top_rated_movies") do
-  #     expect(MoviesFacade.top_rated_movies.first).to be_a(Movies)
-  #   end
-  # end 
-
-  # it 'creates movies objects of the results returned by the search' do 
-  #   VCR.use_cassette("search_results_green") do
-  #     expect(MoviesFacade.search_results("green").first).to be_a(Movies)
-  #   end
-  #   VCR.use_cassette("search_results_green") do
-  #     expect(MoviesFacade.search_results("green").first.name.downcase).to include("green")
-  #   end 
-  # end
 

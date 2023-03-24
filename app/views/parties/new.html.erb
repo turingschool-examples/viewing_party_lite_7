@@ -8,7 +8,7 @@
 <div id="viewing_party_form">
 <%= form_with url: "/users/#{@user.id}/movies/#{@movie.movie_id}/parties", method: "post", local: true do |form| %>
   <%= form.label :name, "Name:" %>
-  <%= form.number_field :name, required: true %>
+  <%= form.text_field :name, required: true %>
 
   <%= form.label :duration, "Party duration (in minutes):" %>
   <%= form.number_field :duration, value: @movie.raw_runtime.to_i, required: true %>

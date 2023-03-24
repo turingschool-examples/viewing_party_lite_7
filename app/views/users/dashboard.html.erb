@@ -2,16 +2,45 @@
 
 <p><%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %></p>
 
-<div id="viewing_parties">
-  <h3><%= @user.name %>'s Viewing Parties:</h3>
-  <% @parties.each do |party| %>
-    <p><%= party.name %></p>
+
+<% if @invited_parties %>
+<div id="viewing_parties_invited">
+  <h3><%= @user.name %>'s Viewing Parties to Which She Has Been Invited:</h3>
+ 
+  <% @invited_parties_with_hosts.each do |party| %>
+
+  <div id="<%= party[:party].id %>">
+    <h4><%= party[:party].name %></h4>
+    <p><%= image_tag party[:movie_image], alt: "Movie Picture" %>
+    <p>Party Date:<%= party[:party].party_date %> </p>
+    <p>Party Time: <%= party[:party].party_time %> </p>
+    <p>Host: <%=party[:host] %>
+    <p>Movie Title:</p>
+    <div id="title">
+      <%=party[:movie_title] %>
+      <%= link_to "#{party[:movie_title]}", "/users/#{party[:party].user_id}/movies/#{party[:party].movie_id}"%>
+    </div>  
+    <div id="list_of_invitees">
+      <%party[:list_invitees].each do |invitee|%>
+        <%=invitee.name%>
+      <%end%>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
   <%end%>
 </div>
+<%end%>
 
+<% if @all_user_parties_host %>
 <div id="host_parties">
   <h3><%= @user.name %>'s Hosting Parties:</h3>
     <% @all_user_parties_host.each do |party| %>
     <p><%= party.name %></p>
   <%end%>
 </div>
+
+<%end%>

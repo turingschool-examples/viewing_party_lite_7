@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "party new page", type: :feature do
-
   before :each do 
     @andra = User.create!(name: "Andra", email: "andra@turing.edu")
     @hady = User.create!(name: "Hady", email: "hady@turing.edu")
@@ -17,7 +16,7 @@ RSpec.describe "party new page", type: :feature do
   end 
   describe "when visit the viewing party page" do 
 
-    it "when you enter the viewing party, it lists the movie title, the voting average and the runtime" do
+    it "when you enter the viewing party, it lists the movie title, the voting average and the runtime in hours and minutes" do
       VCR.use_cassette("party_new_spec", :allow_playback_repeats => true) do
         visit "/users/#{@hady.id}/movies/#{@results[0].movie_id}"
 
@@ -111,9 +110,15 @@ RSpec.describe "party new page", type: :feature do
       end 
     end
 
-    it "when you fill in the form on the viewing party new page, you are redirected to the user's dashboard where the new event is shown" do 
+    it "when you fill in the form on the viewing party new page and click create, you create a new party and are redirected to the user's dashboard" do 
+      
+      expect(Party.count).to eq(3)
+
       VCR.use_cassette("party_new_spec_form", :allow_playback_repeats => true) do
         visit "/users/#{@hady.id}/movies/#{@results[0].movie_id}/parties/new"
+
+
+
         within("div#viewing_party_form") do 
           fill_in :name, with: "Fun Party"
           fill_in :duration, with: 180
@@ -129,6 +134,8 @@ RSpec.describe "party new page", type: :feature do
           end
 
           click_button "Create Party"
+
+          expect(Party.count).to eq(4)
 
           expect(current_path).to eq("/users/#{@hady.id}")
         end

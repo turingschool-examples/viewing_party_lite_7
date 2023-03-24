@@ -28,6 +28,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_21_023947) do
   create_table "user_parties", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "party_id", null: false
+    t.integer "invite_status", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["party_id"], name: "index_user_parties_on_party_id"

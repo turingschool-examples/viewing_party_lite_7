@@ -1,83 +1,157 @@
 require 'rails_helper'
 
 RSpec.describe "User Show Page", type: :feature do
-  let!(:andra) { User.create!(name: "Andra", email: "andra@turing.edu") }
-  let!(:hady) { User.create!(name: "Hady", email: "hady@turing.edu") }
-  let!(:mike) { User.create!(name: "Mike", email: "mky@turing.edu") }
+  before :each do 
 
+    VCR.use_cassette("top_rated_movies_dashboard") do
+      @results = MoviesFacade.new.top_rated_movies
 
-  let!(:halloween) { Party.create!(name: "Halloween Party", user_id: hady.id, movie_id: 1, party_date: "10/31/2023", party_time: "10:30", duration: 123) }
-  let!(:girls_night) { Party.create!(name: "Girl's Night", user_id: hady.id, movie_id: 2, party_date: "01/01/2023", party_time: "02:00", duration: 210) }
-  let!(:eighties) { Party.create!(name: "Eighties Themed", user_id: hady.id, movie_id: 3, party_date: "01/01/2023", party_time: "02:00", duration: 210) }
-  let!(:other) { Party.create!(name: "Other", user_id: hady.id, party_date: "01/01/2023", party_time: "02:00", duration: 210) }
+    @andra = User.create!(name: "Andra", email: "andra@turing.edu") 
+    @hady = User.create!(name: "Hady", email: "hady@turing.edu") 
+    @mike = User.create!(name: "Mike", email: "mky@turing.edu") 
+    @malena = User.create!(name: "Malena", email: "malena@tours.edu") 
 
-  let!(:usp1) { UserParty.create!(user_id: andra.id, party_id: halloween.id) }
-  let!(:usp2) { UserParty.create!(user_id: andra.id, party_id: girls_night.id) }
-  let!(:usp3) { UserParty.create!(user_id: andra.id, party_id: eighties.id) }
-  
-  before do
-    visit "/users/#{andra.id}"
-  end
+    @halloween = Party.create!(name: "Halloween Party", user_id: @hady.id, movie_id: @results[2].movie_id, party_date: "2023/10/31", party_time: "10:30", duration: 123) 
+
+    @girls_night= Party.create!(name: "Girl's Night", user_id: @hady.id, movie_id: @results[3].movie_id, party_date: "2023/01/02", party_time: "02:00", duration: 210) 
+
+    @eighties = Party.create!(name: "Eighties Themed", user_id: @hady.id, movie_id: @results[4].movie_id, party_date: "2023/05/01", party_time: "02:00", duration: 210) 
+    
+    @other = Party.create!(name: "Other", user_id: @hady.id, party_date: "01/01/2023", movie_id: @results[0].movie_id, party_time: "02:00", duration: 210) 
+
+    @up1 = UserParty.create!(user_id: @andra.id, party_id: @halloween.id, invite_status: 0)
+    @up2 = UserParty.create!(user_id: @andra.id, party_id: @girls_night.id, invite_status: 0)
+    @up5 = UserParty.create!(user_id: @mike.id, party_id: @halloween.id, invite_status: 0)
+    @up3 = UserParty.create!(user_id: @andra.id, party_id: @eighties.id, invite_status: 1) 
+    @up4 = UserParty.create!(user_id: @hady.id, party_id: @eighties.id, invite_status: 2) 
+  end 
+  end 
 
   describe "When I visit '/users/:id'" do
     it "I see user's name at the top of the page" do
+      visit "/users/#{@andra.id}"
       expect(page).to have_content("Andra's Info")
     end
 
     it "I see a button to Discover Movies that directs to a discover page" do
+      visit "/users/#{@andra.id}"
       expect(page).to have_button("Discover Movies")
-
       click_button("Discover Movies")
-      expect(current_path).to eq("/users/#{andra.id}/discover")
+
+      expect(current_path).to eq("/users/#{@andra.id}/discover")
     end
 
     it "I see a section that lists viewing parties they've been invited to" do
-      within "#viewing_parties" do
-        expect(page).to have_content("Andra's Viewing Parties")
 
-        expect(page).to have_content("Halloween Party")
-        expect(page).to have_content("Girl's Night")
-        expect(page).to have_content("Eighties Themed")
-        expect(page).to_not have_content("Other")
+      visit "/users/#{@andra.id}"
+      within "#viewing_parties_invited" do
+        expect(page).to have_content("Andra's Viewing Parties to Which She Has Been Invited")
+        expect(page).to have_content(@halloween.name)
+        expect(page).to have_content(@girls_night.name)
+        expect(page).to_not have_content(@eighties.name)
+        expect(page).to_not have_content(@other.name)
       end
     end
 
-    it "I see the viewing parties I've created" do
-      VCR.use_cassette("top_rated_movies_dashboard") do
-          @results = MoviesFacade.new.top_rated_movies
-        
-        visit "/users/#{hady.id}/movies/#{@results[0].movie_id}/parties/new"
-        within("div#viewing_party_form") do 
-          fill_in :name, with: "Fun Party"
-          fill_in :duration, with: 180
-          fill_in :party_date, with: "2023/01/01"
-          fill_in :party_time, with: "10:00"
+    describe "The person who created the viewing party sees it listed under their hosted parties but the person who did not create it does not see it under their hosted parties" do
+      before :each do 
+        VCR.use_cassette("top_rated_movies_dashboard") do
+            @results = MoviesFacade.new.top_rated_movies
 
-          within("div##{hady.name}") do
-            check("invites[]", option: hady.id)
-          end
-          
-          within("div##{mike.name}") do
-            check("invites[]", option: mike.id)
-          end
+          visit "/users/#{@hady.id}/movies/#{@results[0].movie_id}/parties/new"
+            within("div#viewing_party_form") do 
+              fill_in :name, with: "Fun Party"
+              fill_in :duration, with: 180
+              fill_in :party_date, with: "2023/01/01"
+              fill_in :party_time, with: "10:00"
+              
+              within("div##{@mike.name}") do
+                check("invites[]", option: @mike.id)
+              end
 
-          click_button "Create Party"
-        end
+            click_button "Create Party"
+          end
+        end 
+      end 
+
+      it "directs to the dashboard of the creator who has the party listed under their hosted parties but not invited parties" do 
+        expect(current_path).to eq("/users/#{@hady.id}")
         
         within("div#host_parties") do
           expect(page).to have_content("Fun Party")
         end
 
-        visit "/users/#{mike.id}"
+        within("div#viewing_parties_invited") do
+          expect(page).to_not have_content("Fun Party")
+        end 
+      end 
+    
+      it "when visiting an invitee, it shows under their invited parties but not hosted parties" do 
+        visit "/users/#{@mike.id}" 
 
-        within("div#viewing_parties") do
+        within("div#host_parties") do
+          expect(page).to_not have_content("Fun Party")
+        end 
+
+        within("div#viewing_parties_invited") do
           expect(page).to have_content("Fun Party")
-          expect(page).to_not have_content("Halloween Party")
-          expect(page).to_not have_content("Girl's Night")
-          expect(page).to_not have_content("Eighties Themed")
-          expect(page).to_not have_content("Other")
-        end
+        end 
+      end 
+
+      it "when visiting an invitee that did not accept or create it, does not show up in either" do 
+        visit "/users/#{@andra.id}" 
+
+        within("div#host_parties") do
+          expect(page).to_not have_content("Fun Party")
+        end 
+
+        within("div#viewing_parties_invited") do
+          expect(page).to_not have_content("Fun Party")
+        end 
       end
     end
+
+    it "when visiting a user dashboard will see the parties that the person has been invited to" do 
+      
+      visit "/users/#{@andra.id}" 
+
+      within("div#viewing_parties_invited") do
+        expect(page).to have_content(@halloween.name)
+        expect(page).to_not have_content(@eighties.name)
+      end 
+    end
+
+    it "will see the movie title of the movie to which they have been invited" do 
+
+      VCR.use_cassette("dashboard_spec_movie_test") do
+      visit "/users/#{@andra.id}" 
+      # save_and_open_page
+      within("div#viewing_parties_invited") do
+        within("div##{@halloween.id}") do 
+          expect(page).to have_content(@halloween.party_date)
+          expect(page).to have_content(@halloween.party_time)
+          expect(page).to have_content("Host: #{@hady.name}")
+          expect(page).to have_selector('img[src]')
+          within("div#title")
+            expect(page).to have_content(/.*/)
+            expect(page).to have_link(href: "/users/#{@hady.id}/movies/#{@results[2].movie_id}")
+          within("div#list_of_invitees") do 
+            expect(page).to have_content(@mike.name)
+            expect(page).to_not have_content(@malena.name)
+            # expect(page).to have_css('b', text: @andra.name)
+          end
+        end
+      end
+    end 
+
+    end
+
+
+
+
+
+
+
+
   end
 end
