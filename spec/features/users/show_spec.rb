@@ -7,15 +7,21 @@ RSpec.describe "/users/:id", type: :feature do
       @riker = User.create!(name: "William Riker", email: "number2@uss-enterprise.com")
       @data = User.create!(name: "Data", email: "data@uss-enterprise.com")
 
-      # @party1 = Party.create!(duration_minutes: 143, start_time: "08:00", date: Date.parse("2023-01-01"), movie_id: 2001, host_id: @picard.id)
-      # @party2 = Party.create!(duration_minutes: 90, start_time: "10:30", date: Date.parse("2023-02-02"), movie_id: 1999, host_id: @riker.id)
+      @party1 = Party.create!(duration_minutes: 143, start_time: "08:00", date: Date.parse("2023-01-01"), movie_id: 62, host_id: @picard.id)
+      @party2 = Party.create!(duration_minutes: 90, start_time: "10:30", date: Date.parse("2023-02-02"), movie_id: 238, host_id: @riker.id)
 
-      # PartyUser.create!(party_id: @party1.id, user_id: @picard.id, host_id: @party1.host_id)
-      # PartyUser.create!(party_id: @party1.id, user_id: @data.id, host_id: @party1.host_id)
+      PartyUser.create!(party_id: @party1.id, user_id: @picard.id, host_id: @party1.host_id)
+      PartyUser.create!(party_id: @party1.id, user_id: @data.id, host_id: @party1.host_id)
 
-      # PartyUser.create!(party_id: @party2.id, user_id: @picard.id, host_id: @party2.host_id)
-      # PartyUser.create!(party_id: @party2.id, user_id: @riker.id, host_id: @party2.host_id)
-      # PartyUser.create!(party_id: @party2.id, user_id: @data.id, host_id: @party2.host_id)
+      PartyUser.create!(party_id: @party2.id, user_id: @picard.id, host_id: @party2.host_id)
+      PartyUser.create!(party_id: @party2.id, user_id: @riker.id, host_id: @party2.host_id)
+      PartyUser.create!(party_id: @party2.id, user_id: @data.id, host_id: @party2.host_id)
+
+      ############
+
+      movie_response = File.read("spec/fixtures/moviedb/space_odyssey.json")
+      stub_request(:get, "https://api.themoviedb.org/3/movie/62?api_key=#{ENV["TMDB_API_KEY"]}")
+      .to_return(status: 200, body: movie_response, headers: {})
 
       visit "/users/#{@picard.id}"
     end
@@ -27,15 +33,28 @@ RSpec.describe "/users/:id", type: :feature do
       expect(page).to have_content("#{@picard.name}'s Dashboard")
       expect(page).to have_button("Discover Movies")
 
-      expect(page).to have_content(@party1.start_time.strftime("%I:%M %p"))
-      expect(page).to have_content(@party1.date.strftime("%B %-d, %Y"))
-      expect(page).to have_content("Hosting")
+      within "#party_id-#{@party1.id}" do
+        # expect(page).to have_content("2001: A Space Odyssey")
+        # expect(page).to have_css("img[src^='https://image.tmdb.org/t/p/w154/ve72VxNqjGM69Uky4WTo2bK6rfq.jpg']")
+        expect(page).to have_content(@party1.start_time.strftime("%I:%M %p"))
+        expect(page).to have_content(@party1.date.strftime("%B %-d, %Y"))
+        expect(page).to have_content("Hosting")
+        # expect(page).to have_content(@picard.name)
+        # expect(page).to have_content(@data.name)
 
-      expect(page).to have_content(@party2.start_time.strftime("%I:%M %p"))
-      expect(page).to have_content(@party2.date.strftime("%B %-d, %Y"))
-      expect(page).to have_content("Invited")
+        # expect(page).to_not have_content(@riker.name)
+      end
 
-      expect(page).to_not have_content("#{@riker.name}")
+      within "#party_id-#{@party2.id}" do
+        # expect(page).to have_content("The Godfather")
+        # expect(page).to have_css("img[src^='https://image.tmdb.org/t/p/w154/3bhkrj58Vtu7enYsRolD1fZdja1.jpg']")
+        expect(page).to have_content(@party2.start_time.strftime("%I:%M %p"))
+        expect(page).to have_content(@party2.date.strftime("%B %-d, %Y"))
+        expect(page).to have_content("Invited")
+        # expect(page).to have_content(@riker.name)
+        # expect(page).to have_content(@data.name)
+        # expect(page).to have_content(@picard.name)
+      end
     end
 
     it "when I click the discover button, I'm redirected to '/users/:id/discover' page" do
@@ -43,6 +62,9 @@ RSpec.describe "/users/:id", type: :feature do
       expect(current_path).to eq("/users/#{@picard.id}/discover")
     end
 
-    # Need to Add a Test: that I see an image from an API call
+    it "can display a single movie image & title" do
+      expect(page).to have_content("2001: A Space Odyssey")
+      expect(page).to have_css("img[src^='https://image.tmdb.org/t/p/w154/ve72VxNqjGM69Uky4WTo2bK6rfq.jpg']")
+    end
   end
 end

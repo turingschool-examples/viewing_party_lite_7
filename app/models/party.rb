@@ -7,4 +7,15 @@ class Party < ApplicationRecord
 
   has_many :party_users
   has_many :users, through: :party_users
+
+  # Doesn't work yet:  
+  # def invitee_names
+  #   require 'pry'; binding.pry
+  #   party
+  #     .joins(:users)
+  #     .select("users.*")
+  #     .where("party_users.host_id != users.id")
+  #     .pluck("users.name")
+  # end
+
 end

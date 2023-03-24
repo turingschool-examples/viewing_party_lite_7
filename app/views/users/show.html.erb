@@ -2,13 +2,29 @@
 <br>
 <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %>
 <br>
+<%= image_tag "https://image.tmdb.org/t/p/w154#{@the_movie.image}"%>
+<p><%= @the_movie.title %></p>
+<br>
+
+<%# BELOW .image & .movie_title will not work - Need previous page finished %>
 <% @user_all_parties.each do |party| %>
-  <p><%= party.date.strftime("%B %-d, %Y") %></p>
-  <p><%= party.start_time.strftime("%I:%M %p") %></p>
-  <% if @user.id == party.host_id %>
-    <p>Hosting</p>
-  <% else %>
-    <p>Invited</p>
-  <% end %>
+  <div id = "party_id-<%= party.id %>">
+    <%# <%= image_tag "https://image.tmdb.org/t/p/w154#{party.image}"%>
+    <%# <p><%= party.movie_title %>
+    <p><%= party.date.strftime("%B %-d, %Y") %></p>
+    <p><%= party.start_time.strftime("%I:%M %p") %></p>
+
+    <% if @user.id == party.host_id %>
+      <p>Hosting</p>
+    <% else %>
+      <p>Invited</p>
+    <% end %>
     <br>
+
+    <%# <ul> %>
+      <%# <% party.invitees.each do |name| %>
+        <%# <strong><li><%= name %>
+      <%# <% end %>
+    <%# </ul> %>
+  </div>
 <% end %>

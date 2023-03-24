@@ -2,9 +2,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    # @the_movie = MoviedbFacade.new(params[:movie_id])
     @user_all_parties = @user.parties
-    require 'pry'; binding.pry
+
+    # This will work to render one movie image to page:
+      movie_info = MoviedbFacade.new(movie_id: @user_all_parties.first[:movie_id]).find_movie_info
+      @the_movie = Movie.new(movie: movie_info)
   end
   
   def new
