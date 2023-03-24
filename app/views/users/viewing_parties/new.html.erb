@@ -1,8 +1,9 @@
-<h3> Create a Movie Party for <%= "#{@movie.title}" %> </h3>
+<center><h3> Create a Movie Party for <%= "#{@movie.title}" %> </h3></center>
+<center><%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %></center>
 
 <body>
   <center><table>
-    <%= form_with url: "/users/#{@user.id}movies/#{@movie.movie_id}/viewing_parties/new", method: :post, local: true do |f| %>
+    <%= form_with url: "/users/#{@user.id}/movies/#{@movie.movie_id}/viewing_parties/new", method: :post, local: true do |f| %>
     <tr>
         <center><td> <%= f.label :header, "Viewing Party Details" %></td></center>
     </tr>
@@ -15,20 +16,16 @@
     </tr>
     <tr>
       <td> <%= f.label :day, "Day" %> </td>
-      <td> <%= f.date_field :party_date, min: Date.today %> </td>
+      <td> <%= f.date_field :date, min: Date.today %> </td>
     </tr>
     <tr>
       <td> <%= f.label :time, "Start Time" %> </td>
       <td> <%= f.time_field :start_time, min: Time.now.strftime("%H:%M") %> </td>
     </tr>
-    <tr>
-      <td> <%= f.label :time, "Duration of Party" %> </td>
-      <td> <%= f.number_field :time, value: @movie.runtime %> </td>
-    </tr>
-        <%= f.hidden_field :host_id, value: @user.id %>
-        <%= f.hidden_field :movie_id, value: @movie.movie_id %>
-        <%= f.hidden_field :movie_id, value: @movie.movie_id %>
-        <td><%= f.submit "Create Party" %></td>
+        <%= f.hidden_field :host_id, value: "#{@user.id}" %>
+        <%= f.hidden_field :movie_id, value: "#{@movie.movie_id}" %>
+        <%= f.hidden_field :image, value: "#{@movie.image}" %>
+      <td><%= f.submit "Create Party" %></td>
     <% end %></td>
     </tr>
   </table> </center>

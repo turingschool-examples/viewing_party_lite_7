@@ -6,7 +6,7 @@ class Users::ViewingPartiesController < ApplicationController
     # binding.pry
     facade = MoviedbFacade.new(movie_id: params[:movie_id]).find_movie_info
     @movie = Movie.new(movie: facade)
-    @party = Party.new
+    @party = Party.new #create!(create_params)
     # binding.pry
   end
   
@@ -18,4 +18,9 @@ class Users::ViewingPartiesController < ApplicationController
   #   @party.users = @invitees
   #   PartyUser.new(user_id: @user.id, viewing_party_id: @viewing_party.id)
   # end
+  
+  private
+  def create_params
+    params.permit(:duration,:start_time, :date, :movie_id, :host_id)
+  end
 end
