@@ -2,9 +2,15 @@
 <br>
 <%=button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get%>
 <br>
+<h3>Viewing Parties</h3>
 <div id="viewing-parties">
   <%@user.viewing_parties.each do |party|%>
-    <p>Viewing Party On: <%=party.start_time%></p>
+  <div id="party-<%= party.id%>">
+    <p>Movie Poster:<%= image_tag (party.movie_poster)%> </p>
+    <p>Movie Title</p>
+    <p>Date: <%=party.party_date%></p>
+    <p>Starting At: <%=party.start_time.strftime("%l:%M%P")%></p>
     <br>
+  </div>
   <%end%>
 </div>

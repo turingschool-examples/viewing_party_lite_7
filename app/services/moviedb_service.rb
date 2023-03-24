@@ -19,6 +19,10 @@ class MoviedbService
     get_url("/3/movie/#{id}/reviews?api_key=#{ENV['TMDB_API_KEY']}&language=en-US&page=1")
   end
 
+  def image(poster_path)
+    "https://image.tmdb.org/t/p/h100#{poster_path}"
+  end
+
   def get_url(url)
     response = conn.get(url)
     JSON.parse(response.body, symbolize_names: true)

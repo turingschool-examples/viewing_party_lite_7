@@ -45,5 +45,17 @@ describe MoviedbService do
         expect(@searched_nothing[:results].first).to be nil
       end
     end
+
+
+
+    describe "#image" do
+      it "returns images of the movie" do
+        VCR.use_cassette("fight_club") do
+          @image = MoviedbService.new.image("/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg")
+        end
+        expect(@image).to be_a String
+        expect(@image).to include("https")
+      end
+    end
   end
 end
