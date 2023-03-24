@@ -1,10 +1,22 @@
-<p><%= button_to "Discover Movies", user_discover_index_path(@user), method: :get %></p>
-<div id="movies">
-  <ul>
-    <% @movie_facade.retrieve_movies.each do |movie| %>
-      <p>
-          <%= link_to movie.title, user_movie_path(@user, movie.id) %> &emsp; Vote Average: <%= movie.vote_average.round(1) %>
-      </p>
-    <% end %>
-  </ul>
+<p><center><%= button_to "Discover Movies", user_discover_index_path(@user), method: :get %></center></p>
+<div class="movie_main_container", id="movies">
+  <div class="movie_container", id="movie_titles">
+    <ul>
+      <% @movie_facade.retrieve_movies.each do |movie| %>
+        <p>
+            <%= link_to movie.title, user_movie_path(@user, movie.id) %>
+        </p>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="movie_container", id="movie_ratings">
+    <ul>
+      <% @movie_facade.retrieve_movies.each do |movie| %>
+        <p>
+            Vote Average: <%= movie.vote_average.round(1) %>
+        </p>
+      <% end %>
+    </ul>
+  </div>
 </div>
