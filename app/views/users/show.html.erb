@@ -1,5 +1,5 @@
 <h1><%= @user.name %>'s Dashboard</h1>
-<%= button_to "Discover Movies", user_discover_index_path(@user.id), local: true %>
+<%= button_to "Discover Movies", user_discover_index_path(@user.id), method: :get, local: true %>
 <h3>Viewing Parties:</h3>
   <div id="parties">
     <% @user.viewing_parties.each do |party| %>
