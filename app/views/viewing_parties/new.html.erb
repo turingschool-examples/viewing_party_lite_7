@@ -1,0 +1,23 @@
+<h2>Create A Movie Party for <%= @facade.movie_details.title %></h2>
+
+<%= form_with url:"/users/#{@user.id}/movies/#{@facade.movie_details.id}/viewing-party/new", method: :post, local: true do |form| %>
+  <p><%= form.label :duration, "Duration of Party" %></p>
+  <p><%= form.number_field :duration, min: @facade.movie_details.runtime %></p>
+
+  <p><%= form.label :date, "When" %></p>
+  <p><%= form.date_field :date, min: Date.today %></p>
+
+  <p><%= form.label :time, "Start Time" %></p>
+  <p><%= form.time_field :time %></p>
+
+  <p><%= form.hidden_field :movie_id, value: @facade.movie_details.id %></p>
+
+  <p><% @users.each do |user| %>
+      <div>
+        <%= form.check_box :user_ids, { multiple: true }, user.id, nil %>
+        <%= user.name %>
+      </div>
+    <% end %></p>
+
+  <p><%= form.submit "Create Party" %></p>
+<% end %>
