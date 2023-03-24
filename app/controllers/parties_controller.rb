@@ -17,6 +17,7 @@ class PartiesController < ApplicationController
       end
       redirect_to "/users/#{@user.id}"
     else
+      flash[:notice] = "Duration is less than actual play time"
       redirect_to "/users/#{@user.id}/movies/#{@movie.movie_id}/parties/new"
     end
   end

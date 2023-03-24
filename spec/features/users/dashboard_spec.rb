@@ -30,7 +30,7 @@ RSpec.describe "User Show Page", type: :feature do
     it "I see user's name at the top of the page" do
       VCR.use_cassette("top_rated_dashboard_1") do
         visit "/users/#{@andra.id}"
-        expect(page).to have_content("Andra's Info")
+        expect(page).to have_content("Andra's Dashboard")
       end
     end
 

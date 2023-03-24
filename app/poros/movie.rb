@@ -15,7 +15,7 @@ class Movie
     @name = info[:original_title]
     @vote_average = info[:vote_average]
     @movie_id = info[:id]
-    @genres = info[:genres]
+    @genres = extract_genres(info[:genres])  unless info[:genres].nil?
     @raw_runtime = info[:runtime]
     @runtime = divmod_to_sixty(info[:runtime]) unless info[:runtime].nil?
     @description = info[:overview]
@@ -28,6 +28,12 @@ class Movie
 
   def divmod_to_sixty(info)
     info.divmod(60)
+  end
+
+  def extract_genres(info)
+    info.map do |genre|
+      genre[:name]
+    end
   end
 
 
