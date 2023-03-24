@@ -1,7 +1,7 @@
 <h2>Create A Movie Party for <%= @facade.movie_details.title %></h2>
 
 <%= form_with url:"/users/#{@user.id}/movies/#{@facade.movie_details.id}/viewing-party/new", method: :post, local: true do |form| %>
-  <p><%= form.label :duration, "Duration of Party" %></p>
+  <p><%= form.label :duration, "Duration of Party(in mins)" %></p>
   <p><%= form.number_field :duration, min: @facade.movie_details.runtime %></p>
 
   <p><%= form.label :date, "When" %></p>
