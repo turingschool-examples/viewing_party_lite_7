@@ -9,7 +9,8 @@ class Movie
     @vote_average = params[:vote_average]
   end
 
-  def get_details(details) #make detail dummy in test
+  def get_details(details) #make detail dummy in test_
+    
     details_hash = {}
 
      details_hash[:movie_title] = details[:original_title]
@@ -18,6 +19,7 @@ class Movie
      details_hash[:genre] = get_genre(details[:genres])
      details_hash[:summary] = details[:overview]
      details_hash[:id] = details[:id]
+     details_hash[:image] = details[:belongs_to_collection][:poster_path] if details[:belongs_to_collection]
 
     details_hash
   end

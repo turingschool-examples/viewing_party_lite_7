@@ -29,7 +29,7 @@ class UserFacade
 
     @movie_results = parsed_movie_title_search[:results].map do |result|
       Movie.new(result)
-    end
+    end[0..19]
   end
 
   def get_movie_details(movie_id)

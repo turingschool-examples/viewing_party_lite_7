@@ -1,6 +1,11 @@
-class UsersController <ApplicationController
+class UsersController < ApplicationController
   def show 
     @user = User.find(params[:id])
+    @movie_details = @user.movie_ids.map do |movie_id|
+      facade = UserFacade.new(nil, nil)
+      facade.get_movie_details(movie_id)
+      facade.details
+    end
   end
 
   def new

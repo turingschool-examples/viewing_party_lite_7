@@ -22,6 +22,6 @@
 
   <% @reviews[:author_info].each do |author| %>
     <p>Name: <%= author[0] %></p>
-    <p>Rating: <%= author[1][:rating].round(2) %></p>
+    <p>Rating: <%= author[1][:rating] %></p>
   <% end %>
 </section>
