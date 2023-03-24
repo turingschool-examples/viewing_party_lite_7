@@ -26,7 +26,7 @@
   </div>
 
   <div style="border: 1px solid #EEE; border-radius: 5px; padding: 10px; margin-bottom: 20px;">
-    <p style="margin-bottom: 10px;">Reviews:</p>
+    <p style="margin-bottom: 10px;"> <%= "Number of Reviews: #{@facade.movie_review_count}"%></p>
     <% @facade.movie_reviews.each do |review| %>
       <p style="margin-bottom: 5px;"><%= "Author: #{review.author}" %></p>
       <p style="margin-bottom: 10px;"><%= review.content %></p>
