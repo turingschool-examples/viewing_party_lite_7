@@ -16,7 +16,7 @@ RSpec.describe "/users/:id/discover", type: :feature do
     
     it "click Top Rated Movies button, redirected to '/users/:id/movies' (movies result page) " do
       top_movies = File.read("spec/fixtures/moviedb/top_movies.json")
-      stub_request(:get, "https://api.themoviedb.org/movie/top_rated?include_adult=false")
+      stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV["TMDB_API_KEY"]}&include_adult=false")
       .to_return(status: 200, body: top_movies, headers: {})
 
       click_button("Find Top Rated Movies")
@@ -24,12 +24,11 @@ RSpec.describe "/users/:id/discover", type: :feature do
     end
 
     it "can accept partial keywords & redirect to result page" do
-      fill_in(:search, with: "space od")
-
       search_results = File.read("spec/fixtures/moviedb/search_results.json")
-      stub_request(:get, "https://api.themoviedb.org/search/movie?include_adult=false&query=space%20od")
+      stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV["TMDB_API_KEY"]}&include_adult=false&query=space%20od")
       .to_return(status: 200, body: search_results, headers: {})
-
+      
+      fill_in(:search, with: "space od")
       click_button("Search by Movie Title")
 
       expect(current_path).to eq("/users/#{@picard.id}/movies")
