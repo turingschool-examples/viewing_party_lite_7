@@ -13,9 +13,10 @@ class ViewingPartiesController < ApplicationController
       params[:user_ids].each do |id|
         ViewingPartyUser.create!(user: User.find(id), viewing_party: viewing_party)
       end
+      flash[:notice] = "Party has been Created!"
+      redirect_to "/users/#{@user.id}"
     end
 
-    redirect_to "/users/#{@user.id}"
   end
 
   private

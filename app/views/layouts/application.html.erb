@@ -11,9 +11,17 @@
   </head>
 
   <body>
+    <h1><span>Viewing Party</span></h1>
+
     <div id="nav_bar">
       <%= link_to "Home", root_path %>
     </div>
+
+    <% flash.each do |type, msg| %>
+      <div id="flash_message">
+        <%= msg %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
