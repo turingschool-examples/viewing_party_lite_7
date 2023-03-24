@@ -147,6 +147,7 @@ RSpec.describe MoviesFacade do
       expect(movie_details.total_review_count).to be_a(Integer)
       expect(movie_details.title_show).to be_a(String)
       expect(movie_details.vote_average_show).to be_a(Float)
+      expect(movie_details.poster_path).to be_a(String)
     end
   end
 end
