@@ -33,10 +33,21 @@ RSpec.describe 'New Viewing Party Page' do
       expect(ViewingPartyUser.find_by(user_id: @user2.id, viewing_party_id: ViewingParty.last.id)).to eq(nil)
     end
 
+    it 'If I fill out duration with a value less than movie runtime, I should stay on the create page' do
+      fill_in 'Duration of Party', with: 10
+      fill_in 'When', with: Date.tomorrow
+      fill_in 'Start Time', with: '18:00'
+      
+      VCR.use_cassette(:create_party, serialize_with: :json) do
+        click_on 'Create Party'
+      end
+      expect(current_path).to eq("/users/#{@user.id}/movies/238/viewing-party/new")
+    end
+
     it 'If I do not fill out the form and try to submit, I should stay on the create page' do
-      fill_in 'Duration of Party', with: nil
+      fill_in 'Duration of Party', with: 500
       fill_in 'When', with: nil
-      fill_in 'Start Time', with: nil
+      fill_in 'Start Time', with: '18:00'
       
       VCR.use_cassette(:create_party, serialize_with: :json) do
         click_on 'Create Party'
