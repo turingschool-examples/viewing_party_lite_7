@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.themoviedb.org/3/movie/238?api_key=d0e96dc1332122d6644bee9c92cca944
+    uri: https://api.themoviedb.org/3/movie/238?api_key=d2198b40a5c82882520e0f6673eac605
     body:
       encoding: US-ASCII
       string: ''
@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 23 Mar 2023 17:49:44 GMT
+      - Fri, 24 Mar 2023 15:43:40 GMT
       Server:
       - openresty
       Cache-Control:
@@ -35,26 +35,26 @@ http_interactions:
       X-Memc-Key:
       - 9d48db5c244b9c3e3d162ef155211175
       X-Memc-Age:
-      - '12650'
+      - '8797'
       X-Memc-Expires:
-      - '4675'
+      - '6577'
       Etag:
-      - W/"28e2e712c5858e782acac38fd81764cd"
+      - W/"4f6e4b7e636a34becfd028e3d0ab8cc5"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 5d351175d5947d478733fbecdab866f6.cloudfront.net (CloudFront)
+      - 1.1 d9fe97589e952f97209f7a422c89d876.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - zgmfPuMDCJ_L3VlgidhIfT07LqF8FQN3VRMC78pNuuxc7BDaqUB2nw==
+      - WQOqRzXPBSCqiGO-JIuNvSAj1_n_1LvGDiiz6bbHbViW-OvGd9uSbQ==
       Age:
-      - '26065'
+      - '10878'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
@@ -63,9 +63,9 @@ http_interactions:
         fictional Italian-American Corleone crime family. When organized crime family
         patriarch, Vito Corleone barely survives an attempt on his life, his youngest
         son, Michael steps in to take care of the would-be killers, launching a campaign
-        of bloody revenge.","popularity":129.885,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        of bloody revenge.","popularity":120.733,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
         Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.712,"vote_count":17640}'
-  recorded_at: Fri, 24 Mar 2023 01:04:10 GMT
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.712,"vote_count":17643}'
+  recorded_at: Fri, 24 Mar 2023 18:44:58 GMT
 recorded_with: VCR 6.1.0
