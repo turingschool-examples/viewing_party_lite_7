@@ -6,6 +6,6 @@ class MoviesController < ApplicationController
 
   def show
     @user = User.find(params[:user_id])
-    @movie = MovieFacade.new(params[:id]).movie
+    @movie_facade = MovieFacade.new(params[:id])
   end
 end

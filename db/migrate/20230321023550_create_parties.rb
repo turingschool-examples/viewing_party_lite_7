@@ -3,8 +3,8 @@ class CreateParties < ActiveRecord::Migration[7.0]
     create_table :parties do |t|
       t.integer :movie_id
       t.integer :host_id
-      t.string :day
-      t.string :time
+      t.date :day
+      t.time :time
       t.integer :duration
 
       t.timestamps

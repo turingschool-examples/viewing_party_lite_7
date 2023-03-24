@@ -4,15 +4,19 @@ class MovieService
   end
 
   def top_rated_movies
-    get_url("/3/movie/top_rated")
+    get_url("movie/top_rated")
   end
 
   def movie_search(query)
-    get_url("/3/search/movie?query=#{query}")
+    get_url("search/movie?query=#{query}")
   end
 
-  def cast(movie_id)
-    get_url("/3/movie/#{movie_id}/credits")
+  def movie_cast(movie_id)
+    get_url("movie/#{movie_id}/credits")
+  end
+
+  def movie_reviews(movie_id)
+    get_url("movie/#{movie_id}/reviews")
   end
 
   def get_url(url)
@@ -21,7 +25,7 @@ class MovieService
   end
 
   def conn
-    Faraday.new(url: "https://api.themoviedb.org") do |faraday|
+    Faraday.new(url: "https://api.themoviedb.org/3/") do |faraday|
       faraday.params["api_key"] = ENV["MOVIE_API_KEY"]
     end
   end
