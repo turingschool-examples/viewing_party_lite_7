@@ -34,7 +34,7 @@ RSpec.describe "user registration page" do
       expect(page).to have_content("Email has already been taken")
     end
     
-    describe "won't create a user with blank fields" do
+    describe "sad path testing" do
       it "won't create a user with two blank fields" do
         click_on("Create New User")
         
@@ -42,7 +42,7 @@ RSpec.describe "user registration page" do
         expect(page).to have_content("Name can't be blank and Email can't be blank")
       end
       
-      it "won't create a user without a name" do
+      it "won't create a user without an email" do
         fill_in('Name', with: "Jeff Goldblum")
         click_on("Create New User")
         
@@ -51,7 +51,7 @@ RSpec.describe "user registration page" do
         expect(page).to_not have_content("Name can't be blank")
       end
       
-      it "won't create a user without an email" do
+      it "won't create a user without a name" do
         fill_in('Email', with: "JurassicSnark@jp.com")
         click_on("Create New User")
         
