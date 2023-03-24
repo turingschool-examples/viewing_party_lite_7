@@ -35,7 +35,9 @@ describe "When I visit the discover movies page, and click on either the Top Mov
       end
 
       it "can click the link" do
-        click_link("The Godfather")
+        VCR.use_cassette("godfather_movie_2") do
+          click_link("The Godfather")
+        end
         expect(current_path).to eq(user_movie_path(@user, 238))
       end
 
@@ -79,7 +81,9 @@ describe "When I visit the discover movies page, and click on either the Top Mov
       end
 
       it 'Can click the link' do
-        click_link('Despicable Me')
+        VCR.use_cassette("despicable_me_movie") do
+          click_link('Despicable Me')
+        end
         expect(current_path).to eq(user_movie_path(@user, 20352))
       end
 
