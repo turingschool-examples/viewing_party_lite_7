@@ -34,7 +34,7 @@
         <ul>
           <% @my_parties.each do |party| %>
             <li id=<%= party.id %>>
-							<h4><%= link_to "Party ##{party.id}", party_path(party)%></h4>
+							<h4><%= link_to "Party ##{party.id}",user_movie_party_path(@user, party.movie_id, party)%></h4>
 							<%#= party.movie.image %>
 							<%#= party.movie.title %>
 							<p>Date: <%= party.date %></p>
