@@ -5,10 +5,10 @@ class Movie
               :runtime,
               :summary,
               :genres, 
+              :cast,
               :reviews
   
   def initialize(response)
-    
     @movie_id = response[:movie][:id]
     @title = response[:movie][:title]
     @vote_avg = response[:movie][:vote_average]
@@ -17,8 +17,12 @@ class Movie
     @summary = response[:movie][:overview]
     @genres = response[:movie][:genres]
 
-    @reviews = response[:reviews]
     @cast = response[:cast]
+    @reviews = response[:reviews]
+  end
+
+  def review_count
+    reviews.size
   end
   
   # def list_genres
