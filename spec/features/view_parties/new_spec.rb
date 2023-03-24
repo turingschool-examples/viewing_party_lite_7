@@ -2,16 +2,14 @@ require "rails_helper"
 
 RSpec.describe "New Viewing Party Page" do
   describe "As a user" do
-    describe "When I visit the new viewing party page (/users/:user_id/movies/:movid_id/viewing-party/new, where :user_id is a valid user's id)" do
+    describe "When I visit the new viewing party page (/users/:user_id/movies/:movid_id/viewing-party/new, where :user_id is a valid user's id)", :vcr do
       before(:each) do
         @james = User.create!(name: "James", email: "james@email.com")
         @adam = User.create!(name: "Adam", email: "adam@email.com")
         @mike = User.create!(name: "Mike", email: "mike@email.com")
         @abdul = User.create!(name: "Abdul", email: "abdul@email.com")
         
-        VCR.use_cassette("fight_club", serialize_with: :json) do
-          visit new_user_movie_viewing_party_path(@james, 550)
-        end
+        visit new_user_movie_viewing_party_path(@james, 550)
       end
 
       it "should see a button to return to the discover page" do 
@@ -56,9 +54,7 @@ RSpec.describe "New Viewing Party Page" do
         fill_in :party_time, with: "21:17"
         check "users[#{@abdul.id}]"
 
-        VCR.use_cassette("fight_club_details", serialize_with: :json) do
-          click_button "Create Party"
-        end
+        click_button "Create Party"
 
         expect(current_path).to eq(user_path(@james))
       end
@@ -68,9 +64,7 @@ RSpec.describe "New Viewing Party Page" do
         fill_in :party_time, with: "21:17"
         fill_in :duration_minutes, with: 0
 
-        VCR.use_cassette("fight_club_details", serialize_with: :json) do
-          click_button "Create Party"
-        end
+        click_button "Create Party"
 
         expect(current_path).to eq(new_user_movie_viewing_party_path(@james, 550))
         within("#flash_message") { expect(page).to have_content("Unable to create viewing party - [\"Duration minutes cannot be less than movie runtime\"]")}
@@ -80,9 +74,7 @@ RSpec.describe "New Viewing Party Page" do
         fill_in :party_date, with: "2023-01-28"
         fill_in :party_time, with: "21:17"
 
-        VCR.use_cassette("fight_club_details", serialize_with: :json) do
-          click_button "Create Party"
-        end
+        click_button "Create Party"
 
         expect(current_path).to eq(new_user_movie_viewing_party_path(@james, 550))
         within("#flash_message") { expect(page).to have_content("Unable to create viewing party - [\"Party date cannot be in the past\"]")}
