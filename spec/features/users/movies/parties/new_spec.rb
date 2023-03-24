@@ -1,10 +1,15 @@
 require 'rails_helper'
 
-Rspec.describe 'User Story 12' do
+RSpec.describe 'User Story 12' do
   before(:each) do
-    # create users with factorybot/faker
-    # use batman vcr
+    @user = create(:user)
+    @friend_1 = create(:user)
+    @friend_2 = create(:user)
+    @friend_3 = create(:user)
+
+    VCR.insert_cassette(:batman_doom, serialize_with: :json)
     # visit /users/:user_id/movies/:movid_id/viewing-party/new, where :user_id is a valid user's id)
+    visit new_user_movie_viewing_party_path(@user, 1003579)
   end
 
   describe "New Viewing Party Page" do
@@ -22,7 +27,7 @@ Rspec.describe 'User Story 12' do
       end
 
       xit "has Checkboxes next to each existing user in the system to select invitees" do
-        
+
       end
     end
 
