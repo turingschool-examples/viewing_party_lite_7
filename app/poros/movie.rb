@@ -10,7 +10,8 @@ class Movie
               :movie_id,
               :title_show,
               :vote_average_show,
-              :movie_id_show
+              :movie_id_show,
+              :poster_path
 
   def initialize(info)
     @movie_id = info[:id]
@@ -25,5 +26,6 @@ class Movie
     @total_review_count = info["total_reviews_count"]
     @review_info = info["review_info"]
     @movie_id_show = info["id"]
+    @poster_path = info["poster_path"]
   end
 end
