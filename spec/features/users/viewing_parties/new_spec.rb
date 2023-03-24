@@ -1,24 +1,24 @@
-require 'rails-helper'
+require 'rails_helper'
 
-RSpec.describe "/users/:user_id/movies/:movid_id/viewing-party/new" do
+RSpec.describe "/users/:user_id/movies/:movid_id/viewing_party/new" do
   describe "as a user, when I visit the new viewing party page" do
     before :each do
       PartyUser.delete_all
-      ViewingParty.delete_all
+      Party.delete_all
       User.delete_all
-      
-      @user1 = create(:user)
+    
+      @user1 = create!(name: "", email: "captain@uss-enterprise.com")
       @user2 = create(:user)
       @user3 = create(:user)
       @user4 = create(:user)
-      
+    
       movie_response = File.read("spec/fixtures/moviedb/space_odyssey.json")
       stub_request(:get, "https://api.themoviedb.org/3/movie/62?api_key=#{ENV["TMDB_API_KEY"]}")
         .to_return(status: 200, body: movie_response, headers: {})
-        
+    
       @movie = Movie.new(JSON.parse, symbolize_names: true)
-      
-      visit "/users/#{@user1.id}/movies/#{@movie.id}/viewing-party/new"
+    
+      visit "/users/#{@user1.id}/movies/#{@movie.id}/viewing_party/new"
     end
     
     describe "I should see the name of the movie title rendered above a form" do
