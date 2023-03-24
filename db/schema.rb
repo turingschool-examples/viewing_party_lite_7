@@ -15,10 +15,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_21_023947) do
   enable_extension "plpgsql"
 
   create_table "parties", force: :cascade do |t|
-    t.integer "host_id"
+    t.integer "user_id"
     t.date "party_date"
     t.time "party_time"
     t.integer "duration"
+    t.integer "movie_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"

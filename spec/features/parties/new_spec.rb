@@ -1,9 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe "party new page", type: :feature do
+
   before :each do 
     @andra = User.create!(name: "Andra", email: "andra@turing.edu")
     @hady = User.create!(name: "Hady", email: "hady@turing.edu")
+    @mike = User.create!(name: "Mike", email: "mike@turing.edu")
+
+    @halloween = Party.create!(name: "Halloween Party", user_id: @andra.id, movie_id: 1, party_date: "2023/01/01", party_time: "10:30", duration: 123)
+    @girls = Party.create!(name: "Girls Night", user_id: @hady.id, movie_id: 2, party_date: "2023/01/01", party_time: "10:30", duration: 123)
+    @eighties = Party.create!(name: "Eighties", user_id: @hady.id, movie_id: 3, party_date: "2023/01/01", party_time: "10:30", duration: 123)
+    
     VCR.use_cassette("top_rated_movies") do
       @results = MoviesFacade.new.top_rated_movies
     end
@@ -79,8 +86,8 @@ RSpec.describe "party new page", type: :feature do
         within("div#viewing_party_form") do 
           expect(page).to have_selector("form")
           expect(page).to have_field("duration", type: 'number')
-          expect(page).to have_field("event_date", type: 'date')
-          expect(page).to have_field("time_field")
+          expect(page).to have_field("party_date", type: 'date')
+          expect(page).to have_field("party_time")
           expect(page).to have_button("Create Party")
         end 
       
@@ -108,18 +115,24 @@ RSpec.describe "party new page", type: :feature do
       VCR.use_cassette("party_new_spec_form", :allow_playback_repeats => true) do
         visit "/users/#{@hady.id}/movies/#{@results[0].movie_id}/parties/new"
         within("div#viewing_party_form") do 
-          fill_in "Party duration (in minutes):", with: 180
+          fill_in :name, with: "Fun Party"
+          fill_in :duration, with: 180
+          fill_in :party_date, with: "2023/01/01"
+          fill_in :party_time, with: "10:00"
 
+          within("div##{@hady.name}") do
+            check("invites[]", option: @hady.id)
+          end
+          
+          within("div##{@mike.name}") do
+            check("invites[]", option: @mike.id)
+          end
+
+          click_button "Create Party"
+
+          expect(current_path).to eq("/users/#{@hady.id}")
         end
-        save_and_open_page
       end 
     end 
-
-
-
-    # it "the event should also be listed on any user's dashboard that were invited to the party" do 
-
-    # end
-
   end 
 end 

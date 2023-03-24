@@ -5,4 +5,8 @@ class User < ApplicationRecord
   def matched_parties
     Party.joins(:user_parties).where(user_parties: { user_id: self.id })
   end
+
+  def get_host_parties
+    Party.where(user_id: self.id)
+  end
 end
