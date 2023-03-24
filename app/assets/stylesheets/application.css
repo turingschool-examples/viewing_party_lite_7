@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+ 
+.party_container {
+  padding: 15px;
+  margin: 15px;
+  border-radius: 25px;
+  border: 5px solid black;
+  display: inline-block;
+}
