@@ -12,27 +12,31 @@ describe "When I visit the new viewing party page (/users/:user_id/movies/:movid
     @user8 = create(:user)
 
     
-    VCR.use_cassette('godfather_movie_2') do
+    VCR.use_cassette('viewing_party_2') do
       facade = MovieFacade.new({id: 238, user_id: @user.id})
       @movie = facade.movie
-      visit new_user_movie_viewing_party_path(@user, @movie)
+      visit new_user_movie_viewing_party_path(@user, @movie.id)
     end
   end
 
   describe 'form' do
     it 'has a field for duration of party with a default value of movie runtime in minutes' do
-      expect(page).to have_field('duration', with: @movie.runtime)
+      expect(page).to have_field("viewing_party[duration]", with: @movie.runtime)
     end
 
     it "has a field to select the date" do
-      expect(page).to have_field('date_select')
+      expect(page).to have_field('viewing_party[date(1i)]')
+      expect(page).to have_field('viewing_party[date(2i)]')
+      expect(page).to have_field('viewing_party[date(3i)]')
     end
 
     it "has a field to select the start time" do
-      expect(page).to have_field('start_time_select')
+      expect(page).to have_field('viewing_party[start_time(4i)]')
+      expect(page).to have_field('viewing_party[start_time(5i)]')
     end
 
     it "has checkboxes next to each existing user in the system" do
+      save_and_open_page
       expect(page).to have_unchecked_field(@user)
       expect(page).to have_unchecked_field(@user2)
       expect(page).to have_unchecked_field(@user3)

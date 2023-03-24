@@ -28,5 +28,14 @@ describe ViewingPartyFacade do
       @result = @vp_facade.movie
     end
 
-    expect(@result).to be_instance_of(Movie)  end
+    expect(@result).to be_instance_of(Movie)  
+  end
+
+  it 'can create a new viewing_party' do
+    VCR.use_cassette("viewing_party") do
+      @result = @vp_facade.new_viewing_party
+    end
+    
+    expect(@result).to be_instance_of(ViewingParty)  
+  end
 end
