@@ -44,6 +44,17 @@ RSpec.describe 'User Story 12' do
           check :user_id
         end
       end
+
+      it "creates a new party" do
+        fill_in "Duration of Party", with: 100
+        fill_in "Day", with: "12/02/23"
+        fill_in "Start Time", with: "7:00 pm"
+
+        click_button "Create Party"
+
+        expect(current_path).to eq(dashboard_path(@user))
+        expect(page).to have_content("You have created a new viewing party!")
+      end
     end
 
     describe "sad path" do
