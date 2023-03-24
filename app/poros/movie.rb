@@ -9,7 +9,7 @@ class Movie
     @vote_average = params[:vote_average]
   end
 
-  def get_details(details) #make detail dummy in test_
+  def get_details(details)
     
     details_hash = {}
 
@@ -52,7 +52,7 @@ class Movie
     author_info_hash  
   end
 
-  def get_genre(genre_hash) #stub in test
+  def get_genre(genre_hash) 
     genre_hash.map do |genre| 
       genre[:name]
     end.join(", ")
