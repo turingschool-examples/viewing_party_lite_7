@@ -135,7 +135,19 @@ RSpec.describe MoviesFacade do
     it "returns a new movie object with all details", :vcr do 
       facade = MoviesFacade.new(238)
       movie_details = facade.detailed_movie
+ 
       expect(movie_details).to be_an_instance_of(Movie)
+      expect(movie_details.cast).to be_a(Hash)
+      expect(movie_details.genres).to be_a(Array)
+      expect(movie_details.genres).to be_a(Array)
+      expect(movie_details.movie_id_show).to be_a(Integer)
+      expect(movie_details.review_info).to be_a(Hash)
+      expect(movie_details.runtime).to be_a(Integer)
+      expect(movie_details.summary).to be_a(String)
+      expect(movie_details.total_review_count).to be_a(Integer)
+      expect(movie_details.title_show).to be_a(String)
+      expect(movie_details.vote_average_show).to be_a(Float)
+    
     end
   end
 end
