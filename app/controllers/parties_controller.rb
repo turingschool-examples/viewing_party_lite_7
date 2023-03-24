@@ -18,8 +18,8 @@ class PartiesController < ApplicationController
 		party = Party.new(party_params)
 		UserParty.create(user: user, party: party, host: user)
 		params[:party][:users].each do |user_id|
-			next if user_id.empty?
-			UserParty.create(user_id: user_id.to_i, party: party, host: user)
+			next if user_id.empty? || user_id == user.id.to_s
+			UserParty.create(user_id: user_id.to_i, party: party, host: false)
 		end
 		party.save
 		redirect_to user_path(user)
