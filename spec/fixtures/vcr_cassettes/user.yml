@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.themoviedb.org/3/movie/238?api_key=86f361cca6ee286354949e22ca339323&language=en-US
+    uri: https://api.themoviedb.org/3/movie/238?api_key=ebf46d9ab88b772502128d76538d0071&language=en-US
     body:
       encoding: US-ASCII
       string: ''
@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 24 Mar 2023 12:37:01 GMT
+      - Fri, 24 Mar 2023 15:20:39 GMT
       Server:
       - openresty
       Cache-Control:
@@ -35,26 +35,26 @@ http_interactions:
       X-Memc-Key:
       - 9d48db5c244b9c3e3d162ef155211175
       X-Memc-Age:
-      - '13331'
+      - '7416'
       X-Memc-Expires:
-      - '2365'
+      - '7958'
       Etag:
-      - W/"70445ff3ba5a8fb28005a8aa810c740c"
+      - W/"4f6e4b7e636a34becfd028e3d0ab8cc5"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 422414d66021e4e123bcb2b5087f7042.cloudfront.net (CloudFront)
+      - 1.1 05fe6f95b77eb54d0691950915c27264.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 9Ee9fC8yGYVAJO0XtQnjt1yeGreO3Lat9jvBidfrwTfG93QsWWXhsA==
+      - EATJX72C2hyAkbiAcyLbdma6_1dI6yoI6jTIbTHJO6DgCMGaN3wbOQ==
       Age:
-      - '26199'
+      - '20155'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
@@ -66,11 +66,11 @@ http_interactions:
         of bloody revenge.","popularity":120.733,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
         Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.712,"vote_count":17642}'
-  recorded_at: Fri, 24 Mar 2023 19:53:40 GMT
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.712,"vote_count":17643}'
+  recorded_at: Fri, 24 Mar 2023 20:56:34 GMT
 - request:
     method: get
-    uri: https://api.themoviedb.org/3/movie/238?api_key=86f361cca6ee286354949e22ca339323&language=en-US
+    uri: https://api.themoviedb.org/3/movie/238?api_key=ebf46d9ab88b772502128d76538d0071&language=en-US
     body:
       encoding: US-ASCII
       string: ''
@@ -93,7 +93,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 24 Mar 2023 12:37:01 GMT
+      - Fri, 24 Mar 2023 15:20:39 GMT
       Server:
       - openresty
       Cache-Control:
@@ -103,26 +103,26 @@ http_interactions:
       X-Memc-Key:
       - 9d48db5c244b9c3e3d162ef155211175
       X-Memc-Age:
-      - '13331'
+      - '7416'
       X-Memc-Expires:
-      - '2365'
+      - '7958'
       Etag:
-      - W/"70445ff3ba5a8fb28005a8aa810c740c"
+      - W/"4f6e4b7e636a34becfd028e3d0ab8cc5"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 f111faa3f37b2169cefb225b0f246234.cloudfront.net (CloudFront)
+      - 1.1 16d72e0791ff01fc4470d27fc024527a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - tyn02y8rCB_zsgjuvdiEdUeSfrLaBm-R8uy0pMe3vSBoegAXSQoWgw==
+      - g3Ng2ss9L2DjotsQCtWWt-CLkxFEZoUttT-HS9BzhnS3TcOMCoOnBw==
       Age:
-      - '26199'
+      - '20155'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
@@ -134,6 +134,6 @@ http_interactions:
         of bloody revenge.","popularity":120.733,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
         Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.712,"vote_count":17642}'
-  recorded_at: Fri, 24 Mar 2023 19:53:40 GMT
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.712,"vote_count":17643}'
+  recorded_at: Fri, 24 Mar 2023 20:56:34 GMT
 recorded_with: VCR 6.1.0

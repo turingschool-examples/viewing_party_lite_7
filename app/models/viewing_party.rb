@@ -4,8 +4,11 @@ class ViewingParty < ApplicationRecord
 
   before_validation :check_for_movie_duration
   validates_presence_of :duration, :party_date, :start_time, :movie_id
-
-
+  
+  def viewing_party_movie
+    MovieFacade.new({id: movie_id}).movie
+  end  
+  
   private
   def check_for_movie_duration
     facade = MovieFacade.new({id: movie_id})

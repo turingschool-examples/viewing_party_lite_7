@@ -6,7 +6,8 @@ class Movie
               :genres,
               :summary,
               :cast,
-              :reviews
+              :reviews,
+              :posters
 
   def initialize(attributes)
     @id = attributes[:id]
@@ -17,6 +18,7 @@ class Movie
     @summary = attributes[:overview]
     @cast = attributes[:cast]
     @reviews = attributes[:reviews]
+    @posters = attributes[:poster_path]
   end
 
   def genre_names(genres)

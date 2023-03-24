@@ -1,10 +1,30 @@
-<h1><%=@user.name%>'s Dashboard</h1>
+<h1><%=@facade.user.name%>'s Dashboard</h1>
 <br>
-<%=button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get%>
+<%=button_to "Discover Movies", "/users/#{@facade.user.id}/discover", method: :get%>
 <br>
-<div id="viewing-parties">
-  <%@user.viewing_parties.each do |party|%>
-    <p>Viewing Party On: <%=party.start_time%></p>
+<h3>Viewing Parties</h3>
+<div id="hosted-parties">
+  <%@facade.hosted_parties.each do |party|%>
+  <div id="party-<%= party.id%>">
+    <p>Movie Poster: <%= image_tag ("https://image.tmdb.org/t/p/h100#{party.viewing_party_movie.posters}")%></p>
+    <p>Movie Title: <%= link_to party.viewing_party_movie.title, user_movie_path(@facade.user.id, party.movie_id) %></p>
+    <p>Date: <%=party.party_date.strftime("%A, %B %d, %Y") %> </p> 
+    <p>Starting At: <%=party.start_time.strftime("%l:%M%P")%></p>
+    <p>Host:<strong> <%= @facade.user.name %></p> </strong>
     <br>
+  </div>
+  <%end%>
+</div>
+<div id="attended-parties">
+  <%@facade.attended_parties.each do |party|%>
+  <div id="party-<%= party.id%>">
+    <p>Movie Poster: <%= image_tag  ("https://image.tmdb.org/t/p/h100#{party.viewing_party_movie.posters}")%> </p>
+    <p>Movie Title: <%= link_to party.viewing_party_movie.title, user_movie_path(@facade.user.id, party.movie_id) %></p>
+    <p>Date: <%=party.party_date.strftime("%A, %B %d, %Y") %> </p> 
+    <p>Starting At: <%=party.start_time.strftime("%l:%M%P")%></p>
+    <p>Host: </p>
+    <p>Attendees:</p>
+    <br>
+  </div>
   <%end%>
 </div>
