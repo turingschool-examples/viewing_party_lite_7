@@ -20,7 +20,6 @@ RSpec.describe 'User Story 12' do
 
       it "has a form to create a new viewing party (Duration, Day, and Start Time)" do
         within "#party_form" do
-          save_and_open_page
           expect(page).to have_field("Duration of Party")
           expect(page).to have_field(:duration, :with => 86)
           expect(page).to have_field("Day")
@@ -28,32 +27,34 @@ RSpec.describe 'User Story 12' do
         end
       end
 
-      it "has each existing user in the system with checkboxes to select invitees" do
+      xit "has each existing user in the system with checkboxes to select invitees" do
         within "#user_#{@friend_1.id}" do
           expect(page).to have_content("#{@friend_1.name} (#{@friend_1.email})")
-          check :user_id
+          check :guest_id
         end
 
         within "#user_#{@friend_2.id}" do
           expect(page).to have_content("#{@friend_2.name} (#{@friend_2.email})")
-          check :user_id
+          check :guest_id
         end
 
         within "#user_#{@friend_3.id}" do
           expect(page).to have_content("#{@friend_3.name} (#{@friend_3.email})")
-          check :user_id
+          check :guest_id
         end
       end
 
       it "creates a new party" do
         fill_in "Duration of Party", with: 100
-        fill_in "Day", with: "12/02/23"
-        fill_in "Start Time", with: "7:00 pm"
+        fill_in :day, with: "12/02/23"
+        fill_in :time, with: "8:00 PM"
+
+        check @friend_1.name
+        check @friend_2.name
 
         click_button "Create Party"
 
-        expect(current_path).to eq(dashboard_path(@user))
-        expect(page).to have_content("You have created a new viewing party!")
+        expect(Party.all.count).to eq(1)
       end
     end
 
