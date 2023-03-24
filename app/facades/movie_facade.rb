@@ -25,8 +25,4 @@ class MovieFacade
     movie.add_cast(cast[:cast][0..9])
     movie
   end
-
-	def service
-		MovieService.new
-	end
 end

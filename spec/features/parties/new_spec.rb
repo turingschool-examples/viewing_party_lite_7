@@ -37,4 +37,16 @@ describe "Parties New Page", :vcr do
 
 		expect(current_path).to eq(user_path(@user_1))
 	end
+
+	it 'does not allow creation of party if the duration is shorter than runtime of movie' do
+		fill_in "Duration", with: 130
+		fill_in "Date", with: "04/04/2023"
+		fill_in "Time", with: "07:30"
+		check "Lisa"
+		check "Sally"
+		click_button "Create Party"
+		
+		expect(current_path).to eq(new_user_movie_party_path(@user_1, 278))
+		expect(page).to have_content("Duration of Party cannot be shorter than Movie Runtime")
+	end
 end
