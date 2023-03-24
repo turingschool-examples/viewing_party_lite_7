@@ -12,4 +12,5 @@
   <%= f.collection_check_boxes :user_ids, @users, :id, :name%>
   <%= f.hidden_field :host_id, value: @user.id %>
   <%= f.hidden_field :movie_id, value: @movie.id %>
+  <%= f.submit "Create Viewing Party" %>
 <% end %>

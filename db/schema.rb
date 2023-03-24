@@ -17,7 +17,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_20_232729) do
   create_table "user_parties", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "viewing_party_id"
-    t.boolean "host"
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.index ["user_id"], name: "index_user_parties_on_user_id"
@@ -36,6 +35,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_20_232729) do
     t.date "party_date"
     t.time "party_time"
     t.integer "movie_id"
+    t.integer "host_id"
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
   end

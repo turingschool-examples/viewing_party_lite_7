@@ -5,8 +5,8 @@ RSpec.describe 'movies show page' do
     @user_1 = create(:user)
     @party1 = create(:viewing_party)
     @party2 = create(:viewing_party)
-    create(:user_party, user: @user_1, viewing_party: @party1, host: false)
-    create(:user_party, user: @user_1, viewing_party: @party2, host: true)
+    create(:user_party, user: @user_1, viewing_party: @party1)
+    create(:user_party, user: @user_1, viewing_party: @party2)
 
     top_20_response = File.read('spec/fixtures/top_movies.json')
     stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV['MOVIE_DB_KEY']}")
