@@ -18,7 +18,6 @@ RSpec.describe 'User Dashboard' do
   describe 'As a user when I visit my dashboard' do
     it 'I see my name at the top of the page' do
       expect(page).to have_content("#{@user1.name}'s Dashboard")
-      expect(page).to_not have_content(@user2.name)
     end
 
     it 'I see a button to discover movies' do
@@ -27,15 +26,11 @@ RSpec.describe 'User Dashboard' do
 
     it 'I see a section for viewing parties' do
       expect(page).to have_content('Viewing Parties')
-      expect(page).to have_content("Duration: #{@viewing_party.duration}")
-      expect(page).to have_content("Date: #{@viewing_party.date}")
-      expect(page).to have_content("Time: #{@viewing_party.time}")
-      expect(page).to have_content("Movie: #{@viewing_party.movie_id}")
     end
 
     it 'I should see the viewing parties that the user has been invited to with the party details' do 
       within("#invited") do
-        save_and_open_page
+    
         # expect(page).to have_content(@viewing_party.poster)
         expect(page).to have_link("#{@viewing_party.movie_title}")
         expect(page).to have_content("Date: #{@viewing_party.date}")

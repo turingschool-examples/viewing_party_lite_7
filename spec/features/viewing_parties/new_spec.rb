@@ -23,7 +23,9 @@ RSpec.describe 'New Viewing Party Page' do
       
       check @user3.name
 
-      click_on 'Create Party'
+      VCR.use_cassette(:create_party, serialize_with: :json) do
+        click_on 'Create Party'
+      end
       expect(current_path).to eq("/users/#{@user.id}")
       expect(ViewingPartyUser.last).to eq(ViewingPartyUser.find_by(user_id: @user3.id, viewing_party_id: ViewingParty.last.id))
       expect(ViewingPartyUser.find_by(user_id: @user2.id, viewing_party_id: ViewingParty.last.id)).to eq(nil)

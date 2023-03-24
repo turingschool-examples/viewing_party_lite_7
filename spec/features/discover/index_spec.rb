@@ -12,8 +12,10 @@ RSpec.describe 'User Discover' do
 
   describe 'As a user when I visit my dashboard and click the discover movies button' do
     it 'I am taken to the discover page' do
-      visit user_path(@user1)
-
+      VCR.use_cassette(:user_show, serialize_with: :json) do
+        visit user_path(@user1)
+      end
+      
       click_button('Discover Movies')
       expect(current_path).to eq(user_discover_path(@user1))
     end
