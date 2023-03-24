@@ -1,2 +1,16 @@
 <center><h4>Create a Movie Party for <%= @movie_facade.movie.title %></h4></center>
 
+<center><div id="party_form">
+  <strong>Viewing Party Details</strong>
+  
+  <%= form_with do |f|  %>
+    <%= f.label :duration, "Duration of Party" %>
+    <%= f.text_field :duration, value: "#{@movie_facade.movie.runtime}" %><br>
+    <%= f.label :date, "Day" %>
+    <%= f.text_field :date %><br>
+    <%= f.label :time, "Start Time" %>
+    <%= f.text_field :time %><br>
+    <%= f.submit "Create Party" %>
+  <% end %>
+
+</div></center>
