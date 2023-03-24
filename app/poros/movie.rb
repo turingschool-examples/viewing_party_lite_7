@@ -25,9 +25,17 @@ class Movie
     reviews.size
   end
   
+  def format_runtime
+    "#{@runtime / 60} hrs #{@runtime % 60} mins"
+  end
+
   # def list_genres
   #   genres.map do |g|
   #     g[:name]
   #   end
+  # end
+
+  # def format_runtime
+  #   "#{@runtime / 60} hrs #{@runtime % 60} mins"
   # end
 end
