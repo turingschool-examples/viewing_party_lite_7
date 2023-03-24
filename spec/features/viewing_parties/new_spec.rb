@@ -46,7 +46,7 @@ RSpec.describe 'new viewing party page' do
       check(@user_2.name)
       check(@user_3.name)
 
-      # click_button "Create Party"
+      click_button "Create Party"
     end
   end
 end
