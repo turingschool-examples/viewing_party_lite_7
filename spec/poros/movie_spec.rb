@@ -10,7 +10,8 @@ RSpec.describe Movie do
       genres: "comedy",
       cast: [{ name: "Bob", character: "Hot Dog" },{ name: "Leonardo Dicaprio", character: "Hot Dog 2" }],
       results: [{ author: "steve", content: "This movie is great" }],
-      total_results: 3
+      total_results: 3,
+      poster_path: "/eginewgon.jpg"
     }
 
     movie = Movie.new(attrs)
@@ -23,5 +24,6 @@ RSpec.describe Movie do
     expect(movie.genres).to eq("comedy")
     expect(movie.cast).to eq({ "Bob"=>"Hot Dog", "Leonardo Dicaprio"=>"Hot Dog 2" })
     expect(movie.reviews).to eq({ "steve"=>"This movie is great" })
+    expect(movie.poster_path).to eq("/eginewgon.jpg")
   end
 end

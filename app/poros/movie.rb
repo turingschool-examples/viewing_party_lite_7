@@ -7,7 +7,8 @@ class Movie
               :genres,
               :cast,
               :reviews,
-              :review_count
+              :review_count,
+              :poster_path
   
   def initialize(data)
     @id = data[:id]
@@ -19,6 +20,7 @@ class Movie
     @cast = cast_info(data[:cast])
     @reviews = review_info(data[:results])
     @review_count = data[:total_results]
+    @poster_path = data[:poster_path]
   end
 
   def cast_info(info)
