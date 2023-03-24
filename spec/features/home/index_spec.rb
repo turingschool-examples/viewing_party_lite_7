@@ -20,6 +20,13 @@ RSpec.describe "/", type: :feature do
       expect(page).to have_link("#{@riker.email}", href: "/users/#{@riker.id}")
       expect(page).to have_link("#{@data.email}", href: "/users/#{@data.id}")
     end
+    
+    it 'has a link to home that returns to the landing page' do
+      visit register_path
+      click_link("Home")
+      
+      expect(current_path).to eq(root_path)
+    end
 
     it "when I click on the button I'm redirected to '/register' page" do
       click_button("Create a New User")
