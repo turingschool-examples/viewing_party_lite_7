@@ -28,7 +28,7 @@ RSpec.describe 'User Story 10' do
 
 
     it "shows the movie title (as link) and vote average" do
-      VCR.use_cassette(:find_movies, serialize_with: :json) do
+      VCR.insert_cassette(:find_movies, serialize_with: :json) do
         fill_in :search, with: "bat"
         click_button "Find Movies"
 
