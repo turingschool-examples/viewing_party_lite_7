@@ -1,16 +1,16 @@
- <p class= "title has-test_centered"><%= @user.name %>'s Dashboard</p>
+ <h3 class= "title has-test_centered"><%= @user.name %>'s Dashboard</h3>
 
-	<%= button_to "Discover Movies", user_discover_index_path(@user), method: :get %>
+	<%= button_to "Discover Movies", user_discover_index_path(@user), class: "btn btn-outline-primary", method: :get %>
 
   <section class="section">
-    <p class="title">Viewing Parties</p>
+    <h4 class="title">Viewing Parties<h4>
     <div class="row">
       <div class="col-12">
-        <h3>Party Invites:</h3>
+        <h4>Party Invites:</h4>
         <ul>
           <% @party_invites.each do |party| %>
             <li id=<%= party.id %>>
-							<h4><%= link_to "Party ##{party.id}", user_movie_party_path(@user, party.movie_id, party)%></h4>
+							<h4><%= "Party ##{party.id}"%></h4>
 							<img src=<%= "https://image.tmdb.org/t/p/w300#{party.image_path}"  %>>
 							<p><%= party.title %></p>
 							<p>Date: <%= party.date %></p>
@@ -30,11 +30,11 @@
       </div>
 
       <div class="col-12">
-        <h3>My Parties:</h3>
+        <h4>My Parties:</h4>
         <ul>
           <% @my_parties.each do |party| %>
             <li id=<%= party.id %>>
-							<h4><%= link_to "Party ##{party.id}",user_movie_party_path(@user, party.movie_id, party)%></h4>
+							<h4><%= "Party ##{party.id}"%></h4>
 							<img src=<%= "https://image.tmdb.org/t/p/w300#{party.image_path}" %>>
 							<p><%= party.title %></p>
 							<p>Date: <%= party.date %></p>
