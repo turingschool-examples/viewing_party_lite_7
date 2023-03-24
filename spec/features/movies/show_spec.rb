@@ -58,7 +58,6 @@ RSpec.describe '/users/:id/movies/:id', type: :feature do
 
       it "I should see the cast for the movie", :vcr do
         visit "/users/#{@steve.id}/movies/238"
-        save_and_open_page
 
         expect(page).to have_content("Cast:")
         expect(page).to have_content("Marlon Brando: Don Vito Corleone")
