@@ -10,7 +10,8 @@ class MovieData
               :summary,
               :cast,
               :total_reviews,
-              :reviews
+              :reviews,
+              :image
 
   def initialize(attributes)
     @id = attributes[:id]
@@ -22,6 +23,7 @@ class MovieData
     @cast = cast_list(attributes[:credits][:cast])
     @total_reviews = attributes[:reviews][:total_results]
     @reviews = review_list(attributes[:reviews][:results])
+    @image = "https://image.tmdb.org/t/p/w185#{attributes[:poster_path]}"
   end
 
   def genre_names(genres)

@@ -10,7 +10,8 @@ describe MovieData do
       cocaine_bear_data = MovieDbService.new.movie_details(804150)
 
       cocaine_bear = MovieData.new(cocaine_bear_data)
-
+      expect(cocaine_bear.id).to eq(804150)
+      expect(cocaine_bear.image).to eq('https://image.tmdb.org/t/p/w185/gOnmaxHo0412UVr1QM5Nekv1xPi.jpg')
       expect(cocaine_bear.title).to eq('Cocaine Bear')
       expect(cocaine_bear.vote_average).to eq(6.514)
       expect(cocaine_bear.runtime).to eq(95)

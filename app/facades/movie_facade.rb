@@ -27,4 +27,12 @@ class MovieFacade
 
     MovieData.new((service.movie_details(id)))
   end
+
+  def viewing_party_movies(id_list)
+    service = MovieDbService.new
+
+    id_list.map do |id|
+      MovieData.new((service.movie_details(id)))
+    end
+  end
 end
