@@ -13,7 +13,7 @@ RSpec.describe "Discover Movies Page" do
 
     it "where a maximum of 20 results are displayed with their respective titles and vote average" do
       visit user_movies_path(zoidberg)
-      
+
       expect(page).to have_content("Title", count: 20)
       expect(page).to have_content("Vote Average", count: 20)
       expect(page).to have_link("The Godfather")
