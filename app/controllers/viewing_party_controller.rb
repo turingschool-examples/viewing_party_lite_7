@@ -6,16 +6,13 @@ class ViewingPartyController < ApplicationController
   end
 
   def create
-    
     @user = User.find(params[:user_id])
     @movie = MoviesFacade.new(params[:movie_id])
     @new_party = ViewingParty.new(party_attributes)
     if @new_party.save
-      wanted = []
-        params["email"].each do |email|
-          binding.pry
-          ViewingPartyUser.create!(user_id: User.where("users.email = '#{email.to_s.gsub("{:value=>", "").tr!("\"","").tr!("}","")}'").id, viewing_party_id: @new_party.id)
-        end
+        # params["email"].each do |email|
+        #   ViewingPartyUser.create!(user_id: User.where("users.email = '#{email.to_s.gsub("{:value=>", "").tr!("\"","").tr!("}","")}'").id, viewing_party_id: @new_party.id)
+        # end
       redirect_to user_path(@user)
     else
       redirect_to new_user_movie_viewing_party_path(@user, @movie.detailed_movie.movie_id_show)
