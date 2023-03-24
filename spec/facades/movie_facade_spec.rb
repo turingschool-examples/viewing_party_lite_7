@@ -3,6 +3,7 @@ require "rails_helper"
 RSpec.describe MovieFacade do
   before :each do
     @user = create(:user)
+   
     params = { :user_id=>@user.id,
                :id=>238
               }

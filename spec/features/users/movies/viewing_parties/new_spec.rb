@@ -25,9 +25,9 @@ describe "When I visit the new viewing party page (/users/:user_id/movies/:movid
     end
 
     it "has a field to select the date" do
-      expect(page).to have_field('viewing_party[date(1i)]')
-      expect(page).to have_field('viewing_party[date(2i)]')
-      expect(page).to have_field('viewing_party[date(3i)]')
+      expect(page).to have_field('viewing_party[party_date(1i)]')
+      expect(page).to have_field('viewing_party[party_date(2i)]')
+      expect(page).to have_field('viewing_party[party_date(3i)]')
     end
 
     it "has a field to select the start time" do
@@ -36,34 +36,38 @@ describe "When I visit the new viewing party page (/users/:user_id/movies/:movid
     end
 
     it "has checkboxes next to each existing user in the system" do
-      save_and_open_page
-      expect(page).to have_unchecked_field(@user)
-      expect(page).to have_unchecked_field(@user2)
-      expect(page).to have_unchecked_field(@user3)
-      expect(page).to have_unchecked_field(@user4)
-      expect(page).to have_unchecked_field(@user5)
-      expect(page).to have_unchecked_field(@user6)
-      expect(page).to have_unchecked_field(@user7)
-      expect(page).to have_unchecked_field(@user8)
+      expect(page).to have_unchecked_field('user_ids[]', count: 7)
     end
 
     it "has a button to create a party" do
       expect(page).to have_button("Create Viewing Party")
-
     end
 
   end
 
   describe 'details' do
-    it "reroutes the user back to their dashboard where the party is shown after the create" do
-      fill_in 'date_select', with: Date.today + 1
-      fill_in 'start_time_select', with: '20:15'
-      check @user2
-      check @user4
-      check @user7
-      check @user8
+    before :each do
+      within "##{@user2.id}" do
+        check 'user_ids[]'
+      end
 
-      click_button 'Create Viewing Party'
+      within "##{@user4.id}" do
+        check 'user_ids[]'
+      end
+
+      within "##{@user7.id}" do
+        check 'user_ids[]'
+      end
+
+      within "##{@user8.id}" do
+        check 'user_ids[]'
+      end
+    end
+
+    it "reroutes the user back to their dashboard where the party is shown after the create" do
+      VCR.use_cassette('viewing_party_3') do
+        click_button 'Create Viewing Party'
+      end
 
       expect(page).to have_current_path(user_path(@user))
       expect(page).to have_content('The Godfather Viewing Party on March 25th, 2023')
@@ -71,36 +75,43 @@ describe "When I visit the new viewing party page (/users/:user_id/movies/:movid
 
     it 'will validate that the viewing party length is greater than or equal to the duration of the movie' do
       fill_in 'Duration', with: '120'
-      fill_in 'date_select', with: Date.today + 1
-      fill_in 'start_time_select', with: '20:15'
-      check @user2
-      check @user4
-      check @user7
-      check @user8
+      select 'April', from: 'viewing_party[party_date(2i)]'
+      select 3, from: 'viewing_party[party_date(3i)]'
 
-      click_button 'Create Viewing Party'
+      select 20, from: 'viewing_party[start_time(4i)]'
+      select 15, from: 'viewing_party[start_time(5i)]'
+      
+      VCR.use_cassette('viewing_party_2') do
+        click_button 'Create Viewing Party'
+      end
 
-      expect(page).to have_current_path(new_user_movie_viewing_party_path(@user, @movie))
-      expect(page).to have_content('Must be greater than or equal to movie runtime in minutes: 175')
+
+      expect(page).to have_current_path(new_user_movie_viewing_party_path(@user, @movie.id))
+      expect(page).to have_content('Duration must be greater than or equal to movie runtime: 175 minutes')
     end
 
     
       
     it "is listed in other user's dashboards that were invited to the party" do
-      fill_in 'date_select', with: Date.today + 1
-      fill_in 'start_time_select', with: '20:15'
-      check @user2
-      check @user4
-      check @user7
-      check @user8
+      select 'April', from: 'viewing_party[party_date(2i)]'
+      select 3, from: 'viewing_party[party_date(3i)]'
 
-      click_button 'Create Viewing Party'
+      select 20, from: 'viewing_party[start_time(4i)]'
+      select 15, from: 'viewing_party[start_time(5i)]'
 
+      VCR.use_cassette('viewing_party_4') do
+        click_button 'Create Viewing Party'
+      end
+      
       expect(page).to have_current_path(user_path(@user))  
 
       visit user_path(@user_2)
 
       expect(page).to have_content('The Godfather Viewing Party on March 25th, 2023')
     end
+  end
+
+  describe 'sad_path for form submission' do
+    
   end
 end
