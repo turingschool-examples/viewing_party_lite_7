@@ -105,7 +105,7 @@ describe "When I visit the new viewing party page (/users/:user_id/movies/:movid
       
       expect(page).to have_current_path(user_path(@user))  
 
-      visit user_path(@user_2)
+      visit user_path(@user2)
 
       expect(page).to have_content('The Godfather Viewing Party on March 25th, 2023')
     end

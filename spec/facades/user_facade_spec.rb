@@ -14,10 +14,9 @@ describe UserFacade do
       @user8 = create(:user)
       params = {"controller"=>"movies",
         :action=>"index",
-        :user_id=>@user.id,
+        :id=>@user.id,
         :movie_title=>"Despicable"}
       @movie_facade = MovieFacade.new(params)
-      @vp_facade = ViewingPartyFacade.new(params)
       @user_facade = UserFacade.new(params)
       @vp1 = ViewingParty.create!({duration: 180, party_date: Date.new(2011, 1, 1,), start_time: '21:00', movie_id: 238})
       @vp2 = ViewingParty.create!({duration: 180, party_date: Date.new(2021, 1, 1,), start_time: '21:00', movie_id: 238})
