@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe '/users/:id/movies/:id', type: :feature do
 
   before do
-    @steve = User.create!(name: "steve", email: "steve@steve.com")
+    @steve = User.create!(name: 'steve', email: 'steve@steve.com')
     @bob = User.create!(name: "bob", email: "bob@bob.com")
     
     

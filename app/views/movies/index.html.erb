@@ -4,13 +4,13 @@
 <% if params.include?(:search) %>
   <p>Movie Results for: <%= params[:search] %></p>
   <% @search.each do |movie| %>
-    <%= link_to movie.title, user_movie_path(@user, movie)%> Vote Average: <%= movie.vote_average%>
+    <%= link_to movie.title, user_movie_path(@user, movie.id)%> Vote Average: <%= movie.vote_average%>
     <br>
   <% end %>
 
   <%else%>
   <%@top_movies.each do |movie|%>
-    <p><%= link_to movie.title, user_movie_path(@user, movie)%> Vote Average: <%=movie.vote_average%></p>
+    <p><%= link_to movie.title, user_movie_path(@user, movie.id)%> Vote Average: <%=movie.vote_average%></p>
   <%end%>
 <% end %>
 

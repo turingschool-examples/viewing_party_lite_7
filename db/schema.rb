@@ -19,6 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_21_000754) do
     t.string "date"
     t.string "time"
     t.integer "duration"
+    t.integer "host_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -26,7 +27,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_21_000754) do
   create_table "user_parties", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "party_id"
-    t.boolean "host"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["party_id"], name: "index_user_parties_on_party_id"
