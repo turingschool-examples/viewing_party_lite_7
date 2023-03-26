@@ -2,6 +2,7 @@ class Users::ViewingPartiesController < ApplicationController
 
   def new
     # binding.pry
+    @users = User.all
     @user = User.find(params[:user_id])
     # binding.pry
     facade = MoviedbFacade.new(movie_id: params[:movie_id]).find_movie_info
