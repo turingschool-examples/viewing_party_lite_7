@@ -11,6 +11,7 @@ class Party < ApplicationRecord
   # Doesn't work yet:  
   # def invitee_names
   #   require 'pry'; binding.pry
+  #   party_users
   #   party
   #     .joins(:users)
   #     .select("users.*")

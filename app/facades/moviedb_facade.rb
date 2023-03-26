@@ -9,7 +9,6 @@ class MoviedbFacade
       @word = params[:search] 
     elsif params[:movie_id].present?
       @movie_id = params[:movie_id]
-    # else
     end
   end
 
@@ -27,6 +26,11 @@ class MoviedbFacade
 
   def top_20_movies
     search_results = movie_service.get_top_20
+
+    # This will memoize the return, and only hit the API once...but careful!!
+    # ONLY use this if the data is static & never changes!!!!
+    # @top_20_movies ||= search_results[:results].map do |movie_hash|
+
     search_results[:results].map do |movie_hash|
       movie_list = { movie: movie_hash }
       Movie.new(movie_list)
@@ -41,14 +45,6 @@ class MoviedbFacade
     }
     Movie.new(movie_list)
   end
-  
-  def movie_title_image
-    movie_list = {
-      movie: find_movie_info,
-      images: find_movie_image,
-    }
-    Movie.new(movie_list)
-  end
 
   # Helper methods: 
   def find_movie_info
@@ -57,6 +53,7 @@ class MoviedbFacade
 
   def find_cast_info
     info = movie_service.get_cast(@movie_id)
+    # info[:cast].first(10)
     info[:cast].first(10).map do |cast_hash|
       { actor: cast_hash[:name], character: cast_hash[:character] }
     end
@@ -71,6 +68,17 @@ class MoviedbFacade
 
   ############## REFACTORED: 
   #private <- for later muahaha
+
+    
+  # def movie_title_image
+  #   movie_list = {
+  #     movie: find_movie_info,
+  #     images: find_movie_image,
+  #   }
+  #   Movie.new(movie_list)
+  # end
+
+
 
   # def get_movies_search
   #   search_results = movie_service.fetch_api("search/movie?query=#{@word}&include_adult=false")

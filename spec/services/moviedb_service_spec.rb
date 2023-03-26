@@ -9,6 +9,8 @@ RSpec.describe MoviedbService do
         .to_return(status: 200, body: top_movies, headers: {})
 
         expect(MoviedbService.new.fetch_api("/movie/top_rated?include_adult=false")).to be_a(Hash)
+        #Maybe test for a key of this individual API call
+        #Then change the fixture to call each "get" method in the service and call a unique key from that API call
       end
     end
   end

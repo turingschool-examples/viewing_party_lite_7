@@ -9,17 +9,17 @@ class Movie
               :cast,
               :reviews
   
-  def initialize(response)
-    @movie_id = response[:movie][:id]
-    @title = response[:movie][:title]
-    @vote_avg = response[:movie][:vote_average]
-    @image = response[:movie][:poster_path]
-    @runtime = response[:movie][:runtime]
-    @summary = response[:movie][:overview]
-    @genres = response[:movie][:genres]
+  def initialize(info)
+    @movie_id = info[:movie][:id]
+    @title = info[:movie][:title]
+    @vote_avg = info[:movie][:vote_average]
+    @image = info[:movie][:poster_path]
+    @runtime = info[:movie][:runtime]
+    @summary = info[:movie][:overview]
+    @genres = info[:movie][:genres]
 
-    @cast = response[:cast]
-    @reviews = response[:reviews]
+    @cast = info[:cast]
+    @reviews = info[:reviews]
   end
 
   def review_count
