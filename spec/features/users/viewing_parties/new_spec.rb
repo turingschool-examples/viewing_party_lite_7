@@ -29,6 +29,14 @@ RSpec.describe "/users/:id/movies/:movie_id/viewing_party/new" do
       expect(page).to have_field(:start_time)
       
       expect(page).to have_content("Invite Other Users")
+
+      #what partner used last time in view: 
+      #   <tr>
+      #   <td>
+      #     <td><%= f.label :check_boxes, "Invite Other Users" %></td><br>
+      #     <td><%= f.collection_check_boxes(:user_ids, @users, :id, :name_with_email) %></td>
+      #   <tr>
+
       # this is not complete. They wanted us to display the email also:
       expect(page).to have_unchecked_field("William Riker")
       expect(page).to have_unchecked_field("Data")
