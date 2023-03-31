@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'landing page' do
   before :each do
-    @user1 = User.create!(name: 'Bob', email: 'blahblah@blah.com')
-    @user2 = User.create!(name: 'Steve', email: 'steve@steve.com')
+    @user1 = User.create!(name: 'Bob', email: 'blahblah@blah.com', password: 'password')
+    @user2 = User.create!(name: 'Steve', email: 'steve@steve.com', password: 'password')
 
     @party1 = ViewingParty.create!(duration: 120, party_date: '2021-03-20', party_time: '12:00:00', movie_id: 1)
     @party2 = ViewingParty.create!(duration: 60, party_date: '2021-04-20', party_time: '09:00:00', movie_id: 2)
@@ -13,27 +13,25 @@ RSpec.describe 'landing page' do
     visit '/'
   end
 
-  it 'displays the title of the application' do
-    expect(page).to have_content("Welcome to Viewing Party!")
+  it "displays the welcome message" do
+    expect(page).to have_content("Viewing Party")
   end
 
-  # it 'displays a button to create a new user' do
-  #   expect(page).to have_button("Register New User")
-
-  #   click_button
-  #   expect(current_path).to eq("/register")
-  # end
-
-  it 'has a list of users and their names are links to their show page' do
-    expect(page).to have_link(@user1.name)
-    expect(page).to have_link(@user2.name)
+  it "displays the 'Create a New User' button" do
+    expect(page).to have_link("Create a New User", href: register_path)
   end
 
-  it 'has a link to go back to the landing page' do
-    expect(page).to have_link("Home")
+  it "displays the 'Log In' link" do
+    expect(page).to have_link("Log In", href: login_path)
+  end
 
-    click_link "Home"
-    
-    expect(current_path).to eq("/")
+  it "navigates to the register page when 'Create a New User' button is clicked" do
+    click_link "Create a New User"
+    expect(page.current_path).to eq(register_path)
+  end
+
+  it "navigates to the login page when 'Log In' link is clicked" do
+    click_link "Log In"
+    expect(page.current_path).to eq(login_path)
   end
 end

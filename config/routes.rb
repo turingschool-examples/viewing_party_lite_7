@@ -2,6 +2,11 @@
 
 Rails.application.routes.draw do
   root 'landing#index'
+  get '/login', to: 'users#login_form'
+  post '/login', to: 'users#login'
+
+  get '/logout', to: 'sessions#logout'
+  delete '/logout', to: 'sessions#logout'
 
   get '/register', to: 'users#new'
   post '/register', to: 'users#create'
