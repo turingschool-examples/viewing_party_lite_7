@@ -7,11 +7,54 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #4CAF50;
+        color: white;
+        padding: 15px 0;
+        text-align: center;
+        font-size: 1.5em;
+      }
+
+      header a {
+        color: white;
+        text-decoration: none;
+        padding: 8px;
+        display: inline-block;
+      }
+
+      header a:hover {
+        background-color: #45a049;
+        border-radius: 4px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+    </style>
   </head>
 
   <body>
-  <p><%= link_to 'Home', "/" %></p>
-  <%= flash[:alert] %>
-    <%= yield %>
+    <header>
+      <a href="/">Home</a>
+    </header>
+    <div class="container">
+      <% if flash[:alert] %>
+        <div class="alert">
+          <%= flash[:alert] %>
+        </div>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>

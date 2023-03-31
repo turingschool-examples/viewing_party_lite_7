@@ -1,11 +1,82 @@
-<h1>Discover Movies</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discover Movies</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
 
-<div id="top_movies">
-  <%= button_to "Discover Top Rated Movies", "/users/#{@user.id}/movies", params: {q: 'top_rated'}, method: :get %>
-</div>
-<div id="search_movies">
-<%= form_tag("/users/#{@user.id}/movies", method: :get) do %>
-  <%= text_field_tag(:search, params[:search]) %>
-  <%= submit_tag ("Find Movies") %>
-<% end %>
-</div>
+    .discover-container {
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px 40px;
+    }
+
+    .discover-container h1 {
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    .discover-container input[type="text"],
+    .discover-container input[type="submit"] {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 8px;
+      font-size: 14px;
+    }
+
+    .discover-container input[type="submit"] {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      text-transform: uppercase;
+      margin-left: 10px;
+    }
+
+    .discover-container input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    .discover-container button {
+      background-color: #4CAF50;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      padding: 10px 20px;
+      text-transform: uppercase;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .discover-container button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="discover-container">
+    <h1>Discover Movies</h1>
+
+    <div id="top_movies">
+      <%= button_to "Discover Top Rated Movies", "/users/#{@user.id}/movies", params: {q: 'top_rated'}, method: :get %>
+    </div>
+    <div id="search_movies">
+      <%= form_tag("/users/#{@user.id}/movies", method: :get) do %>
+        <%= text_field_tag(:search, params[:search]) %>
+        <%= submit_tag ("Find Movies") %>
+      <% end %>
+    </div>
+  </div>
+</body>
+</html>

@@ -15,10 +15,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
+    if User.exists?(email: @user.email)
+      flash[:notice] = "Email already exists"
+      render :new
+    elsif @user.save
       redirect_to "/users/#{@user.id}"
     else
-      # flash[:alert] = @user.errors.full_messages.join(", ")
       render :new
     end
   end

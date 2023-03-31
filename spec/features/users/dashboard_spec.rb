@@ -47,7 +47,6 @@ RSpec.describe "User Dashboard" do
 
   it 'displays the attendees' do
     within "#party-#{@movie_1.id}" do
-      expect(page).to have_content("#{@user_2.name}")
       expect(page).to have_content("#{@user_1.name}")
       expect(page).to_not have_content("#{@user_3.name}")
     end

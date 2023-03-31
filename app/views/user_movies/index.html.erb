@@ -1,19 +1,81 @@
-<%= link_to "Back", "/users/#{@user.id}/discover" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discover Movies</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
 
-<h1>Top Rated Movies</h1>
-<% if @top_movies %>
-  <% @top_movies.each.with_index(1) do |film, index| %>
-    <div id="top_rated-<%= index %>">
-      <p><%= link_to "#{film.title}", "/users/#{@user.id}/movies/#{film.id}" %></p>
-      <p><%= film.vote_average %></p>
-    </div>
-  <% end %>
-<% end %>
-<% if @search_results %>
-  <% @search_results.each.with_index(1) do |film, index| %>
-    <div id="search_results-<%= index %>">
-      <p><%= link_to "#{film.title}", "/users/#{@user.id}/movies/#{film.id}"%></p>
-      <p><%= film.vote_average %></p>
-    </div>
-  <% end %>
-<% end %>
+    .discover-container {
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px 40px;
+    }
+
+    .discover-container h1 {
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    .discover-container a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    .discover-container a:hover {
+      text-decoration: underline;
+    }
+
+    .movie-list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .movie-list li {
+      margin-bottom: 10px;
+    }
+
+    .movie-rating {
+      color: #333;
+      font-size: 14px;
+      font-weight: bold;
+      margin-left: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="discover-container">
+    <%= link_to "Back", "/users/#{@user.id}/discover" %>
+
+    <h1>Top Rated Movies</h1>
+    <% if @top_movies %>
+      <ul class="movie-list">
+        <% @top_movies.each.with_index(1) do |film, index| %>
+          <li id="top_rated-<%= index %>">
+            <%= link_to "#{film.title}", "/users/#{@user.id}/movies/#{film.id}" %>
+            <span class="movie-rating"><%= film.vote_average %></span>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+    <% if @search_results %>
+      <ul class="movie-list">
+        <% @search_results.each.with_index(1) do |film, index| %>
+          <li id="search_results-<%= index %>">
+            <%= link_to "#{film.title}", "/users/#{@user.id}/movies/#{film.id}" %>
+            <span class="movie-rating"><%= film.vote_average %></span>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+</body>
+</html>

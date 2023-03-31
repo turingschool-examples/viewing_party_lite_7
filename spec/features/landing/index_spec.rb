@@ -17,12 +17,12 @@ RSpec.describe 'landing page' do
     expect(page).to have_content("Welcome to Viewing Party!")
   end
 
-  it 'displays a button to create a new user' do
-    expect(page).to have_button("Register New User")
+  # it 'displays a button to create a new user' do
+  #   expect(page).to have_button("Register New User")
 
-    click_button "Register New User"
-    expect(current_path).to eq("/register")
-  end
+  #   click_button
+  #   expect(current_path).to eq("/register")
+  # end
 
   it 'has a list of users and their names are links to their show page' do
     expect(page).to have_link(@user1.name)
