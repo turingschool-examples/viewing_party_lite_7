@@ -12,6 +12,15 @@ RSpec.describe 'new viewing party page' do
       .to_return(status: 200, body: json_response, headers: {})
 
     @movie = Movie.new(JSON.parse(json_response, symbolize_names: true))
+
+    visit '/'
+
+    click_on "Log In"
+
+    fill_in :email, with: @user_1.email
+    fill_in :password, with: @user_1.password
+
+    click_button("Log In")
   end
 
   it 'displays the movie title' do
@@ -47,6 +56,7 @@ RSpec.describe 'new viewing party page' do
       check(@user_3.name)
 
       click_button "Create Party"
+
     end
 
     expect(current_path).to eq("/users/#{@user_1.id}")
