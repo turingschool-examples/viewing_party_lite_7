@@ -8,15 +8,19 @@ class Party < ApplicationRecord
   has_many :party_users
   has_many :users, through: :party_users
 
-  # Doesn't work yet:  
-  # def invitee_names
-  #   require 'pry'; binding.pry
-  #   party_users
-  #   party
-  #     .joins(:users)
-  #     .select("users.*")
-  #     .where("party_users.host_id != users.id")
-  #     .pluck("users.name")
-  # end
-
+  def get_all_info
+    movie = MoviedbFacade.new(movie_id: movie_id).all_movie_info
+    host = User.find(host_id)
+    all_party_info = {
+      party_id: id,
+      movie_id: movie.movie_id,
+      image: "https://image.tmdb.org/t/p/w154#{movie.image}", 
+      title: movie.title, 
+      duration_minutes: duration_minutes, # party duration (type self into pry)
+      date: date, 
+      start_time: start_time, 
+      host: host.name, 
+      attendees: users #grabbing from join table association!!!
+    }
+  end
 end

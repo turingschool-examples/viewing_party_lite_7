@@ -2,11 +2,16 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @user_all_parties = @user.parties
+    user_all_parties = @user.parties
 
+    # below might not be needed if image URL & movie title could be passed through params of party
+    @all_parties_and_movie = []
+
+    user_all_parties.each do |party|
+      @all_parties_and_movie << party.get_all_info
+    end
     # This will work to render one movie image to page:
-      movie_info = MoviedbFacade.new(movie_id: @user_all_parties.first[:movie_id]).find_movie_info
-      @the_movie = Movie.new(movie: movie_info)
+      # @the_movie = Movie.new(movie: movie_info)
   end
   
   def new

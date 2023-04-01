@@ -2,29 +2,28 @@
 <br>
 <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %>
 <br>
-<%= image_tag "https://image.tmdb.org/t/p/w154#{@the_movie.image}"%>
-<p><%= @the_movie.title %></p>
-<br>
 
-<%# BELOW .image & .movie_title will not work - Need previous page finished %>
-<% @user_all_parties.each do |party| %>
-  <div id = "party_id-<%= party.id %>">
-    <%# <%= image_tag "https://image.tmdb.org/t/p/w154#{party.image}"%>
-    <%# <p><%= party.movie_title %>
-    <p><%= party.date.strftime("%B %-d, %Y") %></p>
-    <p><%= party.start_time.strftime("%I:%M %p") %></p>
+<% @all_parties_and_movie.each do |party| %>
+  <div id= "party_id-<%= party[:party_id]%>">
 
-    <% if @user.id == party.host_id %>
+    <%# <%= image_tag "https://image.tmdb.org/t/p/w154#{party[:image]}" %> 
+    <%= image_tag party[:image] %> 
+    <p><%= party[:title] %></p>
+    <p><%= party[:date].strftime("%B %-d, %Y") %></p>
+    <p><%= party[:start_time].strftime("%I:%M %p") %></p>
+    <p><%= party[:host] %></p>
+
+    <% if party[:host] == @user.name %>
       <p>Hosting</p>
     <% else %>
       <p>Invited</p>
     <% end %>
     <br>
 
-    <%# <ul> %>
-      <%# <% party.invitees.each do |name| %>
-        <%# <strong><li><%= name %>
-      <%# <% end %>
-    <%# </ul> %>
+    <p>Friends who are attending</p>
+    <% party[:attendees].each do |attendee| %>
+      <p><%= attendee.name %></p>
+    <% end %>
+
   </div>
 <% end %>

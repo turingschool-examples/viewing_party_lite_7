@@ -50,6 +50,8 @@ class MoviedbFacade
   def find_movie_info
     info = movie_service.get_movie(@movie_id)
   end
+  # REFACTOR: make a second method like this that also sends data to poro
+  # since ONLY this info is needed over and over and over!!! 
 
   def find_cast_info
     info = movie_service.get_cast(@movie_id)

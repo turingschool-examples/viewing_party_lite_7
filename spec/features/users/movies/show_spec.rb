@@ -16,7 +16,7 @@ RSpec.describe "/users/:user_id/movies/:movie_id" do
       reviews_response = File.read("spec/fixtures/moviedb/space_reviews.json")
       stub_request(:get, "https://api.themoviedb.org/3/movie/62/reviews?api_key=#{ENV["TMDB_API_KEY"]}")
       .to_return(status: 200, body: reviews_response, headers: {})
-      film = MoviedbFacade.new(movie_id: 62)
+      # NOT NEEDED AT ALL: film = MoviedbFacade.new(movie_id: 62)
 
       visit "/users/#{@picard.id}/movies/62"
     end
