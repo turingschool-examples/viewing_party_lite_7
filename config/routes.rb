@@ -2,6 +2,11 @@
 
 Rails.application.routes.draw do
   root 'landing#index'
+  get '/login', to: 'users#login_form'
+  post '/login', to: 'users#login'
+
+  get '/logout', to: 'sessions#logout'
+  delete '/logout', to: 'sessions#logout'
 
   get '/register', to: 'users#new'
   post '/register', to: 'users#create'
@@ -15,7 +20,6 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  # get 'users/:id', to: "users#show"
   get '/users/:user_id/movies/:movie_id/viewing_party/new', to: 'viewing_parties#new'
   
   get "/users/:id/discover", to: "user_discovers#index"

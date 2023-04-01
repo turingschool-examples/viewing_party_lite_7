@@ -3,13 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Viewing Party - Register</title>
+  <title>Viewing Party - Log In</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #f0f0f0;
-      margin: 0;
-      padding: 0;
     }
 
     .container {
@@ -20,11 +18,9 @@
 
     h1 {
       text-align: center;
-      margin-top: 30px;
-      margin-bottom: 30px;
     }
 
-    .register-form {
+    .login-form {
       background-color: #ffffff;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -33,18 +29,18 @@
       padding: 20px 40px;
     }
 
-    .register-form h3 {
+    .login-form h3 {
       margin-top: 0;
       margin-bottom: 20px;
     }
 
-    .register-form label {
+    .login-form label {
       display: block;
       font-weight: bold;
       margin-bottom: 5px;
     }
 
-    .register-form input[type="text"], .register-form input[type="email"], .register-form input[type="password"] {
+    .login-form input[type="text"], .login-form input[type="password"] {
       width: 100%;
       border: 1px solid #ddd;
       border-radius: 4px;
@@ -53,7 +49,7 @@
       margin-bottom: 20px;
     }
 
-    .register-form input[type="submit"] {
+    .login-form input[type="submit"] {
       background-color: #4CAF50;
       border: none;
       border-radius: 4px;
@@ -65,31 +61,22 @@
       width: 100%;
     }
 
-    .register-form input[type="submit"]:hover {
+    .login-form input[type="submit"]:hover {
       background-color: #45a049;
     }
   </style>
 </head>
 <body>
-<% if flash[:notice] %>
-  <div class="flash-notice">
-    <%= flash[:notice] %>
-  </div>
-<% end %>
   <div class="container">
-    <h1>Viewing Party - Register</h1>
-    <div class="register-form">
-      <h3>Register a New User</h3>
-      <%= form_with url: "/register", method: :post, local: true do |f| %>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
-        <%= f.label :email %>
+    <h1>Viewing Party - Log In</h1>
+    <div class="login-form">
+      <h3>Log In</h3>
+      <%= form_with url: login_path, method: :post do |f| %>
+        <%= f.label :email, "Email Address:" %>
         <%= f.text_field :email %>
-        <%= f.label :password %>
+        <%= f.label :password, "Password:" %>
         <%= f.password_field :password %>
-        <%= f.label :password_confirmation, "Confirm Password" %>
-        <%= f.password_field :password_confirmation %>
-        <%= f.submit "Create New User" %>
+        <%= f.submit "Log In" %>
       <% end %>
     </div>
   </div>

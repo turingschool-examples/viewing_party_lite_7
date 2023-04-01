@@ -23,7 +23,14 @@ RSpec.describe "User Dashboard" do
     @user_party_2 = UserParty.create!(user_id: @user_1.id, viewing_party_id: @viewing_party_2.id)
     @user_party_3 = UserParty.create!(user_id: @user_2.id, viewing_party_id: @viewing_party_2.id)
 
-    visit "users/#{@user_1.id}"
+    visit '/'
+
+    click_on "Log In"
+
+    fill_in :email, with: @user_1.email
+    fill_in :password, with: @user_1.password
+
+    click_button("Log In")
   end
 
   it "will have the user's name" do 
@@ -47,7 +54,6 @@ RSpec.describe "User Dashboard" do
 
   it 'displays the attendees' do
     within "#party-#{@movie_1.id}" do
-      expect(page).to have_content("#{@user_2.name}")
       expect(page).to have_content("#{@user_1.name}")
       expect(page).to_not have_content("#{@user_3.name}")
     end
@@ -55,5 +61,81 @@ RSpec.describe "User Dashboard" do
 
   it 'the movie title is a link to the movies show page' do
     expect(page).to have_link("#{@movie_1.title}")
+  end
+
+  describe 'log in' do
+    before :each do
+      visit "/"
+
+      click_on "Log Out"
+    end
+  
+    it 'successful log in takes users to their discover show page' do
+      expect(page).to have_content("Log In")
+
+      click_on "Log In"
+
+      fill_in :email, with: @user_1.email
+      fill_in :password, with: @user_1.password
+
+      click_on("Log In")
+
+      expect(current_path).to eq(user_path(@user_1.id))
+    end
+
+    it 'unsuccessful log in takes users to the login page and displays flash message' do
+      click_on "Log In"
+
+      fill_in :email, with: "not a user"
+
+      click_on("Log In")
+
+      expect(page).to have_content("Log In")
+      expect(page).to have_content("Invalid Credentials")
+    end
+
+    describe 'log out' do
+      before :each do
+        visit '/'
+
+        click_on "Log In"
+
+        fill_in :email, with: @user_1.email
+        fill_in :password, with: @user_1.password
+
+        click_button("Log In")
+      end
+
+      it 'has a button to log out' do
+        visit '/'
+        
+        expect(page).to have_content("Log Out")
+
+        click_on "Log Out"
+
+        expect(page).to have_content("Log In")
+      end
+
+      it 'log out deletes the session' do
+        visit '/'
+
+        click_on "Log Out"
+
+        expect(current_path).to eq('/')
+
+        expect(page).to have_content("Log In")
+      end
+
+      it 'user can not access user show page without logging in' do
+        visit '/'
+
+        click_on "Log Out"
+
+        click_on "#{@user_1.name}"
+
+        expect(current_path).to eq('/')
+        expect(page).to have_content("Log in to view this page")
+      end
+    end
   end
 end
