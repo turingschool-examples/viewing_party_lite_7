@@ -31,12 +31,15 @@ class UsersController < ApplicationController
 
   def login
     user = User.find_by(email: params[:email])
-    if user.authenticate(params[:password])
+    if user.nil?
+      flash[:notice] = "Invalid Credentials"
+      redirect_to '/login'
+    elsif user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to "/users/#{user.id}"
     else
       flash[:notice] = "Invalid Credentials"
-      redirect_to '/'
+      redirect_to '/login'
     end
   end
 

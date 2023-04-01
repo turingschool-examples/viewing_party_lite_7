@@ -56,7 +56,6 @@
 <body>
   <div class="movie-details-container">
     <%= link_to "Back", "/users/#{@user.id}/discover" %>
-
     <h2>Title: <%= @movie.title %></h2>
     <%= link_to "Create Viewing Party", "/users/#{@user.id}/movies/#{@movie.id}/viewing_party/new", method: :get %>
 

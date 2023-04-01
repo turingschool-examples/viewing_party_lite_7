@@ -49,11 +49,11 @@
       <a href="/">Home</a>
     </header>
     <div class="container">
-      <% if flash[:alert] %>
-        <div class="alert">
-          <%= flash[:alert] %>
-        </div>
-      <% end %>
+      <% flash.each do |type, msg| %>
+      <div>
+        <%= msg %>
+      </div>
+    <% end %>
       <%= yield %>
     </div>
   </body>
