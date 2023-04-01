@@ -1,21 +1,16 @@
 <% if @search_result_movies %>
-  <body>
-    <center><h3>Movie Results for: <%= @keyword %></h3></center>
-    <center><%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %></center>
+  <h3>Movie Results for: <%= @keyword %></h3>
+    <%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %> 
     <% @search_result_movies.each do |movie| %>
       <div id="top-<%= movie.movie_id %>">
         <p><%= link_to movie.title, "/users/#{@user.id}/movies/#{movie.movie_id}", method: :get %></p>
         <p>Vote Average: <%= movie.vote_avg %></p>
       </div>
     <% end %>
-    <br>
-  </body>
-
 <% else %>
-  <body>
-    <center><h3>Top Rated Movies</h3></center>
+  <h3>Top Rated Movies</h3>
     <br>
-    <center><%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %></center>
+    <%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %>
     <% @top_20_movies.each do |movie| %>
       <div id="top-<%= movie.movie_id %>">
         <p><%= link_to movie.title, "/users/#{@user.id}/movies/#{movie.movie_id}", method: :get %></p>
@@ -23,5 +18,4 @@
       </div>
     <% end %>
     <br>
-  </body>
 <% end %>
