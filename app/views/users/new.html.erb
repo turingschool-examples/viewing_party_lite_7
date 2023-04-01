@@ -1,19 +1,19 @@
 <h3>Register a New User</h3>
 
-<body>
-  <center><table>
+<%# <body>
+  <center><table> %>
     <%= form_with url: "/register", method: :post, local: true do |f| %>
-    <tr>
-      <td> <%= f.label :name %> </td>
-      <td> <%= f.text_field :name %> </td>
-    </tr>
-    <tr>
-      <td> <%= f.label :email %> </td>
-      <td> <%= f.text_field :email %> </td>
-    </tr>
-    <tr>
-      <td> <%= f.submit "Create New User" %> </td>
-    </tr>
+    <%# <tr> %>
+      <%= f.label :name %> 
+      <%= f.text_field :name %> 
+    <%# </tr>
+    <tr> %>
+      <%= f.label :email %> 
+      <%= f.text_field :email %> 
+    <%# </tr>
+    <tr> %>
+    <%= f.submit "Create New User" %> 
+    <%# </tr> %>
     <% end %>
-  </table> </center>
-</body>
+  <%# </table> </center>
+</body> %>
