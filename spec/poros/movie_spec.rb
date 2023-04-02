@@ -16,6 +16,7 @@ RSpec.describe Movie do
       reviews: [{:author=>"Spok", :review=> "It portrayed real life."}, {:author=>"Kirk", :review=> "If I had been captain..."}]
     }
   end
+  
   let(:movie) { Movie.new(attributes) }
   
   it "exists & has attributes" do

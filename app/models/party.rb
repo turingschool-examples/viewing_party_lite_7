@@ -20,7 +20,7 @@ class Party < ApplicationRecord
       date: date, 
       start_time: start_time, 
       host: host.name, 
-      attendees: users #grabbing from join table association!!!
+      attendees: users #grabbing from join table association!?!wild?!
     }
   end
 end

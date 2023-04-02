@@ -10,8 +10,6 @@ class UsersController < ApplicationController
     user_all_parties.each do |party|
       @all_parties_and_movie << party.get_all_info
     end
-    # This will work to render one movie image to page:
-      # @the_movie = Movie.new(movie: movie_info)
   end
   
   def new

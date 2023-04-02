@@ -3,8 +3,10 @@
 class MoviedbFacade
   attr_reader :word,
               :movie_id
+              # :user
     
   def initialize(params)
+    # @user = User.find(params[:id])
     if params[:search].present?
       @word = params[:search] 
     elsif params[:movie_id].present?

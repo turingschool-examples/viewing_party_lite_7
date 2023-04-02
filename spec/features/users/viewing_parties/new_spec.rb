@@ -45,7 +45,7 @@ RSpec.describe "/users/:id/movies/:movie_id/viewing_party/new" do
       expect(page).to_not have_unchecked_field("Jean-Luc Picard")
 
       expect(page).to have_field(:host_id, with: @picard.id, type: :hidden)
-      expect(page).to have_field(:movie_id, with: 62, type: :hidden)
+      expect(page).to have_field(:movie_title, with: "2001: A Space Odyssey", type: :hidden)
       expect(page).to have_field(:image, with: "/ve72VxNqjGM69Uky4WTo2bK6rfq.jpg", type: :hidden)
 
       expect(page).to have_button("Create Party")
@@ -62,7 +62,7 @@ RSpec.describe "/users/:id/movies/:movie_id/viewing_party/new" do
       fill_in(:start_time, with: Time.now + 2.hours)
 
       find("#host_id", visible: false).set(@picard.id)
-      find("#movie_id", visible: false).set(62)
+      find("#movie_title", visible: false).set("2001: A Space Odyssey")
       find("#image", visible: false).set("/ve72VxNqjGM69Uky4WTo2bK6rfq.jpg")
       check(@data.name)
       check(@geordi.name)

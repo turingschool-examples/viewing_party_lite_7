@@ -49,7 +49,7 @@ RSpec.describe Party, type: :model do
     end
 
     it "#get_all_info" do
-      result = { party_id: @party.id,
+      result = { party_id: @party1.id,
         movie_id: 62,
         image: 'https://image.tmdb.org/t/p/w154/ve72VxNqjGM69Uky4WTo2bK6rfq.jpg',
         title: "2001: A Space Odyssey", 

@@ -1,24 +1,30 @@
 class Users::ViewingPartiesController < ApplicationController
   def new
-    movie_facade = MoviedbFacade.new(params)
-    @movie = movie_facade.all_movie_info
+    @movie = MoviedbFacade.new(params).all_movie_info
+
     @host = User.find(params[:user_id])
-    @invitees = User.where("id != #{@host.id}") #this should be refactored into model method
+    @invitees = User.where("id != #{@host.id}") 
+    #Other option:  @invitees = User.where.not(id: @host.id)
+
     @party = Party.new
   end
 
   def create
-    # require 'pry'; binding.pry
-    @new_party = Party.create!(party_params) # .new & .save to include flash error messages
-    @invitees = User.where(id: params[:invitees].reject(&:empty?))
-
-    @invitees.each do |invitee|
-      PartyUser.create!(host_id: params[:host_id], user_id: invitee.id, party_id: @new_party.id)
+    @new_party = Party.new(party_params) # .new & .save to include flash error messages
+    
+    if @new_party.save
+      @invitees = User.where(id: params[:invitees].reject(&:empty?))
+      
+      PartyUser.create!(host_id: params[:host_id], user_id: params[:host_id], party_id: @new_party.id)
+      
+      @invitees.each do |invitee|
+        PartyUser.create!(host_id: params[:host_id], user_id: invitee.id, party_id: @new_party.id)
+      end
+      
+      redirect_to "/users/#{params[:host_id]}"
+    else
+      redirect_it "/users/#{params[:host_id]}/movies/#{params[:movie_id]}/viewing_party/new"
     end
-    
-    PartyUser.create!(host_id: params[:host_id], user_id: params[:host_id], party_id: @new_party.id)
-    
-    redirect_to "/users/#{params[:host_id]}"
   end
 
   private
