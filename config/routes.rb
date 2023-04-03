@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   # root "articles#index"
   get "/", to: "landing#index"
 
+  # root "landing#index"
+
   resources :users, only: [:new, :show] do
     resources :discover, only: [:index]
       resources :movies, only: [:index, :show] do
@@ -14,5 +16,6 @@ Rails.application.routes.draw do
 
   get "/register", to: "users#new"
   post "/register", to: "users#create"
- 
+  get '/login', to: 'users#login_form'
+  post '/login', to: 'users#login_user'
 end

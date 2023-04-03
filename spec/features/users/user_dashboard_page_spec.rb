@@ -3,10 +3,10 @@ require 'rails_helper'
 
 RSpec.describe '/users/:id', type: :feature do
   before do
-    @steve = User.create!(name: "steve", email: "steve@steve.com")
-    @bob = User.create!(name: "bob", email: "bob@bob.com")
-    @meg = User.create!(name: "meg", email: "meg@meg.com")
-    @fran = User.create!(name: "fran", email: "fran@fran.com")
+    @steve = User.create!(name: "steve", email: "steve@steve.com", password: "steve123")
+    @bob = User.create!(name: "bob", email: "bob@bob.com", password: "bob123")
+    @meg = User.create!(name: "meg", email: "meg@meg.com", password: "meg123")
+    @fran = User.create!(name: "fran", email: "fran@fran.com", password: "fran123")
     visit "/users/#{@steve.id}"
   end
 
