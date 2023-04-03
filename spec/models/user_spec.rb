@@ -2,8 +2,8 @@ require "rails_helper"
 
 RSpec.describe User do 
   before(:each) do 
-    @user_1 = User.create!(name: "Joe Smith", email: "joey_smithy@yahooey.com")
-    @user_2 = User.create!(name: "Sam Smith", email: "sam_smithy@yahooey.com")
+    @user_1 = User.create!(name: "Joe Smith", email: "joey_smithy@yahooey.com", password: "hellokitty", password_confirmation: "hellokitty")
+    @user_2 = User.create!(name: "Sam Smith", email: "sam_smithy@yahooey.com", password: "hellopuppy", password_confirmation: "hellopuppy")
 
     @viewing_party_1 = ViewingParty.create!(duration_of_party: 300, when: "2023-12-25", start_time: "10:10 AM", movie_id: 238 )
     @viewing_party_2 = ViewingParty.create!(duration_of_party: 280, when: "2439-10-31", start_time: "11:48 AM", movie_id: 278)
@@ -24,6 +24,23 @@ RSpec.describe User do
   describe "validations" do 
     it {should validate_uniqueness_of :email}
     it {should validate_presence_of :name}
+    it {should validate_presence_of :email}
+    it {should validate_presence_of :password_confirmation}
+    it {should have_secure_password}
+  end
+
+  describe "new user is created" do 
+    it "creates a new user with a password" do
+      user = User.create!(name: "Meg", email: "meg@test.com", password: "password123", password_confirmation: "password123")
+      expect(user).to_not have_attribute(:password)
+      expect(user.password_digest).to_not eq("password123")
+    end
+
+    it "makes sure the password and confirmation match" do 
+      user = User.create!(name: "Meg", email: "meg@test.com", password: "password123", password_confirmation: "password123")
+      
+      expect(user.password_confirmation).to_not eq("password")
+    end
   end
 
   describe "movie_ids" do 
