@@ -1,32 +1,30 @@
-<center><h3> Create a Movie Party for <%= "#{@movie.title}" %> </h3></center>
-<center><%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %></center>
+<h3> Create a Movie Party for: <%= @movie.title %> </h3>
+<%= button_to "Discover Page", "/users/#{@host.id}/discover", method: :get %>
+<br>
 
-<body>
-  <center><table>
-    <%= form_with url: "/users/#{@user.id}/movies/#{@movie.movie_id}/viewing_parties/new", method: :post, local: true do |f| %>
-    <tr>
-        <center><td> <%= f.label :header, "Viewing Party Details" %></td></center>
-    </tr>
-    <tr>
-      <center><td> <%= f.label :movie_title, "Movie Title: #{@movie.title}"  %> </td></center>
-    </tr>
-    <tr>
-      <td> <%= f.label :duration, "Duration of Party" %> </td>
-      <td> <%= f.number_field :duration, value: @movie.runtime %> </td>
-    </tr>
-    <tr>
-      <td> <%= f.label :day, "Day" %> </td>
-      <td> <%= f.date_field :date, min: Date.today %> </td>
-    </tr>
-    <tr>
-      <td> <%= f.label :time, "Start Time" %> </td>
-      <td> <%= f.time_field :start_time, min: Time.now.strftime("%H:%M") %> </td>
-    </tr>
-        <%= f.hidden_field :host_id, value: "#{@user.id}" %>
-        <%= f.hidden_field :movie_id, value: "#{@movie.movie_id}" %>
-        <%= f.hidden_field :image, value: "#{@movie.image}" %>
-      <td><%= f.submit "Create Party" %></td>
-    <% end %></td>
-    </tr>
-  </table> </center>
-</body>
+<%= form_with url: "/users/#{@host.id}/movies/#{@movie.movie_id}/viewing_party", method: :post, local: true do |f| %>
+  <%= f.label :header, "Viewing Party Details" %>
+  <br>
+
+  <%= f.label :duration_minutes, "Duration of Party" %> 
+  <%= f.number_field :duration_minutes, min: @movie.runtime, value: @movie.runtime %> 
+  <br>
+
+  <%= f.label :date, "Day" %> 
+  <%= f.date_field :date, min: Date.today %> 
+  <br>
+
+  <%= f.label :start_time, "Start Time" %> 
+  <%= f.time_field :start_time, min: Time.now.strftime("%H:%M") %> 
+  <br> 
+
+  <%= f.label :invitees, "Invite Friends"%>
+  <%= f.collection_check_boxes :invitees, @invitees, :id, :name %>
+  <br>
+
+  <%= f.hidden_field :host_id, value: @host.id %>
+  <%= f.hidden_field :movie_title, value: @movie.title %>
+  <%= f.hidden_field :image, value: @movie.image %>
+
+  <%= f.submit "Create Party" %>
+<% end %>
