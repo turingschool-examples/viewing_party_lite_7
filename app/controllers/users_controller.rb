@@ -26,6 +26,23 @@ class UsersController < ApplicationController
     @movie_facade = MovieFacade.new
   end
 
+  def login_form
+  end
+
+  def login
+    user = User.find_by(email: params[:email])
+    if user.nil?
+      flash[:notice] = "Invalid Credentials"
+      redirect_to '/login'
+    elsif user.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect_to "/users/#{user.id}"
+    else
+      flash[:notice] = "Invalid Credentials"
+      redirect_to '/login'
+    end
+  end
+
   private
 
   def user_params
