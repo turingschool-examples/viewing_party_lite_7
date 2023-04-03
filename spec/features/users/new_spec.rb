@@ -61,7 +61,7 @@ RSpec.describe "User Registration", type: :feature do
     end
   end
 
-  describe "authentication" do
+  describe "User Story 1 Authentication" do
     it "creates a user with a password" do
       visit root_path
 
@@ -77,6 +77,28 @@ RSpec.describe "User Registration", type: :feature do
 
       expect(User.last[:name]).to eq("Meg")
       expect(User.last[:password]).to_not eq("test")
+    end
+  end
+
+  describe "User Story 2 Authentication" do
+    describe "sad path" do
+      it "does not create a user if passwords do not match" do
+        visit root_path
+
+        click_on "Create New User"
+
+        expect(current_path).to eq(register_path)
+
+        fill_in :user_name, with: "funbucket13"
+        fill_in :user_email, with: "an@email.com"
+        fill_in :user_password, with: "test"
+        fill_in :user_password_confirmation, with: "not the same"
+
+        click_on "Create New User"
+        save_and_open_page
+
+        expect(page).to have_content("Password confirmation doesn't match Password")
+      end
     end
   end
 end
