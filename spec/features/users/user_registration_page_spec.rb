@@ -15,6 +15,7 @@ RSpec.describe '/register', type: :feature do
       fill_in :name, with: "Larry"
       fill_in :email, with: "Larry@yahoo.com"
       fill_in :password, with: "Larry123"
+      fill_in :password_confirmation, with: "Larry123"
 
       click_button "Submit"
       expect(current_path).to eq("/users/#{User.last.id}")
