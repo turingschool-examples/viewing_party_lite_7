@@ -8,15 +8,4 @@ class User < ApplicationRecord
   validates :password, presence: true
 
   has_secure_password
-
-
-
-
-  # def hosted_parties(user_id)
-  # Party.where(':host_id = ?', user_id)
-  # end
-  
-  # def invited_parties
-  #   Party.all.users.where("")
-  # end
 end

@@ -22,7 +22,7 @@ RSpec.describe '/register', type: :feature do
       expect(page).to have_content("User was successfully created")
     end
     
-    describe 'sad path for user registration' do
+    describe 'sad paths for user registration' do
       it "should not create a user if email is not filled in" do
         fill_in :name, with: "Katie"
         click_button "Submit"
@@ -33,24 +33,36 @@ RSpec.describe '/register', type: :feature do
       it "should not create a user if email is not unique " do
         fill_in :name, with: "Katie"
         fill_in :email, with: "steve@steve.com"
+        fill_in :password, with: "Katie123"
+        fill_in :password_confirmation, with: "Katie123"
+
         click_button "Submit"
 
+        expect(page).to have_content("Email has already been taken")
         expect(current_path).to eq("/register")
-        expect(page).to have_content("Email already exists for a user")
+      end
+
+      it 'should not create a user if password is not filled in' do
+        fill_in :name, with: "Katie"
+        fill_in :email, with: "Katie@Katie.edu"
+
+        click_button "Submit"
+
+        expect(page).to have_content("Password can't be blank")
+        expect(current_path).to eq("/register")
+      end
+
+      it 'should not create a user if password confirmation does not match password' do
+        fill_in :name, with: "Katie"
+        fill_in :email, with: "Katie@Katie.edu"
+        fill_in :password, with: "Katie123"
+        fill_in :password_confirmation, with: "Katie321"
+
+        click_button "Submit"
+
+        expect(page).to have_content("Password confirmation doesn't match Password")
+        expect(current_path).to eq("/register")
       end
     end
-
-    # describe 'user story 1 for authentication' do
-    #   it 'should see a password field' do
-    #     fill_in :name, with: "Katie"
-    #     fill_in :email, with: "steve@steve.com"
-    #     fill_in :password, with: "password123"
-    #     click_button "Submit"
-
-    #     user = User.create(name: 'Meg', email: 'meg@test.com', password: 'password123', password_confirmation: 'password123')
-    #     expect(user).to_not have_attribute(:password)
-    #     expect(user.password_digest).to_not eq('password123')
-    #   end
-    # end
   end
 end
