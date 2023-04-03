@@ -9,18 +9,45 @@ class UsersController < ApplicationController
   end
 
   def new
-
+    @user = User.new
   end
 
   def create
     user = User.new(user_params)
+    user[:email] = user[:email].downcase
     if user.save
       redirect_to user_path(user)
     else
-      flash[:error] = "Error: Invalid form entry"
+      # flash[:error] = "Error: Invalid form entry"
+      flash[:error] = user.errors.full_messages.to_sentence
       redirect_to "/register"
     end
   end
+
+  def login_form 
+    
+  end
+
+  def login 
+    user = User.find_by(email: params[:email])
+
+    if user.authenticate(params[:password])
+      redirect_to user_path(user)
+    else 
+      flash[:error] = "Sorry, your credentials are bad"
+      render :login_form
+    end
+  end
+
+
+
+
+
+
+
+
+
+
 
   def discover
     @user = User.find(params[:id])
@@ -47,7 +74,10 @@ class UsersController < ApplicationController
   end
 
   private
-    def user_params
-      params.permit(:name, :email)
+    # def user_params
+    #   params.permit(:name, :email)
+    # end
+    def user_params 
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 end
