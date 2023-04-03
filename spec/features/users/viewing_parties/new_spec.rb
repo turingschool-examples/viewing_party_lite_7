@@ -72,24 +72,3 @@ RSpec.describe "/users/:id/movies/:movie_id/viewing_party/new" do
     end
   end
 end
-
-
-
-
-# I should see the name of the movie title rendered above a form with the following fields:
-# 
-# Duration of Party with a default value of movie runtime in minutes; a viewing party should NOT be created if set to a value less than the duration of the movie
-# When: field to select date
-# Start Time: field to select time
-# Checkboxes next to each existing user in the system
-# Button to create a party
-# Details When the party is created, the user should be redirected back to the dashboard where the new event is shown. The event should also be listed on any other user's dashbaords that were also invited to the party.
-
-      #what Max's previous partner used last time in view: 
-      #   <tr>
-      #   <td>
-      #     <td><%= f.label :check_boxes, "Invite Other Users" %></td><br>
-      #     <td><%= f.collection_check_boxes(:user_ids, @users, :id, :name_with_email) %></td>
-      #   <tr>
-
-      # this is not complete. They wanted us to display the email also:

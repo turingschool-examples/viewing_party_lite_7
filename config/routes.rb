@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root "home#index"
 
   get '/register', to: 'users#new'
-    #For the new form_with model to work this route MUST be named /users and NOT /register!!!
+  #For the new form_with model to work this route MUST be named /users and NOT /register!!!
   post '/users', to: 'users#create'
 
   get "/users/:id", to: "users#show"
