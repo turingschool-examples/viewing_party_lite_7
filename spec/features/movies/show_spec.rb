@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe '/users/:id/movies/:id', type: :feature do
 
   before do
-    @steve = User.create!(name: 'steve', email: 'steve@steve.com')
-    @bob = User.create!(name: "bob", email: "bob@bob.com")
+    @steve = User.create!(name: 'steve', email: 'steve@steve.com', password: 'steve123')
+    @bob = User.create!(name: "bob", email: "bob@bob.com", password: "bob123")
     
     
   end

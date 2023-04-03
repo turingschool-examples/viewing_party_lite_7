@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe '/', type: :feature do
   
   before do
-  @steve = User.create!(name: "steve", email: "steve@steve.com")
+    @steve = User.create!(name: "steve", email: "steve@steve.com", password: "steve123")
     visit '/'
   end
 
