@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   # root "articles#index"
   get "/", to: "landing#index"
 
+  # root "landing#index"
+
   resources :users, only: [:new, :show] do
     resources :discover, only: [:index]
       resources :movies, only: [:index, :show] do

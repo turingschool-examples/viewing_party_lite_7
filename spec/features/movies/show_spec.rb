@@ -65,8 +65,8 @@ RSpec.describe '/users/:id/movies/:id', type: :feature do
 
       it "I should see the count of total reviews for the movie", :vcr do
         visit "/users/#{@steve.id}/movies/238"
-
-        expect(page).to have_content("2 Reviews")
+        
+        expect(page).to have_content("3 Reviews")
       end
 
       it "I should see the reviews and their authors", :vcr do

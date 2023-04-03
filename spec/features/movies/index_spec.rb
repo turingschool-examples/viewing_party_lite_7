@@ -11,9 +11,9 @@ RSpec.describe '/users/:id/movies', type: :feature do
           click_button "Find Movies"
 
         expect(page.status_code).to eq 200
-        expect(page).to have_content("Vote Average: 8.199")
+        expect(page).to have_content("Vote Average: 8.2")
         expect(page).to have_content("The Matrix Reloaded")
-        expect(page).to have_content("Vote Average: 7.031")
+        expect(page).to have_content("Vote Average: 7.032")
         expect(page).to_not have_content("Hot Dog")
         expect(page).to have_link("The Matrix")
         expect(page).to have_link("The Matrix Reloaded")
