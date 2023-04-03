@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root "home#index"
 
   get '/register', to: 'users#new'
-  post '/register', to: 'users#create'
+  post '/users', to: 'users#create'
 
   get "/users/:id", to: "users#show"
 
@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   
   get "/users/:id/movies", to: "users/movies#index"
   get "/users/:id/movies/:movie_id", to: "users/movies#show"
+
+  # Non-RESTful Routes:
+  get "/login", to: "users#login_form"
+  post "/login", to: "users#login"
 
   get "/users/:user_id/movies/:movie_id/viewing_party/new", to: "users/viewing_parties#new"
   post "/users/:user_id/movies/:movie_id/viewing_party", to: "users/viewing_parties#create"
