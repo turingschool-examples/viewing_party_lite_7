@@ -3,9 +3,9 @@
 require "rails_helper"
 
 RSpec.describe type: :feature do
-  let!(:phil) { User.create!(name: "Phil", email: "philipjfry@gmail.com") }
-  let!(:amy) { User.create!(name: "Amy", email: "amy_from_mars@gmail.com") }
-  let!(:zoidberg) { User.create!(name: "Zoidberg", email: "dr_zoidberg_whoop_whoop_whoop_whoop@gmail.com") }
+  let!(:phil) { User.create!(name: "Phil", email: "philipjfry@gmail.com", password: 'password') }
+  let!(:amy) { User.create!(name: "Amy", email: "amy_from_mars@gmail.com", password: 'password') }
+  let!(:zoidberg) { User.create!(name: "Zoidberg", email: "dr_zoidberg_whoop_whoop_whoop_whoop@gmail.com", password: 'password') }
 
   describe "Landing Page" do
     before :each do
@@ -37,6 +37,15 @@ RSpec.describe type: :feature do
         expect(page).to have_link("Landing Page")
         click_link "Landing Page"
         expect(current_path).to eq(root_path)
+      end
+
+      it "displays a link to for 'Log In" do
+        expect(page).to have_link("Log In")
+        click_link "Log In"
+        expect(current_path).to eq(login_path)
+        expect(page).to have_field("Email")
+        expect(page).to have_field("Password")
+        expect(page).to have_button("Log In")
       end
     end
   end
