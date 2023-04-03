@@ -18,7 +18,10 @@ RSpec.describe "User Registration", type: :feature do
         within "#new_user" do
           fill_in "Name", with: "Stan Smith"
           fill_in "Email", with: "stan@example.com"
-          fill_in "Password", with: "test123"
+          save_and_open_page
+        
+          fill_in :user_password, with: "test123"
+          fill_in :user_password_confirmation, with: "test123"
 
           click_button "Create New User"
         end
@@ -34,7 +37,8 @@ RSpec.describe "User Registration", type: :feature do
         within "#new_user" do
           fill_in "Name", with: "Stan Smith"
           fill_in "Email", with: "stan@example.com"
-          fill_in "Password", with: "test123"
+          fill_in :user_password, with: "test123"
+          fill_in :user_password_confirmation, with: "test123"
 
           click_button "Create New User"
         end
@@ -65,11 +69,9 @@ RSpec.describe "User Registration", type: :feature do
 
       expect(current_path).to eq(register_path)
 
-      username = "funbucket13"
-      password = "test"
-
-      fill_in :user_name, with: username
-      fill_in :user_password, with: password
+      fill_in :user_name, with: "funbucket13"
+      fill_in :user_password, with: "test"
+      fill_in :user_password_confirmation, with: "test"
 
       click_on "Create New User"
 
