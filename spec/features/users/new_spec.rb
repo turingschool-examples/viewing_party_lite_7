@@ -18,6 +18,7 @@ RSpec.describe "User Registration", type: :feature do
         within "#new_user" do
           fill_in "Name", with: "Stan Smith"
           fill_in "Email", with: "stan@example.com"
+          fill_in "Password", with: "test123"
 
           click_button "Create New User"
         end
@@ -28,11 +29,12 @@ RSpec.describe "User Registration", type: :feature do
       end
 
       it "will only accept unique email addresses" do
-        User.create!(name: "Stan Johnson", email: "stan@example.com")
+        User.create!(name: "Stan Johnson", email: "stan@example.com", password: "test123", password_confirmation: "test123")
 
         within "#new_user" do
           fill_in "Name", with: "Stan Smith"
           fill_in "Email", with: "stan@example.com"
+          fill_in "Password", with: "test123"
 
           click_button "Create New User"
         end
@@ -52,6 +54,27 @@ RSpec.describe "User Registration", type: :feature do
         expect(current_path).to eq("/register")
         expect(page).to have_content("Email can't be blank")
       end
+    end
+  end
+
+  describe "authentication" do
+    it "creates a user with a password" do
+      visit root_path
+
+      click_on "Create New User"
+
+      expect(current_path).to eq(register_path)
+
+      username = "funbucket13"
+      password = "test"
+
+      fill_in :user_name, with: username
+      fill_in :user_password, with: password
+
+      click_on "Create New User"
+
+      expect(User.last[:name]).to eq("Meg")
+      expect(User.last[:password]).to_not eq("test")
     end
   end
 end

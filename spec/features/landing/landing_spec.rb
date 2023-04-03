@@ -2,9 +2,9 @@ require "rails_helper"
 
 RSpec.describe "Landing", type: :feature do
   before(:each) do
-    @user_1 = create(:user)
-    @user_2 = create(:user)
-    @user_3 = create(:user)
+    @user_1 = create(:user, password: "test123", password_confirmation: "test123")
+    @user_2 = create(:user, password: "test123", password_confirmation: "test123")
+    @user_3 = create(:user, password: "test123", password_confirmation: "test123")
 
     visit root_path
   end
