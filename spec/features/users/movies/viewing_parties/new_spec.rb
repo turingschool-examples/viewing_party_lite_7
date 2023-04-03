@@ -1,6 +1,6 @@
 require "rails_helper"
 RSpec.describe "Viewing Party New Page" do
-  let(:phil) { User.create!(name: "Philip", email: "philipjfry@gmail.com") }
+  let(:phil) { User.create!(name: "Philip", email: "philipjfry@gmail.com", password: :password) }
 
   describe "When I visit the movie details page", :vcr do
     before :each do

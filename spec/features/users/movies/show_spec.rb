@@ -1,7 +1,7 @@
 require "rails_helper"
 RSpec.describe type: :feature do
   describe "Movie Details Page", :vcr do
-    let(:phil) { User.create!(name: "Philip", email: "philipjfry@gmail.com") }
+    let(:phil) { User.create!(name: "Philip", email: "philipjfry@gmail.com", password: "password") }
 
     describe "When I visit the movie details page" do
       before :each do

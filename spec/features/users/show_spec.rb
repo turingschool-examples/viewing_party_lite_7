@@ -3,8 +3,8 @@
 require "rails_helper"
 
 RSpec.describe type: :feature do
-  let!(:phil) { User.create!(name: "Philip", email: "philipjfry@gmail.com") }
-  let!(:amy) { User.create!(name: "Amy", email: "amy_from_mars@gmail.com") }
+  let!(:phil) { User.create!(name: "Philip", email: "philipjfry@gmail.com", password: "password") }
+  let!(:amy) { User.create!(name: "Amy", email: "amy_from_mars@gmail.com", password: "password") }
 
   Timecop.freeze(Time.now)
   let!(:spirited_away) { ViewingParty.create!(date: "05/28/2023", start_time: Time.now, duration: 2, movie_id: 1, host_id: amy.id) }
