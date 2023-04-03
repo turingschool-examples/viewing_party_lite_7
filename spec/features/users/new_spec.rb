@@ -18,8 +18,6 @@ RSpec.describe "User Registration", type: :feature do
         within "#new_user" do
           fill_in "Name", with: "Stan Smith"
           fill_in "Email", with: "stan@example.com"
-          save_and_open_page
-        
           fill_in :user_password, with: "test123"
           fill_in :user_password_confirmation, with: "test123"
 
@@ -95,6 +93,7 @@ RSpec.describe "User Registration", type: :feature do
         fill_in :user_password_confirmation, with: "not the same"
 
         click_on "Create New User"
+
         save_and_open_page
 
         expect(page).to have_content("Password confirmation doesn't match Password")
