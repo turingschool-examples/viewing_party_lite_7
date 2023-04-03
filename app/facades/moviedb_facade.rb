@@ -48,6 +48,11 @@ class MoviedbFacade
     Movie.new(movie_list)
   end
 
+  def search_movie_by_id
+    find_movie_info
+    # ensure info is nested correctly... look at top 20 method maybe
+  end
+
   # Helper methods: 
   def find_movie_info
     info = movie_service.get_movie(@movie_id)

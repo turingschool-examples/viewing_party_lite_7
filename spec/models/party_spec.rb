@@ -32,9 +32,9 @@ RSpec.describe Party, type: :model do
       # @movie_details = Movie.new(JSON.parse(json_response, symbolize_names: true))
 
       # USERS
-      @picard = User.create!(name: "Jean-Luc Picard", email: "captain@uss-enterprise.com")
-      @riker = User.create!(name: "William Riker", email: "number2@uss-enterprise.com")
-      @data = User.create!(name: "Data", email: "data@uss-enterprise.com")
+      @picard = User.create!(name: "Jean-Luc Picard", email: "captain@uss-enterprise.com", password: "IamCaptain!")
+      @riker = User.create!(name: "William Riker", email: "number2@uss-enterprise.com", password: "IamNumber2")
+      @data = User.create!(name: "Data", email: "data@uss-enterprise.com", password: "IamData?")
       
       # PARTY
       @party1 = Party.create!(duration_minutes: 143, start_time: "08:00", date: Date.parse("2023-01-01"), movie_id: 62, host_id: @picard.id)

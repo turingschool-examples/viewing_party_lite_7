@@ -4,7 +4,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     user_all_parties = @user.parties
 
-    # below might not be needed if image URL & movie title could be passed through params of party
     @all_parties_and_movie = []
 
     user_all_parties.each do |party|
@@ -19,17 +18,19 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
-      flash.notice = 'User has been created!'
-      redirect_to root_path
+      flash[:success] = "#{user.name} has been created!"
+      # redirect_to root_path
+      redirect_to "/"
     else
       flash[:error] = user.errors.full_messages.to_sentence
-      redirect_to register_path
+      # redirect_to register_path
+      redirect_to "/register"
     end
   end
 
   private
-  def user_params
-    params.permit(:name, :email)
-  end
 
+  def user_params
+    params.permit(:name, :email, :password, :password_confirmation)
+  end
 end

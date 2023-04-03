@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe "/", type: :feature do
   describe "as a user, when I visit the landing page" do 
     before :each do
-      @picard = User.create!(name: "Jean-Luc Picard", email: "captain@uss-enterprise.com")
-      @riker = User.create!(name: "William Riker", email: "number2@uss-enterprise.com")
-      @data = User.create!(name: "Data", email: "data@uss-enterprise.com")
+      @picard = User.create!(name: "Jean-Luc Picard", email: "captain@uss-enterprise.com", password: "IamCaptain!")
+      @riker = User.create!(name: "William Riker", email: "number2@uss-enterprise.com", password: "IamNumber2")
+      @data = User.create!(name: "Data", email: "data@uss-enterprise.com", password: "IamData?")
 
       visit "/"
     end
@@ -33,7 +33,7 @@ RSpec.describe "/", type: :feature do
       expect(current_path).to eq("/register")
     end
 
-    xit "when I click on a user name link I'm redirected to '/users/:id' page" do
+    it "when I click on a user name link I'm redirected to '/users/:id' page" do
       click_link("#{@picard.email}")
       expect(current_path).to eq("/users/#{@picard.id}")
       expect(page).to have_content("#{@picard.name}")

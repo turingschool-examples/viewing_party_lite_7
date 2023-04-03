@@ -3,7 +3,7 @@ class Users::ViewingPartiesController < ApplicationController
     @movie = MoviedbFacade.new(params).all_movie_info
 
     @host = User.find(params[:user_id])
-    @invitees = User.where("id != #{@host.id}") 
+    @invitees = User.where("id != #{@host.id}") # should be a scope/class method
     #Other option:  @invitees = User.where.not(id: @host.id)
 
     @party = Party.new
@@ -13,8 +13,8 @@ class Users::ViewingPartiesController < ApplicationController
     @new_party = Party.new(party_params) # .new & .save to include flash error messages
     
     if @new_party.save
-      @invitees = User.where(id: params[:invitees].reject(&:empty?))
-      
+      @invitees = User.where(id: params[:invitees].reject(&:empty?)) # this should be a scope/class method
+
       PartyUser.create!(host_id: params[:host_id], user_id: params[:host_id], party_id: @new_party.id)
       
       @invitees.each do |invitee|

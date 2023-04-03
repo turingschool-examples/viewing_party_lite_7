@@ -3,10 +3,10 @@ require 'rails_helper'
 RSpec.describe "/users/:id/movies/:movie_id/viewing_party/new" do
   describe "as a user, when I visit the new viewing party page" do
     before :each do
-      @picard = User.create!(name: "Jean-Luc Picard", email: "captain@uss-enterprise.com")
-      @riker = User.create!(name: "William Riker", email: "number2@uss-enterprise.com")
-      @data = User.create!(name: "Data", email: "data@uss-enterprise.com")
-      @geordi = User.create!(name: "Geordi La Forge", email: "chief-engineer@uss-enterprise.com")
+      @picard = User.create!(name: "Jean-Luc Picard", email: "captain@uss-enterprise.com", password: "IamCaptain!")
+      @riker = User.create!(name: "William Riker", email: "number2@uss-enterprise.com", password: "IamNumber2")
+      @data = User.create!(name: "Data", email: "data@uss-enterprise.com", password: "IamData?")
+      @geordi = User.create!(name: "Geordi La Forge", email: "chief-engineer@uss-enterprise.com", password: "IamEngineer!")
 
       @movie_response = File.read("spec/fixtures/moviedb/space_odyssey.json")
       stub_request(:get, "https://api.themoviedb.org/3/movie/62?api_key=#{ENV["TMDB_API_KEY"]}")
