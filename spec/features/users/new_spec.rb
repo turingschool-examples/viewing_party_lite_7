@@ -49,6 +49,8 @@ RSpec.describe "User Registration", type: :feature do
         within "#new_user" do
           fill_in "Name", with: "Stan Smith"
           fill_in "Email", with: " "
+          fill_in :user_password, with: "test123"
+          fill_in :user_password_confirmation, with: "test123"
 
           click_button "Create New User"
         end
@@ -68,12 +70,13 @@ RSpec.describe "User Registration", type: :feature do
       expect(current_path).to eq(register_path)
 
       fill_in :user_name, with: "funbucket13"
+      fill_in :user_email, with: "s@s.com"
       fill_in :user_password, with: "test"
       fill_in :user_password_confirmation, with: "test"
 
       click_on "Create New User"
 
-      expect(User.last[:name]).to eq("Meg")
+      expect(User.last[:name]).to eq("funbucket13")
       expect(User.last[:password]).to_not eq("test")
     end
   end
@@ -93,8 +96,6 @@ RSpec.describe "User Registration", type: :feature do
         fill_in :user_password_confirmation, with: "not the same"
 
         click_on "Create New User"
-
-        save_and_open_page
 
         expect(page).to have_content("Password confirmation doesn't match Password")
       end
