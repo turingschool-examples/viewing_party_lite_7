@@ -2,8 +2,8 @@ require "rails_helper"
 
 RSpec.describe "Landing Page" do 
   before(:each) do 
-    @user_1 = User.create!(name: "Joe Smith", email: "joey_smithy@yahooey.com")
-    @user_2 = User.create!(name: "Sam Smith", email: "sam_smithy@yahooey.com")
+    @user_1 = User.create!(name: "Joe Smith", email: "joey_smithy@yahooey.com", password: "hellokitty", password_confirmation: "hellokitty")
+    @user_2 = User.create!(name: "Sam Smith", email: "sam_smithy@yahooey.com", password: "hellokitty", password_confirmation: "hellokitty")
     visit root_path
   end
   describe "when visiting  '/' " do 
@@ -43,5 +43,16 @@ RSpec.describe "Landing Page" do
       expect(current_path).to eq(root_path)
       expect("Home").to appear_before("Welcome to Viewing Party Lite")
     end
+  end
+  describe "log in" do 
+    it "has a link for log in" do 
+      expect(page).to have_link "Log In"
+    end
+
+    it "redirects to a log in page" do 
+      click_link "Log In"
+      expect(current_path).to eq("/login")
+    end
+
   end
 end
