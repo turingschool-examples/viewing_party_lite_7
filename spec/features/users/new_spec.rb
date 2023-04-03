@@ -17,7 +17,6 @@ RSpec.describe "user registration page" do
     end
     
     it "takes input to create a new user" do
-      save_and_open_page
       fill_in("Name:", with: "Jean-Luc Picard")
       fill_in("Email:", with: "captain@uss-enterprise.com")
       fill_in("Password:", with: "IamCaptain!")

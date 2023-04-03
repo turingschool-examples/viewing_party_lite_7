@@ -11,7 +11,6 @@ RSpec.describe "/", type: :feature do
       it "can log in with valid credentials, when I click Log In & am taken to my Dashboard page" do      
         fill_in('Email', with: "number2@uss-enterprise.com")
         fill_in("Password:", with: "IamNumber2")
-        # fill_in("Type your password again:", with: "IamNumber2")
 
         click_on("Log In")
 
@@ -21,10 +20,42 @@ RSpec.describe "/", type: :feature do
     end
 
     describe "sad path tests" do
-      it "can NOT log in with invalid credentials & am redirected back to the login form page" do  
+      it "can NOT log in with invalid password & am redirected back to the login form page" do  
         fill_in('Email', with: "number2@uss-enterprise.com")
         fill_in("Password:", with: "wrong password")
-        # fill_in("Type your password again:", with: "wrong password")
+
+        click_on("Log In")
+
+        expect(current_path).to eq("/login")
+        # expect(current_path).to eq(login_path)
+        expect(page).to have_content("Sorry, your credentials are bad.")
+      end
+
+      it "can NOT log in with nil password & am redirected back to the login form page" do  
+        fill_in('Email', with: "number2@uss-enterprise.com")
+        fill_in("Password:", with: nil)
+
+        click_on("Log In")
+
+        expect(current_path).to eq("/login")
+        # expect(current_path).to eq(login_path)
+        expect(page).to have_content("Sorry, your credentials are bad.")
+      end
+
+      it "can NOT log in with invalid email & am redirected back to the login form page" do  
+        fill_in('Email', with: "WRONG@uss-enterprise.com")
+        fill_in("Password:", with: "IamNumber2")
+
+        click_on("Log In")
+
+        expect(current_path).to eq("/login")
+        # expect(current_path).to eq(login_path)
+        expect(page).to have_content("Sorry, your credentials are bad.")
+      end
+
+      it "can NOT log in with nil email & am redirected back to the login form page" do  
+        fill_in('Email', with: nil)
+        fill_in("Password:", with: "IamNumber2")
 
         click_on("Log In")
 
