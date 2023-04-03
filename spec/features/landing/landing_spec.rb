@@ -50,4 +50,16 @@ RSpec.describe "Landing", type: :feature do
       expect(current_path).to eq(user_path(@user_1.id))
     end
   end
+
+  # User Story 4 - Authentication
+  it "will not log in a user with incorrect credentials" do
+    click_link "Log In"
+    fill_in :email, with: @user_1.email
+    fill_in :password, with: "wrong_password"
+
+    click_button "Log In"
+
+    expect(current_path).to eq(login_path)
+    expect(page).to have_content("Invalid Credentials")
+  end
 end
