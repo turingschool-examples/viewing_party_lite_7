@@ -35,7 +35,6 @@ RSpec.describe "User's Discover Index", type: :feature do
             click_button "Find Movies"
 
             expect(current_path).to eq("/users/#{@stan.id}/movies")
-            
           end
         end
       end

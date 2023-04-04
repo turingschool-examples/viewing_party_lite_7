@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "Landing", type: :feature do
+RSpec.describe "Home", type: :feature do
   before(:each) do
     @user_1 = create(:user, password: "test123", password_confirmation: "test123")
     @user_2 = create(:user, password: "test123", password_confirmation: "test123")
@@ -10,11 +10,11 @@ RSpec.describe "Landing", type: :feature do
   end
 
   describe "User Story 4" do
-    it "shows the landing page with the name of the app and a button to create a new user" do
+    it "shows the Home page with the name of the app and a button to create a new user" do
       expect(page).to have_content("Viewing Party")
-      expect(page).to have_button("Create New User")
+      expect(page).to have_link("Create New User")
 
-      click_button "Create New User"
+      click_link "Create New User"
       expect(current_path).to eq(register_path)
     end
 
@@ -30,7 +30,7 @@ RSpec.describe "Landing", type: :feature do
       end
     end
 
-    it "has a link to the landing page" do
+    it "has a link to the Home page" do
       expect(page).to have_link("Home", href: root_path)
     end
   end
