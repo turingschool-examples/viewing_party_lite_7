@@ -18,7 +18,13 @@ RSpec.describe "Home", type: :feature do
       expect(current_path).to eq(register_path)
     end
 
-    it "shows the existing users as a link to their dashboard" do
+    it "shows the existing users as a link to their dashboard (when logged in)" do
+      click_link "Log In"
+      fill_in :email, with: @user_1.email
+      fill_in :password, with: @user_1.password
+      click_button "Log In"
+      visit root_path
+
       within("#user_#{@user_1.id}") do
         expect(page).to have_link("#{@user_1.name} - #{@user_1.email}", href: user_path(@user_1.id))
       end
@@ -32,6 +38,17 @@ RSpec.describe "Home", type: :feature do
 
     it "has a link to the Home page" do
       expect(page).to have_link("Home", href: root_path)
+    end
+  end
+
+
+  describe "Authorization Challenge" do
+    describe "User Story 1" do
+      it "does not show the existing users when not logged in" do
+        expect(page).to_not have_content(@user_1.name)
+        expect(page).to_not have_content(@user_2.name)
+        expect(page).to_not have_content(@user_3.name)
+      end
     end
   end
 end
