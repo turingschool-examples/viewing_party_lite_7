@@ -6,10 +6,10 @@ RSpec.describe 'Landing Page Index' do
   before(:each) do
     @user_1 = User.create!(name: 'Joe', email: 'joe@email.com', password: 'password1')
     @user_2 = User.create!(name: 'Bob', email: 'bob@email.com', password: 'password2')
-    @user_3 = User.create!(name: 'Dan', email: 'dan@email.com', password: 'password3')
+    @user_3 = User.create!(name: 'Dan', email: 'dan@email.com', password: 'password3', role: 1)
   end
   
-  context 'As a user when I visit the landing page' do
+  context 'As a visitor when I visit the landing page' do
     it 'I see the title of the application' do
       visit root_path
       expect(page).to have_content('Viewing Party')
@@ -17,16 +17,7 @@ RSpec.describe 'Landing Page Index' do
 
     it 'I see a button to create a new user' do
       visit root_path
-      expect(page).to have_button('Create New User')
-    end
-
-    it "I see a list of existing users, that links to the user's dashboard" do
-      visit root_path
-      within('#existing_users') do
-        expect(page).to have_content('Joe')
-        expect(page).to have_content('Bob')
-        expect(page).to have_content('Joe')
-      end
+      expect(page).to have_link('Create New User')
     end
 
     it 'I see a link to go back to the landing page' do
@@ -36,6 +27,69 @@ RSpec.describe 'Landing Page Index' do
         click_link('Home')
       end
       expect(current_path).to eq(root_path)
+    end
+  end
+    
+  # Task 3: User Story 1
+  it "I do not see a list of existing users," do
+    visit root_path
+    expect(page).not_to have_content('Joe')
+    expect(page).not_to have_content('Bob')
+    expect(page).not_to have_content('Joe')
+  end
+
+  # Task 5: User Story 3
+  it "I see a link to '/dashboard' that errors out if I am not logged in" do
+    visit root_path
+
+    click_on 'Dashboard'
+
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content('You must be logged in or registered to access this page')
+  end
+
+  # Task 5: User Story 3 - Happy Path
+  it "I see a link to '/dashboard' that successfully routes if logged in" do
+    visit login_path
+      
+    fill_in :email, with: @user_3.email
+    fill_in :password, with: @user_3.password
+    click_on 'Log In'
+
+    click_on 'Dashboard'
+
+    expect(current_path).to eq(dashboard_index_path)
+    expect(page).to have_content('Dashboard Page')
+  end
+
+  context 'As a member (logged in) when I visit the landing page' do
+    # Task 2: Log Out
+    it "I see a link to log out that ends my current session" do
+      visit login_path
+      
+      fill_in :email, with: @user_3.email
+      fill_in :password, with: @user_3.password
+      click_on 'Log In'
+      
+      click_on 'Log Out'
+      
+      expect(current_path).to eq(root_path)
+      expect(page).to have_link('Log In')
+    end
+    
+    # Task 4: User Story 2
+    it 'I see a list of existing users with only their emails' do
+      visit login_path
+
+      fill_in :email, with: @user_3.email
+      fill_in :password, with: @user_3.password
+      click_on 'Log In'
+
+      within('#existing_users') do
+        expect(page).to have_content('joe@email.com')
+        expect(page).to have_content('bob@email.com')
+        expect(page).to have_content('dan@email.com')
+      end
     end
   end
 

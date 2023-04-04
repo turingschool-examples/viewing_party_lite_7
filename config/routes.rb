@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resources :movies, only: [:show, :index]
   end
 
+  resources :dashboard, only: [:index]
+
   get "/users/:user_id/movies/:movie_id/viewing-party/new", to: "viewing_parties#new"
   post "/users/:user_id/movies/:movie_id/viewing-party/new", to: "viewing_parties#create"
   get "/login", to: "users#login_form"

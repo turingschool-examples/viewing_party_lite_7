@@ -10,6 +10,8 @@ class User < ApplicationRecord
 
   has_secure_password
 
+  enum role: %w(default member admin)
+
   def self.other_users(id)
     User.where('id != ?', id)
   end

@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 class UsersController < ApplicationController
+  skip_before_action :authenticate_user!
   def new; end
 
   def create
     user = User.new(user_params)
+    user.role = :member
     if user.valid? && user.password == user.password_confirmation
       user.save
       session[:user_id] = user.id
@@ -38,6 +40,7 @@ class UsersController < ApplicationController
   def logout_user
     session.delete(:user_id)
     @current_user = nil
+    flash[:notice] = "Logged out!"
     redirect_to root_path
   end
 
