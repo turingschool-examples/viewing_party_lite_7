@@ -25,10 +25,21 @@ RSpec.describe "/users/:id/movies/:movie_id/viewing_party/new" do
       # facade = MoviedbFacade.new(movie_id: 62).find_movie_info
       # @movie = Movie.new(movie: facade)
       
-      visit "/users/#{@picard.id}/movies/62/viewing_party/new"
+      # visit "/users/#{@picard.id}/movies/62/viewing_party/new"
     end
 
     it "has the following information" do
+      visit "/"
+
+      click_link("Log In")
+      expect(current_path).to eq("/login")
+      fill_in('Email', with: "captain@uss-enterprise.com")
+      fill_in("Password:", with: "IamCaptain!")
+      click_on("Log In")
+      expect(current_path).to eq("/users/#{@picard.id}")
+
+      visit "/users/#{@picard.id}/movies/62/viewing_party/new"
+
       expect(page).to have_content("Viewing Party")
       expect(page).to have_content("Create a Movie Party for: 2001: A Space Odyssey")
       expect(page).to have_button("Discover Page")
@@ -52,11 +63,24 @@ RSpec.describe "/users/:id/movies/:movie_id/viewing_party/new" do
     end
     
     it "discover page link goes to the discover page" do
+      visit "/users/#{@picard.id}/movies/62/viewing_party/new"
+
       click_button("Discover Page")
       expect(current_path).to eq("/users/#{@picard.id}/discover")
     end
       
     it "can create a new viewing party" do
+      visit "/"
+
+      click_link("Log In")
+      expect(current_path).to eq("/login")
+      fill_in('Email', with: "captain@uss-enterprise.com")
+      fill_in("Password:", with: "IamCaptain!")
+      click_on("Log In")
+      expect(current_path).to eq("/users/#{@picard.id}")
+
+      visit "/users/#{@picard.id}/movies/62/viewing_party/new"
+
       fill_in(:duration_minutes, with: 160)
       fill_in(:date, with: Date.today)
       fill_in(:start_time, with: Time.now + 2.hours)

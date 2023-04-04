@@ -1,12 +1,17 @@
 class Users::ViewingPartiesController < ApplicationController
   def new
-    @movie = MoviedbFacade.new(params).all_movie_info
+    if current_user.nil?
+      flash[:message] = "You must be logged in or registered to continue."
+      redirect_to "/users/#{params[:user_id]}/movies/#{params[:movie_id]}"
+    else
+      @movie = MoviedbFacade.new(params).all_movie_info
 
-    @host = User.find(params[:user_id])
-    @invitees = User.where("id != #{@host.id}") # should be a scope/class method
-    #Other option:  @invitees = User.where.not(id: @host.id)
-
-    @party = Party.new
+      @host = User.find(params[:user_id])
+      @invitees = User.where("id != #{@host.id}") # should be a scope/class method
+      #Other option:  @invitees = User.where.not(id: @host.id)
+      
+      @party = Party.new
+    end
   end
 
   def create

@@ -63,9 +63,11 @@ RSpec.describe "/", type: :feature do
 
       it "can recognize I've logged out when I click the Log Out link" do
         click_link("Log In")
+        expect(current_path).to eq("/login")
         fill_in('Email', with: "number2@uss-enterprise.com")
         fill_in("Password:", with: "IamNumber2")
         click_on("Log In")
+        expect(current_path).to eq("/users/#{@riker.id}")
         click_on("Home")
 
         click_on("Log Out")
@@ -78,11 +80,11 @@ RSpec.describe "/", type: :feature do
         expect(page).to_not have_link("Log Out")
       end
 
-      it "can authorize show page so user cannot visit pages without being logged in" do
+      it "can authorize show page so user cannot visit any dashboard without being logged in" do
         visit "/users/#{@picard.id}"
 
         expect(current_path).to eq("/")
-        expect(page).to have_content("You must be logged in or registered to access the dashboard.")
+        expect(page).to have_content("You must be logged in or registered to continue.")
       end
 
       # Original test when user emails were links:
