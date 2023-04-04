@@ -4,7 +4,7 @@ RSpec.describe '/', type: :feature do
   
   before do
     @steve = User.create!(name: "steve", email: "steve@steve.com", password: "steve123", role: 0)
-    @ben = User.create!(name: "ben", email: "ben@ben.com", password: "ben123", role: 0)
+    @ben = User.create!(name: "ben", email: "ben@ben.com", password: "ben123")
     
     visit '/'
   end
