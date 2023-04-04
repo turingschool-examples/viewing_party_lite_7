@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get '/register', to: 'users#new'
   post '/register', to: 'users#create'
 
+  get '/movies/:id', to: 'movies#show'
+
   resources :users, only: [:show] do
     resources :movies, only: [:show] do
       resources :viewing_parties, only: %i[new create]
