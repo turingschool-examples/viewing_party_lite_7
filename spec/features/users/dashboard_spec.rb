@@ -83,8 +83,6 @@ RSpec.describe "User Dashboard" do
       expect(current_path).to eq(user_path(@user_1.id))
     end
 
-    
-
     describe 'log out' do
       before :each do
         visit '/'
@@ -121,14 +119,17 @@ RSpec.describe "User Dashboard" do
         visit '/'
 
         click_on "Log Out"
-
-        click_on "#{@user_1.name}"
+        visit user_path(@user_1.id)
 
         expect(current_path).to eq('/')
         expect(page).to have_content("Log in to view this page")
       end
 
       it 'unsuccessful log in takes users to the login page and displays flash message' do
+        visit "/"
+        
+        click_on "Log Out"
+
         click_on "Log In"
   
         fill_in :email, with: "not a user"
