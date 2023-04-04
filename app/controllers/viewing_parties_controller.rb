@@ -1,12 +1,17 @@
 class ViewingPartiesController <ApplicationController
   def new
-    @users = User.all.where.not(id: params[:user_id])
+    if current_user
+      @users = User.all.where.not(id: params[:user_id])
 
-    @user = User.find(params[:user_id])
+      @user = User.find(params[:user_id])
 
-    facade = UserFacade.new(nil, nil)
-    facade.get_movie_details(params[:movie_id])
-    @movie = facade.details
+      facade = UserFacade.new(nil, nil)
+      facade.get_movie_details(params[:movie_id])
+      @movie = facade.details
+    else
+      flash[:notice] = "You must be logged in to create a viewing party"
+      redirect_to "/users/#{params[:user_id]}/movies/#{params[:movie_id]}"
+    end
   end
 
   def create

@@ -25,6 +25,11 @@ RSpec.describe "Dashboard Page" do
     @user_3.viewing_party_users.create!(viewing_party: @viewing_party_1, is_host: false)
 
     @user_4.viewing_party_users.create!(viewing_party: @viewing_party_1, is_host: false)
+     visit "/login"
+      fill_in(:email, with: @user_1.email)
+      fill_in(:password, with: @user_1.password)
+
+      click_on "Log In"
 
     visit user_path(@user_1)
   end

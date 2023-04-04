@@ -54,11 +54,21 @@ RSpec.describe "Movie Details Page" do
       end
 
       within(".reviews") do 
-        expect(page).to have_content("Review Count: 2")  
+        expect(page).to have_content("Review Count: 3")  
         expect(page).to have_content("Name: futuretv") 
         expect(page).to have_content("Name: crastana") 
         expect(page).to have_content("Rating: 10.0", count: 2) 
       end
+    end
+  end
+
+  describe "as a visitor, when clicking on create a viewing party", :vcr do 
+    it "says I need to be logged in to create a viewing party" do 
+      visit "/users/#{@user_1.id}/movies/238"
+      expect(page).to have_button("Create Viewing Party for The Godfather")
+      click_button "Create Viewing Party for The Godfather"
+      expect(current_path).to eq("/users/#{@user_1.id}/movies/238")
+      expect(page).to have_content("You must be logged in to create a viewing party")
     end
   end
 end
