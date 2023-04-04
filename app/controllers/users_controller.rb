@@ -20,8 +20,8 @@ class UsersController < ApplicationController
     new_params[:email] = new_params[:email].downcase
     new_user = User.new(new_params)
     
-    if new_user.save
-      # session[:user_id] = new_user.id
+    if params[:password] == params[:password_confirmation] && new_user.save
+      session[:user_id] = new_user.id
       flash[:success] = "#{new_user.name} has been created!"
       redirect_to "/users/#{new_user.id}"
     else
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   def login
     if user = User.find_by(email: params[:email])
       if user.authenticate(params[:password])
-        # session[:user_id] = user.id
+        session[:user_id] = user.id
         flash[:success] = "Welcome, #{user.name}!"
         redirect_to "/users/#{user.id}"
       else
@@ -49,6 +49,12 @@ class UsersController < ApplicationController
       flash[:message] = "Sorry, your credentials are bad."
       render :login_form
     end
+  end
+
+  def logout
+    session[:user_id] = nil
+    flash[:success] = "You've been successfully logged out."
+    redirect_to "/"
   end
 
   private

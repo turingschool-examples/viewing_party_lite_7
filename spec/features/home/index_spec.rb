@@ -40,6 +40,39 @@ RSpec.describe "/", type: :feature do
         expect(current_path).to eq("/register")
       end
 
+      it "can recognize a login session" do
+        click_link("Log In")
+        fill_in('Email', with: "number2@uss-enterprise.com")
+        fill_in("Password:", with: "IamNumber2")
+        click_on("Log In")
+
+        # visit "/"
+        click_on("Home")
+        expect(current_path).to eq("/")
+
+        expect(page).to have_link("Log Out")
+
+        expect(page).to_not have_link("Log In")
+        expect(page).to_not have_link("Create a New User")
+      end
+
+      it "can log out when I click the Log Out link" do
+        click_link("Log In")
+        fill_in('Email', with: "number2@uss-enterprise.com")
+        fill_in("Password:", with: "IamNumber2")
+        click_on("Log In")
+        click_on("Home")
+
+        click_on("Log Out")
+        expect(current_path).to eq("/")
+        
+        expect(page).to have_content("You've been successfully logged out.")
+        expect(page).to have_link("Log In")
+        expect(page).to have_link("Create a New User")
+        
+        expect(page).to_not have_link("Log Out")
+      end
+
       # it "when I click on a user name link I'm redirected to '/users/:id' page" do
       #   click_link("#{@picard.email}")
       #   expect(current_path).to eq("/users/#{@picard.id}")

@@ -1,7 +1,11 @@
-<%= link_to "Create a New User", "/register" %>
 <br>
-<%= link_to "Log In", "/login" %>
-
+<% if current_user %>
+  <%= link_to "Log Out", "/logout" %>
+<% else %>
+  <%= link_to "Create a New User", "/register" %>
+  <br>
+  <%= link_to "Log In", "/login" %>
+<% end %>
   <%# <%= link_to "Log In", login_path %>
 
   <%# <h2>Existing Users:</h2>
