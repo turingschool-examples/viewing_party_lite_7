@@ -36,13 +36,13 @@
             "keep-alive"
           ],
           "Date": [
-            "Thu, 23 Mar 2023 18:25:20 GMT"
+            "Tue, 04 Apr 2023 00:01:26 GMT"
           ],
           "Server": [
             "openresty"
           ],
           "Cache-Control": [
-            "public, max-age=28800"
+            "public, max-age=24551"
           ],
           "X-Memc": [
             "HIT"
@@ -51,13 +51,13 @@
             "befdb093a375fc558ec41211328ab887"
           ],
           "X-Memc-Age": [
-            "7928"
+            "17627"
           ],
           "X-Memc-Expires": [
-            "8220"
+            "8603"
           ],
           "Etag": [
-            "W/\"5e1feaed09b8a06b32351b5e5ce2e2cf\""
+            "W/\"c9dddbcd8ab129546fc3cf0433acc021\""
           ],
           "Vary": [
             "Accept-Encoding",
@@ -67,7 +67,7 @@
             "Miss from cloudfront"
           ],
           "Via": [
-            "1.1 05fe6f95b77eb54d0691950915c27264.cloudfront.net (CloudFront)"
+            "1.1 d898fedd2c97412525c0a8011787cf32.cloudfront.net (CloudFront)"
           ],
           "X-Amz-Cf-Pop": [
             "DEN52-P2"
@@ -76,15 +76,15 @@
             "h3=\":443\"; ma=86400"
           ],
           "X-Amz-Cf-Id": [
-            "UOItA2hvMHSKtVtwPkgAn8C7y75MQMVIj466AwfQoXrx2PxGbdSP8g=="
+            "qhd83rXRHGXCBjOT6bY-CZJHURb7twJey31BG5nVQtHwXiPHBnvWzg=="
           ]
         },
         "body": {
           "encoding": "ASCII-8BIT",
-          "string": "{\"adult\":false,\"backdrop_path\":\"/7eccX0xay9pDj6ZQvU4cu3whw18.jpg\",\"belongs_to_collection\":null,\"budget\":0,\"genres\":[{\"id\":16,\"name\":\"Animation\"},{\"id\":9648,\"name\":\"Mystery\"},{\"id\":14,\"name\":\"Fantasy\"},{\"id\":28,\"name\":\"Action\"},{\"id\":27,\"name\":\"Horror\"}],\"homepage\":\"\",\"id\":1003579,\"imdb_id\":\"tt24223450\",\"original_language\":\"en\",\"original_title\":\"Batman: The Doom That Came to Gotham\",\"overview\":\"Explorer Bruce Wayne accidentally unleashes an ancient evil, and returns to Gotham after being away for two decades. There, Batman battles Lovecraftian supernatural forces and encounters allies and enemies such as Green Arrow, Ra's al Ghul, Mr. Freeze, Killer Croc, Two-Face and James Gordon.\",\"popularity\":1095.846,\"poster_path\":\"/hrATQE8ScQceohwInaMluluNEaf.jpg\",\"production_companies\":[{\"id\":9993,\"logo_path\":\"/2Tc1P3Ac8M479naPp1kYT3izLS5.png\",\"name\":\"DC Entertainment\",\"origin_country\":\"US\"},{\"id\":2785,\"logo_path\":\"/l5zW8jjmQOCx2dFmvnmbYmqoBmL.png\",\"name\":\"Warner Bros. Animation\",\"origin_country\":\"US\"},{\"id\":14772,\"logo_path\":\"/1XTIrcpK2JgnKn1RYgsPEJiUO0k.png\",\"name\":\"Warner Bros. Home Entertainment Group\",\"origin_country\":\"US\"}],\"production_countries\":[{\"iso_3166_1\":\"US\",\"name\":\"United States of America\"}],\"release_date\":\"2023-03-10\",\"revenue\":0,\"runtime\":86,\"spoken_languages\":[{\"english_name\":\"English\",\"iso_639_1\":\"en\",\"name\":\"English\"}],\"status\":\"Released\",\"tagline\":\"\",\"title\":\"Batman: The Doom That Came to Gotham\",\"video\":false,\"vote_average\":6.839,\"vote_count\":28}"
+          "string": "{\"adult\":false,\"backdrop_path\":\"/7eccX0xay9pDj6ZQvU4cu3whw18.jpg\",\"belongs_to_collection\":null,\"budget\":0,\"genres\":[{\"id\":16,\"name\":\"Animation\"},{\"id\":14,\"name\":\"Fantasy\"},{\"id\":27,\"name\":\"Horror\"},{\"id\":28,\"name\":\"Action\"},{\"id\":9648,\"name\":\"Mystery\"}],\"homepage\":\"\",\"id\":1003579,\"imdb_id\":\"tt24223450\",\"original_language\":\"en\",\"original_title\":\"Batman: The Doom That Came to Gotham\",\"overview\":\"Explorer Bruce Wayne accidentally unleashes an ancient evil, and returns to Gotham after being away for two decades. There, Batman battles Lovecraftian supernatural forces and encounters allies and enemies such as Green Arrow, Ra's al Ghul, Mr. Freeze, Killer Croc, Two-Face and James Gordon.\",\"popularity\":996.681,\"poster_path\":\"/hrATQE8ScQceohwInaMluluNEaf.jpg\",\"production_companies\":[{\"id\":9993,\"logo_path\":\"/2Tc1P3Ac8M479naPp1kYT3izLS5.png\",\"name\":\"DC Entertainment\",\"origin_country\":\"US\"},{\"id\":2785,\"logo_path\":\"/l5zW8jjmQOCx2dFmvnmbYmqoBmL.png\",\"name\":\"Warner Bros. Animation\",\"origin_country\":\"US\"},{\"id\":14772,\"logo_path\":\"/1XTIrcpK2JgnKn1RYgsPEJiUO0k.png\",\"name\":\"Warner Bros. Home Entertainment Group\",\"origin_country\":\"US\"}],\"production_countries\":[{\"iso_3166_1\":\"US\",\"name\":\"United States of America\"}],\"release_date\":\"2023-03-10\",\"revenue\":0,\"runtime\":86,\"spoken_languages\":[{\"english_name\":\"English\",\"iso_639_1\":\"en\",\"name\":\"English\"}],\"status\":\"Released\",\"tagline\":\"\",\"title\":\"Batman: The Doom That Came to Gotham\",\"video\":false,\"vote_average\":6.448,\"vote_count\":48}"
         }
       },
-      "recorded_at": "Thu, 23 Mar 2023 18:25:20 GMT"
+      "recorded_at": "Tue, 04 Apr 2023 00:01:26 GMT"
     },
     {
       "request": {
@@ -122,13 +122,13 @@
             "keep-alive"
           ],
           "Date": [
-            "Fri, 24 Mar 2023 17:47:38 GMT"
+            "Tue, 04 Apr 2023 00:01:26 GMT"
           ],
           "Server": [
             "openresty"
           ],
           "Cache-Control": [
-            "public, max-age=28800"
+            "public, max-age=24551"
           ],
           "X-Memc": [
             "HIT"
@@ -137,99 +137,13 @@
             "befdb093a375fc558ec41211328ab887"
           ],
           "X-Memc-Age": [
-            "12424"
+            "17627"
           ],
           "X-Memc-Expires": [
-            "3633"
+            "8603"
           ],
           "Etag": [
-            "W/\"c36b1782c83ef60977286ff56656949e\""
-          ],
-          "Vary": [
-            "Accept-Encoding",
-            "Origin"
-          ],
-          "X-Cache": [
-            "Miss from cloudfront"
-          ],
-          "Via": [
-            "1.1 d9fe97589e952f97209f7a422c89d876.cloudfront.net (CloudFront)"
-          ],
-          "X-Amz-Cf-Pop": [
-            "DEN52-P2"
-          ],
-          "Alt-Svc": [
-            "h3=\":443\"; ma=86400"
-          ],
-          "X-Amz-Cf-Id": [
-            "uBLmuRTN85hcM3c--yv55FfOh8lhk3daz4YjbIxmk1Swe8VxqB3KfQ=="
-          ]
-        },
-        "body": {
-          "encoding": "ASCII-8BIT",
-          "string": "{\"adult\":false,\"backdrop_path\":\"/7eccX0xay9pDj6ZQvU4cu3whw18.jpg\",\"belongs_to_collection\":null,\"budget\":0,\"genres\":[{\"id\":16,\"name\":\"Animation\"},{\"id\":9648,\"name\":\"Mystery\"},{\"id\":14,\"name\":\"Fantasy\"},{\"id\":28,\"name\":\"Action\"},{\"id\":27,\"name\":\"Horror\"}],\"homepage\":\"\",\"id\":1003579,\"imdb_id\":\"tt24223450\",\"original_language\":\"en\",\"original_title\":\"Batman: The Doom That Came to Gotham\",\"overview\":\"Explorer Bruce Wayne accidentally unleashes an ancient evil, and returns to Gotham after being away for two decades. There, Batman battles Lovecraftian supernatural forces and encounters allies and enemies such as Green Arrow, Ra's al Ghul, Mr. Freeze, Killer Croc, Two-Face and James Gordon.\",\"popularity\":1012.789,\"poster_path\":\"/hrATQE8ScQceohwInaMluluNEaf.jpg\",\"production_companies\":[{\"id\":9993,\"logo_path\":\"/2Tc1P3Ac8M479naPp1kYT3izLS5.png\",\"name\":\"DC Entertainment\",\"origin_country\":\"US\"},{\"id\":2785,\"logo_path\":\"/l5zW8jjmQOCx2dFmvnmbYmqoBmL.png\",\"name\":\"Warner Bros. Animation\",\"origin_country\":\"US\"},{\"id\":14772,\"logo_path\":\"/1XTIrcpK2JgnKn1RYgsPEJiUO0k.png\",\"name\":\"Warner Bros. Home Entertainment Group\",\"origin_country\":\"US\"}],\"production_countries\":[{\"iso_3166_1\":\"US\",\"name\":\"United States of America\"}],\"release_date\":\"2023-03-10\",\"revenue\":0,\"runtime\":86,\"spoken_languages\":[{\"english_name\":\"English\",\"iso_639_1\":\"en\",\"name\":\"English\"}],\"status\":\"Released\",\"tagline\":\"\",\"title\":\"Batman: The Doom That Came to Gotham\",\"video\":false,\"vote_average\":6.734,\"vote_count\":32}"
-        }
-      },
-      "recorded_at": "Fri, 24 Mar 2023 17:47:38 GMT"
-    },
-    {
-      "request": {
-        "method": "get",
-        "uri": "https://api.themoviedb.org/3/movie/1003579?api_key=<MOVIE_API_KEY>",
-        "body": {
-          "encoding": "US-ASCII",
-          "string": ""
-        },
-        "headers": {
-          "User-Agent": [
-            "Faraday v2.7.4"
-          ],
-          "Accept-Encoding": [
-            "gzip;q=1.0,deflate;q=0.6,identity;q=0.3"
-          ],
-          "Accept": [
-            "*/*"
-          ]
-        }
-      },
-      "response": {
-        "status": {
-          "code": 200,
-          "message": "OK"
-        },
-        "headers": {
-          "Content-Type": [
-            "application/json;charset=utf-8"
-          ],
-          "Transfer-Encoding": [
-            "chunked"
-          ],
-          "Connection": [
-            "keep-alive"
-          ],
-          "Date": [
-            "Fri, 24 Mar 2023 17:47:38 GMT"
-          ],
-          "Server": [
-            "openresty"
-          ],
-          "Cache-Control": [
-            "public, max-age=28800"
-          ],
-          "X-Memc": [
-            "HIT"
-          ],
-          "X-Memc-Key": [
-            "befdb093a375fc558ec41211328ab887"
-          ],
-          "X-Memc-Age": [
-            "12424"
-          ],
-          "X-Memc-Expires": [
-            "3633"
-          ],
-          "Etag": [
-            "W/\"c36b1782c83ef60977286ff56656949e\""
+            "W/\"c9dddbcd8ab129546fc3cf0433acc021\""
           ],
           "Vary": [
             "Accept-Encoding",
@@ -248,18 +162,18 @@
             "h3=\":443\"; ma=86400"
           ],
           "X-Amz-Cf-Id": [
-            "t1UjFyy47EdSRUFTf0NlUko5tdoQouCi5grOrCFsy_ScIEwP0RUyKA=="
+            "TD6THRs-usZLWsc9bXES_A7EmXPaxrJNLHDGv9g23N7XrJuKXSr5VA=="
           ],
           "Age": [
-            "8060"
+            "1"
           ]
         },
         "body": {
           "encoding": "ASCII-8BIT",
-          "string": "{\"adult\":false,\"backdrop_path\":\"/7eccX0xay9pDj6ZQvU4cu3whw18.jpg\",\"belongs_to_collection\":null,\"budget\":0,\"genres\":[{\"id\":16,\"name\":\"Animation\"},{\"id\":9648,\"name\":\"Mystery\"},{\"id\":14,\"name\":\"Fantasy\"},{\"id\":28,\"name\":\"Action\"},{\"id\":27,\"name\":\"Horror\"}],\"homepage\":\"\",\"id\":1003579,\"imdb_id\":\"tt24223450\",\"original_language\":\"en\",\"original_title\":\"Batman: The Doom That Came to Gotham\",\"overview\":\"Explorer Bruce Wayne accidentally unleashes an ancient evil, and returns to Gotham after being away for two decades. There, Batman battles Lovecraftian supernatural forces and encounters allies and enemies such as Green Arrow, Ra's al Ghul, Mr. Freeze, Killer Croc, Two-Face and James Gordon.\",\"popularity\":1012.789,\"poster_path\":\"/hrATQE8ScQceohwInaMluluNEaf.jpg\",\"production_companies\":[{\"id\":9993,\"logo_path\":\"/2Tc1P3Ac8M479naPp1kYT3izLS5.png\",\"name\":\"DC Entertainment\",\"origin_country\":\"US\"},{\"id\":2785,\"logo_path\":\"/l5zW8jjmQOCx2dFmvnmbYmqoBmL.png\",\"name\":\"Warner Bros. Animation\",\"origin_country\":\"US\"},{\"id\":14772,\"logo_path\":\"/1XTIrcpK2JgnKn1RYgsPEJiUO0k.png\",\"name\":\"Warner Bros. Home Entertainment Group\",\"origin_country\":\"US\"}],\"production_countries\":[{\"iso_3166_1\":\"US\",\"name\":\"United States of America\"}],\"release_date\":\"2023-03-10\",\"revenue\":0,\"runtime\":86,\"spoken_languages\":[{\"english_name\":\"English\",\"iso_639_1\":\"en\",\"name\":\"English\"}],\"status\":\"Released\",\"tagline\":\"\",\"title\":\"Batman: The Doom That Came to Gotham\",\"video\":false,\"vote_average\":6.734,\"vote_count\":32}"
+          "string": "{\"adult\":false,\"backdrop_path\":\"/7eccX0xay9pDj6ZQvU4cu3whw18.jpg\",\"belongs_to_collection\":null,\"budget\":0,\"genres\":[{\"id\":16,\"name\":\"Animation\"},{\"id\":14,\"name\":\"Fantasy\"},{\"id\":27,\"name\":\"Horror\"},{\"id\":28,\"name\":\"Action\"},{\"id\":9648,\"name\":\"Mystery\"}],\"homepage\":\"\",\"id\":1003579,\"imdb_id\":\"tt24223450\",\"original_language\":\"en\",\"original_title\":\"Batman: The Doom That Came to Gotham\",\"overview\":\"Explorer Bruce Wayne accidentally unleashes an ancient evil, and returns to Gotham after being away for two decades. There, Batman battles Lovecraftian supernatural forces and encounters allies and enemies such as Green Arrow, Ra's al Ghul, Mr. Freeze, Killer Croc, Two-Face and James Gordon.\",\"popularity\":996.681,\"poster_path\":\"/hrATQE8ScQceohwInaMluluNEaf.jpg\",\"production_companies\":[{\"id\":9993,\"logo_path\":\"/2Tc1P3Ac8M479naPp1kYT3izLS5.png\",\"name\":\"DC Entertainment\",\"origin_country\":\"US\"},{\"id\":2785,\"logo_path\":\"/l5zW8jjmQOCx2dFmvnmbYmqoBmL.png\",\"name\":\"Warner Bros. Animation\",\"origin_country\":\"US\"},{\"id\":14772,\"logo_path\":\"/1XTIrcpK2JgnKn1RYgsPEJiUO0k.png\",\"name\":\"Warner Bros. Home Entertainment Group\",\"origin_country\":\"US\"}],\"production_countries\":[{\"iso_3166_1\":\"US\",\"name\":\"United States of America\"}],\"release_date\":\"2023-03-10\",\"revenue\":0,\"runtime\":86,\"spoken_languages\":[{\"english_name\":\"English\",\"iso_639_1\":\"en\",\"name\":\"English\"}],\"status\":\"Released\",\"tagline\":\"\",\"title\":\"Batman: The Doom That Came to Gotham\",\"video\":false,\"vote_average\":6.448,\"vote_count\":48}"
         }
       },
-      "recorded_at": "Fri, 24 Mar 2023 20:01:59 GMT"
+      "recorded_at": "Tue, 04 Apr 2023 00:01:27 GMT"
     },
     {
       "request": {
@@ -297,13 +211,13 @@
             "keep-alive"
           ],
           "Date": [
-            "Fri, 24 Mar 2023 17:47:38 GMT"
+            "Tue, 04 Apr 2023 00:01:26 GMT"
           ],
           "Server": [
             "openresty"
           ],
           "Cache-Control": [
-            "public, max-age=28800"
+            "public, max-age=24551"
           ],
           "X-Memc": [
             "HIT"
@@ -312,13 +226,13 @@
             "befdb093a375fc558ec41211328ab887"
           ],
           "X-Memc-Age": [
-            "12424"
+            "17627"
           ],
           "X-Memc-Expires": [
-            "3633"
+            "8603"
           ],
           "Etag": [
-            "W/\"c36b1782c83ef60977286ff56656949e\""
+            "W/\"c9dddbcd8ab129546fc3cf0433acc021\""
           ],
           "Vary": [
             "Accept-Encoding",
@@ -328,7 +242,7 @@
             "Hit from cloudfront"
           ],
           "Via": [
-            "1.1 1c13683c7de319f25e08f83861fc6dc2.cloudfront.net (CloudFront)"
+            "1.1 05fe6f95b77eb54d0691950915c27264.cloudfront.net (CloudFront)"
           ],
           "X-Amz-Cf-Pop": [
             "DEN52-P2"
@@ -337,18 +251,107 @@
             "h3=\":443\"; ma=86400"
           ],
           "X-Amz-Cf-Id": [
-            "SEs-neP0EWhlLUCpgl4vqDDvQCMROM2gkaQyuZQS1TvAyKSuRks4Iw=="
+            "IcxreBpAaKek0-Nr5PfzMbmCb8NgX5XbRjt68S4pHYtTjoOE12Ks5A=="
           ],
           "Age": [
-            "9310"
+            "1"
           ]
         },
         "body": {
           "encoding": "ASCII-8BIT",
-          "string": "{\"adult\":false,\"backdrop_path\":\"/7eccX0xay9pDj6ZQvU4cu3whw18.jpg\",\"belongs_to_collection\":null,\"budget\":0,\"genres\":[{\"id\":16,\"name\":\"Animation\"},{\"id\":9648,\"name\":\"Mystery\"},{\"id\":14,\"name\":\"Fantasy\"},{\"id\":28,\"name\":\"Action\"},{\"id\":27,\"name\":\"Horror\"}],\"homepage\":\"\",\"id\":1003579,\"imdb_id\":\"tt24223450\",\"original_language\":\"en\",\"original_title\":\"Batman: The Doom That Came to Gotham\",\"overview\":\"Explorer Bruce Wayne accidentally unleashes an ancient evil, and returns to Gotham after being away for two decades. There, Batman battles Lovecraftian supernatural forces and encounters allies and enemies such as Green Arrow, Ra's al Ghul, Mr. Freeze, Killer Croc, Two-Face and James Gordon.\",\"popularity\":1012.789,\"poster_path\":\"/hrATQE8ScQceohwInaMluluNEaf.jpg\",\"production_companies\":[{\"id\":9993,\"logo_path\":\"/2Tc1P3Ac8M479naPp1kYT3izLS5.png\",\"name\":\"DC Entertainment\",\"origin_country\":\"US\"},{\"id\":2785,\"logo_path\":\"/l5zW8jjmQOCx2dFmvnmbYmqoBmL.png\",\"name\":\"Warner Bros. Animation\",\"origin_country\":\"US\"},{\"id\":14772,\"logo_path\":\"/1XTIrcpK2JgnKn1RYgsPEJiUO0k.png\",\"name\":\"Warner Bros. Home Entertainment Group\",\"origin_country\":\"US\"}],\"production_countries\":[{\"iso_3166_1\":\"US\",\"name\":\"United States of America\"}],\"release_date\":\"2023-03-10\",\"revenue\":0,\"runtime\":86,\"spoken_languages\":[{\"english_name\":\"English\",\"iso_639_1\":\"en\",\"name\":\"English\"}],\"status\":\"Released\",\"tagline\":\"\",\"title\":\"Batman: The Doom That Came to Gotham\",\"video\":false,\"vote_average\":6.734,\"vote_count\":32}"
+          "string": "{\"adult\":false,\"backdrop_path\":\"/7eccX0xay9pDj6ZQvU4cu3whw18.jpg\",\"belongs_to_collection\":null,\"budget\":0,\"genres\":[{\"id\":16,\"name\":\"Animation\"},{\"id\":14,\"name\":\"Fantasy\"},{\"id\":27,\"name\":\"Horror\"},{\"id\":28,\"name\":\"Action\"},{\"id\":9648,\"name\":\"Mystery\"}],\"homepage\":\"\",\"id\":1003579,\"imdb_id\":\"tt24223450\",\"original_language\":\"en\",\"original_title\":\"Batman: The Doom That Came to Gotham\",\"overview\":\"Explorer Bruce Wayne accidentally unleashes an ancient evil, and returns to Gotham after being away for two decades. There, Batman battles Lovecraftian supernatural forces and encounters allies and enemies such as Green Arrow, Ra's al Ghul, Mr. Freeze, Killer Croc, Two-Face and James Gordon.\",\"popularity\":996.681,\"poster_path\":\"/hrATQE8ScQceohwInaMluluNEaf.jpg\",\"production_companies\":[{\"id\":9993,\"logo_path\":\"/2Tc1P3Ac8M479naPp1kYT3izLS5.png\",\"name\":\"DC Entertainment\",\"origin_country\":\"US\"},{\"id\":2785,\"logo_path\":\"/l5zW8jjmQOCx2dFmvnmbYmqoBmL.png\",\"name\":\"Warner Bros. Animation\",\"origin_country\":\"US\"},{\"id\":14772,\"logo_path\":\"/1XTIrcpK2JgnKn1RYgsPEJiUO0k.png\",\"name\":\"Warner Bros. Home Entertainment Group\",\"origin_country\":\"US\"}],\"production_countries\":[{\"iso_3166_1\":\"US\",\"name\":\"United States of America\"}],\"release_date\":\"2023-03-10\",\"revenue\":0,\"runtime\":86,\"spoken_languages\":[{\"english_name\":\"English\",\"iso_639_1\":\"en\",\"name\":\"English\"}],\"status\":\"Released\",\"tagline\":\"\",\"title\":\"Batman: The Doom That Came to Gotham\",\"video\":false,\"vote_average\":6.448,\"vote_count\":48}"
         }
       },
-      "recorded_at": "Fri, 24 Mar 2023 20:22:49 GMT"
+      "recorded_at": "Tue, 04 Apr 2023 00:01:27 GMT"
+    },
+    {
+      "request": {
+        "method": "get",
+        "uri": "https://api.themoviedb.org/3/movie/1003579?api_key=<MOVIE_API_KEY>",
+        "body": {
+          "encoding": "US-ASCII",
+          "string": ""
+        },
+        "headers": {
+          "User-Agent": [
+            "Faraday v2.7.4"
+          ],
+          "Accept-Encoding": [
+            "gzip;q=1.0,deflate;q=0.6,identity;q=0.3"
+          ],
+          "Accept": [
+            "*/*"
+          ]
+        }
+      },
+      "response": {
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "headers": {
+          "Content-Type": [
+            "application/json;charset=utf-8"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Date": [
+            "Tue, 04 Apr 2023 00:01:26 GMT"
+          ],
+          "Server": [
+            "openresty"
+          ],
+          "Cache-Control": [
+            "public, max-age=24551"
+          ],
+          "X-Memc": [
+            "HIT"
+          ],
+          "X-Memc-Key": [
+            "befdb093a375fc558ec41211328ab887"
+          ],
+          "X-Memc-Age": [
+            "17627"
+          ],
+          "X-Memc-Expires": [
+            "8603"
+          ],
+          "Etag": [
+            "W/\"c9dddbcd8ab129546fc3cf0433acc021\""
+          ],
+          "Vary": [
+            "Accept-Encoding",
+            "Origin"
+          ],
+          "X-Cache": [
+            "Hit from cloudfront"
+          ],
+          "Via": [
+            "1.1 a42ce842e0f60814700ead82353e9f08.cloudfront.net (CloudFront)"
+          ],
+          "X-Amz-Cf-Pop": [
+            "DEN52-P2"
+          ],
+          "Alt-Svc": [
+            "h3=\":443\"; ma=86400"
+          ],
+          "X-Amz-Cf-Id": [
+            "Hpg08Fs4xg8yiH5Om6RXRvN6Vi0WyX_PGZwTHkf4lCPlmxHj3LbjKA=="
+          ],
+          "Age": [
+            "1"
+          ]
+        },
+        "body": {
+          "encoding": "ASCII-8BIT",
+          "string": "{\"adult\":false,\"backdrop_path\":\"/7eccX0xay9pDj6ZQvU4cu3whw18.jpg\",\"belongs_to_collection\":null,\"budget\":0,\"genres\":[{\"id\":16,\"name\":\"Animation\"},{\"id\":14,\"name\":\"Fantasy\"},{\"id\":27,\"name\":\"Horror\"},{\"id\":28,\"name\":\"Action\"},{\"id\":9648,\"name\":\"Mystery\"}],\"homepage\":\"\",\"id\":1003579,\"imdb_id\":\"tt24223450\",\"original_language\":\"en\",\"original_title\":\"Batman: The Doom That Came to Gotham\",\"overview\":\"Explorer Bruce Wayne accidentally unleashes an ancient evil, and returns to Gotham after being away for two decades. There, Batman battles Lovecraftian supernatural forces and encounters allies and enemies such as Green Arrow, Ra's al Ghul, Mr. Freeze, Killer Croc, Two-Face and James Gordon.\",\"popularity\":996.681,\"poster_path\":\"/hrATQE8ScQceohwInaMluluNEaf.jpg\",\"production_companies\":[{\"id\":9993,\"logo_path\":\"/2Tc1P3Ac8M479naPp1kYT3izLS5.png\",\"name\":\"DC Entertainment\",\"origin_country\":\"US\"},{\"id\":2785,\"logo_path\":\"/l5zW8jjmQOCx2dFmvnmbYmqoBmL.png\",\"name\":\"Warner Bros. Animation\",\"origin_country\":\"US\"},{\"id\":14772,\"logo_path\":\"/1XTIrcpK2JgnKn1RYgsPEJiUO0k.png\",\"name\":\"Warner Bros. Home Entertainment Group\",\"origin_country\":\"US\"}],\"production_countries\":[{\"iso_3166_1\":\"US\",\"name\":\"United States of America\"}],\"release_date\":\"2023-03-10\",\"revenue\":0,\"runtime\":86,\"spoken_languages\":[{\"english_name\":\"English\",\"iso_639_1\":\"en\",\"name\":\"English\"}],\"status\":\"Released\",\"tagline\":\"\",\"title\":\"Batman: The Doom That Came to Gotham\",\"video\":false,\"vote_average\":6.448,\"vote_count\":48}"
+        }
+      },
+      "recorded_at": "Tue, 04 Apr 2023 00:01:27 GMT"
     }
   ],
   "recorded_with": "VCR 6.1.0"
