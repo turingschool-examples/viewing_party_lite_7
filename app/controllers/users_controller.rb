@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :verify_access, only: :show 
   def show 
     @user = User.find(params[:id])
     @movie_details = @user.movie_ids.map do |movie_id|
@@ -15,10 +16,11 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     user[:email] = user[:email].downcase
+    
     if user.save
+      session[:user_id] = user.id
       redirect_to user_path(user)
     else
-      # flash[:error] = "Error: Invalid form entry"
       flash[:error] = user.errors.full_messages.to_sentence
       redirect_to "/register"
     end
@@ -32,11 +34,18 @@ class UsersController < ApplicationController
     user = User.find_by(email: params[:email])
 
     if user.authenticate(params[:password])
+      session[:user_id] = user.id
       redirect_to user_path(user)
     else 
       flash[:error] = "Sorry, your credentials are bad"
       render :login_form
     end
+  end
+
+  def logout 
+    User.find(session[:user_id])
+    session[:user_id] = nil 
+    redirect_to root_path
   end
 
 
@@ -74,10 +83,14 @@ class UsersController < ApplicationController
   end
 
   private
-    # def user_params
-    #   params.permit(:name, :email)
-    # end
     def user_params 
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    end
+
+    def verify_access 
+      unless current_user 
+        redirect_to root_path 
+        flash[:alert] = "Please log in to view your dashboard"
+      end
     end
 end
