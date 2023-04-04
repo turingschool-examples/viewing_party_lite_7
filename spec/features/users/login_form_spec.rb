@@ -25,7 +25,6 @@ RSpec.describe " User login page " do
       click_button "Log In"
 
       expect(current_path).to eq(login_path)
-      save_and_open_page
       expect(page).to have_content("You've entered incorrect credentials, please try again!")
     end
   end
