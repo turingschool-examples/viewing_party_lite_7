@@ -26,13 +26,16 @@ RSpec.describe "Home", type: :feature do
       visit root_path
 
       within("#user_#{@user_1.id}") do
-        expect(page).to have_link("#{@user_1.name} - #{@user_1.email}", href: user_path(@user_1.id))
+        expect(page).to have_content("#{@user_1.name} - #{@user_1.email}")
+        expect(page).to_not have_link("#{@user_1.name} - #{@user_1.email}", href: user_path(@user_1.id))
       end
       within("#user_#{@user_2.id}") do
-        expect(page).to have_link("#{@user_2.name} - #{@user_2.email}", href: user_path(@user_2.id))
+        expect(page).to have_content("#{@user_2.name} - #{@user_2.email}")
+        expect(page).to_not have_link("#{@user_2.name} - #{@user_2.email}", href: user_path(@user_2.id))
       end
       within("#user_#{@user_3.id}") do
-        expect(page).to have_link("#{@user_3.name} - #{@user_3.email}", href: user_path(@user_3.id))
+        expect(page).to have_content("#{@user_3.name} - #{@user_3.email}")
+        expect(page).to_not have_link("#{@user_3.name} - #{@user_3.email}", href: user_path(@user_3.id))
       end
     end
 
@@ -48,6 +51,13 @@ RSpec.describe "Home", type: :feature do
         expect(page).to_not have_content(@user_1.name)
         expect(page).to_not have_content(@user_2.name)
         expect(page).to_not have_content(@user_3.name)
+      end
+    end
+
+    describe "User Story 2" do
+      it "the list of users gives email addresses, but are NOT links" do
+        # see modifications to above test
+        # it "shows the existing users as a link to their dashboard (when logged in)" do
       end
     end
   end
