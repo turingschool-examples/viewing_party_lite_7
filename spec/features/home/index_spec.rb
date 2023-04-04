@@ -16,11 +16,16 @@ RSpec.describe "/", type: :feature do
         expect(page).to have_link("Home")
 
         expect(page).to have_link("Create a New User")
-        # expect(page).to have_content("Existing Users:")
+        expect(page).to have_link("Log In", href: "/login")
+
+        expect(page).to have_content("Existing Users:")
+        expect(page).to have_content("#{@picard.email}")
+        expect(page).to have_content("#{@riker.email}")
+        expect(page).to have_content("#{@data.email}")
+
         # expect(page).to have_link("#{@picard.email}", href: "/users/#{@picard.id}")
         # expect(page).to have_link("#{@riker.email}", href: "/users/#{@riker.id}")
         # expect(page).to have_link("#{@data.email}", href: "/users/#{@data.id}")
-        expect(page).to have_link("Log In", href: "/login")
       end
 
       it "when I click Log In link & am taken the login form page" do      
