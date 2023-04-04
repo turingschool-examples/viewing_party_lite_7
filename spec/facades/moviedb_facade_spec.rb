@@ -28,6 +28,7 @@ RSpec.describe MoviedbFacade do
         film = MoviedbFacade.new(search: "space od")
 
         expect(film.movies_keyword_search).to be_an(Array)
+        expect(film.movies_keyword_search).to all be_a(Movie)
         expect(film.movies_keyword_search.first).to be_a(Movie)
       end
     end
