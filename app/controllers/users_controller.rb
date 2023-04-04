@@ -43,6 +43,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def logout
+    session.delete(:user_id)
+    flash[:message] = "You have been logged out"
+    redirect_to root_path
+  end
+
   private
 
   def user_params

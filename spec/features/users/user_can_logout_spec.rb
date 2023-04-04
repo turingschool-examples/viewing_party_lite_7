@@ -12,16 +12,18 @@ RSpec.describe "Landing", type: :feature do
   describe "Authorization and Sessions Challenge" do
     describe "User Story 2 - Log Out a User" do
       it "has a link to log out a user" do
-        save_and_open_page
         click_link "Log In"
 
         fill_in :email, with: @user_1.email
         fill_in :password, with: @user_1.password
-        save_and_open_page
         click_button "Log In"
 
         expect(current_path).to eq(user_path(@user_1.id))
+        visit root_path
+
         expect(page).to have_link("Log Out")
+        expect(page).to_not have_link("Log In")
+        expect(page).to_not have_link("Register")
         click_link "Log Out"
 
         expect(current_path).to eq(root_path)
