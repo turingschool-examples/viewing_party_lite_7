@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   post "/users/:user_id/movies/:movie_id/viewing-party/new", to: "viewing_parties#create"
   get "/login", to: "users#login_form"
   post "/login", to: "users#login_user"
+  delete "/logout", to: "users#logout_user"
 end
