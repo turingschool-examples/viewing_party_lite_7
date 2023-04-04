@@ -1,13 +1,19 @@
 class UsersController < ApplicationController
+  # before_action :authorization, only: [:show]
 
   def show
-    @user = User.find(params[:id])
-    user_all_parties = @user.parties
+    if current_user
+      @user = User.find(params[:id])
+      user_all_parties = @user.parties
 
-    @all_parties_and_movie = []
+      @all_parties_and_movie = []
 
-    user_all_parties.each do |party|
-      @all_parties_and_movie << party.get_all_info
+      user_all_parties.each do |party|
+        @all_parties_and_movie << party.get_all_info
+      end
+    else
+      flash[:message] = "You must be logged in or registered to access the dashboard."
+      redirect_to "/"
     end
   end
   
