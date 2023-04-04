@@ -4,7 +4,12 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    if session[:user_id]
+      @user = User.find(params[:id])
+    else 
+      flash[:error] = "You must be logged in or registered to access this page"
+      redirect_to '/'
+    end
     # @hosting = @user.hosted_parties(params[:id])
     # @invited = @user.invited_parties
   end

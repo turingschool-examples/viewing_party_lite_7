@@ -47,6 +47,14 @@ RSpec.describe '/', type: :feature do
       expect(@steve.logged_in?).to eq(false)
     end
 
+    describe "when I visit the landing page" do
+      it "and then try to visit '/dashboard', I remain on landing page with a message telling me that I must be logged in or registered to access to dashboard" do
+        visit '/dashboard'
+        expect(current_path).to eq('/')
+        expect(page).to have_content("You must be logged in or registered to access this page")
+      end
+    end
+
     describe 'as a logged in user' do
       it 'I see a link to log out' do
         expect(page).to have_link("Login", :href => "/login")
