@@ -7,6 +7,29 @@ RSpec.describe 'new viewing party page' do
     @user_3 = create(:user)
     @user_4 = create(:user)
 
+    top_20_response = File.read('spec/fixtures/top_movies.json')
+    stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV['MOVIE_DB_KEY']}")
+      .to_return(status: 200, body: top_20_response)
+
+    search_results = File.read('spec/fixtures/godfather_search.json')
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?query=Godfather&api_key=#{ENV['MOVIE_DB_KEY']}")
+      .to_return(status: 200, body: search_results)
+
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['MOVIE_DB_KEY']}&query=")
+      .to_return(status: 200, body: '{"results": []}')
+    
+    movie_response = File.read('spec/fixtures/movie.json')
+    stub_request(:get, "https://api.themoviedb.org/3/movie/238?api_key=#{ENV['MOVIE_DB_KEY']}")
+      .to_return(status: 200, body: movie_response)
+
+    actor_response = File.read('spec/fixtures/actors.json')
+    stub_request(:get, "https://api.themoviedb.org/3/movie/238/credits?api_key=#{ENV['MOVIE_DB_KEY']}")
+      .to_return(status: 200, body: actor_response)
+
+    review_response = File.read('spec/fixtures/reviews.json')
+    stub_request(:get, "https://api.themoviedb.org/3/movie/238/reviews?api_key=#{ENV['MOVIE_DB_KEY']}")
+      .to_return(status: 200, body: review_response)
+
     json_response = File.read('spec/fixtures/movie.json')
     stub_request(:get, "https://api.themoviedb.org/3/movie/238?api_key=#{ENV['MOVIE_DB_KEY']}")
       .to_return(status: 200, body: json_response, headers: {})
@@ -60,5 +83,15 @@ RSpec.describe 'new viewing party page' do
     end
 
     expect(current_path).to eq("/users/#{@user_1.id}")
+  end
+
+  it 'does not create a new viewing party when the user is not logged in' do
+    visit '/'
+
+    click_on "Log Out"
+
+    visit "/users/#{@user_1.id}/movies/#{@movie.id}/viewing_parties/new"
+    
+    expect(page).to have_content("You must be logged in to create a viewing party")
   end
 end
