@@ -4,9 +4,11 @@ class User < ApplicationRecord
 
   validates_uniqueness_of :email
   validates :password, confirmation: true
-  validates_presence_of :name, :email, :password, :password_confirmation
+  validates_presence_of :name, :email, :password#, :password_confirmation
 
   has_secure_password
+
+  enum role: %w(default manager admin)
 
 
   def movie_ids 
@@ -19,5 +21,9 @@ class User < ApplicationRecord
 
   def viewing_parties_as_host
     viewing_parties.joins(:viewing_party_users).where('viewing_party_users.is_host = true').distinct
+  end
+
+  def self.only_default_users 
+    where(role: 0)
   end
 end
