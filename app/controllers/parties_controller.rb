@@ -1,4 +1,6 @@
 class PartiesController < ApplicationController
+  # before_action :require_login
+
   def new
     if current_user.nil?
       flash[:error] = "You must be logged in to view this page!"
@@ -21,4 +23,11 @@ class PartiesController < ApplicationController
     params[:host_id] = params[:user_id]
     params.permit(:movie_id, :duration, :day, :time, :host_id)
   end
+
+  # def require_login
+  #   if !session[:user_id]
+  #     flash[:error] = "You must be logged in to view this page!"
+  #     redirect_to user_movie_path(params[:user_id], params[:movie_id])
+  #   end
+  # end
 end

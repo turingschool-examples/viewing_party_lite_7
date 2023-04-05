@@ -20,34 +20,43 @@ RSpec.describe "User Registration", type: :feature do
     UserParty.create!(user_id: @sarah.id, party_id: @their_party.id)
     UserParty.create!(user_id: @jill.id, party_id: @their_party.id)
 
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@stan)
-    
-    visit user_path(@stan)
+    # allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@stan)
+    # visit user_path(@stan)
   end
 
   describe "User Story 6", :vcr do
     describe "As a user, when I visit a users dashboard page(/users/:id})" do
       it "I should see the name of the user's dashboard" do
+        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@stan)
+        visit user_path(@stan)
         expect(page).to have_content("#{@stan.name}'s Dashboard")
       end
 
       it "has a button to 'Discover Movies'" do
+        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@stan)
+        visit user_path(@stan)
         expect(page).to have_button "Discover Movies"
       end
 
       it "has a section that shows all viewing parties" do
+        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@stan)
+        visit user_path(@stan)
         within "#viewing_parties" do
           expect(page).to have_content("Viewing Parties")
         end
       end
 
       it "when I click the 'Discover Movies' button, I am routed to the discover page" do
+        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@stan)
+        visit user_path(@stan)
         click_button "Discover Movies"
 
         expect(current_path).to eq("/users/#{@stan.id}/discover")
       end
 
       it "I will see my viewing parties details, details of viewing parties I am invited to, and the movie title and img" do
+        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@stan)
+        visit user_path(@stan)
         
         within "#party-#{@my_party.id}" do
           expect(page).to have_css("img")
@@ -79,8 +88,9 @@ RSpec.describe "User Registration", type: :feature do
     
     describe "User Story 4 - as a visitor when I try to visit movie show page" do
       describe "I click the button to create a viewing party" do
-        it "I'm redirected to the movies show page, and a message appears to let me know I must be logged in or registered to create a movie party." do
-          visit user_movie_path(@stan.id, 550)
+        it "I'm redirected to the movies show page, and a message appears to let me know I must be logged in or registered to create a movie party.", :vcr do
+          visit user_movie_path(@sarah, 550)
+          save_and_open_page
           click_button "Create Viewing Party"
           expect(page).to have_content("You must be logged in to view this page!")
         end
