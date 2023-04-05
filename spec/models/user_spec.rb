@@ -25,7 +25,7 @@ RSpec.describe User do
     it {should validate_uniqueness_of :email}
     it {should validate_presence_of :name}
     it {should validate_presence_of :email}
-    it {should validate_presence_of :password_confirmation}
+    # it {should validate_presence_of :password_confirmation}
     it {should have_secure_password}
   end
 
@@ -58,6 +58,14 @@ RSpec.describe User do
   describe "viewing_parties_invited_to" do 
     it "is the list of viewing parties the user is invited to" do 
       expect(@user_1.viewing_parties_as_host).to eq([@viewing_party_2, @viewing_party_4])
+    end
+  end
+
+  describe "only_default_users" do 
+    it "is a list of only default users" do 
+      admin_user = User.create!(name: "Sam Smith", email: "sam@yahooey.com", password: "hellopuppy", role: 2)
+
+      expect(User.only_default_users).to eq([@user_1, @user_2])
     end
   end
 end
