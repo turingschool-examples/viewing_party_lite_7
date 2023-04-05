@@ -67,14 +67,16 @@ RSpec.describe "/users/:user_id/movies/:movie_id" do
     end
 
     it "when logged in, click the Create Viewing Party button, I'm taken to the viewing party new form page" do
-      visit "/"
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@picard)
 
-      click_link("Log In")
-      expect(current_path).to eq("/login")
-      fill_in('Email', with: "captain@uss-enterprise.com")
-      fill_in("Password:", with: "IamCaptain!")
-      click_on("Log In")
-      expect(current_path).to eq("/users/#{@picard.id}")
+      # without the stub above, need all these lines in every test:
+      # visit "/"
+      # click_link("Log In")
+      # expect(current_path).to eq("/login")
+      # fill_in('Email', with: "captain@uss-enterprise.com")
+      # fill_in("Password:", with: "IamCaptain!")
+      # click_on("Log In")
+      # expect(current_path).to eq("/users/#{@picard.id}")
 
       visit "/users/#{@picard.id}/movies/62"
 

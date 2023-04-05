@@ -28,7 +28,7 @@ RSpec.describe "/", type: :feature do
 
         expect(current_path).to eq("/login")
         # expect(current_path).to eq(login_path)
-        expect(page).to have_content("Sorry, your credentials are bad.")
+        expect(page).to have_content("Sorry, your password is incorrect.")
       end
 
       it "can NOT log in with nil password & am redirected back to the login form page" do  
@@ -39,7 +39,7 @@ RSpec.describe "/", type: :feature do
 
         expect(current_path).to eq("/login")
         # expect(current_path).to eq(login_path)
-        expect(page).to have_content("Sorry, your credentials are bad.")
+        expect(page).to have_content("Sorry, your password is incorrect.")
       end
 
       it "can NOT log in with invalid email & am redirected back to the login form page" do  
@@ -50,7 +50,7 @@ RSpec.describe "/", type: :feature do
 
         expect(current_path).to eq("/login")
         # expect(current_path).to eq(login_path)
-        expect(page).to have_content("Sorry, your credentials are bad.")
+        expect(page).to have_content("Sorry, your email is incorrect.")
       end
 
       it "can NOT log in with nil email & am redirected back to the login form page" do  
@@ -61,7 +61,7 @@ RSpec.describe "/", type: :feature do
 
         expect(current_path).to eq("/login")
         # expect(current_path).to eq(login_path)
-        expect(page).to have_content("Sorry, your credentials are bad.")
+        expect(page).to have_content("Sorry, your email is incorrect.")
       end
     end
   end

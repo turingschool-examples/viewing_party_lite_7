@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
   before_action :authorization, only: [:show]
+  before_action :email_confirmation, only: [:login]
 
   def show
+    # turned the commented out line below into the before action: 
     # if current_user
-      @user = User.find(params[:id])
+      @user = current_user
       user_all_parties = @user.parties
 
       @all_parties_and_movie = []
@@ -41,20 +43,27 @@ class UsersController < ApplicationController
   end
 
   def login
-    if user = User.find_by(email: params[:email])
+      # if !user.nil? && user.authenticate(params[:password]) #bcrypt gem / if only one error message is ok 
       if user.authenticate(params[:password]) #bcrypt gem
         session[:user_id] = user.id
         flash[:success] = "Welcome, #{user.name}!"
         redirect_to "/users/#{user.id}"
       else
-        flash[:message] = "Sorry, your credentials are bad."
+        flash[:message] = "Sorry, your password is incorrect."
         render :login_form
         # redirect_to "/login"
       end
-    else
-      flash[:message] = "Sorry, your credentials are bad."
+  end
+
+  def email_confirmation
+    if user.nil?
+      flash[:message] = "Sorry, your email is incorrect."
       render :login_form
     end
+  end
+
+  def user
+    @user = User.find_by(email: params[:email])
   end
 
   def logout

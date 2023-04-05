@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
 
   get "/users/:id", to: "users#show"
+  # get "/dashboard", to: "users#show"
 
   get "/users/:id/discover", to: "users/discover#index"
   
