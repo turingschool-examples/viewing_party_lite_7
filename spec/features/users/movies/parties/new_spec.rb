@@ -7,6 +7,8 @@ RSpec.describe 'User Story 12' do
     @friend_2 = create(:user, password: "test123", password_confirmation: "test123")
     @friend_3 = create(:user, password: "test123", password_confirmation: "test123")
 
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+
     VCR.use_cassette(:batman_doom, serialize_with: :json, :record => :new_episodes) do
       visit new_user_movie_viewing_party_path(@user, 1003579)
     end

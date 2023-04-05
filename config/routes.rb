@@ -11,10 +11,13 @@ Rails.application.routes.draw do
   get '/logout', to: 'users#logout'
   delete '/logout', to: 'users#logout'
 
+  get "/dashboard", to: "users#show"
+
   get "/register", to: "users#new"
 
   post "/register", to: "users#create"
 
+  # resources :movies, only: [:index, :show]
   resources :users, only: [:create, :show] do
     resources :discover, only: [:index]
     resources :movies, only: [:index, :show] do

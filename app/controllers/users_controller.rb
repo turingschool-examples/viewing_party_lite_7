@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_user, only: [:show]
+  # before_action :require_user, only: [:show, "/dashboard"]
 
   def new
     @user = User.new
@@ -23,9 +23,14 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @user_viewing_parties = @user.parties
-    @movie_facade = MovieFacade.new
+    @user = current_user
+    if @user
+      @user_viewing_parties = @user.parties
+      @movie_facade = MovieFacade.new
+    else
+      flash[:error] = "You must be logged in to view this page!"
+      redirect_to root_path
+    end
   end
 
   def login_form

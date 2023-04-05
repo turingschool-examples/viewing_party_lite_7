@@ -20,14 +20,12 @@ RSpec.describe "User Registration", type: :feature do
     UserParty.create!(user_id: @sarah.id, party_id: @their_party.id)
     UserParty.create!(user_id: @jill.id, party_id: @their_party.id)
 
-    json_response = File.read('spec/fixtures/fight_club_info.json')
-      stub_request(:get, "https://api.themoviedb.org/3/movie/550?api_key=108e8ef231bf49bc3de4db0a0c14366c").
-        to_return(status: 200, body: json_response)
-
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@stan)
+    
     visit user_path(@stan)
   end
 
-  describe "User Story 6" do
+  describe "User Story 6", :vcr do
     describe "As a user, when I visit a users dashboard page(/users/:id})" do
       it "I should see the name of the user's dashboard" do
         expect(page).to have_content("#{@stan.name}'s Dashboard")
@@ -75,6 +73,16 @@ RSpec.describe "User Registration", type: :feature do
             expect(page).to have_content("#{@sarah.name}")
             expect(page).to have_content("#{@jill.name}")
           end
+        end
+      end
+    end
+    
+    describe "User Story 4 - as a visitor when I try to visit movie show page" do
+      describe "I click the button to create a viewing party" do
+        it "I'm redirected to the movies show page, and a message appears to let me know I must be logged in or registered to create a movie party." do
+          visit user_movie_path(@stan.id, 550)
+          click_button "Create Viewing Party"
+          expect(page).to have_content("You must be logged in to view this page!")
         end
       end
     end

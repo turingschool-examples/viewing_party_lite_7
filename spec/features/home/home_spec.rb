@@ -63,7 +63,11 @@ RSpec.describe "Home", type: :feature do
 
     describe "User Story 3 - when I try to visit '/dashboard'" do
       it "I remain on the landing page with an error message" do
-        visit user_path(@user_1.id)
+        # visit user_path(@user_1.id)
+        # expect(current_path).to eq(root_path)
+        # expect(page).to have_content("You must be logged in to view this page!")
+
+        visit "/dashboard"
         expect(current_path).to eq(root_path)
         expect(page).to have_content("You must be logged in to view this page!")
       end
