@@ -35,7 +35,12 @@ class UsersController < ApplicationController
 
     if user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to user_path(user)
+      # redirect_to user_path(user)
+      if user.admin? 
+        redirect_to admin_dashboard_path 
+      elsif 
+        redirect_to user_path(user)
+      end
     else 
       flash[:error] = "Sorry, your credentials are bad"
       render :login_form
