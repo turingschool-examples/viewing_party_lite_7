@@ -12,7 +12,11 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
     unless current_user
-      redirect_to root_path, alert: 'You must be logged in or registered to access this page.'
+      if request.referrer.present? && request.referrer.include?("/movies/") && request.path.include?("/new")
+        redirect_to request.referrer, alert: 'You must be logged in or registered to access this page.'
+      else
+        redirect_to root_path, alert: 'You must be logged in or registered to access this page.'
+      end
     end
   end
 end
