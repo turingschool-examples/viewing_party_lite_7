@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "User's Discover Index", type: :feature do
   before(:each) do
-    @stan = User.create!(name: "Stan Johnson", email: "stan@example.com")
+    @stan = User.create!(name: "Stan Johnson", email: "stan@example.com", password: "test123", password_confirmation: "test123")
     visit user_discover_index_path(@stan)
   end
 
@@ -35,7 +35,6 @@ RSpec.describe "User's Discover Index", type: :feature do
             click_button "Find Movies"
 
             expect(current_path).to eq("/users/#{@stan.id}/movies")
-            
           end
         end
       end

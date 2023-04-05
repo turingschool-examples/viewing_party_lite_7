@@ -1,11 +1,19 @@
 class PartiesController < ApplicationController
+  # before_action :require_login
+
   def new
-    @user = User.find(params[:user_id])
-    @movie_facade = MovieFacade.new(params[:movie_id])
-    @users = User.all
+    if current_user.nil?
+      flash[:error] = "You must be logged in to view this page!"
+      redirect_to user_movies_path(params[:user_id], params[:movie_id])
+    else
+      @user = current_user
+      @movie_facade = MovieFacade.new(params[:movie_id])
+      @users = User.all
+    end
   end
 
   def create
+    @user = current_user
     party = Party.new(party_params)
   end
 
@@ -15,4 +23,11 @@ class PartiesController < ApplicationController
     params[:host_id] = params[:user_id]
     params.permit(:movie_id, :duration, :day, :time, :host_id)
   end
+
+  # def require_login
+  #   if !session[:user_id]
+  #     flash[:error] = "You must be logged in to view this page!"
+  #     redirect_to user_movie_path(params[:user_id], params[:movie_id])
+  #   end
+  # end
 end

@@ -18,6 +18,8 @@ RSpec.describe "User Registration", type: :feature do
         within "#new_user" do
           fill_in "Name", with: "Stan Smith"
           fill_in "Email", with: "stan@example.com"
+          fill_in :user_password, with: "test123"
+          fill_in :user_password_confirmation, with: "test123"
 
           click_button "Create New User"
         end
@@ -28,11 +30,13 @@ RSpec.describe "User Registration", type: :feature do
       end
 
       it "will only accept unique email addresses" do
-        User.create!(name: "Stan Johnson", email: "stan@example.com")
+        User.create!(name: "Stan Johnson", email: "stan@example.com", password: "test123", password_confirmation: "test123")
 
         within "#new_user" do
           fill_in "Name", with: "Stan Smith"
           fill_in "Email", with: "stan@example.com"
+          fill_in :user_password, with: "test123"
+          fill_in :user_password_confirmation, with: "test123"
 
           click_button "Create New User"
         end
@@ -45,12 +49,55 @@ RSpec.describe "User Registration", type: :feature do
         within "#new_user" do
           fill_in "Name", with: "Stan Smith"
           fill_in "Email", with: " "
+          fill_in :user_password, with: "test123"
+          fill_in :user_password_confirmation, with: "test123"
 
           click_button "Create New User"
         end
 
         expect(current_path).to eq("/register")
         expect(page).to have_content("Email can't be blank")
+      end
+    end
+  end
+
+  describe "User Story 1 Authentication" do
+    it "creates a user with a password" do
+      visit root_path
+
+      click_on "Create New User"
+
+      expect(current_path).to eq(register_path)
+
+      fill_in :user_name, with: "funbucket13"
+      fill_in :user_email, with: "s@s.com"
+      fill_in :user_password, with: "test"
+      fill_in :user_password_confirmation, with: "test"
+
+      click_on "Create New User"
+
+      expect(User.last[:name]).to eq("funbucket13")
+      expect(User.last[:password]).to_not eq("test")
+    end
+  end
+
+  describe "User Story 2 Authentication" do
+    describe "sad path" do
+      it "does not create a user if passwords do not match" do
+        visit root_path
+
+        click_on "Create New User"
+
+        expect(current_path).to eq(register_path)
+
+        fill_in :user_name, with: "funbucket13"
+        fill_in :user_email, with: "an@email.com"
+        fill_in :user_password, with: "test"
+        fill_in :user_password_confirmation, with: "not the same"
+
+        click_on "Create New User"
+
+        expect(page).to have_content("Password confirmation doesn't match Password")
       end
     end
   end

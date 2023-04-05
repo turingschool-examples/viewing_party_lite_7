@@ -13,11 +13,10 @@
   <body>
     <div class="top-container">
         <h1 style="text-align:center; background-color:#EBEFF3;">Viewing Party</h1>
-        <%= link_to "Home", root_path %>
+        <%= link_to "Home", root_path %><br>
         <% flash.each do |type, notice| %>
           <h3 style="color: #800080;"><b><%= notice %></b></h3>
         <% end %>
-
       <%= yield %>
     </div>
   </body>
