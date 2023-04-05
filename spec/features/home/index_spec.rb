@@ -29,7 +29,8 @@ RSpec.describe "/", type: :feature do
       end
       
       it 'has a Home link that returns to this home page' do
-        visit register_path
+        # visit register_path
+        visit "/register"
         click_link("Home")
         
         expect(current_path).to eq(root_path)
@@ -67,7 +68,7 @@ RSpec.describe "/", type: :feature do
         fill_in('Email', with: "number2@uss-enterprise.com")
         fill_in("Password:", with: "IamNumber2")
         click_on("Log In")
-        expect(current_path).to eq("/users/#{@riker.id}")
+        expect(current_path).to eq("/dashboard")
         click_on("Home")
 
         click_on("Log Out")
@@ -81,7 +82,7 @@ RSpec.describe "/", type: :feature do
       end
 
       it "can authorize show page so user cannot visit any dashboard without being logged in" do
-        visit "/users/#{@picard.id}"
+        visit "/dashboard"
 
         expect(current_path).to eq("/")
         expect(page).to have_content("You must be logged in or registered to continue.")

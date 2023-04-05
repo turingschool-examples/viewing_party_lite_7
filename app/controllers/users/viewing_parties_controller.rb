@@ -19,16 +19,13 @@ class Users::ViewingPartiesController < ApplicationController
     
     if @new_party.save
       @invitees = User.where(id: params[:invitees].reject(&:empty?)) # this should be a scope/class method
-
       PartyUser.create!(host_id: params[:host_id], user_id: params[:host_id], party_id: @new_party.id)
-      
       @invitees.each do |invitee|
         PartyUser.create!(host_id: params[:host_id], user_id: invitee.id, party_id: @new_party.id)
       end
-      
-      redirect_to "/users/#{params[:host_id]}"
+      redirect_to "/dashboard"
     else
-      redirect_it "/users/#{params[:host_id]}/movies/#{params[:movie_id]}/viewing_party/new"
+      redirect_to "/users/#{params[:host_id]}/movies/#{params[:movie_id]}/viewing_party/new"
     end
   end
 

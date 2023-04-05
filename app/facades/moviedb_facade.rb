@@ -48,17 +48,19 @@ class MoviedbFacade
     Movie.new(movie_list)
   end
 
-  def search_movie_by_id
-    find_movie_info
-    # ensure info is nested correctly... look at top 20 method maybe
-  end
+  # REFACTOR: make a second method like this that also sends data to poro
+  # since ONLY this info is needed over and over and over!!! 
+  # Make this so you DO NOT hit all three APIs each time!
+  # def search_movie_by_id
+  #   find_movie_info
+  #   # ensure info is nested correctly... look at top 20 method maybe
+  # end
 
   # Helper methods: 
   def find_movie_info
     info = movie_service.get_movie(@movie_id)
   end
-  # REFACTOR: make a second method like this that also sends data to poro
-  # since ONLY this info is needed over and over and over!!! 
+
 
   def find_cast_info
     info = movie_service.get_cast(@movie_id)

@@ -16,9 +16,6 @@ RSpec.describe "/users/:user_id/movies/:movie_id" do
       reviews_response = File.read("spec/fixtures/moviedb/space_reviews.json")
       stub_request(:get, "https://api.themoviedb.org/3/movie/62/reviews?api_key=#{ENV["TMDB_API_KEY"]}")
       .to_return(status: 200, body: reviews_response, headers: {})
-      # NOT NEEDED AT ALL: film = MoviedbFacade.new(movie_id: 62)
-
-      # visit "/users/#{@picard.id}/movies/62"
     end
 
     it "displays the movie information" do
@@ -67,17 +64,7 @@ RSpec.describe "/users/:user_id/movies/:movie_id" do
     end
 
     it "when logged in, click the Create Viewing Party button, I'm taken to the viewing party new form page" do
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@picard)
-
-      # without the stub above, need all these lines in every test:
-      # visit "/"
-      # click_link("Log In")
-      # expect(current_path).to eq("/login")
-      # fill_in('Email', with: "captain@uss-enterprise.com")
-      # fill_in("Password:", with: "IamCaptain!")
-      # click_on("Log In")
-      # expect(current_path).to eq("/users/#{@picard.id}")
-
+      log_in(@picard)
       visit "/users/#{@picard.id}/movies/62"
 
       click_button("Create Viewing Party for 2001: A Space Odyssey")

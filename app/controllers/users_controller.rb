@@ -31,7 +31,8 @@ class UsersController < ApplicationController
     if params[:password] == params[:password_confirmation] && new_user.save
       session[:user_id] = new_user.id
       flash[:success] = "#{new_user.name} has been created!"
-      redirect_to "/users/#{new_user.id}"
+      # redirect_to "/users/#{new_user.id}"
+      redirect_to "/dashboard"
     else
       flash[:error] = new_user.errors.full_messages.to_sentence
       # redirect_to register_path
@@ -47,7 +48,8 @@ class UsersController < ApplicationController
       if user.authenticate(params[:password]) #bcrypt gem
         session[:user_id] = user.id
         flash[:success] = "Welcome, #{user.name}!"
-        redirect_to "/users/#{user.id}"
+        # redirect_to "/users/#{user.id}"
+        redirect_to "/dashboard"
       else
         flash[:message] = "Sorry, your password is incorrect."
         render :login_form

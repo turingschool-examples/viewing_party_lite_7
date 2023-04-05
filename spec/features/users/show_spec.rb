@@ -31,8 +31,8 @@ RSpec.describe "/users/:id", type: :feature do
       stub_request(:get, "https://api.themoviedb.org/3/movie/62/reviews?api_key=#{ENV["TMDB_API_KEY"]}")
       .to_return(status: 200, body: reviews_response, headers: {})
       
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@picard)
-      visit "/users/#{@picard.id}"
+      log_in(@picard)
+      visit "/dashboard"
     end
 
     it "I see header, button to discover movies, a section that lists viewing parties" do
