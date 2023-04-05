@@ -22,4 +22,10 @@ Rails.application.routes.draw do
       resources :viewing_parties, :path => "viewing_party", only: [:new, :create], controller: "viewing_parties" 
     end
   end
+
+  namespace :admin do 
+    # resources :users, only: [:show], :path => "dashboard", controller: "admin/users#show"
+    get "/dashboard", to: "admin#show"
+    resources :users, only: [:show], controller: "users"
+  end
 end
