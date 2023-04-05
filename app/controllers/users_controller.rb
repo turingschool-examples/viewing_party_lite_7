@@ -44,7 +44,7 @@ class UsersController < ApplicationController
   end
 
   def login
-      # if !user.nil? && user.authenticate(params[:password]) #bcrypt gem / if only one error message is ok 
+      # if !user.nil? && user.authenticate(params[:password]) #bcrypt gem / if only one error message is ok this will work
       if user.authenticate(params[:password]) #bcrypt gem
         session[:user_id] = user.id
         flash[:success] = "Welcome, #{user.name}!"
@@ -67,13 +67,13 @@ class UsersController < ApplicationController
   def user
     @user = User.find_by(email: params[:email])
   end
-
+  
   def logout
     session[:user_id] = nil
     flash[:success] = "You've been successfully logged out."
     redirect_to "/"
   end
-
+  
   private
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
