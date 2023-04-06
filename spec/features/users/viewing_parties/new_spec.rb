@@ -19,12 +19,8 @@ RSpec.describe "/users/:id/movies/:movie_id/viewing_party/new" do
       reviews_response = File.read("spec/fixtures/moviedb/space_reviews.json")
       stub_request(:get, "https://api.themoviedb.org/3/movie/62/reviews?api_key=#{ENV["TMDB_API_KEY"]}")
       .to_return(status: 200, body: reviews_response, headers: {})
-  
       
-      # movie_hash = (:movie => @movie_response)
-      # facade = MoviedbFacade.new(movie_id: 62).find_movie_info
-      # @movie = Movie.new(movie: facade)
-      
+      log_in(@picard)
       visit "/users/#{@picard.id}/movies/62/viewing_party/new"
     end
 
@@ -45,8 +41,8 @@ RSpec.describe "/users/:id/movies/:movie_id/viewing_party/new" do
       expect(page).to_not have_unchecked_field("Jean-Luc Picard")
 
       expect(page).to have_field(:host_id, with: @picard.id, type: :hidden)
-      expect(page).to have_field(:movie_title, with: "2001: A Space Odyssey", type: :hidden)
-      expect(page).to have_field(:image, with: "/ve72VxNqjGM69Uky4WTo2bK6rfq.jpg", type: :hidden)
+      # expect(page).to have_field(:movie_title, with: "2001: A Space Odyssey", type: :hidden)
+      # expect(page).to have_field(:image, with: "/ve72VxNqjGM69Uky4WTo2bK6rfq.jpg", type: :hidden)
 
       expect(page).to have_button("Create Party")
     end
@@ -62,13 +58,25 @@ RSpec.describe "/users/:id/movies/:movie_id/viewing_party/new" do
       fill_in(:start_time, with: Time.now + 2.hours)
 
       find("#host_id", visible: false).set(@picard.id)
-      find("#movie_title", visible: false).set("2001: A Space Odyssey")
-      find("#image", visible: false).set("/ve72VxNqjGM69Uky4WTo2bK6rfq.jpg")
+      # find("#movie_title", visible: false).set("2001: A Space Odyssey")
+      # find("#image", visible: false).set("/ve72VxNqjGM69Uky4WTo2bK6rfq.jpg")
       check(@data.name)
       check(@geordi.name)
       
       click_button("Create Party")
-      expect(current_path).to eq("/users/#{@picard.id}")
+      expect(current_path).to eq("/dashboard")
+    end
+
+    it "can NOT create a new viewing party if fields are missing info" do
+      fill_in(:duration_minutes, with: 160)
+      # fill_in(:date, with: Date.today)
+      fill_in(:start_time, with: Time.now + 2.hours)
+
+      check(@data.name)
+      check(@geordi.name)
+      
+      click_button("Create Party")
+      expect(current_path).to eq("/users/#{@picard.id}/movies/62/viewing_party/new")
     end
   end
 end

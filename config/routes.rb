@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   #For the new form_with model to work this route MUST be named /users and NOT /register!!!
   post '/users', to: 'users#create'
 
-  get "/users/:id", to: "users#show"
+  # get "/users/:id", to: "users#show"
+  get "/dashboard", to: "users#show"
 
   get "/users/:id/discover", to: "users/discover#index"
   
@@ -18,6 +19,8 @@ Rails.application.routes.draw do
   # Non-RESTful Routes:
   get "/login", to: "users#login_form"
   post "/login", to: "users#login"
+
+  get "/logout", to: "users#logout"
 
   get "/users/:user_id/movies/:movie_id/viewing_party/new", to: "users/viewing_parties#new"
   post "/users/:user_id/movies/:movie_id/viewing_party", to: "users/viewing_parties#create"

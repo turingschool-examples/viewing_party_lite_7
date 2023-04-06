@@ -92,3 +92,14 @@ RSpec.configure do |config|
   #   # as the one that triggered the failure.
   #   Kernel.srand config.seed
 end
+
+  def log_in(user)
+    visit "/"
+    click_link("Log In")
+    fill_in('Email', with: user.email)
+    fill_in("Password:", with: user.password)
+    click_on("Log In")
+  end
+  # OR you can stub every test...the the method above is WAY better!
+  # allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@picard)
+

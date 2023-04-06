@@ -16,12 +16,11 @@ RSpec.describe "/users/:user_id/movies/:movie_id" do
       reviews_response = File.read("spec/fixtures/moviedb/space_reviews.json")
       stub_request(:get, "https://api.themoviedb.org/3/movie/62/reviews?api_key=#{ENV["TMDB_API_KEY"]}")
       .to_return(status: 200, body: reviews_response, headers: {})
-      # NOT NEEDED AT ALL: film = MoviedbFacade.new(movie_id: 62)
-
-      visit "/users/#{@picard.id}/movies/62"
     end
 
     it "displays the movie information" do
+      visit "/users/#{@picard.id}/movies/62"
+
       expect(page).to have_content("2001: A Space Odyssey")
 
       expect(page).to have_button("Discover Page")
@@ -50,13 +49,34 @@ RSpec.describe "/users/:user_id/movies/:movie_id" do
     end
 
     it "when I click the discover button, I'm redirected to '/users/:id/discover' page" do
+      visit "/users/#{@picard.id}/movies/62"
+
       click_button("Discover Page")
       expect(current_path).to eq("/users/#{@picard.id}/discover")
     end
 
-    it "when I click the Viewing Party button, I'm redirected to '/users/:id/movies/:id/viewing-party/new' page" do
+    it "when NOT logged in, click the Create Viewing Party button, I'm redirected back to the movie show page w/ error message" do
+      visit "/users/#{@picard.id}/movies/62"
+      
+      click_button("Create Viewing Party for 2001: A Space Odyssey")
+      expect(current_path).to eq("/users/#{@picard.id}/movies/62")
+      expect(page).to have_content("You must be logged in or registered to continue.")
+    end
+
+    it "when logged in, click the Create Viewing Party button, I'm taken to the viewing party new form page" do
+      log_in(@picard)
+      visit "/users/#{@picard.id}/movies/62"
+
       click_button("Create Viewing Party for 2001: A Space Odyssey")
       expect(current_path).to eq("/users/#{@picard.id}/movies/62/viewing_party/new")
     end
+
+    # Original Test:
+    # it "when I click the Create Viewing Party button, I'm redirected to '/users/:id/movies/:id/viewing-party/new' page" do
+    #   visit "/users/#{@picard.id}/movies/62"
+
+    #   click_button("Create Viewing Party for 2001: A Space Odyssey")
+    #   expect(current_path).to eq("/users/#{@picard.id}/movies/62/viewing_party/new")
+    # end
   end
 end
