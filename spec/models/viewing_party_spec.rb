@@ -15,7 +15,7 @@ RSpec.describe ViewingParty, type: :model do
   describe 'instance methods' do
     describe '#host' do
       it 'returns the name of the host' do
-        user = User.create!(name: 'Bob', email: 'bob@bob.bob')
+        user = User.create!(name: 'Bob', email: 'bob@bob.bob', password: 'bob')
         party = ViewingParty.create!(duration: 240, date: Date.tomorrow, time: '18:00', movie_id: 238, movie_title: 'The Godfather', movie_poster: 'poster')
         ViewingPartyUser.create!(user: user, viewing_party: party, host: true)
         expect(party.host).to eq(user.name)
@@ -24,9 +24,9 @@ RSpec.describe ViewingParty, type: :model do
 
     describe '#guests' do
     it 'returns all the guests' do
-      user = User.create!(name: 'Bob', email: 'bob@bob.bob')
-      user2 = User.create!(name: 'Rob', email: 'blob@bob.bob')
-      user3 = User.create!(name: 'Cob', email: 'brob@bob.bob')
+      user = User.create!(name: 'Bob', email: 'bob@bob.bob', password: 'bob')
+      user2 = User.create!(name: 'Rob', email: 'blob@bob.bob', password: 'rob')
+      user3 = User.create!(name: 'Cob', email: 'brob@bob.bob', password: 'cob')
       party = ViewingParty.create!(duration: 240, date: Date.tomorrow, time: '18:00', movie_id: 238, movie_title: 'The Godfather', movie_poster: 'poster')
       ViewingPartyUser.create!(user: user, viewing_party: party, host: true)
       ViewingPartyUser.create!(user: user2, viewing_party: party)
