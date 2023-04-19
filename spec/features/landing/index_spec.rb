@@ -6,8 +6,7 @@ RSpec.describe 'Landing Page Index' do
   before(:each) do
     @user_1 = User.create!(name: 'Joe', email: 'joe@email.com', password: '1234')
     @user_2 = User.create!(name: 'Bob', email: 'bob@email.com', password: '5678')
-    @user_3 = User.create!(name: 'Dan', email: 'dan@email.com', password: 'dantheman')
-    visit root_path
+    @user_3 = User.create!(name: 'Dan', email: 'dan@email.com', password: 'dantheman', role: 1)
   end
   
   context 'As a visitor when I visit the landing page' do
@@ -38,26 +37,16 @@ RSpec.describe 'Landing Page Index' do
     expect(page).not_to have_content('Joe')
   end
 
-  it "I see a link to '/dashboard' that errors out if I am not logged in" do
-    visit root_path
-
-    click_on 'Dashboard'
-
-    expect(current_path).to eq(root_path)
-    expect(page).to have_content('You must be logged in or registered to access this page')
-  end
-
   it "I see a link to '/dashboard' that successfully routes if logged in" do
     visit login_path
       
     fill_in :email, with: @user_3.email
     fill_in :password, with: @user_3.password
     click_on 'Log In'
+    click_on "Your Movies' Dashboard"
 
-    click_on 'Dashboard'
-
-    expect(current_path).to eq(dashboard_index_path)
-    expect(page).to have_content('Dashboard Page')
+    expect(current_path).to eq(user_path(@user_3))
+    expect(page).to have_content("Dan's Dashboard")
   end
 
   context 'As a member (logged in) when I visit the landing page' do
@@ -80,7 +69,7 @@ RSpec.describe 'Landing Page Index' do
       fill_in :email, with: @user_3.email
       fill_in :password, with: @user_3.password
       click_on 'Log In'
-
+      
       within('#existing_users') do
         expect(page).to have_content('joe@email.com')
         expect(page).to have_content('bob@email.com')

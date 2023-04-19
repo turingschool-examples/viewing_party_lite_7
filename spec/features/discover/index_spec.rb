@@ -6,8 +6,13 @@ RSpec.describe 'User Discover' do
   before :each do
     @user1 = User.create!(name: 'User 1', email: 'user1@email.com', password: 'password')
     @viewing_party = ViewingParty.create!(duration: 120, date: '2021-01-01', time: '12:00:00', movie_id: 1)
-
     ViewingPartyUser.create!(user_id: @user1.id, viewing_party_id: @viewing_party.id, host: true)
+    
+    visit root_path 
+    click_on "Log In"
+    fill_in :email, with: @user1.email
+    fill_in :password, with: @user1.password
+    click_on "Log In"
   end
 
   describe 'As a user when I visit my dashboard and click the discover movies button' do
@@ -15,7 +20,6 @@ RSpec.describe 'User Discover' do
       VCR.use_cassette(:user_show, serialize_with: :json) do
         visit user_path(@user1)
       end
-      
       click_button('Discover Movies')
       expect(current_path).to eq(user_discover_path(@user1))
     end
