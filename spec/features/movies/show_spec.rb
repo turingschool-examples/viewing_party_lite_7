@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'Movie Show Page' do
   before(:each) do
-    @user = User.create!(name: 'Bob', email: 'bob@bob.bob')
+    @user = User.create!(name: 'Bob', email: 'bob@bob.bob', password: 'bob')
     VCR.use_cassette(:movie_details, serialize_with: :json) do
       visit "/users/#{@user.id}/movies/238"
     end
