@@ -1,7 +1,15 @@
-<% @facade.movies.each do |movie| %>
-  <ul class="movie">
-  <%= link_to "#{movie.title}", user_movie_path(@user, movie.id) %><br>
-  <%= movie.vote_average %>
-  </ul>
-  <br><br>
-<% end %>
+<ul class="movies">
+  <% @facade.movies.each do |movie| %>
+    <li class="movie">
+      <%= link_to user_movie_path(@user, movie.id) do %>
+        <div class="movie-poster">
+          <%= image_tag "https://image.tmdb.org/t/p/w500#{movie.poster}", alt: "#{movie.title} poster" %>
+        </div>
+        <div class="movie-details">
+          <h2 class="movie-title"><%= movie.title %></h2>
+          <span class="movie-rating"><%= movie.vote_average %></span>
+        </div>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

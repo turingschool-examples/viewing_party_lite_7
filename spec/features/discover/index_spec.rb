@@ -9,7 +9,7 @@ RSpec.describe 'User Discover' do
     ViewingPartyUser.create!(user_id: @user1.id, viewing_party_id: @viewing_party.id, host: true)
     
     visit root_path 
-    click_on "Log In"
+    click_on "Already A User?"
     fill_in :email, with: @user1.email
     fill_in :password, with: @user1.password
     click_on "Log In"

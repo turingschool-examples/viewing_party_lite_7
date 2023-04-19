@@ -6,7 +6,7 @@ RSpec.describe "Logging In" do
     it "can log in with valid credentials" do
       visit root_path
       
-      click_on "Log In"
+      click_on "Already A User?"
       
       expect(current_path).to eq(login_path)
 
@@ -21,7 +21,7 @@ RSpec.describe "Logging In" do
     it "cannot log in if credentials are not filled in" do
       visit root_path
       
-      click_on "Log In"
+      click_on "Already A User?"
       
       expect(current_path).to eq(login_path)
 

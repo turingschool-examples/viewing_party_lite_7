@@ -60,7 +60,7 @@ RSpec.describe 'Landing Page Index' do
       click_on 'Log Out'
       
       expect(current_path).to eq(root_path)
-      expect(page).to have_link('Log In')
+      expect(page).to have_link('Already A User?')
     end
     
     it 'I see a list of existing users with only their emails' do
@@ -91,7 +91,7 @@ RSpec.describe 'Landing Page Index' do
       click_on 'Log Out'
 
       expect(current_path).to eq(root_path)
-      expect(page).to have_link('Log In')
+      expect(page).to have_link('Already A User?')
       expect(page).not_to have_content("Welcome, #{@user_1.name}!")
     end
   end

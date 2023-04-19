@@ -1,10 +1,14 @@
-<%= form_with url: user_movies_path(@user), method: :get, local: true do |form| %>
-  <%= form.hidden_field :keyword, value: "top rated" %>
-  <%= form.submit 'Top Rated Movies' %>
-<% end %>
-  
-<%= form_with url: user_movies_path(@user), method: :get, local: true do |form| %>
-  <%= form.label :keyword, 'Search For Movies by Title:' %>
-  <%= form.text_field :keyword %>
-  <%= form.submit 'Search' %>
-<% end %>
+<div class="form-container">
+  <%= form_with url: user_movies_path(@user), method: :get, local: true do |form| %>
+    <%= form.hidden_field :keyword, value: "top rated" %>
+    <%= form.submit 'Top Rated Movies', class: "button button--primary" %>
+  <% end %>
+
+  <%= form_with url: user_movies_path(@user), method: :get, local: true do |form| %>
+    <div class="search-container">
+      <%= form.label :keyword, 'Search for Movies by Title:', class: "search-label" %>
+      <%= form.text_field :keyword, class: "search-input" %>
+      <%= form.submit 'Search', class: "button button--secondary" %>
+    </div>
+  <% end %>
+</div>

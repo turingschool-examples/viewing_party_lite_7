@@ -8,7 +8,7 @@ RSpec.describe 'New Viewing Party Page' do
     @user2 = User.create!(name: 'Bobby', email: 'bobby@rob.bob', password: 'bobby')
     @user3 = User.create!(name: 'Robbie', email: 'Robby@bobby.bob', password: 'robbie')
     visit root_path 
-    click_on "Log In"
+    click_on "Already A User?"
     fill_in :email, with: @user.email
     fill_in :password, with: @user.password
     click_on "Log In"

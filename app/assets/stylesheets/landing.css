@@ -1,0 +1,46 @@
+.button {
+  background-color: #4CAF50;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.center {
+  text-align: center;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.center-box {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  margin: auto;
+  width: 50%;
+}
+
+#existing_users {
+  margin-top: 20px;
+}
+
+#existing_users ul {
+  list-style-type: none;
+  padding: 10px 0;
+  margin: 0;
+}
+
+#existing_users li {
+  margin-bottom: 10px;
+}

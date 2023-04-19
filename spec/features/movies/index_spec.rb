@@ -6,7 +6,7 @@ RSpec.describe 'Movies Index' do
   before :each do
     @user1 = User.create!(name: 'User 1', email: 'user1@email.com', password: 'User1')
     visit root_path 
-    click_on "Log In"
+    click_on "Already A User?"
     fill_in :email, with: @user1.email
     fill_in :password, with: @user1.password
     click_on "Log In"
