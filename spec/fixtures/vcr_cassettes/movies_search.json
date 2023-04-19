@@ -5778,6 +5778,178 @@
         }
       },
       "recorded_at": "Fri, 24 Mar 2023 22:33:29 GMT"
+    },
+    {
+      "request": {
+        "method": "get",
+        "uri": "https://api.themoviedb.org/3/search/movie?api_key=api_key&query=batman",
+        "body": {
+          "encoding": "US-ASCII",
+          "string": ""
+        },
+        "headers": {
+          "User-Agent": [
+            "Faraday v2.7.4"
+          ],
+          "Accept-Encoding": [
+            "gzip;q=1.0,deflate;q=0.6,identity;q=0.3"
+          ],
+          "Accept": [
+            "*/*"
+          ]
+        }
+      },
+      "response": {
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "headers": {
+          "Content-Type": [
+            "application/json;charset=utf-8"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Date": [
+            "Wed, 19 Apr 2023 12:24:01 GMT"
+          ],
+          "Server": [
+            "openresty"
+          ],
+          "Cache-Control": [
+            "public, max-age=24869"
+          ],
+          "X-Memc": [
+            "HIT"
+          ],
+          "X-Memc-Key": [
+            "1c52f154e97603f7925abead3a072b11"
+          ],
+          "X-Memc-Age": [
+            "20453"
+          ],
+          "X-Memc-Expires": [
+            "1567"
+          ],
+          "Etag": [
+            "W/\"224c8fb19dfa3fe3cc4473be35b0b34c\""
+          ],
+          "Vary": [
+            "Accept-Encoding",
+            "Origin"
+          ],
+          "X-Cache": [
+            "Miss from cloudfront"
+          ],
+          "Via": [
+            "1.1 115c7d901fcc7bb17cbb373a1d33eb0a.cloudfront.net (CloudFront)"
+          ],
+          "X-Amz-Cf-Pop": [
+            "IAH50-C4"
+          ],
+          "Alt-Svc": [
+            "h3=\":443\"; ma=86400"
+          ],
+          "X-Amz-Cf-Id": [
+            "4WLRfh7oinEj-g01XgunN9LcGxF7roQWJIfI_IOoGv1peCkrxxvczg=="
+          ]
+        },
+        "body": {
+          "encoding": "ASCII-8BIT",
+          "string": "{\"page\":1,\"results\":[{\"adult\":false,\"backdrop_path\":\"/yHfezFdN9kNf2KvyUcZfEhtnFMP.jpg\",\"genre_ids\":[14,28,80],\"id\":268,\"original_language\":\"en\",\"original_title\":\"Batman\",\"overview\":\"Batman must face his most ruthless nemesis when a deformed madman calling himself \\\"The Joker\\\" seizes control of Gotham's criminal underworld.\",\"popularity\":44.416,\"poster_path\":\"/cij4dd21v2Rk2YtUQbV5kW69WB2.jpg\",\"release_date\":\"1989-06-23\",\"title\":\"Batman\",\"video\":false,\"vote_average\":7.215,\"vote_count\":6854},{\"adult\":false,\"backdrop_path\":\"/bxxupqG6TBLKC60M6L8iOvbQEr6.jpg\",\"genre_ids\":[28,35,80],\"id\":2661,\"original_language\":\"en\",\"original_title\":\"Batman\",\"overview\":\"The Dynamic Duo faces four super-villains who plan to hold the world for ransom with the help of a secret invention that instantly dehydrates people.\",\"popularity\":14.427,\"poster_path\":\"/zzoPxWHnPa0eyfkMLgwbNvdEcVF.jpg\",\"release_date\":\"1966-07-30\",\"title\":\"Batman\",\"video\":false,\"vote_average\":6.292,\"vote_count\":731},{\"adult\":false,\"backdrop_path\":\"/xEG5iP1qZCiDt4BefSpLy1d54zE.jpg\",\"genre_ids\":[28,12,80,878,53,10752],\"id\":125249,\"original_language\":\"en\",\"original_title\":\"Batman\",\"overview\":\"Japanese master spy Daka operates a covert espionage-sabotage organization located in Gotham City's now-deserted Little Tokyo, which turns American scientists into pliable zombies. The great crime-fighters Batman and Robin, with the help of their allies, are in pursuit.\",\"popularity\":7.434,\"poster_path\":\"/6XYL5JRHxaLLd0ZwsBugaAuGHTa.jpg\",\"release_date\":\"1943-07-16\",\"title\":\"Batman\",\"video\":false,\"vote_average\":6.6,\"vote_count\":42},{\"adult\":false,\"backdrop_path\":\"/7eccX0xay9pDj6ZQvU4cu3whw18.jpg\",\"genre_ids\":[16,14,27,28,9648],\"id\":1003579,\"original_language\":\"en\",\"original_title\":\"Batman: The Doom That Came to Gotham\",\"overview\":\"Explorer Bruce Wayne accidentally unleashes an ancient evil, and returns to Gotham after being away for two decades. There, Batman battles Lovecraftian supernatural forces and encounters allies and enemies such as Green Arrow, Ra's al Ghul, Mr. Freeze, Killer Croc, Two-Face and James Gordon.\",\"popularity\":590.972,\"poster_path\":\"/hrATQE8ScQceohwInaMluluNEaf.jpg\",\"release_date\":\"2023-03-10\",\"title\":\"Batman: The Doom That Came to Gotham\",\"video\":false,\"vote_average\":6.436,\"vote_count\":70},{\"adult\":false,\"backdrop_path\":\"/b0PlSFdDwbyK0cf5RxwDpaOJQvQ.jpg\",\"genre_ids\":[80,9648,53],\"id\":414906,\"original_language\":\"en\",\"original_title\":\"The Batman\",\"overview\":\"In his second year of fighting crime, Batman uncovers corruption in Gotham City that connects to his own family while facing a serial killer known as the Riddler.\",\"popularity\":233.944,\"poster_path\":\"/74xTEgt7R36Fpooo50r9T25onhq.jpg\",\"release_date\":\"2022-03-01\",\"title\":\"The Batman\",\"video\":false,\"vote_average\":7.713,\"vote_count\":7819},{\"adult\":false,\"backdrop_path\":\"/8VSaa8ZCy43zm7aRzsyCnKOfarm.jpg\",\"genre_ids\":[16,28,878],\"id\":886396,\"original_language\":\"en\",\"original_title\":\"Batman and Superman: Battle of the Super Sons\",\"overview\":\"After discovering he has powers, 11-year-old Jonathan Kent and assassin-turned-Boy-Wonder Damian Wayne must join forces to rescue their fathers (Superman \\u0026 Batman) and save the planet from the malevolent alien force known as Starro.\",\"popularity\":83.379,\"poster_path\":\"/mvffaexT5kA3chOnGxwBSlRoshh.jpg\",\"release_date\":\"2022-10-18\",\"title\":\"Batman and Superman: Battle of the Super Sons\",\"video\":false,\"vote_average\":7.9,\"vote_count\":188},{\"adult\":false,\"backdrop_path\":\"/5fX1oSGuYdKgwWmUTAN5MNSQGzr.jpg\",\"genre_ids\":[28,12,14],\"id\":209112,\"original_language\":\"en\",\"original_title\":\"Batman v Superman: Dawn of Justice\",\"overview\":\"Fearing the actions of a god-like Super Hero left unchecked, Gotham City’s own formidable, forceful vigilante takes on Metropolis’s most revered, modern-day savior, while the world wrestles with what sort of hero it really needs. And with Batman and Superman at war with one another, a new threat quickly arises, putting mankind in greater danger than it’s ever known before.\",\"popularity\":77.349,\"poster_path\":\"/5UsK3grJvtQrtzEgqNlDljJW96w.jpg\",\"release_date\":\"2016-03-23\",\"title\":\"Batman v Superman: Dawn of Justice\",\"video\":false,\"vote_average\":5.944,\"vote_count\":16690},{\"adult\":false,\"backdrop_path\":\"/8pOUmMgVnl1tYNtTRTE5TeyGBGD.jpg\",\"genre_ids\":[16,28,878],\"id\":485942,\"original_language\":\"ja\",\"original_title\":\"ニンジャバットマン\",\"overview\":\"Batman, along with many of his allies and adversaries, finds himself transported to feudal Japan by Gorilla Grodd's time displacement machine.\",\"popularity\":18.859,\"poster_path\":\"/5xSB0Npkc9Fd9kahKBsq9P4Cdzp.jpg\",\"release_date\":\"2018-06-15\",\"title\":\"Batman Ninja\",\"video\":false,\"vote_average\":5.8,\"vote_count\":740},{\"adult\":false,\"backdrop_path\":\"/ew5FcYiRhTYNJAkxoVPMNlCOdVn.jpg\",\"genre_ids\":[28,80,18],\"id\":272,\"original_language\":\"en\",\"original_title\":\"Batman Begins\",\"overview\":\"Driven by tragedy, billionaire Bruce Wayne dedicates his life to uncovering and defeating the corruption that plagues his home, Gotham City.  Unable to work within the system, he instead creates a new identity, a symbol of fear for the criminal underworld - The Batman.\",\"popularity\":46.184,\"poster_path\":\"/4MpN4kIEqUjW8OPtOQJXlTdHiJV.jpg\",\"release_date\":\"2005-06-10\",\"title\":\"Batman Begins\",\"video\":false,\"vote_average\":7.695,\"vote_count\":18928},{\"adult\":false,\"backdrop_path\":\"/kU7ZiyeUwcpTkYj3UcxSqGdZmxY.jpg\",\"genre_ids\":[16,28],\"id\":618353,\"original_language\":\"en\",\"original_title\":\"Batman: Death in the Family\",\"overview\":\"Tragedy strikes the Batman's life again when Robin Jason Todd tracks down his birth mother only to run afoul of the Joker. An adaptation of the 1988 comic book storyline of the same name.\",\"popularity\":37.396,\"poster_path\":\"/k8Q9ulyRE8fkvZMkAM9LPYMKctb.jpg\",\"release_date\":\"2020-10-13\",\"title\":\"Batman: Death in the Family\",\"video\":false,\"vote_average\":7.188,\"vote_count\":368},{\"adult\":false,\"backdrop_path\":\"/eoMushgujydxFplE9yPZ54lwOvo.jpg\",\"genre_ids\":[16,28,35,10751],\"id\":324849,\"original_language\":\"en\",\"original_title\":\"The Lego Batman Movie\",\"overview\":\"A cooler-than-ever Bruce Wayne must deal with the usual suspects as they plan to rule Gotham City, while discovering that he has accidentally adopted a teenage orphan who wishes to become his sidekick.\",\"popularity\":33.34,\"poster_path\":\"/snGwr2gag4Fcgx2OGmH9otl6ofW.jpg\",\"release_date\":\"2017-02-08\",\"title\":\"The Lego Batman Movie\",\"video\":false,\"vote_average\":7.206,\"vote_count\":4406},{\"adult\":false,\"backdrop_path\":\"/3WP0RObZ2t7ShHfqQpKPljF9B22.jpg\",\"genre_ids\":[28,14],\"id\":364,\"original_language\":\"en\",\"original_title\":\"Batman Returns\",\"overview\":\"While Batman deals with a deformed man calling himself the Penguin, an employee of a corrupt businessman transforms into the Catwoman.\",\"popularity\":28.825,\"poster_path\":\"/jKBjeXM7iBBV9UkUcOXx3m7FSHY.jpg\",\"release_date\":\"1992-06-19\",\"title\":\"Batman Returns\",\"video\":false,\"vote_average\":6.901,\"vote_count\":5732},{\"adult\":false,\"backdrop_path\":\"/uS9apevOgs2fuYghf9szOoK1u63.jpg\",\"genre_ids\":[16,9648,28,80],\"id\":736073,\"original_language\":\"en\",\"original_title\":\"Batman: The Long Halloween, Part One\",\"overview\":\"Following a brutal series of murders taking place on Halloween, Thanksgiving, and Christmas, Gotham City's young vigilante known as the Batman sets out to pursue the mysterious serial killer alongside police officer James Gordon and district attorney Harvey Dent.\",\"popularity\":31.74,\"poster_path\":\"/fvaB0jrzFXq07bUpox03k6qOAJu.jpg\",\"release_date\":\"2021-06-21\",\"title\":\"Batman: The Long Halloween, Part One\",\"video\":false,\"vote_average\":7.543,\"vote_count\":492},{\"adult\":false,\"backdrop_path\":\"/ymX3MnaxAO3jJ6EQnuNBRWJYiPC.jpg\",\"genre_ids\":[16,9648,28,80],\"id\":736074,\"original_language\":\"en\",\"original_title\":\"Batman: The Long Halloween, Part Two\",\"overview\":\"As Gotham City's young vigilante, the Batman, struggles to pursue a brutal serial killer, district attorney Harvey Dent gets caught in a feud involving the criminal family of the Falcones.\",\"popularity\":29.123,\"poster_path\":\"/f46QMSo2wAVY1ywrNc9yZv0rkNy.jpg\",\"release_date\":\"2021-07-26\",\"title\":\"Batman: The Long Halloween, Part Two\",\"video\":false,\"vote_average\":7.526,\"vote_count\":410},{\"adult\":false,\"backdrop_path\":\"/m4UT6yKXhXgbzxpeV35L4jLoJoP.jpg\",\"genre_ids\":[28,878,12,35],\"id\":415,\"original_language\":\"en\",\"original_title\":\"Batman \\u0026 Robin\",\"overview\":\"Batman and Robin deal with relationship issues while preventing Mr. Freeze and Poison Ivy from attacking Gotham City.\",\"popularity\":23.266,\"poster_path\":\"/cGRDufDDSrFrv7VI4YnmWnslne0.jpg\",\"release_date\":\"1997-06-20\",\"title\":\"Batman \\u0026 Robin\",\"video\":false,\"vote_average\":4.3,\"vote_count\":4469},{\"adult\":false,\"backdrop_path\":\"/1YaG52CwGY3pKh76OBlwX0ymncg.jpg\",\"genre_ids\":[878,28,16,9648],\"id\":123025,\"original_language\":\"en\",\"original_title\":\"Batman: The Dark Knight Returns, Part 1\",\"overview\":\"Batman has not been seen for ten years. A new breed of criminal ravages Gotham City, forcing 55-year-old Bruce Wayne back into the cape and cowl. But, does he still have what it takes to fight crime in a new era?\",\"popularity\":28.137,\"poster_path\":\"/kkjTbwV1Xnj8wBL52PjOcXzTbnb.jpg\",\"release_date\":\"2012-08-21\",\"title\":\"Batman: The Dark Knight Returns, Part 1\",\"video\":false,\"vote_average\":7.739,\"vote_count\":1374},{\"adult\":false,\"backdrop_path\":\"/jvRewPpawHAfBW38EzHoFdTVEez.jpg\",\"genre_ids\":[16,28,12,80,14],\"id\":732450,\"original_language\":\"en\",\"original_title\":\"Batman: Soul of the Dragon\",\"overview\":\"Bruce Wayne faces a deadly menace from his past, with the help of three former classmates: world-renowned martial artists Richard Dragon, Ben Turner and Lady Shiva.\",\"popularity\":23.296,\"poster_path\":\"/uDhnTtSxU5a8DtZdbbin3aZmkmU.jpg\",\"release_date\":\"2021-01-12\",\"title\":\"Batman: Soul of the Dragon\",\"video\":false,\"vote_average\":6.928,\"vote_count\":284},{\"adult\":false,\"backdrop_path\":\"/snlu32RmjldF9b068UURJg8sQtn.jpg\",\"genre_ids\":[28,80,14],\"id\":414,\"original_language\":\"en\",\"original_title\":\"Batman Forever\",\"overview\":\"Batman must battle a disfigured district attorney and a disgruntled former employee with help from an amorous psychologist and a young circus acrobat.\",\"popularity\":27.418,\"poster_path\":\"/mzzNBVwTiiY94xAXDMWJpNPW2US.jpg\",\"release_date\":\"1995-06-16\",\"title\":\"Batman Forever\",\"video\":false,\"vote_average\":5.403,\"vote_count\":4615},{\"adult\":false,\"backdrop_path\":\"/3xnfbtgJmVotajqM57iKib3ftnT.jpg\",\"genre_ids\":[878,80,28,16,9648],\"id\":40662,\"original_language\":\"en\",\"original_title\":\"Batman: Under the Red Hood\",\"overview\":\"One part vigilante, one part criminal kingpin, Red Hood begins cleaning up Gotham with the efficiency of Batman, but without following the same ethical code.\",\"popularity\":28.221,\"poster_path\":\"/7lmHqHg1rG9b4U8MjuyQjmJ7Qm0.jpg\",\"release_date\":\"2010-07-27\",\"title\":\"Batman: Under the Red Hood\",\"video\":false,\"vote_average\":7.791,\"vote_count\":1392},{\"adult\":false,\"backdrop_path\":\"/9Eh5xzWTpJeZM1FGCblWKZ8GTpw.jpg\",\"genre_ids\":[878,28,16,9648],\"id\":142061,\"original_language\":\"en\",\"original_title\":\"Batman: The Dark Knight Returns, Part 2\",\"overview\":\"Batman has stopped the reign of terror that The Mutants had cast upon his city.  Now an old foe wants a reunion and the government wants The Man of Steel to put a stop to Batman.\",\"popularity\":25.602,\"poster_path\":\"/arEZYd6uMOFTILne9Ux0A8qctMe.jpg\",\"release_date\":\"2013-01-03\",\"title\":\"Batman: The Dark Knight Returns, Part 2\",\"video\":false,\"vote_average\":7.958,\"vote_count\":1260}],\"total_pages\":8,\"total_results\":148}"
+        }
+      },
+      "recorded_at": "Wed, 19 Apr 2023 12:24:01 GMT"
+    },
+    {
+      "request": {
+        "method": "get",
+        "uri": "https://api.themoviedb.org/3/search/movie?api_key=api_key&query=Fight%20Club",
+        "body": {
+          "encoding": "US-ASCII",
+          "string": ""
+        },
+        "headers": {
+          "User-Agent": [
+            "Faraday v2.7.4"
+          ],
+          "Accept-Encoding": [
+            "gzip;q=1.0,deflate;q=0.6,identity;q=0.3"
+          ],
+          "Accept": [
+            "*/*"
+          ]
+        }
+      },
+      "response": {
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "headers": {
+          "Content-Type": [
+            "application/json;charset=utf-8"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Date": [
+            "Wed, 19 Apr 2023 12:24:11 GMT"
+          ],
+          "Server": [
+            "openresty"
+          ],
+          "Cache-Control": [
+            "public, max-age=22259"
+          ],
+          "X-Memc": [
+            "HIT"
+          ],
+          "X-Memc-Key": [
+            "0cd14138ae78d0d35a8fdad6755d5f96"
+          ],
+          "X-Memc-Age": [
+            "16250"
+          ],
+          "X-Memc-Expires": [
+            "6323"
+          ],
+          "Etag": [
+            "W/\"fa79763e911278bfd5b9a48b4c04b48e\""
+          ],
+          "Vary": [
+            "Accept-Encoding",
+            "Origin"
+          ],
+          "X-Cache": [
+            "Miss from cloudfront"
+          ],
+          "Via": [
+            "1.1 ccb5889ae0aaf6afe39d69437fe706d4.cloudfront.net (CloudFront)"
+          ],
+          "X-Amz-Cf-Pop": [
+            "IAH50-C4"
+          ],
+          "Alt-Svc": [
+            "h3=\":443\"; ma=86400"
+          ],
+          "X-Amz-Cf-Id": [
+            "LDW5E8Z215I7AxOhEkl_GA__WlQVMWW2-Zbx8sXsz-bNRF04zMnfaw=="
+          ]
+        },
+        "body": {
+          "encoding": "ASCII-8BIT",
+          "string": "{\"page\":1,\"results\":[{\"adult\":false,\"backdrop_path\":\"/hZkgoQYus5vegHoetLkCJzb17zJ.jpg\",\"genre_ids\":[18,53,35],\"id\":550,\"original_language\":\"en\",\"original_title\":\"Fight Club\",\"overview\":\"A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \\\"fight clubs\\\" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.\",\"popularity\":66.969,\"poster_path\":\"/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg\",\"release_date\":\"1999-10-15\",\"title\":\"Fight Club\",\"video\":false,\"vote_average\":8.432,\"vote_count\":26232},{\"adult\":false,\"backdrop_path\":\"/1VqE5z4VIOcNcajJuHLk4fDkY9G.jpg\",\"genre_ids\":[28,27],\"id\":289732,\"original_language\":\"zh\",\"original_title\":\"屍城\",\"overview\":\"It's the end of the century at a corner of the city in a building riddled with crime - Everyone in the building has turned into zombies. After Jenny's boyfriend is killed in a zombie attack, she faces the challenge of surviving in the face of adversity. In order to stay alive, she struggles with Andy to flee danger.\",\"popularity\":13.565,\"poster_path\":\"/u8u3KVq0qfJYmNDsaTVOXy4So6f.jpg\",\"release_date\":\"2014-10-23\",\"title\":\"Zombie Fight Club\",\"video\":false,\"vote_average\":4.721,\"vote_count\":52},{\"adult\":false,\"backdrop_path\":null,\"genre_ids\":[35,18],\"id\":323667,\"original_language\":\"ru\",\"original_title\":\"Вставай и бейся\",\"overview\":\"Intertwined stories from the gladiator/athletes participating to the Calcio Storico Fiorentino yearly championship.\",\"popularity\":3.237,\"poster_path\":\"/rPCOC0myV3Vr7nYGMAOAOpUXgH3.jpg\",\"release_date\":\"2015-06-21\",\"title\":\"Florence Fight Club\",\"video\":false,\"vote_average\":5.722,\"vote_count\":9},{\"adult\":false,\"backdrop_path\":null,\"genre_ids\":[],\"id\":973534,\"original_language\":\"ru\",\"original_title\":\"Бойцовский клуб (русская версия)\",\"overview\":\"The Russian version of the movie \\\"Fight Club\\\" is not just a Russian version of a well-known cult film, it is the result and of the hard work of two young men and their love for cinema, Alexander Kukhar (GOLOBON-TV) and Dmitry Ivanov (GRIZLIK FILM) , who are responsible for this project, from the development of its idea and the selection of the cast, to the organization of filming and financial support.  Filming lasted a whole year. Everyday work, constant trips, searching for suitable film sets and an exhausting schedule - all this was not in vain and resulted in an unusually amazing and original project - the film \\\"Fight Club\\\", created in the very heart of southern Russia, in the city of Krasnodar, by two young people\",\"popularity\":0.6,\"poster_path\":null,\"release_date\":\"\",\"title\":\"Fight Club (Russian version)\",\"video\":false,\"vote_average\":7.4,\"vote_count\":6},{\"adult\":false,\"backdrop_path\":null,\"genre_ids\":[],\"id\":883656,\"original_language\":\"en\",\"original_title\":\"GCW Fight Club\",\"overview\":\"GCW presents Fight Club straight from the Showboat Hotel in Atlantic City, NJ! The event features the GCW World Championship match where Mox defends against Gage in a match that we have been waiting for during the last decade. Who will be the new GCW World Champion?\",\"popularity\":2.781,\"poster_path\":\"/a9RWdhRLyx3BqCjlwmZJHXyeMkR.jpg\",\"release_date\":\"2021-10-09\",\"title\":\"GCW Fight Club\",\"video\":true,\"vote_average\":6.5,\"vote_count\":5},{\"adult\":false,\"backdrop_path\":null,\"genre_ids\":[28],\"id\":347807,\"original_language\":\"hi\",\"original_title\":\"Fight Club: Members Only\",\"overview\":\"Four friends head off to Bombay and get involved in the mother and father of all gang wars.\",\"popularity\":1.891,\"poster_path\":\"/aXFmWfWYCCxQTkCn7K86RvDiMHZ.jpg\",\"release_date\":\"2006-02-17\",\"title\":\"Fight Club: Members Only\",\"video\":false,\"vote_average\":4.5,\"vote_count\":12},{\"adult\":false,\"backdrop_path\":null,\"genre_ids\":[99],\"id\":259016,\"original_language\":\"en\",\"original_title\":\"Insane Fight Club\",\"overview\":\"A group of friends have created a brand new subculture that is taking over the streets of Glasgow. They've established their very own fight club, but this is no ordinary wrestling event - this is brutal, riotous chaos. Fights don't always stay inside the ring, people are bounced off the side of buses and thrown off balconies in pubs. They now plan the biggest show of their lives. The stakes are high, will it bring them the fame and recognition they need to survive?\",\"popularity\":1.644,\"poster_path\":null,\"release_date\":\"2014-03-11\",\"title\":\"Insane Fight Club\",\"video\":false,\"vote_average\":4.333,\"vote_count\":3},{\"adult\":false,\"backdrop_path\":null,\"genre_ids\":[28,18,80],\"id\":51021,\"original_language\":\"en\",\"original_title\":\"Lure: Teen Fight Club\",\"overview\":\"A community is under siege as three Belmont Highschool coed students go missing with no trace of their whereabouts. The pressure is on the police to capture the culprits responsible. Scouring the school hallways in search of clues, undercover female detective Maggie Rawdon (Jessica Sonnerborn) enters Belmont High as a transfer student in an attempt to solve the hideous disappearance of the students. Maggie makes a few new friends, and gets invited to a private rave in the country. Just as the group begins to suspect that they've taken a wrong turn, however, the trap is sprung and Maggie finds out firsthand what fate has befallen the missing girls.\",\"popularity\":1.96,\"poster_path\":\"/ipl6NdM0LwyakzLH9gKBDn8YhmZ.jpg\",\"release_date\":\"2010-11-16\",\"title\":\"Lure: Teen Fight Club\",\"video\":false,\"vote_average\":5.556,\"vote_count\":9},{\"adult\":false,\"backdrop_path\":null,\"genre_ids\":[28,99,12],\"id\":104782,\"original_language\":\"it\",\"original_title\":\"Florence Fight Club\",\"overview\":\"Four men decided to enter in the oldest Fight Club of the History, The Florentine Football tournament. A father and son, a black guy, an old champion and outsider clerk will enter in an arena of the time to win their fears, to go over their limits, to be heroes for a day.\",\"popularity\":0.623,\"poster_path\":null,\"release_date\":\"2010-01-01\",\"title\":\"Florence Fight Club\",\"video\":false,\"vote_average\":7.0,\"vote_count\":1},{\"adult\":false,\"backdrop_path\":null,\"genre_ids\":[99],\"id\":532155,\"original_language\":\"en\",\"original_title\":\"Musangwe: Fight Club\",\"overview\":\"The first rule is that there are no rules. For the bare-knuckle combatants competing in Musangwe fights, anything goes - you can even put a curse on him. The sport, which dates back centuries, has become a South African institution. Any male from the age of nine to ninety can compete. We follow a group of fighters as they slug it out in the ring. Who will be this year's champion?\",\"popularity\":0.6,\"poster_path\":\"/tZDxttt0LfgAKwvLIWyOO3fr01c.jpg\",\"release_date\":\"2007-10-01\",\"title\":\"Musangwe: Fight Club\",\"video\":false,\"vote_average\":6.25,\"vote_count\":4},{\"adult\":false,\"backdrop_path\":null,\"genre_ids\":[],\"id\":289100,\"original_language\":\"en\",\"original_title\":\"Girls Fight Club\",\"overview\":\"The best women's wrestling competition of all time...and if you think it's fake you're in for a big surprise See LEGENDARY Mixed Martial Arts fighters coach their teams to victory in the cage! aka Chuck Lidell's Girl's Fight Club\",\"popularity\":0.652,\"poster_path\":null,\"release_date\":\"2009-06-18\",\"title\":\"Girls Fight Club\",\"video\":false,\"vote_average\":5.25,\"vote_count\":2},{\"adult\":false,\"backdrop_path\":\"/lBENxZ1nmHXkTKV0AJu1agnW8Mg.jpg\",\"genre_ids\":[],\"id\":877672,\"original_language\":\"en\",\"original_title\":\"Superhero Fight Club\",\"overview\":\"Oliver introduces Barry to his own little fight club which features such members as Roy Harper, Laurel Lance, Malcolm Merlyn and Ra's Al Ghul.\",\"popularity\":0.613,\"poster_path\":\"/riAUCTb0NBakJxlBMB801gQlF1j.jpg\",\"release_date\":\"2015-04-13\",\"title\":\"Superhero Fight Club\",\"video\":false,\"vote_average\":6.375,\"vote_count\":8},{\"adult\":false,\"backdrop_path\":\"/z8MzErK9gYLHgvqYKMapqk7rqyZ.jpg\",\"genre_ids\":[],\"id\":877673,\"original_language\":\"en\",\"original_title\":\"Superhero Fight Club 2.0\",\"overview\":\"Barry and Oliver introduce Supergirl to the new fight club, Felicity and Cisco applying additional features to the fight in which The Flash, Green Arrow, Supergirl, White Canary, Firestorm and Atom need to fight to stay alive.\",\"popularity\":0.6,\"poster_path\":\"/edt0iegDlAqPddRunIixcpNsja4.jpg\",\"release_date\":\"2016-09-29\",\"title\":\"Superhero Fight Club 2.0\",\"video\":false,\"vote_average\":6.5,\"vote_count\":6},{\"adult\":false,\"backdrop_path\":null,\"genre_ids\":[16,35],\"id\":615408,\"original_language\":\"en\",\"original_title\":\"Fight Club But With Tennis And No Fight\",\"overview\":\"Drama descends upon two tennis-obsessed women as the tension moves from off the court and into the café.\",\"popularity\":0.6,\"poster_path\":\"/8pEQqVtSpgCtb7dzhR55EO1dC3l.jpg\",\"release_date\":\"2019-07-13\",\"title\":\"Fight Club But With Tennis And No Fight\",\"video\":false,\"vote_average\":7.0,\"vote_count\":1},{\"adult\":false,\"backdrop_path\":null,\"genre_ids\":[],\"id\":969532,\"original_language\":\"en\",\"original_title\":\"GCW: Fight Club Houston\",\"overview\":\"On July 9th GCW presents Fight Club Houston straight from Premier Arena in Houston, Texas. The lineup is almost completed, check it below:  AJ Gray vs Bryan Keith  Nick Gage vs Sadika  Joey Janela vs Dante  Ninja Mack vs Jack Cartwheel  Effy vs Gino  Jimmy Lloyd vs Carter  Lucha Scramble  .... more to be added soon!\",\"popularity\":0.6,\"poster_path\":\"/353CATo61TQERENVF6AqIqhUD51.jpg\",\"release_date\":\"2021-07-09\",\"title\":\"GCW: Fight Club Houston\",\"video\":true,\"vote_average\":5.0,\"vote_count\":1},{\"adult\":false,\"backdrop_path\":null,\"genre_ids\":[],\"id\":944789,\"original_language\":\"en\",\"original_title\":\"Leopard Fight Club\",\"overview\":\"Witness a remarkable coming-of-age story as we track a young leopard's journey from rookie to royalty in South Africa's lethal Big Five landscape. When we first meet Jack, he's clumsy, fearful, and weak, but he's a fast learner - and he'll need to be. He's destined for a showdown with the area's current leopard monarch, an alpha male with a real mean streak. We follow Jack as he hones his skills and builds up muscle for the ultimate catfight. It's a battle where only the winner will walk out alive.\",\"popularity\":0.6,\"poster_path\":\"/pNhu0kvxvBJhpzDEwKf9Zdphbfg.jpg\",\"release_date\":\"\",\"title\":\"Leopard Fight Club\",\"video\":false,\"vote_average\":6.0,\"vote_count\":1},{\"adult\":false,\"backdrop_path\":null,\"genre_ids\":[99],\"id\":151912,\"original_language\":\"en\",\"original_title\":\"Jurassic Fight Club\",\"overview\":\"Jurassic Fight Club, a paleontology-based miniseries that ran for 12 episodes, depicts how prehistoric beasts hunted their prey, dissecting these battles and uncovering a predatory world far more calculated and complex than originally thought. It was hosted by George Blasing, a self-taught paleontologist.\",\"popularity\":0.6,\"poster_path\":null,\"release_date\":\"2008-10-22\",\"title\":\"Jurassic Fight Club\",\"video\":false,\"vote_average\":7.4,\"vote_count\":5},{\"adult\":false,\"backdrop_path\":null,\"genre_ids\":[99],\"id\":322772,\"original_language\":\"en\",\"original_title\":\"Insane Fight Club II - This Time It’s Personal\",\"overview\":\"Insane Fight Club is back. This year the boys are taking their unique form of entertainment to England as they stage fight nights in Birmingham, Leeds, Liverpool and Newcastle.\",\"popularity\":2.129,\"poster_path\":null,\"release_date\":\"2015-01-21\",\"title\":\"Insane Fight Club II - This Time It’s Personal\",\"video\":false,\"vote_average\":7.0,\"vote_count\":2},{\"adult\":false,\"backdrop_path\":null,\"genre_ids\":[],\"id\":818666,\"original_language\":\"en\",\"original_title\":\"Triller Fight Club: Jake Paul vs Ben Askren\",\"overview\":\"Jake Paul vs. Ben Askren is an professional boxing match between YouTuber Jake Paul and former MMA fighter Ben Askren.  The bout took take place on April 17, 2021, at the Mercedes-Benz Stadium in Atlanta, Georgia.\",\"popularity\":1.511,\"poster_path\":\"/pFxHnZhetfHpXlcYTNTFZFt6pBq.jpg\",\"release_date\":\"2021-04-17\",\"title\":\"Triller Fight Club: Jake Paul vs Ben Askren\",\"video\":true,\"vote_average\":5.0,\"vote_count\":3},{\"adult\":false,\"backdrop_path\":null,\"genre_ids\":[],\"id\":935845,\"original_language\":\"en\",\"original_title\":\"GCW: Fight Club 2 Houston\",\"overview\":\"Are you ready for the GCW: Fight Club 2?  On February 4th GCW: Fight Club 2 is live on FITE straight from Houston Premier Arena, TX!  Check the full lineup below:  4-way match  Mascara Dorada vs Gringo Loco vs Blake Christian vs ASF  Atticus Cogar vs Gino Medina  All-Star Scramble  Matthew Justice vs Allie Katch vs Grim Reefer vs Jimmy Lloyd vs Jordan Oliver vs Chris Carter  GCW Extreme Championship  AJ Gray vs Mysterious Q  Bryan Keith vs Effy  Ninja Mack vs Nick Wayne  Loko Wrestling Championship  Dante Leon vs Sam Stackhouse  Matt Tremont vs Sadika  *lineup subject to change\",\"popularity\":0.6,\"poster_path\":\"/bPPvoNxWcoqSvw0SnigOZpcxKmN.jpg\",\"release_date\":\"2022-02-04\",\"title\":\"GCW: Fight Club 2 Houston\",\"video\":true,\"vote_average\":8.0,\"vote_count\":1}],\"total_pages\":2,\"total_results\":39}"
+        }
+      },
+      "recorded_at": "Wed, 19 Apr 2023 12:24:11 GMT"
     }
   ],
   "recorded_with": "VCR 6.1.0"

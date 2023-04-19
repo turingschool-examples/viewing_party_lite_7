@@ -54,7 +54,6 @@ RSpec.describe 'Movie Show Page' do
         end
       end
 
-      # Task 6: User Story 4
       it 'if I click the button without being logged in, I cannot create a new viewing party' do       
         VCR.use_cassette(:viewing_party_new, serialize_with: :json) do
           visit "/users/#{@user.id}/movies/238"

@@ -30,7 +30,6 @@ RSpec.describe 'Landing Page Index' do
     end
   end
     
-  # Task 3: User Story 1
   it "I do not see a list of existing users," do
     visit root_path
     expect(page).not_to have_content('Joe')
@@ -38,7 +37,6 @@ RSpec.describe 'Landing Page Index' do
     expect(page).not_to have_content('Joe')
   end
 
-  # Task 5: User Story 3
   it "I see a link to '/dashboard' that errors out if I am not logged in" do
     visit root_path
 
@@ -48,7 +46,6 @@ RSpec.describe 'Landing Page Index' do
     expect(page).to have_content('You must be logged in or registered to access this page')
   end
 
-  # Task 5: User Story 3 - Happy Path
   it "I see a link to '/dashboard' that successfully routes if logged in" do
     visit login_path
       
@@ -63,7 +60,6 @@ RSpec.describe 'Landing Page Index' do
   end
 
   context 'As a member (logged in) when I visit the landing page' do
-    # Task 2: Log Out
     it "I see a link to log out that ends my current session" do
       visit login_path
       
@@ -77,7 +73,6 @@ RSpec.describe 'Landing Page Index' do
       expect(page).to have_link('Log In')
     end
     
-    # Task 4: User Story 2
     it 'I see a list of existing users with only their emails' do
       visit login_path
 
