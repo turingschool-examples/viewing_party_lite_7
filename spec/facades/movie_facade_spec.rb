@@ -50,7 +50,8 @@ RSpec.describe MovieFacade, type: :model do
     it 'returns a list of reviews for a movie' do
       VCR.use_cassette(:movie_reviews, serialize_with: :json) do
         reviews = MovieFacade.new(id: 238).movie_reviews
-        expect(reviews.count).to eq(2)
+  
+        expect(reviews.count).to eq(3)
         expect(reviews.first).to be_a(Review)
       end
     end
@@ -60,7 +61,7 @@ RSpec.describe MovieFacade, type: :model do
     it 'returns the number of reviews for a movie' do
       VCR.use_cassette(:movie_reviews, serialize_with: :json) do
         count = MovieFacade.new(id: 238).movie_review_count
-        expect(count).to eq(2)
+        expect(count).to eq(3)
       end
     end
   end

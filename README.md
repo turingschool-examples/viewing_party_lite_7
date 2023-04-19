@@ -1,8 +1,8 @@
-# Viewing Party Lite
+# Cinema Social
 
 ## Description
 
-[Viewing Party Lite](https://backend.turing.edu/module3/projects/viewing_party_lite) is a web application that allows users to create a movie night event with their friends by choosing a movie from The Movie Database (TMDb) and creating a list of attendees. The app also allows users to see movie recommendations based on their search history and add friends to their list of attendees.
+[Cinema Social](https://backend.turing.edu/module3/projects/viewing_party_lite) is a web application that allows users to create a movie night event with their friends by choosing a movie from The Movie Database (TMDb) and creating a list of attendees. The app also allows users to see movie recommendations based on their search history and add friends to their list of attendees.
 
 This project is built using Ruby on Rails and follows MVC architecture. The database is implemented using PostgreSQL and the front-end is built using HTML, CSS, and Bootstrap. The app also utilizes APIs from The Movie Database (TMDb) to fetch movie data and user authentication is implemented using Devise gem.
 
@@ -39,7 +39,7 @@ This app utilizes the following APIs:
 
 ## Contributors
 
-This project was created by [Conner Van Loan](https://github.com/C-V-L) and [Harrison Ryan](https://github.com/hwryan12), as part of the [Bootcamp Name] at [School Name]. 
+This project was created by [Conner Van Loan](https://github.com/C-V-L) and [Harrison Ryan](https://github.com/hwryan12), as part of the Back End Engineer program at Turing School of Software Design. 
 
 ## Acknowledgements
 

@@ -4,9 +4,10 @@ require 'rails_helper'
 
 RSpec.describe 'Landing Page Index' do
   before(:each) do
-    @user_1 = User.create!(name: 'Joe', email: 'joe@email.com', password: 'password1')
-    @user_2 = User.create!(name: 'Bob', email: 'bob@email.com', password: 'password2')
-    @user_3 = User.create!(name: 'Dan', email: 'dan@email.com', password: 'password3', role: 1)
+    @user_1 = User.create!(name: 'Joe', email: 'joe@email.com', password: '1234')
+    @user_2 = User.create!(name: 'Bob', email: 'bob@email.com', password: '5678')
+    @user_3 = User.create!(name: 'Dan', email: 'dan@email.com', password: 'dantheman')
+    visit root_path
   end
   
   context 'As a visitor when I visit the landing page' do

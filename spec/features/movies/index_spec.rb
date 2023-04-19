@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'Movies Index' do
   before :each do
-    @user1 = User.create!(name: 'User 1', email: 'user1@email.com')
+    @user1 = User.create!(name: 'User 1', email: 'user1@email.com', password: 'User1')
   end
 
   describe 'As a user when I visit the movies index page' do

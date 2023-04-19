@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'User Discover' do
   before :each do
-    @user1 = User.create!(name: 'User 1', email: 'user1@email.com')
+    @user1 = User.create!(name: 'User 1', email: 'user1@email.com', password: 'password')
     @viewing_party = ViewingParty.create!(duration: 120, date: '2021-01-01', time: '12:00:00', movie_id: 1)
 
     ViewingPartyUser.create!(user_id: @user1.id, viewing_party_id: @viewing_party.id, host: true)
