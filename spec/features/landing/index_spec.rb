@@ -12,7 +12,7 @@ RSpec.describe 'Landing Page Index' do
   context 'As a visitor when I visit the landing page' do
     it 'I see the title of the application' do
       visit root_path
-      expect(page).to have_content('Viewing Party')
+      expect(page).to have_content('Cinema Social')
     end
 
     it 'I see a button to create a new user' do
