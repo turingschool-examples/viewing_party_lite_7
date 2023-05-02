@@ -1,16 +1,29 @@
-<p style="text-align: center; margin-top: 20px;">
-  <%= button_to "Create New User", "/register", method: :get, style: "background-color: #4CAF50; color: #FFFFFF; padding: 10px 20px; border: none; border-radius: 5px; text-decoration: none; font-size: 1rem; font-weight: bold;" %>
+<%= stylesheet_link_tag 'landing' %>
+<% if current_user %>
+  <div class="container center">
+    <%= link_to "Log Out", logout_path, method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to log out?" }, class: "button" %>
+  </div>
   <br>
-  <%= link_to "I already have an account", login_path, style: "background-color: #4CAF50; color: #FFFFFF; padding: 10px 20px; border: none; border-radius: 5px; text-decoration: none; font-size: 1rem; font-weight: bold;" %>
-</p>
+  <div class="container center">
+    <%= link_to "Your Movies' Dashboard", user_path(current_user), method: :get, class: "button" %>
+  </div>
+<% else %>
+  <div class="container center">
+    <%= link_to "Create New User", "/register", class: "button" %>
+  </div>
+  <br>
+  <div class="container center">
+    <%= link_to "Already A User?", login_path, class: "button" %>
+  </div>
+<% end %>
 
-<div id="existing_users" style="margin-top: 20px;">
-  <ul style="list-style-type: none; padding: 10px 0; margin: 0;">
-    <li style="font-weight: bold;">All Users:</li><br>
-    <% @users.each do |user| %>
-      <li style="margin-bottom: 10px;">
-        <%= link_to "#{user.name}", "/users/#{user.id}", style: "background-color: #EEE; color: #333; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-size: 1rem; font-weight: bold;" %>
-      </li>
-    <% end %>
-  </ul>
-</div>
+<% if current_user && current_user.member? %>
+  <div id="existing_users" class="center-box">
+    <ul>
+      <li style="font-weight: bold;">All Users:</li><br>
+      <% @users.each do |user| %>
+        <li><%= user.email %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

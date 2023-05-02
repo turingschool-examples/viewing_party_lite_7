@@ -7,6 +7,11 @@ RSpec.describe 'New Viewing Party Page' do
     @user = User.create!(name: 'Bob', email: 'bob@bob.bob', password: 'bob')
     @user2 = User.create!(name: 'Bobby', email: 'bobby@rob.bob', password: 'bobby')
     @user3 = User.create!(name: 'Robbie', email: 'Robby@bobby.bob', password: 'robbie')
+    visit root_path 
+    click_on "Already A User?"
+    fill_in :email, with: @user.email
+    fill_in :password, with: @user.password
+    click_on "Log In"
 
     VCR.use_cassette(:movie_details, serialize_with: :json) do
       visit "/users/#{@user.id}/movies/238/viewing-party/new"

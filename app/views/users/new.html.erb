@@ -1,17 +1,27 @@
-<h2>Register New User</h2>
+<div class="register-form">
+  <h2>Register New User</h2>
 
-<%= form_with url: users_path, local: :true do |form| %>
-  <%= form.text_field :name %>
-  <%= form.label :name, "Name" %>
-  <br>
-  <%= form.text_field :email %>
-  <%= form.label :email, "Email" %>
-  <br>
-  <%= form.password_field :password %>
-  <%= form.label :password %>
-  <br>
-  <%= form.password_field :password_confirmation %>
-  <%= form.label :password_confirmation %>
-  <br>
-  <%= form.submit "Create User" %>
-<% end %>
+  <%= form_with url: users_path, local: :true do |form| %>
+    <div class="form-group">
+      <%= form.text_field :name, class: "form-control", required: true %>
+      <%= form.label :name, "Name", class: "form-label" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.text_field :email, class: "form-control", required: true %>
+      <%= form.label :email, "Email", class: "form-label" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.password_field :password, class: "form-control", required: true %>
+      <%= form.label :password, "Password", class: "form-label" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.password_field :password_confirmation, class: "form-control", required: true %>
+      <%= form.label :password_confirmation, "Confirm Password", class: "form-label" %>
+    </div>
+
+    <%= form.submit "Create User", class: "button button--primary" %>
+  <% end %>
+</div>
