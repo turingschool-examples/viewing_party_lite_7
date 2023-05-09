@@ -40,8 +40,12 @@ RSpec.describe "landing page" do
       end
 
     end
-    xit "has a link to go back to the landing page" do
-
+    it "has a link to go back to the landing page" do
+      within("#home") do
+        expect(page).to have_link("Home")
+        click_link "Home"
+      end
+      expect(current_path).to eq(root_path)
     end
   end
 end
