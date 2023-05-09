@@ -35,4 +35,4 @@ Checklist:
    - [ ] I have fully tested my code
 
 
-![brokem link](https://media.tenor.com/FRi5efWsLMwAAAAM/calgary-flames-elias-lindholm.gif)
+![broken link](https://media.tenor.com/FRi5efWsLMwAAAAM/calgary-flames-elias-lindholm.gif)
