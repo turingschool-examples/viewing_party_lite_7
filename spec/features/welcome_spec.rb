@@ -1,4 +1,4 @@
-require 'rails_helper' 
+require 'rails_helper'
 
 RSpec.describe '/', type: :feature do
   before(:each) do
@@ -7,7 +7,7 @@ RSpec.describe '/', type: :feature do
     @user3 = create(:user)
     visit root_path
   end
-  
+
   describe 'When a user visits the root path' do
     it "should be on the landing page ('/') and I see the title of the applications" do
       expect(page).to have_content('Viewing Party')
@@ -21,13 +21,13 @@ RSpec.describe '/', type: :feature do
       expect(page).to have_content('Existing Users')
 
       within "#user_#{@user1.id}" do
-      expect(page).to have_content(@user1.email)
+        expect(page).to have_content(@user1.email)
       end
       within "#user_#{@user2.id}" do
-      expect(page).to have_content(@user2.email)
+        expect(page).to have_content(@user2.email)
       end
       within "#user_#{@user3.id}" do
-      expect(page).to have_content(@user3.email)
+        expect(page).to have_content(@user3.email)
       end
     end
 
