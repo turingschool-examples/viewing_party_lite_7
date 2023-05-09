@@ -24,5 +24,15 @@ RSpec.describe "User Dashboard", type: :feature do
         expect(page).to have_content(@viewing3.movie_title)
       end
     end
+
+    it 'I see a button to discover movies' do
+
+      within "#discover-movies" do
+        expect(page).to have_button("Discover Movies")
+        click_button "Discover Movies"
+      end
+
+      expect(current_path).to eq(user_discover_path(@user1))
+    end
   end
 end
