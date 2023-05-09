@@ -5,6 +5,8 @@ RSpec.describe "Home page", type: :feature do
 
   it "home page" do
     visit root_path
+    
+    expect(page).to have_link "Home", href: root_path
 
     expect(page).to have_content "Viewing Party"
 
