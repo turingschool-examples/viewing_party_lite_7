@@ -8,6 +8,7 @@ Branden Ge: [LinkedIn Profile](https://www.linkedin.com/in/brandenge/) -- [Githu
 
 Reilly Miller [LinkedIn Profile](https://www.linkedin.com/in/reilly-miller-6b6131266/) -- [Github Profile](https://github.com/rmiller220)
 
+
 ### About this Project
 
 Viewing Party Lite is an application in which users can explore movie options and create a viewing party event for themselves and other users of the application.
