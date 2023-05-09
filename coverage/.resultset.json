@@ -1,54 +1,51 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/stevomac/turing_work/3mod/projects/viewing_party_lite_7/app/helpers/application_helper.rb": {
+      "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/stevomac/turing_work/3mod/projects/viewing_party_lite_7/app/helpers/user_viewing_parties_helper.rb": {
+      "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/helpers/user_viewing_parties_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/stevomac/turing_work/3mod/projects/viewing_party_lite_7/app/helpers/users_helper.rb": {
+      "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/stevomac/turing_work/3mod/projects/viewing_party_lite_7/app/helpers/viewing_parties_helper.rb": {
+      "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/helpers/viewing_parties_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/stevomac/turing_work/3mod/projects/viewing_party_lite_7/app/models/user.rb": {
+      "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/models/viewing_party.rb": {
         "lines": [
           1,
           1,
           1,
-          null
-        ]
-      },
-      "/Users/stevomac/turing_work/3mod/projects/viewing_party_lite_7/app/models/application_record.rb": {
-        "lines": [
+          null,
           1,
-          1,
-          null
-        ]
-      },
-      "/Users/stevomac/turing_work/3mod/projects/viewing_party_lite_7/app/models/user_viewing_party.rb": {
-        "lines": [
           1,
           1,
           1,
           null
         ]
       },
-      "/Users/stevomac/turing_work/3mod/projects/viewing_party_lite_7/app/models/viewing_party.rb": {
+      "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/models/user_viewing_party.rb": {
         "lines": [
           1,
           1,
@@ -56,7 +53,18 @@
           null
         ]
       },
-      "/Users/stevomac/turing_work/3mod/projects/viewing_party_lite_7/app/channels/application_cable/channel.rb": {
+      "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/channels/application_cable/channel.rb": {
         "lines": [
           0,
           0,
@@ -66,7 +74,7 @@
         "branches": {
         }
       },
-      "/Users/stevomac/turing_work/3mod/projects/viewing_party_lite_7/app/channels/application_cable/connection.rb": {
+      "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
           0,
@@ -76,7 +84,7 @@
         "branches": {
         }
       },
-      "/Users/stevomac/turing_work/3mod/projects/viewing_party_lite_7/app/controllers/application_controller.rb": {
+      "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/controllers/application_controller.rb": {
         "lines": [
           0,
           0
@@ -84,7 +92,7 @@
         "branches": {
         }
       },
-      "/Users/stevomac/turing_work/3mod/projects/viewing_party_lite_7/app/controllers/user_viewing_parties_controller.rb": {
+      "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/controllers/user_viewing_parties_controller.rb": {
         "lines": [
           0,
           0
@@ -92,7 +100,7 @@
         "branches": {
         }
       },
-      "/Users/stevomac/turing_work/3mod/projects/viewing_party_lite_7/app/controllers/users_controller.rb": {
+      "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/controllers/users_controller.rb": {
         "lines": [
           0,
           0
@@ -100,7 +108,7 @@
         "branches": {
         }
       },
-      "/Users/stevomac/turing_work/3mod/projects/viewing_party_lite_7/app/controllers/viewing_parties_controller.rb": {
+      "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/controllers/viewing_parties_controller.rb": {
         "lines": [
           0,
           0
@@ -108,7 +116,7 @@
         "branches": {
         }
       },
-      "/Users/stevomac/turing_work/3mod/projects/viewing_party_lite_7/app/facades/tmdb.rb": {
+      "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/facades/tmdb.rb": {
         "lines": [
           null,
           0,
@@ -127,7 +135,7 @@
         "branches": {
         }
       },
-      "/Users/stevomac/turing_work/3mod/projects/viewing_party_lite_7/app/jobs/application_job.rb": {
+      "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/jobs/application_job.rb": {
         "lines": [
           0,
           null,
@@ -140,7 +148,7 @@
         "branches": {
         }
       },
-      "/Users/stevomac/turing_work/3mod/projects/viewing_party_lite_7/app/mailers/application_mailer.rb": {
+      "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/mailers/application_mailer.rb": {
         "lines": [
           0,
           0,
@@ -150,7 +158,7 @@
         "branches": {
         }
       },
-      "/Users/stevomac/turing_work/3mod/projects/viewing_party_lite_7/app/services/tmdb_service.rb": {
+      "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/services/tmdb_service.rb": {
         "lines": [
           0,
           0,
@@ -170,6 +178,6 @@
         }
       }
     },
-    "timestamp": 1683664324
+    "timestamp": 1683670543
   }
 }
