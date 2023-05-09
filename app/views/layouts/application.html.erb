@@ -12,5 +12,10 @@
 
   <body>
     <%= yield %>
+     <% flash.each do |type, msg| %>
+        <div id=flash_message>
+          <%= msg %>
+        </div>
+      <% end %>
   </body>
 </html>
