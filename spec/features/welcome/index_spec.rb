@@ -15,7 +15,7 @@ describe 'welcome index' do
 
   it 'has button to create new user' do
     expect(page).to have_button('Create New User')
-    click_button "Create New User"
+    click_button 'Create New User'
     expect(current_path).to eq(new_user_path)
   end
 
@@ -31,7 +31,7 @@ describe 'welcome index' do
     within '#nav-container' do
       expect(page).to have_link('Home')
       click_link 'Home'
-      expect(current_path).to eq("/")
+      expect(current_path).to eq('/')
     end
   end
 end

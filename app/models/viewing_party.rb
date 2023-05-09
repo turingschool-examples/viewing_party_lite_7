@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ViewingParty < ApplicationRecord
   validates :duration, presence: true, numericality: true
   validates :date, presence: true
