@@ -1,7 +1,15 @@
 class UsersController < ApplicationController
+  
+  def show 
+    @user = User.find(params[:id])
+    @parties = ViewingParty.all
+  end
+  
+  def new
+  end
+
   def create
     @user = User.create(user_params)
-    pry
     if @user.save
       redirect_to user_path(@user)
     else 
