@@ -1,0 +1,10 @@
+<h1> <%= @user.name %>'s Dashboard  </h1>
+
+<%= button_to "Discover Movies"  %>
+
+<ul id="viewing-parties">
+  <h3> Viewing Parties </h3>
+  <% @viewing_parties.each do |party| %>
+    <li><%= party.movie_title %>%</li>
+  <% end %>
+</ul>
