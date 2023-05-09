@@ -1,4 +1,6 @@
+# frozen_string_literal: true
+
 User.destroy_all
 
-@user_1 = User.create!(name: 'JoJo', email: 'JoJo@hotmail.com')
-@user_2 = User.create!(name: 'JaJa', email: 'JaJa@hotmail.com')
+@user1 = User.create!(name: 'JoJo', email: 'JoJo@hotmail.com')
+@user2 = User.create!(name: 'JaJa', email: 'JaJa@hotmail.com')

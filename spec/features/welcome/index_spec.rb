@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe 'welcome index' do
   before :each do
-    @user_1 = User.create!(name: 'JoJo', email: 'JoJo@hotmail.com')
-    @user_2 = User.create!(name: 'JaJa', email: 'JaJa@hotmail.com')
+    @user1 = User.create!(name: 'JoJo', email: 'JoJo@hotmail.com')
+    @user2 = User.create!(name: 'JaJa', email: 'JaJa@hotmail.com')
     visit '/'
   end
 
