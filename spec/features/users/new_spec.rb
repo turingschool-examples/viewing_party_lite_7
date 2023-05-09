@@ -29,7 +29,6 @@ RSpec.describe "user registration page", type: :feature do
   describe "sad path" do
     it "email not unique" do
       visit '/register'
-      save_and_open_page
 
       fill_in("Name:", with: "Barbara")
       fill_in("Email", with: "BarbarasEmail@Email.com")
