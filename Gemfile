@@ -73,7 +73,7 @@ group :test do
   gem "launchy"
   gem "orderly"
   gem "shoulda-matchers"
-  # gem "simplecov"
+  gem "simplecov"
   gem "webmock"
   gem "vcr"
 end
