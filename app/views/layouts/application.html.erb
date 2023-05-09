@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= stylesheet_link_tag 'application' %>
     <title>ViewingPartyLite7</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
@@ -11,6 +12,9 @@
   </head>
 
   <body>
+    <% flash.each do |type, notice| %>
+        <h3><b><%= notice %></b></h3>
+    <% end %>
     <%= yield %>
   </body>
 </html>
