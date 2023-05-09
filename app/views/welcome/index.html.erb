@@ -1,0 +1,12 @@
+<h1>Viewing Party</h1>
+<br>
+<div id="new-user">
+  <%= button_to 'New User', register_path, method: :get %>
+</div>
+<br>
+<div id="existing-users">
+  <h2>Existing Users</h2>
+  <% @users.each do |user| %>
+    <p><%= link_to "#{user.name}", "/users/#{user.id}" %></p>
+  <% end %>
+</div>
