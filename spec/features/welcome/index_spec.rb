@@ -20,8 +20,8 @@ describe 'welcome index' do
   it 'has list of existing users' do
     expect(page).to have_content('Users')
     within '#users' do
-      expect(page).to have_link(@user_1.name)
-      expect(page).to have_link(@user_2.name)
+      expect(page).to have_link(@user1.name)
+      expect(page).to have_link(@user2.name)
     end
   end
 

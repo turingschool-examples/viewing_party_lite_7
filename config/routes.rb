@@ -1,6 +1,6 @@
-# frozen_string_literal: true
-
 Rails.application.routes.draw do
   root 'welcome#index'
-  resources :user, only: %i[new show]
+  get '/register', to: 'users#new'
+
+  resources :users, only: %i[new show create]
 end
