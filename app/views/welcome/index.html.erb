@@ -1,0 +1,14 @@
+<h2>Viewing Party</h2>
+
+<%= button_to "Create New User", new_user_path, method: :get %>
+
+<h3>Users:</h3>
+<div id='users'>
+<% @users.each do |user| %>
+<li><%=link_to "#{user.name}", user_path(user) %></li>
+<% end %>
+</div>
+
+<p>
+  The time is now: <%= Time.now %>
+</p>
