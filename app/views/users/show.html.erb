@@ -1,10 +1,19 @@
 <div id="user-dashboard">
 <h2><%= @user.name %>'s Dashboard</h2>
-<%= button_to "Discover Movies" %>
+<%= button_to "Discover Movies", user_discover_path(@user) , method: :get%>
 </div>
 
-<div>
+<div id="user-viewing-parties">
+<ul>
 <% @viewing_parties.each do |vp| %>
-<%= vp.movie_id %>
+<li><%= vp.movie_id %></li>
+<li><%= vp.date %></li>
+<li><%= vp.start_time %></li>
+  <% if vp.user_id == @user.id %>
+    <li><%= "Hosting" %></li>
+    <% else %>
+    <li><%= "Invited" %></li>
+  <% end %>
 <% end %>
+<ul>
 </div>

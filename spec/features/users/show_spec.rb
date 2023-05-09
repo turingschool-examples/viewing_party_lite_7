@@ -27,6 +27,22 @@ RSpec.describe 'User Show Page', type: :feature do
         expect(page).to have_button("Discover Movies")
       end
     end
-    it "displays a section that lists viewing parties"
+    xit "displays a section that lists viewing parties" do #I will improve this test later after linking to API
+      within("#user-viewing-parties") do
+        expect(page).to have_content("100")
+        expect(page).to have_content("Hosting")
+        expect(page).to have_content("202")
+        expect(page).to have_content("Invited")
+      end
+    end
+  end
+
+  describe "Dashboard:Discover Movies #6" do
+    it "clicking 'Discover Movies' redirects to user_discover_index_path " do
+      within("#user-dashboard") do
+        click_button("Discover Movies")
+        expect(current_path).to eq(user_discover_path(@user_1))
+      end
+    end
   end
 end
