@@ -51,6 +51,9 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "pry"
+  gem "factory_bot_rails"
+  gem "faker"
+  gem "shoulda-matchers"
 end
 
 group :development do
@@ -70,4 +73,6 @@ group :test do
   gem "capybara"
   gem "launchy"
   gem "simplecov"
+  gem "orderly"
+  gem "net-http"
 end
