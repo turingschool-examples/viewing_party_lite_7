@@ -1,0 +1,9 @@
+<div id="new-user">
+  <%= button_to "Create New User", "/register" %>
+</div>
+
+<div id="users">
+  <% @users.each do |user| %>
+    <%= link_to "#{user.email}", user_path(user.id) %>
+  <% end %>
+</div>
