@@ -24,8 +24,17 @@ describe 'user dashboard' do
     expect(page).to have_content("#{@user1.name} Dashboard")
   end
 
-  it 'has a discover movies button' do
-    expect(page).to have_button('Discover Movies')
+  describe 'discover movies' do
+    it 'has a discover movies button' do
+      expect(page).to have_button('Discover Movies')
+    end
+
+    it 'clicking button redirects to users/:id/discover page' do
+      visit user_path(@user2)
+
+      click_button('Discover Movies')
+      expect(current_path).to eq("/users/#{@user2.id}/discover")
+    end
   end
 
   it 'has a veiwing parties section' do
