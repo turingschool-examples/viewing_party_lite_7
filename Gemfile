@@ -74,5 +74,6 @@ group :test do
   gem 'simplecov'
   gem 'faker'
   gem 'factory_bot_rails'
+  gem 'shoulda-matchers'
   # gem 'webmock'
 end
