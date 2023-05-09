@@ -8,6 +8,14 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <div id="nav-container">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <ul class="nav navbar-nav">
+          <li><%= link_to 'Home Page', "/", style: 'pull-right' %></li>
+        </ul>
+      </nav>
+    </div>
   </head>
 
   <body>
