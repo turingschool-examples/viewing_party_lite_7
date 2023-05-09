@@ -10,11 +10,11 @@ require 'rails_helper'
 RSpec.describe "landing page" do
   describe "as a user, when I visit the landing page" do
     before(:each) do
-      visit root_path
       @user_1 = User.create!(name: "Katie", email: "email_address@gmail.com")
       @user_2 = User.create!(name: "Steve", email: "email_address_2@gmail.com")
       @user_3 = User.create!(name: "Stacey", email: "email_address_3@gmail.com")
       @users = [@user_1, @user_2, @user_3]
+      visit root_path
     end
     it "displays the title of the application" do
       within("#title") do
@@ -34,7 +34,7 @@ RSpec.describe "landing page" do
         @users.each do |user|
           expect(page).to have_link("#{user.email}")
           click_link("#{user.email}")
-          expect(current_path).to eq(user_path(user.id))
+          expect(current_path).to eq("/users/#{user.id}")
           visit root_path
         end
       end
