@@ -10,7 +10,7 @@ RSpec.describe "Landing page", type: :feature do
   end
 
   describe "When I visit the Landing page" do
-    it "I see the title of the application" do
+    it "I see the title of the application, a button to register, and a list of current users" do
       expect(page).to have_link("Home")
       expect(page).to have_content("Viewing Party")
       expect(page).to have_button("Register")
