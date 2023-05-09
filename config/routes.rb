@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "home#index"
 
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :show]
 
-  get '/users/:id/dashboard', to: 'users#dashboard', as: 'user_dashboard'
+  # get '/users/:id/dashboard', to: 'users#dashboard', as: 'user_dashboard'
 end

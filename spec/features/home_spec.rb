@@ -11,7 +11,7 @@ RSpec.describe "Home page", type: :feature do
     expect(page).to have_button "Create a New User"
 
     users.each do |user|
-      expect(page).to have_link user.name, href: user_dashboard_path(user)
+      expect(page).to have_link user.name, href: user_path(user)
     end
   end
 end
