@@ -9,6 +9,10 @@ describe 'create user' do
     visit '/register'
   end
 
+  it 'has application title' do
+    expect(page).to have_content('Viewing Party')
+  end
+
   it 'has working registration form' do
     fill_in :name, with: 'Jane'
     fill_in :email, with: 'Its_Jane_Doe@yahoo.com'
