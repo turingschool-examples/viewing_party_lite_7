@@ -74,11 +74,19 @@ RSpec.configure do |config|
   end
 end
 
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+  config.hook_into :webmock
+  config.filter_sensitive_data('<MOVIEDB_AUTHORIZATION_TOKEN>') { ENV["MOVIEDB_AUTHORIZATION_TOKEN"] }
+  config.default_cassette_options = { re_record_interval: 7.days }
+  config.configure_rspec_metadata!
+end
+
 def test_data
   UserParty.destroy_all
   User.destroy_all
   Party.destroy_all
-  
+
   @user_1 = User.create!(name: "User 1", email: "email1@email.com")
   @user_2 = User.create!(name: "User 2", email: "email2@email.com")
   @user_3 = User.create!(name: "User 3", email: "email3@email.com")
@@ -89,3 +97,5 @@ def test_data
 
   @party_1.user_parties.create!(user_id: @user_2.id)
 end
+
+
