@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def new 
   end
 
@@ -12,8 +13,9 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
+   def show
     @user = User.find(params[:id])
+    @viewing_parties = ViewingParty.find_viewing_parties(@user)
   end
 
   private
@@ -21,4 +23,5 @@ class UsersController < ApplicationController
   def user_params
     params.permit(:name, :email)
   end
+
 end
