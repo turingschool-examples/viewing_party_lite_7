@@ -60,6 +60,9 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'simplecov'
+  gem 'figaro'
+  gem 'faraday'
+  
 end
 
 group :development do
@@ -82,4 +85,6 @@ group :test do
   # gem 'shoulda-matchers', '~> 3.1'
   # gem 'net-http'
   # gem 'orderly'
+  gem 'webmock'
+  gem 'vcr'
 end
