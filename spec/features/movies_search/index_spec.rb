@@ -63,6 +63,20 @@ describe 'Movies discover page' do
         click_button("Find Top Rated Movies")
         expect(current_path).to eq("/users/#{@user2.id}/movies")
       end
+
+      feature "user can search for top 20 movies" do
+        scenario "user clicks Top 20 button and API call is made", :vcr do
+          visit "/users/#{user1.id}/discover"
+
+          click_on "Find Top Rated Movies"
+          expect(current_path).to eq("/users/#{user1.id}/movies")
+          expect(page).to have_css(".movie", count: 20)
+          within(first(".movie")) do
+            expect(page).to have_css(".title")
+            expect(page).to have_css(".vote_average")
+          end
+        end
+      end
     end
 
     describe "Find Movies Button" do
@@ -87,6 +101,21 @@ describe 'Movies discover page' do
         click_button("Find Movies")
         expect(current_path).to eq("/users/#{@user1.id}/discover")
         expect(page).to have_content('Error: Input must be at least 1 charachter')
+      end
+    end
+
+    feature "user can search for movies by title" do
+      scenario "user inputs movie title and clicks button, API call is made", vcr: do
+        visit "/users/#{user1.id}/discover"
+
+        fill_in :movie, with: "Pulp Fiction"
+        click_on "Find Movies"
+        expect(current_path).to eq("/users/#{user1.id}/movies")
+        expect(page).to have_css(".movie", count: 20)
+        within(first(".movie")) do
+          expect(page).to have_css(".title")
+          expect(page).to have_css(".vote_average")
+        end
       end
     end
   end
