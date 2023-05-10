@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'User Movies Index Page' type: :feature do
+RSpec.describe 'User Movies Index Page', type: :feature do
   describe 'Top Rated Movies' do
 
     it "After clicking on Top Rated Movies button from Discover Page,
