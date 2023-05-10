@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class SearchFacade
   def initialize(params)
     @type = params[:type]
     @movie_id = params[:id]
-    @title = params[:title]
+    @title = params[:movie]
   end
 
   def movies

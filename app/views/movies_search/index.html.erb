@@ -1,7 +1,8 @@
 <h3>Discover Movies</h3>
 
-<%= form_with url: "/users/#{@user.id}/movies?q=top%20rates", method: :get, local: true do |f| %>
+<%= form_with url: "/users/#{@user.id}/movies", method: :get, local: true do |f| %>
   <%= f.submit "Find Top Rated Movies" %>
+  <%= f.hidden_field  :type, :value => "top_rated" %>
 <% end %>
 
 <div id="search_button">

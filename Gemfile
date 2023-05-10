@@ -82,6 +82,6 @@ group :test do
   gem 'capybara'
   gem 'rspec-rails'
   gem 'simplecov'
-  gem 'webmock'
   gem 'vcr'
+  gem 'webmock'
 end

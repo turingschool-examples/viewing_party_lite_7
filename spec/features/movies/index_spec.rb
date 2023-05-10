@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe 'Movies Results Index Page' do
@@ -6,7 +8,6 @@ describe 'Movies Results Index Page' do
     @user2 = User.create!(name: 'JaJa', email: 'JaJa@hotmail.com')
   end
 
-  describe "Page Display" do
-    
+  describe 'Page Display' do
   end
 end

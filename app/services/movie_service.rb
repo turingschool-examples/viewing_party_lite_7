@@ -1,21 +1,26 @@
+# frozen_string_literal: true
+
 class MovieService
-  
-  def get_url(url)
+  def self.get_url(url)
     response = conn.get(url)
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  def conn 
-    Faraday.new(url: "https://api.themoviedb.org/3") do |faraday|
-      faraday.header["api_key"] = ENV["api_key"]
+  def self.conn
+    Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
+      faraday.params['api_key'] = ENV['api_key']
     end
   end
 
-  def top_movies
-    get_url("movie/top_rated")
+  def self.top_movies
+    get_url('/3/movie/top_rated')
   end
 
-  def movies_search(input)
-    get_url("search/movie?language=en-US&query=#{input}&page=1&include_adult=false")
+  def self.movies_search(input)
+    get_url("/3/search/movie?language=en-US&query=#{input}&page=1&include_adult=false")
+  end
+
+  def self.movie_search(id)
+    get_url("/3/movie/#{id}")
   end
 end

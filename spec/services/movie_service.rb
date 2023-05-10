@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe MovieService do
-  context "class methods" do
-    context "#Top_20_movies" do
-      it "returns movies data" do
+  context 'class methods' do
+    context '#Top_20_movies' do
+      it 'returns movies data' do
         search = MovieService.new.top_20_movies
         expect(search).to be_a Hash
         expect(search[:results]).to be_an Array
@@ -26,9 +28,9 @@ describe MovieService do
         expect(first_movie_data[:poster_path]).to be_an(String)
       end
     end
-    context "#Find_movies_by_search" do
-      it "returns movies data" do
-        search = MovieService.new.find_movies_by_search("Interstellar")
+    context '#Find_movies_by_search' do
+      it 'returns movies data' do
+        search = MovieService.new.find_movies_by_search('Interstellar')
         expect(search).to be_a Hash
         expect(search[:results]).to be_an Array
         expect(search[:results].count).to eq(20)
