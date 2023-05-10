@@ -7,7 +7,7 @@ RSpec.describe MovieFacade do
     movie = MovieFacade.get_movie('238')
 
     expect(movie.title).to eq('The Godfather')
-    expect(movie.vote_average).to eq(8.7)
+    expect(movie.vote_average).to eq(8.713)
   end
 
   it 'creates top rated movies poros', :vcr do
