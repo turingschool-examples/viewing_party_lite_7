@@ -1,0 +1,36 @@
+require 'rails_helper'
+
+RSpec.describe '/users/:id/discover', type: :feature do
+  before(:each) do
+    @user1 = create(:user)
+    visit user_discover_path(@user1)
+  end
+
+  describe 'When a user visits their users discover page' do
+    it 'They see a Discover Top Rated Movies button' do
+      expect(page).to have_button('Discover Top Rated Movies')
+    end
+
+    it 'The user sees a form to enter a keyword to search by movie title and a search buttong' do
+      expect(page).to have_field(:q)
+      expect(page).to have_button('Search')
+    end
+  end
+
+  describe 'When a user clicks on the Discover Top Rated Movies button' do
+    it 'They are taken to the movies results page' do
+      click_button('Discover Top Rated Movies')
+      expect(current_path).to eq(user_movies_path(@user1))
+    end
+  end
+
+  describe 'When a user clicks on the the search button (after a keyword has been input)' do
+    it 'They are taken to the movies results page' do
+      fill_in :q, with: 'Tremors'
+      
+      click_button('Search')
+
+      expect(current_path).to eq(user_movies_path(@user1))
+    end
+  end
+end
