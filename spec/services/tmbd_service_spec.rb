@@ -9,6 +9,12 @@ RSpec.describe TmbdService do
       expect(top_movies[:results]).to be_an(Array)
       expect(top_movies[:results].first[:title]).to be_a(String)
       expect(top_movies[:results].count).to eq(20)
+
+      movie = top_movies[:results].first
+
+      expect(movie).to have_key(:id)
+      expect(movie).to have_key(:title)
+      expect(movie).to have_key(:vote_average)
     end
 
     it 'can retrieve a list of search results' do
@@ -19,6 +25,12 @@ RSpec.describe TmbdService do
         expect(search_movies[:results]).to be_an(Array)
         expect(search_movies[:results].first[:title]).to be_a(String)
         expect(search_movies[:results].first[:title]).to eq('Tremors')
+
+        movie = search_movies[:results].first
+
+      expect(movie).to have_key(:id)
+      expect(movie).to have_key(:title)
+      expect(movie).to have_key(:vote_average)
       end
     end
   end
