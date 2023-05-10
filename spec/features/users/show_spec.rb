@@ -15,7 +15,7 @@ RSpec.describe 'User Dashboard' do
       expect(page).to_not have_content(@user2.name)
     end
 
-    xit 'when I visit the user dashboard, I see a button to discover movies' do
+    it 'when I visit the user dashboard, I see a button to discover movies' do
       within '#discover-movies' do
         expect(page).to have_button('Discover Movies')
         expect(page).to_not have_content('My Viewing Parties')
