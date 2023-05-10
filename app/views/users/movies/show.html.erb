@@ -4,6 +4,8 @@
 
 <%=button_to "Return to Discover Page", user_discover_path(@user), method: :get%>
 
+<%= button_to "Create Viewing Party for #{@facade.specific_movie}", new_user_movie_viewing_party_path(@facade.user, @facade.movie), method: :get%>
+
 <div id="movie-info">
   <p><b>Vote: <%=@facade.specific_movie.vote_average%></p>
   <p>Runtime: <%=@facade.specific_movie.runtime/60%> hour(s) and <%=@facade.specific_movie.runtime%60%> minutes</p>
