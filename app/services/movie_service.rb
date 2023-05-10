@@ -1,3 +1,4 @@
+# interacts with MovieDB API
 require 'faraday'
 
 class MovieService
@@ -6,7 +7,7 @@ class MovieService
   end
 
   def get_url(url)
-    response = Faraday.new(url: url).get do |faraday|
+    response = Faraday.new(url:).get do |faraday|
       faraday.headers["Authorization"] = ENV['MOVIEDB_AUTHORIZATION_TOKEN']
     end
     JSON.parse(response.body, symbolize_names: true)

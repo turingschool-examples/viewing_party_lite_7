@@ -6,9 +6,9 @@ RSpec.describe Movie do
       "adult": false,
       "backdrop_path": "/hZkgoQYus5vegHoetLkCJzb17zJ.jpg",
       "genre_ids": [
-          18,
-          53,
-          35
+        18,
+        53,
+        35
       ],
       "id": 550,
       "original_language": "en",
@@ -20,8 +20,8 @@ RSpec.describe Movie do
       "title": "Fight Club",
       "video": false,
       "vote_average": 8.433,
-      "vote_count": 26357
-  }
+      "vote_count": 26_357
+    }
   end
   it "exists and has attributes" do
     movie = Movie.new(@data)

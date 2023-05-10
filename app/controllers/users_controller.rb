@@ -1,3 +1,4 @@
+# controller for users in database
 class UsersController < ApplicationController
   def new
     @user = User.new
