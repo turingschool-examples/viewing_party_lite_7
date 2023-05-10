@@ -32,13 +32,12 @@ RSpec.describe "landing page" do
     it "has a list of existing users which links to the user dashboard" do
       within("#users") do
         @users.each do |user|
-          expect(page).to have_link("#{user.email}")
-          click_link("#{user.email}")
+          expect(page).to have_link(user.email.to_s)
+          click_link(user.email.to_s)
           expect(current_path).to eq("/users/#{user.id}")
           visit root_path
         end
       end
-
     end
     it "has a link to go back to the landing page" do
       within("#home") do
