@@ -46,4 +46,13 @@ RSpec.describe '/users/:id', type: :feature do
       end
     end
   end
+
+  describe 'When I visit the users dashboard page and click "Discover Movies"' do
+    it 'redirects to a discover page for the specific user' do
+      click_button 'Discover Movies'
+
+      expect(current_path).to eq(user_discover_path(@user1))
+      expect(page).to have_content('Discover Movies')
+    end
+  end
 end

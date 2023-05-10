@@ -7,6 +7,6 @@ Rails.application.routes.draw do
 
   get 'register', to: 'users#new', as: :new_user
   resources :users, only: [:create, :show] do
-    get 'discover', to: 'user#discover'
+    get 'discover', to: 'users#discover'
   end
 end
