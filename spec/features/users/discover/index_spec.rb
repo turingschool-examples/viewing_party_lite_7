@@ -38,7 +38,7 @@ RSpec.describe 'Discover Movies Page', type: :feature do
       visit user_discover_path(@user1)
 
       within('#movie-search') do
-        expect(page).to have_field('search')
+        expect(page).to have_field('movie_title')
         expect(page).to have_button('Find Movies')
       end
     end
@@ -47,7 +47,7 @@ RSpec.describe 'Discover Movies Page', type: :feature do
       visit user_discover_path(@user1)
 
       within('#movie-search') do
-        fill_in 'search', with: 'Lock, Stock and Two Smoking Barrels'
+        fill_in 'movie_title', with: 'Lock, Stock and Two Smoking Barrels'
         click_button 'Find Movies'
       end
 

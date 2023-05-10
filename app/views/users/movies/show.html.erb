@@ -1,31 +1,36 @@
-<h1><%=@facade.specific_movie.title%>'s Detail Page</h1>
+<div id='title'>
+  <h3><%=@facade.specific_movie.title%></h3>
+</div>
 
 <%=button_to "Return to Discover Page", user_discover_path(@user), method: :get%>
 
 <div id="movie-info">
-  <p>Vote: <%=@facade.specific_movie.vote_average%></p>
-  <p>Runtime: <%=@facade.specific_movie.runtime/60%> hours and <%=@facade.specific_movie.runtime%60%> minutes</p>
-  <p>Genre: <%@facade.specific_movie.genres.each do |genre| %>
+  <p><b>Vote: <%=@facade.specific_movie.vote_average%></p>
+  <p>Runtime: <%=@facade.specific_movie.runtime/60%> hour(s) and <%=@facade.specific_movie.runtime%60%> minutes</p>
+  <p>Genre(s): <%@facade.specific_movie.genres.each do |genre| %>
             <%=genre[:name]%>
             <%end%>
-  </p>
+  </p></b>
 </div>
 
-<div id="">
-  <p>Summary</p>
+<div id="summary">
+  <h3>Summary:</h3>
   <p><%= @facade.specific_movie.summary %></p>
-  <p>Cast</p>
-  <p><% 10.times do |i| %>
-    <ul>
-     <li><%= @cast[:cast][i][:original_name] %> as <%=@cast[:cast][i][:character] %></li>
+</div>
+
+<div id="cast"> 
+  <h3>Cast:</h3>
+    <% 10.times do |i| %>
+      <ul>
+        <li><p><%= @cast[:cast][i][:original_name] %> as <%=@cast[:cast][i][:character] %></p></li>
      </ul>
-     <% end %>
-  </p>
+    <% end %>
+</div>
   
-  <p><%=@reviews[:results].count%> Reviews</p>
-  <p><% @reviews[:results].each do |review| %>
-    <b>Reviewer: <%= review[:author] %></b><br><br>
-      <%= review[:content] %><br><br>
-      <% end %>
-  </p>
+<div id='reviews'>
+  <h3><%=@reviews[:results].count%> Reviews:</h3>
+    <% @reviews[:results].each do |review| %>
+      <p><b>Reviewer: <%= review[:author] %></b><br><br>
+        <%= review[:content] %></p><br>
+    <% end %>
 </div>
