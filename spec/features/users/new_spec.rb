@@ -6,7 +6,6 @@ RSpec.describe 'Registration Page' do
       visit '/register'
 
       within '#registration-form' do 
-#  save_and_open_page
         expect(page).to have_field('name')
         expect(page).to have_field('email')
         expect(page).to have_content('Name')
@@ -14,18 +13,35 @@ RSpec.describe 'Registration Page' do
         expect(page).to have_button('Save')
       end
     end
-
+    
     it 'can fill in form and submit' do
       visit '/register'
-
+      
       within '#registration-form' do
         fill_in 'name', with: 'Barnaby Jones'
         fill_in 'email', with: 'freshtodeath@aol.com'
         
         click_button 'Save'
       end
-
+      
       expect(current_path).to eq(user_path(User.last.id))
+    end
+  end
+  
+  describe 'registration error message' do
+    it 'displays error message and redirects to registration form if missing fields' do
+      visit '/register'
+      
+      within '#registration-form' do
+        fill_in 'name', with: ''
+        fill_in 'email', with: 'freshtodeath@aol.com'
+        
+        click_button 'Save'
+      end
+      
+      #save_and_open_page
+      expect(current_path).to eq('/register')
+      expect(page).to have_content("Oops, please try again. Make sure all fields are completed and email is unique!")
     end
   end
 end

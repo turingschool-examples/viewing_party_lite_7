@@ -10,10 +10,10 @@ class UsersController < ApplicationController
   def create
     @new_user = User.new(user_params)
     if @new_user.save
-      redirect_to user_path(@new_user)
+      redirect_to user_path(@new_user.id)
     else
-      flash.notice = "Oops, please try again your email is not unique."
-      render 'new'
+      flash.notice = "Oops, please try again. Make sure all fields are completed and email is unique!"
+      redirect_to '/register'
     end
   end
 
