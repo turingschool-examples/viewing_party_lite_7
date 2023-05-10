@@ -75,6 +75,10 @@ RSpec.configure do |config|
 end
 
 def test_data
+  UserParty.destroy_all
+  User.destroy_all
+  Party.destroy_all
+  
   @user_1 = User.create!(name: "User 1", email: "email1@email.com")
   @user_2 = User.create!(name: "User 2", email: "email2@email.com")
   @user_3 = User.create!(name: "User 3", email: "email3@email.com")
