@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?query
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <TMDB_V4_TOKEN>
+      Content-Type:
+      - application/json;charset=utf-8
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 10 May 2023 22:29:31 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=26466
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 0ad04c4a8f86817194f97d0815bf2d05
+      X-Memc-Age:
+      - '7062'
+      X-Memc-Expires:
+      - '19828'
+      Etag:
+      - W/"0e23279b004381f72a34159d5c7dfd1f"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 749e1450fdc7cac18bb91a34e80053aa.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - CdkceiRLT192e7yjDN_B1XfKAzV14xjaBaDiRlQDl6nqV2UAP7xdGQ==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"page":1,"results":[],"total_pages":1,"total_results":0}'
+  recorded_at: Wed, 10 May 2023 22:29:31 GMT
+recorded_with: VCR 6.1.0

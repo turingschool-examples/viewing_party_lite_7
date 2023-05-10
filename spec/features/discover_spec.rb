@@ -15,15 +15,20 @@ RSpec.feature "Discover page" do
   end
 
   scenario "User clicks on Discover Top Rated Movies button" do
-    click_button "Discover Top Rated Movies"
-
-    expect(current_path).to eq(movies_user_path(user))
+    VCR.use_cassette('discover_top_movies') do
+      click_button "Discover Top Rated Movies"
+    end
+  
+    expect(current_path).to eq(movies_path(user))
   end
-
+  
   scenario "User enters keywords and clicks on Search by Movie Title button" do
-    fill_in "query", with: "Star Wars"
-    click_button "Search by Movie Title"
-
-    expect(current_path).to eq(movies_user_path(user))
+    VCR.use_cassette('search_movie_title') do
+      fill_in "query", with: "Star Wars"
+      click_button "Search by Movie Title"
+    end
+  
+    expect(current_path).to eq(movies_path(user))
   end
+  
 end
