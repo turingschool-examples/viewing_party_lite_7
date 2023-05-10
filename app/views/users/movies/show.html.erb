@@ -1,0 +1,16 @@
+<h1><%=@facade.specific_movie.title%>'s Detail Page</h1>
+
+<%=button_to "Return to Discover Page", user_discover_path(@user), method: :get%>
+
+<div id="movie-info">
+  <p>Vote Average: <%=@facade.specific_movie.vote_average%></p>
+  <p>Run-Time: <%=@facade.specific_movie.runtime/60%> hours and <%=@facade.specific_movie.runtime%60%> minutes</p>
+  <p>Genre: <%@facade.specific_movie.genres.each do |genre| %>
+            <%=genre[:name]%>
+            <%end%>
+  </p>
+</div>
+
+<div>
+  
+</div>

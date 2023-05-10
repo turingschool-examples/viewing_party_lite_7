@@ -3,6 +3,7 @@ class MoviesFacade
 
   def initialize(params)
     @search_results = params[:movie_title]
+    @movie_id = params[:id]
   end
 
   def service
@@ -29,6 +30,11 @@ class MoviesFacade
     json[:results].map do |movie_data|
       Movie.new(movie_data)
     end    
+  end
+
+  def specific_movie
+    json = service.get_specific_movie(@movie_id)
+    Movie.new(json)
   end
 
 end

@@ -17,5 +17,9 @@ class MovieService
   def get_movie_search(query)
     get_url("/3/search/movie?api_key=#{ENV['TMDB_API_KEY']}&language=en-US&query=#{query}&page=1&include_adult=false")
   end
+
+  def get_specific_movie(id)
+    get_url("/3/movie/#{id}?api_key=#{ENV['TMDB_API_KEY']}&language=en-US")
+  end
   
 end
