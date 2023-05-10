@@ -5,11 +5,15 @@ class MoviesController < ApplicationController
   def discover; end
 
   def index
-    return unless params[:search].present?
-
-    @movies = MovieFacade.new.find_movies(params[:search])
+    if params[:search].present?
+      @movies = MovieFacade.new.find_movies(params[:search])
     # else
     #   @movies =
+    end
+  end
+
+  def show
+    
   end
 
   private
