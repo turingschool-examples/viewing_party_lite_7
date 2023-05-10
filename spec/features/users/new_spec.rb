@@ -29,7 +29,7 @@ RSpec.describe 'User Registration', type: :feature do
   
   describe "sad path test" do
     it "should not create a new user if email is not unique" do
-      save_and_open_page
+
       fill_in 'Name', with: 'Jon Smith'
       fill_in 'Email', with: 'jonsmith@gmail.com'
       click_button 'Create New User'
