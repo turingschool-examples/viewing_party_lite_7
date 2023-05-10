@@ -19,11 +19,11 @@
 <% end %>
 
 <h2>Parties Attending</h2>
-<% @user.parties.each do |party| %>
+<% @user.invited_parties.each do |party| %>
   <div id='invited'>
   <p><%= party.date %></p>
   <p><%= party.start_time %></p>
-  <p>Host: <%= get_host_name(party.host_id) %></p>
+  <p>Host: <%= party.host_name %></p>
   <p>Invited:</p>
   <ul>
   <% party.users.each do |user| %>
