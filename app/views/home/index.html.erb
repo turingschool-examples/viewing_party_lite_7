@@ -2,7 +2,7 @@
   <section id="users">
     <h3>Existing Users</h3>
       <div id="create_user">
-        <%= button_to "Create New User", "/register" %>
+        <%= button_to "Create New User", "/register", method: :get %>
       </div>
       <br>
       <% @users.each do |user| %>
