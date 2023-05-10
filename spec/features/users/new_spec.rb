@@ -17,7 +17,7 @@ RSpec.describe 'User Registration Page' do
       fill_in 'Email:', with: 'test_email@turing.edu'
       click_button 'Create New User'
 
-      expect(current_path).to eq(dashboard_path)
+      expect(current_path).to eq(dashboard_path(User.last))
       expect(page).to have_content('Welcome to Viewing Party!')
     end
 
@@ -27,7 +27,7 @@ RSpec.describe 'User Registration Page' do
       fill_in 'Email:', with: 'test_email@turing.edu'
       click_button 'Create New User'
 
-      expect(current_path).to_not eq(dashboard_path)
+      expect(current_path).to_not eq(dashboard_path(User.last))
       expect(current_path).to eq(register_path)
       expect(page).to have_content('Email already exists')
     end
