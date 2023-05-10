@@ -6,7 +6,9 @@ RSpec.describe 'Landing Page' do
   end
 
   scenario "displays title of Application" do
-    expect(page).to have_content("Viewing Party")
+    within 'header#title' do
+      expect(page).to have_content("Viewing Party")
+    end
   end
 
   scenario "has link to return to home page" do
@@ -30,17 +32,22 @@ RSpec.describe 'Landing Page' do
       @user_3 = create(:user)
       visit root_path
 
-      within "#users" do
+      within "#user-#{@user_1.id}" do
         expect(page).to have_link("#{@user_1.email}")
-        expect(page).to have_link("#{@user_2.email}")
-        expect(page).to have_link("#{@user_3.email}")
-
         click_on "#{@user_1.email}"
         expect(current_path).to eq("/user/#{@user_1.id}")
       end
 
       visit root_path
-      within "users" do
+      within "#user-#{@user_2.id}" do
+        expect(page).to have_link("#{@user_2.email}")
+        click_on "#{@user_2.email}"
+        expect(current_path).to eq("/user/#{@user_2.id}")
+      end
+
+      visit root_path
+      within "#user-#{@user_3.id}" do
+        expect(page).to have_link("#{@user_3.email}")
         click_on "#{@user_3.email}"
         expect(current_path).to eq("/user/#{@user_3.id}")
       end
