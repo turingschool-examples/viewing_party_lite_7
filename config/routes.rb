@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   #user paths
   get '/register', to: 'user#new', as: 'new_user'
   post '/register', to: 'user#create'
+  get '/users/:user_id/discover', to: 'movie#index', as: 'movie_index'
   get '/users/:id', to: 'user#show', as: 'user'
 end
