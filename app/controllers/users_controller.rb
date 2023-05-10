@@ -17,10 +17,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:user_id])
   end
 
-  def discover
-    @user = User.find(params[:user_id])
-  end
-
   private
 
   def user_params
