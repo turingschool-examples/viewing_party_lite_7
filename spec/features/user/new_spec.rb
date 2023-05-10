@@ -19,7 +19,7 @@ RSpec.describe "register user page" do
     end
 
     describe 'sad path' do
-      xit 'form not filled out' do
+      it 'form not filled out' do
         visit '/register'
         fill_in 'name', with: 'New User'
 
@@ -29,7 +29,7 @@ RSpec.describe "register user page" do
         expect(current_path).to eq('/register')
       end
 
-      xit 'email already in use' do
+      it 'email already in use' do
         
         fill_in 'name', with: 'New User'
         fill_in 'email', with: 'oldmail@mail.com'
