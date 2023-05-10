@@ -1,9 +1,9 @@
 <div id="new-user">
   <%= button_to "Create New User", "/register", method: :get %>
 </div>
-
+<br>
 <div id="users">
   <% @users.each do |user| %>
-    <%= link_to "#{user.email}", "users/#{user.id}" %>
+    <%= link_to "#{user.email}", "users/#{user.id}" %> <br>
   <% end %>
 </div>
