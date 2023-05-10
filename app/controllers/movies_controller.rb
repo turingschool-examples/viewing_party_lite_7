@@ -5,10 +5,6 @@ class MoviesController < ApplicationController
   end
 
   def index
-
-  end
-
-  def search
     if params[:search].present?
       @movies = MovieFacade.new.find_movies(params[:search])
     # else
