@@ -25,14 +25,12 @@ RSpec.describe 'Movies Details Page', type: :feature do
         expect(page).to_not have_content('The Godfather')
       end
       
-
       visit user_movie_path(@user2, 238)
 
       within('#title') do
         expect(page).to have_content('The Godfather')
         expect(page).to_not have_content('Lock, Stock and Two Smoking Barrels')
       end
-      
     end
 
     it 'shows movies info (vote average, runtime, genres)' do
@@ -76,7 +74,6 @@ RSpec.describe 'Movies Details Page', type: :feature do
         expect(page).to have_content('A card shark and his unwillingly-enlisted friends')
         expect(page).to_not have_content('Spanning the years 1945 to 1955')
       end
-
     end
 
     it 'shows cast members' do
