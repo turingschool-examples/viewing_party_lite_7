@@ -11,4 +11,8 @@ Rails.application.routes.draw do
   get "/users/:user_id/movies", to: "movies#index"
 
   resources :users, only: [:create]
+
+  resources :users, only: [:show] do
+    resources :movies, only: [:show]
+  end
 end
