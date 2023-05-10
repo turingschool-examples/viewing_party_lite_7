@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(strong_params)
     if @user.save
-      redirect_to user_path(@user)
+      redirect_to user_dashboard_path(@user)
     else
       flash[:alert] = "Please fill in all fields, email must be unique"
       redirect_to new_user_path
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   end
 
   private
-  
+
   def strong_params
     params.require(:user).permit(:email, :name)
   end
