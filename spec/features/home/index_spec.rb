@@ -25,23 +25,23 @@ RSpec.describe 'Landing Page' do
 
   describe "list of existing users" do
     it "displays all existing users' emails as links to their dashboard" do
-      @user_1 = User.create!(id: 1, name: "User 1", email: "User1@gmail.com")
-      @user_2 = User.create!(id: 2, name: "User 2", email: "User2@gmail.com")
-      @user_3 = User.create!(id: 3, name: "User 3", email: "User3@gmail.com")
+      @user_1 = create(:user)
+      @user_2 = create(:user)
+      @user_3 = create(:user)
       visit root_path
 
       within "#users" do
-        expect(page).to have_link("User1@gmail.com")
-        expect(page).to have_link("User2@gmail.com")
-        expect(page).to have_link("User3@gmail.com")
+        expect(page).to have_link("#{@user_1.email}")
+        expect(page).to have_link("#{@user_2.email}")
+        expect(page).to have_link("#{@user_3.email}")
 
-        click_on "User1@gmail.com"
+        click_on "#{@user_1.email}"
         expect(current_path).to eq("/user/#{@user_1.id}")
       end
 
       visit root_path
       within "users" do
-        click_on "User3@gmail.com"
+        click_on "#{@user_3.email}"
         expect(current_path).to eq("/user/#{@user_3.id}")
       end
     end
