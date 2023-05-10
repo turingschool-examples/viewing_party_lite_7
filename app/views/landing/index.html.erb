@@ -1,0 +1,11 @@
+<h1>Landing Page</h1>
+
+<h3>Existing Users</h3>
+<% @users.each do |user| %>
+<div id="user-<%= user.id %>">
+<ul>
+  <b><li><%= link_to "#{user.name}", "/dashboard/#{user.id}" %></li></b>
+</ul>
+</div>
+<% end %>
+<%= button_to "New User", "/register", method: :get %>
