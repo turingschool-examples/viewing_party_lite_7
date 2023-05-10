@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   root "home#index"
 
   resources :users, only: [:new, :create, :show] do
-    get 'discover', on: :member
-    get 'movies', on: :member
+    member do
+      get 'discover'
+      resources :movies, only: [:index, :show]
+    end
   end
-
-  # get '/users/:id/dashboard', to: 'users#dashboard', as: 'user_dashboard'
 end
