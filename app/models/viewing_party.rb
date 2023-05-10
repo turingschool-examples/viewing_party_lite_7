@@ -5,6 +5,7 @@ class ViewingParty < ApplicationRecord
   has_many :viewing_party_users
   has_many :users, through: :viewing_party_users
 
+  validates :date, presence: true
   validates :start_time, presence: true
   validates :duration, presence: true
   validates :movie_id, presence: true
