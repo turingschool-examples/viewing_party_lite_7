@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe 'landing page index page' do
-  let!(:user_1) { User.create!(name: "Angel Byun", email: "angelbyun@turing.edu", password: "ABC123") }
-  let!(:user_2) { User.create!(name: "Isaac Thill", email: "isaacthill@turing.edu", password: "234XYZ") }
-  let!(:user_3) { User.create!(name: "Scott Le", email: "scottle@gmail.com", password: "098543") }
-  let!(:user_4) { User.create!(name: "Megan Hinricher", email: "hinmeg@gmail.com", password: "BHAUI6") }
+  let!(:user_1) { User.create!(name: "Angel Byun", email: "angelbyun@turing.edu") }
+  let!(:user_2) { User.create!(name: "Isaac Thill", email: "isaacthill@turing.edu") }
+  let!(:user_3) { User.create!(name: "Scott Le", email: "scottle@gmail.com") }
+  let!(:user_4) { User.create!(name: "Megan Hinricher", email: "hinmeg@gmail.com") }
 
   it 'landing page index page' do
     visit root_path
@@ -20,13 +20,34 @@ RSpec.describe 'landing page index page' do
     visit root_path
 
     within "#user-#{user_1.id}" do
+      expect(page).to have_content(user_1.name)
       click_link("#{user_1.name}")
     end
 
-    expect(current_path).to eq(dashboard_path)
+    expect(current_path).to eq("/dashboard/#{user_1.id}")
+    visit root_path
+
+    within "#user-#{user_2.id}" do
+      expect(page).to have_content(user_2.name)
+      click_link("#{user_2.name}")
+    end
     
-    # expect(page).to have_content(user_2.name)
-    # expect(page).to have_content(user_3.name)
-    # expect(page).to have_content(user_4.name)
+    expect(current_path).to eq("/dashboard/#{user_2.id}")
+    visit root_path
+
+    within "#user-#{user_3.id}" do
+      expect(page).to have_content(user_3.name)
+      click_link("#{user_3.name}")
+    end
+
+    expect(current_path).to eq("/dashboard/#{user_3.id}")
+    visit root_path
+    
+    within "#user-#{user_4.id}" do
+      expect(page).to have_content(user_4.name)
+      click_link("#{user_4.name}")
+    end
+
+    expect(current_path).to eq("/dashboard/#{user_4.id}")
   end
 end
