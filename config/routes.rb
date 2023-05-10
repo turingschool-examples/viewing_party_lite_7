@@ -3,8 +3,11 @@ Rails.application.routes.draw do
 
   get '/register', controller: 'users', to: 'users#new'
   post '/register', controller: 'users', to: 'users#create'
-  
-  resources :users
+
+  resources :users do
+    # get '/users/:id/discover', to: 'discover#index'
+    resources :discover, only: [:index], controller: 'users/discover'
+  end
   resources :user_viewing_parties
   resources :viewing_parties
 end
