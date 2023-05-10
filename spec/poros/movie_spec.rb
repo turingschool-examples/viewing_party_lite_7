@@ -27,5 +27,6 @@ RSpec.describe Movie do
     movie = Movie.new(@data)
     expect(movie).to be_a Movie
     expect(movie.title).to eq("Fight Club")
+    expect(movie.id).to eq(550)
   end
 end
