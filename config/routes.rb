@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :discover, only: [:index], controller: 'users/discover'
-    # resources :movie, only: [:show], controller: 'user/movies'
+    resources :movie, only: [:index, :show], controller: 'users/movies'
   end
   resources :user_viewing_parties
   resources :viewing_parties

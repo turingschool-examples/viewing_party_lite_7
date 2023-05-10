@@ -13,7 +13,7 @@ RSpec.describe MovieFacade do
 
   it 'creates top rated movies poros', :vcr do
     top_rated = MovieFacade.top_rated
-  #  require 'pry'; binding.pry
+
     expect(top_rated.first).to be_a(MovieDetail)
   end
 end 
