@@ -5,8 +5,11 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
 
-  #Look into refactoring (at some point)
   def hosted_parties
-    Party.where("host_id = ?", self.id)
+    parties.where("user_parties.is_host = true")
+  end
+
+  def invited_parties
+    parties.where("user_parties.is_host = false")
   end
 end

@@ -6,12 +6,14 @@ RSpec.describe '/users/:id', type: :feature do
     @user2 = create(:user)
     @user3 = create(:user)
 
-    @party1 = create(:party, host_id: @user1.id, movie_id: 2, start_time: "04:30:45 UTC")
-    @party2 = create(:party, host_id: @user2.id, movie_id: 3, start_time: "04:35:30 UTC")
+    @party1 = create(:party, movie_id: 2, start_time: "04:30:45 UTC")
+    @party2 = create(:party, movie_id: 3, start_time: "04:35:30 UTC")
 
     @user_party1 = UserParty.create!(user: @user1, party: @party2)
     @user_party2 = UserParty.create!(user: @user3, party: @party1)
-    @user_party2 = UserParty.create!(user: @user2, party: @party1)
+    @user_party3 = UserParty.create!(user: @user2, party: @party1)
+    @user_party4 = UserParty.create!(user: @user1, party: @party1, is_host: true)
+    @user_party5 = UserParty.create!(user: @user2, party: @party2, is_host: true)
     visit user_path(@user1)
   end
 
