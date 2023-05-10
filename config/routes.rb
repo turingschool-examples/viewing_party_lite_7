@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   # root "articles#index"
   root 'landing#index'
 
-  post '/register', to: 'users#new'
+  get '/register', to: 'users#new'
+  post '/register', to: 'users#create'
 
-  resources :register, only: [:create, :new], controller: :users
   resources :users, only: [:show]
 end
