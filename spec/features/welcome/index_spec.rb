@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe 'Visit Landing Page', type: :feature do
   before do
-    test_data
     visit '/'
   end
 

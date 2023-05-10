@@ -1,8 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'User Registration', type: :feature do
-  before do 
-    test_data
+  before do
     visit new_user_path
   end
   describe "New user page" do
@@ -26,7 +25,7 @@ RSpec.describe 'User Registration', type: :feature do
       expect(current_path).to eq(user_path(User.last))
     end
   end
-  
+
   describe "sad path test" do
     it "should not create a new user if email is not unique" do
 
@@ -56,7 +55,7 @@ RSpec.describe 'User Registration', type: :feature do
     it "should not create a new user if email field is blank" do
       fill_in 'Name', with: 'John Doe'
       click_button 'Create New User'
-      expect(current_path).to eq(new_user_path) 
+      expect(current_path).to eq(new_user_path)
       expect(page).to have_content('Please fill in all fields, email must be unique')
     end
   end
