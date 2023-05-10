@@ -54,4 +54,14 @@ RSpec.describe 'landing page index' do
 
     expect(current_path).to eq("/dashboard/#{user_4.id}")
   end
+
+  it 'creates a link to go back to the landing page' do
+    visit root_path
+
+    expect(page).to have_link("Home")
+
+    click_link("Home")
+
+    expect(current_path).to eq(root_path)
+  end
 end
