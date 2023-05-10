@@ -1,0 +1,14 @@
+<h3>Discover Movies</h3>
+
+<%= form_with url: "/users/#{@user.id}/movies?q=top%20rates", method: :get, local: true do |f| %>
+  <%= f.submit "Find Top Rated Movies" %>
+<% end %>
+
+<div id="search_button">
+  <p>Input the name of a movie you want to find!</p>
+  <%= form_with url: "/users/#{@user.id}/movies", method: :get, local: true do |f| %>
+    <%  f.label :movie %>
+    <%= f.text_field :movie %>
+    <%= f.submit "Find Movies" %>
+  <% end %>
+</div>
