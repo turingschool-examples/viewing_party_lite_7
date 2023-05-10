@@ -1,0 +1,11 @@
+<h1>Register a New User</h1>
+
+<%= form_with model: @user do |f| %>
+  <%= f.label :name, "Name:" %>
+  <%= f.text_field :name %>
+
+  <%= f.label :email, "E-mail Address:" %>
+  <%= f.text_field :email %>
+
+  <%= f.submit "Register" %>
+<% end %>
