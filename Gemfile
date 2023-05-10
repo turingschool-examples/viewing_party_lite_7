@@ -54,6 +54,7 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "pry"
   gem "rspec-rails"
+  gem 'net-http'
 end
 
 group :development do
@@ -79,4 +80,5 @@ group :test do
   gem "factory_bot_rails"
   gem 'vcr'
   gem 'webmock'
+  
 end
