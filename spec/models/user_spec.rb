@@ -33,5 +33,12 @@ RSpec.describe User, type: :model do
         expect(@user1.hosted_parties).to eq([@party1])
       end
     end
+
+    describe '#invited_parties' do
+      it 'returns an array of all parties the user is invited to but not hosting' do
+        expect(@user1.invited_parties).to eq([@party2])
+        expect(@user1.invited_parties).to_not include(@party1)
+      end
+    end
   end
 end
