@@ -13,7 +13,7 @@ describe 'user discover page' do
     @viewing_party3 = @user2.viewing_parties.create!(duration: 120, date: '06/01/2023',
                                                      time: '2023-01-06 13:00:00 UTC', movie_id: 3)
 
-    visit user_discover_path(@user1)
+    visit user_discover_index_path(@user1)
   end
 
   it 'has Top Rated Movies button', :vcr do

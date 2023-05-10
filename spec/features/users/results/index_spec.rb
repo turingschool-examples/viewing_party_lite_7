@@ -12,11 +12,11 @@ describe 'user results page', :vcr do
                                                      time: '2023-13-12 13:00:00 UTC', movie_id: 2)
     @viewing_party3 = @user2.viewing_parties.create!(duration: 120, date: '06/01/2023',
                                                      time: '2023-01-06 13:00:00 UTC', movie_id: 3)
-    visit user_discover_path(@user1)
+    visit user_discover_index_path(@user1)
   end
-  
-  it 'has Top Rated Movies results', :vcr do
-    @movie1 = SearchFacade.new({type: "top_rated"}).movies.first
+
+  it 'has Top Rated Movies results with correct attributes', :vcr do
+    @movie1 = SearchFacade.new({ type: 'top_rated' }).movies.first
     expect(page).to have_button('Top Rated Movies')
     click_button('Top Rated Movies')
     expect(current_path).to eq(user_movies_path(@user1))
@@ -28,8 +28,8 @@ describe 'user results page', :vcr do
 
   it 'has returnt to discover page button' do
     click_button('Top Rated Movies')
-    expect(page).to have_button("Return to Discover")
-    click_on("Return to Discover")
-    expect(current_path).to eq(user_discover_path(@user1))
+    expect(page).to have_button('Return to Discover')
+    click_on('Return to Discover')
+    expect(current_path).to eq(user_discover_index_path(@user1))
   end
 end

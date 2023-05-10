@@ -3,6 +3,11 @@
 class MoviesController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @facade = SearchFacade.new(params)
+    @movies = SearchFacade.new(params).movies
+  end
+
+  def show
+    @movie = SearchFacade.new(params).movies
+    @user = User.find(params[:user_id])
   end
 end

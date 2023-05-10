@@ -3,7 +3,7 @@
 class MovieService
   def self.conn
     Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
-      faraday.params['api_key'] = '00a0de78b93bcdb648a48814b6465f22'
+      faraday.params['api_key'] = ENV['api_key']
     end
   end
 
@@ -18,5 +18,9 @@ class MovieService
 
   def self.movies_search(query)
     get_url("/3/search/movie?language=en-US&query=#{query}&page=1")
+  end
+
+  def self.movie_search(id)
+    get_url("/3/movie/#{id}")
   end
 end
