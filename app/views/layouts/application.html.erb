@@ -11,11 +11,17 @@
   </head>
 
   <body>
+
     <header id="title">
       <h1>Viewing Party</h1>
     </header>
     
     <%= render partial: 'shared/navigation' %>
+
+    <% flash.each do |type, message| %>
+      <p><%= message %></p>
+    <% end %>
+ 
     <%= yield %>
   </body>
 </html>
