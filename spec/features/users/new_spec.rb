@@ -43,5 +43,21 @@ RSpec.describe 'Registration Page' do
       expect(current_path).to eq('/register')
       expect(page).to have_content("Oops, please try again. Make sure all fields are completed and email is unique!")
     end
+
+    it 'displays error message and redirects if email is not unique' do
+      @user1 = User.create!(name: 'Geraldine Peters', email: 'freshtodeath@aol.com')
+      visit '/register'
+      
+      within '#registration-form' do
+        fill_in 'name', with: 'Baranby Jones'
+        fill_in 'email', with: 'freshtodeath@aol.com'
+        
+        click_button 'Save'
+      end
+      
+      #save_and_open_page
+      expect(current_path).to eq('/register')
+      expect(page).to have_content("Oops, please try again. Make sure all fields are completed and email is unique!")
+    end
   end
 end
