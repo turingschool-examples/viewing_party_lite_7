@@ -1,0 +1,8 @@
+<h1> Discover Movies </h2>
+  <%= button_to "Back", user_discover_path(@user), method: :get %>
+<ul>
+  <% @movies.each do |movie| %>
+    <li>Movie Title: <%= movie.title %></li>
+    <li>Rating: <%= movie.rating %></li> <br>
+  <% end %>
+</ul>
