@@ -6,6 +6,7 @@ RSpec.describe 'User Dashboard', type: :feature do
   end
 
   it 'has a header' do
+    save_and_open_page
     expect(page).to have_content("#{@user1.name}'s Dashboard")
     expect(page).to have_button('Discover Movies')
   end

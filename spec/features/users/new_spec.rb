@@ -22,7 +22,7 @@ RSpec.describe 'User Registration', type: :feature do
       fill_in 'Name', with: 'John Doe'
       fill_in 'Email', with: 'johndoe123@hotmail.com'
       click_button 'Create New User'
-      expect(current_path).to eq(user_path(User.last))
+      expect(current_path).to eq(user_dashboard_path(User.last))
     end
   end
 
