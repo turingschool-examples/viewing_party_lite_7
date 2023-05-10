@@ -2,6 +2,6 @@ class Movie
   attr_reader :title
   
   def initialize(data)
-    @title = data[:title]
+    @title = data[:original_title]
   end
 end
