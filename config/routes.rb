@@ -6,8 +6,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'welcome#index'
 
-  resources :users do
+  resources :users, only: [:show] do
     get 'discover', to: 'users/discover#index', as: 'discover'
   end
+
+  get '/register', to: 'users#new', as: 'register'
+  post '/register', to: 'users#create'
 
 end
