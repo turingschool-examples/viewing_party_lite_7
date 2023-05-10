@@ -3,14 +3,29 @@
 <%=button_to "Return to Discover Page", user_discover_path(@user), method: :get%>
 
 <div id="movie-info">
-  <p>Vote Average: <%=@facade.specific_movie.vote_average%></p>
-  <p>Run-Time: <%=@facade.specific_movie.runtime/60%> hours and <%=@facade.specific_movie.runtime%60%> minutes</p>
+  <p>Vote: <%=@facade.specific_movie.vote_average%></p>
+  <p>Runtime: <%=@facade.specific_movie.runtime/60%> hours and <%=@facade.specific_movie.runtime%60%> minutes</p>
   <p>Genre: <%@facade.specific_movie.genres.each do |genre| %>
             <%=genre[:name]%>
             <%end%>
   </p>
 </div>
 
-<div>
+<div id="">
+  <p>Summary</p>
+  <p><%= @facade.specific_movie.summary %></p>
+  <p>Cast</p>
+  <p><% 10.times do |i| %>
+    <ul>
+     <li><%= @cast[:cast][i][:original_name] %> as <%=@cast[:cast][i][:character] %></li>
+     </ul>
+     <% end %>
+  </p>
   
+  <p><%=@reviews[:results].count%> Reviews</p>
+  <p><% @reviews[:results].each do |review| %>
+    <b>Reviewer: <%= review[:author] %></b><br><br>
+      <%= review[:content] %><br><br>
+      <% end %>
+  </p>
 </div>

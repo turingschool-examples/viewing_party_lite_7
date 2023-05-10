@@ -22,4 +22,12 @@ class MovieService
     get_url("/3/movie/#{id}?api_key=#{ENV['TMDB_API_KEY']}&language=en-US")
   end
   
+  def get_movie_cast_info(id)
+    get_url("3/movie/#{id}/credits?api_key=#{ENV['TMDB_API_KEY']}&language=en-US")
+  end
+
+  def get_movie_review_info(id)
+    get_url("3/movie/#{id}/reviews?api_key=#{ENV['TMDB_API_KEY']}&language=en-US&page=1")
+  end
+
 end
