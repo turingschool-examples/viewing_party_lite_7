@@ -30,6 +30,7 @@ RSpec.describe "register user page" do
       end
 
       it 'email already in use' do
+        visit '/register'
         
         fill_in 'name', with: 'New User'
         fill_in 'email', with: 'oldmail@mail.com'
