@@ -11,9 +11,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to dashboard_path, notice: "Welcome to Viewing Party!"
+      redirect_to dashboard_path(@user), notice: "Welcome to Viewing Party!"
     else
-      redirect_to '/register', notice: "Email already exists"
+      redirect_to register_path, notice: "Email already exists"
     end
   end
 
