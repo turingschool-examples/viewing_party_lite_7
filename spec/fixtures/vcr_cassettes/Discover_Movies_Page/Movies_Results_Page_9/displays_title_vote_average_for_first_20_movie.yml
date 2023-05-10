@@ -44,15 +44,17 @@ http_interactions:
       - Accept-Encoding
       - Origin
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 d7b3fa0ef559ab3ac226fc78e47d311a.cloudfront.net (CloudFront)
+      - 1.1 48ea53c7edffa2cdbdc32f7d94966344.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN52-P1
+      - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - uPX1UxHX-cNoFKwbu4q5KnbWNRWQyH7tDENDkZmlYb5omRHFbTI43g==
+      - xetQFCRShcj8AXWN_Htou0bBHa5TuWBmuPlxijXlQxe3ba4rtU_RVA==
+      Age:
+      - '1349'
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/cXQH2u7wUIX1eoIdEj51kHXoWhX.jpg","genre_ids":[35,80],"id":100,"original_language":"en","original_title":"Lock,
@@ -66,5 +68,5 @@ http_interactions:
         Ritchie. Interviews were conducted with Nick Moran, Jason Flemyng, Dexter
         Fletcher and Jason Statham.","popularity":0.6,"poster_path":null,"release_date":"2005-01-01","title":"The
         Making of Lock, Stock, and Two Smoking Barrels","video":false,"vote_average":0.0,"vote_count":0}],"total_pages":1,"total_results":2}'
-  recorded_at: Wed, 10 May 2023 22:46:26 GMT
+  recorded_at: Wed, 10 May 2023 23:08:55 GMT
 recorded_with: VCR 6.1.0

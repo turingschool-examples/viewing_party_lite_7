@@ -1,7 +1,9 @@
 <h1>Movie Search Results</h2>
 <%=button_to "Return to Discover Page", user_discover_path(@user), method: :get%>
+<div id="movies">
 <%facade.search_results.each do |movie|%>
   <div id="movie-<%=movie.id%>">
     <p><%=link_to movie.title, user_movie_path(@user, movie.id)%> Vote Average: <%=movie.vote_average%></p>
   </div>
+</div>
 <%end%>

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get 'discover', to: 'users/discover#index', as: 'discover'
     get 'movies', to: 'users/movies#index', as: 'movies'
     get 'movies/:id', to: 'users/movies#show' , as: 'movie'
+    get 'movies/:id/viewing_party/new', to: 'users/viewing_party#new', as: 'viewing_party_new'
   end
 
   get '/register', to: 'users#new', as: 'register'
