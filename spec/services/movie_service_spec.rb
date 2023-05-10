@@ -3,7 +3,7 @@ require 'rails_helper'
 describe MovieService do
   describe "class methods" do
     describe "movies" do
-      it "returns movie data" do
+      it "returns movie data", :vcr do
         movies = MovieService.new.movies("query")[:results]
         movie = movies.first
 
