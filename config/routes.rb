@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   root 'landing#index'
-  get '/landing/new', to: 'landing#new'
 
   get '/register', to: 'users#new'
   post '/users', to: 'users#create'

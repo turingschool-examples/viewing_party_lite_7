@@ -17,7 +17,7 @@ RSpec.describe 'landing page index page' do
 
     click_button("New User")
 
-    expect(current_path).to eq("/landing/new")
+    expect(current_path).to eq("/register")
   end
 
   it 'displays a list of existing users which links to users dashboard' do
