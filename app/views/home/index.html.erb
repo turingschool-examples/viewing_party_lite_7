@@ -1,12 +1,15 @@
-<div id="create-user">
-  <h3><%= button_to "Create New User", url: "/register", method: :get %></h3>
-</div>
-
-<div id="users">
-  <h3>Existing Users</h3>
-  <ul>
-    <% @users.each do |user| %>
-      <li><%= link_to "#{user.email}", url: "/users/#{user.id}", method: :get %></li>
-    <% end %>
-  </ul>
-</div>
+<body>
+  <section id="users">
+    <h3>Existing Users</h3>
+      <div id="create_user">
+        <%= button_to "Create New User", "/register" %>
+      </div>
+      <br>
+      <% @users.each do |user| %>
+        <div id="user-<%= user.id %>">
+          <%= link_to "#{user.email}", "/users/#{user.id}" %>
+        </div>
+      <br>
+      <% end %>
+  </section>
+</body>

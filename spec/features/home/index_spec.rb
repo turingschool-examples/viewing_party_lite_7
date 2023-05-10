@@ -16,7 +16,7 @@ RSpec.describe 'Landing Page' do
   end
 
   scenario "has button to create new user" do
-    within "#create-user"
+    within "#create_user"
     expect(page).to have_link("Create New User")
     click_on "Create New User"
 
@@ -28,6 +28,7 @@ RSpec.describe 'Landing Page' do
       @user_1 = User.create!(id: 1, name: "User 1", email: "User1@gmail.com")
       @user_2 = User.create!(id: 2, name: "User 2", email: "User2@gmail.com")
       @user_3 = User.create!(id: 3, name: "User 3", email: "User3@gmail.com")
+      visit root_path
 
       within "#users" do
         expect(page).to have_link("User1@gmail.com")
@@ -35,13 +36,13 @@ RSpec.describe 'Landing Page' do
         expect(page).to have_link("User3@gmail.com")
 
         click_on "User1@gmail.com"
-        expect(current_path).to eq("/users/#{@user_1.id}")
+        expect(current_path).to eq("/user/#{@user_1.id}")
       end
 
       visit root_path
       within "users" do
         click_on "User3@gmail.com"
-        expect(current_path).to eq("/users/#{@user_3.id}")
+        expect(current_path).to eq("/user/#{@user_3.id}")
       end
     end
   end
