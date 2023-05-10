@@ -6,6 +6,7 @@
 
 <section id="title-search">
   <%= form_with url: user_movies_path(@user), local: true, method: :get do |form|%>
+    <%= form.hidden_field value: "search"%>
     <%= form.label :title, "Movie Title" %>
     <%= form.text_field :title %>
     <%= form.submit "Search" %>
