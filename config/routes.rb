@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   #user paths
   get '/register', to: 'user#new', as: 'new_user'
   post '/register', to: 'user#create'
-  get '/user/:id', to: 'user#show', as: 'user'
+  get '/users/:id', to: 'user#show', as: 'user'
 end
