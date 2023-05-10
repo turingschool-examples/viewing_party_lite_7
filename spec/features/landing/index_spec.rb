@@ -30,19 +30,19 @@ RSpec.describe 'landing page', type: :feature do
 
         expect(page).to have_link(@user_1.email)
         click_link(@user_1.email)
-        expect(current_path).to eq(users_path(@user_1))
+        expect(current_path).to eq(user_path(@user_1))
         
         visit '/'
         
         expect(page).to have_link(@user_2.email)
         click_link(@user_2.email)
-        expect(current_path).to eq(users_path(@user_2))
+        expect(current_path).to eq(user_path(@user_2))
         
         visit '/'
 
         expect(page).to have_link(@user_3.email)
         click_link(@user_3.email)
-        expect(current_path).to eq(users_path(@user_3))
+        expect(current_path).to eq(user_path(@user_3))
       end
     end
 

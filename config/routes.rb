@@ -7,6 +7,6 @@ Rails.application.routes.draw do
 
   post '/register', to: 'users#new'
 
-  resource :register, only: [:index], controller: :users
-  resource :users, only: [:show]
+  resources :register, only: [:create, :new], controller: :users
+  resources :users, only: [:show]
 end
