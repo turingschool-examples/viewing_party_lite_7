@@ -1,12 +1,14 @@
 <div id="button">
-<%= button_to "Create a New User", new_user_path%>
+  <%= form_tag(register_path, method: :get) do %>
+    <%= submit_tag "Create a New User"%>
+  <% end %>
 </div>
 
 <div id="existing-users">
 <h2>Existing Users</h2>
-<ul>
-<% @users.each do |user| %>
-<li><%= user.email %></li>
-<% end %>
-</ul>
+  <ul>
+    <% @users.each do |user| %>
+      <li><%= user.email %></li>
+    <% end %>
+  </ul>
 </div>
