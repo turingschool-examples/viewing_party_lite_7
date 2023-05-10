@@ -1,3 +1,4 @@
+## This creates the party class for viewing parties
 class Party < ApplicationRecord
   validates_numericality_of :duration
   validates_presence_of :date

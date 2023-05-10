@@ -1,1 +1,12 @@
 <%= "#{@user.name}'s Dashboard" %>
+<%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %>
+<section id="parties">
+  <% if @user.no_parties? %>
+    <p> This user has no parties yet </p>
+  <% else %>
+    <% @user.parties.each do |party| %>
+      <%= party.date %><br/>
+      <%= party.time %>
+    <% end %>
+  <% end %>
+</section>

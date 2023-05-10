@@ -43,5 +43,26 @@ RSpec.describe "user registration page", type: :feature do
       expect(current_path).to eq('/register')
       expect(page).to have_content("All fields must be filled out and email must be unique")
     end
+
+    it "fields not filled out" do
+      visit '/register'
+
+      fill_in("Name:", with: "Barbara")
+      click_button("Create User")
+
+      expect(current_path).to eq('/register')
+      expect(page).to have_content("All fields must be filled out and email must be unique")
+    end
+
+    it "not valid email" do
+      visit '/register'
+
+      fill_in("Name:", with: "John")
+      fill_in("Email", with: "kjshdfkjshdf")
+      click_button("Create User")
+
+      expect(current_path).to eq('/register')
+      expect(page).to have_content("All fields must be filled out and email must be unique")
+    end
   end
 end
