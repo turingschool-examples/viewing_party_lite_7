@@ -12,8 +12,12 @@ RSpec.describe 'landing page index page' do
     expect(page).to have_content("Landing Page")
   end
 
-  xit 'creates a button to create a new user' do
+  it 'creates a button to create a new user' do
     visit root_path
+
+    click_button("New User")
+
+    expect(current_path).to eq("/landing/new")
   end
 
   it 'displays a list of existing users which links to users dashboard' do
