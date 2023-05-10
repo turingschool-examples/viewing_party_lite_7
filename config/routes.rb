@@ -9,11 +9,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     get 'discover', to: 'users/discover#index', as: 'discover'
     get 'movies', to: 'users/movies#index', as: 'movies'
-    # post 'movies', to: 'users/movies#index'
-    # get "/:id/movies?q=keyword", to: 'users/movies#index', as: 'movies'
-    # get "/:id/movies?q=top%20rated", to: 'users/movies#index', as: 'movies'
-    # get '/:id/movies', to: 'users/movies#index', as: 'movies', constraints: { "q=top%20rated" }
-    # get '/:id/movies', to: 'users/movies#index', as: 'movies', constraints: { "q=keyword" }
+
   end
 
   get '/register', to: 'users#new', as: 'register'
