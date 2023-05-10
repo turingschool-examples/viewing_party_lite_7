@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ViewingPartyLite7</title>
+    <title>Viewing Party</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,9 +11,17 @@
   </head>
 
   <body>
+
+    <header id="title">
+      <h1>Viewing Party</h1>
+    </header>
+    
+    <%= render partial: 'shared/navigation' %>
+
     <% flash.each do |type, message| %>
       <p><%= message %></p>
     <% end %>
+ 
     <%= yield %>
   </body>
 </html>

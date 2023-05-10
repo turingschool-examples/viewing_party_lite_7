@@ -1,0 +1,15 @@
+<body>
+  <section id="users">
+    <h3>Existing Users</h3>
+      <div id="create_user">
+        <%= button_to "Create New User", "/register" %>
+      </div>
+      <br>
+      <% @users.each do |user| %>
+        <div id="user-<%= user.id %>">
+          <%= link_to "#{user.email}", "/user/#{user.id}" %>
+        </div>
+      <br>
+      <% end %>
+  </section>
+</body>
