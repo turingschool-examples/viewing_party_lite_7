@@ -1,1 +1,10 @@
 <h1>Landing Page</h1>
+
+<h3>Existing Users</h3>
+<ul>
+<% @users.each do |user| %>
+<div id="user-<%= user.id %>">
+  <b><li><%= link_to "#{user.name}", dashboard_path %></li></b>
+</div>
+<% end %>
+</ul>

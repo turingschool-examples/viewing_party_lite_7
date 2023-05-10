@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   root "landing#index"
+
+  get "/dashboard", to: "users#show"
 end
