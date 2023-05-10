@@ -14,5 +14,18 @@ RSpec.describe 'Registration Page' do
         expect(page).to have_button('Save')
       end
     end
+
+    it 'can fill in form and submit' do
+      visit '/register'
+
+      within '#registration-form' do
+        fill_in 'name', with: 'Barnaby Jones'
+        fill_in 'email', with: 'freshtodeath@aol.com'
+        
+        click_button 'Save'
+      end
+
+      expect(current_path).to eq(user_path(User.last.id))
+    end
   end
 end
