@@ -12,6 +12,13 @@
   </head>
 
   <body>
+    <div id="home">
+      <%= link_to "Home", root_path %>
+    </div>
+    <div id="title">
+      <h1>Viewing Party</h1>
+    </div>
+
     <% flash.each do |type, notice| %>
         <h3><b><%= notice %></b></h3>
     <% end %>
