@@ -11,4 +11,7 @@ Rails.application.routes.draw do
 
   get '/dashboard/:user_id', to: 'users#show', as: 'dashboard'
 
+  get '/discover/users/:user_id', to: 'discover/users#show'
+
+  get '/movies', to: 'movies#index'
 end
