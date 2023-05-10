@@ -7,6 +7,11 @@ class Movie
               :cast_members,
               :review_count,
               :reviews
-
+  def initialize(data)
+    @title = data[:title]
+    @rating = data[:vote_average]
+    @runtime = data[:runtime]
+    
+  end
        
 end
