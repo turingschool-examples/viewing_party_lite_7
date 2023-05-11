@@ -25,4 +25,9 @@ class ViewingParty < ApplicationRecord
     movie[:poster_path]
   end
 
+  def title(id)
+    movie = MovieService.new.get_specific_movie(id)
+    movie[:title]
+  end
+
 end
