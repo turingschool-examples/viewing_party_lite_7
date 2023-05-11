@@ -16,8 +16,8 @@ class MovieService
     get_url('/3/movie/top_rated')
   end
 
-  def self.movies_search(input)
-    get_url("/3/search/movie?language=en-US&query=#{input}&page=1&include_adult=false")
+  def self.movies_search(query)
+    get_url("/3/search/movie?language=en-US&query=#{query}&page=1")
   end
 
   def self.movie_search(id)
