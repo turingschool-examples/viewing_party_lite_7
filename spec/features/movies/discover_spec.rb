@@ -25,7 +25,7 @@ RSpec.describe "Movies Discover page" do
       end
 
       expect(current_path).to eq("/users/#{@user_1.id}/movies")
-      # expect(page).to have_content("Fight Club")
+      expect(page).to have_content("Fight Club")
     end
   end
 end
