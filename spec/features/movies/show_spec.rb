@@ -67,7 +67,8 @@ RSpec.describe "Movie Detail page" do
 
       within("#cast-members") do
         cast.each do |member|
-          expect(page).to have_content(member)
+          expect(page).to have_content(member.character)
+          expect(page).to have_content(member.actor)
         end
       end
     end
