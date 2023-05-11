@@ -10,8 +10,8 @@ describe MovieService do
         expect(movies).to be_a Array
         expect(movie).to be_a Hash
 
-        expect(movie).to have_key :original_title
-        expect(movie[:original_title]).to be_a(String)
+        expect(movie).to have_key :title
+        expect(movie[:title]).to be_a(String)
 
         expect(movie).to have_key :id
         expect(movie[:id]).to be_a(Integer)
@@ -26,8 +26,8 @@ describe MovieService do
         expect(movies).to be_a Array
         expect(movie).to be_a Hash
 
-        expect(movie).to have_key :original_title
-        expect(movie[:original_title]).to be_a(String)
+        expect(movie).to have_key :title
+        expect(movie[:title]).to be_a(String)
 
         expect(movie).to have_key :id
         expect(movie[:id]).to be_a(Integer)
