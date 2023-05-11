@@ -4,15 +4,9 @@ RSpec.describe 'Movie show page', type: :feature do
   let(:user) { create(:user) }
   let(:movie_id) { 11 }  
 
-  before do
-    VCR.use_cassette('movie_details') do
-      VCR.use_cassette('movie_credits') do
-        visit movie_path(user, movie_id)
-      end
-    end
-  end
+  before { visit movie_path(user, movie_id) }
 
-  it 'shows movie details' do
+  it 'shows movie details', :vcr do
     expect(page).to have_content('Star Wars')
     expect(page).to have_content('Vote Average: 8.2')
     expect(page).to have_content('Runtime: 121 minutes')
