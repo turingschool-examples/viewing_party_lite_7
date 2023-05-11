@@ -1,9 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe MovieDbService do
+  before(:all) do
+    @service = MovieDbService.new
+  end
+
   it 'searches for movies' do
     VCR.use_cassette('movie_search') do
-      data = MovieDbService.search_movies('Star Wars')
+      data = @service.search_movies('Star Wars')
 
       expect(data).to be_a(Hash)
       expect(data[:results]).to be_an(Array)
@@ -13,7 +17,7 @@ RSpec.describe MovieDbService do
 
   it 'retrieves movie details' do
     VCR.use_cassette('movie_details') do
-      data = MovieDbService.movie_details(11)
+      data = @service.movie_details(11)
 
       expect(data).to be_a(Hash)
       expect(data[:title]).to eq('Star Wars')
