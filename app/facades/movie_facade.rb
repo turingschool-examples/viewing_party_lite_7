@@ -32,4 +32,14 @@ class MovieFacade
     data = MovieService.new.find_movie(id)
     Movie.new(data)
   end
+
+  def cast_members(movie_id)
+    data = MovieService.new.credits(movie_id)
+    cast = []
+    data[:cast].each_with_index do |member, i|
+      break if i > 9
+      cast << member[:name]
+    end
+    cast
+  end
 end
