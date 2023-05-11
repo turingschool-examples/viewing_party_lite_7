@@ -1,15 +1,17 @@
 class Users::MoviesController < ApplicationController
+  before_action :get_user
+
   def index
-    @user = User.find(params[:user_id])
-    if params[:q].present?
-      @movies = MovieFacade.new.search_movies(params[:q])
-    else
-      @movies = MovieFacade.new.top_rated_movies
-    end
+    @facade = MoviesFacade.new(params[:q])
   end
 
   def show
+    @facade = MovieFacade.new(params[:id])
+  end
+
+  private
+
+  def get_user
     @user = User.find(params[:user_id])
-    @movie = MovieFacade.new.all_movie_data(params[:id])
   end
 end
