@@ -35,21 +35,21 @@ RSpec.describe 'Landing Page' do
       within "#user-#{@user_1.id}" do
         expect(page).to have_link("#{@user_1.email}")
         click_on "#{@user_1.email}"
-        expect(current_path).to eq("/user/#{@user_1.id}")
+        expect(current_path).to eq("/users/#{@user_1.id}")
       end
 
       visit root_path
       within "#user-#{@user_2.id}" do
         expect(page).to have_link("#{@user_2.email}")
         click_on "#{@user_2.email}"
-        expect(current_path).to eq("/user/#{@user_2.id}")
+        expect(current_path).to eq("/users/#{@user_2.id}")
       end
 
       visit root_path
       within "#user-#{@user_3.id}" do
         expect(page).to have_link("#{@user_3.email}")
         click_on "#{@user_3.email}"
-        expect(current_path).to eq("/user/#{@user_3.id}")
+        expect(current_path).to eq("/users/#{@user_3.id}")
       end
     end
   end
