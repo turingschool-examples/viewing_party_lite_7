@@ -17,4 +17,9 @@ class MovieDbService
     response = conn.get("/3/movie/#{id}")
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  def self.top_movies
+    response = conn.get("/3/movie/top_rated")
+    JSON.parse(response.body, symbolize_names: true)[:results]
+  end  
 end
