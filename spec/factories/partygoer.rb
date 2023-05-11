@@ -3,5 +3,6 @@ FactoryBot.define do
     sequence :id
     association :user
     association :party
+    host { false }
   end
 end
