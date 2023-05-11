@@ -1,6 +1,6 @@
 # controller for data from movies API
 class MoviesController < ApplicationController
-  before_action :find_user, only: [:discover, :index]
+  before_action :find_user, only: [:discover, :index, :show]
 
   def discover; end
 
@@ -13,7 +13,9 @@ class MoviesController < ApplicationController
               end
   end
 
-  def show; end
+  def show
+    @movie = MovieFacade.new.find_movie(params[:id])
+  end
 
   private
 
