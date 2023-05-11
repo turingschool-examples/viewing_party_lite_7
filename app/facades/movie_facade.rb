@@ -38,14 +38,14 @@ class MovieFacade
     cast = []
     data[:cast].each_with_index do |member, i|
       break if i > 9
-      cast << member[:name]
+      cast << CastMember.new(member)
     end
     cast
   end
 
   def all_reviews(movie_id)
     data = MovieService.new.reviews(movie_id)
-    @reviews = data[:results].map do |results|
+    reviews = data[:results].map do |results|
       Review.new(results)
     end
   end
