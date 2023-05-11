@@ -72,8 +72,17 @@ RSpec.describe "Movie Detail page" do
       end
     end
 
-    xit "has a count of reviews and each review's author and info", :vcr do
+    it "has a count of reviews and each review's author and info", :vcr do
+      reviews = MovieFacade.new.all_reviews(@movie.id)
+      visit user_movie_path(@user_1.id, @movie.id)
 
+      within("#reviews") do
+      expect(page).to have_content("#{reviews.count} Reviews")
+        reviews.each do |review|
+            expect(page).to have_content(review.author)
+            # expect(page).to have_content(review.content)
+        end
+      end
     end
   end
 end
