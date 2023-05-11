@@ -17,6 +17,20 @@ RSpec.describe 'Movies Details Page', type: :feature do
       expect(current_path).to eq(user_movie_path(@user2, 100))
     end
 
+    it 'displays button to create viewing party' do
+      visit user_movie_path(@user1, 238)
+      expect(page).to have_button('Create Viewing Party')
+      click_button 'Create Viewing Party'
+      expect(current_path).to eq(user_new_viewing_party_path(@user1, 238))
+    end
+
+    it "displays a button to return to discover page" do
+      visit user_movie_path(@user1, 238)
+      expect(page).to have_button('Discover Page')
+      click_button 'Discover Page'
+      expect(current_path).to eq(user_discover_path(@user1))
+    end
+
     it 'displays movie title' do
       visit user_movie_path(@user1, 100)
 

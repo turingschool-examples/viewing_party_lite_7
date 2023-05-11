@@ -2,9 +2,9 @@
   <h3><%=@facade.specific_movie.title%></h3>
 </div>
 
-<%=button_to "Return to Discover Page", user_discover_path(@user), method: :get%>
-
-<%= button_to "Create Viewing Party for #{@facade.specific_movie}", new_user_movie_viewing_party_path(@facade.user, @facade.movie), method: :get%>
+<%=button_to "Discover Page", user_discover_path(@user), method: :get%>
+<br>
+<%= button_to "Create Viewing Party for #{@facade.specific_movie.title}", user_new_viewing_party_path(@user, @facade.specific_movie.id), method: :get%>
 
 <div id="movie-info">
   <p><b>Vote: <%=@facade.specific_movie.vote_average%></p>

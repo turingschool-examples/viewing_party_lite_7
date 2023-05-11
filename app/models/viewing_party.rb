@@ -11,9 +11,14 @@ class ViewingParty < ApplicationRecord
   validates :movie_id, presence: true
   validates :user_id, presence: true
 
-  def self.find_viewing_parties(user)
+  def self.find_hosted_parties(user)
+    where(user_id: user.id)
+  end
+
+  def self.find_invited_parties(user)
     joins(:viewing_party_users)
     .where(viewing_party_users: {user_id: user.id})
   end
+  
 
 end
