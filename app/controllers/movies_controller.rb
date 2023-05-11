@@ -7,13 +7,13 @@ class MoviesController < ApplicationController
   def index
     if params[:search].present?
       @movies = MovieFacade.new.find_movies(params[:search])
-    # else
-    #   @movies =
+    else
+      @movies = MovieFacade.new.top_rated_movies
     end
   end
 
   def show
-    
+
   end
 
   private
