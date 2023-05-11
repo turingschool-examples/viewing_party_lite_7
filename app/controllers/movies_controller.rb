@@ -2,10 +2,10 @@ class MoviesController < ApplicationController
   def index
     @user = User.find(params[:user_dashboard_id])
     if params[:q] == 'top rated'
-      @movies = MovieFactory.new.top_20_movies
+      @movies = MovieFacade.new.top_20_movies
       @is_top_rated = true
     else
-      @movies = MovieFactory.new.search_movies(params[:q])
+      @movies = MovieFacade.new.search_movies(params[:q])
       @search = params[:q]
     end
   end

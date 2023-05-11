@@ -1,7 +1,7 @@
 require './app/poros/movie'
 require 'faraday'
 
-class MovieFactory
+class MovieFacade
   def service
     MovieService.new
   end
