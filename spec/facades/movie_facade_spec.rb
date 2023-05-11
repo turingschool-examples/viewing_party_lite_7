@@ -46,4 +46,9 @@ RSpec.describe MovieFacade do
       expect(reviews).to all be_a Review
     end
   end
+  describe "review_count" do
+    it "returns count of reviews for movie with given id", :vcr do
+      expect(@mf.review_count(550)).to eq 8
+    end
+  end
 end
