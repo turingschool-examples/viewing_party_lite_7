@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MovieDetail
   attr_reader :title,
               :id,
@@ -8,7 +10,6 @@ class MovieDetail
               :poster_path
 
   def initialize(response)
-    #require 'pry'; binding.pry
     @title = response[:title]
     @id = response[:id]
     @overview = response[:overview]
