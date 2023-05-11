@@ -1,7 +1,11 @@
+<%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %>
+<br>
 <div id="results">
   <% @movies.each do |movie| %>
-    <%= link_to movie.title.to_s, user_movie_path(@user.id, movie.id) %>
-    Vote Average: <%= movie.vote_average %>
-    <br>
+    <div id="movie-<%=movie.id%>">
+      <%= link_to movie.title.to_s, user_movie_path(@user.id, movie.id) %>
+      Vote Average: <%= movie.vote_average %>
+      <br>
+    </div>
   <% end %>
 </div>
