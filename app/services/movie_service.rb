@@ -23,4 +23,8 @@ class MovieService
   def self.movie_search(id)
     get_url("/3/movie/#{id}")
   end
+
+  def self.movie_search(id)
+    get_url("/3/movie/#{id}")
+  end
 end
