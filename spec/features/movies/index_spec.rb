@@ -44,16 +44,22 @@ RSpec.describe "Movies Results page" do
       end
     end
 
-    xit "does not display more than 20 results" do
-
-    end
-
     xit "has a button to return to the discover page" do
 
     end
 
-    xit "displays top rated movies if chosen from discover page" do
+    it "displays top rated movies if chosen from discover page", :vcr do
+      visit "/users/#{@user_1.id}/discover"
 
+      within("#top-movies") do
+        click_button "Find Top Rated Movies"
+      end
+
+      within("#results") do
+        expect(page).to have_content("The Godfather")
+        expect(page).to have_content("The Shawshank Redemption")
+        expect(page).to have_content("The Godfather Part II")
+      end
     end
   end
 end
