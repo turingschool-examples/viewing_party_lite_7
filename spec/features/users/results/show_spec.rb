@@ -12,67 +12,73 @@ describe 'user result show page', :vcr do
                                                      time: '2023-13-12 13:00:00 UTC', movie_id: 2)
     @viewing_party3 = @user2.viewing_parties.create!(duration: 120, date: '06/01/2023',
                                                      time: '2023-01-06 13:00:00 UTC', movie_id: 3)
-    visit user_discover_index_path(@user1)
+    @movie1 = SearchFacade.new({ type: 'top_rated' }).movies.first
+    @movie2 = SearchFacade.new({ type: 'top_rated' }).movies[10]
+    @new_movie1 = SearchFacade.new({ id: "#{@movie1.id}" }).movies
   end
 
   it 'has button to create a viewing party' do
+    visit user_discover_index_path(@user1)
+    click_on "Top Rated"
+    click_on "The Godfather"
+    expect(page).to have_button("Create a Viewing Party!")
+    click_button "Create a Viewing Party!"
+    expect(current_path).to eq(new_user_movie_viewing_party_path(@user1, @movie1.id))
   end
 
   it 'has a button to return to the discover page' do
-  end
-
-  it 'has a details button to view the viewing party page' do
+    visit user_movie_path(@user1, @movie1.id)
+    expect(page).to have_button('Return to Discover')
+    click_on('Return to Discover')
+    expect(current_path).to eq(user_discover_index_path(@user1))
   end
 
   describe 'movie information' do
+    before :each do
+      visit user_movie_path(@user1, @movie1.id)
+    end
     it 'has movie title' do
+      expect(page).to have_content(@movie1.title)
+      expect(page).to have_no_content(@movie2.title)
     end
 
     it 'has vote average of movie' do
+      expect(page).to have_content(@movie1.vote_average)
+      expect(page).to have_no_content(@movie2.vote_average)
     end
 
     it 'has runtime in hours and minutes' do
+      expect(page).to have_content(@new_movie1.runtime)
+      expect(@new_movie1.runtime).to eq("2 hours, 55 minutes")
     end
 
-    it 'has grenres for movie' do
+    it 'has genres for movie' do
+      expect(page).to have_content(@new_movie1.genres)
+      expect(@new_movie1.genres).to eq("Drama, Crime")
     end
 
     it 'has a summary' do
+      expect(page).to have_content(@new_movie1.summary)
+      expect(@new_movie1.summary).to eq("Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge.")
     end
 
     it 'lists first 10 cast members' do
+      SearchFacade.new({id: "#{@new_movie1.id}"}).cast_search(@new_movie1)
+      save_and_open_page
+      expect(page).to have_content(@new_movie1.cast)
+      exoect(@new_movie1.cast).length to_eq(10)
     end
 
-    it 'has count of total reviews' do
+    xit 'has count of total reviews' do
     end
 
-    it 'has each reviews author and info' do
+    xit 'has each reviews author and info' do
     end
 
-    it 'has a details section with 3 details' do
+    xit 'has a details section with 3 details' do
       #alternative titles
       #release date
       #translations
     end
   end
 end
-
-
-# When I visit a movie's detail page (/users/:user_id/movies/:movie_id where :id is a valid user id,
-# I should see
-
-# Button to create a viewing party
-# Button to return to the Discover Page
-# Details This viewing party button should take the user to the new viewing party page (/users/:user_id/movies/:movie_id/viewing-party/new)
-
-# And I should see the following information about the movie:
-
-# Movie Title
-# Vote Average of the movie
-# Runtime in hours & minutes
-# Genre(s) associated to movie
-# Summary description
-# List the first 10 cast members (characters&actress/actors)
-# Count of total reviews
-# Each review's author and information
-# Details: This information should come from 3 different endpoints from The Movie DB API

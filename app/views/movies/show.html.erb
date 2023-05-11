@@ -1,1 +1,11 @@
 <h3><%= @movie.title %></h3>
+<h3><%= @movie.vote_average %></h3>
+<h3><%= @movie.runtime %></h3>
+<h3><%= @movie.genres %></h3>
+<h3><%= @movie.summary %></h3>
+<% @movie.cast.each do |member| %>
+<%= member %>
+<% end %>
+
+<%= button_to "Create a Viewing Party!", new_user_movie_viewing_party_path(@user, @movie.id), method: :get %>
+<%= button_to "Return to Discover", user_discover_index_path(@user), method: :get %>

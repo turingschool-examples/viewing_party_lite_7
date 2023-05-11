@@ -33,6 +33,10 @@ class SearchFacade
       end
     end
   end
-end
 
+  def cast_search(movie)
+    cast = MovieService.cast_search(@movie_id)
+    movie.update(cast)
+  end
+end
 

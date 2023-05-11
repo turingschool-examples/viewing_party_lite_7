@@ -24,7 +24,7 @@ class MovieService
     get_url("/3/movie/#{id}")
   end
 
-  def self.movie_search(id)
-    get_url("/3/movie/#{id}")
+  def self.cast_search(id)
+    get_url("/3/movie/#{id}/credits")
   end
 end
