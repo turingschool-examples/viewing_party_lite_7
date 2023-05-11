@@ -1,10 +1,16 @@
 class MovieService
   def top_rated_movies
-    response = conn.get('movie/top_rated') do |req|
-      req.headers['Authorization'] = "Bearer #{ENV['MOVIES_API_READ_ACCESS_TOKEN']}"
-    end
-    parsed = JSON.parse(response.body, symbolize_names: true)
-    movies = parsed[:results].map do |movie_data|
+    parsed_data = get_url('movie/top_rated')
+    get_movie_data(parsed_data[:results])
+  end
+
+  def search_movies(query)
+    parsed_data = get_url("search/movie?query=#{query}")
+    get_movie_data(parsed_data[:results])
+  end
+
+  def get_movie_data(response_data)
+    response_data.map do |movie_data|
       {
         title: movie_data[:title],
         rating: movie_data[:vote_average]
@@ -12,17 +18,11 @@ class MovieService
     end
   end
 
-  def search_movies(query)
-    response = conn.get("search/movie?query=#{query}") do |req|
+  def get_url(url)
+    response = conn.get(url) do |req|
       req.headers['Authorization'] = "Bearer #{ENV['MOVIES_API_READ_ACCESS_TOKEN']}"
     end
-    parsed = JSON.parse(response.body, symbolize_names: true)
-    movies = parsed[:results].map do |movie_data|
-      {
-        title: movie_data[:title],
-        rating: movie_data[:vote_average]
-      }
-    end
+    JSON.parse(response.body, symbolize_names: true)
   end
 
   def conn
