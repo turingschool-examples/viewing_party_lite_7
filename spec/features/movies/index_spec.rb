@@ -30,19 +30,29 @@ RSpec.describe "Movies Results page" do
 
       expect(current_path).to eq("/users/#{@user_1.id}/movies/550")
     end
-    # it "displays the vote average of the movie" do
-    #   visit "/users/#{@user_1.id}/discover"
 
-    #   within("#results") do
-    #   expect()
-    #   end
-    # end
+    it "displays the vote average of the movie", :vcr do
+      visit "/users/#{@user_1.id}/discover"
+
+      within("#search-movies") do
+        fill_in(:search, with: "Fight Club")
+        click_button "Find Movies"
+      end
+
+      within("#results") do
+        expect(page).to have_content("Vote Average: 8.433")
+      end
+    end
 
     xit "does not display more than 20 results" do
 
     end
 
     xit "has a button to return to the discover page" do
+
+    end
+
+    xit "displays top rated movies if chosen from discover page" do
 
     end
   end
