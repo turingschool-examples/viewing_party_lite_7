@@ -61,8 +61,15 @@ RSpec.describe "Movie Detail page" do
       end
     end
 
-    xit "lists the first 10 case members", :vcr do
+    it "lists the first 10 cast members", :vcr do
+      cast = MovieFacade.new.cast_members(@movie.id)
+      visit user_movie_path(@user_1.id, @movie.id)
 
+      within("#cast-members") do
+        cast.each do |member|
+          expect(page).to have_content(member)
+        end
+      end
     end
 
     xit "has a count of reviews and each review's author and info", :vcr do
