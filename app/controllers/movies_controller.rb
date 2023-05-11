@@ -14,7 +14,8 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @movie = MovieFacade.new.find_movie(params[:id])
+    @facade = MovieFacade.new
+    @movie = @facade.find_movie(params[:id])
   end
 
   private
