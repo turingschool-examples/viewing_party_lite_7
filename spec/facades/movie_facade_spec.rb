@@ -33,4 +33,11 @@ RSpec.describe MovieFacade do
       expect(movie).to be_a Movie
     end
   end
+  describe "cast_members" do
+    it "returns 10 cast members from movie with given id", :vcr do
+      cast = @mf.cast_members(550)
+      expect(cast).to all be_a String
+      expect(cast.count <= 10).to be true
+    end
+  end
 end
