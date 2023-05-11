@@ -13,39 +13,47 @@ require 'rails_helper'
 RSpec.describe "Movies Results page" do
   before(:each) do
     test_data
+    test_movie
   end
   describe "As a user, when I visit the movie results page from the discover movies page" do
+    before(:each) do
+      @movie = Movie.new(@data)
+    end
     it "displays the movie title as a link to the movie details page", :vcr do
       visit "/users/#{@user_1.id}/discover"
 
       within("#search-movies") do
-        fill_in(:search, with: "Fight Club")
+        fill_in(:search, with: @movie.title.to_s)
         click_button "Find Movies"
       end
 
       within("#results") do
-        expect(page).to have_link("Fight Club")
-        click_link "Fight Club"
+        expect(page).to have_link(@movie.title.to_s)
+        click_link @movie.title.to_s
       end
 
-      expect(current_path).to eq("/users/#{@user_1.id}/movies/550")
+      expect(current_path).to eq("/users/#{@user_1.id}/movies/#{@movie.id}")
     end
 
     it "displays the vote average of the movie", :vcr do
       visit "/users/#{@user_1.id}/discover"
 
       within("#search-movies") do
-        fill_in(:search, with: "Fight Club")
+        fill_in(:search, with: @movie.title.to_s)
         click_button "Find Movies"
       end
 
-      within("#results") do
-        expect(page).to have_content("Vote Average: 8.433")
+      within("#movie-#{@movie.id}") do
+        expect(page).to have_content("Vote Average: #{@movie.vote_average}")
       end
     end
 
-    xit "has a button to return to the discover page" do
+    it "has a button to return to the discover page", :vcr do
+      visit "/users/#{@user_1.id}/movies"
 
+      expect(page).to have_button("Discover Page")
+      click_button "Discover Page"
+      expect(current_path).to eq("/users/#{@user_1.id}/discover")
     end
 
     it "displays top rated movies if chosen from discover page", :vcr do
