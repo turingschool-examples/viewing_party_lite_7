@@ -21,3 +21,12 @@
     <%= member %>
   <% end %>
 </div>
+
+<div id="reviews">
+  <h5><%= @facade.review_count(@movie.id) %> Reviews</h5>
+  <% @facade.all_reviews(@movie.id).each do |review| %>
+    <%= "#{review.author}:" %><br>
+    <%= review.content %><br>
+    <br>
+  <% end %>
+</div>
