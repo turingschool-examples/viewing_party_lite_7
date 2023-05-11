@@ -8,19 +8,21 @@
   <ul>
   <% @hosted_parties.each do |vp| %>
     <img width="150px" src=<%="https://image.tmdb.org/t/p/original#{vp.poster(vp.movie_id)}" %>>
-    <li><%= vp.title(vp.movie_id) %></li>
+    <li><%= link_to vp.title(vp.movie_id), user_movie_path(@user, vp.movie_id) %></li>
     <li><%= vp.date.strftime("%B %-d, %Y") %></li>
     <li><%= vp.start_time.strftime("%-I:%M %p") %></li>
     <li>Hosting</li>
+    <li><%= vp.participants(@user) %></li>
     <br><br>
     <% end %>
 
 <% @invited_parties.each do |vp| %>
     <img width="150px" src=<%="https://image.tmdb.org/t/p/original#{vp.poster(vp.movie_id)}" %>>
-    <li><%= vp.title(vp.movie_id) %></li>
+    <li><%= link_to vp.title(vp.movie_id), user_movie_path(@user, vp.movie_id)  %></li>
     <li><%= vp.date.strftime("%B %-d, %Y") %></li>
     <li><%= vp.start_time.strftime("%-I:%M %p") %></li>
-    <li>Invited</li>
+    <li>Host: <b><%= vp.host %></b></li>
+    <li>Invited: <b><%= @user.name %></b>&nbsp;<%= vp.participants(@user) %></li>
     <br><br>
     <% end %>
 

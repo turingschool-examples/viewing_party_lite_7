@@ -30,4 +30,13 @@ class ViewingParty < ApplicationRecord
     movie[:title]
   end
 
+  def host
+    user.name
+  end
+
+  def participants(user)
+    users.where("viewing_party_id = #{self.id}")
+    .where.not("viewing_party_users.user_id = #{user.id}")
+    .pluck(:name).to_sentence
+  end
 end
