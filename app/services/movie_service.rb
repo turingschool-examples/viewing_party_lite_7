@@ -10,6 +10,10 @@ class MovieService
     get_url("https://api.themoviedb.org/3/movie/top_rated?language=en-US")
   end
 
+  def find_movie(id)
+    get_url("https://api.themoviedb.org/3/movie/#{id}?language=en-US")
+  end
+
   def get_url(url)
     response = Faraday.new(url:).get do |faraday|
       faraday.headers["Authorization"] = ENV['MOVIEDB_AUTHORIZATION_TOKEN']
