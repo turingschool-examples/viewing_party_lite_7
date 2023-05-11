@@ -44,6 +44,30 @@ RSpec.describe TmbdService do
         expect(find_movie[:runtime]).to be_an(Integer)
         expect(find_movie[:genres]).to be_an(Array)
         expect(find_movie[:overview]).to be_an(String)
+        expect(find_movie[:poster_path]).to be_an(String)
+        expect(find_movie[:overview]).to be_an(String)
+      end
+    end
+
+    it 'can retrieve all reviews for a movie through its id' do
+      VCR.use_cassette('find_reviews_by_id_550') do
+        find_reviews = TmbdService.find_reviews(550)
+
+        expect(find_reviews).to be_a(Hash)
+        expect(find_reviews[:results].first[:author]).to be_a(String)
+        expect(find_reviews[:results].first[:content]).to be_a(String)
+      end
+    end
+
+    it 'can retrieve all cast members for a movie through its id' do
+      VCR.use_cassette('find_cast_by_id_550') do
+        find_cast = TmbdService.find_cast(550)
+
+        expect(find_cast).to be_a(Hash)
+        expect(find_cast[:cast]).to be_an(Array)
+        expect(find_cast[:cast].first[:name]).to be_a(String)
+        expect(find_cast[:cast].first[:character]).to be_a(String)
+
       end
     end
   end

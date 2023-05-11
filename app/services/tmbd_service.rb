@@ -12,6 +12,14 @@ class TmbdService
     get_url("/3/movie/#{id}")
   end
 
+  def self.find_reviews(id)
+    get_url("/3/movie/#{id}/reviews")
+  end
+
+  def self.find_cast(id)
+    get_url("/3/movie/#{id}/credits")
+  end
+
 
   def self.conn
     Faraday.new(url: 'https://api.themoviedb.org') do |f|
