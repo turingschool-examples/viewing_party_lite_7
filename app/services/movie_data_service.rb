@@ -1,12 +1,12 @@
-class TmbdService
-  
+class MovieDataService
+
   def top_rated_movies
     get_url('/3/movie/top_rated')
   end
-  
+
   def search_movies(search)
     get_url("/3/search/movie?query=#{search}")
-  end 
+  end
 
   def find_movie(id)
     get_url("/3/movie/#{id}")

@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe TmbdService do
+RSpec.describe MovieDataService do
   describe 'Establish connection' do
     it 'can retreive a list of the top 20 movies', :vcr do
-      top_movies = TmbdService.new.top_rated_movies
+      top_movies = MovieDataService.new.top_rated_movies
 
       expect(top_movies).to be_a(Hash)
       expect(top_movies[:results]).to be_an(Array)
@@ -19,7 +19,7 @@ RSpec.describe TmbdService do
 
     it 'can retrieve a list of search results' do
       VCR.use_cassette('search_movies_tremors') do
-        search_movies = TmbdService.new.search_movies('Tremors')
+        search_movies = MovieDataService.new.search_movies('Tremors')
 
         expect(search_movies).to be_a(Hash)
         expect(search_movies[:results]).to be_an(Array)
@@ -36,7 +36,7 @@ RSpec.describe TmbdService do
 
     it 'can retrieve a single movie through its id' do
       VCR.use_cassette('find_movie_by_id_550') do
-        find_movie = TmbdService.new.find_movie(550)
+        find_movie = MovieDataService.new.find_movie(550)
 
         expect(find_movie).to be_a(Hash)
         expect(find_movie[:title]).to be_a(String)
@@ -51,7 +51,7 @@ RSpec.describe TmbdService do
 
     it 'can retrieve all reviews for a movie through its id' do
       VCR.use_cassette('find_reviews_by_id_550') do
-        find_reviews = TmbdService.new.find_reviews(550)
+        find_reviews = MovieDataService.new.find_reviews(550)
 
         expect(find_reviews).to be_a(Hash)
         expect(find_reviews[:results].first[:author]).to be_a(String)
@@ -61,7 +61,7 @@ RSpec.describe TmbdService do
 
     it 'can retrieve all cast members for a movie through its id' do
       VCR.use_cassette('find_cast_by_id_550') do
-        find_cast = TmbdService.new.find_cast(550)
+        find_cast = MovieDataService.new.find_cast(550)
 
         expect(find_cast).to be_a(Hash)
         expect(find_cast[:cast]).to be_an(Array)
