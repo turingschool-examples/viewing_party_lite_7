@@ -1,37 +1,58 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'user story 9' do
   describe 'movie results page' do
-    before :each do
+    before(:each) do
       @user1 = User.create(name: 'Bob', email: 'bob@email.com')
       @user2 = User.create(name: 'Sally', email: 'sally@email.com')
-
-      
-      visit "/users/#{@user1.id}/movie"
-    end
-    
-    it 'displays movie title' do
-      json_response = File.read('spec/fixtures/top_movies.json')
-      stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV['TMDB_KEY']}")
-        .to_return(status: 200, body: json_response)
-        # require 'pry'; binding.pry
-
-      @movie_detail = MovieDetail.new(JSON.parse(json_response, symbolize_names: true)[:results].first)
-      
-      expect(current_path).to eq("/users/#{@user1.id}/movie")
-      expect(page).to have_content(@movie_detail.title)
-     
     end
 
-    it 'displays vote average' do
-      json_response = File.read('spec/fixtures/top_movies.json')
-      stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV['TMDB_KEY']}")
-        .to_return(status: 200, body: json_response)
+    it 'displays top 20 movie titles', :vcr do
+      visit user_movie_index_path(@user1)
+      save_and_open_page
+      within '#movie-1' do
+        expect(page).to have_content('The Godfather')
+      end
 
-      @movie_detail = MovieDetail.new(JSON.parse(json_response, symbolize_names: true)[:results].first)
+      within "#movie-20" do
+        expect(page).to have_content('GoodFellas')
+      end
 
-      expect(current_path).to eq("/users/#{@user1.id}/movie")
-      expect(page).to have_content(@movie_detail.vote_average)
+      within "#movie-17" do
+        expect(page).to have_content('The Lord of the Rings: The Return of the King')
+      end
+    end
+
+    it 'displays vote average of top 20 movies', :vcr do
+      visit user_movie_index_path(@user1)
+
+      within '#movie-1' do
+        expect(page).to have_content(8.7)
+      end
+
+      within '#movie-20' do
+        expect(page).to have_content(8.5)
+      end
+
+      within '#movie-17' do
+        expect(page).to have_content(8.5)
+      end
+    end
+
+    it 'has movie title as a link' do
+      
+    end
+
+    it 'has button to return to discover page', :vcr do
+      visit user_movie_index_path(@user1)
+
+      within '#discover-button' do
+        expect(page).to have_button('Back to Discover')
+        click_button 'Back to Discover'
+      end
+      expect(current_path).to eq(user_discover_index_path(@user1))
     end
   end
 end
