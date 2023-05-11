@@ -2,7 +2,7 @@
   <%= button_to "Back", user_discover_path(@user), method: :get %>
 <ul>
   <% @movies.each do |movie| %>
-    <li>Movie Title: <%= movie.title %></li>
+    <li>Movie Title: <%= link_to "#{movie.title}", user_movie_path(@user, movie.id) %></li>
     <li>Rating: <%= movie.rating %></li> <br>
   <% end %>
 </ul>
