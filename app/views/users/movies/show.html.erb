@@ -9,7 +9,7 @@
 <div id="movie-info">
   <p><b>Vote: <%=@facade.specific_movie.vote_average%></p>
   <p>Runtime: <%=@facade.specific_movie.runtime/60%> hour(s) and <%=@facade.specific_movie.runtime%60%> minutes</p>
-  <p>Genre(s): <%=@facade.specific_movie.genres.each do |genre| %>
+  <p>Genre(s): <%@facade.specific_movie.genres.each do |genre| %>
             <%=genre[:name]%>
             <%end%>
   </p></b>
