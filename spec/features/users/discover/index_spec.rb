@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Discover Index Page' do
-  describe 'As a registered user' do
+  describe 'As a registered user', :vcr do
     it 'I visit the discover index page' do
       visit user_dashboard_discover_index_path(@user1)
 
