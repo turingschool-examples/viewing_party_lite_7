@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&query=query
+    uri: https://api.themoviedb.org/3/search/movie?language=en-US&query=query
     body:
       encoding: US-ASCII
       string: ''
@@ -27,36 +27,34 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Wed, 10 May 2023 19:06:26 GMT
+      - Thu, 11 May 2023 00:04:06 GMT
       Server:
       - openresty
       Cache-Control:
-      - public, max-age=26785
+      - public, max-age=23991
       X-Memc:
-      - HIT
+      - MISS, STORE
       X-Memc-Key:
-      - f56112a99296263f6091efc3dbd3424a
+      - '09949b3dca2fa5036a98f7324cb7c469'
       X-Memc-Age:
-      - '2452'
+      - '0'
       X-Memc-Expires:
-      - '19944'
+      - '23991'
       Etag:
       - W/"4cc09965564d9d1b186a5e5b2744a9fa"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
-      - Hit from cloudfront
+      - Miss from cloudfront
       Via:
-      - 1.1 e62d5638b40841e7b8480ae5876ef040.cloudfront.net (CloudFront)
+      - 1.1 a1fb8be6c85edc28c20536da81db5204.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P1
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 1jCUZOoNzwwi-gXPHPV42fjXnZmqh58FkMPIp-Rt2Tfa8KmuzyEHhw==
-      Age:
-      - '12890'
+      - bh_iWtkPT3JbjAunqXi4AAdbdCnPqEAixlXJvCxNkmRWejgI5IOuoQ==
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/5SwoNJ5o2dEOdABCHdqM4siMhqt.jpg","genre_ids":[35,18],"id":701189,"original_language":"en","original_title":"Query","overview":"A
@@ -70,5 +68,5 @@ http_interactions:
         of a murder charge. His death sentence is commuted to a long prison term.
         When released as an old man, he vows to find the real killer.","popularity":1.021,"poster_path":"/fl13KK3qG1ReCChHCU2qyai8oij.jpg","release_date":"1945-10-21","title":"Murder
         in Reverse?","video":false,"vote_average":6.0,"vote_count":2}],"total_pages":1,"total_results":3}'
-  recorded_at: Wed, 10 May 2023 22:41:16 GMT
+  recorded_at: Thu, 11 May 2023 00:04:06 GMT
 recorded_with: VCR 6.1.0

@@ -4,7 +4,7 @@ RSpec.describe "Movies Discover page" do
   before(:each) do
     test_data
   end
-  describe "As a user, when I visit the '/users/:id/discover' path" do
+  describe "As a user, when I visit the movies discover page" do
     it "has a button to discover top rated movies", :vcr do
       visit "/users/#{@user_1.id}/discover"
 
