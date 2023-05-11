@@ -1,4 +1,4 @@
 <h3><%= @user.name %>'s Dashboard</h3>
-<% form_with url: discover_movies_path, method: :get , local: true do |form| %>
+<%= form_with url: user_dashboard_discover_index_path(@user), method: :get , local: true do |form| %>
   <%= form.submit 'Discover Movies' %>
 <% end %>

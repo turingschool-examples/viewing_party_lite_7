@@ -1,0 +1,10 @@
+<%= link_to "Discover Movies", user_dashboard_discover_index_path(@user) %>
+<% if @is_top_rated %>
+  <h3>Top Rated Movies</h3>
+  <% else %>
+    <h3><%= @search %></h3>
+    <% end %>
+<% @movies.each do |movie| %>
+  <p><%= movie.title %>
+  Vote Average: <%= movie.rating %></p>
+  <% end %>
