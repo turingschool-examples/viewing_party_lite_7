@@ -69,5 +69,13 @@ RSpec.describe "Movies Results page" do
         expect(page).to have_content("The Godfather Part II")
       end
     end
+
+    it "displays a message if there are no movie search results" do
+      visit "/users/#{@user_1.id}/movies"
+
+      within("#results") do 
+        expect(page).to have_content("No results.")
+      end
+    end
   end
 end
