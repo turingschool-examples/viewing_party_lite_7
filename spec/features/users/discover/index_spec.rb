@@ -36,4 +36,13 @@ describe 'user discover page' do
     expect(current_path).to eq(user_movies_path(@user1))
     expect(page).to have_content('God', count: 20)
   end
+
+  it 'provides flash error and redirects to same page if input is less than 1 charater', :vcr do
+    visit user_discover_index_path(@user1)
+
+    fill_in 'title', with: ''
+    click_button('Search')
+    expect(current_path).to eq(user_discover_index_path(@user1))
+    expect(page).to have_content('Error: Input must be at least 1 charachter')
+  end
 end
