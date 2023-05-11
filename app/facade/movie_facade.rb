@@ -11,4 +11,26 @@ class MovieFacade
       Movie.new(movie)
     end
   end
+
+  def self.find_by_id(id)
+    MovieService.find_by_id(id)
+  end
+
+  def self.movie_details(id)
+    Movie.new(find_by_id(id))
+  end
+
+  def self.reviews(id)
+    reviews = MovieService.reviews(id)[:results]
+    reviews.map do |review|
+      Review.new(review)
+    end[0..9]
+  end
+
+  def self.cast(id)
+    cast = MovieService.cast(id)[:cast]
+    cast.map do |actor|
+      Cast.new(actor)
+    end[0..9]
+  end
 end
