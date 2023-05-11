@@ -1,58 +1,88 @@
 class MovieFacade
-
-  def top_rated_movies
-    movies = TmbdService.new.top_rated_movies
-    create_movies(movies)
+  def initialize(id)
+    @id = id
   end
 
-  def search_movies(search)
-    movies = TmbdService.new.search_movies(search)
-    create_movies(movies)
+  def movie
+    @_movie ||= Movie.new(format_movie_data)
   end
 
-  def all_movie_data(id)
-    movie = find_movie(id)
-    reviews = find_reviews(id)[:results]
-    cast = find_cast(id)[:cast][0..9]
-    combine_data(movie, reviews, cast)
-  end
-
-  
-  private
-  def find_movie(id)
-    movie = TmbdService.new.find_movie(id)
-  end
-
-  def find_reviews(id)
-    reviews = TmbdService.new.find_reviews(id)
-  end
-
-  def find_cast(id)
-    cast = TmbdService.new.find_cast(id)
-  end
-
-  def create_movies(movies)
-    movies[:results].map do |movie_data|
-      Movie.new(movie_data)
+  def reviews
+    @_reviews ||= reviews_data.map do |review|
+      Review.new(review)
     end
   end
 
-  def create_movie(data)
-    Movie.new(data)
+  def cast
+    @_cast ||= cast_data.map do |cast_member|
+      CastMember.new(cast_member)
+    end
   end
 
-  def combine_data(movie, reviews, cast)
-    movie_data = {
-      id: movie[:id],
-      title: movie[:title],
-      vote_average: movie[:vote_average],
-      runtime: movie[:runtime],
-      genres: movie[:genres].map {|genre| genre[:name]},
-      summary: movie[:overview],
-      poster: 'https://image.tmdb.org/t/p/original' + movie[:poster_path],
-      reviews: reviews,
-      cast: cast
-    }
-    create_movie(movie_data)
+  def movie_id
+    movie.id
   end
+
+  def movie_title
+    movie.title
+  end
+
+  def movie_vote_average
+    movie.vote_average
+  end
+
+  def movie_runtime
+    movie.runtime
+  end
+
+  def movie_genres
+    movie.genres
+  end
+
+  def movie_summary
+    movie.summary
+  end
+
+  def movie_poster
+    movie.poster
+  end
+
+  private
+    def service
+      @_service ||= MovieDataService.new
+    end
+
+    def movie_data
+      @_movie_data ||= service.find_movie(@id)
+    end
+
+    def format_movie_data
+      movie = movie_data
+
+      data = {
+        id: movie[:id],
+        title: movie[:title],
+        vote_average: movie[:vote_average],
+        runtime: movie[:runtime],
+        genres: get_genres(movie[:genres]),
+        summary: movie[:overview],
+        poster: create_url(movie[:poster_path])
+      }
+    end
+
+    def reviews_data
+      @_reviews_data ||= service.find_reviews(@id)[:results]
+    end
+
+    def cast_data
+      @_cast_data ||= service.find_cast(@id)[:cast][0..9]
+    end
+
+    def get_genres(genres)
+      genres.map {|genre| genre[:name]}
+    end
+
+    def create_url(path)
+      'https://image.tmdb.org/t/p/original' + path
+    end
 end
