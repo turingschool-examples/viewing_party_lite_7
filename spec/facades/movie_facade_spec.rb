@@ -27,4 +27,10 @@ RSpec.describe MovieFacade do
       expect(movies.count <= 20).to be true
     end
   end
+  describe "find_movie" do
+    it "returns the movie with given id", :vcr do
+      movie = @mf.find_movie(550)
+      expect(movie).to be_a Movie
+    end
+  end
 end
