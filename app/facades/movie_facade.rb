@@ -15,8 +15,14 @@ class MovieFacade
     end
   end
 
+  def find_movie(movie_id)
+    result = service.find_movie(movie_id)
+    MovieDetailed.new(result)
+  end
+
   private
+
   def service
-    MovieService.new
+    @service ||= MovieService.new
   end
 end
