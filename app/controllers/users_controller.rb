@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to user_dashboard_path(@user)
     else
-      flash[:alert] = "Please fill in all fields, email must be unique"
+      flash[:alert] = 'Please fill in all fields, email must be unique'
       redirect_to new_user_path
     end
   end

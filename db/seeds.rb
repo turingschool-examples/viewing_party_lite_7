@@ -16,6 +16,7 @@
 @viewing_party3 = ViewingParty.create!(movie_id: 13, duration: 120, date: '2023-10-01',
                                        start_time: '2023-10-01 19:00:00 UTC')
 
-@user_viewing_party1 = UserViewingParty.create!(user_id: @user1.id, viewing_party_id: @viewing_party1.id, is_host: false)
+@user_viewing_party1 = UserViewingParty.create!(user_id: @user1.id, viewing_party_id: @viewing_party1.id,
+                                                is_host: false)
 @user_viewing_party2 = UserViewingParty.create!(user_id: @user1.id, viewing_party_id: @viewing_party2.id, is_host: true)
 @user_viewing_party3 = UserViewingParty.create!(user_id: @user2.id, viewing_party_id: @viewing_party3.id, is_host: true)
