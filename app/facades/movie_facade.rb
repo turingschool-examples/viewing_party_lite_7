@@ -1,16 +1,16 @@
 class MovieFacade
 
-  def self.top_rated_movies
-    movies = TmbdService.top_rated_movies
+  def top_rated_movies
+    movies = TmbdService.new.top_rated_movies
     create_movies(movies)
   end
 
-  def self.search_movies(search)
-    movies = TmbdService.search_movies(search)
+  def search_movies(search)
+    movies = TmbdService.new.search_movies(search)
     create_movies(movies)
   end
 
-  def self.all_movie_data(id)
+  def all_movie_data(id)
     movie = find_movie(id)
     reviews = find_reviews(id)[:results]
     cast = find_cast(id)[:cast][0..9]
@@ -19,29 +19,29 @@ class MovieFacade
 
   
   private
-  def self.find_movie(id)
-    movie = TmbdService.find_movie(id)
+  def find_movie(id)
+    movie = TmbdService.new.find_movie(id)
   end
 
-  def self.find_reviews(id)
-    reviews = TmbdService.find_reviews(id)
+  def find_reviews(id)
+    reviews = TmbdService.new.find_reviews(id)
   end
 
-  def self.find_cast(id)
-    cast = TmbdService.find_cast(id)
+  def find_cast(id)
+    cast = TmbdService.new.find_cast(id)
   end
 
-  def self.create_movies(movies)
+  def create_movies(movies)
     movies[:results].map do |movie_data|
       Movie.new(movie_data)
     end
   end
 
-  def self.create_movie(data)
+  def create_movie(data)
     Movie.new(data)
   end
 
-  def self.combine_data(movie, reviews, cast)
+  def combine_data(movie, reviews, cast)
     movie_data = {
       id: movie[:id],
       title: movie[:title],

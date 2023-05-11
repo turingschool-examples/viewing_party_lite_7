@@ -5,7 +5,7 @@ RSpec.describe MovieFacade do
     it 'returns an array of the top movies in movie objects' do
       VCR.use_cassette('TmbdService/Establish_connection/can_retreive_a_list_of_the_top_20_movies') do
 
-        top_movies = MovieFacade.top_rated_movies
+        top_movies = MovieFacade.new.top_rated_movies
         expect(top_movies).to be_an(Array)
         expect(top_movies.first).to be_a(Movie)
         expect(top_movies.count).to eq(20)
@@ -17,7 +17,7 @@ RSpec.describe MovieFacade do
     it 'returns an array of movies searched with a specific keyword' do
       VCR.use_cassette('search_movies_tremors') do
         
-        search_movies = MovieFacade.search_movies('Tremors')
+        search_movies = MovieFacade.new.search_movies('Tremors')
         expect(search_movies).to be_an(Array)
         expect(search_movies.first).to be_a(Movie)
         expect(search_movies.count).to eq(20)
@@ -27,7 +27,7 @@ RSpec.describe MovieFacade do
     describe '#all_movie_data' do
       it 'returns an object that stores all movie data needed for show page' do
         VCR.use_cassette('all_movie_data_by_id_550') do
-          movie = MovieFacade.all_movie_data(550)
+          movie = MovieFacade.new.all_movie_data(550)
 
           expect(movie).to be_a(Movie)
           expect(movie.id).to be_a(Integer)

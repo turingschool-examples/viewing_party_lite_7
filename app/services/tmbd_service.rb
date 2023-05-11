@@ -1,33 +1,33 @@
 class TmbdService
   
-  def self.top_rated_movies
+  def top_rated_movies
     get_url('/3/movie/top_rated')
   end
   
-  def self.search_movies(search)
+  def search_movies(search)
     get_url("/3/search/movie?query=#{search}")
   end 
 
-  def self.find_movie(id)
+  def find_movie(id)
     get_url("/3/movie/#{id}")
   end
 
-  def self.find_reviews(id)
+  def find_reviews(id)
     get_url("/3/movie/#{id}/reviews")
   end
 
-  def self.find_cast(id)
+  def find_cast(id)
     get_url("/3/movie/#{id}/credits")
   end
 
 
-  def self.conn
+  def conn
     Faraday.new(url: 'https://api.themoviedb.org') do |f|
       f.params['api_key'] = ENV['TMBD_API_KEY']
     end
   end
 
-  def self.get_url(url)
+  def get_url(url)
     response = conn.get(url)
     JSON.parse(response.body, symbolize_names: true)
   end

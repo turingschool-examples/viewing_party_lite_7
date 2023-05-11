@@ -9,7 +9,7 @@ RSpec.describe '/users/:id/movies#index' do
     describe 'And they click on Discover Top Rated Movies' do
       it 'They are taken to the user movies index page where a list of the top movies is rendered' do
         VCR.use_cassette('top_20_movies', allow_playback_repeats: true) do
-          top_movies = MovieFacade.top_rated_movies
+          top_movies = MovieFacade.new.top_rated_movies
 
           visit user_discover_path(@user1)
           click_button ('Discover Top Rated Movies')
@@ -31,7 +31,7 @@ RSpec.describe '/users/:id/movies#index' do
       it 'Each movie name listed is a link to their show page' do
         VCR.use_cassette('this_should_work', allow_playback_repeats: true) do
             
-          top_movies = MovieFacade.top_rated_movies
+          top_movies = MovieFacade.new.top_rated_movies
           first_movie = top_movies.first
           
           visit user_discover_path(@user1)
@@ -48,7 +48,7 @@ RSpec.describe '/users/:id/movies#index' do
     describe 'When they fill in the search field and click search' do
       it 'They are taken to the movie index page where the 20 results for their search are listed' do
         VCR.use_cassette('search_movies_tremors', allow_playback_repeats: true) do
-          search_movies = MovieFacade.search_movies('Tremors')
+          search_movies = MovieFacade.new.search_movies('Tremors')
           visit user_discover_path(@user1)
 
           fill_in :q, with: 'Tremors'
@@ -71,10 +71,10 @@ RSpec.describe '/users/:id/movies#index' do
       it 'Each movie name listed in the search results is a link to their show page' do
         VCR.use_cassette('does_this_work', allow_playback_repeats: true) do
           
-          search_movies = MovieFacade.search_movies('Tremors')
+          search_movies = MovieFacade.new.search_movies('Tremors')
           first_movie = search_movies.first
           
-          search_movies = MovieFacade.search_movies('Tremors')
+          search_movies = MovieFacade.new.search_movies('Tremors')
           visit user_discover_path(@user1)
           
           fill_in :q, with: 'Tremors'
