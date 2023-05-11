@@ -8,6 +8,10 @@ RSpec.describe "Movie Show Page" do
   describe "When I visit a movie's show page" do
     it "I see a button to create a viewing party" do
       expect(page).to have_button("Create a Viewing Party")
+
+      click_button("Create a Viewing Party")
+
+      expect(current_path).to eq(new_user_movie_viewing_party_path(@user, 5))
     end
 
     it "I see a button to return to the Discover Page" do
