@@ -42,4 +42,11 @@ class MovieFacade
     end
     cast
   end
+
+  def all_reviews(movie_id)
+    data = MovieService.new.reviews(movie_id)
+    reviews = data[:results].map do |results|
+      Review.new(results)
+    end
+  end
 end
