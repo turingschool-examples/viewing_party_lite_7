@@ -8,6 +8,10 @@ class TmbdService
     get_url("/3/search/movie?query=#{search}")
   end 
 
+  def self.find_movie(id)
+    get_url("/3/movie/#{id}")
+  end
+
   def self.conn
     Faraday.new(url: 'https://api.themoviedb.org') do |f|
       f.params['api_key'] = ENV['tmbd_key']

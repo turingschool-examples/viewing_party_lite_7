@@ -33,5 +33,18 @@ RSpec.describe TmbdService do
       expect(movie).to have_key(:vote_average)
       end
     end
+
+    it 'can retrieve a single movie through its id' do
+      VCR.use_cassette('find_movie_by_id_550') do
+        find_movie = TmbdService.find_movie(550)
+
+        expect(find_movie).to be_a(Hash)
+        expect(find_movie[:title]).to be_a(String)
+        expect(find_movie[:vote_average]).to be_a(Float)
+        expect(find_movie[:runtime]).to be_an(Integer)
+        expect(find_movie[:genres]).to be_an(Array)
+        expect(find_movie[:overview]).to be_an(String)
+      end
+    end
   end
 end
