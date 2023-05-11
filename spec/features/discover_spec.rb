@@ -18,17 +18,15 @@ RSpec.feature "Discover page" do
     VCR.use_cassette('discover_top_movies') do
       click_button "Discover Top Rated Movies"
     end
-  
     expect(current_path).to eq(movies_path(user))
   end
-  
+
   scenario "User enters keywords and clicks on Search by Movie Title button" do
-    VCR.use_cassette('search_movie_title') do
+    VCR.use_cassette('movie_search') do
       fill_in "query", with: "Star Wars"
       click_button "Search by Movie Title"
     end
   
     expect(current_path).to eq(movies_path(user))
   end
-  
 end
