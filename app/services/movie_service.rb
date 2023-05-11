@@ -10,9 +10,8 @@ class MovieService
         rating: movie_data[:vote_average]
       }
     end
-
   end
- 
+
   def search_movies(query)
     response = conn.get("search/movie?query=#{query}") do |req|
       req.headers['Authorization'] = "Bearer #{ENV['MOVIES_API_READ_ACCESS_TOKEN']}"
@@ -25,7 +24,6 @@ class MovieService
       }
     end
   end
-
 
   def conn
     Faraday.new(url: 'https://api.themoviedb.org/3', headers: { 'Content-Type' => 'application/json' })

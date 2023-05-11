@@ -1,8 +1,8 @@
-require './app/poros/movie.rb'
+require './app/poros/movie'
 require 'faraday'
 
 class MovieFactory
-  def service 
+  def service
     MovieService.new
   end
 
