@@ -1,11 +1,7 @@
 class Movie
   attr_reader :id,
               :title,
-              :vote_average,
-              :image,
-              :genre,
-              :runtime,
-              :summary
+              :vote_average
 
   def initialize(data)
     @id = data[:id]
