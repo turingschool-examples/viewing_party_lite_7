@@ -45,8 +45,12 @@ class MovieFacade
 
   def all_reviews(movie_id)
     data = MovieService.new.reviews(movie_id)
-    reviews = data[:results].map do |results|
+    @reviews = data[:results].map do |results|
       Review.new(results)
     end
+  end
+
+  def review_count(movie_id)
+    all_reviews(movie_id).count
   end
 end
