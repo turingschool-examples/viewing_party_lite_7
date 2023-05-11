@@ -25,36 +25,36 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 11 May 2023 20:05:51 GMT
+      - Thu, 11 May 2023 17:24:41 GMT
       Server:
       - openresty
       Cache-Control:
-      - public, max-age=26004
+      - public, max-age=26381
       X-Memc:
       - HIT
       X-Memc-Key:
       - 9d48db5c244b9c3e3d162ef155211175
       X-Memc-Age:
-      - '8083'
+      - '21430'
       X-Memc-Expires:
-      - '17443'
+      - '1553'
       Etag:
-      - W/"e329ae09382fbfa15066511879a57083"
+      - W/"3f47f2affad848359707d4e1dd4a1a3d"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 9204cf44179493ed42c678800a26918a.cloudfront.net (CloudFront)
+      - 1.1 48a6ccbb0ddb052ab512a3422295bd38.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 33h3fL9gX_XFKr9U3xqesyUd30hcks8FEtI8b59yZCNZDCevhR_Qvg==
+      - Yp3dt5bjHVwZ1je69BRJHZhjeRIs8xqs4qGf7nUmhB2SS1ZuRgKyVw==
       Age:
-      - '544'
+      - '13170'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
@@ -66,6 +66,6 @@ http_interactions:
         of bloody revenge.","popularity":95.565,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
         Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.713,"vote_count":17885}'
-  recorded_at: Thu, 11 May 2023 20:14:55 GMT
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.712,"vote_count":17883}'
+  recorded_at: Thu, 11 May 2023 21:04:11 GMT
 recorded_with: VCR 6.1.0
