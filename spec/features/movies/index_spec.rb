@@ -6,9 +6,6 @@ RSpec.describe "Movies Results page" do
     test_movie
   end
   describe "As a user, when I visit the movie results page from the discover movies page" do
-    before(:each) do
-      @movie = Movie.new(@data)
-    end
     it "displays the movie title as a link to the movie details page", :vcr do
       visit "/users/#{@user_1.id}/discover"
 
