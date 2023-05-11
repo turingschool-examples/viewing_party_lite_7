@@ -22,5 +22,6 @@ RSpec.describe Movie do
     expect(lockstock.genres).to eq(["Comedy", "Crime"])
     expect(lockstock.summary).to eq("A card shark and his unwillingly-enlisted friends")
     expect(lockstock.poster).to eq("/qVdEeQrDSIoYzQq1J3s2dDFtQr.jpg")
+
   end
 end
