@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   
   def show 
     @user = User.find(params[:id])
-    @parties = ViewingParty.all
+    @parties = @user.viewing_parties
   end
   
   def new
