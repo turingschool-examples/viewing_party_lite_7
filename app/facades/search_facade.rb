@@ -4,7 +4,7 @@ class SearchFacade
   def initialize(params)
     @type = params[:type]
     @movie_id = params[:id]
-    @title = params[:movie]
+    @title = params[:title]
   end
 
   def movies
