@@ -24,4 +24,33 @@ RSpec.describe MovieService, :vcr do
       end
     end
   end
+
+  describe 'find_movie' do
+    it 'returns a movie by id' do
+      fight_club = @movie_service.find_movie(550)
+
+      expect(fight_club).to be_a(Hash)
+
+      expect(fight_club).to have_key :id
+      expect(fight_club[:id]).to eq(550)
+
+      expect(fight_club).to have_key :title
+      expect(fight_club[:title]).to be_a String
+
+      expect(fight_club).to have_key :vote_average
+      expect(fight_club[:vote_average]).to be_a Float
+
+      expect(fight_club).to have_key :poster_path
+      expect(fight_club[:poster_path]).to be_a String
+
+      expect(fight_club).to have_key :genres
+      expect(fight_club[:genres]).to be_an Array
+
+      expect(fight_club).to have_key :runtime
+      expect(fight_club[:runtime]).to be_an Integer
+
+      expect(fight_club).to have_key :overview
+      expect(fight_club[:overview]).to be_a String
+    end
+  end
 end
