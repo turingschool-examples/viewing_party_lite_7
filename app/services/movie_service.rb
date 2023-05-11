@@ -17,4 +17,16 @@ class MovieService
   def self.movie_search(query)
     get_url("https://api.themoviedb.org/3/search/movie?query=#{query}")
   end
+
+  def self.find_by_id(id)
+    get_url("https://api.themoviedb.org/3/movie/#{id}")
+  end
+
+  def self.reviews(movie_id)
+    get_url("https://api.themoviedb.org/3/movie/#{movie_id}/reviews")
+  end
+
+  def self.cast(movie_id)
+    get_url("https://api.themoviedb.org/3/movie/#{movie_id}/credits")
+  end
 end

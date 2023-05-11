@@ -4,6 +4,7 @@ require './app/poros/movie.rb'
 RSpec.describe Movie do
   before(:all) do
     data = {
+      id: 1,
       title: "Frozen",
       vote_average: 4,
       runtime: 55,
@@ -19,6 +20,7 @@ RSpec.describe Movie do
     end
 
     it 'initializes with attributes' do
+      expect(@movie.id).to eq(1)
       expect(@movie.title).to eq('Frozen')
       expect(@movie.rating).to eq(4)
       expect(@movie.runtime).to eq(55)
