@@ -19,18 +19,22 @@ RSpec.describe '/users/:id/discover', type: :feature do
 
   describe 'When a user clicks on the Discover Top Rated Movies button' do
     it 'They are taken to the movies results page' do
-      click_button('Discover Top Rated Movies')
-      expect(current_path).to eq(user_movies_path(@user1))
+      VCR.use_cassette('top_20_movies', allow_playback_repeats: true) do
+        click_button('Discover Top Rated Movies')
+        expect(current_path).to eq(user_movies_path(@user1))
+      end
     end
   end
 
   describe 'When a user clicks on the the search button (after a keyword has been input)' do
     it 'They are taken to the movies results page' do
-      fill_in :q, with: 'Tremors'
-      
-      click_button('Search')
-
-      expect(current_path).to eq(user_movies_path(@user1))
+      VCR.use_cassette('search_movies_tremors', allow_playback_repeats: true) do
+        fill_in :q, with: 'Tremors'
+        
+        click_button('Search')
+        
+        expect(current_path).to eq(user_movies_path(@user1))
+      end
     end
   end
 end
