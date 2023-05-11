@@ -29,19 +29,17 @@ RSpec.describe '/users/:id/movies#index' do
       end
 
       it 'Each movie name listed is a link to their show page' do
-        VCR.use_cassette('top_20_movies', allow_playback_repeats: true) do
-          VCR.use_cassette('first_movie_from_top_20', allow_playback_repeats: true) do
+        VCR.use_cassette('this_should_work', allow_playback_repeats: true) do
             
-            top_movies = MovieFacade.top_rated_movies
-            first_movie = top_movies.first
-            
-            visit user_discover_path(@user1)
-            click_button ('Discover Top Rated Movies')
-            
-            within "#movie_#{first_movie.id}" do
-              click_link(first_movie.title)
-              expect(current_path).to eq(user_movie_path(@user1, first_movie.id))
-            end
+          top_movies = MovieFacade.top_rated_movies
+          first_movie = top_movies.first
+          
+          visit user_discover_path(@user1)
+          click_button ('Discover Top Rated Movies')
+          
+          within "#movie_#{first_movie.id}" do
+            click_link(first_movie.title)
+            expect(current_path).to eq(user_movie_path(@user1, first_movie.id))
           end
         end
       end
@@ -71,21 +69,20 @@ RSpec.describe '/users/:id/movies#index' do
       end
 
       it 'Each movie name listed in the search results is a link to their show page' do
-        VCR.use_cassette('search_movies_tremors', allow_playback_repeats: true) do
-          VCR.use_cassette('first_movie_from_search', allow_playback_repeats: true) do
-            search_movies = MovieFacade.search_movies('Tremors')
-            first_movie = search_movies.first
-            
-            search_movies = MovieFacade.search_movies('Tremors')
-            visit user_discover_path(@user1)
-            
-            fill_in :q, with: 'Tremors'
-            click_button ('Search')
-            
-            within "#movie_#{first_movie.id}" do
-              click_link(first_movie.title)
-              expect(current_path).to eq(user_movie_path(@user1, first_movie.id))
-            end
+        VCR.use_cassette('does_this_work', allow_playback_repeats: true) do
+          
+          search_movies = MovieFacade.search_movies('Tremors')
+          first_movie = search_movies.first
+          
+          search_movies = MovieFacade.search_movies('Tremors')
+          visit user_discover_path(@user1)
+          
+          fill_in :q, with: 'Tremors'
+          click_button ('Search')
+          
+          within "#movie_#{first_movie.id}" do
+            click_link(first_movie.title)
+            expect(current_path).to eq(user_movie_path(@user1, first_movie.id))
           end
         end
       end

@@ -7,8 +7,8 @@ RSpec.describe '/users/:id/movies/:id', type: :feature do
 
   describe 'When a user clicks on a movie link they are taken to that movies show page' do
     it 'They see a button to create a viewing party and a button to go back to discover page' do
-      VCR.use_cassette('find_movie_by_id_550', allow_playback_repeats: true) do
-        movie = MovieFacade.find_movie(550)
+      VCR.use_cassette('all_movie_data_550', allow_playback_repeats: true) do
+        movie = MovieFacade.all_movie_data(550)
         visit user_movie_path(@user1, movie.id)
 
         expect(page).to have_button('Discover Page')
@@ -18,8 +18,8 @@ RSpec.describe '/users/:id/movies/:id', type: :feature do
 
     describe 'They see all the movie details' do
       xit 'title, average, runtime, genre(s), summary' do
-        VCR.use_cassette('find_movie_by_id_550', allow_playback_repeats: true) do
-          movie = MovieFacade.find_movie(550)
+        VCR.use_cassette('all_movie_data_550', allow_playback_repeats: true) do
+          movie = MovieFacade.all_movie_data(550)
           visit user_movie_path(@user1, movie.id)
   
           expect(page).to have_content(movie.title)
