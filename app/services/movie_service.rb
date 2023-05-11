@@ -10,6 +10,7 @@ class MovieService
   private
 
   def self.conn
+    #require 'pry'; binding.pry
     Faraday.new(url: 'https://api.themoviedb.org/3/') do |f|
       f.params['api_key'] = ENV['TMDB_KEY']
     end
