@@ -1,15 +1,17 @@
 class Movie 
-  attr_reader :title,
+  attr_reader :id,
+              :title,
               :rating,
               :runtime,
               :genres,
               :summary
 
   def initialize(data)
+    @id = data[:id]
     @title = data[:title].to_s
     @rating = data[:vote_average]
     @runtime = data[:runtime]
-    @genres = data[:genres].to_s
+    @genres = data[:genres]
     @summary = data[:overview].to_s
   end
 end
