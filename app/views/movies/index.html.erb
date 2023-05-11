@@ -7,8 +7,9 @@
 <table>
   <tr><th>Title</th><th>Rating</th>
   <% @movies.each do |movie| %>
+
     <tr>
-      <td><%= movie.title %></td>
+      <td><%= link_to "#{movie.title}", user_dashboard_movie_path(@user, movie) %></td>
       <td><%= movie.rating %></td>
     </tr>
   <% end %>

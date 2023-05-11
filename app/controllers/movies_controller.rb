@@ -9,4 +9,8 @@ class MoviesController < ApplicationController
       @search = params[:q]
     end
   end
+
+  def show
+
+  end
 end
