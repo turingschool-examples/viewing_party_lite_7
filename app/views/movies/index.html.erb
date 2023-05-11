@@ -1,6 +1,6 @@
 <h1><%= @user.name %>'s Movies</h1>
 
-<% @movies.each do |movie| %>
+<% @facade.movies.each do |movie| %>
   <h2><%= link_to movie.title, movie_path(@user, movie) %></h2>
   <p>Vote Average: <%= movie.vote_average %></p>
 <% end %>
