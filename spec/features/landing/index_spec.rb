@@ -16,9 +16,9 @@ RSpec.describe 'landing page', type: :feature do
 
     it 'when I visit the root path I should see a button to create a new user' do
       within('#new-user') do
-        expect(page).to have_button('Create User')
+        expect(page).to have_link('Create User')
 
-        click_button('Create User')
+        click_link('Create User')
 
         expect(current_path).to eq(register_path)
       end
