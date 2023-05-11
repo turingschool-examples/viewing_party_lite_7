@@ -18,6 +18,10 @@ class MovieService
     get_url("https://api.themoviedb.org/3/movie/#{id}/credits?language=en-US")
   end
 
+  def reviews(id)
+    get_url("https://api.themoviedb.org/3/movie/#{id}/reviews?language=en-US")
+  end
+
   def get_url(url)
     response = Faraday.new(url:).get do |faraday|
       faraday.headers["Authorization"] = ENV['MOVIEDB_AUTHORIZATION_TOKEN']
