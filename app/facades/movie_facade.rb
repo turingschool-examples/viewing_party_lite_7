@@ -1,5 +1,4 @@
 require './app/poros/movie'
-require 'faraday'
 
 class MovieFacade
   def movies(movies_data)
