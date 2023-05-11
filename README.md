@@ -1,7 +1,7 @@
 
 # Viewing Party
 
-![Project Image](project-image-url)
+![Project Image](https://static.wikia.nocookie.net/theoffice/images/c/c0/Viewing_Party.jpg/revision/latest?cb=20110611145246)
 This is the first paired project used for Turing's Backend Module 3.
 ---
 
@@ -10,7 +10,6 @@ You're sections headers will be used to reference location of destination.
 
 - [Description](#description)
 - [How To Use](#how-to-use)
-- [References](#references)
 - [Author Info](#author-info)
 
 ---
@@ -39,13 +38,9 @@ Viewing Party Lite is an application in which users can explore movie options an
 
 ---
 
-## References
-[Back To The Top](#read-me-template)
-
----
-
 ## Author Info
 
-
+- Stephen McPhee [linkedin](https://www.linkedin.com/in/smcphee19) [github](https://github.com/SMcPhee19)
+- Crow Rising [linkedin](https://www.linkedin.com/in/crowrising/) [github](https://github.com/CrowRising)
 
 [Back To The Top](#read-me-template)
