@@ -4,6 +4,8 @@
       "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/config/environment.rb": {
         "lines": [
           null,
+          null,
+          null,
           1,
           null,
           null,
@@ -12,6 +14,8 @@
       },
       "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/config/application.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -53,6 +57,8 @@
       },
       "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/config/boot.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -61,6 +67,8 @@
       },
       "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/config/environments/test.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           null,
@@ -128,6 +136,8 @@
           null,
           null,
           null,
+          null,
+          null,
           1,
           null,
           null,
@@ -165,11 +175,14 @@
           null,
           null,
           null,
+          null,
           null
         ]
       },
       "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/config/initializers/filter_parameter_logging.rb": {
         "lines": [
+          null,
+          null,
           null,
           null,
           null,
@@ -182,6 +195,7 @@
       },
       "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/config/initializers/inflections.rb": {
         "lines": [
+          null,
           null,
           null,
           null,
@@ -212,11 +226,14 @@
           null,
           null,
           null,
+          null,
           null
         ]
       },
       "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/config/routes.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null,
@@ -234,32 +251,90 @@
       },
       "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/helpers/application_helper.rb": {
         "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
       "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/helpers/user_viewing_parties_helper.rb": {
         "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
       "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/helpers/users_helper.rb": {
         "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
       "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/helpers/viewing_parties_helper.rb": {
         "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/models/user.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/models/application_record.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/controllers/users/movies_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          0,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/controllers/application_controller.rb": {
+        "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
       "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/facades/movie_facade.rb": {
         "lines": [
-          1,
           null,
+          null,
+          1,
           1,
           1,
           20,
@@ -270,35 +345,19 @@
           0,
           0,
           null,
-          null
-        ]
-      },
-      "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/poros/movie_detail.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           null,
           1,
+          0,
+          0,
           null,
-          22,
-          22,
-          22,
-          22,
-          22,
-          22,
-          22,
           null,
           null
         ]
       },
       "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/services/movie_service.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           0,
@@ -309,17 +368,43 @@
           null,
           null,
           1,
+          0,
+          null,
           null,
           1,
-          null,
           1,
           1,
           null,
           null,
           null
         ]
+      },
+      "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/poros/movie_detail.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1683836918
+    "timestamp": 1683846881
   }
 }
