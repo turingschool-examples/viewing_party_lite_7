@@ -6,16 +6,22 @@
 
 <div id="user-viewing-parties">
   <ul>
-  <% @viewing_parties.each do |vp| %>
+  <% @hosted_parties.each do |vp| %>
+    <li>Viewing Party id: <%= vp.id %></li>
     <li><%= vp.movie_id %></li>
     <li><%= vp.date %></li>
     <li><%= vp.start_time %></li>
-      <% if vp.user_id == @user.id %>
-        <li><%= "Hosting" %></li>
-        <% else %>
-        <li><%= "Invited" %></li>
-      <% end %>
+    <li>Hosting</li>
     <% end %>
+
+<% @invited_parties.each do |vp| %>
+    <li>Viewing Party id: <%= vp.id %></li>
+    <li><%= vp.movie_id %></li>
+    <li><%= vp.date %></li>
+    <li><%= vp.start_time %></li>
+    <li>Invited</li>
+    <% end %>
+
   <ul>
 </div>
 
