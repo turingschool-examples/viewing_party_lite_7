@@ -254,6 +254,8 @@
       },
       "/Users/alejandrolopez/turing_work/3mod/viewing_party_lite_7/spec/features/movies_search/index_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -526,22 +528,6 @@
           null
         ]
       },
-      "/Users/alejandrolopez/turing_work/3mod/viewing_party_lite_7/spec/models/user_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          2,
-          2,
-          2,
-          2,
-          null,
-          null
-        ]
-      },
       "/Users/alejandrolopez/turing_work/3mod/viewing_party_lite_7/app/models/user.rb": {
         "lines": [
           null,
@@ -562,88 +548,13 @@
           null
         ]
       },
-      "/Users/alejandrolopez/turing_work/3mod/viewing_party_lite_7/spec/models/viewing_party_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2,
-          null,
-          null
-        ]
-      },
-      "/Users/alejandrolopez/turing_work/3mod/viewing_party_lite_7/app/models/viewing_party.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/alejandrolopez/turing_work/3mod/viewing_party_lite_7/spec/poros/movie_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/alejandrolopez/turing_work/3mod/viewing_party_lite_7/app/poros/movie.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          161,
-          161,
-          161,
-          161,
-          161,
-          null,
-          null
-        ]
-      },
       "/Users/alejandrolopez/turing_work/3mod/viewing_party_lite_7/app/controllers/movies_search_controller.rb": {
         "lines": [
           null,
           null,
           1,
           1,
-          17,
+          24,
           null,
           null
         ]
@@ -663,55 +574,56 @@
       },
       "/Users/alejandrolopez/turing_work/3mod/viewing_party_lite_7/app/controllers/movies_controller.rb": {
         "lines": [
-          1,
-          null,
-          1,
-          7,
-          7,
-          7,
-          1,
-          1,
-          null,
           null,
           null,
           1,
+          1,
+          13,
+          13,
+          13,
+          null,
+          1,
+          1,
           null,
           null,
+          1,
           null
         ]
       },
       "/Users/alejandrolopez/turing_work/3mod/viewing_party_lite_7/app/facades/search_facade.rb": {
         "lines": [
+          null,
+          null,
           1,
+          1,
+          18,
+          18,
+          18,
+          null,
+          null,
+          1,
+          18,
+          9,
+          null,
+          9,
+          null,
+          null,
+          null,
           1,
           9,
           9,
+          180,
+          null,
+          null,
+          null,
+          1,
           9,
-          null,
-          null,
-          1,
-          9,
-          4,
-          null,
-          5,
-          null,
-          null,
-          null,
-          1,
-          4,
-          4,
-          80,
-          null,
-          null,
-          null,
-          1,
-          5,
           0,
           0,
           null,
-          5,
-          5,
-          80,
+          9,
+          9,
+          134,
           null,
           null,
           null,
@@ -720,29 +632,51 @@
       },
       "/Users/alejandrolopez/turing_work/3mod/viewing_party_lite_7/app/services/movie_service.rb": {
         "lines": [
+          null,
+          null,
           1,
+          1,
+          18,
+          18,
+          null,
+          null,
+          1,
+          18,
+          18,
+          null,
+          null,
           null,
           1,
           9,
-          9,
           null,
           null,
           1,
           9,
-          9,
-          null,
-          null,
-          null,
-          1,
-          4,
-          null,
-          null,
-          1,
-          5,
           null,
           null,
           1,
           0,
+          null,
+          null
+        ]
+      },
+      "/Users/alejandrolopez/turing_work/3mod/viewing_party_lite_7/app/poros/movie.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          314,
+          314,
+          314,
+          314,
+          314,
           null,
           null
         ]
@@ -776,6 +710,19 @@
           null
         ]
       },
+      "/Users/alejandrolopez/turing_work/3mod/viewing_party_lite_7/app/models/viewing_party.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/alejandrolopez/turing_work/3mod/viewing_party_lite_7/app/controllers/welcome_controller.rb": {
         "lines": [
           null,
@@ -788,6 +735,6 @@
         ]
       }
     },
-    "timestamp": 1683760895
+    "timestamp": 1683816017
   }
 }
