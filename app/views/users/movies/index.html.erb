@@ -1,3 +1,11 @@
 <h1>Viewing Party</h1>
 <br>
 <h2>Movies Results Page</h2>
+<% @top_rated.each.with_index(1) do |movie, i| %>
+
+  <div id="movie-<%= i %>">
+    <p><%= link_to "#{movie.title}", user_movie_path(@user.id, movie.id) %></p>
+    <p><%= "#{movie.vote_average}" %></p>
+  </div>
+  <br>
+<% end %>
