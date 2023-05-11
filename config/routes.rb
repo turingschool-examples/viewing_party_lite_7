@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show] do
     member do
       get 'discover'
-      resources :movies, only: [:index, :show], param: :movie_id
+      resources :movies, only: [:index, :show], param: :movie_id do
+        resources :viewing_parties, only: [:new, :create], path: 'viewing-party'
+      end
     end
   end
 end
