@@ -9,14 +9,16 @@ RSpec.describe '/users/:id/movies/:id' do
 
       click_button 'Discover Top Rated Movies'
 
-      movies = MovieFacade.new.top_rated_movies
+      movies = MoviesFacade.new.movies
       @movie = movies.first
 
       within("#movie_#{@movie.id}") do
         VCR.use_cassette('test_individual_movie', :allow_playback_repeats => true) do
           click_link(@movie.title)
 
-          @selected_movie = MovieFacade.new.all_movie_data(@movie.id)
+          @selected_movie = MovieFacade.new(@movie.id).movie
+          @reviews = MovieFacade.new(@movie.id).reviews
+          @cast = MovieFacade.new(@movie.id).cast
         end
       end
     end
@@ -53,16 +55,16 @@ RSpec.describe '/users/:id/movies/:id' do
 
       expect(page).to have_css('.cast', maximum: 10)
 
-      @selected_movie.cast.each do |cast_member|
-        expect(page).to have_content(cast_member[:character])
-        expect(page).to have_content(cast_member[:name])
+      @cast.each do |cast_member|
+        expect(page).to have_content(cast_member.character)
+        expect(page).to have_content(cast_member.name)
       end
 
-      expect(page).to have_content("#{@selected_movie.reviews.count} Reviews")
+      expect(page).to have_content("#{@reviews.count} Reviews")
 
-      @selected_movie.reviews.each do |review|
-        expect(page).to have_content(review[:author])
-        # expect(page).to have_content(review[:content])
+      @reviews.each do |review|
+        expect(page).to have_content(review.author)
+        # expect(page).to have_content(review.content)
       end
     end
     end
