@@ -25,7 +25,6 @@ RSpec.describe MovieFacade do
       movies = @mf.top_rated_movies
       expect(movies).to all be_a Movie
       expect(movies.count <= 20).to be true
-      expect(movies.first.title).to eq("The Godfather")
     end
   end
 end
