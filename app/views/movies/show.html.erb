@@ -8,9 +8,16 @@
 
 <div id="movie-info">
   <h5>Summary</h5>
-  Title: <%= @movie.title %>
-  Vote Average: <%= @movie.vote_average %>
-  Runtime: <%= @movie.runtime %>
-  Genres: <%= @movie.genres.each{|genre| genre}  %>
-  Summary: <%= @movie.overview %>
+  Title: <%= @movie.title %><br>
+  Vote Average: <%= @movie.vote_average %><br>
+  Runtime: <%= @movie.runtime %><br>
+  Genres: <%= @movie.genres.each{|genre| genre}  %><br>
+  Summary: <%= @movie.overview %><br>
+</div>
+
+<div id="cast-members">
+  <h5>Cast</h5>
+  <% @facade.cast_members(@movie.id).each do |member| %>
+    <%= member %>
+  <% end %>
 </div>
