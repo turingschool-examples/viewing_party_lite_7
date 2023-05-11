@@ -61,5 +61,24 @@ describe MovieService do
         expect(credits[:cast][0]).to be_a(Hash)
       end
     end
+
+    describe "reviews" do
+      it "returns reviews for given movie id", :vcr do
+        reviews = MovieService.new.reviews(550)
+
+        expect(reviews).to be_a Hash
+
+        expect(reviews).to have_key(:results)
+        expect(reviews[:results]).to be_a(Array)
+
+        expect(reviews[:results][0]).to have_key(:author)
+        expect(reviews[:results][0][:author]).to be_a(String)
+
+        expect(reviews[:results][0]).to have_key(:content)
+        expect(reviews[:results][0][:content]).to be_a(String)
+        
+        expect(reviews[:results][0]).to be_a(Hash)
+      end
+    end
   end
 end
