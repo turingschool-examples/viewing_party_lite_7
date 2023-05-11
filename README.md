@@ -1,22 +1,51 @@
+
 # Viewing Party
 
-This is the base repo for the [Viewing Party Lite project](https://backend.turing.edu/module3/projects/viewing_party_lite) used for Turing's Backend Module 3.
+![Project Image](project-image-url)
+This is the first paired project used for Turing's Backend Module 3.
+---
 
-### About this Project
+### Table of Contents
+You're sections headers will be used to reference location of destination.
 
+- [Description](#description)
+- [How To Use](#how-to-use)
+- [References](#references)
+- [Author Info](#author-info)
+
+---
+
+## Description
 Viewing Party Lite is an application in which users can explore movie options and create a viewing party event for themselves and other users of the application.
 
-## Setup
 
-1. Fork and Clone the repo
-2. Install gem packages: `bundle install`
-3. Setup the database: `rails db:create`
-
-
-## Versions
+#### Technologies
 
 - Ruby 3.1.1
-
 - Rails 7.0.4
 
-Example wireframes to follow are found [here](https://backend.turing.edu/module3/projects/viewing_party_lite/wireframes)
+[Back To The Top](#read-me-template)
+
+---
+
+## How To Use
+
+#### API Reference
+
+```html
+    <p>https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>&language=en-US</p>
+```
+[Back To The Top](#read-me-template)
+
+---
+
+## References
+[Back To The Top](#read-me-template)
+
+---
+
+## Author Info
+
+
+
+[Back To The Top](#read-me-template)
