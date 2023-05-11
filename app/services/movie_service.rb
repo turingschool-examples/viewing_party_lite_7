@@ -10,6 +10,7 @@ class MovieService
     JSON.parse(response.body, symbolize_names: true)
   end
 
+
   def get_top_rated_movies
     get_url("/3/movie/top_rated?api_key=#{ENV['TMDB_API_KEY']}&language=en-US&page=1")
   end
@@ -29,5 +30,6 @@ class MovieService
   def get_movie_review_info(id)
     get_url("3/movie/#{id}/reviews?api_key=#{ENV['TMDB_API_KEY']}&language=en-US&page=1")
   end
+
 
 end

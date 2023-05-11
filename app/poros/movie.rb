@@ -9,5 +9,6 @@ class Movie
     @runtime = data[:runtime]
     @genres = data[:genres]
     @summary = data[:overview]
-  end
+    @poster = data[:poster_path]
+  end 
 end

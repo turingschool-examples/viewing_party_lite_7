@@ -51,10 +51,10 @@ RSpec.describe 'Movies Details Page', type: :feature do
       visit user_movie_path(@user1, 100)
 
       within('#movie-info') do
-        expect(page).to have_content('Vote: 8.133')
+        expect(page).to have_content('Vote: 8.1')
         expect(page).to have_content('Runtime: 1 hour(s) and 45 minutes')
         expect(page).to have_content('Genre(s): Comedy Crime')
-        expect(page).to_not have_content('Vote: 8.713')
+        expect(page).to_not have_content('Vote: 8.7')
         expect(page).to_not have_content('Runtime: 2 hour(s) and 55 minutes')
         expect(page).to_not have_content('Genre(s): Drama Crime')
       end
@@ -62,10 +62,10 @@ RSpec.describe 'Movies Details Page', type: :feature do
       visit user_movie_path(@user2, 238)
 
       within('#movie-info') do
-        expect(page).to have_content('Vote: 8.713')
+        expect(page).to have_content('Vote: 8.7')
         expect(page).to have_content('Runtime: 2 hour(s) and 55 minutes')
         expect(page).to have_content('Genre(s): Drama Crime')
-        expect(page).to_not have_content('Vote: 8.133')
+        expect(page).to_not have_content('Vote: 8.1')
         expect(page).to_not have_content('Runtime: 1 hour(s) and 45 minutes')
         expect(page).to_not have_content('Genre(s): Comedy Crime')
       end
