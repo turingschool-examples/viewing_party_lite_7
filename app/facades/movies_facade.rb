@@ -6,10 +6,6 @@ class MoviesFacade
     @movie_id = params[:id]
   end
 
-  def service
-    MovieService.new
-  end
-
   def status
     if @search_results
       "search"
@@ -37,6 +33,34 @@ class MoviesFacade
     Movie.new(json)
   end
 
+  def cast_info
+   cast_data.map do |cast_data|
+      Cast.new(cast_data)
+    end
+  end
 
+  def review_info 
+    review_data.map do |review_data|
+      Review.new(review_data)
+    end
+  end
+
+  def review_count
+    review_info.count
+  end
+
+private 
+
+  def review_data
+    @_review_data ||= service.get_movie_review_info(@movie_id)[:results]
+  end
+
+  def cast_data
+    @_cast_data ||= service.get_movie_cast_info(@movie_id)[:cast][0..9]
+  end
+
+  def service
+   @_service ||= MovieService.new
+  end
 
 end
