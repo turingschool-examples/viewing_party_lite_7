@@ -234,3 +234,20 @@ def test_review
     "url": "https://www.themoviedb.org/review/5b1c13b9c3a36848f2026384"
   } 
 end
+
+def test_cast_member
+  @data = {
+    "adult": false,
+    "gender": 2,
+    "id": 819,
+    "known_for_department": "Acting",
+    "name": "Edward Norton",
+    "original_name": "Edward Norton",
+    "popularity": 32.008,
+    "profile_path": "/8nytsqL59SFJTVYVrN72k6qkGgJ.jpg",
+    "cast_id": 4,
+    "character": "The Narrator",
+    "credit_id": "52fe4250c3a36847f80149f3",
+    "order": 0
+}
+end
