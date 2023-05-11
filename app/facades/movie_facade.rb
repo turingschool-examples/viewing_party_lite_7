@@ -1,31 +1,49 @@
 class MovieFacade
-  def initialize(params)
-    @params = params
+  def initialize(id)
+    @id = id
+    @movie = Movie.new(movie_details, movie_credits)
   end
 
-  def movies
-    @params.nil? ? top_movies : search_movies(@params)
+  def title
+    @movie.title
   end
 
-  def movie_details(id)
-    data = service.movie_details(id)
-    Movie.new(data)
+  def vote_average
+    @movie.vote_average
+  end
+
+  def runtime
+    @movie.runtime
+  end
+
+  def genres
+    @movie.genres
+  end
+
+  def summary
+    @movie.summary
+  end
+
+  def cast_members
+    @movie.cast_members
+  end
+
+  def review_count
+    @movie.review_count
+  end
+
+  def reviews
+    @movie.reviews
   end
 
   private
 
-  def top_movies
-    data = service.top_movies
-    data.map do |movie_data|
-      Movie.new(movie_data)
-    end
+  def movie_details
+    service.movie_details(@id)
   end
 
-  def search_movies(query)
-    data = service.search_movies(query)
-    data[:results].map do |movie_data|
-      Movie.new(movie_data)
-    end
+  def movie_credits
+    service.movie_credits(@id)
   end
 
   def service

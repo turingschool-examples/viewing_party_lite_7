@@ -1,4 +1,9 @@
 class MovieDbService
+  def top_movies
+    response = get_url("/3/movie/top_rated")
+    response[:results]
+  end  
+
   def search_movies(query)
     response = get_url("/3/search/movie", { query: query } )
   end
@@ -7,9 +12,8 @@ class MovieDbService
     response = get_url("/3/movie/#{id}")
   end
 
-  def top_movies
-    response = get_url("/3/movie/top_rated")
-    response[:results]
+  def movie_credits(id)
+    response = get_url("/3/movie/#{id}/credits")
   end  
 
   private
