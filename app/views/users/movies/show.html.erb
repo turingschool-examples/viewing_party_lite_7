@@ -9,7 +9,7 @@
 <div id="movie-info">
   <p><b>Vote: <%=@facade.specific_movie.vote_average%></p>
   <p>Runtime: <%=@facade.specific_movie.runtime/60%> hour(s) and <%=@facade.specific_movie.runtime%60%> minutes</p>
-  <p>Genre(s): <%@facade.specific_movie.genres.each do |genre| %>
+  <p>Genre(s): <%=@facade.specific_movie.genres.each do |genre| %>
             <%=genre[:name]%>
             <%end%>
   </p></b>
@@ -22,17 +22,17 @@
 
 <div id="cast"> 
   <h3>Cast:</h3>
-    <% 10.times do |i| %>
+    <% @facade.cast_info.each do |cast|%>
       <ul>
-        <li><p><%= @cast[:cast][i][:original_name] %> as <%=@cast[:cast][i][:character] %></p></li>
+        <li><%= cast.name %> as <%= cast.character %></li>
      </ul>
     <% end %>
 </div>
   
 <div id='reviews'>
-  <h3><%=@reviews[:results].count%> Reviews:</h3>
-    <% @reviews[:results].each do |review| %>
-      <p><b>Reviewer: <%= review[:author] %></b><br><br>
-        <%= review[:content] %></p><br>
+  <h3><%=@facade.review_count%> Reviews:</h3>
+    <% @facade.review_info.each do |review| %>
+      <p><b>Reviewer: <%= review.author %></b><br><br>
+        <%= review.content %></p><br>
     <% end %>
 </div>

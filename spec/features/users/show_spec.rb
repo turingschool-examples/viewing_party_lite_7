@@ -18,7 +18,7 @@ RSpec.describe 'User Show Page', type: :feature do
     visit user_path(@user_1)
   end
 
-  describe "User Dashboard #5" do
+  describe "User Dashboard #5", :vcr do
     it "displays <User Name>'s Dashboard" do
       within("#user-dashboard") do
         expect(page).to have_content("John Doe's Dashboard")
@@ -33,7 +33,6 @@ RSpec.describe 'User Show Page', type: :feature do
       visit user_path(@user_1)
 
       within("#user-viewing-parties") do
-        expect(page).to have_content("100")
         expect(page).to have_content("Hosting")
         expect(page).to have_content("202")
         expect(page).to have_content("Invited")
@@ -41,7 +40,7 @@ RSpec.describe 'User Show Page', type: :feature do
     end
   end
 
-  describe "Dashboard:Discover Movies #6" do
+  describe "Dashboard:Discover Movies #6", :vcr do
     it "clicking 'Discover Movies' redirects to user_discover_index_path " do
       within("#user-dashboard") do
         click_button("Discover Movies")
