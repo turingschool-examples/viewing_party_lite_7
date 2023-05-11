@@ -30,9 +30,13 @@ RSpec.describe "Movies Results page" do
 
       expect(current_path).to eq("/users/#{@user_1.id}/movies/550")
     end
-    xit "displays the vote average of the movie" do
+    # it "displays the vote average of the movie" do
+    #   visit "/users/#{@user_1.id}/discover"
 
-    end
+    #   within("#results") do
+    #   expect()
+    #   end
+    # end
 
     xit "does not display more than 20 results" do
 
