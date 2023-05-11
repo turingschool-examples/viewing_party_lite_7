@@ -33,5 +33,19 @@ describe MovieService do
         expect(movie[:id]).to be_a(Integer)
       end
     end
+
+    describe "find_movie" do
+      it "returns the top rated movies", :vcr do
+        movie = MovieService.new.find_movie(550)
+
+        expect(movie).to be_a Hash
+
+        expect(movie).to have_key :title
+        expect(movie[:title]).to be_a(String)
+
+        expect(movie).to have_key :id
+        expect(movie[:id]).to be_a(Integer)
+      end
+    end
   end
 end
