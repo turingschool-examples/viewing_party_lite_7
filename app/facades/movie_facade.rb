@@ -21,7 +21,6 @@ class MovieFacade
   private
   def self.find_movie(id)
     movie = TmbdService.find_movie(id)
-    # create_movie(movie)
   end
 
   def self.find_reviews(id)
@@ -31,7 +30,7 @@ class MovieFacade
   def self.find_cast(id)
     cast = TmbdService.find_cast(id)
   end
-  
+
   def self.create_movies(movies)
     movies[:results].map do |movie_data|
       Movie.new(movie_data)
