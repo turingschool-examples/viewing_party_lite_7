@@ -1,0 +1,183 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=<api_key>&include_adult=false&language=en-US&page=1&query=Pulp%20Fiction
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 11 May 2023 14:23:36 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=27322
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 43d54f129d8b141d8d83d4e8dfeac7bf
+      X-Memc-Age:
+      - '20266'
+      X-Memc-Expires:
+      - '1597'
+      Etag:
+      - W/"ad60d271ea198bc7db4b32a434b44c35"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 23241b9c368643949e3bb1a1ba4e97c2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - cioJTK1sL0MJYNnCHm1XAcn7zjwR_QVFfCKq_ox9NZCSfSZpr0HtmQ==
+      Age:
+      - '465'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/suaEOtk1N1sgg2MTM7oZd2cfVp3.jpg","genre_ids":[53,80],"id":680,"original_language":"en","original_title":"Pulp
+        Fiction","overview":"A burger-loving hit man, his philosophical partner, a
+        drug-addled gangster''s moll and a washed-up boxer converge in this sprawling,
+        comedic crime caper. Their adventures unfurl in three stories that ingeniously
+        trip back and forth in time.","popularity":61.481,"poster_path":"/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg","release_date":"1994-09-10","title":"Pulp
+        Fiction","video":false,"vote_average":8.491,"vote_count":25119},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":982376,"original_language":"en","original_title":"Pulp
+        Fiction: the Facts","overview":"Behind the scenes of the legendary classic
+        film by Quentin Tarantino.","popularity":0.976,"poster_path":"/ylcMrUkiAxAReHw8HNbVl0Bkdq5.jpg","release_date":"","title":"Pulp
+        Fiction: the Facts","video":false,"vote_average":0.0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":1104402,"original_language":"en","original_title":"Stealing
+        Pulp Fiction","overview":"It follows Jonathan, Elizabeth and Steve as they
+        try to steal Tarantino''s personal print of Pulp Fiction.","popularity":0.676,"poster_path":null,"release_date":"","title":"Stealing
+        Pulp Fiction","video":false,"vote_average":0.0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":1065811,"original_language":"en","original_title":"Making
+        of Pulp Fiction","overview":"The cast and crew talk about Pulp Fiction.  Directed
+        by Quentin Tarantino.","popularity":0.665,"poster_path":"/1md3a96ihYQpgwZBNzgF3pzSgIq.jpg","release_date":"2000-10-07","title":"Making
+        of Pulp Fiction","video":false,"vote_average":0.0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":109005,"original_language":"en","original_title":"Pulp
+        Fiction Art","overview":"A guilty pleasure of the mid-20th century, pulp fiction
+        magazines were often defined less by their contents than by their provocative
+        covers. This documentary explores the shocking art that brought life to these
+        lurid publications. Filmmaker Jamie McDonald delves into the collection of
+        art historian Robert Lesser, shedding light on this nearly forgotten art form
+        and the ways it impacted popular culture.","popularity":0.747,"poster_path":"/pVpCuDyyvt3HRjVEYUUBOqrio7F.jpg","release_date":"2005-01-01","title":"Pulp
+        Fiction Art","video":false,"vote_average":5.5,"vote_count":4},{"adult":false,"backdrop_path":null,"genre_ids":[35],"id":738735,"original_language":"en","original_title":"Stealing
+        Pulp Fiction","overview":"A diehard Quentin Tarantino fan recruits his friend
+        Elizabeth to steal a 35mm film reel of Pulp Fiction.","popularity":0.644,"poster_path":"/5OHH3y2v8uwluOZLC2Kt8ENcjxn.jpg","release_date":"2020-09-01","title":"Stealing
+        Pulp Fiction","video":false,"vote_average":0.0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":295641,"original_language":"en","original_title":"Pulp
+        Fiction: The Golden Age of Storytelling","overview":"This program profiles
+        writers of the 20s, 30s, and 40s--known as the Pulp Fiction era. These writers
+        created the iconic movies and characters who live on today in our collective
+        hearts and imaginations. It has even been estimated that 90-95% of the top
+        blockbusters in Hollywood movies were based on stories from the Pulp Fiction
+        era.","popularity":0.6,"poster_path":"/x7siHmBxskdiL8Z2thRzeGajPm4.jpg","release_date":"2009-01-01","title":"Pulp
+        Fiction: The Golden Age of Storytelling","video":false,"vote_average":4.0,"vote_count":1}],"total_pages":1,"total_results":7}'
+  recorded_at: Thu, 11 May 2023 14:31:21 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=<api_key>&include_adult=false&language=en-US&page=1&query=Pulp%20Fiction
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 11 May 2023 14:23:36 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=27322
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 43d54f129d8b141d8d83d4e8dfeac7bf
+      X-Memc-Age:
+      - '20266'
+      X-Memc-Expires:
+      - '1597'
+      Etag:
+      - W/"ad60d271ea198bc7db4b32a434b44c35"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 c29390732f5bc4b2c7832623ae6e492e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - QH-mzylERXtPDNTTpTiZLwPyEwOhh0VsRYTY6ULHrG8BNFzhgyiC3Q==
+      Age:
+      - '465'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/suaEOtk1N1sgg2MTM7oZd2cfVp3.jpg","genre_ids":[53,80],"id":680,"original_language":"en","original_title":"Pulp
+        Fiction","overview":"A burger-loving hit man, his philosophical partner, a
+        drug-addled gangster''s moll and a washed-up boxer converge in this sprawling,
+        comedic crime caper. Their adventures unfurl in three stories that ingeniously
+        trip back and forth in time.","popularity":61.481,"poster_path":"/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg","release_date":"1994-09-10","title":"Pulp
+        Fiction","video":false,"vote_average":8.491,"vote_count":25119},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":982376,"original_language":"en","original_title":"Pulp
+        Fiction: the Facts","overview":"Behind the scenes of the legendary classic
+        film by Quentin Tarantino.","popularity":0.976,"poster_path":"/ylcMrUkiAxAReHw8HNbVl0Bkdq5.jpg","release_date":"","title":"Pulp
+        Fiction: the Facts","video":false,"vote_average":0.0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":1104402,"original_language":"en","original_title":"Stealing
+        Pulp Fiction","overview":"It follows Jonathan, Elizabeth and Steve as they
+        try to steal Tarantino''s personal print of Pulp Fiction.","popularity":0.676,"poster_path":null,"release_date":"","title":"Stealing
+        Pulp Fiction","video":false,"vote_average":0.0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":1065811,"original_language":"en","original_title":"Making
+        of Pulp Fiction","overview":"The cast and crew talk about Pulp Fiction.  Directed
+        by Quentin Tarantino.","popularity":0.665,"poster_path":"/1md3a96ihYQpgwZBNzgF3pzSgIq.jpg","release_date":"2000-10-07","title":"Making
+        of Pulp Fiction","video":false,"vote_average":0.0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":109005,"original_language":"en","original_title":"Pulp
+        Fiction Art","overview":"A guilty pleasure of the mid-20th century, pulp fiction
+        magazines were often defined less by their contents than by their provocative
+        covers. This documentary explores the shocking art that brought life to these
+        lurid publications. Filmmaker Jamie McDonald delves into the collection of
+        art historian Robert Lesser, shedding light on this nearly forgotten art form
+        and the ways it impacted popular culture.","popularity":0.747,"poster_path":"/pVpCuDyyvt3HRjVEYUUBOqrio7F.jpg","release_date":"2005-01-01","title":"Pulp
+        Fiction Art","video":false,"vote_average":5.5,"vote_count":4},{"adult":false,"backdrop_path":null,"genre_ids":[35],"id":738735,"original_language":"en","original_title":"Stealing
+        Pulp Fiction","overview":"A diehard Quentin Tarantino fan recruits his friend
+        Elizabeth to steal a 35mm film reel of Pulp Fiction.","popularity":0.644,"poster_path":"/5OHH3y2v8uwluOZLC2Kt8ENcjxn.jpg","release_date":"2020-09-01","title":"Stealing
+        Pulp Fiction","video":false,"vote_average":0.0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":295641,"original_language":"en","original_title":"Pulp
+        Fiction: The Golden Age of Storytelling","overview":"This program profiles
+        writers of the 20s, 30s, and 40s--known as the Pulp Fiction era. These writers
+        created the iconic movies and characters who live on today in our collective
+        hearts and imaginations. It has even been estimated that 90-95% of the top
+        blockbusters in Hollywood movies were based on stories from the Pulp Fiction
+        era.","popularity":0.6,"poster_path":"/x7siHmBxskdiL8Z2thRzeGajPm4.jpg","release_date":"2009-01-01","title":"Pulp
+        Fiction: The Golden Age of Storytelling","video":false,"vote_average":4.0,"vote_count":1}],"total_pages":1,"total_results":7}'
+  recorded_at: Thu, 11 May 2023 14:31:21 GMT
+recorded_with: VCR 6.1.0

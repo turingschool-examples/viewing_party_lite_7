@@ -1,5 +1,10 @@
-<ol type="1">
-<% @facade.movies.each do |movie| %>
-  <h4><li><%= movie.title %></li></h4>
-<% end %>
-</ol>
+<% @movies.each do |movie| %>
+<div id="movies">
+    <div id="movie-<%=movie.id%>">
+      <h4>Movie Title: <li><%= link_to "#{movie.title}", "/users/#{@user.id}/movies/#{movie.id}", method: :get %></li></h4>
+      <li>Vote Average: <%= movie.vote_average %>
+    </div>
+  </div>
+  <% end %>
+
+<%= button_to "Return to Discover", "/users/#{@user.id}/discover", method: :get %>
