@@ -7,26 +7,31 @@
 </div>
 
 <div id="movie-info">
-  <h5>Summary</h5>
+  <h4>Summary</h4>
   Title: <%= @movie.title %><br>
   Vote Average: <%= @movie.vote_average %><br>
   Runtime: <%= @movie.runtime %><br>
-  Genres: <%= @movie.genres.each{|genre| genre}  %><br>
+  Genres: 
+  <% @movie.genres.each do |genre| %>
+    <%= genre %>
+  <% end %>
+  <br>
   Summary: <%= @movie.overview %><br>
 </div>
 
 <div id="cast-members">
-  <h5>Cast</h5>
+  <h4>Cast</h4>
   <% @facade.cast_members(@movie.id).each do |member| %>
-    <%= member.character %>
+    <%= member.character %> <i>played by</i>
     <%= member.actor %><br>
   <% end %>
 </div>
 
 <div id="reviews">
-  <h5><%= @facade.review_count(@movie.id) %> Reviews</h5>
+  <h4><%= @facade.review_count(@movie.id) %> Reviews</h4>
   <% @facade.all_reviews(@movie.id).each do |review| %>
     <%= "#{review.author}:" %><br>
+    <br>
     <%= review.content %><br>
     <br>
   <% end %>
