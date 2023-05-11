@@ -4,7 +4,7 @@ require 'json'
 
 def conn
   Faraday.new(url: 'https://api.themoviedb.org/3/') do |faraday|
-    faraday.params['api_key'] = '27497a269af52c0049ba8bfe885390eb'
+    faraday.params['api_key'] = ENV['MOVIE_API_KEY']
   end
 end
 

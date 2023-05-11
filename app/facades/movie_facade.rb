@@ -18,6 +18,6 @@ class MovieFacade
 
   private
   def service
-    MovieService.new
+    _service ||= MovieService.new
   end
 end
