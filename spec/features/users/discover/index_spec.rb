@@ -7,7 +7,7 @@ RSpec.describe 'Discover Movies Page', type: :feature do
     visit user_discover_index_path(@user)
   end
 
-  describe 'top rated movies button' do
+  describe 'top rated movies button', :vcr do
     it 'displays a button that can take you to the movie results page with top rated movies' do
       expect(page).to have_button('Find Top Rated Movies')
 
@@ -19,19 +19,19 @@ RSpec.describe 'Discover Movies Page', type: :feature do
   
   describe 'find movies form' do
     it 'displays a form to find movies by keyword' do
-      expect(page).to have_field(:keyword)
+      expect(page).to have_field(:q)
       expect(page).to have_button('Find Movies')
     end
 
-    it 'takes you to the movie results page when you click the find movies button' do
-      fill_in :keyword, with: 'The Avengers'
+    it 'takes you to the movie results page when you click the find movies button', :vcr do
+      fill_in :q, with: 'The Avengers'
 
       click_on 'Find Movies'
 
       expect(current_path).to eq(user_movies_path(@user))
     end
 
-    it 'returns an error if the field is left empty' do
+    it 'returns an error if the field is left empty', :vcr do
       click_on 'Find Movies'
 
       expect(page).to have_content('Please enter a movie')
