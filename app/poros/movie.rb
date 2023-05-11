@@ -1,15 +1,16 @@
 class Movie
   attr_reader :id,
-  :title,
-  :summary,
-  :vote_average,
-  :vote_count,
-  :poster_path,
-  :total_min,
-  :cast,
-  :genres,
-  :reviews,
-  :runtime
+              :title,
+              :summary,
+              :vote_average,
+              :vote_count,
+              :poster_path,
+              :total_min,
+              :cast,
+              :genres,
+              :reviews,
+              :runtime
+
   def initialize(data)
     @id           = data[:id]
     @title        = data[:title]
