@@ -20,5 +20,9 @@ class ViewingParty < ApplicationRecord
     .where(viewing_party_users: {user_id: user.id})
   end
   
+  def poster(id)
+    movie = MovieService.new.get_specific_movie(id)
+    movie[:poster_path]
+  end
 
 end

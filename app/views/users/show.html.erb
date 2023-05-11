@@ -7,16 +7,14 @@
 <div id="user-viewing-parties">
   <ul>
   <% @hosted_parties.each do |vp| %>
-    <li>Viewing Party id: <%= vp.id %></li>
-    <li><%= vp.movie_id %></li>
+    <li><img width="150px" src=<%="https://image.tmdb.org/t/p/original#{vp.poster(vp.movie_id)}" %>></li>
     <li><%= vp.date %></li>
     <li><%= vp.start_time %></li>
     <li>Hosting</li>
     <% end %>
 
 <% @invited_parties.each do |vp| %>
-    <li>Viewing Party id: <%= vp.id %></li>
-    <li><%= vp.movie_id %></li>
+    <li><img width="150px" src=<%="https://image.tmdb.org/t/p/original#{vp.poster(vp.movie_id)}" %>></li>
     <li><%= vp.date %></li>
     <li><%= vp.start_time %></li>
     <li>Invited</li>
