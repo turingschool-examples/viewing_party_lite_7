@@ -40,4 +40,10 @@ RSpec.describe MovieFacade do
       expect(cast.count <= 10).to be true
     end
   end
+  describe "all_reviews" do
+    it "returns all reviews for movie with given id", :vcr do
+      reviews = @mf.all_reviews(550)
+      expect(reviews).to all be_a Review
+    end
+  end
 end
