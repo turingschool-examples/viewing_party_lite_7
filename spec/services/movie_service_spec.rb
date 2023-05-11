@@ -23,5 +23,21 @@ RSpec.describe MovieService do
       
       expect(@movies2.count).to eq(20)
     end
+
+    it 'cast' do
+      @response = MovieService.cast(238)
+      @cast = @response[:cast]
+
+      expect(@cast).to be_a(Array)
+      expect(@cast.count).to eq(59)
+    end
+
+    it 'reviews' do
+      @response = MovieService.reviews(238)
+      @reviews = @response[:results]
+
+      expect(@reviews).to be_a(Array)
+      expect(@reviews.count).to eq(3)
+    end
   end
 end

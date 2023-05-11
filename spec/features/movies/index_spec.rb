@@ -11,7 +11,7 @@ RSpec.describe "movie results page", type: :feature do
       click_button("Discover Top Movies")
       expect(current_path).to eq("/users/#{@user1.id}/movies")
 
-      expect(page).to have_content("Movie Title: The Godfather")
+      expect(page).to have_link("The Godfather")
       expect(page).to have_content("Rating: 8.7")
 
       expect(page).to have_button("Back")
@@ -24,7 +24,7 @@ RSpec.describe "movie results page", type: :feature do
       click_button("Search")
       expect(current_path).to eq("/users/#{@user1.id}/movies")
 
-      expect(page).to have_content("Movie Title: The Lord of the Rings: The Fellowship of the Ring")
+      expect(page).to have_link("The Lord of the Rings: The Fellowship of the Ring")
       expect(page).to have_content("Rating: 8.396")
 
       expect(page).to have_button("Back")
@@ -37,7 +37,7 @@ RSpec.describe "movie results page", type: :feature do
       click_button("Search")
       expect(current_path).to eq("/users/#{@user1.id}/movies")
 
-      expect(page).to have_content("Movie Title: The Pope's Exorcist")
+      expect(page).to have_link("The Pope's Exorcist")
       expect(page).to have_content("Rating: 7.394")
 
       expect(page).to have_button("Back")
