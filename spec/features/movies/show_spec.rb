@@ -21,7 +21,7 @@ require 'rails_helper'
 RSpec.describe "Movie Detail page" do
   before(:each) do
     test_data
-    test_movie
+    test_movie_details
     @movie = Movie.new(@data)
   end
   describe "As a user, when I visit a movie's show page" do
@@ -36,19 +36,36 @@ RSpec.describe "Movie Detail page" do
       expect(current_path).to eq(new_user_movie_party_path(@user_1.id, @movie.id))
     end
 
-    xit "has a button to return to the discover page" do
+    it "has a button to return to the discover page", :vcr do
+      visit user_movie_path(@user_1.id, @movie.id)
+
+      within("#return-to-discover") do
+        expect(page).to have_button("Discover Page")
+        click_button "Discover Page"
+      end
+
+      expect(current_path).to eq("/users/#{@user_1.id}/discover")
+    end
+
+    it "has the movie's information", :vcr do
+      visit user_movie_path(@user_1.id, @movie.id)
+
+      within("#movie-info") do
+        expect(page).to have_content(@movie.title)
+        expect(page).to have_content(@movie.vote_average)
+        expect(page).to have_content(@movie.runtime)
+        @movie.genres.each do |genre|
+          expect(page).to have_content(genre)
+        end
+        expect(page).to have_content(@movie.overview)
+      end
+    end
+
+    xit "lists the first 10 case members", :vcr do
 
     end
 
-    xit "has the movie's information" do
-
-    end
-
-    xit "lists the first 10 case members" do
-
-    end
-
-    xit "has a count of reviews and each review's author and info" do
+    xit "has a count of reviews and each review's author and info", :vcr do
 
     end
   end
