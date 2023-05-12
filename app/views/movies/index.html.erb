@@ -1,13 +1,12 @@
-<%= link_to "Discover Movies", user_dashboard_discover_index_path(@user) %>
-<% if @is_top_rated %>
+<%= link_to "Discover Movies", user_dashboard_discover_index_path(@user_movies.user) %>
+<% if @user_movies.type == 'top rated' %>
   <h3>Top Rated Movies</h3>
-<% else %>
-    <h3><%= @search %></h3>
+<% elsif @user_movies.type == 'search' %>
+    <h3><%= @user_movies.user_name %>'s Dashboard</h3>
 <% end %>
 <table>
   <tr><th>Title</th><th>Rating</th>
-  <% @movies.each do |movie| %>
-
+  <% @user_movies.movies.each do |movie| %>
     <tr>
       <td><%= link_to "#{movie.title}", user_dashboard_movie_path(@user, movie) %></td>
       <td><%= movie.rating %></td>
