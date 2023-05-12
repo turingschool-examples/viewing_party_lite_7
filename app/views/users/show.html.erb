@@ -2,9 +2,16 @@
 
 <%= button_to "Discover Movies", user_discover_index_path(@user), method: :get %>
 
-<div id="viewing_parties">
-<h4>Viewing Parties:</h4>
-<% @user.viewing_parties.each do |party| %>
-<p> Viewing Party <%= party.id %></p>
-<% end %>
+<h3>Hosted Parties:</h3>
+<div id="hosted">
+<% @user.hosted_viewing_parties.each do |party| %>
+<p><%= party.movie_title %> Viewing Party</p>
+<%end%>
+</div>
+
+<h3>Invited Parties:</h3>
+<div id="invited">
+<% @user.invited_viewing_parties.each do |party| %>
+<p><%= party.movie_title %> Viewing Party</p>
+<%end%>
 </div>
