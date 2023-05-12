@@ -51,4 +51,9 @@ RSpec.describe MovieFacade do
       expect(@mf.review_count(550)).to eq 8
     end
   end
+  describe "movie_title" do
+    it "returns title of a movie with given id", :vcr do
+      expect(@mf.movie_title(550)).to eq("Fight Club")
+    end
+  end
 end
