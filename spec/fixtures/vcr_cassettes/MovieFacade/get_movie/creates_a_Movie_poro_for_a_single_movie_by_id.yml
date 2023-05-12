@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/734265?api_key=tmdb_key&language=en-US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 12 May 2023 19:35:14 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=22166
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 27800b650f4db4bd9e4e0147da92f5d1
+      X-Memc-Age:
+      - '15901'
+      X-Memc-Expires:
+      - '7129'
+      Etag:
+      - W/"f350d41a72e3153a5ef2ccf778aa6294"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 61ea521c913b8f6dbadaa96ecbb825ec.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P3
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - TGo4I2S6ypPBna8u5TFIFZDsJrf-z3LnBR85dzYNt2SWZy0-Qwxrgw==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/pa0Mq5rGm2QnzdpFmugTu4Mghf.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":35,"name":"Comedy"},{"id":10749,"name":"Romance"}],"homepage":"https://www.netflix.com/title/81086631","id":734265,"imdb_id":"tt10752004","original_language":"en","original_title":"Love
+        Hard","overview":"An LA girl, unlucky in love, falls for an East Coast guy
+        on a dating app and decides to surprise him for Christmas, only to discover
+        that she''s been catfished. But the object of her affection actually lives
+        in the same town, and the guy who duped her offers to set them up if she pretends
+        to be his own girlfriend for the holidays.","popularity":15.496,"poster_path":"/oTkAFDZRLnqrXOrOwuy3Tvul0v5.jpg","production_companies":[{"id":4022,"logo_path":"/q6Xts6ztGkTHrY1WfHttlhL3Pfc.png","name":"Wonderland
+        Sound and Vision","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2021-11-05","revenue":0,"runtime":105,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"A
+        romantic comedy about the lies we tell for love.","title":"Love Hard","video":false,"vote_average":7.017,"vote_count":1282}'
+  recorded_at: Fri, 12 May 2023 19:35:14 GMT
+recorded_with: VCR 6.1.0

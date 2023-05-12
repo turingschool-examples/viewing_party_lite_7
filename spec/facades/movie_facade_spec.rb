@@ -43,4 +43,21 @@ RSpec.describe 'MovieFacade', :vcr do
       expect(ocean_movies.count).to be <= 20
     end
   end
+
+  describe 'get_movie' do
+    it 'creates a Movie poro for a single movie by id' do
+      movie = @movie_facade.get_movie(734265)
+
+      expect(movie).to be_a(Movie)
+    end
+  end
+
+  describe 'get_cast' do
+    it 'returns the cast of a movie that matches given id' do
+      cast = @movie_facade.get_cast('5')
+
+      expect(cast).to be_an(Array)
+      expect(cast.count).to eq(10)
+    end
+  end
 end

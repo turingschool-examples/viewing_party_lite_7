@@ -11,6 +11,10 @@ class TmdbService
     get_url("/3/movie/#{movie_id}")
   end
 
+  def get_cast(movie_id)
+    get_url("/3/movie/#{movie_id}/credits")
+  end
+
   private
   
   def get_url(url)

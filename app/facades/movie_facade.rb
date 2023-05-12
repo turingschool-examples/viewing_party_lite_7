@@ -7,6 +7,26 @@ class MovieFacade
     end 
   end
 
+  def get_cast(movie_id)
+    results = service.get_cast(movie_id)[:cast][0..9]
+
+    results.map do |result|
+      Actor.new(result)
+    end
+  end
+
+  def get_movie(movie_id)
+    results = service.get_movie(movie_id)
+
+    results.map do |result|
+      MovieInfo.new(result)
+    end
+  end
+
+  def get_movie_info
+    
+  end
+
   def search_by_title(key_word)
     results = service.search_by_title(key_word)[:results]
     
