@@ -7,5 +7,11 @@ class Party < ApplicationRecord
 
   has_many :user_parties
   has_many :users, through: :user_parties
-  
+  before_save :compare_lengths
+
+  def compare_lengths
+    if duration < MovieFacade.new.find_movie(movie_id).runtime
+      throw :abort
+    end
+  end
 end

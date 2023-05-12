@@ -1,6 +1,6 @@
 class PartyFacade
   def self.create_party(params)
-      Party.create!(duration: params[:duration].to_i,
+      Party.new(duration: params[:duration].to_i,
                   movie_id: params[:movie_id],
                   date: self.format_date(params),
                   time: self.format_time(params))
