@@ -1,14 +1,7 @@
 <%= "#{@user.name}'s Dashboard" %>
 <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %>
 <section id="parties">
-  <% if @user.no_parties? %>
-    <p> This user has no parties yet </p>
-  <% else %>
-    <% @user.parties.each do |party| %>
-      <%= party.format_date %><br/>
-      <%= party.format_time %>
-    <% end %>
-  <% end %>
+  <%= "This user has no parties yet" if @user.no_parties? %>
 </section>
 <br>
 <div id="hosted-vps">
@@ -19,10 +12,11 @@
     <%= party.format_date %><br>
     <%= party.format_time %><br>
     Hosting
+    <br>
     Guests:
     <ul>
       <% party.guests.each do |guest| %>
-        <li><%= guest.name %></li><br>
+        <li><%= guest.name %></li>
       <% end %>
     </ul>
   <% end %>
@@ -32,11 +26,13 @@
   <% @user.guest_vps.each do |party| %>
     <img src=<%= @facade.movie_poster(party.movie_id)%> alt="poster", width="100", height="auto">
     <br>
-    <%= @facade.movie_title(party.movie_id) %><br>
+    <%= link_to @facade.movie_title(party.movie_id).to_s, user_movie_path(@user.id, party.movie_id) %><br>
     <%= party.format_date %><br>
     <%= party.format_time %><br>
     Invited
+    <br>
     Hosted by: <%= party.host %>
+    <br>
     Guests:
     <ul>
       <% party.guests.each do |guest| %>
