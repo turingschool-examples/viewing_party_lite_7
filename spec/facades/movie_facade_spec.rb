@@ -28,7 +28,7 @@ RSpec.describe MovieFacade do
 
   describe '#reviews' do
     it 'returns review objects that contain data for a specific movies reviews' do
-      VCR.use_cassette('all_movie_data_by_id_550') do
+      VCR.use_cassette('all_review_data_by_id_550') do
         reviews = MovieFacade.new(550).reviews
 
         expect(reviews).to be_a(Array)
@@ -44,7 +44,7 @@ RSpec.describe MovieFacade do
 
   describe '#cast' do
     it 'returns cast objects that contain data for a specific movies cast members' do
-      VCR.use_cassette('all_movie_data_by_id_550') do
+      VCR.use_cassette('all_cast_data_by_id_550') do
         cast = MovieFacade.new(550).cast
 
         expect(cast).to be_a(Array)
@@ -58,7 +58,7 @@ RSpec.describe MovieFacade do
     end
 
     it 'returns an array of 10 cast member objects' do
-      VCR.use_cassette('all_movie_data_by_id_550') do
+      VCR.use_cassette('all_cast_data_by_id_550') do
         cast = MovieFacade.new(550).cast
 
         expect(cast.count).to be <= 10
