@@ -18,9 +18,9 @@ RSpec.describe Movie do
   end
   describe "format_runtime" do
     it "turns minutes to hours and minutes" do
-      expect(@movie.format_runtime(139)).to eq("2 hours 19 minutes")
-      expect(@movie.format_runtime(45)).to eq("0 hours 45 minutes")
-      expect(@movie.format_runtime(0)).to eq("0 hours 0 minutes")
+      test_movie_details
+      movie_8 = Movie.new(@data)
+      expect(movie_8.format_runtime).to eq("2 hours 19 minutes")
     end
   end
   describe "extract_genres" do
