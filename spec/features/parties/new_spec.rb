@@ -10,7 +10,6 @@ RSpec.describe "New Viewing party page" do
 
     it "has a form with all necessary fields", :vcr do
       visit new_user_movie_party_path(@user_1, @movie_1.id)
-      save_and_open_page
 
       expect(page).to have_content("Viewing Party Details")
       expect(page).to have_content(@movie_1.title)
