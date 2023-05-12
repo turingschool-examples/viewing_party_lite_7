@@ -48,7 +48,14 @@ RSpec.describe 'MovieFacade', :vcr do
     it 'creates a Movie poro for a single movie by id' do
       movie = @movie_facade.get_movie(343611)
 
-      expect(movie).to be_a(Movie)
+      expect(movie).to be_a(MovieInfo)
+      expect(movie.id).to eq(343611)
+      expect(movie.title).to eq('Jack Reacher: Never Go Back')
+      expect(movie.vote_average).to eq(5.93)
+      expect(movie.runtime).to eq(118)
+      expect(movie.movie_genres).to eq(['Action', 'Thriller'])
+      expect(movie.summary).to eq('When Major Susan Turner is arrested for treason, ex-investigator Jack Reacher undertakes the challenging task to prove her innocence and ends up exposing a shocking conspiracy.')
+      expect(movie.poster).to eq('/cOg3UT2NYWHZxp41vpxAnVCOC4M.jpg')
     end
   end
 
