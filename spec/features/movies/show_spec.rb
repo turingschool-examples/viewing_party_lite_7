@@ -26,7 +26,7 @@ RSpec.describe 'Movies Show Page', :vcr do
     it 'has a button to go back to discover users page' do
       visit "/users/#{user_1.id}/movies/238"
 
-      click_button("Discover User Page")
+      click_button("User Discover Page")
 
       expect(current_path).to eq("/users/#{user_1.id}/discover")
     end
