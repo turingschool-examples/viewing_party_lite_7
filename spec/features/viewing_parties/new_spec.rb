@@ -5,6 +5,8 @@ RSpec.describe 'viewing_parties new page', type: :feature do
   before(:each) do
     @user1 = User.create!(name: "Bob", email: "bob@bob.com")
     @user2 = User.create!(name: "Jeff", email: "jeff@bob.com")
+    stub_request(:get, "https://api.themoviedb.org/3/movie/5?api_key=#{ENV['MOVIE_API_KEY']}")
+      .to_return(status: 200, body: File.read("./spec/fixtures/four_rooms_info.json"))
     visit new_user_movie_viewing_party_path(@user1, 5)
   end
 
