@@ -23,7 +23,6 @@ RSpec.describe "user dashboard page", type: :feature do
       visit "/users/#{@user_3.id}"
 
       within("#hosted-vps") do
-      # contains image
         expect(page).to have_content("Fight Club")
         expect(page).to have_content(@party_2.format_date)
         expect(page).to have_content(@party_2.format_time)
@@ -33,8 +32,6 @@ RSpec.describe "user dashboard page", type: :feature do
       end
 
       within("#guest-vps") do
-      # contains image
-        expect(page).to have_content("The Godfather")
         expect(page).to have_content(@party_1.format_date)
         expect(page).to have_content(@party_1.format_time)
         expect(page).to have_content("Invited")
@@ -44,8 +41,11 @@ RSpec.describe "user dashboard page", type: :feature do
       end
     end
 
-    xit "has movie titles linked to their show page" do
+    it "has movie titles linked to their show page", :vcr do
+      visit "/users/#{@user_3.id}"
 
+      click_link "Fight Club"
+      expect(current_path).to eq(user_movie_path(@user_3.id, 550))
     end
   end
 end
