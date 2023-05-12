@@ -10,7 +10,12 @@ class ViewingPartiesController < ApplicationController
     facade = MovieFacade.new(user: user, type: :details, movie_id: params[:movie_id])
     viewing_party = ViewingParty.new(viewing_party_params)
     if viewing_party.save
-      UserViewingParty.create(user_id: user.user_dashboard_id, viewing_party_id: viewing_party.id)
+      UserViewingParty.create(user_id: user.id, viewing_party_id: viewing_party.id, user_type: 'Hosting')
+      params[:user_ids].each do |user_id, invited|
+        if invited == '1'
+          UserViewingParty.create(user_id: user_id, viewing_party_id: viewing_party.id, user_type: 'Invited')
+        end
+      end
       redirect_to user_dashboard_path(user)
     else
       flash[:error] = 'Please fill in all fields'
