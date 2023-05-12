@@ -1,4 +1,15 @@
-<h3><%= @facade.user_name %>'s Dashboard</h3>
-<%= form_with url: user_dashboard_discover_index_path(@facade.user), method: :get , local: true do |form| %>
+<h3><%= @user_movies.user_name %>'s Dashboard</h3>
+<%= form_with url: user_dashboard_discover_index_path(@user_movies.user), method: :get , local: true do |form| %>
   <%= form.submit 'Discover Movies' %>
 <% end %>
+
+<section class='card-container'>
+  <% @user_movies.movies do |movie| %>
+    <div class='card'>
+      <img src='<%= movie.image_url %>'>
+      <h4><%= movie.title %></h4>
+      <p><%= movie.start_time %></p>
+      <p><%= @user_movies.user.user_type %></p>
+    </div>
+  <% end %>
+</section>

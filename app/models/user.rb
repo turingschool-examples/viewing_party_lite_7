@@ -9,4 +9,8 @@ class User < ApplicationRecord
   def viewing_party_movie_ids
     viewing_parties.pluck(:movie_id)
   end
+
+  def user_type(movie_id)
+    viewing_parties.find_by(movie_id: movie_id)
+  end
 end

@@ -4,9 +4,9 @@ class MoviesController < ApplicationController
     movie_facade = MovieFacade.new(user)
 
     if params[:q] == 'top rated'
-      @facade = movie_facade.top_20_movies
+      @user_movies = movie_facade.top_20_movies
     else
-      @facade = movie_facade.search_movies(params[:q])
+      @user_movies = movie_facade.search_movies(params[:q])
     end
   end
 end

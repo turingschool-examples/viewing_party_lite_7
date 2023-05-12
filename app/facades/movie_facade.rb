@@ -10,8 +10,8 @@ class MovieFacade
 
   def movie_details(movie_id)
     UserMovies.new(type: 'details',
-              data: Movie.new(service.full_movie_details(movie_id)),
-              user: user)
+                   movies: Movie.new(service.full_movie_details(movie_id)),
+                   user: user)
   end
 
   def movies_by_ids(movie_ids)
@@ -20,21 +20,21 @@ class MovieFacade
     end
 
     UserMovies.new(type: 'viewing party',
-                   data: movies_data,
+                   movies: movies_data,
                    user: user)
   end
 
   def top_20_movies()
     UserMovies.new(type: 'top rated',
-              data: movies(service.top_rated_movies),
-              user: user)
+                   movies: movies(service.top_rated_movies),
+                   user: user)
   end
 
   def search_movies(query)
     UserMovies.new(type: 'search',
-              data: movies(service.search_movies(query)),
-              user: user,
-              query: query)
+                   movies: movies(service.search_movies(query)),
+                   user: user,
+                   query: query)
   end
 
   private

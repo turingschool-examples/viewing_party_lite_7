@@ -14,7 +14,7 @@ RSpec.describe Movie do
     reviews: ["John Chard": 'A fun comedy that is a little bit more than just a vehicle for Chris Farley and David Spade.']
   }
 
-  let(:movie) { Movie.new(attributes) }
+  let(:movie) { create(:movie, attributes) }
 
   describe '#initialize' do
     it 'exists' do

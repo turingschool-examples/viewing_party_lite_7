@@ -1,12 +1,12 @@
 class UserMovies
   attr_reader :type,
-              :data,
+              :movies,
               :user,
               :query
 
-  def initialize(type:, data:, user:, query: nil)
+  def initialize(type:, movies:, user:, query: nil)
     @type = type
-    @data = data
+    @movies = movies
     @user = user
     @query = query
   end

@@ -17,6 +17,8 @@ FactoryBot.define do
   end
 
   factory :movie do
+    skip_create
+
     id { Faker::Number.within(range: 11..10000) }
     title { Faker::Movie.title }
     runtime { Faker::Number.within(range: 30..200) }
@@ -26,12 +28,18 @@ FactoryBot.define do
     summary { Faker::Lorem.paragraph }
     cast { Array.new(10, Faker::Name.name) }
     reviews { Array.new(5, Faker::Lorem.paragraph) }
+
+    initialize_with { new(attributes) }
   end
 
   factory :user_movies do
+    skip_create
+
     type { ['details', 'search', 'top rated'].sample }
-    data { Array.new(5, create(:movie)) }
+    movies { Array.new(5, attributes_for(:movie)) }
     user
     query { Faker::Lorem.words }
+
+    initialize_with { new(attributes) }
   end
 end
