@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe 'Movies Show Page', :vcr do
+  let!(:user_1) { User.create!(name: "Angel Byun", email: "angelbyun@turing.edu") }
+  let!(:user_2) { User.create!(name: "Isaac Thill", email: "isaacthill@turing.edu") }
+  let!(:user_3) { User.create!(name: "Scott Le", email: "scottle@gmail.com") }
+  let!(:user_4) { User.create!(name: "Megan Hinricher", email: "hinmeg@gmail.com") }
+
   describe 'movies show page' do
     it 'lists a movies details' do
       visit "/movies/238"
@@ -17,6 +22,14 @@ RSpec.describe 'Movies Show Page', :vcr do
       click_button("Create Viewing Party")
 
       expect(current_path).to eq("/parties/new")
+    end
+
+    it 'has a button to go back to discover users page' do
+      visit "/movies/238"
+
+      click_button("Discover User Page")
+
+      expect(current_path).to eq("/discover/users/#{user_1.id}")
     end
   end
 end

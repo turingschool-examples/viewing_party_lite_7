@@ -6,15 +6,14 @@ Rails.application.routes.draw do
 
   root 'landing#index'
 
+  resources :users, only: [:new, :show] do
+    resources :discover, only: [:index]
+    resources :movies, only: [:index, :show] do
+      resources :parties, only: [:new, :create]
+    end
+  end
+
   get '/register', to: 'users#new'
-  post '/users', to: 'users#create'
-
+  post '/register', to: 'users#create'
   get '/dashboard/:user_id', to: 'users#show', as: 'dashboard'
-
-  get '/discover/users/:user_id', to: 'discover/users#show'
-
-  get '/movies', to: 'movies#index'
-  get '/movies/:movie_id', to: "movies#show"
-
-  get '/parties/new', to: 'parties#new'
 end

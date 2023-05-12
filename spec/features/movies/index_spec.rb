@@ -24,7 +24,7 @@ RSpec.describe 'movies index page', :vcr do
     it 'can search movies by title and keywords' do
       visit "/discover/users/#{user_1.id}"
 
-      fill_in(:search, with: "god")
+      fill_in(:query, with: "god")
       click_button("Search Movie")
 
       expect(current_path).to eq("/movies")

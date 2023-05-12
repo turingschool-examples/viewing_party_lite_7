@@ -1,11 +1,15 @@
 class MoviesController < ApplicationController
   def index
-    @top_movies = MoviesFacade.new.top_rated_movies
-    @search = MoviesFacade.new.search_movies(params[:query])
+    @user = User.find(params[:user_id])
+    if params[:query].present?
+      @movies = MoviesFacade.new.search_movies(params[:query])
+    else
+      @movies = MoviesFacade.new.top_rated_movies
+    end
   end
 
   def show
-    # require 'pry'; binding.pry
     @movie = MoviesFacade.new.movie_details(params[:movie_id])
+    @user = User.find(params[:user_id])
   end
 end
