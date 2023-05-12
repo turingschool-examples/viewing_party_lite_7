@@ -70,4 +70,14 @@ RSpec.describe MovieFacade, :vcr do
       expect(movies.last.title).to eq(movies2.last.title)
     end
   end
+
+  describe 'cast' do
+    it 'returns an array of 10 cast members' do
+      cast = @movie_facade.cast(550)
+
+      expect(cast).to be_an(Array)
+      expect(cast).to all(be_a(Cast))
+      expect(cast.count).to eq(10)
+    end
+  end
 end
