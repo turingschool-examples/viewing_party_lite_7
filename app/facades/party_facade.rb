@@ -1,3 +1,4 @@
+# Party facade
 class PartyFacade
   def self.create_party(params)
     Party.new(duration: params[:duration].to_i,
