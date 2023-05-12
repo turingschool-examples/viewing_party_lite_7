@@ -12,4 +12,8 @@ class User < ApplicationRecord
   def invited_parties
     parties.where("user_parties.is_host = false")
   end
+
+  def self.other_users(id)
+    where.not(id: id)
+  end
 end
