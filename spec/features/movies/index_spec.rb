@@ -2,43 +2,43 @@ require 'rails_helper'
 
 RSpec.describe 'movies index page', :vcr do
   describe 'movies index' do
-    let!(:user_1) { User.create!(name: "Angel Byun", email: "angelbyun@turing.edu") }
-    let!(:user_2) { User.create!(name: "Isaac Thill", email: "isaacthill@turing.edu") }
-    let!(:user_3) { User.create!(name: "Scott Le", email: "scottle@gmail.com") }
-    let!(:user_4) { User.create!(name: "Megan Hinricher", email: "hinmeg@gmail.com") }
-
-    it 'has a list of top rated movies' do
-      visit "/users/#{user_1.id}/movies"
-
-      expect(page).to have_content("The Godfather")
-      expect(page).to have_content("The Shawshank Redemption")
-      expect(page).to have_content("Cuando Sea Joven")
-      expect(page).to have_content("The Godfather Part II")
-      expect(page).to have_content("Dilwale Dulhania Le Jayenge")
-      expect(page).to have_content("Spirited Away")
-      expect(page).to have_content("12 Angry Men")
-      expect(page).to have_content("Your Name.")
-      expect(page).to have_content("Parasite")
+    before :each do
+      @user_1 = User.create!(name: 'Billy Bob Thornton', email: 'billybob@turing.edu')
+      visit user_discover_index_path(@user_1)
     end
 
-    it 'can search movies by title and keywords' do
-      visit "/users/#{user_1.id}/discover"
+    it 'If I clicked "Find Top Rated Movies" I see a list of the top rated movies' do
+      click_button 'Find Top Rated Movies'
+      expect(current_path).to eq(user_movies_path(@user_1))
+      expect("The Godfather").to appear_before("The Shawshank Redemption")
+      expect("The Shawshank Redemption").to appear_before("The Dark Knight")
+      expect("The Dark Knight").to_not appear_before("The Godfather")
+      expect(page).to have_link("The Godfather")
+      click_link "The Godfather"
+      expect(current_path).to eq(user_movie_path(@user_1, 238))
+    end
 
-      fill_in(:query, with: "god")
-      click_button("Search Movie")
-
-      expect(current_path).to eq("/users/#{user_1.id}/movies")
-      visit "/users/#{user_1.id}/movies"
-
-      expect(page).to have_content("Shazam! Fury of the Gods")
+    it 'If I clicked "Find Movies" I see a list of movies that match my search' do
+      fill_in :query, with: "basketball"
+      click_button 'Find Movies'
+      expect(current_url).to eq("http://www.example.com/users/#{@user_1.id}/movies?query=basketball&commit=Find+Movies")
+      expect(page).to have_link("Kuroko's Basketball the Movie: Last Game")
+      expect(page).to have_link("The Basketball Diaries")
+      expect(page).to_not have_link("The Godfather")
     end
 
     it 'creates a link to the top rated movies detail page' do
-      visit "/users/#{user_1.id}/movies"
-
       click_link("The Godfather")
 
-      expect(current_path).to eq("/users/#{user_1.id}/movies/238")
+      expect(current_path).to eq("/users/#{@user_1.id}/movies/238")
+    end
+    
+    it 'I see a button back to the discover page' do
+      click_button 'Find Top Rated Movies'
+      expect(current_path).to eq(user_movies_path(@user_1))
+      expect(page).to have_button('Discover Page')
+      click_button 'Discover Page'
+      expect(current_path).to eq(user_discover_index_path(@user_1))
     end
   end
 end
