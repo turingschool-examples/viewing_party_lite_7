@@ -29,4 +29,10 @@ RSpec.describe Movie do
       expect(@movie.extract_genres(data)).to eq(%w[Drama Thriller Comedy])
     end
   end
+  describe "is_nil?" do
+    it "checks if the given data is nil" do
+      expect(@movie.is_nil?(nil)).to eq(nil)
+      expect(@movie.is_nil?("data")).to eq("data")
+    end
+  end
 end
