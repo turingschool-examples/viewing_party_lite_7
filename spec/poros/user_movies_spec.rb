@@ -49,4 +49,11 @@ RSpec.describe UserMovies do
       end
     end
   end
+
+  describe '#user_name' do
+    it 'returns the user name' do
+      expect(@movie_data1.user_name).to eq(@user1.name)
+      expect(@movie_data2.user_name).to eq(@user2.name)
+    end
+  end
 end
