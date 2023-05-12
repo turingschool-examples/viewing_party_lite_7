@@ -31,8 +31,8 @@ RSpec.describe 'user story 10' do
     it 'displays movie title and vote average', :vcr do
       visit "/users/#{@user1.id}/movie/324857"
 
-      within "#movie-details" do
-        expect(page).to have_content("Spider-Man: Into the Spider-Verse")
+      within '#movie-details' do
+        expect(page).to have_content('Spider-Man: Into the Spider-Verse')
         expect(page).to have_content(8.4)
       end
     end
@@ -40,55 +40,55 @@ RSpec.describe 'user story 10' do
     it 'displays movie runtime in hours and minutes', :vcr do
       visit "/users/#{@user1.id}/movie/324857"
 
-      within "#movie-details" do
-        expect(page).to have_content("1h 57min")
+      within '#movie-details' do
+        expect(page).to have_content('1h 57min')
       end
     end
 
     it 'displays movie genre', :vcr do
       visit "/users/#{@user1.id}/movie/324857"
-
-      within "#movie-details" do
-        expect(page).to have_content("Action")
-        expect(page).to have_content("Adventure")
-        expect(page).to have_content("Animation")
-        expect(page).to have_content("Science Fiction")
+      within '#movie-details' do
+        expect(page).to have_content('Action')
+        expect(page).to have_content('Adventure')
+        expect(page).to have_content('Animation')
+        expect(page).to have_content('Science Fiction')
       end
     end
 
     it 'displays summary of movie', :vcr do
       visit "/users/#{@user1.id}/movie/324857"
-save_and_open_page
-      within "#movie-details" do
-        expect(page).to have_content("Miles Morales is juggling his life between being a high school student and being a spider-man. When Wilson \"Kingpin\" Fisk uses a super collider, others from across the Spider-Verse are transported to this dimension.")
+      # save_and_open_page
+      within '#movie-details' do
+        expect(page).to have_content('Miles Morales is juggling his life between being a high school student and being a spider-man. When Wilson "Kingpin" Fisk uses a super collider, others from across the Spider-Verse are transported to this dimension.')
       end
     end
 
     it 'displays first 10 cast members', :vcr do
       visit "/users/#{@user1.id}/movie/324857"
 
-      within "#movie-details" do
-        expect(page).to have_content()
-        expect(page).to have_content()
+      within '#movie-details' do
+        expect(page).to have_content("Shameik Moore")
+        expect(page).to have_content("Brian Tyree Henry")
+        expect(page).to have_content("Kimiko Glenn")
       end
     end
 
-    xit 'displays count of total reviews', :vcr do
-      visit new_user_movie_viewing_party_path(@user1, 324_857)
-
-      within "#movie-details" do
-        expect(page).to have_content()
+    it 'displays count of total reviews', :vcr do
+      visit "/users/#{@user1.id}/movie/324857"
+save_and_open_page
+      within "#movie-reviews" do
+        expect(page).to have_content(20)
       end
     end
 
     xit 'displays each reviews author and information', :vcr do
-      visit new_user_movie_viewing_party_path(@user1, 324_857)
-      
-      within "#movie-details" do
-        expect(page).to have_content()
-        expect(page).to have_content()
-        expect(page).to have_content()
-        expect(page).to have_content()
+      visit "/users/#{@user1.id}/movie/324857"
+
+      within "movie-reviews" do
+        expect(page).to have_content
+        expect(page).to have_content
+        expect(page).to have_content
+        expect(page).to have_content
       end
     end
   end
