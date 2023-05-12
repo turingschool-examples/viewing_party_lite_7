@@ -11,6 +11,14 @@ class MovieService
     get_url("/3/movie/#{movie_id}")
   end
 
+  def credits(movie_id)
+    get_url("/3/movie/#{movie_id}/credits")
+  end
+  
+  def reviews(movie_id)
+    get_url("/3/movie/#{movie_id}/reviews")
+  end
+
   private
 
   def get_url(url)
