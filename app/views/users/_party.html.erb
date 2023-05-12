@@ -1,0 +1,28 @@
+<div style='padding:15px'>
+  <img width='100px' src=<%= party.movie_image_src %>>
+</div>
+<div>
+  <h3><%= party.movie_title %></h3>
+</div>
+<br>
+<div>
+  <%= party.date.strftime("%B %-d, %Y") %>
+</div>
+<div>
+  <%= party.start_time.strftime("%-I:%M %p") %>
+</div>
+<br>
+<div>
+  <% if party.host_name == user.user_name %> 
+    <h3>Hosting</h3>
+  <% else %>
+    <h3>Invited by <%= party.host_name %></h3>
+  <% end %>
+  <% party.attendees_names.each do |name| %>
+    <% if name == user.user_name %>
+      <p id='user_name' style='font-weight:bold'><%= name %></p>
+    <% else %>
+      <p><%= name %></p>
+    <% end %>
+  <% end %>
+</div>
