@@ -29,36 +29,36 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 11 May 2023 17:00:47 GMT
+      - Fri, 12 May 2023 01:30:24 GMT
       Server:
       - openresty
       Cache-Control:
-      - public, max-age=22711
+      - public, max-age=28088
       X-Memc:
       - HIT
       X-Memc-Key:
       - a3dde13b574bdd203b706f79c6da42d3
       X-Memc-Age:
-      - '12207'
+      - '15910'
       X-Memc-Expires:
-      - '13444'
+      - '12412'
       Etag:
-      - W/"396cc1c9f5e6fd0e333d8f5c302aa0f9"
+      - W/"29fcb28a05923691f3ccbc5bcc620b38"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 22e9d361a9c4153886c1c8aa0eb4ffa8.cloudfront.net (CloudFront)
+      - 1.1 0712e4ad4264127dfcb76a114b130494.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - IAD89-C3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - RFYO9WTM1AKB9kSywRs00W8TiM3c3CMDOs7_gVSebiXQne4JNLxFng==
+      - ze4DfrZXBnuu7x-aGh0p9xHq6t3BD2FLUurTQvpmD7CuZRAZ98m0ig==
       Age:
-      - '22335'
+      - '5143'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/2w4xG178RpB4MDAIfTkqAuSJzec.jpg","belongs_to_collection":{"id":10,"name":"Star
@@ -72,8 +72,8 @@ http_interactions:
         Ltd.","origin_country":"US"},{"id":25,"logo_path":"/qZCc1lty5FzX30aOCVRBLzaVmcp.png","name":"20th
         Century Fox","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1977-05-25","revenue":775398007,"runtime":121,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"A
-        long time ago in a galaxy far, far away...","title":"Star Wars","video":false,"vote_average":8.2,"vote_count":18588}'
-  recorded_at: Thu, 11 May 2023 23:13:02 GMT
+        long time ago in a galaxy far, far away...","title":"Star Wars","video":false,"vote_average":8.2,"vote_count":18589}'
+  recorded_at: Fri, 12 May 2023 02:56:07 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/11/credits
@@ -124,15 +124,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 d9057c384f4ac5ba2672d2ff44de7e08.cloudfront.net (CloudFront)
+      - 1.1 8d6071bd169bbf5fd46638140132b1d0.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - IAD89-C3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - owcv-ffnBY2CfWZKMHi9kEDaFu_UVF923SWaQSAbTC6AxvEyinKrQg==
+      - r0lCGH0ISssyYNlLsUyJGCJSegS0yIurCxlLd_FwaLTvXa7G5w7Trg==
       Age:
-      - '12838'
+      - '26223'
     body:
       encoding: ASCII-8BIT
       string: '{"id":11,"cast":[{"adult":false,"gender":2,"id":2,"known_for_department":"Acting","name":"Mark
@@ -451,5 +451,5 @@ http_interactions:
         In"},{"adult":false,"gender":0,"id":3583983,"known_for_department":"Crew","name":"Len
         Mathewman","original_name":"Len Mathewman","popularity":0.6,"profile_path":null,"credit_id":"62a423307e12f02ff658460c","department":"Crew","job":"Stand
         In"}]}'
-  recorded_at: Thu, 11 May 2023 23:13:02 GMT
+  recorded_at: Fri, 12 May 2023 02:56:07 GMT
 recorded_with: VCR 6.1.0
