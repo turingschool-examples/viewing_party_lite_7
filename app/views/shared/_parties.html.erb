@@ -1,0 +1,21 @@
+<h2> <%=title%> </h2>
+<% parties.each do |party| %>
+  <p><%= @facade.get_movie_title(party.movie_id)%>
+  <p><%= image_tag @facade.get_movie_poster(party.movie_id), size: "60x80" %></p>
+
+  <p><%= party.date %></p>
+  <p><%= party.start_time %></p>
+  <p>Host: <%= host=party.host_name %></p>
+  <div id='invitees'>
+  <p>Invited:</p>
+  <ul>
+  <% party.invited_users.each do |user| %>
+    <% if user.id == @user.id %>
+      <li><b><%= user.name %></b></li>
+    <% else %>
+      <li><%= user.name %></li>
+    <% end %>
+  <% end %>
+  </ul>
+  </div>
+<% end %>
