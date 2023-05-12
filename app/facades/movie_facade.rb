@@ -3,7 +3,7 @@ class MovieFacade
 
   def initialize(id)
     @id = id
-    @movie = Movie.new(movie_details, movie_credits)
+    @movie = Movie.new(movie_details, movie_credits, movie_reviews)
   end
 
   def title
@@ -50,6 +50,10 @@ class MovieFacade
 
   def movie_credits
     service.movie_credits(@id)
+  end
+
+  def movie_reviews
+    service.movie_reviews(@id)
   end
 
   def service

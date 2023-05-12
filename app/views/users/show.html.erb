@@ -6,14 +6,26 @@
   <h2>My Parties</h2>
   <% @parties.each do |party| %>
     <div class="party">
-      <%= image_tag party.image_url, alt: party.title %>
-      <%= party.title %>
-      <%= party.datetime.strftime('%Y-%m-%d %H:%M') %>
-      <% if party.user_id == @user.id %>
+      <%= image_tag party.image_url, alt: party.title, width: '185' %>
+      <%= link_to party.title, movie_path(party.movie_id) %>
+      <p><%= party.datetime.strftime('%Y-%m-%d %H:%M') %></p>
+      <% if party.host?(@user) %>
         <p>Hosting</p>
       <% else %>
-        <p>Invited</p>
+        <p>Host: <%= party.host.name %></p>
       <% end %>
+      <p>Invited:</p>
+      <ul>
+        <% party.invited_users.each do |user| %>
+          <li>
+            <% if user == @user %>
+              <strong><%= user.name %></strong>
+            <% else %>
+              <%= user.name %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
     </div>
   <% end %>
 </div>

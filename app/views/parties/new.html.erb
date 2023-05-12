@@ -14,6 +14,7 @@
   <% end %>
 
   <%= form.hidden_field :user_id, value: @host.id %>
+  <%= form.hidden_field :movie_id, value: @movie.id %>
   <%= form.hidden_field :title, value: @movie.title %>
   <%= form.hidden_field :movie_runtime, value: @movie.runtime %>
   <%= form.hidden_field :image_url, value: @movie.image_url %>

@@ -3,12 +3,21 @@ class Party < ApplicationRecord
   has_many :partygoings, dependent: :destroy
   has_many :users, through: :partygoings
   
+  validates :movie_id, presence: true
   validates :title, presence: true
   validates :image_url, presence: true
   validates :datetime, presence: true
   validates :duration, presence: true
   validate :min_duration
   validate :min_date
+
+  def invited_users
+    users.where.not(id: user_id)
+  end
+
+  def host?(user)
+    user_id == user.id
+  end
 
   attr_accessor :movie_runtime
 

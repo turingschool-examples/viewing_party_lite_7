@@ -16,6 +16,11 @@ class MovieDbService
     get_url("/3/movie/#{id}/credits")
   end  
 
+  def movie_reviews(id)
+    response = get_url("/3/movie/#{id}/reviews")
+    response[:results]
+  end
+
   private
 
   def get_url(url, params = {})

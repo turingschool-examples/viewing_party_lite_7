@@ -19,9 +19,9 @@
 </div>
 
 <div class="reviews">
-  <h2>(<%= @movie.review_count %>) Reviews </h2>
+  <h2><%= @movie.review_count %> Reviews </h2>
   <% @movie.reviews.each do |review| %>
-    <p><%= review %></p>
+    <p><%= link_to review[:author], review[:url] %></p>
   <% end %>
 </div>
 
