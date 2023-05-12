@@ -45,4 +45,40 @@ RSpec.describe MovieFacade, :vcr do
       expect(reviews.count).to eq(8)
     end
   end
+
+  describe 'movie_title' do
+    it 'returns the movie title' do
+      expect(@movie_facade.movie_title).to eq('Fight Club')
+    end
+  end
+
+  describe 'movie_vote_average' do
+    it 'returns the movie vote average' do
+      expect(@movie_facade.movie_vote_average).to eq(8.4)
+    end
+  end
+
+  describe 'movie_runtime' do
+    it 'returns the movie runtime' do
+      expect(@movie_facade.movie_runtime).to eq(139)
+    end
+  end
+
+  describe 'movie_genres' do
+    it 'returns the movie genres' do
+      expect(@movie_facade.movie_genres).to eq('Drama, Thriller, Comedy')
+    end
+  end
+  
+  describe 'movie_summary' do
+    it 'returns the movie summary' do
+      expect(@movie_facade.movie_summary).to eq("A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \"fight clubs\" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.")
+    end
+  end
+
+  describe 'review_count' do
+    it 'returns the count of reviews for a movie' do
+      expect(@movie_facade.review_count).to eq(8)
+    end
+  end
 end

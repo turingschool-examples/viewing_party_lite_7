@@ -24,6 +24,30 @@ class MovieFacade
     end
   end
 
+  def review_count
+    service.reviews(@id)[:total_results]
+  end
+
+  def movie_title
+    find_movie.title
+  end
+
+  def movie_vote_average
+    find_movie.vote_average
+  end
+
+  def movie_runtime
+    find_movie.runtime
+  end
+
+  def movie_genres
+    find_movie.genre.join(', ')
+  end
+
+  def movie_summary
+    find_movie.summary
+  end
+
   private
 
   def service
