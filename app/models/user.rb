@@ -15,4 +15,8 @@ class User < ApplicationRecord
   def host_vps
     parties.joins(:user_parties).where("user_parties.is_host=true").distinct
   end
+
+  def guest_vps
+    parties.joins(:user_parties).where("user_parties.is_host=false").distinct
+  end
 end
