@@ -9,12 +9,13 @@ Rails.application.routes.draw do
   get "/users/:user_id", to: "users#dashboard"
   get "/users/:user_id/discover", to: "movies#discover"
   get "/users/:user_id/movies", to: "movies#index"
+  get "/user_parties/create", to: "user_parties#create"
 
   resources :users, only: [:create]
-
+  
   resources :users, only: [:show] do
     resources :movies, only: [:show] do
-      resources :parties, only: [:new]
+      resources :parties, only: [:new, :create]
     end
   end
 end

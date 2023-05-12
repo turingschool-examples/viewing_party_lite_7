@@ -35,7 +35,7 @@ RSpec.describe "Movie Detail page" do
       within("#movie-info") do
         expect(page).to have_content(@movie.title)
         expect(page).to have_content(@movie.vote_average)
-        expect(page).to have_content(@movie.runtime)
+        expect(page).to have_content(@movie.format_runtime)
         @movie.genres.each do |genre|
           expect(page).to have_content(genre)
         end

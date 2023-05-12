@@ -6,13 +6,17 @@ class Movie
     @title = data[:title]
     @id = data[:id]
     @vote_average = data[:vote_average]
-    @runtime = format_runtime(data[:runtime])
+    @runtime = is_nil?(data[:runtime])
     @genres = extract_genres(data[:genres])
     @overview = data[:overview]
   end
 
-  def format_runtime(time)
-    time.nil? ? nil : "#{time / 60} hours #{time % 60} minutes"
+  def format_runtime
+    "#{@runtime / 60} hours #{@runtime % 60} minutes"
+  end
+
+  def is_nil?(data)
+    data == nil ? nil : data
   end
 
   def extract_genres(data)
