@@ -13,7 +13,7 @@ FactoryBot.define do
   end
 
   factory :user_viewing_party do
-    user_type { %w[visitor host].sample }
+    user_type { %w[Invited Hosting].sample }
   end
 
   factory :movie do
