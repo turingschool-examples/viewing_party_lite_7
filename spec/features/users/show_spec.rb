@@ -35,8 +35,6 @@ RSpec.describe '/users/:id', type: :feature do
       VCR.use_cassette('all_movie_data_by_id_550_551', :allow_playback_repeats => true) do
         title_550 = MovieFacade.get_movie_title(550)
         title_551 = MovieFacade.get_movie_title(551)
-        poster_550 = MovieFacade.get_movie_poster(550)
-        poster_551 = MovieFacade.get_movie_poster(551)
 
         visit user_path(@user1)
 
@@ -45,7 +43,6 @@ RSpec.describe '/users/:id', type: :feature do
 
         within "#hosting" do
           expect(page).to have_content(title_550)
-          # expect(page).to have_content(poster_550)
           expect(page).to have_css('img')
           expect(page).to have_content(@party1.date)
           expect(page).to have_content(@party1.start_time)
@@ -60,7 +57,6 @@ RSpec.describe '/users/:id', type: :feature do
 
         within "#invited" do
           expect(page).to have_content(title_551)
-          # expect(page).to have_content(poster_551)
           expect(page).to have_css('img')
           expect(page).to have_content(@party2.date)
           expect(page).to have_content(@party2.start_time)
