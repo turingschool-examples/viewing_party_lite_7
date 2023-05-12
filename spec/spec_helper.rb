@@ -5,9 +5,9 @@
 # files.
 #
 require 'shoulda/matchers'
-require 'simplecov'
+# require 'simplecov'
 require 'webmock/rspec'
-SimpleCov.start 'rails'
+# SimpleCov.start 'rails'
 WebMock.disable_net_connect!
 # Given that it is always loaded, you are encouraged to keep this file as
 # light-weight as possible. Requiring heavyweight dependencies from this file

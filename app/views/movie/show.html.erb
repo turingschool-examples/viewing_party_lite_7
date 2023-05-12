@@ -1,0 +1,29 @@
+<h1><%= @movie.title %></h1>
+
+<section id="buttons">
+  <div id="discover">
+    <%= button_to 'Discover Page', movie_index_path(@user), method: :get %>
+  </div>
+  <br>
+  <div id="new_party">
+    <%= button_to "Create Viewing Party For #{@movie.title}", new_viewing_party_path(@user, @movie), method: :get %>
+  </div>
+</section>
+  <br>
+<section id="general_info">
+  <div id="movie_details">
+    <p>Runtime: <%= @movie.runtime %> minutes</p>
+    <p>Vote Average: <%= @movie.vote_average %></p>
+    <p>Genres: <%= @movie.genres %></p>
+    <p>Summary: <%= @movie.summary %></p>
+  </div>
+  <div id="cast_characters">
+    <h2>Cast:</h2>
+    <ul>
+      <% @cast.each do |c| %>
+        <li>Name: <%= c.name %></li>
+        <li>Character: <%= c.character %></li>
+      <% end %>
+    </ul>
+  </div>
+</section>

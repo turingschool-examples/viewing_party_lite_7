@@ -1,3 +1,15 @@
+# class Movie
+#   attr_reader :id,
+#               :title,
+#               :vote_average
+
+#   def initialize(data)
+#     @id = data[:id]
+#     @title = data[:title]
+#     @vote_average = data[:vote_average]
+#   end
+# end
+
 class Movie
   attr_reader :id,
   :title,
@@ -10,14 +22,14 @@ class Movie
   :genres,
   :reviews,
   :runtime
+
   def initialize(data)
     @id           = data[:id]
     @title        = data[:title]
     @summary      = data[:overview]
     @vote_average = data[:vote_average]
-    @vote_count   = data[:vote_count]
     @poster_path  = data[:poster_path]
-    @total_min    = nil
+    @total_min    = data[:total_min]
     @runtime      = nil
     @cast         = nil
     @genres       = nil
