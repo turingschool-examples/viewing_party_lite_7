@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   
   def show 
     @user = User.find(params[:id])
-    @invited_parties = @user.viewing_parties
+    @invited_parties = @user.invited_parties
     @hosted_parties = @user.hosted_parties
   end
   

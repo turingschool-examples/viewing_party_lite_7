@@ -12,7 +12,6 @@ class ViewingParty < ApplicationRecord
   end
 
   def get_image
-    require 'pry'; binding.pry
     image = MovieService.find_by_id(self.movie_id)[:poster_path]
   end
 end

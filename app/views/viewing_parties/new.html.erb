@@ -8,7 +8,7 @@
   <%= form.date_field :date, min: Date.today %>
   <br>
   <%= form.label :time %>
-  <%= form.time_field :time %>
+  <%= form.time_field :time, ignore_date: true %>
   <br>
   <%= form.label :invites, "Invite Others:" %>
   <%= form.collection_check_boxes :users, @all_other_users, :id, :name %><br>
