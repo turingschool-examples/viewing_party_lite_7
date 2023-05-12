@@ -4,9 +4,23 @@
 <%= button_to "Discover Movies", user_discover_path(@user), {method: "get"} %>
 </section>
 
-<ul id="viewing-parties">
-  <h3> Viewing Parties </h3>
-  <% @parties.each do |party| %>
+<ul id="invited-parties">
+  <h3> Invited Parties </h3>
+  <% @invited_parties.each do |party| %>
+    <%= image_tag "https://image.tmdb.org/t/p/w500#{party.get_image}" %>
+    <li><%= link_to "#{party.movie_title}", user_movie_path(party.movie_id) %></li>
+    <li><%= party.date %></li>
+    <li><%= party.time %></li>
+    <% party.users.each do |user| %>
+      <li><%= user.name %></li>
+      <% end %>
+
+  <% end %>
+</ul>
+
+<ul id="hosted-parties">
+  <h3> Hosted Parties </h3>
+  <% @hosted_parties.each do |party| %>
     <li><%= party.movie_title %></li>
   <% end %>
 </ul>
