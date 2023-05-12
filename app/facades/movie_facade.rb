@@ -54,4 +54,8 @@ class MovieFacade
   def review_count(movie_id)
     all_reviews(movie_id).count
   end
+
+  def movie_title(movie_id)
+    find_movie(movie_id).title
+  end
 end
