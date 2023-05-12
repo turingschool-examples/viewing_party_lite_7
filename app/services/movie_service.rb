@@ -25,18 +25,18 @@ class MovieService
 
     {
       id: movie_id,
-      title: details[:title], 
+      title: details[:title],
       image_url: image_url,
       rating: details[:vote_average],
       runtime: details[:runtime],
       genres: details[:genres].map { |genre| genre[:name] },
       summary: details[:overview],
-      cast: cast[0..9].map do |member| 
+      cast: cast[0..9].map do |member|
         {
-          name: member[:name], 
-          character: member[:character] 
-      }
-              end,
+          name: member[:name],
+          character: member[:character]
+        }
+      end,
       reviews: reviews.map do |review|
         {
           author: review[:author],

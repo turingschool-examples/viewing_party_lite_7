@@ -32,7 +32,10 @@ class MovieFacade
 
   def viewing_parties
     viewing_parties = @user.viewing_parties.map do |viewing_party|
-      viewing_party[:movie] = Movie.new(service.full_movie_details(viewing_party[:movie_id]))
+      {
+        viewing_party: viewing_party,
+        movie: Movie.new(service.full_movie_details(viewing_party[:movie_id]))
+      }
     end
   end
 

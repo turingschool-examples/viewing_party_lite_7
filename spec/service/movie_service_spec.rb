@@ -84,6 +84,8 @@ RSpec.describe MovieService, :vcr do
 
         movie_data[:cast].each do |cast_member|
           expect(cast_member).to be_a(Hash)
+          expect(cast_member).to have_key(:name)
+          expect(cast_member).to have_key(:character)
         end
 
         movie_data[:reviews].each do |review|
