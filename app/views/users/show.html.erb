@@ -1,3 +1,18 @@
-<h1><%= @user.name %>'s Dashboard</h1>
+<h2><%= @user.name %>'s Dashboard</h2>
 
-<p>Email: <%= @user.email %></p>
+<%= button_to "Discover Page", discover_user_path(@user) %>
+
+<div id="parties">
+  <h2>My Parties</h2>
+  <% @user.partygoings.each do |partygoing| %>
+    <div class="party">
+      <% if partygoing.party.user_id == @user.id %>
+        <p>Hosting</p>
+      <% else %>
+        <p>Invited</p>
+      <% end %>
+      <%= partygoing.party.title %>
+      <%= partygoing.party.datetime.strftime('%Y-%m-%d %H:%M') %>
+    </div>
+  <% end %>
+</div>

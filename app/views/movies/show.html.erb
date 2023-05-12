@@ -1,7 +1,13 @@
-<h1><%= @movie.title %></h1>
-<p>Vote Average: <%= @movie.vote_average %></p>
-<p>Runtime: <%= @movie.runtime %> minutes</p>
-<p>Genres: <%= @movie.genres.join(', ') %></p>
+<h2><%= @movie.title %></h2>
+
+<%= button_to "Discover Page", discover_user_path(@user) %>
+<%= button_to "Create a viewing party for #{@movie.title}", new_movie_party_path(id: @user.id, movie_id: @movie.id) %>
+
+<p>Vote: <%= @movie.vote_average %>
+   Runtime: <%= @movie.runtime %> minutes
+   Genre: <%= @movie.genres.join(', ') %>
+</p>
+
 <p>Summary: <%= @movie.summary %></p>
 
 <div class="cast_members">
@@ -12,11 +18,10 @@
 </div>
 
 <div class="reviews">
-  <h2>Reviews (<%= @movie.review_count %>)</h2>
+  <h2>(<%= @movie.review_count %>) Reviews </h2>
   <% @movie.reviews.each do |review| %>
     <p><%= review %></p>
   <% end %>
 </div>
 
-<%= button_to "Create a viewing party", root_path %>
-<%= button_to "Return to Discover Page", discover_user_path(@user) %>
+

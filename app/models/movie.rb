@@ -19,6 +19,6 @@ class Movie
   private
 
   def get_cast(credits)
-    credits.dig(:cast)&.take(10)&.map { |c| "#{c[:character]}: (#{c[:name]})" } || []
+    credits.dig(:cast)&.take(10)&.map { |c| "#{c[:name]} as #{c[:character]}" } 
   end
 end

@@ -5,15 +5,15 @@ class MovieDbService
   end  
 
   def search_movies(query)
-    response = get_url("/3/search/movie", { query: query } )
+    get_url("/3/search/movie", { query: query } )
   end
 
   def movie_details(id)
-    response = get_url("/3/movie/#{id}")
+    get_url("/3/movie/#{id}")
   end
 
   def movie_credits(id)
-    response = get_url("/3/movie/#{id}/credits")
+    get_url("/3/movie/#{id}/credits")
   end  
 
   private
