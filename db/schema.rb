@@ -17,6 +17,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_11_233529) do
   create_table "parties", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "title"
+    t.string "image_url"
     t.integer "duration"
     t.datetime "datetime"
     t.datetime "created_at", null: false

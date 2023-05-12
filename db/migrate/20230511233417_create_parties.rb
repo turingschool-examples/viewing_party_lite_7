@@ -3,6 +3,7 @@ class CreateParties < ActiveRecord::Migration[7.0]
     create_table :parties do |t|
       t.references :user, null: false, foreign_key: true
       t.string :title
+      t.string :image_url
       t.integer :duration
       t.datetime :datetime
 
