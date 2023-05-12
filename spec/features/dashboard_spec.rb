@@ -32,5 +32,7 @@ RSpec.describe 'User Dashboard Page', type: :feature do
       expect(hosting.count).to eq(19)
       expect(invited.count).to eq(1)
     end
+
+    click_button('Discover Page')
   end
 end

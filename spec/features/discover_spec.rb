@@ -21,4 +21,11 @@ feature "Discover page" do
     click_button "Search by Movie Title"
     expect(current_path).to eq(movies_path(user))
   end
+
+  scenario "User clicks on a movie and goes to movie show page", :vcr do
+    visit movies_path(user)
+    click_link "The Godfather"
+    expect(current_path).to eq(movie_path(user))
+    expect(page).to have_button("Create a viewing party for The Godfather")
+  end
 end
