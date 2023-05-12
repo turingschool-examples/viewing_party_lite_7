@@ -19,13 +19,32 @@ RSpec.describe "user dashboard page", type: :feature do
       expect(current_path).to eq("/users/#{@user_1.id}/discover")
     end
 
-    it "lists viewing parties that I am invited to with VP info" do
+    it "lists viewing parties that I am invited to with VP info", :vcr do
       visit "/users/#{@user_3.id}"
 
       within("#hosted-vps") do
       # contains image
-        expect(page).to have_content("")
+        expect(page).to have_content("Fight Club")
+        expect(page).to have_content(@party_2.format_date)
+        expect(page).to have_content(@party_2.format_time)
+        expect(page).to have_content("Hosting")
+        expect(page).to have_content("#{@user_4.name}")
+        expect(page).to have_content("#{@user_5.name}")
       end
+
+      within("#guest-vps") do
+      # contains image
+        expect(page).to have_content("The Godfather")
+        expect(page).to have_content(@party_1.format_date)
+        expect(page).to have_content(@party_1.format_time)
+        expect(page).to have_content("Invited")
+        expect(page).to have_content("Hosted by: #{@user_4.name}")
+        expect(page).to have_content("#{@user_2.name}")
+        expect(page).to have_content("#{@user_3.name}")
+      end
+    end
+
+    xit "has movie titles linked to their show page" do
 
     end
   end
@@ -41,6 +60,7 @@ end
 #  Date and Time of Event
 #  who is hosting the event
 #  list of users invited, with my name in bold
+
 # I should also see the viewing parties that the user has created with the following details:
 
 #  Movie Image
