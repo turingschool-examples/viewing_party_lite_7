@@ -22,7 +22,7 @@ class MovieService
   def get_url_results(url, params={})
     response = conn.get(url, params)
     results = JSON.parse(response.body, symbolize_names: true)[:results]
-    results.first(10)
+    results.first(20)
   end
 
   def conn

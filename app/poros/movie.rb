@@ -4,6 +4,7 @@ class Movie
               :summary,
               :vote_average,
               :runtime,
+              :genre_ids,
               :genres,
               :vote_count,
               :image,
@@ -15,6 +16,7 @@ class Movie
     @summary = movie_data[:overview]
     @vote_average = movie_data[:vote_average]
     @runtime = movie_data[:runtime]
+    @genre_ids = movie_data[:genre_ids]
     @genres = movie_data[:genres]
     @vote_count = movie_data[:vote_count]
     @image = movie_data[:poster_path]
