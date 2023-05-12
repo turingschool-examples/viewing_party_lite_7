@@ -28,7 +28,7 @@ RSpec.describe 'users movies results page', type: :feature do
   describe 'top rated movies', :vcr do
     it 'returns top rated movies' do
       visit "/users/#{@user1[:id]}/movies?q=top%20rated"
-      movies = MovieFacade.new.top_rated
+      movies = MovieListFacade.new('top rated').top_rated
 
       movies.each do |movie|
         within("##{movie.id}") do
@@ -42,7 +42,7 @@ RSpec.describe 'users movies results page', type: :feature do
   describe 'searched movies', :vcr do
     it 'returns searched movies' do
       visit "/users/#{@user1[:id]}/movies?q=princess"
-      movies = MovieFacade.new.search('princess')
+      movies = MovieListFacade.new('princess').search
 
       movies.each do |movie|
         within("##{movie.id}") do
