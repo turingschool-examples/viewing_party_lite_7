@@ -45,6 +45,7 @@ RSpec.describe '/users/:id', type: :feature do
         expect(page).to have_content("Host: #{@user2.name}")
         expect(page).to have_content('Invited:')
         expect(page).to have_content(@user1.name)
+        # expect(page).to_not have_content()
       end
     end
   end

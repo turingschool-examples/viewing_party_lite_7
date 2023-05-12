@@ -11,7 +11,7 @@
   <p>Host: <%= @user.name %></p>
   <p>Invited:</p>
   <ul>
-  <% party.users.each do |user| %>
+  <% party.invited_users.each do |user| %>
     <li><%= user.name %></li>
   <% end %>
   </ul>
@@ -26,7 +26,7 @@
   <p>Host: <%= party.host_name %></p>
   <p>Invited:</p>
   <ul>
-  <% party.users.each do |user| %>
+  <% party.invited_users.each do |user| %>
     <% if user.id == @user.id %>
       <li><b><%= user.name %></b></li>
     <% else %>

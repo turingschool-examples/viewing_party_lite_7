@@ -6,6 +6,12 @@ RSpec.describe Party, type: :model do
     it {should have_many(:users).through(:user_parties)}
   end
 
+  describe 'validations' do
+    it {should validate_presence_of(:duration)}
+    it {should validate_presence_of(:date)}
+    it {should validate_presence_of(:start_time)}
+  end
+
   describe 'instance methods' do
     before(:each) do
       @user1 = create(:user)
@@ -26,6 +32,12 @@ RSpec.describe Party, type: :model do
       it 'returns the name of the host of a specific party' do
         expect(@party1.host_name).to eq(@user1.name)
         expect(@party2.host_name).to eq(@user2.name)
+      end
+    end
+
+    describe '#invited_users' do
+      it 'returns an array of users that are invited to a party' do
+        expect(@party1.invited_users).to match_array([@user2, @user3])
       end
     end
   end

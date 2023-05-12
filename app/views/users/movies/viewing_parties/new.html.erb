@@ -1,0 +1,23 @@
+<h1>Viewing Party</h1>
+
+<%= button_to 'Discover Movies', user_discover_path(@user), method: :get  %>
+<br>
+<h2>Create a Movie Party for <%= @facade.movie_title %></h2>
+
+
+<%= form_with url: user_movie_viewing_party_index_path(@user, @facade.movie_id), local: true do |f| %>
+  <%= f.label :duration, 'Duration of Party' %>
+  <%= f.number_field :duration, value: @facade.movie_runtime, min: @facade.movie_runtime, max: 300 %>
+  <%= f.label :date, 'Day' %>
+  <%= f.date_field :date %>
+  <%= f.label :start_time %>
+  <%= f.time_field :start_time %>
+  <p>Invite Users</p>
+  <% @users.each do |user| %>
+    <div id="invite_<%= user.id%>">
+    <%= check_box_tag 'invite[]', user.id %>
+    <%= label_tag 'invite[]', user.name %>
+    </div>
+  <% end %>
+  <%= f.submit 'Create Party!' %>
+  <% end %>
