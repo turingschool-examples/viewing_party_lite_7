@@ -95,5 +95,31 @@ RSpec.describe MovieService, :vcr do
         expect(movie[:tagline]).to be_a(String)
       end
     end
+
+    describe '::movie_cast' do
+      it 'returns an array of actors' do
+        movie = MovieService.new.movie_cast(278)
+        expect(movie).to be_an(Array)
+
+        expect(movie.first).to have_key(:name)
+        expect(movie.first[:name]).to be_a(String)
+
+        expect(movie.first).to have_key(:character)
+        expect(movie.first[:character]).to be_a(String)
+      end
+    end
+
+    describe '::movie_reviews' do
+      it 'returns an array of reviews' do
+        movie = MovieService.new.movie_reviews(278)
+        expect(movie).to be_an(Array)
+
+        expect(movie.first).to have_key(:author)
+        expect(movie.first[:author]).to be_a(String)
+
+        expect(movie.first).to have_key(:content)
+        expect(movie.first[:content]).to be_a(String)
+      end
+    end
   end
 end

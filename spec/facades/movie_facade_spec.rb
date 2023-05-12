@@ -32,5 +32,25 @@ RSpec.describe MovieFacade, :vcr do
         expect(movie.title).to eq("The Shawshank Redemption")
       end
     end
+
+    describe '#movie_cast' do
+      it 'returns an array of actors' do
+        movie = MovieFacade.new.movie_cast(278)
+        expect(movie).to be_an(Array)
+        expect(movie.first).to be_a(Actor)
+        expect(movie.first.name).to be_a(String)
+        expect(movie.first.name).to eq("Tim Robbins")
+      end
+    end
+
+    describe '#movie_reviews' do
+      it 'returns an array of reviews' do
+        movie = MovieFacade.new.movie_reviews(278)
+        expect(movie).to be_an(Array)
+        expect(movie.first).to be_a(Review)
+        expect(movie.first.author).to be_a(String)
+        expect(movie.first.author).to eq("elshaarawy")
+      end
+    end
   end
 end

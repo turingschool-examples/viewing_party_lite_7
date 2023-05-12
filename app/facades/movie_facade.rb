@@ -16,6 +16,18 @@ class MovieFacade
     Movie.new(movie_data)
   end
 
+  def movie_cast(id)
+    service.movie_cast(id).map do |actor_data|
+      Actor.new(actor_data)
+    end
+  end
+
+  def movie_reviews(id)
+    service.movie_reviews(id).map do |review_data|
+      Review.new(review_data)
+    end
+  end
+
   private
   def service
     _service ||= MovieService.new

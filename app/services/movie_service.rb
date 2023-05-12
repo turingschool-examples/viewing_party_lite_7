@@ -13,6 +13,14 @@ class MovieService
     get_url("movie/#{id}")
   end
 
+  def movie_cast(id)
+    get_url_cast("movie/#{id}/credits")
+  end
+
+  def movie_reviews(id)
+    get_url_results("movie/#{id}/reviews")
+  end
+
   private
   def get_url(url)
     response = conn.get(url)
@@ -23,6 +31,12 @@ class MovieService
     response = conn.get(url, params)
     results = JSON.parse(response.body, symbolize_names: true)[:results]
     results.first(20)
+  end
+
+  def get_url_cast(url)
+    response = conn.get(url)
+    results = JSON.parse(response.body, symbolize_names: true)[:cast]
+    results.first(10)
   end
 
   def conn
