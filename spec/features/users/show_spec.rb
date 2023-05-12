@@ -18,7 +18,6 @@ RSpec.describe "User Dashboard", type: :feature do
     it "I see a header with the users name, a button to discover movies, and a list with all viewing parties" do
       expect(page).to have_content("#{@user1.name}'s Dashboard")
       expect(page).to have_button("Discover Movies")
-      save_and_open_page
       within("#invited-parties") do
         expect(page).to have_content("Four Rooms")
       end
