@@ -66,5 +66,35 @@ describe 'new viewing party', :vcr do
 
       expect(current_path).to eq(user_path(@user1))
     end
+
+    it 'redirects to dashboard' do
+      fill_in('Duration', with: 176)
+      select "2024", from: '[date(1i)]'
+      select "May", from: '[date(2i)]'
+      select "5", from: '[date(3i)]'
+      select "00", from: '[time(4i)]'
+      select "00", from: '[time(5i)]'
+     
+      click_on "Create Party"
+
+      expect(current_path).to eq(new_user_movie_viewing_party_path(@user1, @movie1.id))
+      expect(page).to have_content("Error: Must add users! Don't be a loner!")
+    end
+
+    it 'redirects to dashboard' do
+      fill_in('Duration', with: 176)
+      select "2022", from: '[date(1i)]'
+      select "May", from: '[date(2i)]'
+      select "00", from: '[time(4i)]'
+      select "00", from: '[time(5i)]'
+      within "#user_#{@user3.id}" do
+        check
+      end
+     
+      click_on "Create Party"
+
+      expect(current_path).to eq(new_user_movie_viewing_party_path(@user1, @movie1.id))
+      expect(page).to have_content("Error: Date can't be in the past")
+    end
   end
 end

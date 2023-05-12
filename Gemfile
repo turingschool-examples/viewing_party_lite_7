@@ -58,13 +58,11 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'jquery-rails'
-  gem 'jquery-rails'
   gem 'launchy'
   gem 'net-http'
   gem 'orderly'
   gem 'pry'
   gem 'shoulda-matchers'
-  gem 'turbolinks'
   gem 'turbolinks'
 end
 
@@ -82,7 +80,6 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'launchy'
   gem 'rspec-rails'
   gem 'simplecov'
   gem 'vcr'
