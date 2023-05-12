@@ -44,6 +44,7 @@ RSpec.describe "New Viewing party page" do
       expect(@user_4.parties.count).to eq(0)
 
       fill_in("duration", with: 140)
+      select "20", from: "[day(1i)]"
       fill_in("[day(1i)]", with: 2023)
       fill_in("[day(2i)]", May)
       fill_in("[day(3i)]", 25)
