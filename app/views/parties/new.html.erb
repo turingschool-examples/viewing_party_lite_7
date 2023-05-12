@@ -7,6 +7,9 @@
   <%= form.date_select :day %>
   <%= form.label :time, "Start Time" %>
   <%= form.time_select :time %><br/>
-  <%= form.check_boxes :id, User.all, :name, :email %>
+  <% @users.each do |user|%>
+    <%= label_tag user.id, "#{user.name} (#{user.email})" %>
+    <%= check_box_tag user.id, user.id %><br/>
+  <% end %>
   <%= form.submit "Create Party" %>
 <% end %>

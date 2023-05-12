@@ -20,11 +20,11 @@ RSpec.describe "New Viewing party page" do
       expect(page).to have_field("[day(3i)]")
       expect(page).to have_field("[time(4i)]")
       expect(page).to have_field("[time(5i)]")
-      expect(page).to have_selector("input##{@user_1.id}[type='radio']")
-      expect(page).to have_selector("input##{@user_2.id}[type='radio']")
-      expect(page).to have_selector("input##{@user_3.id}[type='radio']")
-      expect(page).to have_selector("input##{@user_4.id}[type='radio']")
-      expect(page).to have_selector("input##{@user_5.id}[type='radio']")
+      expect(page).to have_field(@user_1.id.to_s, type: 'checkbox')
+      expect(page).to have_field(@user_2.id.to_s, type: 'checkbox')
+      expect(page).to have_field(@user_3.id.to_s, type: 'checkbox')
+      expect(page).to have_field(@user_4.id.to_s, type: 'checkbox')
+      expect(page).to have_field(@user_5.id.to_s, type: 'checkbox')
       expect(page).to have_button("Create Party")
     end
   end
@@ -36,16 +36,19 @@ RSpec.describe "New Viewing party page" do
       @movie_1 = Movie.new(@data)
     end
 
-    xit "creates viewing party", :vcr do
+    it "creates viewing party", :vcr do
       visit new_user_movie_party_path(@user_1, @movie_1.id)
 
       expect(@user_1.parties.count).to eq(0)
       expect(@user_2.parties.count).to eq(1)
       expect(@user_4.parties.count).to eq(0)
 
-      fill_in("Duration of Party", with: 140)
-      fill_in("Day", "05/11/2023")
-      fill_in("Start Time", with: "20:00")
+      fill_in("duration", with: 140)
+      fill_in("[day(1i)]", with: 2023)
+      fill_in("[day(2i)]", May)
+      fill_in("[day(3i)]", 25)
+      fill_in("[time(4i)]", with: 20)
+      fill_in("[time(5i)]", with: 30)
       choose(@user_2.id)
       choose(@user_4.id)
       click_button("Create Party")
