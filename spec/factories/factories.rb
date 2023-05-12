@@ -31,15 +31,4 @@ FactoryBot.define do
 
     initialize_with { new(attributes) }
   end
-
-  factory :user_movies do
-    skip_create
-
-    type { ['details', 'search', 'top rated'].sample }
-    movies { Array.new(5, attributes_for(:movie)) }
-    user
-    query { Faker::Lorem.words }
-
-    initialize_with { new(attributes) }
-  end
 end
