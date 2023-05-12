@@ -3,9 +3,22 @@
 <h3><%= @movie.runtime %></h3>
 <h3><%= @movie.genres %></h3>
 <h3><%= @movie.summary %></h3>
+<h3><%= @movie.review_count %></h3>
+<h4> Cast: </h4>
+<div id="cast">
 <% @movie.cast.each do |member| %>
-<%= member %>
+  <div id="member_<%=member[:cast_id]%>">
+  <p><%= member[:name] %> as <%= member[:character]%><p>
+  </div>
 <% end %>
+</div>
+
+<h4> Reviews: </h4>
+<% @movie.reviews.each do |review| %>
+<div id="review_<%=review[:id]%>">
+<p> <%= review[:author]%> Review: <br> <%=review[:content]%> <p> <br> 
+</div>
+<%end%>
 
 <%= button_to "Create a Viewing Party!", new_user_movie_viewing_party_path(@user, @movie.id), method: :get %>
 <%= button_to "Return to Discover", user_discover_index_path(@user), method: :get %>

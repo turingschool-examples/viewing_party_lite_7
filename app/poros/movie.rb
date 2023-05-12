@@ -9,9 +9,12 @@ class Movie
               :runtime,
               :genres,
               :summary,
-              :cast
+              :cast,
+              :review_count,
+              :reviews
 
-  def initialize(attributes)
+
+  def initialize(attributes, cast = nil, reviews = nil)
     @id = attributes[:id]
     @title = attributes[:title]
     @vote_average = attributes[:vote_average]
@@ -19,7 +22,13 @@ class Movie
     @poster_path = attributes[:poster_path]
     @runtime = time_conversion(attributes[:runtime]) if !attributes[:runtime].nil?
     @genres = get_genres(attributes[:genres]) if !attributes[:genres].nil?
-    @cast = []
+    if cast != nil
+      @cast = cast[:cast][0..9]
+    end
+    if reviews != nil
+      @review_count = reviews[:total_results]
+      @reviews = reviews[:results]
+    end
   end
 
   def time_conversion(minutes)
@@ -34,11 +43,5 @@ class Movie
       genres << genre[:name]
     end
     genres.join(", ")
-  end
-
-  def update(cast)
-    cast[:cast][0..9].each do |member|
-      @cast << { member[:name] => member[:character] }
-    end
   end
 end

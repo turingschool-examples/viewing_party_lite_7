@@ -35,7 +35,7 @@ describe 'user result show page', :vcr do
 
   describe 'movie information' do
     before :each do
-      visit user_movie_path(@user1, @movie1.id)
+      visit user_movie_path(@user1, @new_movie1.id)
     end
     it 'has movie title' do
       expect(page).to have_content(@movie1.title)
@@ -63,22 +63,24 @@ describe 'user result show page', :vcr do
     end
 
     it 'lists first 10 cast members' do
-      SearchFacade.new({id: "#{@new_movie1.id}"}).cast_search(@new_movie1)
-      save_and_open_page
-      expect(page).to have_content(@new_movie1.cast)
-      exoect(@new_movie1.cast).length to_eq(10)
+      visit user_movie_path(@user1, @new_movie1.id)
+      within "#member_#{@new_movie1.cast.first[:cast_id]}" do
+        expect(page).to have_content("Marlon Brando as Vito Corleone")
+      end
+      expect(@new_movie1.cast.count).to eq(10)
     end
 
-    xit 'has count of total reviews' do
+    it 'has count of total reviews' do
+      visit user_movie_path(@user1, @new_movie1.id)
+      expect(page).to have_content(@new_movie1.review_count)
+      expect(@new_movie1.review_count).to eq(3)
     end
 
-    xit 'has each reviews author and info' do
-    end
-
-    xit 'has a details section with 3 details' do
-      #alternative titles
-      #release date
-      #translations
+    it 'has each reviews author and info' do
+      visit user_movie_path(@user1, @new_movie1.id)
+      expect(page).to have_content("crastana Review:")
+      expect(page).to have_content("futuretv Review:")
+      expect(page).to have_content("drystyx Review:")
     end
   end
 end
