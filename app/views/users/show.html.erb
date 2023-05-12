@@ -4,12 +4,9 @@
 <% end %>
 
 <section class='card-container'>
-  <% @user_movies.movies do |movie| %>
-    <div class='card'>
-      <img src='<%= movie.image_url %>'>
+  <% @user_movies.movies.each do |movie| %>
+    <div class='card' style="background-image:url('<%= movie.image_url %>')">
       <h4><%= movie.title %></h4>
-      <p><%= movie.start_time %></p>
-      <p><%= @user_movies.user.user_type %></p>
     </div>
   <% end %>
 </section>

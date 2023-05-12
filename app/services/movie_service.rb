@@ -14,10 +14,10 @@ class MovieService
   end
 
   def movies_by_ids(movie_ids)
-    movie_ids.map { |movie_id| full_movie_data(movie_id) }
+    movie_ids.map { |movie_id| full_movie_details(movie_id) }
   end
 
-  def full_movie_data(movie_id)
+  def full_movie_details(movie_id)
     details = get_movie_details(movie_id)
     cast = get_movie_cast(movie_id)[:cast]
     reviews = get_movie_reviews(movie_id)[:results]

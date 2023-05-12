@@ -60,7 +60,7 @@ RSpec.describe MovieService, :vcr do
 
     describe '#full_movie_data' do
       it 'returns the full data for a movie' do
-        movie_data = movie_service.full_movie_data(11)
+        movie_data = movie_service.full_movie_details(11)
         expect(movie_data).to be_a(Hash)
 
         expect(movie_data).to have_key(:id)

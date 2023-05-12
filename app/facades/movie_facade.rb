@@ -11,30 +11,30 @@ class MovieFacade
   def movie_details(movie_id)
     UserMovies.new(type: 'details',
                    movies: Movie.new(service.full_movie_details(movie_id)),
-                   user:)
+                   user: user)
   end
 
-  def movies_by_ids(movie_ids)
+  def viewing_parties(movie_ids)
     movies_data = service.movies_by_ids(movie_ids).map do |movie_data|
       Movie.new(movie_data)
     end
 
-    UserMovies.new(type: 'viewing party',
+    UserMovies.new(type: 'viewing parties',
                    movies: movies_data,
-                   user:)
+                   user: user)
   end
 
   def top_20_movies
     UserMovies.new(type: 'top rated',
                    movies: movies(service.top_rated_movies),
-                   user:)
+                   user: user)
   end
 
   def search_movies(query)
     UserMovies.new(type: 'search',
                    movies: movies(service.search_movies(query)),
-                   user:,
-                   query:)
+                   user: user,
+                   query: query)
   end
 
   private

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Discover Index Page' do
+RSpec.describe 'Discover Index Page', type: :feature do
   user = create(:user)
 
   before(:each) do
