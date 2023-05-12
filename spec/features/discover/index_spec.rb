@@ -18,7 +18,7 @@ RSpec.describe 'users discover index', :vcr do
     it 'creates a text field to search movies by title and a button to search movie by title' do
       visit "/users/#{user_1.id}/discover"
 
-      fill_in(:query, with: "Godfather")
+      fill_in(:query, with: "god")
       click_button("Search Movie")
 
       expect(current_path).to eq("/users/#{user_1.id}/movies")

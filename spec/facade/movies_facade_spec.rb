@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe MoviesFacade do
+describe MoviesFacade, :vcr do
   describe 'class methods' do
-    it 'top_rated_movies', :vcr do
+    it 'top_rated_movies' do
       service = MoviesService.new.top_rated_movies
 
       expect(service).to be_a(Hash)
@@ -14,7 +14,7 @@ describe MoviesFacade do
       expect(movie_data[:title]).to eq("The Godfather")
     end
 
-    it 'search_movies', :vcr do
+    it 'search_movies' do
       service = MoviesService.new.search_movies("god")
 
       expect(service).to be_a(Hash)
@@ -26,7 +26,7 @@ describe MoviesFacade do
       expect(movie_data[:title]).to eq("Shazam! Fury of the Gods")
     end
 
-    it 'movie_details', :vcr do
+    it 'movie_details' do
       service = MoviesService.new.movie_details(550)
 
       expect(service).to be_a(Hash)

@@ -2,6 +2,6 @@
 
 <% @movies.each do |movie| %>
 <ul>
-<li><%= link_to movie.title, "/movies/#{movie.id}"  %></li>
+<li><%= link_to movie.title, "/users/#{@user.id}/movies/#{movie.id}" %></li>
 </ul>
 <% end %>

@@ -8,7 +8,7 @@ RSpec.describe 'movies index page', :vcr do
     let!(:user_4) { User.create!(name: "Megan Hinricher", email: "hinmeg@gmail.com") }
 
     it 'has a list of top rated movies' do
-      visit "/movies"
+      visit "/users/#{user_1.id}/movies"
 
       expect(page).to have_content("The Godfather")
       expect(page).to have_content("The Shawshank Redemption")
@@ -22,23 +22,23 @@ RSpec.describe 'movies index page', :vcr do
     end
 
     it 'can search movies by title and keywords' do
-      visit "/discover/users/#{user_1.id}"
+      visit "/users/#{user_1.id}/discover"
 
       fill_in(:query, with: "god")
       click_button("Search Movie")
 
-      expect(current_path).to eq("/movies")
-      # visit "/movies"
+      expect(current_path).to eq("/users/#{user_1.id}/movies")
+      visit "/users/#{user_1.id}/movies"
 
-      # expect(page).to have_content("Shazam! Fury of the Gods")
+      expect(page).to have_content("Shazam! Fury of the Gods")
     end
 
     it 'creates a link to the top rated movies detail page' do
-      visit "/movies"
+      visit "/users/#{user_1.id}/movies"
 
       click_link("The Godfather")
 
-      expect(current_path).to eq("/movies/238")
+      expect(current_path).to eq("/users/#{user_1.id}/movies/238")
     end
   end
 end
