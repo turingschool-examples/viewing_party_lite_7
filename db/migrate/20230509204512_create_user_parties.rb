@@ -1,3 +1,4 @@
+# creating join table for users and parties
 class CreateUserParties < ActiveRecord::Migration[7.0]
   def change
     create_table :user_parties do |t|
