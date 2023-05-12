@@ -1,4 +1,12 @@
 class MovieFacade 
+  def get_results(key_word)
+    if key_word == 'top%20rated'
+      top_rated_movies
+    else
+      search_by_title(key_word)
+    end 
+  end
+
   def search_by_title(key_word)
     results = service.search_by_title(key_word)[:results]
     
