@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module Users
   class ViewingPartiesController < ApplicationController
     def new
@@ -6,8 +7,6 @@ module Users
       @movie = MovieFacade.get_movie(params[:movie_id])
     end
 
-    def create
-
-    end
+    def create; end
   end
-end 
+end
