@@ -1,9 +1,4 @@
 class MoviesFacade
-  # def initialize(title)
-  #   @query = query
-  #   @id = id
-  # end
-
   def top_rated_movies
     service = MoviesService.new
 
@@ -18,6 +13,7 @@ class MoviesFacade
     service = MoviesService.new
 
     json = service.search_movies(query)
+    
 
     @movies = json[:results][0..19].map do |movie_data|
       Movies.new(movie_data)

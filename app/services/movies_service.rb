@@ -6,7 +6,7 @@ class MoviesService
   end
 
   def search_movies(query)
-    get_url('search/movie', { query: query })
+    get_url("search/movie?query=#{query}")
   end
 
   def movie_details(id)
