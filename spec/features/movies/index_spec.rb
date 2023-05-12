@@ -25,12 +25,12 @@ RSpec.describe "Movies Results page" do
 
     it "displays the vote average of the movie", :vcr do
       visit "/users/#{@user_1.id}/discover"
-
+      
       within("#search-movies") do
         fill_in(:search, with: @movie.title.to_s)
         click_button "Find Movies"
       end
-
+      
       within("#movie-#{@movie.id}") do
         expect(page).to have_content("Vote Average: #{@movie.vote_average}")
       end

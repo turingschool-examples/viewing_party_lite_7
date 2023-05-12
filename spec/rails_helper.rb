@@ -92,10 +92,6 @@ def test_data
   @user_3 = User.create!(name: "User 3", email: "email3@email.com")
   @user_4 = User.create!(name: "User 4", email: "email4@email.com")
   @user_5 = User.create!(name: "User 5", email: "email5@email.com")
-
-  # @party_1 = Party.create!(duration: 135, date: "05/09/2023", time: "12:00")
-
-  # @party_1.user_parties.create!(user_id: @user_2.id)
 end
 
 def test_movie
@@ -116,7 +112,7 @@ def test_movie
     "release_date": "1999-10-15",
     "title": "Fight Club",
     "video": false,
-    "vote_average": 8.433,
+    "vote_average": 8.4,
     "vote_count": 26_357
   }
 end
@@ -213,7 +209,7 @@ def test_movie_details
     "tagline": "Mischief. Mayhem. Soap.",
     "title": "Fight Club",
     "video": false,
-    "vote_average": 8.433,
+    "vote_average": 8.4,
     "vote_count": 26_372
   }
 end

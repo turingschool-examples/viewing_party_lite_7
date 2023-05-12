@@ -51,4 +51,19 @@ RSpec.describe MovieFacade do
       expect(@mf.review_count(550)).to eq 8
     end
   end
+  describe "movie_title" do
+    it "returns title of a movie with given id", :vcr do
+      expect(@mf.movie_title(550)).to eq("Fight Club")
+    end
+  end
+  describe "movie_poster" do
+    it "returns the image source url for the post", :vcr do
+      expect(@mf.movie_poster(550)).to eq("https://image.tmdb.org/t/p/original/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg")
+    end
+  end
+  describe "poster_path" do
+    it "returns the poster_path from the movie details page", :vcr do
+      expect(@mf.poster_path(550)).to eq("/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg")
+    end
+  end
 end
