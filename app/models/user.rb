@@ -11,6 +11,6 @@ class User < ApplicationRecord
   end
 
   def user_type(party_id)
-    user_viewing_parties.where(user_id: user.id).where(viewing_party_id: party_id).user_type
+    user_viewing_parties.where(user_id: id).where(viewing_party_id: party_id).first.user_type
   end
 end

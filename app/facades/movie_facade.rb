@@ -34,7 +34,7 @@ class MovieFacade
     viewing_parties = @user.viewing_parties.map do |viewing_party|
       {
         viewing_party: viewing_party,
-        user_type: user.user_type,
+        user_type: user.user_type(viewing_party.id),
         movie: Movie.new(service.full_movie_details(viewing_party[:movie_id]))
       }
     end
