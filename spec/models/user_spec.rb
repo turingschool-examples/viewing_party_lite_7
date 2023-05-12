@@ -20,5 +20,24 @@ RSpec.describe User, type: :model do
       
       expect(@user_1.other_users).to eq([@user_2, @user_3])
     end
+
+    it '#hosted_parties & #invited_parties' do
+      @user_1 = User.create!(name: "Bob", email: "bob@bobbington.com")
+      @user_2 = User.create!(name: "Jeff", email: "jeffrey@jeff.com")
+      @user_3 = User.create!(name: "Sally", email: "salamander@bob.com")
+
+      @viewing_party_1 = ViewingParty.create!(duration: 1, date: Date.current, time: Time.current, movie_id: 5)
+      ViewingPartyUser.create!(user_id: @user_1.id, viewing_party_id: @viewing_party_1.id, host: true)
+      ViewingPartyUser.create!(user_id: @user_2.id, viewing_party_id: @viewing_party_1.id, host: false)
+      ViewingPartyUser.create!(user_id: @user_3.id, viewing_party_id: @viewing_party_1.id, host: false)
+
+      expect(@user_1.hosted_parties).to eq([@viewing_party_1])
+      expect(@user_2.hosted_parties).to eq([])
+      expect(@user_3.hosted_parties).to eq([])
+
+      expect(@user_1.invited_parties).to eq([])
+      expect(@user_2.invited_parties).to eq([@viewing_party_1])
+      expect(@user_3.invited_parties).to eq([@viewing_party_1])
+    end
   end
 end
