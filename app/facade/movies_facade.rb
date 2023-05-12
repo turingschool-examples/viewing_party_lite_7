@@ -27,10 +27,8 @@ class MoviesFacade
   def movie_details(id)
     service = MoviesService.new
 
-    json = service.movie_details(id)
+    movie_data = service.movie_details(id)
 
-    @movies = json.map do |movie_data|
-      Movies.new(movie_data)
-    end
+    @movie = Movies.new(movie_data)
   end
 end

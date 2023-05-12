@@ -4,7 +4,6 @@
 <% @top_movies.each do |movie| %>
 <ul>
 <li><%= link_to movie.title, "/movies/#{movie.id}"  %></li>
-<%= movie.vote_average%>
 </ul>
 <% end %>
 

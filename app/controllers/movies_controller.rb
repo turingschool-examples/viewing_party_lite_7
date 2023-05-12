@@ -5,6 +5,7 @@ class MoviesController < ApplicationController
   end
 
   def show
-    
+    # require 'pry'; binding.pry
+    @movie = MoviesFacade.new.movie_details(params[:movie_id])
   end
 end
