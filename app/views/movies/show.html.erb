@@ -10,7 +10,7 @@
   <h4>Summary</h4>
   Title: <%= @movie.title %><br>
   Vote Average: <%= @movie.vote_average %><br>
-  Runtime: <%= @movie.runtime %><br>
+  Runtime: <%= @movie.format_runtime %><br>
   Genres: 
   <% @movie.genres.each do |genre| %>
     <%= genre %>

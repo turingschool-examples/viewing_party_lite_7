@@ -1,0 +1,6 @@
+<h2>Viewing Party Details </h2>
+<h3><%= @movie.title %></h3>
+<%= form_with url: user_movie_parties(@user, @movie.id), method: :post, local: true do |form| %>
+<%= form.label :duration, "Duration of Party", value: @movie.duration %>
+<%= form.number_field :duration %>
+<%= form.label :day, "Day" %>
