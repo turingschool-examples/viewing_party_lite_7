@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe ViewingParty, type: :model do
+  before(:each) do
+    stub_request(:get, "https://api.themoviedb.org/3/movie/5?api_key=#{ENV['MOVIE_API_KEY']}")
+    .to_return(status: 200, body: File.read("./spec/fixtures/four_rooms_info.json"))
+
+    @viewing = ViewingParty.create!(duration: 1, date: Date.current, time: Time.current, movie_id: 5)
+  end
   describe 'relationships' do
     it { should have_many(:viewing_party_users) }
     it { should have_many(:users).through(:viewing_party_users) }
@@ -13,13 +19,12 @@ RSpec.describe ViewingParty, type: :model do
   end
 
   describe 'instance methods' do
-    it '#movie_title' do
-      stub_request(:get, "https://api.themoviedb.org/3/movie/5?api_key=#{ENV['MOVIE_API_KEY']}")
-        .to_return(status: 200, body: File.read("./spec/fixtures/four_rooms_info.json"))
-    
-      @viewing = ViewingParty.create!(duration: 1, date: Date.current, time: Time.current, movie_id: 5)
-      
+    it '#movie_title' do   
       expect(@viewing.movie_title).to eq("Four Rooms")
+    end
+
+    it '#get_image' do
+      expect(@viewing.get_image).to be_a(String)
     end
   end
 end

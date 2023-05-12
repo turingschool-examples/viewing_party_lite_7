@@ -12,10 +12,11 @@ RSpec.describe "Movie Show Page" do
     
     stub_request(:get, "https://api.themoviedb.org/3/movie/5/reviews?api_key=#{ENV['MOVIE_API_KEY']}")
     .to_return(status: 200, body: File.read("./spec/fixtures/four_rooms_reviews.json"))
+
+    visit user_movie_path(@user, 5)
   end
   describe "When I visit a movie's show page" do
     it "I see a button to create a viewing party" do
-      visit user_movie_path(@user, 5)
       expect(page).to have_button("Create a Viewing Party")
       
       click_button("Create a Viewing Party")
@@ -24,7 +25,6 @@ RSpec.describe "Movie Show Page" do
     end
     
     it "I see a button to return to the Discover Page" do
-      visit user_movie_path(@user, 5)
       expect(page).to have_button("Back")
       
       click_button("Back")
@@ -33,7 +33,6 @@ RSpec.describe "Movie Show Page" do
     end
     
     it "I see the movie's title, vote average, runtime, genre(s), and summary" do
-      visit user_movie_path(@user, 5)
       expect(page).to have_content("Four Rooms")
       expect(page).to have_content("Rating: 5.757")
       expect(page).to have_content("Runtime: 98")
