@@ -30,7 +30,12 @@ class MovieService
       runtime: details[:runtime],
       genres: details[:genres].map { |genre| genre[:name] },
       summary: details[:overview],
-      cast: cast.map { |member| member[:name] }.first(10),
+      cast: cast[0..9].map do |member| 
+        {
+          name: member[:name], 
+          character: member[:character] 
+      }
+              end,
       reviews: reviews.map do |review|
         {
           author: review[:author],

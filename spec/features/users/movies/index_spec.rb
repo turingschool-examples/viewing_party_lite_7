@@ -6,6 +6,7 @@ RSpec.describe 'User Movies Index Page', type: :feature do
   describe 'Top Rated Movies', :vcr do
     it "After clicking on Top Rated Movies button from Discover Page,
         I should see headers and links" do
+      movie = MovieService.new.top_rated_movies.first
       visit user_dashboard_discover_index_path(user)
       click_link 'Top Rated Movies'
 
@@ -17,7 +18,8 @@ RSpec.describe 'User Movies Index Page', type: :feature do
       expect(page).to have_content('Top Rated Movies')
       expect(page).to have_content('Title')
       expect(page).to have_content('Rating')
-      click_on "The Shawshank Redemption"
+      click_on "The Godfather"
+      expect(current_path).to eq(user_dashboard_movie_path(user, movie[:id]))
     end
   end
 
@@ -34,6 +36,7 @@ RSpec.describe 'User Movies Index Page', type: :feature do
       expect(page).to have_content('The Matrix')
       expect(page).to have_content('Rating')
       expect(page).to have_content('Title')
+      click_on "The Matrix"
     end
   end
 end

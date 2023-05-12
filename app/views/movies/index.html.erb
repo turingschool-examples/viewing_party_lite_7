@@ -1,4 +1,4 @@
-<%= link_to "Discover Movies", user_dashboard_discover_index_path(@user_movies.user) %>
+<%= render "shared/discover" %>
 <% if @user_movies.type == 'top rated' %>
   <h3>Top Rated Movies</h3>
 <% elsif @user_movies.type == 'search' %>
@@ -8,7 +8,7 @@
   <tr><th>Title</th><th>Rating</th>
   <% @user_movies.movies.each do |movie| %>
     <tr>
-      <td><%= link_to "#{movie.title}", user_dashboard_movie_path(@user, movie) %></td>
+      <td><%= link_to "#{movie.title}", user_dashboard_movie_path(@user, movie.id) %></td>
       <td><%= movie.rating %></td>
     </tr>
   <% end %>

@@ -1,0 +1,27 @@
+<%= @movie.title %>
+<%= link_to "Discover Movies", user_dashboard_discover_index_path(@user) %>
+<%= link_to "Create a Viewing Party for #{@movie.title}", new_user_dashboard_movie_viewing_party_path(@user, @movie) %>
+<table>
+  <tr><th>Rating: <%= @movie.rating %></th><th>Runtime: <%= @movie.runtime %></th><th>Genre(s): <%= @movie.genres %></th></tr>
+</table>
+<h4>Summary</h4>
+<p><%= @movie.summary %></p>
+<h4>Cast</h4>
+<table>
+  <tr><th>Actor</th><th>Character</th></tr>
+  <% @movie.cast.each do |cast| %>
+    <tr>
+      <td><%= cast[:name] %></td>
+      <td><%= cast[:character] %></td>
+    </tr>
+  <% end %>
+</table>
+<h4>Reviews</h4>
+<table>
+  <tr><th>Author</th><th>Review</th></tr>
+  <% @movie.reviews.each do |review| %>
+    <tr class="review">
+      <td><%= review[:author] %></td>
+      <td><%= review[:content] %></td>
+    </tr>
+  <% end %>

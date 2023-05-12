@@ -82,7 +82,7 @@ RSpec.describe MovieService, :vcr do
         end
 
         movie_data[:cast].each do |cast_member|
-          expect(cast_member).to be_a(String)
+          expect(cast_member).to be_a(Hash)
         end
 
         movie_data[:reviews].each do |review|
@@ -122,7 +122,7 @@ RSpec.describe MovieService, :vcr do
           end
 
           movie_data[:cast].each do |cast_member|
-            expect(cast_member).to be_a(String)
+            expect(cast_member).to be_a(Hash)
           end
 
           movie_data[:reviews].each do |review|
