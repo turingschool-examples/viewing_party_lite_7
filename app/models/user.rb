@@ -16,6 +16,5 @@ class User < ApplicationRecord
 
   def self.host
     x = joins("user_viewing_parties").select("user").where(host: true)
-    require 'pry'; binding.pry
   end
 end

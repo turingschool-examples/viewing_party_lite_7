@@ -14,7 +14,6 @@ describe 'user dashboard', :vcr do
   it 'has application title' do
     expect(page).to have_content('Viewing Party')
   end
-  # <p>Party Host: <%= viewing_party.find(user_viewing_party.where(hose.true)).name %></p>
 
   it 'has user name dashboard title' do
     expect(page).to have_content("#{@user1.name} Dashboard")
@@ -91,8 +90,21 @@ describe 'user dashboard', :vcr do
     end
   end
 
-  xit 'has movie image for movie that viewing party is associated with' do
+  it 'has movie image for movie that viewing party is associated with' do
+    visit new_user_movie_viewing_party_path(@user1, @movie1.id)
+    
+    fill_in('Duration', with: 176)
+    select "2024", from: '[date(1i)]'
+    select "May", from: '[date(2i)]'
+    select "5", from: '[date(3i)]'
+    select "00", from: '[time(4i)]'
+    select "00", from: '[time(5i)]'
+    within "#user_#{@user3.id}" do
+      check
+    end
+    click_on "Create Party"
 
+    expect(@movie1.poster_path).to eq("/3bhkrj58Vtu7enYsRolD1fZdja1.jpg")
   end
 
 end

@@ -6,4 +6,9 @@ class UserViewingParty < ApplicationRecord
     viewing_party = ViewingParty.find(self.viewing_party_id)
     MovieService.movie_search(viewing_party.movie_id)[:title]
   end
+
+  def movie_image
+    viewing_party = ViewingParty.find(self.viewing_party_id)
+    MovieService.movie_search(viewing_party.movie_id)[:poster_path]
+  end
 end
