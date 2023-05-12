@@ -3,7 +3,11 @@ require 'faraday'
 # interacts with MovieDB API
 class MovieService
   def movies(query)
-    get_url("https://api.themoviedb.org/3/search/movie?language=en-US&query=#{query}&include_adult=false")
+    get_url("https://api.themoviedb.org/3/search/movie?language=en-US&query=#{query}")
+  end
+
+  def top_movies
+    get_url("https://api.themoviedb.org/3/movie/top_rated?language=en-US")
   end
 
   def get_url(url)

@@ -74,7 +74,19 @@ RSpec.configure do |config|
   end
 end
 
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+  config.hook_into :webmock
+  config.filter_sensitive_data('<MOVIEDB_AUTHORIZATION_TOKEN>') { ENV["MOVIEDB_AUTHORIZATION_TOKEN"] }
+  config.default_cassette_options = { re_record_interval: 7.days }
+  config.configure_rspec_metadata!
+end
+
 def test_data
+  UserParty.destroy_all
+  User.destroy_all
+  Party.destroy_all
+
   @user_1 = User.create!(name: "User 1", email: "email1@email.com")
   @user_2 = User.create!(name: "User 2", email: "email2@email.com")
   @user_3 = User.create!(name: "User 3", email: "email3@email.com")
@@ -84,4 +96,27 @@ def test_data
   @party_1 = Party.create!(duration: 135, date: "05/09/2023", time: "12:00", host: "Fozzy Bear")
 
   @party_1.user_parties.create!(user_id: @user_2.id)
+end
+
+def test_movie
+  @data = {
+    "adult": false,
+    "backdrop_path": "/hZkgoQYus5vegHoetLkCJzb17zJ.jpg",
+    "genre_ids": [
+      18,
+      53,
+      35
+    ],
+    "id": 550,
+    "original_language": "en",
+    "original_title": "Fight Club",
+    "overview": "A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \"fight clubs\" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.",
+    "popularity": 56.3,
+    "poster_path": "/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg",
+    "release_date": "1999-10-15",
+    "title": "Fight Club",
+    "video": false,
+    "vote_average": 8.433,
+    "vote_count": 26_357
+  }
 end

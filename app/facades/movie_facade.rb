@@ -14,4 +14,17 @@ class MovieFacade
     end
     movies
   end
+
+  def top_rated_movies
+    service = MovieService.new
+    json = service.top_movies[:results]
+
+    movies = []
+    json.each_with_index do |info, i|
+      break if i > 19
+
+      movies << Movie.new(info)
+    end
+    movies
+  end
 end
