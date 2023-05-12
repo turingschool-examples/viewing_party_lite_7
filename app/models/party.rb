@@ -14,4 +14,8 @@ class Party < ApplicationRecord
   def format_date
     date.to_fs(:long)
   end
+
+  def format_time
+    time.strftime("%-l:%M %P")
+  end
 end
