@@ -6,7 +6,7 @@ RSpec.describe 'Movie Results', :vcr do
   end
 
   describe "user can click on Top Rated or Search and be taken to movie results page" do
-    scenario "click on Top Rated Movies"
+    scenario "click on Top Rated Movies" do
       visit movie_index_path(@user)
       click_on "Find Top Rated Movies"
       

@@ -42,5 +42,20 @@ describe 'TmdbService', :vcr do
         expect(@tmdb_service[:results]).to eq([])
       end
     end
+
+    context 'get_movie' do 
+      it 'returns a movie that matches given id' do
+        @tmdb_service = TmdbService.new.get_movie('5')
+
+        expect(@tmdb_service).to have_key :id
+        expect(@tmdb_service[:id]).to be_a(Integer)
+
+        expect(@tmdb_service).to have_key(:title)
+        expect(@tmdb_service[:title]).to be_a(String)
+
+        expect(@tmdb_service).to have_key :vote_average
+        expect(@tmdb_service[:vote_average]).to be_a(Float)
+      end
+    end
   end
 end
