@@ -34,5 +34,11 @@ RSpec.describe Party do
         expect(@party_2.format_time).to eq("6:00 pm")
       end
     end
+    describe "host" do
+      it "returns the name of the host" do
+        expect(@party_1.host).to eq(@user_4.name)
+        expect(@party_2.host).to eq(@user_3.name)
+      end
+    end
   end
 end
