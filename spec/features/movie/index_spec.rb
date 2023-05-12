@@ -7,29 +7,22 @@ RSpec.describe "Movie Index" do
   end
 
   it 'visits page' do
+    expect(page).to have_content("Discover Movies")
     expect(current_path).to eq(movie_index_path(@user))
   end
 
-  describe "discover user's movies" do 
-    scenario "id is that of a valid user"
-      it 'has button to search top rated movies' do
-        expect(page).to have_button("Find Top Rated Movies")
-        click_button("Find Top Rated Movies")
-        expect(current_path).to eq("/users/#{@user.id}"/movies)
-      end
-
-      describe "search for a movie by title" do
-        it "has a text field to enter keyword(s) to search by movie title" do
-          expect(page).to have_field("keywords")
-          expect(page).to have_content("Search by Movie Title")
-        end
-        
-        it "has button to submit search by movie title" do
-          expect(page).to have_button("Find Movies")
-          expect(page).to_not have_content("Search by Show Title")
-          expect(page).to_not have_content("Search by Movie ID")
-        end
-      end
+  describe "top rated movies button", :vcr do
+    it 'has button to search top rated movies' do
+      expect(page).to have_button("Find Top Rated Movies")
+      click_on("Find Top Rated Movies")
+      expect(current_path).to eq(movie_results_path(@user))
     end
+  end
+
+  it "has a text field to enter keyword(s) to search by movie title" do
+    expect(page).to have_field("q")
+    expect(page).to have_button("Find Movies")
+    click_on("Find Movies")
+    expect(current_path).to eq(movie_results_path(@user))
   end
 end

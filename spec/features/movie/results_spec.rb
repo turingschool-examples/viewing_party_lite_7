@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Movie Results' do
+RSpec.describe 'Movie Results', :vcr do
   before :each do
     @user = create(:user)
   end
