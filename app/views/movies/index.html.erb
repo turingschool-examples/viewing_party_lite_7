@@ -3,7 +3,8 @@
 <h3>Top Rated Movies</h3>
 <% @top_movies.each do |movie| %>
 <ul>
-<li><%= movie.title %></li>
+<li><%= link_to movie.title, "/movies/#{movie.id}"  %></li>
+<%= movie.vote_average%>
 </ul>
 <% end %>
 

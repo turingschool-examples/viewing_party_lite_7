@@ -3,4 +3,8 @@ class MoviesController < ApplicationController
     @top_movies = MoviesFacade.new.top_rated_movies
     @search = MoviesFacade.new.search_movies(params[:query])
   end
+
+  def show
+    
+  end
 end

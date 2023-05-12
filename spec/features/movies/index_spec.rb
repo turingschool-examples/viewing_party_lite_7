@@ -32,5 +32,13 @@ RSpec.describe 'movies index page', :vcr do
 
       # expect(page).to have_content("Shazam! Fury of the Gods")
     end
+
+    it 'creates a link to the top rated movies detail page' do
+      visit "/movies"
+
+      click_link("The Godfather")
+
+      expect(current_path).to eq("/movies/238")
+    end
   end
 end
