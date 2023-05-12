@@ -24,5 +24,18 @@
   <% end %></p>
 
   <p>Summary: <%= @movie.overview %></p>
+  <p>Cast: <% @cast.each do |c| %>
+  <ul>
+      <li>
+        <%= c %>
+      </li>
+    </ul>
+  <% end %></p>
+</div>
 
+<div id="movie-reviews">
+  <p><h4>Reviews</h4></p>
+  <p><%= @reviews.count %> Reviews:<% @reviews.each do |review| %></p>
+    <p><%= @review %></p>
+  <% end %>
 </div>

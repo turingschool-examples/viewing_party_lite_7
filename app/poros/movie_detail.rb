@@ -7,7 +7,9 @@ class MovieDetail
               :genre,
               :runtime,
               :vote_average,
-              :poster_path
+              :poster_path,
+              :cast,
+              :review
 
   def initialize(response)
     @title = response[:title]
@@ -21,7 +23,11 @@ class MovieDetail
 
   def format_runtime(time)
     hours = time / 60
-    minutes = (time) % 60 
-    "#{ hours }h #{ minutes }min"
+    minutes = time % 60
+    "#{hours}h #{minutes}min"
+  end
+
+  def add_cast(cast)
+    @cast = cast
   end
 end

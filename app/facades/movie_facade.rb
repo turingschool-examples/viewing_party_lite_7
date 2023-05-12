@@ -17,4 +17,21 @@ class MovieFacade
       MovieDetail.new(movie)
     end
   end
+
+  def self.top_cast(id)
+    cast_char = []
+    MovieService.get_cast(id)[:cast][0..9].map do |cast_info|
+      cast_char << "#{cast_info[:name]} as #{cast_info[:character]}"
+    end
+    cast_char
+  end
+
+  def self.reviews(id)
+    review_data = []
+    MovieService.get_reviews(id)[:results].map do |review|
+      review_data << "#{review[:author]}'s /n #{review[:content]}"
+    end
+    # require 'pry'; binding.pry
+    review_data
+  end
 end
