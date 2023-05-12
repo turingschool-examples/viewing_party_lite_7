@@ -4,14 +4,28 @@
 
 <h3>Hosted Parties:</h3>
 <div id="hosted">
-<% @user.hosted_viewing_parties.each do |party| %>
-<p><%= party.movie_title %> Viewing Party</p>
-<%end%>
+  <% @user.hosted_viewing_parties.each do |user_viewing_party| %>
+    <p><%= user_viewing_party.movie_title %> Viewing Party</p>
+    <p>You are the host of this party</p>
+    <p>Date: <%= user_viewing_party.viewing_party.date %></p>
+    <p>Time: <%= user_viewing_party.viewing_party.time %></p>
+    <p>Users Invited: 
+      <% user_viewing_party.viewing_party.users.each do |user| %>
+        <li><%= user.name %> </li>
+      <% end %></p>
+  <%end%>
 </div>
 
 <h3>Invited Parties:</h3>
 <div id="invited">
-<% @user.invited_viewing_parties.each do |party| %>
-<p><%= party.movie_title %> Viewing Party</p>
-<%end%>
+  <% @user.invited_viewing_parties.each do |user_viewing_party| %>
+    <p><%= user_viewing_party.movie_title %> Viewing Party</p>
+    <p>Party Host: <%= user_viewing_party.viewing_party.users.host %></p>
+    <p>Date: <%= user_viewing_party.viewing_party.date %></p>
+    <p>Time: <%= user_viewing_party.viewing_party.time %></p>
+    <p>Users Invited: 
+      <% user_viewing_party.viewing_party.users.each do |user| %>
+        <li><%= user.name %> </li>
+      <% end %> </p>
+  <%end%>
 </div>

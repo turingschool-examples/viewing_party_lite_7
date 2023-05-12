@@ -14,6 +14,7 @@ describe 'user dashboard', :vcr do
   it 'has application title' do
     expect(page).to have_content('Viewing Party')
   end
+  # <p>Party Host: <%= viewing_party.find(user_viewing_party.where(hose.true)).name %></p>
 
   it 'has user name dashboard title' do
     expect(page).to have_content("#{@user1.name} Dashboard")
@@ -32,9 +33,9 @@ describe 'user dashboard', :vcr do
     end
   end
 
-  it 'has viewing party on user page' do
+  it 'has viewing party attributes on host section' do
     visit new_user_movie_viewing_party_path(@user1, @movie1.id)
-
+    
     fill_in('Duration', with: 176)
     select "2024", from: '[date(1i)]'
     select "May", from: '[date(2i)]'
@@ -42,16 +43,22 @@ describe 'user dashboard', :vcr do
     select "00", from: '[time(4i)]'
     select "00", from: '[time(5i)]'
     within "#user_#{@user3.id}" do
-      check
-    end
-    click_on "Create Party"
+    check
+  end
+  click_on "Create Party"
+  
+  viewing_party = ViewingParty.last
 
     within "#hosted" do
       expect(page).to have_content("#{@movie1.title} Viewing Party")
+      expect(page).to have_content(viewing_party.date)
+      expect(page).to have_content(viewing_party.time)
+      expect(page).to have_content("You are the Host of this party")
+      expect(page).to have_content("Users Invited: Jojo, Donald J Trump")
     end
   end
 
-  it 'has viewing party on invitee page' do
+  it 'has viewing party attributes on invitee section' do
     visit new_user_movie_viewing_party_path(@user1, @movie1.id)
 
     fill_in('Duration', with: 176)
@@ -64,11 +71,17 @@ describe 'user dashboard', :vcr do
       check
     end
     click_on "Create Party"
+
+    viewing_party = ViewingParty.last
 
     visit user_path(@user3)
 
     within "#invited" do
       expect(page).to have_content("#{@movie1.title} Viewing Party")
+      expect(page).to have_content(viewing_party.date)
+      expect(page).to have_content(viewing_party.time)
+      expect(page).to have_content("Party Host: Jojo")
+      expect(page).to have_content("Users Invited: Jojo, Donald J Trump")
     end
 
     visit user_path(@user2)
@@ -77,4 +90,9 @@ describe 'user dashboard', :vcr do
       expect(page).to have_no_content("#{@movie1.title} Viewing Party")
     end
   end
+
+  xit 'has movie image for movie that viewing party is associated with' do
+
+  end
+
 end
