@@ -17,16 +17,26 @@ class MovieService
     details = get_movie_details(movie_id)
     cast = get_movie_cast(movie_id)[:cast]
     reviews = get_movie_reviews(movie_id)[:results]
+    image_url = if details[:poster_path].nil?
+      DEFAULT_IMAGE_URL
+    else
+      IMAGES_DOMAIN + details[:poster_path]
+    end
 
     {
       id: movie_id,
-      title: details[:title],
-      image_url: IMAGES_DOMAIN + details[:poster_path],
+      title: details[:title], 
+      image_url: image_url,
       rating: details[:vote_average],
       runtime: details[:runtime],
       genres: details[:genres].map { |genre| genre[:name] },
       summary: details[:overview],
-      cast: cast.map { |member| member[:name] }.first(10),
+      cast: cast[0..9].map do |member| 
+        {
+          name: member[:name], 
+          character: member[:character] 
+      }
+              end,
       reviews: reviews.map do |review|
         {
           author: review[:author],

@@ -1,4 +1,4 @@
-<%= link_to "Discover Movies", user_dashboard_discover_index_path(@facade.user) %>
+<%= render "shared/discover" %>
 <% if @facade.type == :top_rated %>
   <h3>Top Rated Movies</h3>
 <% elsif @facade.type == :search %>
