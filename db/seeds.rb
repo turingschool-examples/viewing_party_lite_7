@@ -20,6 +20,6 @@ ViewingParty.destroy_all
 @viewing_party2 = create(:viewing_party)
 @viewing_party3 = create(:viewing_party)
 
-@user_viewing_party1 = create(:user_viewing_party, user: @user1, user_type: 'host', viewing_party: @viewing_party1)
-@user_viewing_party2 = create(:user_viewing_party, user: @user2, user_type: 'visitor', viewing_party: @viewing_party1)
-@user_viewing_party3 = create(:user_viewing_party, user: @user2, user_type: 'host', viewing_party: @viewing_party2)
+@user_viewing_party1 = create(:user_viewing_party, user: @user1, user_type: 'Hosting', viewing_party: @viewing_party1)
+@user_viewing_party2 = create(:user_viewing_party, user: @user2, user_type: 'Invited', viewing_party: @viewing_party1)
+@user_viewing_party3 = create(:user_viewing_party, user: @user2, user_type: 'Hosting', viewing_party: @viewing_party2)
