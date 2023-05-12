@@ -7,7 +7,7 @@ RSpec.describe 'New Viewing Party Page' do
       movie_details = MovieService.new.full_movie_details(movie[:id])
       @user1 = create(:user)
       visit new_user_dashboard_movie_viewing_party_path(@user1, movie[:id])
-      save_and_open_page
+      
       expect(page).to have_content('Viewing Party')
       expect(page).to have_link('Home')
       expect(page).to have_link('Discover Movies')

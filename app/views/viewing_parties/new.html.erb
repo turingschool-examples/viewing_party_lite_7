@@ -17,8 +17,8 @@
   <h4>Invite Other Users</h4>
   <div>
   <% @all_users.each do |user|%>
-    <%= form.label :user %>
-    <%= form.check_box :user.name %>
+    <%= form.label :"#{user.name} (#{user.email})" %>
+    <%= form.check_box :"#{user.name}" %>
     <% end %>
   <div>
     <%= form.submit "Create Party" %>
