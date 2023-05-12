@@ -10,7 +10,7 @@ RSpec.describe 'User Dashboard Page', type: :feature do
     end
 
     @parties = @movies.map do |movie|
-      Party.create!(host: @user1, title: movie.title, image_url: movie.image_url, duration: movie.runtime, datetime: DateTime.now + 40)
+      Party.create!(host: @user1, movie_id: movie.id, title: movie.title, image_url: movie.image_url, duration: movie.runtime, datetime: DateTime.now + 40)
     end
 
     @parties.last.update!(host: @user2)
@@ -27,11 +27,11 @@ RSpec.describe 'User Dashboard Page', type: :feature do
 
     within("#parties") do
       expect(page).to have_css(".party", count: 20)
-      hosted_parties = all(".party").select { |party| party.has_content?("Hosting") }
-      invited_parties = all(".party").select { |party| party.has_content?("Invited") }
-
-      expect(hosted_parties.count).to eq(19)
-      expect(invited_parties.count).to eq(1)
+      hosting = all(".party").select { |party| party.has_content?("Hosting") }
+      invited = all(".party").select { |party| party.has_content?("#{@user1.name}") }
+      
+      expect(hosting.count).to eq(19)
+      expect(invited.count).to eq(1)
     end
   end
 end

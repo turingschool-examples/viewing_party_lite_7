@@ -29,36 +29,36 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 11 May 2023 17:00:47 GMT
+      - Fri, 12 May 2023 01:30:24 GMT
       Server:
       - openresty
       Cache-Control:
-      - public, max-age=22711
+      - public, max-age=28088
       X-Memc:
       - HIT
       X-Memc-Key:
       - a3dde13b574bdd203b706f79c6da42d3
       X-Memc-Age:
-      - '12207'
+      - '15910'
       X-Memc-Expires:
-      - '13444'
+      - '12412'
       Etag:
-      - W/"396cc1c9f5e6fd0e333d8f5c302aa0f9"
+      - W/"29fcb28a05923691f3ccbc5bcc620b38"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 4db130e87be66fce9731567ae0669c56.cloudfront.net (CloudFront)
+      - 1.1 3f8050fbf1460156d177f2d3d6a03332.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - IAD89-C3
+      - IAD12-P4
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - bc166htdVyMvyfq6qMMIPkT-wAWqlQbFn787XeBcUqhvdmdtMlxE8g==
+      - 1XmsWobDoIEMpL-JwSUHclI0v-7Xb6q-KOi-tRrQ6VMWZVd1rifVOQ==
       Age:
-      - '22291'
+      - '27971'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/2w4xG178RpB4MDAIfTkqAuSJzec.jpg","belongs_to_collection":{"id":10,"name":"Star
@@ -72,6 +72,6 @@ http_interactions:
         Ltd.","origin_country":"US"},{"id":25,"logo_path":"/qZCc1lty5FzX30aOCVRBLzaVmcp.png","name":"20th
         Century Fox","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1977-05-25","revenue":775398007,"runtime":121,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"A
-        long time ago in a galaxy far, far away...","title":"Star Wars","video":false,"vote_average":8.2,"vote_count":18588}'
-  recorded_at: Thu, 11 May 2023 23:12:18 GMT
+        long time ago in a galaxy far, far away...","title":"Star Wars","video":false,"vote_average":8.2,"vote_count":18589}'
+  recorded_at: Fri, 12 May 2023 09:16:35 GMT
 recorded_with: VCR 6.1.0
