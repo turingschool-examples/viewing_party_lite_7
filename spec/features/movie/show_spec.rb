@@ -39,8 +39,8 @@ RSpec.describe 'Movie Show', :vcr do
     end
 
     it "displays the movie's reviews" do  
-    # expect(page).to have_content("8 Reviews:")
-    # expect(page).to have_content("Roger Ebert")
+    # expect(page).to have_content("Reviews:")
+    # expect(page).to have_content("Author: ")
     end
   end
 end

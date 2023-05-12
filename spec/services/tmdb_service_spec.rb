@@ -83,8 +83,6 @@ describe 'TmdbService', :vcr do
     context 'get_reviews' do
       it 'returns the reviews of a movie that matches given id' do
         @tmdb_service.get_reviews('550')
-
-        
       end
     end
   end
