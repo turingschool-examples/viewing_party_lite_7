@@ -3,8 +3,8 @@
   <p><%= @facade.get_movie_title(party.movie_id)%>
   <p><%= image_tag @facade.get_movie_poster(party.movie_id), size: "60x80" %></p>
 
-  <p><%= party.date %></p>
-  <p><%= party.start_time %></p>
+  <p><%= format_date(party.date) %></p>
+  <p><%= format_time(party.start_time) %></p>
   <p>Host: <%= host=party.host_name %></p>
   <div id='invitees'>
   <p>Invited:</p>
