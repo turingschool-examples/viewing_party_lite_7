@@ -2,6 +2,11 @@ class Party < ApplicationRecord
   has_many :partygoers
   has_many :users, through: :partygoers
 
+  validates :movie_id, presence: true
+  validates :duration, presence: true
+  validates :date, presence: true
+  validates :start_time, presence: true
+
   def attendees_names
     users.where(partygoers: { host: false }).pluck(:user_name)
   end
