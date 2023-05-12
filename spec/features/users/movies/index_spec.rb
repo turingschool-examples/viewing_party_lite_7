@@ -18,7 +18,7 @@ RSpec.describe 'User Movies Index Page', type: :feature do
   end
 
   describe 'Search Movies', :vcr do
-    it "After entering a search term and clicking on Find Movies button" do
+    it 'After entering a search term and clicking on Find Movies button' do
       visit user_dashboard_discover_index_path(@user1)
       fill_in :q, with: 'The Matrix'
       click_on 'Find Movies'

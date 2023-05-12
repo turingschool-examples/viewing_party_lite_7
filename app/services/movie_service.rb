@@ -27,16 +27,16 @@ class MovieService
 
   def movies_data(response_data)
     response_data.map do |movie_data|
-      if movie_data[:poster_path].nil?
-        image_url = DEFAULT_IMAGE_URL
-      else
-        image_url = IMAGES_DOMAIN + movie_data[:poster_path]
-      end
+      image_url = if movie_data[:poster_path].nil?
+                    DEFAULT_IMAGE_URL
+                  else
+                    IMAGES_DOMAIN + movie_data[:poster_path]
+                  end
 
       {
         id: movie_data[:id],
         title: movie_data[:title],
-        image_url: image_url,
+        image_url:,
         rating: movie_data[:vote_average]
       }
     end
@@ -53,9 +53,9 @@ class MovieService
       image_url: IMAGES_DOMAIN + details[:poster_path],
       rating: details[:vote_average],
       runtime: details[:runtime],
-      genres: details[:genres].map{ |genre| genre.name },
+      genres: details[:genres].map { |genre| genre.name },
       summary: details[:overview],
-      cast: cast.map{ |member| member[:name] }.first(10),
+      cast: cast.map { |member| member[:name] }.first(10),
       reviews: reviews.map do |review|
         {
           author: review[:author],

@@ -4,6 +4,7 @@ RSpec.describe 'User Registration', type: :feature do
   before do
     visit new_user_path
   end
+  
   describe 'New user page' do
     it "should have a title of 'Viewing Party' with subtitle 'Create a New User'" do
       expect(page).to have_content('Viewing Party')

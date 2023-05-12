@@ -1,7 +1,6 @@
 require './app/poros/movie'
 
 class MovieFacade
-
   def movie_details(movie_id)
     Movie.new(service.movie_details(movie_id))
   end
