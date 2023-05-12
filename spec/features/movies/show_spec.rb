@@ -10,5 +10,13 @@ RSpec.describe 'Movies Show Page', :vcr do
       expect(page).to have_content(8.7)
       expect(page).to have_content(17886)
     end
+
+    it 'has a button to create a viewing party' do
+      visit "/movies/238"
+
+      click_button("Create Viewing Party")
+
+      expect(current_path).to eq("/parties/new")
+    end
   end
 end

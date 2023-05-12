@@ -3,4 +3,6 @@
 <%= @movie.title %>
 <%= @movie.description %>
 <%= @movie.vote_average %>
-<%= @movie.vote_count %>
+<%= @movie.vote_count %><br>
+
+<%= button_to "Create Viewing Party", "/parties/new", method: :get %>
