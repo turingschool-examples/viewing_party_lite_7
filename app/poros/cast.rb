@@ -1,4 +1,4 @@
-class Actor
+class Cast
   attr_reader :name, :character
 
   def initialize(info)
