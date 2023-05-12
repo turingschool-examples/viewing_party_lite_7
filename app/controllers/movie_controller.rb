@@ -1,5 +1,5 @@
 class MovieController < ApplicationController
-  before_action :find_user, only: [:index, :results]
+  before_action :find_user, only: [:index, :results, :show]
 
   def index
   end
