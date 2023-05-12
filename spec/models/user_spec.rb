@@ -27,5 +27,11 @@ RSpec.describe User do
       expect(@user_3.host_vps).to eq([@party_2])
       expect(@user_4.host_vps).to eq([@party_1])
     end
+
+    it "guest_vps" do
+      expect(@user_1.guest_vps).to eq([])
+      expect(@user_3.guest_vps).to eq([@party_1])
+      expect(@user_4.guest_vps).to eq([@party_2])
+    end
   end
 end
