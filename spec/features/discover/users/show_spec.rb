@@ -7,10 +7,19 @@ RSpec.describe 'discover users show page' do
     let!(:user_3) { User.create!(name: "Scott Le", email: "scottle@gmail.com") }
     let!(:user_4) { User.create!(name: "Megan Hinricher", email: "hinmeg@gmail.com") }
 
-    it 'creates a button to the Discover Top Rated Movies' do
-      visit "discover/users/#{user_1.id}"
+    it 'creates a button to the Discover Top Rated Movies', :vcr do
+      visit "/discover/users/#{user_1.id}"
 
       click_button("Discover Top Rated Movies")
+
+      expect(current_path).to eq("/movies")
+    end
+
+    it 'creates a text field to search movies by title and a button to search movie by title', :vcr do
+      visit "/discover/users/#{user_1.id}"
+
+      fill_in(:search, with: "Godfather")
+      click_button("Search Movie")
 
       expect(current_path).to eq("/movies")
     end

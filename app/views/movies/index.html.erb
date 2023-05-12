@@ -1,0 +1,15 @@
+<h1>Movies Index Page</h1>
+
+<h3>Top Rated Movies</h3>
+<% @top_movies.each do |movie| %>
+<ul>
+<li><%= movie.title %></li>
+</ul>
+<% end %>
+
+<h3>Movie Results</h3>
+<% @search.each do |movie| %>
+<ul>
+  <li><%= movie.title %></li>
+</ul>
+<% end %>
