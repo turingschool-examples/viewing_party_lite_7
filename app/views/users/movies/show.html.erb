@@ -10,3 +10,19 @@
   <%= button_to 'Back to Discover', "/users/#{@user.id}/discover", method: :get %>
 </div>
 <br>
+
+<div id="movie-details">
+  <h3><%= @movie.title %></h3>
+  <p>Vote: <%= @movie.vote_average %></p>
+  <p>Runtime: <%= @movie.runtime %></p>
+  <p>Genre(s): <% @movie.genre.each do |g| %>
+    <ul>
+      <li>
+        <%= g[:name] %>
+      </li>
+    </ul>
+  <% end %></p>
+
+  <p>Summary: <%= @movie.overview %></p>
+
+</div>
