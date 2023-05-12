@@ -53,4 +53,27 @@ RSpec.describe MovieService, :vcr do
       expect(fight_club[:overview]).to be_a String
     end
   end
+
+  describe 'credits' do
+    it 'returns a movies credits' do
+      fight_club_credits = @movie_service.credits(550)
+
+      expect(fight_club_credits).to be_a(Hash)
+      expect(fight_club_credits).to have_key(:cast)
+      expect(fight_club_credits[:cast].first).to have_key(:name)
+      expect(fight_club_credits[:cast].first).to have_key(:character)
+    end
+  end
+  
+  describe 'reviews' do
+    it 'returns a movies reviews' do
+      fight_club_reviews = @movie_service.reviews(550)
+
+      expect(fight_club_reviews[:results]).to be_a(Array)
+      expect(fight_club_reviews[:results].first).to have_key(:author)
+      expect(fight_club_reviews[:results].first).to have_key(:content)
+      expect(fight_club_reviews[:results].first[:author_details]).to have_key(:rating)
+      expect(fight_club_reviews).to have_key(:total_results)
+    end
+  end
 end
