@@ -4,6 +4,15 @@ RSpec.describe "user dashboard page", type: :feature do
   describe "display" do
     before do
       test_data
+      @party_1 = Party.create!(duration: 135, date: "Tue, 9 May 2023", time: "12:00", movie_id: 238)
+      @party_2 = Party.create!(duration: 200, date: "Mon, 16 Jan 2023", time: "18:00", movie_id: 550)
+    
+      @party_1.user_parties.create!(user_id: @user_2.id)
+      @party_1.user_parties.create!(user_id: @user_3.id)
+      @party_1.user_parties.create!(user_id: @user_4.id, is_host: true)
+      @party_2.user_parties.create!(user_id: @user_3.id, is_host: true)
+      @party_2.user_parties.create!(user_id: @user_4.id)
+      @party_2.user_parties.create!(user_id: @user_5.id)
     end
 
     it "has user's name, a discover button, and a party viewing section" do
@@ -49,22 +58,3 @@ RSpec.describe "user dashboard page", type: :feature do
     end
   end
 end
-
-
-# As a user,
-# When I visit a user dashboard,
-# I should see the viewing parties that the user has been invited to with the following details:
-
-#  Movie Image
-#  Movie Title, which links to the movie show page
-#  Date and Time of Event
-#  who is hosting the event
-#  list of users invited, with my name in bold
-
-# I should also see the viewing parties that the user has created with the following details:
-
-#  Movie Image
-#  Movie Title, which links to the movie show page
-#  Date and Time of Event
-#  That I am the host of the party
-#  List of friends invited to the viewing party
