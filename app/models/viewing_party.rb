@@ -9,6 +9,11 @@ class ViewingParty < ApplicationRecord
   has_many :user_viewing_parties
   has_many :users, through: :user_viewing_parties
 
+  def host
+    id = user_viewing_parties.where(host: true).first.user_id
+    User.find(id).name
+  end
+
   private
 
   def generate_random_id
