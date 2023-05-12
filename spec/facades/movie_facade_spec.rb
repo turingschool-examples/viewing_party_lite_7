@@ -3,6 +3,9 @@ require 'rails_helper'
 RSpec.describe MovieFacade, :vcr do
   before(:each) do
     @user = create(:user)
+    # @viewing_party1 = create(:viewing_party)
+    # @user_viewing_party1 = create(:user_viewing_party, user: @user, user_type: 'host', viewing_party: @viewing_party1)
+
     @facade1 = MovieFacade.new(user: @user, type: :viewing_parties)
     @facade2 = MovieFacade.new(user: @user, type: :details, movie_id: 11)
     @facade3 = MovieFacade.new(user: @user, type: :top_rated)
@@ -48,7 +51,7 @@ RSpec.describe MovieFacade, :vcr do
       expect(@facade3.movies).to be_a(Array)
       expect(@facade4.movies).to be_a(Array)
 
-      expect(@facade1.movies).to all(be_a(Movie))
+      expect(@facade1.movies).to all(be_a(Hash))
       expect(@facade2.movies).to be_a(Movie)
       expect(@facade3.movies).to all(be_a(Movie))
       expect(@facade4.movies).to all(be_a(Movie))
