@@ -38,7 +38,25 @@ RSpec.describe '/register', type: :feature do
       fill_in 'E-mail Address:', with: "#{user.email}"
       click_button 'Register'
 
-      expect(page).to have_content("E-mail address must be unique.")
+      expect(page).to have_content("A name and unique email must be present.")
+    end
+
+    it 'should not allow users to register without a name' do
+      user = create(:user)
+
+      fill_in 'E-mail Address:', with: "#{user.email}"
+      click_button 'Register'
+
+      expect(page).to have_content("A name and unique email must be present.")
+    end
+
+    it 'should not allow users to register without an e-mail address' do
+      user = create(:user)
+
+      fill_in 'Name', with: "#{user.name}"
+      click_button 'Register'
+
+      expect(page).to have_content("A name and unique email must be present.")
     end
   end
 end

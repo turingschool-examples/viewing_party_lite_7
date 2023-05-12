@@ -43,6 +43,33 @@ RSpec.describe '/users/:id/movies#index' do
           end
         end
       end
+
+      it 'When search field is not filled in or spaces added and the Search button is clicked, top movies are returned' do
+        VCR.use_cassette('top_20_movies', allow_playback_repeats: true) do
+          top_movies = MoviesFacade.new.movies
+          visit user_discover_path(@user1)
+
+          fill_in :q, with: ' '
+          click_button 'Search'
+
+          top_movies.each do |movie|
+            within "#movie_#{movie.id}" do
+              expect(page).to have_content(movie.title)
+              expect(page).to have_content("Vote Average: #{movie.vote_average}")
+            end
+          end
+          visit user_discover_path(@user1)
+
+          click_button 'Search'
+
+          top_movies.each do |movie|
+            within "#movie_#{movie.id}" do
+              expect(page).to have_content(movie.title)
+              expect(page).to have_content("Vote Average: #{movie.vote_average}")
+            end
+          end
+        end
+      end
     end
 
     describe 'When they fill in the search field and click search' do

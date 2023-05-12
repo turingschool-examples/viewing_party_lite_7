@@ -10,8 +10,8 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to user_path(@user)
     else
-      flash[:error] = 'E-mail address must be unique.'
-      render :new
+      flash[:error] = 'A name and unique email must be present.'
+      redirect_to new_user_path
     end
   end
 

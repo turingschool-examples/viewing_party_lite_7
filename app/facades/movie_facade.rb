@@ -57,10 +57,6 @@ class MovieFacade
     movie.summary
   end
 
-  def movie_poster
-    movie.poster
-  end
-
   private
     def service
       @_service ||= MovieDataService.new

@@ -97,7 +97,6 @@ RSpec.describe MovieFacade do
           expect(facade.movie_runtime).to be_a(Integer)
           expect(facade.movie_genres).to be_a(Array)
           expect(facade.movie_summary).to be_a(String)
-          expect(facade.movie_poster).to be_a(String)
         end
       end
     end

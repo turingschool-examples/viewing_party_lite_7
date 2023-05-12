@@ -44,6 +44,39 @@ RSpec.describe '/users/:id/movies/:id/viewing_party/new', type: :feature do
         expect(current_path).to eq(user_path(@user1))
       end
     end
-    # Sad path tests incoming.
+  end
+
+  describe 'If a user does not fill out the entire form' do
+    it 'The user does not fill out the date an error message displays' do
+      VCR.use_cassette('find_movies_550', :allow_playback_repeats => true) do
+        visit new_user_movie_viewing_party_path(@user1, 550)
+
+        fill_in :duration, with: 250
+        fill_in :start_time, with: Time.now
+
+        check "#{@user2.name}"
+
+        click_button 'Create Party!'
+
+        expect(current_path).to eq(new_user_movie_viewing_party_path(@user1, 550))
+        expect(page).to have_content('Please fill out all fields!')
+      end
+    end
+
+    it 'The user does not fill out the time an error message displays' do
+      VCR.use_cassette('find_movies_550', :allow_playback_repeats => true) do
+        visit new_user_movie_viewing_party_path(@user1, 550)
+
+        fill_in :duration, with: 250
+        fill_in :date, with: '2023/05/11'
+
+        check "#{@user2.name}"
+
+        click_button 'Create Party!'
+
+        expect(current_path).to eq(new_user_movie_viewing_party_path(@user1, 550))
+        expect(page).to have_content('Please fill out all fields!')
+      end
+    end
   end
 end
