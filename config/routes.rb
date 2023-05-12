@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   post '/register', to: 'user#create'
   get '/users/:user_id/discover', to: 'movie#index', as: 'movie_index'
   get '/users/:user_id/movies', to: 'movie#results', as: 'movie_results'
+  get '/users/:user_id/movies/:movie_id', to: 'movie#show', as: 'movie'
   get '/users/:id', to: 'user#show', as: 'user'
 end

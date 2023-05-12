@@ -8,6 +8,10 @@ class MovieController < ApplicationController
     @movies = MovieFacade.new.get_results(params[:q])
   end
 
+  def show
+    @movie = MovieFacade.new.get_movie(params[:movie_id])
+  end
+
   private
 
   def find_user

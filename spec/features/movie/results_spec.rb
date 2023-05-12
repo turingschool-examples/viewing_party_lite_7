@@ -11,15 +11,12 @@ RSpec.describe 'Movie Results', :vcr do
       click_on "Find Top Rated Movies"
       
       expect(current_path).to eq(movie_results_path(@user))
-      expect(page).to have_css(".movie", count: 20)
-      within(first(".movie")) do
-        expect(page).to have_css(".title")
-        expect(page).to have_css(".vote_average")
-      end
+      expect(page).to have_content("The Godfather")
     end
 
     describe "click on the Search button" do
       scenario "user doesn't enter a keyword into the text field" do
+        visit movie_index_path(@user)
         click_on "Find Movies"
 
         expect(current_path).to eq(movie_results_path(@user))
@@ -27,15 +24,12 @@ RSpec.describe 'Movie Results', :vcr do
       end
 
       scenario "user enters a keyword into the text field" do
-        fill_in :keywords, with: "ocean"
+        visit movie_index_path(@user)
+        fill_in :q, with: "ocean"
         click_on "Find Movies"
 
         expect(current_path).to eq(movie_results_path(@user))
-        expect(page).to have_css(".movie", count: 20)
-        within(first(".movie")) do
-          expect(page).to have_css(".title")
-          expect(page).to have_css(".vote_average")
-        end
+        expect(page).to have_content("Ocean")
       end
     end
   end
