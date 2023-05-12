@@ -20,9 +20,12 @@ RSpec.describe "user dashboard page", type: :feature do
     end
 
     it "lists viewing parties that I am invited to with VP info" do
-      visit "/users/#{@user_1.id}"
+      visit "/users/#{@user_3.id}"
 
-      
+      within("#hosted-vps") do
+      # contains image
+        expect(page).to have_content("")
+      end
 
     end
   end
