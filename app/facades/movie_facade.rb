@@ -1,6 +1,6 @@
 class MovieFacade 
-  def movie_search(key_word)
-    results = service.movie_search(key_word)[:results]
+  def search_by_title(key_word)
+    results = service.search_by_title(key_word)[:results]
     
     results.map do |result|
       Movie.new(result)
@@ -16,7 +16,8 @@ class MovieFacade
   end
 
   private
+
   def service
-    TmdbService.new
+    @_service ||= TmdbService.new
   end
 end

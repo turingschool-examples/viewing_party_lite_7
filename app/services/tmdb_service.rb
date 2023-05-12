@@ -1,5 +1,5 @@
 class TmdbService
-  def movie_search(key_word)
+  def search_by_title(key_word)
     get_url("/3/search/movie?query=#{key_word}")
   end
 
@@ -8,6 +8,7 @@ class TmdbService
   end
 
   private
+  
   def get_url(url)
     response = conn.get(url)
     JSON.parse(response.body, symbolize_names: true)
