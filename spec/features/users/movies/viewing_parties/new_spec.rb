@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe 'New Viewing Party Page' do
-  describe 'Create a new viewing party', :vcr do
+RSpec.describe 'New Viewing Party Page', vcr: { record: :new_episodes } do
+  describe 'Create a new viewing party' do
 
     it 'I can create a new viewing party' do
       user1 = User.create!(email: 'jon@jon.com', name: 'Jon')
