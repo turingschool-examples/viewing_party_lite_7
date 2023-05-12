@@ -28,6 +28,14 @@ class MovieFacade
     MovieDetailed.new(result)
   end
 
+  def cast(movie_id)
+    results = service.credits(movie_id)[:cast]
+
+    results[0..9].map do |result|
+      Cast.new(result)
+    end
+  end
+
   private
 
   def service
