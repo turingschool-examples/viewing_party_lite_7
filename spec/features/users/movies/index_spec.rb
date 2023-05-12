@@ -10,12 +10,14 @@ RSpec.describe 'User Movies Index Page', type: :feature do
       click_link 'Top Rated Movies'
 
       expect(current_path).to eq(user_dashboard_movies_path(user))
+
       expect(page).to have_content('Viewing Party')
       expect(page).to have_link('Home')
       expect(page).to have_link('Discover Movies')
       expect(page).to have_content('Top Rated Movies')
       expect(page).to have_content('Title')
       expect(page).to have_content('Rating')
+      click_on "The Shawshank Redemption"
     end
   end
 
