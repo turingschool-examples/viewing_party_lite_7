@@ -4,9 +4,11 @@
 <% end %>
 
 <section class='card-container'>
-  <% @facade.movies.each do |movie| %>
-    <div class='card' style="background-image:url('<%= movie.image_url %>')">
-      <h4><%= movie.title %></h4>
+  <% @facade.movies.each do |party_hash| %>
+    <div class='card' style="background-image:url('<%= party_hash[:movie].image_url %>')">
+      <h4><%= party_hash[:movie].title %></h4>
+      <p><%= party_hash[:viewing_party].start_time %></p>
+      <p><%= party_hash[:user_type] %></p>
     </div>
   <% end %>
 </section>
