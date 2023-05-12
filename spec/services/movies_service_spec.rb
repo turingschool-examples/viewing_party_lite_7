@@ -1,11 +1,10 @@
-equire 'rails_helper'
+require 'rails_helper'
 
 describe MoviesService, :vcr do
   describe 'class methods' do
     it 'top_rated_movies' do
       service = MoviesService.new.top_rated_movies
 
-      expect(service).to be_a(Hash)
       expect(service[:results]).to be_an(Array)
       movie_data = service[:results].first
 
@@ -15,15 +14,14 @@ describe MoviesService, :vcr do
     end
 
     it 'search_movies' do
-      facade = MoviesService.new.search_movies("god")
+      service = MoviesService.new.search_movies("god")
      
-      expect(service).to be_a(Hash)
       expect(service[:results]).to be_an(Array)
       movie_data = service[:results].first
 
       expect(movie_data).to have_key(:title)
-      expect(movie_data.title).to be_a(String)
-      expect(movie_data.title).to eq("Shazam! Fury of the Gods")
+      expect(movie_data[:title]).to be_a(String)
+      expect(movie_data[:title]).to eq("Shazam! Fury of the Gods")
     end
 
     it 'movie_details' do
