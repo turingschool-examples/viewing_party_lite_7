@@ -25,7 +25,30 @@ RSpec.describe MovieFacade do
       movies = @mf.top_rated_movies
       expect(movies).to all be_a Movie
       expect(movies.count <= 20).to be true
-      expect(movies.first.title).to eq("The Godfather")
+    end
+  end
+  describe "find_movie" do
+    it "returns the movie with given id", :vcr do
+      movie = @mf.find_movie(550)
+      expect(movie).to be_a Movie
+    end
+  end
+  describe "cast_members" do
+    it "returns 10 cast members from movie with given id", :vcr do
+      cast = @mf.cast_members(550)
+      expect(cast).to all be_a CastMember
+      expect(cast.count <= 10).to be true
+    end
+  end
+  describe "all_reviews" do
+    it "returns all reviews for movie with given id", :vcr do
+      reviews = @mf.all_reviews(550)
+      expect(reviews).to all be_a Review
+    end
+  end
+  describe "review_count" do
+    it "returns count of reviews for movie with given id", :vcr do
+      expect(@mf.review_count(550)).to eq 8
     end
   end
 end

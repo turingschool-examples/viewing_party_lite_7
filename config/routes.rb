@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   resources :users, only: [:create]
 
   resources :users, only: [:show] do
-    resources :movies, only: [:show]
+    resources :movies, only: [:show] do
+      resources :parties, only: [:new]
+    end
+    
   end
 end
