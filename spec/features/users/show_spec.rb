@@ -32,10 +32,10 @@ RSpec.describe 'User Dashboard Page', :vcr do
       expect(page).to_not have_content("Sandra Bullock's Dashboard")
     end
 
-    xit 'I see a button to discover movies' do
+    it 'I see a button to discover movies' do
       expect(page).to have_button('Discover Movies')
       click_button 'Discover Movies'
-      expect(current_path).to eq(user_discover_index_path(user_1))
+      expect(current_path).to eq(user_discover_index_path(@user_1))
     end
 
     it 'I see a list of parties I am hosting or invited to' do
