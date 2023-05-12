@@ -4,6 +4,7 @@ RSpec.describe 'Movie Show', :vcr do
   before :each do
     @user = create(:user)
     @movie = MovieFacade.new.get_movie(238)
+    @cast = CastFacade.new.get_cast(238)
 
     visit "/users/#{@user.id}/movies/#{@movie.id}"
   end 
@@ -31,13 +32,15 @@ RSpec.describe 'Movie Show', :vcr do
       expect(page).to have_content("Runtime: 2 hours 55 minutes")
       expect(page).to have_content("Genre: Drama, Crime")
       expect(page).to have_content("Summary: Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge.")
-      # expect(page).to have_content("8 Reviews:")
-      # expect(page).to have_content("Roger Ebert")
     end
     
     it "displays movie's cast and characters" do
       expect(page).to have_content("Cast: Al Pacino, ")
-      
+    end
+
+    it "displays the movie's reviews" do  
+    # expect(page).to have_content("8 Reviews:")
+    # expect(page).to have_content("Roger Ebert")
     end
   end
 end

@@ -58,13 +58,4 @@ RSpec.describe 'MovieFacade', :vcr do
       expect(movie.poster).to eq('/cOg3UT2NYWHZxp41vpxAnVCOC4M.jpg')
     end
   end
-
-  describe 'get_cast' do
-    it 'returns the cast of a movie that matches given id' do
-      cast = @movie_facade.get_cast('5')
-
-      expect(cast).to be_an(Array)
-      expect(cast.count).to eq(10)
-    end
-  end
 end
