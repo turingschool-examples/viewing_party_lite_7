@@ -11,7 +11,5 @@ class UserMovies
     @query = query
   end
 
-  def user_name
-    user.name
-  end
+  delegate :name, to: :user, prefix: true
 end

@@ -14,7 +14,7 @@ class MovieService
   end
 
   def movies_by_ids(movie_ids)
-    movie_ids.map{ |movie_id| full_movie_data(movie_id) }
+    movie_ids.map { |movie_id| full_movie_data(movie_id) }
   end
 
   def full_movie_data(movie_id)
@@ -45,7 +45,7 @@ class MovieService
   def movies_data(response_data)
     response_data.map do |movie_data|
       image_url = if movie_data[:poster_path].nil?
-        DEFAULT_IMAGE_URL
+                    DEFAULT_IMAGE_URL
                   else
                     IMAGES_DOMAIN + movie_data[:poster_path]
                   end

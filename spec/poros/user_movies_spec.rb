@@ -4,7 +4,8 @@ RSpec.describe UserMovies do
   before(:each) do
     @user1 = create(:user)
     @user2 = create(:user)
-    @user_movies1 = UserMovies.new(type: 'search', movies: Array.new(5, create(:movie)), user: @user1, query: 'star wars')
+    @user_movies1 = UserMovies.new(type: 'search', movies: Array.new(5, create(:movie)), user: @user1,
+                                   query: 'star wars')
     @user_movies2 = UserMovies.new(type: 'details', movies: Array.new(5, create(:movie)), user: @user2)
   end
 

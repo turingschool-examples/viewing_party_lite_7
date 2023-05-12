@@ -11,6 +11,6 @@ class User < ApplicationRecord
   end
 
   def user_type(movie_id)
-    viewing_parties.find_by(movie_id: movie_id)
+    viewing_parties.find_by(movie_id:)
   end
 end
