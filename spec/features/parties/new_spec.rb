@@ -55,5 +55,32 @@ RSpec.describe "New Viewing party page" do
       expect(@user_2.parties.count).to eq(2)
       expect(@user_4.parties.count).to eq(1)
     end
+
+    xit "displays an error message if movie duration is longer than party duration" do
+      visit new_user_movie_party_path(@user_1, @movie_1.id)
+
+      fill_in("Duration of Party", with: 30)
+      fill_in("Day", "05/11/2023")
+      fill_in("Start Time", with: "20:00")
+      choose(@user_2.id)
+      choose(@user_4.id)
+      click_button("Create Party")
+
+      expect(current_path).to eq(new_user_movie_party_path(@user_1, @movie_1.id))
+      expect(page).to have_content("Viewing Party must be longer than movie duration.")
+    end
+
+    xit "displays an error message if fields are blank" do
+      visit new_user_movie_party_path(@user_1, @movie_1.id)
+
+      fill_in("Day", "05/11/2023")
+      fill_in("Start Time", with: "20:00")
+      choose(@user_2.id)
+      choose(@user_4.id)
+      click_button("Create Party")
+
+      expect(current_path).to eq(new_user_movie_party_path(@user_1, @movie_1.id))
+      expect(page).to have_content("All fields must be filled in.")
+    end
   end
 end
