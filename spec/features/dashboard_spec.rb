@@ -23,7 +23,6 @@ RSpec.describe 'User Dashboard Page', type: :feature do
 
   it 'displays all parties user is connected to' do
     visit user_path(@user1)
-    save_and_open_page
 
     within("#parties") do
       expect(page).to have_css(".party", count: 20)
