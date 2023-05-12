@@ -1,22 +1,39 @@
-<h2>Create a Movie Party for <%= @facade.specific_movie.title %></h2>
-<%=button_to "Discover Page", user_discover_path(@user), method: :get%>
-<h3>Viewing Party Details</h3>
-<%= form_with url: user_new_viewing_party_path, method: :post, local: true do |form| %>
+<style>
+  label {
+    text-align: left;
+    display: inline-block;
+    width: 100px;
+  }
+
+  input[type="text"], input[type="date"], input[type="time"] {
+    float: right;
+  }
+</style>
+
+<div style = "text-align: center;">  
+  <h2>Create a Movie Party for <%= @facade.specific_movie.title %></h2>
+  <%=button_to "Discover Page", user_discover_path(@user), method: :get%>
+</div>
+
+<br>
+<br>
+
+<div style="border: 5px solid black; display: block; margin-left: 35%; margin-right: 35%;">
+  <h3 style = "text-align: center;">Viewing Party Details</h3>
+  <%= form_with url: user_new_viewing_party_path, method: :post, local: true do |form| %>
 
   <%= form.hidden_field :movie_id, value: @facade.specific_movie.id %>
   <%= form.hidden_field :user_id, value: @user.id %>
 
-  Movie Title <%= form.text_field :movie_title, value: @facade.specific_movie.title, readonly: true %>
-  <br>
-  Duration of Party <%= form.text_field :duration, value: @facade.specific_movie.runtime %>
-  <br>
-  Day <%= form.date_field :date %>
-  <br>
-  Start Time <%= form.time_field :start_time %>
-  <br>
-  <%= form.submit "Create Party"%>
-  Invite Other Users
-  <br>
+  <div style="display: flex; justify-content: space-between;">
+  <span>&nbsp; Movie Title</span>
+  <div style="text-align: right;"><b><%= @facade.specific_movie.title %></b></div>
+  </div><br>
+  
+  &nbsp; Duration of Party <%= form.text_field :duration, value: @facade.specific_movie.runtime, style: "width: 110px;" %><br><br>
+  &nbsp; Day <%= form.date_field :date, style: "width: 110px;" %><br><br>
+  &nbsp; Start Time <%= form.time_field :start_time, style: "width: 110px;" %><br><br>
+  &nbsp; Invite Other Users<br><br>
   <% @users.each do |user| %>
   <div id="user-<%=user.id %>">
     <%= check_box_tag "viewing_party[user_ids][]", user.id  %>
@@ -24,6 +41,7 @@
   </div>
   <% end %>
   <br>
-<% end %>
-
+  <%= form.submit "Create Party"%>
+  <% end %>
+</div>
   

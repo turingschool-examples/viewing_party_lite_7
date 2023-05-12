@@ -1,20 +1,22 @@
-<div id='title'>
+<div id='title' style="text-align: center;">
   <h3><%=@facade.specific_movie.title%></h3>
-</div>
 
 <%=button_to "Discover Page", user_discover_path(@user), method: :get%>
 <br>
 <%= button_to "Create Viewing Party for #{@facade.specific_movie.title}", user_new_viewing_party_path(@user, @facade.specific_movie.id), method: :get%>
+</div>
 
-<div id="movie-info">
-  <p><b>Vote: <%=@facade.specific_movie.vote_average%></p>
-  <p>Runtime: <%=@facade.specific_movie.runtime/60%> hour(s) and <%=@facade.specific_movie.runtime%60%> minutes</p>
-  <p>Genre(s): <%@facade.specific_movie.genres.each do |genre| %>
+<br>
+
+<div id="movie-info" style="text-align: center;">
+  <p style = "display: inline"><b>Vote: <%=@facade.specific_movie.vote_average%></p> &nbsp;&nbsp;&nbsp;&nbsp;
+  <p style = "display: inline">Runtime: <%=@facade.specific_movie.runtime/60%> hour(s) and <%=@facade.specific_movie.runtime%60%> minutes</p>&nbsp;&nbsp;&nbsp;&nbsp;
+  <p style = "display: inline">Genre(s): <%@facade.specific_movie.genres.each do |genre| %>
             <%=genre[:name]%>
             <%end%>
   </p></b>
 </div>
-
+<hr size="5" color="black">
 <div id="summary">
   <h3>Summary:</h3>
   <p><%= @facade.specific_movie.summary %></p>

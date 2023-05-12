@@ -37,11 +37,9 @@ RSpec.describe 'Welcome Page', type: :feature do
     end
 
     it 'displays a link to go back to landing page' do
-      within('#header') do
-        expect(page).to have_link('Home')
-        click_link('Home')
-        expect(current_path).to eq(root_path)
-      end
+      expect(page).to have_link('Home')
+      click_link('Home')
+      expect(current_path).to eq(root_path)
     end
   end
 end

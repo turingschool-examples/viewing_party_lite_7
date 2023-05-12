@@ -1,5 +1,5 @@
-<% if @facade.status == "search" %>
+<% if @facade.search? %>
   <%=render partial: "search", locals: {facade: @facade}%>
-<% elsif @facade.status == "top_20" %>
+<% else %>
   <%=render partial: "top_20", locals: {facade: @facade}%>
 <% end %>

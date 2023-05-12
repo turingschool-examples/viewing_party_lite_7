@@ -1,10 +1,15 @@
-<h1>Movie Search Results</h2>
+<div style="text-align: center;">
 <%=button_to "Discover Page", user_discover_path(@user), method: :get%>
+<h3>Movie Search Results</h3>
+</div>
 
-<div id="movies">
+<div id="movies" style="text-align: center;">
   <%facade.search_results.each do |movie|%>
     <div id="movie-<%=movie.id%>">
-      <p><%=link_to movie.title, user_movie_path(@user, movie.id)%> Vote Average: <%=movie.vote_average%></p>
+      <p>
+        <span><%=link_to movie.title, user_movie_path(@user, movie.id)%></span> 
+        <span>Vote Average: <%=movie.vote_average%></span>
+      </p>
     </div>
   <%end%>
 </div>

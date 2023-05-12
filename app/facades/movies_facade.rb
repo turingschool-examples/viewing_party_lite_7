@@ -6,11 +6,11 @@ class MoviesFacade
     @movie_id = params[:id]
   end
 
-  def status
+  def search?
     if @search_results
-      "search"
+      true
     else
-      "top_20"
+      false
     end
   end
   
