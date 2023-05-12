@@ -10,6 +10,12 @@ RSpec.describe "User Dashboard", type: :feature do
     @viewing1.users = [@user1, @user2]
     stub_request(:get, "https://api.themoviedb.org/3/movie/5?api_key=#{ENV['MOVIE_API_KEY']}")
       .to_return(status: 200, body: File.read("./spec/fixtures/four_rooms_info.json"))
+
+    stub_request(:get, "https://api.themoviedb.org/3/movie/5/credits?api_key=#{ENV['MOVIE_API_KEY']}")
+      .to_return(status: 200, body: File.read("./spec/fixtures/four_rooms_credits.json"))
+    
+    stub_request(:get, "https://api.themoviedb.org/3/movie/5/reviews?api_key=#{ENV['MOVIE_API_KEY']}")
+      .to_return(status: 200, body: File.read("./spec/fixtures/four_rooms_reviews.json"))
     
     visit(user_path(@user1))
   end
@@ -19,8 +25,11 @@ RSpec.describe "User Dashboard", type: :feature do
       expect(page).to have_content("#{@user1.name}'s Dashboard")
       expect(page).to have_button("Discover Movies")
       within("#invited-parties") do
-        expect(page).to have_content("Four Rooms")
+        expect(page).to have_link("Four Rooms")
+        click_link("Four Rooms")
       end
+
+      expect(current_path).to eq(user_movie_path(@user1, 5))
     end
 
     it 'I see a button to discover movies' do
