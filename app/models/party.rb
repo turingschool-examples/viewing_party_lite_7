@@ -10,4 +10,8 @@ class Party < ApplicationRecord
   def guests
     users.joins(:user_parties).where("user_parties.is_host=false").distinct
   end
+
+  def format_date
+    date.to_fs(:long)
+  end
 end
