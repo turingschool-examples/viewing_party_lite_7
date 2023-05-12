@@ -25,7 +25,9 @@ class SearchFacade
   def movies_search
     if @title.nil?
       movie = MovieService.movie_search(@movie_id)
-      Movie.new(movie)
+      cast = MovieService.cast_search(@movie_id)
+      reviews = MovieService.reviews_search(@movie_id)
+      @movie = Movie.new(movie, cast, reviews)
     else
       movies = MovieService.movies_search(@title)
       movies[:results].map do |movie|
@@ -34,5 +36,4 @@ class SearchFacade
     end
   end
 end
-
 
