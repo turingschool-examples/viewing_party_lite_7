@@ -44,16 +44,15 @@ RSpec.describe "New Viewing party page" do
       expect(@user_4.parties.count).to eq(0)
 
       fill_in("duration", with: 140)
-      select "20", from: "[day(1i)]"
-      fill_in("[day(1i)]", with: 2023)
-      fill_in("[day(2i)]", May)
-      fill_in("[day(3i)]", 25)
-      fill_in("[time(4i)]", with: 20)
-      fill_in("[time(5i)]", with: 30)
-      choose(@user_2.id)
-      choose(@user_4.id)
+      select "2023", from: "[day(1i)]"
+      select "May", from: "[day(2i)]"
+      select "25", from: "[day(3i)]"
+      select "20", from: "[time(4i)]"
+      select "30", from: "[time(5i)]"
+      check(@user_2.id)
+      check(@user_4.id)
       click_button("Create Party")
-      expect(current_path).to eq("/users/#{@user_1.id}")
+      expect(current_path).to eq(user_movie_parties_path(@user_1, @movie_1.id))
 
       expect(@user_1.parties.count).to eq(1)
       expect(@user_2.parties.count).to eq(2)
