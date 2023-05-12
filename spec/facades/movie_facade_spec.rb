@@ -2,41 +2,18 @@ require 'rails_helper'
 
 RSpec.describe MovieFacade, :vcr do
   before(:all) do
-    @movie_facade = MovieFacade.new
+    @movie_facade = MovieFacade.new(550)
   end
 
-  describe 'search' do
-    it 'returns an array of movie objects' do
-      movies = @movie_facade.search('King')
-
-      expect(movies).to be_an(Array)
-      expect(movies).to all(be_a(Movie))
-      expect(movies.count).to be <= 20
-    end
-
-    it 'can return an array of objects with less than 20 results' do
-      movies = @movie_facade.search('Princess Peach')
-
-      expect(movies).to be_an(Array)
-      expect(movies).to all(be_a(Movie))
-      expect(movies.count).to eq(1)
-      expect(movies.count).to be <= 20
-    end
-  end
-
-  describe 'top_rated' do
-    it 'returns an array of movie objects' do
-      movies = @movie_facade.top_rated
-
-      expect(movies).to be_an(Array)
-      expect(movies).to all(be_a(Movie))
-      expect(movies.count).to be <= (20)
+  describe 'initialize' do
+    it 'exists' do
+      expect(@movie_facade).to be_a(MovieFacade)
     end
   end
 
   describe 'find_movie' do
     it 'returns a movie object with all details' do
-      movie = @movie_facade.find_movie(550)
+      movie = @movie_facade.find_movie
 
       expect(movie).to be_a(MovieDetailed)
       expect(movie.id).to eq(550)
@@ -49,31 +26,9 @@ RSpec.describe MovieFacade, :vcr do
     end
   end
 
-  describe 'get_movies' do
-    it 'returns top rated movies' do
-      movies = @movie_facade.get_movies('top rated')
-      movies2 = @movie_facade.top_rated
-
-      expect(movies).to be_an(Array)
-      expect(movies).to all(be_a(Movie))
-      expect(movies.first.title).to eq(movies2.first.title)
-      expect(movies.last.title).to eq(movies2.last.title)
-    end
-
-    it 'returns searched movies' do
-      movies = @movie_facade.get_movies('princess')
-      movies2 = @movie_facade.search('princess')
-
-      expect(movies).to be_an(Array)
-      expect(movies).to all(be_a(Movie))
-      expect(movies.first.title).to eq(movies2.first.title)
-      expect(movies.last.title).to eq(movies2.last.title)
-    end
-  end
-
   describe 'cast' do
     it 'returns an array of 10 cast members' do
-      cast = @movie_facade.cast(550)
+      cast = @movie_facade.cast
 
       expect(cast).to be_an(Array)
       expect(cast).to all(be_a(Cast))
@@ -83,7 +38,7 @@ RSpec.describe MovieFacade, :vcr do
 
   describe 'reviews' do
     it 'returns all reviews for a movie' do
-      reviews = @movie_facade.reviews(550)
+      reviews = @movie_facade.reviews
 
       expect(reviews).to be_an(Array)
       expect(reviews).to all(be_a(Review))

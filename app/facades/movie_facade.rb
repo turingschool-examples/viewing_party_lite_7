@@ -1,43 +1,23 @@
 class MovieFacade
-  def get_movies(key_word)
-    if key_word == 'top rated'
-      top_rated
-    else
-      search(key_word)
-    end
+  def initialize(movie_id)
+    @id = movie_id
   end
 
-  def search(key_word)
-    results = service.search(key_word)[:results]
-
-    results.map do |result|
-      Movie.new(result)
-    end
-  end
-
-  def top_rated
-    results = service.top_rated[:results]
-
-    results.map do |result|
-      Movie.new(result)
-    end
-  end
-
-  def find_movie(movie_id)
-    result = service.find_movie(movie_id)
+  def find_movie
+    result = service.find_movie(@id)
     MovieDetailed.new(result)
   end
 
-  def cast(movie_id)
-    results = service.credits(movie_id)[:cast]
+  def cast
+    results = service.credits(@id)[:cast]
 
     results[0..9].map do |result|
       Cast.new(result)
     end
   end
 
-  def reviews(movie_id)
-    results = service.reviews(movie_id)[:results]
+  def reviews
+    results = service.reviews(@id)[:results]
 
     results.map do |result|
       Review.new(result)
