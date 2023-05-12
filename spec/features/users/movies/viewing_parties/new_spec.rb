@@ -22,7 +22,7 @@ RSpec.describe 'New Viewing Party Page' do
       expect(page).to have_content('Date')
       expect(page).to have_field('date')
       expect(page).to have_content('Time')
-      expect(page).to have_field('time')
+      expect(page).to have_field('start_time')
       expect(page).to have_field("#{user1.email}")
       expect(page).to have_content('Invite Other Users')
       expect(page).to have_button('Create Party')
@@ -43,7 +43,7 @@ RSpec.describe 'New Viewing Party Page' do
       visit new_user_dashboard_movie_viewing_party_path(user, movie[:id])
 
       fill_in :date, with: '2023-08-01'
-      fill_in :time, with: '12:00'
+      fill_in :start_time, with: '12:00'
       fill_in :duration, with: movie[:runtime]
       check user2.email
       click_on 'Create Party'
