@@ -2,7 +2,7 @@ require './app/poros/movie'
 
 class MovieFacade
   def movie_details(movie_id)
-    Movie.new(service.movie_details(movie_id))
+    Movie.new(service.full_movie_details(movie_id))
   end
 
   def top_20_movies

@@ -13,22 +13,35 @@ class MovieService
     movies_data(parsed_movies_data[:results])
   end
 
-  def get_movie_details(movie_id)
-    get_url("#{API_DOMAIN}/movie/#{movie_id}")
+  def full_movie_data(movie_id)
+    details = get_movie_details(movie_id)
+    cast = get_movie_cast(movie_id)[:cast]
+    reviews = get_movie_reviews(movie_id)[:results]
+
+    {
+      id: movie_id,
+      title: details[:title],
+      image_url: IMAGES_DOMAIN + details[:poster_path],
+      rating: details[:vote_average],
+      runtime: details[:runtime],
+      genres: details[:genres].map { |genre| genre[:name] },
+      summary: details[:overview],
+      cast: cast.map { |member| member[:name] }.first(10),
+      reviews: reviews.map do |review|
+        {
+          author: review[:author],
+          content: review[:content]
+        }
+      end
+    }
   end
 
-  def get_movie_cast(movie_id)
-    get_url("#{API_DOMAIN}/movie/#{movie_id}/credits")
-  end
-
-  def get_movie_reviews(movie_id)
-    get_url("#{API_DOMAIN}/movie/#{movie_id}/reviews")
-  end
+  private
 
   def movies_data(response_data)
     response_data.map do |movie_data|
       image_url = if movie_data[:poster_path].nil?
-                    DEFAULT_IMAGE_URL
+        DEFAULT_IMAGE_URL
                   else
                     IMAGES_DOMAIN + movie_data[:poster_path]
                   end
@@ -42,30 +55,17 @@ class MovieService
     end
   end
 
-  def movie_details(movie_id)
-    details = get_movie_details(movie_id)
-    cast = get_movie_cast(movie_id)[:cast]
-    reviews = get_movie_reviews(movie_id)[:results]
-
-    {
-      id: movie_id,
-      title: details[:title],
-      image_url: IMAGES_DOMAIN + details[:poster_path],
-      rating: details[:vote_average],
-      runtime: details[:runtime],
-      genres: details[:genres].map { |genre| genre.name },
-      summary: details[:overview],
-      cast: cast.map { |member| member[:name] }.first(10),
-      reviews: reviews.map do |review|
-        {
-          author: review[:author],
-          content: review[:content]
-        }
-      end
-    }
+  def get_movie_details(movie_id)
+    get_url("#{API_DOMAIN}/movie/#{movie_id}")
   end
 
-  private
+  def get_movie_cast(movie_id)
+    get_url("#{API_DOMAIN}/movie/#{movie_id}/credits")
+  end
+
+  def get_movie_reviews(movie_id)
+    get_url("#{API_DOMAIN}/movie/#{movie_id}/reviews")
+  end
 
   def get_url(url)
     response = conn.get(url) do |req|
