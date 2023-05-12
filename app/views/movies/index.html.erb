@@ -1,12 +1,12 @@
-<%= link_to "Discover Movies", user_dashboard_discover_index_path(@user) %>
-<% if @is_top_rated %>
+<%= link_to "Discover Movies", user_dashboard_discover_index_path(@facade.user) %>
+<% if @facade.type == 'top rated' %>
   <h3>Top Rated Movies</h3>
 <% else %>
-    <h3><%= @search %></h3>
+    <h3><%= @facade.type == 'search' %></h3>
 <% end %>
 <table>
   <tr><th>Title</th><th>Rating</th>
-  <% @movies.each do |movie| %>
+  <% @facade.data.each do |movie| %>
     <tr>
       <td><%= movie.title %></td>
       <td><%= movie.rating %></td>

@@ -1,16 +1,30 @@
 require './app/poros/movie'
+require './app/poros/movie_data'
 
 class MovieFacade
-  def movie_details(movie_id)
-    Movie.new(service.full_movie_details(movie_id))
+  attr_reader :user
+
+  def initialize(user)
+    @user = user
   end
 
-  def top_20_movies
-    movies(service.top_rated_movies)
+  def movie_details(movie_id)
+    MovieData.new(type: 'details',
+              data: Movie.new(service.full_movie_details(movie_id)),
+              user: user)
+  end
+
+  def top_20_movies()
+    MovieData.new(type: 'top rated',
+              data: movies(service.top_rated_movies),
+              user: user)
   end
 
   def search_movies(query)
-    movies(service.search_movies(query))
+    MovieData.new(type: 'search',
+              data: movies(service.search_movies(query)),
+              user: user,
+              query: query)
   end
 
   private
