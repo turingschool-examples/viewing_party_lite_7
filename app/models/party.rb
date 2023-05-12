@@ -9,9 +9,7 @@ class Party < ApplicationRecord
   before_save :compare_lengths
 
   def compare_lengths
-    if duration < MovieFacade.new.find_movie(movie_id).runtime
-      throw :abort
-    end
+    throw :abort if duration < MovieFacade.new.find_movie(movie_id).runtime
   end
 
   def guests
