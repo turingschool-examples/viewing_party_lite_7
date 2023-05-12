@@ -1,5 +1,5 @@
-<h3>Create a Movie Party for <%= @movie.title %></h3>
-<%= link_to "Discover Movies", user_dashboard_discover_index_path(@user) %>
+<h3>Create a Movie Party for <%= @facade.title %></h3>
+<%= link_to "Discover Movies", user_dashboard_discover_index_path(@facade.user) %>
 <h3>Viewing Party Details</h3>
 <%= form_with model: @viewing_party, url: user_dashboard_movie_viewing_parties_path(@user, @movie.id), local: true do |form| %>
   <div>

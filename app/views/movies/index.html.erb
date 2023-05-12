@@ -1,14 +1,14 @@
 <%= render "shared/discover" %>
-<% if @user_movies.type == 'top rated' %>
+<% if @facade.type == :top_rated %>
   <h3>Top Rated Movies</h3>
-<% elsif @user_movies.type == 'search' %>
-    <h3><%= @user_movies.user_name %>'s Dashboard</h3>
+<% elsif @facade.type == :search %>
+    <h3><%= @facade.user_name %>'s Dashboard</h3>
 <% end %>
 <table>
   <tr><th>Title</th><th>Rating</th>
-  <% @user_movies.movies.each do |movie| %>
+  <% @facade.movies.each do |movie| %>
     <tr>
-      <td><%= link_to "#{movie.title}", user_dashboard_movie_path(@user, movie.id) %></td>
+      <td><%= link_to "#{movie.title}", user_dashboard_movie_path(@facade.user, movie.id) %></td>
       <td><%= movie.rating %></td>
     </tr>
   <% end %>

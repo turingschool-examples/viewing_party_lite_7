@@ -13,19 +13,20 @@ class MovieService
     movies_data(parsed_movies_data[:results])
   end
 
-  def movies_by_ids(movie_ids)
-    movie_ids.map { |movie_id| full_movie_details(movie_id) }
-  end
-
   def full_movie_details(movie_id)
     details = get_movie_details(movie_id)
     cast = get_movie_cast(movie_id)[:cast]
     reviews = get_movie_reviews(movie_id)[:results]
+    image_url = if details[:poster_path].nil?
+      DEFAULT_IMAGE_URL
+    else
+      IMAGES_DOMAIN + details[:poster_path]
+    end
 
     {
       id: movie_id,
-      title: details[:title],
-      image_url: IMAGES_DOMAIN + details[:poster_path],
+      title: details[:title], 
+      image_url: image_url,
       rating: details[:vote_average],
       runtime: details[:runtime],
       genres: details[:genres].map { |genre| genre[:name] },
@@ -45,8 +46,6 @@ class MovieService
     }
   end
 
-  private
-
   def movies_data(response_data)
     response_data.map do |movie_data|
       image_url = if movie_data[:poster_path].nil?
@@ -58,11 +57,13 @@ class MovieService
       {
         id: movie_data[:id],
         title: movie_data[:title],
-        image_url:,
+        image_url: image_url,
         rating: movie_data[:vote_average]
       }
     end
   end
+
+  private
 
   def get_movie_details(movie_id)
     get_url("#{API_DOMAIN}/movie/#{movie_id}")

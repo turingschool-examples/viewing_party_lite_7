@@ -2,11 +2,13 @@ require 'rails_helper'
 
 RSpec.describe 'New Viewing Party Page' do
   describe 'Create a new viewing party', :vcr do
+
     it 'I can create a new viewing party' do
+      user1 = create(:user)
       movie = MovieService.new.top_rated_movies.first
       movie_details = MovieService.new.full_movie_details(movie[:id])
-      @user1 = create(:user)
-      visit new_user_dashboard_movie_viewing_party_path(@user1, movie[:id])
+      
+      visit new_user_dashboard_movie_viewing_party_path(user1, movie[:id])
       
       expect(page).to have_content('Viewing Party')
       expect(page).to have_link('Home')

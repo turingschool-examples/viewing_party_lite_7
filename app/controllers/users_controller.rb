@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :user, only: [:show]
+
   def new
     @user = User.new
   end
@@ -14,12 +16,14 @@ class UsersController < ApplicationController
   end
 
   def show
-    user = User.find(params[:id])
-    movie_facade = MovieFacade.new(user)
-    @user_movies = movie_facade.viewing_parties(user.viewing_party_movie_ids)
+    @facade = MovieFacade.new(user: user, type: :viewing_parties)
   end
 
   private
+
+  def user
+    User.find(params[:id])
+  end
 
   def strong_params
     params.require(:user).permit(:email, :name)
