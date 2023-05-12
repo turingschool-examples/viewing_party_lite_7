@@ -18,4 +18,8 @@ class Party < ApplicationRecord
   def format_time
     time.strftime("%-l:%M %P")
   end
+
+  def host
+    users.joins(:user_parties).where("user_parties.is_host=true").distinct.pluck(:name).first
+  end
 end
