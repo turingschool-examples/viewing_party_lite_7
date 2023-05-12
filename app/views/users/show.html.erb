@@ -6,7 +6,7 @@
 <% @parties.each do |party| %>
   <li id="party-<%=party.id%>">
    
-    <p><b><%= @movie.title %></b></p>
+    <p><b><%= party.movie.title %></b></p>
     <p><%= party.date %></p>
     <p><%= party.start_time %></p>
     <% if party.host_id == @user.id %>

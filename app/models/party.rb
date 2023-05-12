@@ -7,4 +7,8 @@ class Party < ApplicationRecord
                         
   has_many :party_users
   has_many :users, through: :party_users
+
+  def movie
+    MovieFacade.new.movie_details(movie_id)
+  end
 end
