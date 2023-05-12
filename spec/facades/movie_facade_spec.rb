@@ -80,4 +80,14 @@ RSpec.describe MovieFacade, :vcr do
       expect(cast.count).to eq(10)
     end
   end
+
+  describe 'reviews' do
+    it 'returns all reviews for a movie' do
+      reviews = @movie_facade.reviews(550)
+
+      expect(reviews).to be_an(Array)
+      expect(reviews).to all(be_a(Review))
+      expect(reviews.count).to eq(8)
+    end
+  end
 end

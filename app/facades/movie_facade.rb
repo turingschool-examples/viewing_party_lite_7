@@ -36,6 +36,14 @@ class MovieFacade
     end
   end
 
+  def reviews(movie_id)
+    results = service.reviews(movie_id)[:results]
+
+    results.map do |result|
+      Review.new(result)
+    end
+  end
+
   private
 
   def service
