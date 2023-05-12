@@ -7,8 +7,6 @@ RSpec.describe "User Dashboard", type: :feature do
     @user2 = User.create!(name: "John", email: "john@john.com")
 
     @viewing1 = ViewingParty.create!(duration: 1, date: Date.current, time: Time.current, movie_id: 5)
-    # @viewing2 = ViewingParty.create!(duration: 2, date: 3.days.from_now, time: Time.current, movie_id: 2)
-    # @viewing3 = ViewingParty.create!(duration: 3, date: 1.day.from_now, time: Time.current, movie_id: 3)
     @viewing1.users = [@user1, @user2]
     stub_request(:get, "https://api.themoviedb.org/3/movie/5?api_key=#{ENV['MOVIE_API_KEY']}")
       .to_return(status: 200, body: File.read("./spec/fixtures/four_rooms_info.json"))
