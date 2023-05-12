@@ -1,15 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe MoviesFacade, :vcr do
-  describe '#status' do
+  describe '#search?' do
     it 'returns "search" when search_results is present' do
       facade = MoviesFacade.new(movie_title: 'Lock, Stock and Two Smoking Barrels')
-      expect(facade.status).to eq('search')
+      expect(facade.search?).to eq(true)
     end
 
     it 'returns "top_20" when search_results is not present' do
       facade = MoviesFacade.new({})
-      expect(facade.status).to eq('top_20')
+      expect(facade.search?).to eq(false)
     end
   end
 

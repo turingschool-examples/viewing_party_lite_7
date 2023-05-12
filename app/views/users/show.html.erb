@@ -1,22 +1,30 @@
 
-<div id="user-dashboard">
+<div id="user-dashboard", style="text-align: center;">
   <h2><%= @user.name %>'s Dashboard</h2>
   <%= button_to "Discover Movies", user_discover_path(@user) , method: :get%>
 </div>
+<br>
+<hr size="5" color="black">
 
 <div id="user-viewing-parties">
-  <ul>
+
   <% @hosted_parties.each do |vp| %>
+  <ul style="border: 5px solid black; display: inline-block; height: 400px; width:200px; overflow: hidden;">
+    <br>
     <img id="image" width="150px" src=<%="https://image.tmdb.org/t/p/original#{vp.poster(vp.movie_id)}" %>>
     <li><%= link_to vp.title(vp.movie_id), user_movie_path(@user, vp.movie_id) %></li>
     <li><%= vp.date.strftime("%B %-d, %Y") %></li>
     <li><%= vp.start_time.strftime("%-I:%M %p") %></li>
     <li>Hosting</li>
-    <li><%= vp.participants(@user) %></li>
+    <li>Invitees: <%= vp.participants(@user) %></li>
     <br><br>
+  </ul>
     <% end %>
 
+
 <% @invited_parties.each do |vp| %>
+<ul style="border: 5px solid black; display: inline-block; height: 400px; width:200px; overflow: hidden;">
+    <br>
     <img id="image" width="150px" src=<%="https://image.tmdb.org/t/p/original#{vp.poster(vp.movie_id)}" %>>
     <li><%= link_to vp.title(vp.movie_id), user_movie_path(@user, vp.movie_id)  %></li>
     <li><%= vp.date.strftime("%B %-d, %Y") %></li>
@@ -24,8 +32,8 @@
     <li>Host: <b><%= vp.host %></b></li>
     <li>Invited: <b><%= @user.name %></b>&nbsp;<%= vp.participants(@user) %></li>
     <br><br>
+</ul>
     <% end %>
 
-  </ul>
 </div>
 

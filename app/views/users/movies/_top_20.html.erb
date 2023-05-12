@@ -1,15 +1,22 @@
-<h1>Top Rated Movies</h2>
-<%=button_to "Discover Page", user_discover_path(@user), method: :get%>
-<br>
-<div id="movies">
-  <%facade.top_20.each do |movie|%>
-    <div id="movie-<%=movie.id%>">
-      <div style="display: flex; justify-content: space-between;">
-      <span style="text-align: left; padding-left:3%;"><%= link_to movie.title, user_movie_path(@user, movie.id) %></span>
-      <span style="text-align: right; padding-right:50%;">Vote Average: <%= movie.vote_average %></span>
-      </div>
-    </div>
-    <br>
-  <%end%>
+<div style="text-align: center;">
+  <%=button_to "Discover Page", user_discover_path(@user), method: :get%>
+  <h3>Top Rated Movies</h3>
+  <br>
 </div>
 
+<div id="movies" style="text-align: center;">
+    <%facade.top_20.each do |movie|%>
+
+    <div style="text-align: center;">
+        <div style="text-align: left; display: inline-block;">
+        <span><%= link_to movie.title, user_movie_path(@user, movie.id) %></span>
+        </div>
+
+        <div style="text-align: right; display: inline-block;">
+        <span >Vote Average: <%= movie.vote_average %></span>
+        </div>
+    </div>
+
+      <br>
+    <%end%>
+</div>
