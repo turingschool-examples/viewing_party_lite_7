@@ -4,8 +4,8 @@ RSpec.describe "user dashboard page", type: :feature do
   describe "display" do
     before do
       test_data
-      @party_1 = Party.create!(duration: 135, date: "Tue, 9 May 2023", time: "12:00", movie_id: 238)
-      @party_2 = Party.create!(duration: 200, date: "Mon, 16 Jan 2023", time: "18:00", movie_id: 550)
+      @party_1 = Party.create!(duration: 200, date: "Tue, 9 May 2023", time: "12:00", movie_id: 238)
+      @party_2 = Party.create!(duration: 180, date: "Mon, 16 Jan 2023", time: "18:00", movie_id: 550)
     
       @party_1.user_parties.create!(user_id: @user_2.id)
       @party_1.user_parties.create!(user_id: @user_3.id)
@@ -15,7 +15,7 @@ RSpec.describe "user dashboard page", type: :feature do
       @party_2.user_parties.create!(user_id: @user_5.id)
     end
 
-    it "has user's name, a discover button, and a party viewing section" do
+    it "has user's name, a discover button, and a party viewing section", :vcr do
       visit "/users/#{@user_1.id}"
 
       expect(page).to have_content("User 1's Dashboard")
