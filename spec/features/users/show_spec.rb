@@ -52,8 +52,8 @@ describe 'user dashboard', :vcr do
       expect(page).to have_content("#{@movie1.title} Viewing Party")
       expect(page).to have_content(viewing_party.date)
       expect(page).to have_content(viewing_party.time)
-      expect(page).to have_content("You are the Host of this party")
-      expect(page).to have_content("Users Invited: Jojo, Donald J Trump")
+      expect(page).to have_content("You are the host of this party")
+      expect(page).to have_content("Donald J Trump")
     end
   end
 
@@ -79,8 +79,8 @@ describe 'user dashboard', :vcr do
       expect(page).to have_content("#{@movie1.title} Viewing Party")
       expect(page).to have_content(viewing_party.date)
       expect(page).to have_content(viewing_party.time)
-      expect(page).to have_content("Party Host: Jojo")
-      expect(page).to have_content("Users Invited: Jojo, Donald J Trump")
+      expect(page).to have_content("Party Host: JoJo")
+      expect(page).to have_content("Donald J Trump - User")
     end
 
     visit user_path(@user2)
