@@ -16,6 +16,10 @@ class MovieFacade
     Movie.new(movie_data)
   end
 
+  def movie
+    movie_details(id)
+  end
+
   private
   def service
     _service ||= MovieService.new
