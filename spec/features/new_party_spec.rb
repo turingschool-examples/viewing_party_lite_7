@@ -34,8 +34,6 @@ RSpec.describe 'New Movie Party Page' do
 
     click_button 'Create Party'
 
-    save_and_open_page
-
     expect(current_path).to eq(user_path(@user1))
     within '#parties' do
       within '.party' do
@@ -47,7 +45,6 @@ RSpec.describe 'New Movie Party Page' do
 
   it 'does not create a new viewing party when duration is less than movie length', :vcr do
     visit new_movie_party_path(@user1, @movie.id)
-    save_and_open_page
 
     fill_in 'Duration of Party (in minutes)', with: "#{@movie.runtime - 1}" 
     click_button 'Create Party'
