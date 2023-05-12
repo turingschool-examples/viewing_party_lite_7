@@ -10,4 +10,8 @@ class ViewingParty < ApplicationRecord
     movie = MovieFacade.movie_details(self.movie_id)
     movie.title
   end
+
+  def get_image
+    image = MovieService.find_by_id(self.movie_id)[:poster_path]
+  end
 end
