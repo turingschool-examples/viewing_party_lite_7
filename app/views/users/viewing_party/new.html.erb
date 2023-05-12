@@ -18,9 +18,10 @@
   Invite Other Users
   <br>
   <% @users.each do |user| %>
-    <%= check_box_tag "viewing_party[user_ids][]", user.id %>
+  <div id="user-<%=user.id %>">
+    <%= check_box_tag "viewing_party[user_ids][]", user.id  %>
     <%= user.name %>
-    <br>
+  </div>
   <% end %>
   <br>
 <% end %>
