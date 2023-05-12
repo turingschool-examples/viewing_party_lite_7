@@ -11,10 +11,10 @@ class Party < ApplicationRecord
   end
 
   def movie_title
-    MovieFacade.new.find_movie(movie_id).title
+    MovieFacade.new(movie_id).find_movie.title
   end
 
   def movie_image_src
-    "https://image.tmdb.org/t/p/original#{MovieFacade.new.find_movie(movie_id).image}"
+    "https://image.tmdb.org/t/p/original#{MovieFacade.new(movie_id).find_movie.image}"
   end
 end

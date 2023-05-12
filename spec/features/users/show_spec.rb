@@ -29,9 +29,9 @@ RSpec.describe 'users dashboard show page', type: :feature do
       @user4 = create(:user)
       @user5 = create(:user)
 
-      MovieFacade.new.find_movie(550)
+      MovieFacade.new(550).find_movie
       @party1 = create(:party, movie_id: 550)
-      MovieFacade.new.find_movie(545611)
+      MovieFacade.new(545611).find_movie
       @party2 = create(:party, movie_id: 545611)
       @party3 = create(:party, movie_id: 545611)
 
