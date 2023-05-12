@@ -94,8 +94,12 @@ def test_data
   @user_5 = User.create!(name: "User 5", email: "email5@email.com")
 
   @party_1 = Party.create!(duration: 135, date: "05/09/2023", time: "12:00", host: "Fozzy Bear")
+  @party_2 = Party.create!(duration: 200, date: "01/16/2023", time: "18:00", host: "User 3")
 
   @party_1.user_parties.create!(user_id: @user_2.id)
+  @party_2.user_parties.create!(user_id: @user_3.id)
+  @party_2.user_parties.create!(user_id: @user_4.id)
+  @party_2.user_parties.create!(user_id: @user_5.id)
 end
 
 def test_movie
