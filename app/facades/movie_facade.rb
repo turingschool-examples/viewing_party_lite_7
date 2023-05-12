@@ -58,4 +58,13 @@ class MovieFacade
   def movie_title(movie_id)
     find_movie(movie_id).title
   end
+
+  def movie_poster(movie_id)
+    "https://image.tmdb.org/t/p/original#{poster_path(movie_id)}"
+  end
+
+  def poster_path(movie_id)
+    data = MovieService.new.find_movie(movie_id)
+    data[:poster_path]
+  end
 end
