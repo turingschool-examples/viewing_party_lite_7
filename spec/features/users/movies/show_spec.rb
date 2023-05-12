@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe 'User Movies Show Page', type: :feature do
-  describe 'Movie Details', :vcr do
+RSpec.describe 'User Movies Show Page', feature: true, vcr: { record: :new_episodes } do
+  describe 'Movie Details', vcr: { record: :new_episodes } do
     before do
       @user1 = create(:user)
     end
@@ -26,7 +26,6 @@ RSpec.describe 'User Movies Show Page', type: :feature do
       expect(page).to have_content(movie_details[:cast][0][:character])
       expect(movie_details[:cast].count).to eq(10)
       expect(page).to have_content("Reviews")
-      # require 'pry'; binding.pry
       expect(page).to have_content(movie_details[:reviews][2][:author])
       # expect(page).to have_content(movie_details[:reviews][2][:content])
     end
