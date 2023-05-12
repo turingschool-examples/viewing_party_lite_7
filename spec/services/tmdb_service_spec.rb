@@ -55,6 +55,24 @@ describe 'TmdbService', :vcr do
 
         expect(@tmdb_service).to have_key :vote_average
         expect(@tmdb_service[:vote_average]).to be_a(Float)
+
+        expect(@tmdb_service).to have_key :runtime
+        expect(@tmdb_service[:runtime]).to be_a(Integer)
+        
+        expect(@tmdb_service).to have_key :genres
+        expect(@tmdb_service[:genres]).to be_an(Array)
+
+        expect(@tmdb_service).to have_key :poster_path
+        expect(@tmdb_service[:poster_path]).to be_a(String)
+      end
+    end
+
+    context 'get_cast' do
+      it 'returns the cast of a movie that matches given id' do
+        @tmdb_service = TmdbService.new.get_cast('5')
+
+        expect(@tmdb_service).to be_a(Hash)
+        expect(@tmdb_service[:cast]).to be_an(Array)
       end
     end
   end
