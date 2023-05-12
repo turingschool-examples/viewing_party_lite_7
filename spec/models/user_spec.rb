@@ -21,5 +21,11 @@ RSpec.describe User do
       expect(@user_1.no_parties?).to eq(true)
       expect(@user_2.no_parties?).to eq(false)
     end
+
+    it "host_vps" do
+      expect(@user_1.host_vps).to eq([])
+      expect(@user_3.host_vps).to eq([@party_2])
+      expect(@user_4.host_vps).to eq([@party_1])
+    end
   end
 end
