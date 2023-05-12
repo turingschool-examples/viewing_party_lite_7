@@ -285,40 +285,41 @@
           null
         ]
       },
-      "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/services/movie_service.rb": {
+      "/Users/crowrising/Turing/3Mod/Projects/viewing_party_lite_7/app/poros/movie_detail.rb": {
         "lines": [
           null,
           null,
           1,
           1,
-          1,
           null,
           null,
-          1,
-          1,
           null,
           null,
-          1,
-          1,
           null,
           null,
-          1,
-          5,
-          5,
           null,
           null,
           null,
           1,
-          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
           null,
           null,
           1,
-          1,
+          null,
+          3,
+          3,
+          3,
           null,
           null
         ]
       }
     },
-    "timestamp": 1683923770
+    "timestamp": 1683928370
   }
 }

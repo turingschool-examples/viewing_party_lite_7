@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-05-12T14:36:10-06:00">2023-05-12T14:36:10-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-05-12T15:52:51-06:00">2023-05-12T15:52:51-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -30,7 +30,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.12
+         1.19
        </span>
     </span> hits/line
     )
@@ -115,13 +115,13 @@
           </tr>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#59adfdace095569def1dab6ef89be46d9d4f2461" class="src_link" title="app/services/movie_service.rb">app/services/movie_service.rb</a></td>
+            <td class="strong t-file__name"><a href="#c9ca3b96bca849e0d8ddf107db332cc9dd5d4f39" class="src_link" title="app/poros/movie_detail.rb">app/poros/movie_detail.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">29</td>
+            <td class="cell--number">30</td>
             <td class="cell--number">14</td>
             <td class="cell--number">14</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.57</td>
+            <td class="cell--number">1.93</td>
             
           </tr>
         
@@ -552,9 +552,9 @@
 </div>
 
       
-        <div class="source_table" id="59adfdace095569def1dab6ef89be46d9d4f2461">
+        <div class="source_table" id="c9ca3b96bca849e0d8ddf107db332cc9dd5d4f39">
   <div class="header">
-    <h3>app/services/movie_service.rb</h3>
+    <h3>app/poros/movie_detail.rb</h3>
     <h4>
       <span class="green">
   100.0%
@@ -607,7 +607,7 @@
 
             
 
-            <code class="ruby">class MovieService</code>
+            <code class="ruby">class MovieDetail</code>
           </li>
         </div>
       
@@ -618,18 +618,18 @@
 
             
 
-            <code class="ruby">  def self.get_movie(id)</code>
+            <code class="ruby">  attr_reader :title,</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="5">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="5">
+            
             
 
             
 
-            <code class="ruby">    JSON.parse(conn.get(&quot;movie/#{id}&quot;).body, symbolize_names: true)</code>
+            <code class="ruby">              :id,</code>
           </li>
         </div>
       
@@ -640,7 +640,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">              :overview,</code>
           </li>
         </div>
       
@@ -651,29 +651,29 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">              :genre,</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="8">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="8">
+            
             
 
             
 
-            <code class="ruby">  def self.top_rated_movies</code>
+            <code class="ruby">              :runtime,</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="9">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="9">
+            
             
 
             
 
-            <code class="ruby">    JSON.parse(conn.get(&#39;movie/top_rated&#39;).body, symbolize_names: true)</code>
+            <code class="ruby">              :vote_average,</code>
           </li>
         </div>
       
@@ -684,7 +684,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">              :poster_path,</code>
           </li>
         </div>
       
@@ -695,45 +695,23 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">              :cast,</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="12">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="12">
+            
             
 
             
 
-            <code class="ruby">  def self.search_movie(movie)</code>
+            <code class="ruby">              :review</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="13">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    JSON.parse(conn.get(&quot;search/movie?query=#{movie}&quot;).body, symbolize_names: true)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="14">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="15">
+          <li class="never" data-hits="" data-linenumber="13">
             
             
 
@@ -744,51 +722,95 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="16">
+          <li class="covered" data-hits="1" data-linenumber="14">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def self.conn</code>
+            <code class="ruby">  def initialize(response)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="17">
-            <span class="hits">5</span>
+          <li class="covered" data-hits="2" data-linenumber="15">
+            <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">    Faraday.new(url: &#39;https://api.themoviedb.org/3/&#39;) do |f|</code>
+            <code class="ruby">    @title = response[:title]</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="18">
-            <span class="hits">5</span>
+          <li class="covered" data-hits="2" data-linenumber="16">
+            <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">      f.params[&#39;api_key&#39;] = ENV[&#39;TMDB_KEY&#39;]</code>
+            <code class="ruby">    @id = response[:id]</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="19">
-            
-            
-
+          <li class="covered" data-hits="2" data-linenumber="17">
+            <span class="hits">2</span>
             
 
-            <code class="ruby">    end</code>
+            
+
+            <code class="ruby">    @overview = response[:overview]</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="20">
+          <li class="covered" data-hits="2" data-linenumber="18">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    @genre = response[:genres]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="19">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    @runtime = format_runtime(response[:runtime])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="20">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    @vote_average = response[:vote_average]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="21">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    @poster_path = response[poster_path:]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="22">
             
             
 
@@ -799,7 +821,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="21">
+          <li class="never" data-hits="" data-linenumber="23">
             
             
 
@@ -810,35 +832,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="22">
+          <li class="covered" data-hits="1" data-linenumber="24">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def self.get_cast(id)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="23">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    JSON.parse(conn.get(&quot;movie/#{id}/credits&quot;).body, symbolize_names: true)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="24">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
+            <code class="ruby">  def format_runtime(time)</code>
           </li>
         </div>
       
@@ -849,34 +849,45 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    #  require &#39;pry&#39;; binding.pry</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="26">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="3" data-linenumber="26">
+            <span class="hits">3</span>
             
 
             
 
-            <code class="ruby">  def self.get_reviews(id)</code>
+            <code class="ruby">    hours = time / 60</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="27">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="3" data-linenumber="27">
+            <span class="hits">3</span>
             
 
             
 
-            <code class="ruby">    JSON.parse(conn.get(&quot;movie/#{id}/reviews&quot;).body, symbolize_names: true)</code>
+            <code class="ruby">    minutes = time % 60</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="28">
+          <li class="covered" data-hits="3" data-linenumber="28">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">    &quot;#{hours}h #{minutes}min&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="29">
             
             
 
@@ -887,7 +898,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="29">
+          <li class="never" data-hits="" data-linenumber="30">
             
             
 
