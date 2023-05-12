@@ -11,7 +11,7 @@ RSpec.describe Party, type: :model do
       @user1 = create(:user)
       @user2 = create(:user)
       @user3 = create(:user)
-      MovieFacade.new.find_movie(550)
+      MovieFacade.new(550).find_movie
       @party1 = create(:party, movie_id: 550)
       @party2 = create(:party, movie_id: 550)
       create(:partygoer, user: @user1, party: @party1, host: true)
