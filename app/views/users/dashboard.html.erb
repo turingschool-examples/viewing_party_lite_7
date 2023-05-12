@@ -5,21 +5,46 @@
     <p> This user has no parties yet </p>
   <% else %>
     <% @user.parties.each do |party| %>
-      <%= party.date %><br/>
-      <%= party.time %>
+      <%= party.format_date %><br/>
+      <%= party.format_time %>
     <% end %>
   <% end %>
 </section>
 <br>
 <div id="hosted-vps">
-  <% @user.host_vps.each do |party| %>%
-    <%= @facade.movie_title(party.movie_id) %><br>
+  <% @user.host_vps.each do |party| %>
+    <img src=<%= @facade.movie_poster(party.movie_id)%> alt="poster", width="100", height="auto">
+    <br>
+    <%= link_to @facade.movie_title(party.movie_id).to_s, user_movie_path(@user.id, party.movie_id) %><br>
     <%= party.format_date %><br>
     <%= party.format_time %><br>
     Hosting
+    Guests:
     <ul>
       <% party.guests.each do |guest| %>
         <li><%= guest.name %></li><br>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
+<div id="guest-vps">
+  <% @user.guest_vps.each do |party| %>
+    <img src=<%= @facade.movie_poster(party.movie_id)%> alt="poster", width="100", height="auto">
+    <br>
+    <%= @facade.movie_title(party.movie_id) %><br>
+    <%= party.format_date %><br>
+    <%= party.format_time %><br>
+    Invited
+    Hosted by: <%= party.host %>
+    Guests:
+    <ul>
+      <% party.guests.each do |guest| %>
+        <% if guest == @user %>
+          <li><b><%= guest.name %></b></li>
+        <% else %>
+          <li><%= guest.name %></li>
+        <% end %>
       <% end %>
     </ul>
   <% end %>
