@@ -16,10 +16,10 @@ RSpec.describe 'user story 9' do
       end
 
       within '#movie-20' do
-        expect(page).to have_content('GoodFellas')
+        expect(page).to have_content('The Boy, the Mole, the Fox and the Horse')
       end
 
-      within '#movie-17' do
+      within '#movie-16' do
         expect(page).to have_content('The Lord of the Rings: The Return of the King')
       end
     end
@@ -35,7 +35,7 @@ RSpec.describe 'user story 9' do
         expect(page).to have_content(8.5)
       end
 
-      within '#movie-17' do
+      within '#movie-16' do
         expect(page).to have_content(8.5)
       end
     end
@@ -48,10 +48,10 @@ RSpec.describe 'user story 9' do
       end
 
       within '#movie-20' do
-        expect(page).to have_link('GoodFellas')
+        expect(page).to have_link('The Boy, the Mole, the Fox and the Horse')
       end
 
-      within '#movie-17' do
+      within '#movie-16' do
         expect(page).to have_link('The Lord of the Rings: The Return of the King')
       end
     end
@@ -68,9 +68,9 @@ RSpec.describe 'user story 9' do
     it 'when I click another one of these links, I am taken to that movies show page', :vcr do
       visit user_movie_index_path(@user1)
       within '#movie-20' do
-        click_link 'GoodFellas'
+        click_link 'The Boy, the Mole, the Fox and the Horse'
 
-        expect(current_path).to eq(user_movie_path(@user1, 769))
+        expect(current_path).to eq(user_movie_path(@user1, 995133))
       end
     end
 
