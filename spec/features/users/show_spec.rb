@@ -2,17 +2,12 @@
 
 require 'rails_helper'
 
-describe 'user dashboard' do
+describe 'user dashboard', :vcr do
   before :each do
     @user1 = User.create!(name: 'JoJo', email: 'JoJo@hotmail.com')
     @user2 = User.create!(name: 'JaJa', email: 'JaJa@hotmail.com')
-    @viewing_party1 = @user1.viewing_parties.create!(duration: 120, date: '12/12/2023',
-                                                     time: '2023-12-12 13:00:00 UTC', movie_id: 1)
-    @viewing_party2 = @user1.viewing_parties.create!(duration: 120, date: '13/12/2023',
-                                                     time: '2023-13-12 13:00:00 UTC', movie_id: 2)
-    @viewing_party3 = @user2.viewing_parties.create!(duration: 120, date: '06/01/2023',
-                                                     time: '2023-01-06 13:00:00 UTC', movie_id: 3)
-
+    @user3 = User.create!(name: 'Donald J Trump', email: 'Trumpinator420@hotmail.com')
+    @movie1 = SearchFacade.new({ id: "238" }).movies
     visit user_path(@user1)
   end
 
@@ -37,11 +32,79 @@ describe 'user dashboard' do
     end
   end
 
-  it 'has a veiwing parties section' do
-    within '#viewing_parties' do
-      expect(page).to have_content("Viewing Party #{@viewing_party1.id}")
-      expect(page).to have_content("Viewing Party #{@viewing_party2.id}")
-      expect(page).to have_no_content("Viewing Party #{@viewing_party3.id}")
+  it 'has viewing party attributes on host section' do
+    visit new_user_movie_viewing_party_path(@user1, @movie1.id)
+    
+    fill_in('Duration', with: 176)
+    select "2024", from: '[date(1i)]'
+    select "May", from: '[date(2i)]'
+    select "5", from: '[date(3i)]'
+    select "00", from: '[time(4i)]'
+    select "00", from: '[time(5i)]'
+    within "#user_#{@user3.id}" do
+    check
+  end
+  click_on "Create Party"
+  
+  viewing_party = ViewingParty.last
+
+    within "#hosted" do
+      expect(page).to have_content("#{@movie1.title} Viewing Party")
+      expect(page).to have_content(viewing_party.date)
+      expect(page).to have_content(viewing_party.time)
+      expect(page).to have_content("You are the host of this party")
+      expect(page).to have_content("Donald J Trump")
     end
   end
+
+  it 'has viewing party attributes on invitee section' do
+    visit new_user_movie_viewing_party_path(@user1, @movie1.id)
+
+    fill_in('Duration', with: 176)
+    select "2024", from: '[date(1i)]'
+    select "May", from: '[date(2i)]'
+    select "5", from: '[date(3i)]'
+    select "00", from: '[time(4i)]'
+    select "00", from: '[time(5i)]'
+    within "#user_#{@user3.id}" do
+      check
+    end
+    click_on "Create Party"
+
+    viewing_party = ViewingParty.last
+
+    visit user_path(@user3)
+
+    within "#invited" do
+      expect(page).to have_content("#{@movie1.title} Viewing Party")
+      expect(page).to have_content(viewing_party.date)
+      expect(page).to have_content(viewing_party.time)
+      expect(page).to have_content("Party Host: JoJo")
+      expect(page).to have_content("Donald J Trump - User")
+    end
+
+    visit user_path(@user2)
+
+    within "#invited" do
+      expect(page).to have_no_content("#{@movie1.title} Viewing Party")
+    end
+  end
+
+  it 'has movie image for movie that viewing party is associated with' do
+    visit new_user_movie_viewing_party_path(@user1, @movie1.id)
+    
+    fill_in('Duration', with: 176)
+    select "2024", from: '[date(1i)]'
+    select "May", from: '[date(2i)]'
+    select "5", from: '[date(3i)]'
+    select "00", from: '[time(4i)]'
+    select "00", from: '[time(5i)]'
+    within "#user_#{@user3.id}" do
+      check
+    end
+    click_on "Create Party"
+
+    expect(@movie1.poster_path).to eq("/3bhkrj58Vtu7enYsRolD1fZdja1.jpg")
+  end
+
 end

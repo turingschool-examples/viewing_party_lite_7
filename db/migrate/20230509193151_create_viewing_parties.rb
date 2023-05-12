@@ -7,7 +7,6 @@ class CreateViewingParties < ActiveRecord::Migration[7.0]
       t.date :date
       t.time :time
       t.integer :movie_id
-      t.references :user, foreign_key: true
 
       t.timestamps
     end

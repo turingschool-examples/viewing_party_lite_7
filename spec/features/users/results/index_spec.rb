@@ -6,12 +6,7 @@ describe 'user results page', :vcr do
   before :each do
     @user1 = User.create!(name: 'JoJo', email: 'JoJo@hotmail.com')
     @user2 = User.create!(name: 'JaJa', email: 'JaJa@hotmail.com')
-    @viewing_party1 = @user1.viewing_parties.create!(duration: 120, date: '12/12/2023',
-                                                     time: '2023-12-12 13:00:00 UTC', movie_id: 1)
-    @viewing_party2 = @user1.viewing_parties.create!(duration: 120, date: '13/12/2023',
-                                                     time: '2023-13-12 13:00:00 UTC', movie_id: 2)
-    @viewing_party3 = @user2.viewing_parties.create!(duration: 120, date: '06/01/2023',
-                                                     time: '2023-01-06 13:00:00 UTC', movie_id: 3)
+
     visit user_discover_index_path(@user1)
   end
 

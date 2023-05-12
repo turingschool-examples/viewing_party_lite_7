@@ -2,9 +2,36 @@
 
 <%= button_to "Discover Movies", user_discover_index_path(@user), method: :get %>
 
-<div id="viewing_parties">
-<h4>Viewing Parties:</h4>
-<% @user.viewing_parties.each do |party| %>
-<p> Viewing Party <%= party.id %></p>
-<% end %>
+<h3>Hosted Parties:</h3>
+<div id="hosted">
+  <% @user.hosted_viewing_parties.each do |user_viewing_party| %>
+    <p><%= user_viewing_party.movie_title %> Viewing Party</p>
+    <p><%= image_tag "http://image.tmdb.org/t/p/w500#{user_viewing_party.movie_image}" %></p>
+    <p>You are the host of this party</p>
+    <p>Date: <%= user_viewing_party.viewing_party.date %></p>
+    <p>Time: <%= user_viewing_party.viewing_party.time %></p>
+    <p>Users Invited: 
+      <% user_viewing_party.viewing_party.users.each do |user| %>
+        <li><%= user.name %> </li>
+      <% end %></p>
+  <%end%>
+</div>
+
+<h3>Invited Parties:</h3>
+<div id="invited">
+  <% @user.invited_viewing_parties.each do |user_viewing_party| %>
+    <p><%= user_viewing_party.movie_title %> Viewing Party</p>
+    <p><%= image_tag "http://image.tmdb.org/t/p/w500#{user_viewing_party.movie_image}" %></p>
+    <p>Party Host: <%= user_viewing_party.viewing_party.users.host %></p>
+    <p>Date: <%= user_viewing_party.viewing_party.date %></p>
+    <p>Time: <%= user_viewing_party.viewing_party.time %></p>
+    <p>Users Invited: 
+      <% user_viewing_party.viewing_party.users.each do |user| %>
+        <% if user.id == @user.id %>
+        <li><b><%= user.name %></b> - User</li>
+        <% else %>
+        <li><%= user.name %></li>
+        <%end%>
+      <% end %> </p>
+  <%end%>
 </div>

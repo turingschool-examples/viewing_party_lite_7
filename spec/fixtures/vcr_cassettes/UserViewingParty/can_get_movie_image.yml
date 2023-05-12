@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/275?api_key=<api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 12 May 2023 21:32:31 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=21941
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 8d0207971eeea0f51591d02bcb121b9b
+      X-Memc-Age:
+      - '21007'
+      X-Memc-Expires:
+      - '1193'
+      Etag:
+      - W/"87b601c2e213cadec3b14d25f4e7feaf"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 56a79b3a2ac1e2942686c2337f96fb72.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P3
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - FLC-qbSmoXsNO-QbMP8V0aenNBU_V3tk8RaOrBhQ8xJVHCsYzxA_Yg==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/747dgDfL5d8esobk7h4odaOFhUq.jpg","belongs_to_collection":null,"budget":7000000,"genres":[{"id":80,"name":"Crime"},{"id":18,"name":"Drama"},{"id":53,"name":"Thriller"}],"homepage":"","id":275,"imdb_id":"tt0116282","original_language":"en","original_title":"Fargo","overview":"Jerry,
+        a small-town Minnesota car salesman is bursting at the seams with debt...
+        but he''s got a plan. He''s going to hire two thugs to kidnap his wife in
+        a scheme to collect a hefty ransom from his wealthy father-in-law. It''s going
+        to be a snap and nobody''s going to get hurt... until people start dying.
+        Enter Police Chief Marge, a coffee-drinking, parka-wearing - and extremely
+        pregnant - investigator who''ll stop at nothing to get her man. And if you
+        think her small-time investigative skills will give the crooks a run for their
+        ransom... you betcha!","popularity":22.36,"poster_path":"/rt7cpEr1uP6RTZykBFhBTcRaKvG.jpg","production_companies":[{"id":1382,"logo_path":"/sOg7LGESPH5vCTOIdbMhLuypoLL.png","name":"PolyGram
+        Filmed Entertainment","origin_country":"US"},{"id":10163,"logo_path":"/16KWBMmfPX0aJzDExDrPxSLj0Pg.png","name":"Working
+        Title Films","origin_country":"GB"}],"production_countries":[{"iso_3166_1":"GB","name":"United
+        Kingdom"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"1996-03-08","revenue":60611975,"runtime":98,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"A
+        lot can happen in the middle of nowhere.","title":"Fargo","video":false,"vote_average":7.869,"vote_count":7029}'
+  recorded_at: Fri, 12 May 2023 21:32:31 GMT
+recorded_with: VCR 6.1.0
