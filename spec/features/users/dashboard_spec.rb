@@ -22,6 +22,8 @@ RSpec.describe "user dashboard page", type: :feature do
     it "lists viewing parties that I am invited to with VP info" do
       visit "/users/#{@user_1.id}"
 
+      
+
     end
   end
 end
