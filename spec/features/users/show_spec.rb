@@ -44,8 +44,8 @@ RSpec.describe '/users/:id', type: :feature do
         within "#hosting" do
           expect(page).to have_content(title_550)
           expect(page).to have_css('img')
-          expect(page).to have_content(@party1.date)
-          expect(page).to have_content(@party1.start_time)
+          expect(page).to have_content(format_date(@party1.date))
+          expect(page).to have_content(format_time(@party1.start_time))
           expect(page).to have_content("Host: #{@user1.name}")
           within "#invitees" do
             expect(page).to have_content('Invited:')
@@ -58,8 +58,8 @@ RSpec.describe '/users/:id', type: :feature do
         within "#invited" do
           expect(page).to have_content(title_551)
           expect(page).to have_css('img')
-          expect(page).to have_content(@party2.date)
-          expect(page).to have_content(@party2.start_time)
+          expect(page).to have_content(format_date(@party2.date))
+          expect(page).to have_content(format_time(@party2.start_time))
           expect(page).to have_content("Host: #{@user2.name}")
           within "#invitees" do
             expect(page).to have_content('Invited:')
