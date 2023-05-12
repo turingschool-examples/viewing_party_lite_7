@@ -1,5 +1,5 @@
 require './app/poros/movie'
-require './app/poros/movie_data'
+require './app/poros/user_movies'
 
 class MovieFacade
   attr_reader :user
@@ -9,19 +9,29 @@ class MovieFacade
   end
 
   def movie_details(movie_id)
-    MovieData.new(type: 'details',
+    UserMovies.new(type: 'details',
               data: Movie.new(service.full_movie_details(movie_id)),
               user: user)
   end
 
+  def movies_by_ids(movie_ids)
+    movies_data = service.movies_by_ids(movie_ids).map do |movie_data|
+      Movie.new(movie_data)
+    end
+
+    UserMovies.new(type: 'viewing party',
+                   data: movies_data,
+                   user: user)
+  end
+
   def top_20_movies()
-    MovieData.new(type: 'top rated',
+    UserMovies.new(type: 'top rated',
               data: movies(service.top_rated_movies),
               user: user)
   end
 
   def search_movies(query)
-    MovieData.new(type: 'search',
+    UserMovies.new(type: 'search',
               data: movies(service.search_movies(query)),
               user: user,
               query: query)

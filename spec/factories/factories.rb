@@ -28,7 +28,7 @@ FactoryBot.define do
     reviews { Array.new(5, Faker::Lorem.paragraph) }
   end
 
-  factory :movie_data do
+  factory :user_movies do
     type { ['details', 'search', 'top rated'].sample }
     data { Array.new(5, create(:movie)) }
     user

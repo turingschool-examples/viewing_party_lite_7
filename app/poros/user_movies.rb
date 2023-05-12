@@ -1,4 +1,4 @@
-class MovieData
+class UserMovies
   attr_reader :type,
               :data,
               :user,

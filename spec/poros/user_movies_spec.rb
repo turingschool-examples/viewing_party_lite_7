@@ -1,17 +1,17 @@
 require 'rails_helper'
 
-RSpec.describe MovieData do
+RSpec.describe UserMovies do
   before(:each) do
     @user1 = create(:user)
     @user2 = create(:user)
-    @movie_data1 = MovieData.new(type: 'search', data: 'test movie search results', user: @user1, query: 'star wars' )
-    @movie_data2 = MovieData.new(type: 'details', data: 'test movies details', user: @user2 )
+    @movie_data1 = UserMovies.new(type: 'search', data: 'test movie search results', user: @user1, query: 'star wars' )
+    @movie_data2 = UserMovies.new(type: 'details', data: 'test movies details', user: @user2 )
   end
 
   describe '#initialize' do
     it 'exists' do
-      expect(@movie_data1).to be_a(MovieData)
-      expect(@movie_data2).to be_a(MovieData)
+      expect(@movie_data1).to be_a(UserMovies)
+      expect(@movie_data2).to be_a(UserMovies)
     end
   end
 

@@ -13,6 +13,10 @@ class MovieService
     movies_data(parsed_movies_data[:results])
   end
 
+  def movies_by_ids(movie_ids)
+    movie_ids.map{ |movie_id| full_movie_data(movie_id) }
+  end
+
   def full_movie_data(movie_id)
     details = get_movie_details(movie_id)
     cast = get_movie_cast(movie_id)[:cast]
