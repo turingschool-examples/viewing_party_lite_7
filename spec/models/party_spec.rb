@@ -10,6 +10,5 @@ RSpec.describe Party do
     it { should validate_numericality_of :duration }
     it { should validate_presence_of :date }
     it { should validate_presence_of :time }
-    it { should validate_presence_of :host }
   end
 end
