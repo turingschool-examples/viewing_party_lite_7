@@ -32,7 +32,7 @@ class Users::Movies::ViewingPartiesController < ApplicationController
 
     def create_user_parties(ids, pid)
       if ids.present?
-        ids.each do |id|
+        ids.compact_blank.each do |id|
           UserParty.create(user_id: id, party_id: pid)
         end
       end

@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :get_user, only: [:show]
+
   def new
     @user = User.new
   end
@@ -14,11 +16,15 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @facade = MovieFacade
   end
 
   private
   def user_params
     params.require(:user).permit(:name, :email)
+  end
+
+  def get_user
+    @user = User.find(params[:id])
   end
 end

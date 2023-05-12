@@ -13,4 +13,12 @@ module ApplicationHelper
   def count_reviews(reviews)
     reviews.count
   end
+
+  def format_date(date)
+    date.strftime("%B %d, %Y")
+  end
+
+  def format_time(time)
+    time.strftime("%l:%M %p").strip
+  end
 end
