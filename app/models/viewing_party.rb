@@ -5,4 +5,9 @@ class ViewingParty < ApplicationRecord
   validates :date , presence: true
   validates :time , presence: true
   validates :duration , numericality: { only_integer: true }
+
+  def movie_title 
+    movie = MovieFacade.movie_details(self.movie_id)
+    movie.title
+  end
 end

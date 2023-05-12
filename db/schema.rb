@@ -26,7 +26,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_08_235101) do
     t.date "date"
     t.time "time"
     t.integer "movie_id"
-    t.string "movie_title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

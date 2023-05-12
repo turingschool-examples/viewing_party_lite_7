@@ -13,7 +13,7 @@ class MovieFacade
   end
 
   def self.find_by_id(id)
-    MovieService.find_by_id(id)
+    results = MovieService.find_by_id(id)
   end
 
   def self.movie_details(id)

@@ -6,10 +6,11 @@ RSpec.describe "User Dashboard", type: :feature do
     @user1 = User.create!(name: "Bob", email: "bob@bob.com")
     @user2 = User.create!(name: "John", email: "john@john.com")
 
-    @viewing1 = ViewingParty.create!(duration: 1, date: Date.current, time: Time.current, movie_id: 1, movie_title: "Fellowship of the Ring")
-    @viewing2 = ViewingParty.create!(duration: 2, date: 3.days.from_now, time: Time.current, movie_id: 2, movie_title: "Office Space")
-    @viewing3 = ViewingParty.create!(duration: 3, date: 1.day.from_now, time: Time.current, movie_id: 3, movie_title: "The Dark Knight")
-
+    @viewing1 = ViewingParty.create!(duration: 1, date: Date.current, time: Time.current, movie_id: 5)
+    @viewing1.users = [@user1, @user2]
+    stub_request(:get, "https://api.themoviedb.org/3/movie/5?api_key=#{ENV['MOVIE_API_KEY']}")
+      .to_return(status: 200, body: File.read("./spec/fixtures/four_rooms_info.json"))
+    
     visit(user_path(@user1))
   end
 
@@ -19,9 +20,7 @@ RSpec.describe "User Dashboard", type: :feature do
       expect(page).to have_button("Discover Movies")
 
       within("#viewing-parties") do
-        expect(page).to have_content(@viewing1.movie_title)
-        expect(page).to have_content(@viewing2.movie_title)
-        expect(page).to have_content(@viewing3.movie_title)
+        expect(page).to have_content("Four Rooms")
       end
     end
 
