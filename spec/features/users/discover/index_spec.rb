@@ -26,12 +26,16 @@ RSpec.describe 'Discover Movies Page' do
       visit user_discover_index_path(@user1)
 
       within '#search-movie' do
-        fill_in 'Enter Movie Title', with: "Gabriel's Inferno"
+        fill_in 'Enter Movie Title', with: 'Your Name.'
         click_button 'Search'
       end
       expect(current_path).to eq(user_movie_index_path(@user1))
-      expect(page).to have_link("Gabriels's Inferno")
-      expect(page).to have_content(8.5)
+      # expect(page).to have_link("Gabriels's Inferno")
+      # expect(page).to have_content(8.5)
+      within '#movie-1' do
+        expect(page).to have_link('Your Name.')
+        expect(page).to have_content(8.5)
+      end
     end
   end
 end

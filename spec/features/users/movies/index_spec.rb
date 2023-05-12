@@ -11,16 +11,15 @@ RSpec.describe 'user story 9' do
 
     it 'displays top 20 movie titles', :vcr do
       visit user_movie_index_path(@user1)
-      save_and_open_page
       within '#movie-1' do
         expect(page).to have_content('The Godfather')
       end
 
-      within "#movie-20" do
+      within '#movie-20' do
         expect(page).to have_content('GoodFellas')
       end
 
-      within "#movie-17" do
+      within '#movie-17' do
         expect(page).to have_content('The Lord of the Rings: The Return of the King')
       end
     end
@@ -41,8 +40,38 @@ RSpec.describe 'user story 9' do
       end
     end
 
-    it 'has movie title as a link' do
-      
+    it 'has movie title as a link', :vcr do
+      visit user_movie_index_path(@user1)
+
+      within '#movie-1' do
+        expect(page).to have_link('The Godfather')
+      end
+
+      within '#movie-20' do
+        expect(page).to have_link('GoodFellas')
+      end
+
+      within '#movie-17' do
+        expect(page).to have_link('The Lord of the Rings: The Return of the King')
+      end
+    end
+
+    it 'when I click one of these links, I am taken to that movies show page', :vcr do
+      visit user_movie_index_path(@user1)
+      within '#movie-1' do
+        click_link 'The Godfather'
+
+        expect(current_path).to eq(user_movie_path(@user1, 238))
+      end
+    end
+
+    it 'when I click another one of these links, I am taken to that movies show page', :vcr do
+      visit user_movie_index_path(@user1)
+      within '#movie-20' do
+        click_link 'GoodFellas'
+
+        expect(current_path).to eq(user_movie_path(@user1, 769))
+      end
     end
 
     it 'has button to return to discover page', :vcr do
@@ -52,6 +81,7 @@ RSpec.describe 'user story 9' do
         expect(page).to have_button('Back to Discover')
         click_button 'Back to Discover'
       end
+
       expect(current_path).to eq(user_discover_index_path(@user1))
     end
   end
