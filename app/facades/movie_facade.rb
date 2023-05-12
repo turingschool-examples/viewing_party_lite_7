@@ -17,10 +17,8 @@ class MovieFacade
 
   def get_movie(movie_id)
     results = service.get_movie(movie_id)
-
-    results.map do |result|
-      MovieInfo.new(result)
-    end
+    
+    Movie.new(results)
   end
 
   def get_movie_info

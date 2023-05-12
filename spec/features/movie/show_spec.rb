@@ -5,7 +5,7 @@ RSpec.describe 'Movie Show' do
     @user = create(:user)
     @movie = MovieFacade.new.get_movie(238)
 
-    visit "users/#{@user}/movies/#{@movie.id}"
+    visit "/users/#{@user.id}/movies/#{@movie.id}"
   end 
 
   it "has button to create viewing party", :vcr do  

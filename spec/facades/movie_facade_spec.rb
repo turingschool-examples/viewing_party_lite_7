@@ -46,7 +46,7 @@ RSpec.describe 'MovieFacade', :vcr do
 
   describe 'get_movie' do
     it 'creates a Movie poro for a single movie by id' do
-      movie = @movie_facade.get_movie(734265)
+      movie = @movie_facade.get_movie(343611)
 
       expect(movie).to be_a(Movie)
     end
