@@ -71,5 +71,13 @@ RSpec.describe 'New Viewing Party Page', type: :feature do
       expect(page).to have_content(@user1.user_name)
       expect(page).to have_content(@user2.user_name)
     end
+
+    it 'displays an alert if not all fields are filled' do
+      check @user2.user_name
+      click_button 'Create Party'
+
+      expect(current_path).to eq(new_user_movie_viewing_party_path(@user1, @movie.id))
+      expect(page).to have_content('Please fill in all fields.')
+    end
   end
 end

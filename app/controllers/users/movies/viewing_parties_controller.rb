@@ -16,16 +16,12 @@ class Users::Movies::ViewingPartiesController < ApplicationController
       flash[:notice] = 'Your party has been created!'
     else
       flash[:alert] = 'Please fill in all fields.'
-      render :new
+      redirect_to new_user_movie_viewing_party_path(host, party_params[:movie_id])
     end
   end
 
   private
   def party_params
     params.permit(:movie_id, :duration, :date, :start_time)
-  end
-
-  def partygoers_params
-    params.permit(:user_id, :user)
   end
 end
