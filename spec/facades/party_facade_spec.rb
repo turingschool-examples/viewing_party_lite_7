@@ -3,21 +3,21 @@ require 'rails_helper'
 RSpec.describe PartyFacade do
   describe "party_facade" do
     before do
-      @params = {"duration"=>"140", 
-              "day(1i)"=>"2023",
-              "day(2i)"=>"5",
-              "day(3i)"=>"25",
-              "time(1i)"=>"2023",
-              "time(2i)"=>"5",
-              "time(3i)"=>"12",
-              "time(4i)"=>"20",
-              "time(5i)"=>"30",
-              "participants"=>["27", "29"],
-              "commit"=>"Create Party",
-              "controller"=>"parties",
-              "action"=>"create",
-              "user_id"=>"26",
-               "movie_id"=>"550"}
+      @params = { "duration" => "140",
+                  "day(1i)" => "2023",
+                  "day(2i)" => "5",
+                  "day(3i)" => "25",
+                  "time(1i)" => "2023",
+                  "time(2i)" => "5",
+                  "time(3i)" => "12",
+                  "time(4i)" => "20",
+                  "time(5i)" => "30",
+                  "participants" => %w[27 29],
+                  "commit" => "Create Party",
+                  "controller" => "parties",
+                  "action" => "create",
+                  "user_id" => "26",
+                  "movie_id" => "550" }
       @facade = PartyFacade.new
     end
 

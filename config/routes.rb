@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get "/user_parties/create", to: "user_parties#create"
 
   resources :users, only: [:create]
-  
+
   resources :users, only: [:show] do
     resources :movies, only: [:show] do
       resources :parties, only: [:new, :create]

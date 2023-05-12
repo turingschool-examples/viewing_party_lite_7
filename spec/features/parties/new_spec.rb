@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "New Viewing party page" do
   describe "display" do
-    before do 
+    before do
       test_data
       test_movie_details
       @movie_1 = Movie.new(@data)
@@ -29,7 +29,7 @@ RSpec.describe "New Viewing party page" do
   end
 
   describe "function" do
-    before do 
+    before do
       test_data
       test_movie_details
       @movie_1 = Movie.new(@data)

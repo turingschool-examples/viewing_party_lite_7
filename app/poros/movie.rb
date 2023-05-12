@@ -16,7 +16,7 @@ class Movie
   end
 
   def is_nil?(data)
-    data == nil ? nil : data
+    data.nil? ? nil : data
   end
 
   def extract_genres(data)
