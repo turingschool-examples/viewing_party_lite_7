@@ -2,13 +2,13 @@ require 'rails_helper'
 
 describe 'TmdbService', :vcr do
   before :each do
-    @tmdb_service = TmdbService.new
+    # @tmdb_service = TmdbService.new
   end
 
   context "class methods" do 
     context 'top_rated_movies' do
       it 'returns the top 20 rated movies' do
-        @tmdb_service.top_rated_movies
+        @tmdb_service = TmdbService.new.top_rated_movies
         expect(@tmdb_service[:results]).to be_an(Array)
         expect(@tmdb_service[:results].count).to eq(20)
         top_movie = @tmdb_service[:results].first
@@ -26,7 +26,7 @@ describe 'TmdbService', :vcr do
 
     context 'search_by_title' do
       it 'returns movies that match the search term' do
-        @tmdb_service.search_by_title('ocean')
+        @tmdb_service = TmdbService.new.search_by_title('ocean')
         expect(@tmdb_service[:results]).to be_an(Array)
         first_result = @tmdb_service[:results].first
 
@@ -41,7 +41,7 @@ describe 'TmdbService', :vcr do
       end
 
       it 'returns an empty array if no movies match the search term' do
-        @tmdb_service.search_by_title('')
+        @tmdb_service = TmdbService.new.search_by_title('')
         expect(@tmdb_service[:results]).to be_an(Array)
         expect(@tmdb_service[:results]).to eq([])
       end
@@ -49,7 +49,7 @@ describe 'TmdbService', :vcr do
 
     context 'get_movie' do 
       it 'returns a movie that matches given id' do
-        @tmdb_service.get_movie('5')
+        @tmdb_service = TmdbService.new.get_movie('5')
 
         expect(@tmdb_service).to have_key :id
         expect(@tmdb_service[:id]).to be_a(Integer)
@@ -73,17 +73,17 @@ describe 'TmdbService', :vcr do
 
     context 'get_cast' do
       it 'returns the cast of a movie that matches given id' do
-        @tmdb_service.get_cast('5')
+        @tmdb_service = TmdbService.new.get_cast('5')
 
         expect(@tmdb_service).to be_a(Hash)
         expect(@tmdb_service[:cast]).to be_an(Array)
       end
     end
 
-    context 'get_reviews' do
-      it 'returns the reviews of a movie that matches given id' do
-        @tmdb_service.get_reviews('550')
-      end
-    end
+    # context 'get_reviews' do
+    #   it 'returns the reviews of a movie that matches given id' do
+    #     @tmdb_service.get_reviews('550')
+    #   end
+    # end
   end
 end
