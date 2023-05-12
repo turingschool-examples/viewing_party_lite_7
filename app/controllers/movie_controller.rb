@@ -10,6 +10,7 @@ class MovieController < ApplicationController
 
   def show
     @movie = MovieFacade.new.get_movie(params[:movie_id])
+    @cast = CastFacade.new.get_cast(params[:movie_id])
   end
 
   private

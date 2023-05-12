@@ -20,9 +20,9 @@
   <div id="cast_characters">
     <h2>Cast:</h2>
     <ul>
-      <% @movie.cast.each do |cast| %>
-        <li>Name: <%= cast.name %></li>
-        <li>Character: <%= cast.character %></li>
+      <% @cast.each do |c| %>
+        <li>Name: <%= c.name %></li>
+        <li>Character: <%= c.character %></li>
       <% end %>
     </ul>
   </div>
