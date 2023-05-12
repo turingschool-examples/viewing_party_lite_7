@@ -81,14 +81,14 @@ save_and_open_page
       end
     end
 
-    xit 'displays each reviews author and information', :vcr do
+    it 'displays each reviews author and information', :vcr do
       visit "/users/#{@user1.id}/movie/324857"
 
-      within "movie-reviews" do
-        expect(page).to have_content
-        expect(page).to have_content
-        expect(page).to have_content
-        expect(page).to have_content
+      within "#movie-reviews" do
+        expect(page).to have_content("StephenScott")
+        expect(page).to have_content("The visuals, concepts, soundtrack, and characters are some of the best I've ever seen!")
+        expect(page).to have_content("JacobKing1")
+        expect(page).to have_content("Sony really nails making character movement look detailed and pronounced.")
       end
     end
   end
