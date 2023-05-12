@@ -15,4 +15,23 @@ FactoryBot.define do
   factory :user_viewing_party do
     user_type { ['visitor', 'host'].sample }
   end
+
+  factory :movie do
+    id { Faker::Number.within(range: 11..10000) }
+    title { Faker::Movie.title }
+    runtime { Faker::Number.within(range: 30..200) }
+    image_url { Faker::Internet.url }
+    rating { Faker::Number.decimal(l_digits: 1, r_digits: 1) }
+    genres { Array.new(3, Faker::Book.genre) }
+    summary { Faker::Lorem.paragraph }
+    cast { Array.new(10, Faker::Name.name) }
+    reviews { Array.new(5, Faker::Lorem.paragraph) }
+  end
+
+  factory :movie_data do
+    type { ['details', 'search', 'top rated'].sample }
+    data { Array.new(5, create(:movie)) }
+    user
+    query { Faker::Lorem.words }
+  end
 end
