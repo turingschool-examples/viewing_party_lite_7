@@ -11,7 +11,7 @@ class MoviesFacade
     results = service.get_cast(movie_id)[:cast][0..9]
 
     results.map do |result|
-      Actor.new(result)
+      Cast.new(result)
     end
   end
 
