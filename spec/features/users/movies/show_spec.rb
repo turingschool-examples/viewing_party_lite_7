@@ -64,7 +64,7 @@ save_and_open_page
       end
     end
 
-    xit 'displays first 10 cast members', :vcr do
+    it 'displays first 10 cast members', :vcr do
       visit "/users/#{@user1.id}/movie/324857"
 
       within "#movie-details" do

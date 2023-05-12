@@ -12,8 +12,11 @@ module Users
     end
 
     def show
+      #require 'pry'; binding.pry
       @user = User.find(params[:user_id])
       @movie = MovieFacade.get_movie(params[:id])
+      @cast =  MovieFacade.top_cast(params[:id])
+      @reviews = MovieFacade.reviews(params[:id])
     end
   end
 end
