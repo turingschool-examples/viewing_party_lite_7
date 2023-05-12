@@ -19,6 +19,20 @@ class MovieFacade
     end
   end
 
+  def self.get_movie_poster(id)
+    facade = create_facade(id)
+    facade.movie.poster
+  end
+
+  def self.get_movie_title(id)
+    facade = create_facade(id)
+    facade.movie.title
+  end
+
+  def self.create_facade(id)
+    MovieFacade.new(id)
+  end
+
   def movie_id
     movie.id
   end
