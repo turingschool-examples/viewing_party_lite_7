@@ -28,5 +28,11 @@ RSpec.describe Party do
         expect(@party_2.format_date).to eq("January 16, 2023")
       end
     end
+    describe "format_time" do
+      it "returns a formatted time of the party" do
+        expect(@party_1.format_time).to eq("12:00 pm")
+        expect(@party_2.format_time).to eq("6:00 pm")
+      end
+    end
   end
 end
