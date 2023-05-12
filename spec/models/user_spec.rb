@@ -15,7 +15,7 @@ RSpec.describe User do
   describe "instance methods" do
     before do
       test_data
-      @party_1 = Party.create!(duration: 135, date: "Tue, 9 May 2023", time: "12:00", movie_id: 238)
+      Party.create!(duration: 135, date: "Tue, 9 May 2023", time: "12:00", movie_id: 238)
       @party_2 = Party.create!(duration: 200, date: "Mon, 16 Jan 2023", time: "18:00", movie_id: 550)
     
       @party_1.user_parties.create!(user_id: @user_2.id)
@@ -26,7 +26,7 @@ RSpec.describe User do
       @party_2.user_parties.create!(user_id: @user_5.id)
     end
 
-    it "#no_parties?" do
+    it "#no_parties?", :vcr do
       expect(@user_1.no_parties?).to eq(true)
       expect(@user_2.no_parties?).to eq(false)
     end
