@@ -1,0 +1,10 @@
+<% @movies.each do |movie| %>
+  <div id=<%= movie.id %>>
+    <div>
+      <%= movie.title %>
+    </div>
+    <div>
+      <%= movie.vote_average %>
+    </div>
+  </div>
+<% end %>

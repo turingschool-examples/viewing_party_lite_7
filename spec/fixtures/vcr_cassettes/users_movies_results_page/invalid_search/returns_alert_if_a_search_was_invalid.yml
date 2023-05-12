@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.themoviedb.org/3/search/movie?api_key=moviedb_api_key&language=en-US&query=top%20rated
+    uri: https://api.themoviedb.org/3/search/movie?api_key=moviedb_api_key&language=en-US&query=%27asldkgjawof%27
     body:
       encoding: US-ASCII
       string: ''
@@ -25,19 +25,19 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 12 May 2023 00:35:50 GMT
+      - Fri, 12 May 2023 00:55:17 GMT
       Server:
       - openresty
       Cache-Control:
-      - public, max-age=22522
+      - public, max-age=28216
       X-Memc:
       - MISS, STORE
       X-Memc-Key:
-      - 346e5a6f14d8559d745746d31aca7e78
+      - 9f111d0fcb20880ec2cc43768c684c84
       X-Memc-Age:
       - '0'
       X-Memc-Expires:
-      - '22522'
+      - '28216'
       Etag:
       - W/"0e23279b004381f72a34159d5c7dfd1f"
       Vary:
@@ -46,17 +46,17 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 3cb6f3f47d56232df6d6c959bb4ba486.cloudfront.net (CloudFront)
+      - 1.1 a3aced10a4664c0d5614b6f6d77b0824.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DFW57-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - Lw5kZcUeFZHydqrxXNZkA7zlz1JpSgC_PHbpBEniXADrtNFTJxRxJQ==
+      - ZUj9_rjJshUG7-BnIhlbD7uHXO8GpiVfpMeagXV-9FNrh7ThuePokQ==
       Age:
-      - '2974'
+      - '1700'
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[],"total_pages":1,"total_results":0}'
-  recorded_at: Fri, 12 May 2023 01:25:24 GMT
+  recorded_at: Fri, 12 May 2023 01:23:37 GMT
 recorded_with: VCR 6.1.0

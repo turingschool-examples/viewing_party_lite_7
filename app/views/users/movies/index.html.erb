@@ -1,0 +1,12 @@
+<%= button_to "Discover Page", user_discover_index_path(@user), method: 'get' %>
+
+<% if params[:q] == "top rated" %>
+  <%= render partial: "movie_list" %>
+<% else %>
+  <h3>Movie results for: <%= params[:q] %></h3>
+  <% if @movies.empty? %>
+    <%= "No movies found." %>
+  <% else %>
+    <%= render partial: "movie_list" %>
+  <% end %>
+<% end %>

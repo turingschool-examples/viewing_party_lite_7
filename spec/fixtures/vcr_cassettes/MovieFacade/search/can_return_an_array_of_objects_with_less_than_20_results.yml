@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=moviedb_api_key&language=en-US&query=Princess%20Peach
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 12 May 2023 01:20:21 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=27047
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - bb2c03455fa2435197fcc68a2dff5e8b
+      X-Memc-Age:
+      - '129'
+      X-Memc-Expires:
+      - '24581'
+      Etag:
+      - W/"c498cc19d0f1da409c607fa1ec1a1e22"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 6b73deb011f1e2c824bdf8934c8a0434.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DFW57-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - kMzKu_qwckYIrjQSlcREGFx3GgzhetnHnAOvEdACt9SLyMWX6tJrLw==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJwYWdlIjoxLCJyZXN1bHRzIjpbeyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvN1B6cG5HTDRXMG95MU5BZDB0b0laZXVEdDBHLmpwZyIsImdlbnJlX2lkcyI6WzE2LDM1LDE0XSwiaWQiOjI4MTUyLCJvcmlnaW5hbF9sYW5ndWFnZSI6ImphIiwib3JpZ2luYWxfdGl0bGUiOiLjgrnjg7zjg5Hjg7zjg57jg6rjgqrjg5bjg6njgrbjg7zjgrog44OU44O844OB5aer5pWR5Ye65aSn5L2c5oimISIsIm92ZXJ2aWV3IjoiV2hlbiBQcmluY2VzcyBQZWFjaCBpcyBraWRuYXBwZWQgYnkgdGhlIG1vbnN0ZXIgS2luZyBLb29wYSwgTWFyaW8gYW5kIGhpcyBicm90aGVyIEx1aWdpIGpvdXJuZXkgdG8gdGhlIE11c2hyb29tIEtpbmdkb20gdG8gcmVzY3VlIGhlci4iLCJwb3B1bGFyaXR5Ijo3MC43NDgsInBvc3Rlcl9wYXRoIjoiL2Q4NDY2WUFnREZabXNyV21naXpQY1VRTXNJeC5qcGciLCJyZWxlYXNlX2RhdGUiOiIxOTg2LTA3LTIwIiwidGl0bGUiOiJTdXBlciBNYXJpbyBCcm90aGVyczogR3JlYXQgTWlzc2lvbiB0byBSZXNjdWUgUHJpbmNlc3MgUGVhY2giLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6Ni4xNCwidm90ZV9jb3VudCI6MjV9XSwidG90YWxfcGFnZXMiOjEsInRvdGFsX3Jlc3VsdHMiOjF9
+  recorded_at: Fri, 12 May 2023 01:20:21 GMT
+recorded_with: VCR 6.1.0
