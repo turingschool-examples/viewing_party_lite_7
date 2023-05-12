@@ -8,5 +8,9 @@ RSpec.describe UserViewingParty, type: :model do
 
   describe 'validations' do
     it { should define_enum_for(:user_type) }
+    it { should validate_presence_of(:user_id) }
+    it { should validate_numericality_of(:user_id) }
+    it { should validate_presence_of(:viewing_party_id) }
+    it { should validate_numericality_of(:viewing_party_id) }
   end
 end

@@ -4,7 +4,7 @@ RSpec.describe 'User Registration', type: :feature do
   before do
     visit new_user_path
   end
-  
+
   describe 'New user page' do
     it "should have a title of 'Viewing Party' with subtitle 'Create a New User'" do
       expect(page).to have_content('Viewing Party')
@@ -28,6 +28,8 @@ RSpec.describe 'User Registration', type: :feature do
 
   describe 'sad path test' do
     it 'should not create a new user if email is not unique' do
+      create(:user, name: 'Jon Smith', email: 'jonsmith@gmail.com')
+
       fill_in 'Name', with: 'Jon Smith'
       fill_in 'Email', with: 'jonsmith@gmail.com'
       click_button 'Create New User'

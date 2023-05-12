@@ -14,6 +14,8 @@ require_relative '../config/environment'
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
 require 'webmock/rspec'
+
+include FactoryBot::Syntax::Methods
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -38,31 +40,8 @@ begin
 rescue ActiveRecord::PendingMigrationError => e
   abort e.to_s.strip
 end
+
 RSpec.configure do |config|
-  config.before(:each) do
-    UserViewingParty.destroy_all
-    User.destroy_all
-    ViewingParty.destroy_all
-
-    @user1 = User.create!(email: 'jonsmith@gmail.com', name: 'Jon Smith')
-    @user2 = User.create!(email: 'janedoe@aol.com', name: 'Jane Doe')
-    @user3 = User.create!(email: 'snoopdogg@gmail.com', name: 'Snoop Dogg')
-
-    @viewing_party1 = ViewingParty.create!(movie_id: 11, duration: 120, date: '2023-08-01',
-                                           start_time: '2023-08-01 19:00:00 UTC')
-    @viewing_party2 = ViewingParty.create!(movie_id: 278, duration: 120, date: '2023-09-01',
-                                           start_time: '2023-09-01 19:00:00 UTC')
-    @viewing_party3 = ViewingParty.create!(movie_id: 13, duration: 120, date: '2023-10-01',
-                                           start_time: '2023-10-01 19:00:00 UTC')
-
-    @user_viewing_party1 = UserViewingParty.create!(user_id: @user1.id, viewing_party_id: @viewing_party1.id,
-                                                    user_type: 'visitor')
-    @user_viewing_party2 = UserViewingParty.create!(user_id: @user1.id, viewing_party_id: @viewing_party2.id,
-                                                    user_type: 'host')
-    @user_viewing_party3 = UserViewingParty.create!(user_id: @user2.id, viewing_party_id: @viewing_party3.id,
-                                                    user_type: 'host')
-  end
-
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = Rails.root.join('/spec/fixtures')
 
@@ -95,12 +74,14 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 end
+
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
     with.test_framework :rspec
     with.library :rails
   end
 end
+
 VCR.configure do |config|
   config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
   config.hook_into :webmock

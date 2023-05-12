@@ -5,20 +5,21 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-@user1 = User.create!(email: 'jonsmith@gmail.com', name: 'Jon Smith')
-@user2 = User.create!(email: 'janedoe@aol.com', name: 'Jane Doe')
-@user3 = User.create!(email: 'snoopdogg@gmail.com', name: 'Snoop Dogg')
 
-@viewing_party1 = ViewingParty.create!(movie_id: 11, duration: 120, date: '2023-08-01',
-                                       start_time: '2023-08-01 19:00:00 UTC')
-@viewing_party2 = ViewingParty.create!(movie_id: 278, duration: 120, date: '2023-09-01',
-                                       start_time: '2023-09-01 19:00:00 UTC')
-@viewing_party3 = ViewingParty.create!(movie_id: 13, duration: 120, date: '2023-10-01',
-                                       start_time: '2023-10-01 19:00:00 UTC')
+include FactoryBot::Syntax::Methods
 
-@user_viewing_party1 = UserViewingParty.create!(user_id: @user1.id, viewing_party_id: @viewing_party1.id,
-                                                user_type: 'visitor')
-@user_viewing_party2 = UserViewingParty.create!(user_id: @user1.id, viewing_party_id: @viewing_party2.id,
-                                                user_type: 'host')
-@user_viewing_party3 = UserViewingParty.create!(user_id: @user2.id, viewing_party_id: @viewing_party3.id,
-                                                user_type: 'host')
+UserViewingParty.destroy_all
+User.destroy_all
+ViewingParty.destroy_all
+
+@user1 = create(:user)
+@user2 = create(:user)
+@user3 = create(:user)
+
+@viewing_party1 = create(:viewing_party)
+@viewing_party2 = create(:viewing_party)
+@viewing_party3 = create(:viewing_party)
+
+@user_viewing_party1 = create(:user_viewing_party, user: @user1, user_type: 'host', viewing_party: @viewing_party1)
+@user_viewing_party2 = create(:user_viewing_party, user: @user2, user_type: 'visitor', viewing_party: @viewing_party1)
+@user_viewing_party3 = create(:user_viewing_party, user: @user2, user_type: 'host', viewing_party: @viewing_party2)

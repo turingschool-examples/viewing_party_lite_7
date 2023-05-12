@@ -1,8 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe 'Discover Index Page' do
+  user = create(:user)
+
   before(:each) do
-    visit user_dashboard_discover_index_path(@user1)
+    visit user_dashboard_discover_index_path(user)
   end
 
   describe 'As a registered user', :vcr do
@@ -17,7 +19,7 @@ RSpec.describe 'Discover Index Page' do
 
       click_link 'Top Rated Movies'
 
-      expect(current_path).to eq(user_dashboard_movies_path(@user1))
+      expect(current_path).to eq(user_dashboard_movies_path(user))
     end
   end
 end
