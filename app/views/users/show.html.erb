@@ -4,15 +4,16 @@
 
 <div id="parties">
   <h2>My Parties</h2>
-  <% @user.partygoings.each do |partygoing| %>
+  <% @parties.each do |party| %>
     <div class="party">
-      <% if partygoing.party.user_id == @user.id %>
+      <%= image_tag party.image_url, alt: party.title %>
+      <%= party.title %>
+      <%= party.datetime.strftime('%Y-%m-%d %H:%M') %>
+      <% if party.user_id == @user.id %>
         <p>Hosting</p>
       <% else %>
         <p>Invited</p>
       <% end %>
-      <%= partygoing.party.title %>
-      <%= partygoing.party.datetime.strftime('%Y-%m-%d %H:%M') %>
     </div>
   <% end %>
 </div>

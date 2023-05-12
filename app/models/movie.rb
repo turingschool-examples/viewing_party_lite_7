@@ -1,10 +1,11 @@
 class Movie
-  attr_reader :id, :title, :vote_average, :runtime, :genres, :summary, :cast_members, :review_count, :reviews
+  attr_reader :id, :title, :vote_average, :poster_path, :runtime, :genres, :summary, :cast_members, :review_count, :reviews
 
   def initialize(data, credits = {})
     @id = data[:id]
     @title = data[:title]
     @vote_average = data[:vote_average]
+    @poster_path = data[:poster_path]
 
     if data[:genres]
       @runtime = data[:runtime]

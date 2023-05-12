@@ -16,6 +16,7 @@
   <%= form.hidden_field :user_id, value: @host.id %>
   <%= form.hidden_field :title, value: @movie.title %>
   <%= form.hidden_field :movie_runtime, value: @movie.runtime %>
+  <%= form.hidden_field :image_url, value: @movie.image_url %>
 
   <%= form.label :title, 'Movie Title' %>
   <%= form.text_field :title_display, value: @movie.title, disabled: true %>
