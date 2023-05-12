@@ -5,6 +5,7 @@ class MovieController < ApplicationController
   end
 
   def results
+    require 'pry'; binding.pry
     @movies = MovieFacade.new.get_results(params[:q])
   end
 

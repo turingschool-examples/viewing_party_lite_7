@@ -7,6 +7,10 @@ class TmdbService
     get_url('/3/movie/top_rated')
   end
 
+  def get_movie(movie_id)
+    get_url("/3/movie/#{movie_id}")
+  end
+
   private
   
   def get_url(url)

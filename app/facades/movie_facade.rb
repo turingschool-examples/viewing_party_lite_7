@@ -7,7 +7,7 @@ class MovieFacade
     end 
   end
 
-  def search_by_title(key_word)
+app/controllers/home_controller.rb  def search_by_title(key_word)
     results = service.search_by_title(key_word)[:results]
     
     results.map do |result|
