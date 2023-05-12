@@ -3,7 +3,6 @@
 class Movie
   attr_reader :title,
               :vote_average,
-              :overview,
               :poster_path,
               :id,
               :runtime,
