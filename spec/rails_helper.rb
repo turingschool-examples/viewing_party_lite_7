@@ -122,7 +122,7 @@ def test_movie
     "release_date": "1999-10-15",
     "title": "Fight Club",
     "video": false,
-    "vote_average": 8.433,
+    "vote_average": 8.4,
     "vote_count": 26_357
   }
 end
@@ -219,7 +219,7 @@ def test_movie_details
     "tagline": "Mischief. Mayhem. Soap.",
     "title": "Fight Club",
     "video": false,
-    "vote_average": 8.433,
+    "vote_average": 8.4,
     "vote_count": 26_372
   }
 end
