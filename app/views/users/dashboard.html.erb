@@ -10,3 +10,17 @@
     <% end %>
   <% end %>
 </section>
+<br>
+<div id="hosted-vps">
+  <% @user.host_vps.each do |party| %>%
+    <%= @facade.movie_title(party.movie_id) %><br>
+    <%= party.format_date %><br>
+    <%= party.format_time %><br>
+    Hosting
+    <ul>
+      <% party.guests.each do |guest| %>
+        <li><%= guest.name %></li><br>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
