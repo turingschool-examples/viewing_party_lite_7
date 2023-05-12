@@ -6,6 +6,7 @@ class PartiesController < ApplicationController
   end
 
   def create
-    require 'pry'; binding.pry
+    PartyFacade.create_party(params)
   end
+
 end
