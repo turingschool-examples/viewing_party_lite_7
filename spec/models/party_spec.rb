@@ -14,8 +14,8 @@ RSpec.describe Party do
   describe "instance methods" do
     before(:each) do
       test_data
-      @party_1 = Party.create!(duration: 135, date: "Tue, 9 May 2023", time: "12:00", movie_id: 238)
-      @party_2 = Party.create!(duration: 200, date: "Mon, 16 Jan 2023", time: "18:00", movie_id: 550)
+      @party_1 = Party.create!(duration: 200, date: "Tue, 9 May 2023", time: "12:00", movie_id: 238)
+      @party_2 = Party.create!(duration: 180, date: "Mon, 16 Jan 2023", time: "18:00", movie_id: 550)
     
       @party_1.user_parties.create!(user_id: @user_2.id)
       @party_1.user_parties.create!(user_id: @user_3.id)
@@ -25,25 +25,25 @@ RSpec.describe Party do
       @party_2.user_parties.create!(user_id: @user_5.id)
     end
     describe "guests" do
-      it "returns list of users who are not hosting party" do
+      it "returns list of users who are not hosting party", :vcr do
         expect(@party_1.guests).to eq([@user_2, @user_3])
         expect(@party_2.guests).to eq([@user_4, @user_5])
       end
     end
     describe "format_date" do
-      it "returns a formatted date of the party" do
+      it "returns a formatted date of the party", :vcr do
         expect(@party_1.format_date).to eq("May 09, 2023")
         expect(@party_2.format_date).to eq("January 16, 2023")
       end
     end
     describe "format_time" do
-      it "returns a formatted time of the party" do
+      it "returns a formatted time of the party", :vcr do
         expect(@party_1.format_time).to eq("12:00 pm")
         expect(@party_2.format_time).to eq("6:00 pm")
       end
     end
     describe "host" do
-      it "returns the name of the host" do
+      it "returns the name of the host", :vcr do
         expect(@party_1.host).to eq(@user_4.name)
         expect(@party_2.host).to eq(@user_3.name)
       end
