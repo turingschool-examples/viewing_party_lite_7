@@ -11,6 +11,16 @@ RSpec.describe MovieFacade, :vcr do
 
       expect(movies).to be_an(Array)
       expect(movies).to all(be_a(Movie))
+      expect(movies.count).to be <= 20
+    end
+
+    it 'can return an array of objects with less than 20 results' do
+      movies = @movie_facade.search('Princess Peach')
+
+      expect(movies).to be_an(Array)
+      expect(movies).to all(be_a(Movie))
+      expect(movies.count).to eq(1)
+      expect(movies.count).to be <= 20
     end
   end
 
@@ -20,6 +30,7 @@ RSpec.describe MovieFacade, :vcr do
 
       expect(movies).to be_an(Array)
       expect(movies).to all(be_a(Movie))
+      expect(movies.count).to be <= (20)
     end
   end
 
