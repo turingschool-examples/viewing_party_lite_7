@@ -29,7 +29,7 @@ class MovieFacade
   def self.reviews(id)
     review_data = []
     MovieService.get_reviews(id)[:results].map do |review|
-      review_data << "#{review[:author]}'s /n #{review[:content]}"
+      review_data << "#{review[:author]}'s review: #{review[:content]}"
     end
     # require 'pry'; binding.pry
     review_data

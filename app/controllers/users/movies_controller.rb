@@ -17,6 +17,7 @@ module Users
       @movie = MovieFacade.get_movie(params[:id])
       @cast =  MovieFacade.top_cast(params[:id])
       @reviews = MovieFacade.reviews(params[:id])
+      # require 'pry'; binding.pry
     end
   end
 end

@@ -26,8 +26,4 @@ class MovieDetail
     minutes = time % 60
     "#{hours}h #{minutes}min"
   end
-
-  def add_cast(cast)
-    @cast = cast
-  end
 end
