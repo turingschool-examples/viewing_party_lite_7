@@ -41,4 +41,12 @@ RSpec.describe User, type: :model do
       end
     end
   end
+
+  describe 'class methods' do
+    describe '#other_users' do
+      it 'returns an array of all users except the specified user' do
+        expect(User.other_users(@user1.id)).to match_array([@user2, @user3])
+      end
+    end
+  end
 end
