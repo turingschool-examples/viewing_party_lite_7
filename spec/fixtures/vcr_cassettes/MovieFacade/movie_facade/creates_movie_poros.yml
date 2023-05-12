@@ -46,15 +46,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 4bb08411ba89edb53d3520e2681c55f2.cloudfront.net (CloudFront)
+      - 1.1 21d788b44c2b3d335a275c07a54548b6.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - xA_JiJSSrHefPtWsKv7nF1UVWoXekkovdeoYBJp3tK8BDCoqXhOPyQ==
+      - KhttQCb4k8r92lXNJp8yMjBTtOhNckgy6z1WxPRaE8-WBXnDpjcekA==
       Age:
-      - '1338'
+      - '9813'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
@@ -67,5 +67,5 @@ http_interactions:
         Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
         offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.7,"vote_count":17887}'
-  recorded_at: Fri, 12 May 2023 21:05:29 GMT
+  recorded_at: Fri, 12 May 2023 23:26:44 GMT
 recorded_with: VCR 6.1.0

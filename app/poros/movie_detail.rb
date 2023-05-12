@@ -22,9 +22,12 @@ class MovieDetail
   end
 
   def format_runtime(time)
-    #  require 'pry'; binding.pry
-    hours = time / 60
-    minutes = time % 60
-    "#{hours}h #{minutes}min"
+    if time 
+      hours = time / 60
+      minutes = time % 60
+      "#{hours}h #{minutes}min"
+    else 
+      "No run time"
+    end
   end
 end

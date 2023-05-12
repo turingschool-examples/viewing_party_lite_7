@@ -14,9 +14,9 @@ RSpec.describe MovieFacade do
       expect(movie.overview).to eq('Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge.')
     end
 
-    xit 'creates top rated movies poros', :vcr do
+    it 'creates top rated movies poros', :vcr do
       top_movie = MovieFacade.top_rated
-      expect(top_movie).to be_a(Hash)
+      expect(top_movie.first).to be_a(MovieDetail)
     end
 
     it 'can call top_cast', :vcr do
