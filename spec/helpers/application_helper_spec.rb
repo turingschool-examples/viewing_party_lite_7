@@ -21,5 +21,19 @@ RSpec.describe ApplicationHelper do
         expect(count_reviews(reviews)).to eq(3)
       end
     end
+
+    describe '#format_date(date)' do
+      it 'formats a Date object to Month, Day Year format' do
+        date = '2023-05-16'.to_date
+        expect(format_date(date)).to eq('May 16, 2023')
+      end
+    end
+
+    describe '#format_time(time)' do
+      it 'formats a Time object to HH:MM AM or PM format' do
+        time = '2000-01-01 13:46:00 UTC'.to_time
+        expect(format_time(time)).to eq('1:46 PM')
+      end
+    end
   end
 end
