@@ -23,7 +23,8 @@ class Movie
 
   def get_cast(credits)
     credits[:cast].first(10).map do |credit|
-       "#{credit[:name]} as #{credits[:character]}"
+      credit[:character].empty? ? credit[:name] : 
+        "#{credit[:name]} as #{credit[:character]}"
     end
   end
 

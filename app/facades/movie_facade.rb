@@ -38,8 +38,8 @@ class MovieFacade
     @movie.reviews
   end
 
-  def image_url
-    "https://image.tmdb.org/t/p/w154#{@movie.poster_path}" 
+  def image_url(width=154)
+    "https://image.tmdb.org/t/p/w#{width}#{@movie.poster_path}" 
   end
 
   private
