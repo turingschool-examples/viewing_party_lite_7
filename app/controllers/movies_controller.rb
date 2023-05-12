@@ -9,7 +9,6 @@ class MoviesController < ApplicationController
                 MovieFacade.new.find_movies(params[:search])
               elsif params[:q] == "top20rated"
                 MovieFacade.new.top_rated_movies
-              else
               end
   end
 

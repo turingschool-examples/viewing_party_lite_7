@@ -16,6 +16,5 @@ Rails.application.routes.draw do
     resources :movies, only: [:show] do
       resources :parties, only: [:new]
     end
-    
   end
 end

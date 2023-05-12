@@ -25,8 +25,8 @@ RSpec.describe Movie do
   end
   describe "extract_genres" do
     it "extracts genre names from data" do
-      data = [{"id": 18, "name": "Drama"}, {"id": 53, "name": "Thriller"}, {"id": 35, "name": "Comedy"}]
-      expect(@movie.extract_genres(data)).to eq(["Drama", "Thriller", "Comedy"])
+      data = [{ "id": 18, "name": "Drama" }, { "id": 53, "name": "Thriller" }, { "id": 35, "name": "Comedy" }]
+      expect(@movie.extract_genres(data)).to eq(%w[Drama Thriller Comedy])
     end
   end
 end

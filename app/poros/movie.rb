@@ -12,14 +12,14 @@ class Movie
   end
 
   def format_runtime(time)
-    time == nil ? nil : "#{time/60} hours #{time % 60} minutes"
+    time.nil? ? nil : "#{time / 60} hours #{time % 60} minutes"
   end
 
   def extract_genres(data)
-    unless data == nil
-      data.map do |genre|
-        genre.dig(:name)
-      end
+    return if data.nil?
+
+    data.map do |genre|
+      genre.dig(:name)
     end
   end
 end

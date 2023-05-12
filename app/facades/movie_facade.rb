@@ -38,6 +38,7 @@ class MovieFacade
     cast = []
     data[:cast].each_with_index do |member, i|
       break if i > 9
+
       cast << CastMember.new(member)
     end
     cast

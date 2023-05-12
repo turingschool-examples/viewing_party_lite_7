@@ -60,10 +60,10 @@ RSpec.describe "Movie Detail page" do
       visit user_movie_path(@user_1.id, @movie.id)
 
       within("#reviews") do
-      expect(page).to have_content("#{reviews.count} Reviews")
+        expect(page).to have_content("#{reviews.count} Reviews")
         reviews.each do |review|
-            expect(page).to have_content(review.author)
-            expect(page).to have_content("Pretty awesome movie. It shows what one crazy person can convince other crazy people to do. Everyone needs something to believe in. I recommend Jesus Christ, but they want Tyler Durden.")
+          expect(page).to have_content(review.author)
+          expect(page).to have_content("Pretty awesome movie. It shows what one crazy person can convince other crazy people to do. Everyone needs something to believe in. I recommend Jesus Christ, but they want Tyler Durden.")
         end
       end
     end

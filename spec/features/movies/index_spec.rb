@@ -61,7 +61,7 @@ RSpec.describe "Movies Results page" do
     it "displays a message if there are no movie search results" do
       visit "/users/#{@user_1.id}/movies"
 
-      within("#results") do 
+      within("#results") do
         expect(page).to have_content("No results.")
       end
     end

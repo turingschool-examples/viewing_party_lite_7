@@ -76,7 +76,7 @@ describe MovieService do
 
         expect(reviews[:results][0]).to have_key(:content)
         expect(reviews[:results][0][:content]).to be_a(String)
-        
+
         expect(reviews[:results][0]).to be_a(Hash)
       end
     end
