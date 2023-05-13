@@ -41,7 +41,6 @@ RSpec.describe 'Registration Page' do
         click_button 'Save'
       end
 
-      # save_and_open_page
       expect(current_path).to eq('/register')
       expect(page).to have_content('Oops, please try again. Make sure all fields are completed and email is unique!')
     end
@@ -57,7 +56,6 @@ RSpec.describe 'Registration Page' do
         click_button 'Save'
       end
 
-      # save_and_open_page
       expect(current_path).to eq('/register')
       expect(page).to have_content('Oops, please try again. Make sure all fields are completed and email is unique!')
     end

@@ -30,8 +30,7 @@ RSpec.describe 'Discover Movies Page' do
         click_button 'Search'
       end
       expect(current_path).to eq(user_movie_index_path(@user1))
-      # expect(page).to have_link("Gabriels's Inferno")
-      # expect(page).to have_content(8.5)
+
       within '#movie-1' do
         expect(page).to have_link('Your Name.')
         expect(page).to have_content(8.5)

@@ -70,7 +70,7 @@ RSpec.describe 'user story 9' do
       within '#movie-20' do
         click_link 'The Boy, the Mole, the Fox and the Horse'
 
-        expect(current_path).to eq(user_movie_path(@user1, 995133))
+        expect(current_path).to eq(user_movie_path(@user1, 995_133))
       end
     end
 
