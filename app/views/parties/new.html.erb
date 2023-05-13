@@ -1,0 +1,35 @@
+<h2>Make a Movie Party for <%= @movie.title %></h2>
+<%= button_to "Discover Page", discover_user_path(@host), method: :get %>
+
+<%= form_with model: @party, url: movie_parties_path(@host.id, @movie.id) do |form| %>
+  <% if @party.errors.any? %>
+    <div id="error_explanation">
+      <h3>Error:</h3>
+      <ul>
+        <% @party.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.hidden_field :user_id, value: @host.id %>
+  <%= form.hidden_field :movie_id, value: @movie.id %>
+  <%= form.hidden_field :title, value: @movie.title %>
+  <%= form.hidden_field :movie_runtime, value: @movie.runtime %>
+  <%= form.hidden_field :image_url, value: @movie.image_url %>
+
+  <%= form.label :title, 'Movie Title' %>
+  <%= form.text_field :title_display, value: @movie.title, disabled: true %>
+
+  <%= form.label :duration, 'Duration of Party (in minutes)' %>
+  <%= form.number_field :duration, value: @movie.runtime %>
+
+  <%= form.label :datetime, 'When:' %>
+  <%= form.datetime_select :datetime, default: DateTime.now.tomorrow %>
+
+  <%= form.label :users, 'Invite:' %>
+  <div id="invitees"><%= form.collection_check_boxes :user_ids, @users, :id, :name %></div>
+
+  <%= form.submit 'Create Party' %>
+<% end %>

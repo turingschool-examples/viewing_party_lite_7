@@ -1,0 +1,9 @@
+<h1>Discover Movies</h1>
+
+<%= button_to "Discover Top Rated Movies", movies_path(@user), method: :get %>
+
+<%= form_with url: movies_path(@user), method: :get do |form| %>
+  <%= form.text_field :query, placeholder: "Enter title keywords" %>
+  <%= form.submit "Search by Movie Title" %>
+<% end %>
+

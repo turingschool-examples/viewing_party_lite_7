@@ -6,7 +6,12 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "home#index"
 
-  resources :users, only: [:new, :create, :show]
-
-  # get '/users/:id/dashboard', to: 'users#dashboard', as: 'user_dashboard'
+  resources :users, only: [:new, :create, :show] do
+    member do
+      get 'discover'
+      resources :movies, only: [:index, :show] do
+        resources :parties, only: [:new, :create], path: 'viewing-party'
+      end
+    end
+  end
 end

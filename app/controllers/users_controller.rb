@@ -14,6 +14,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @parties = @user.partygoings.map(&:party)
+  end
+
+  def discover
+    @user = User.find(params[:id])
   end
 
   private
