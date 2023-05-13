@@ -11,6 +11,15 @@
   </head>
 
   <body>
+    <section>
+      <div class="nav"><p><%= link_to 'Home', root_path %></p></div>
+    </section>
+
+        <% flash.each do |type, msg| %>
+      <div>
+        <%= msg %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
