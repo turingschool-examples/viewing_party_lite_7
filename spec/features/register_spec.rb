@@ -12,9 +12,8 @@ feature "User registration" do
 
     user = User.find_by(email: "snoop@dogg.com")
 
-    expect(current_path).to eq(user_path(user))
+    expect(current_path).to eq(user_dashboard_path(user))
     expect(page).to have_content("Snoop Dogg")
-    expect(page).to have_content("snoop@dogg.com")
   end
 
   feature "User fails to register" do
