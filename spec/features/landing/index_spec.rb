@@ -53,5 +53,13 @@ RSpec.describe 'landing page', type: :feature do
 
       expect(current_path).to eq(root_path)
     end
+
+    it 'has a link to log in that routes to /login' do
+      expect(page).to have_link('Log In')
+
+      click_link('Log In')
+
+      expect(current_path).to eq(login_path)
+    end
   end
 end
