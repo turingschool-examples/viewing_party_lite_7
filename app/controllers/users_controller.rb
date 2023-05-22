@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
+rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
+  def not_found(error)
+    flash[:error] = "No user with that email found."
+    render :login_form
+  end
   def show
     @user = User.find(params[:id])
   end
@@ -23,12 +28,9 @@ class UsersController < ApplicationController
   end
 
   def login_user
-    user = User.find_by(email: params[:email])
-
-    if user.nil?
-      flash[:error] = "No user with that email found."
-      render :login_form
-    elsif user.authenticate(params[:password])
+    user = User.find_by!(email: params[:email])
+      
+    if user.authenticate(params[:password])
       session[:user_id] = user.id
       flash[:success] = "Welcome, #{user.user_name}!"
       redirect_to user_path(user)
