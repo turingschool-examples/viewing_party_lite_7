@@ -24,6 +24,17 @@ class UsersController < ApplicationController
     @facade = MovieFacade
   end
 
+  def login_form
+  end
+
+  def login_user
+    user = User.find_by(email: params[:email])
+    if user.authenticate(params[:password])
+      flash[:success] = "Welcome, #{user.email}!"
+      redirect_to user_path(user)
+    end
+  end
+
   private
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
