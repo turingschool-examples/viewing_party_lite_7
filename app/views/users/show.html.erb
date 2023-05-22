@@ -1,8 +1,7 @@
-<h3 align="center"><%= @user.user_name %>'s Dashboard</h3>
-<div align="center">
+<h3><%= @user.user_name %>'s Dashboard</h3>
+
 <%= button_to "Discover Movies", user_discover_index_path(@user), method: 'get' %>
-</div>
-<br>
+
 <section class='viewing-parties' style="display:flex;justify-content:space-evenly">
   <%= "click 'Discover Movies' and start a party!" if @user.parties.empty? %>
   <% @user.parties.each do |party| %>
