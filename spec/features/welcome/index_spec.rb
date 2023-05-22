@@ -29,4 +29,10 @@ RSpec.describe 'Visit Landing Page', type: :feature do
   it 'includes a link to go back to the landing page(present on all pages)' do
     expect(page).to have_link('Home')
   end
+
+  it 'includes a link to log in' do 
+    expect(page).to have_link('Log In')
+    click_link 'Log In'
+    expect(current_path).to eq(login_path)
+  end
 end

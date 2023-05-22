@@ -19,10 +19,24 @@ class UsersController < ApplicationController
   def login_form
   end
 
-  def login
-    require 'pry'; binding.pry
+  def login_user
+    # require 'pry'; binding.pry
     user = User.find_by(email: params[:email])
-    
+    if !user.nil?
+      if
+        user.authenticate(params[:password])
+        session[:user_id] = user.id
+        flash[:success] = "Welcome, #{user.name}!"
+        redirect_to user_dashboard_path(user)
+      else
+        flash[:error] = 'Sorry, your credentials are bad.'
+        render :login_form
+      end
+    else
+      flash[:error] = 'Sorry, your credentials are bad.'
+      render :login_form
+    end
+
   end
 
   def show
