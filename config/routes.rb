@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   get '/register', to: 'users#new'
   post '/register', to: 'users#create'
   get '/dashboard/:user_id', to: 'users#show', as: 'dashboard'
+  get '/login', to: 'users#login_form'
+  post '/login', to: 'users#login_user'
 end
