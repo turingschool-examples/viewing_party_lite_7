@@ -5,6 +5,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :not_found
     flash[:error] = "No user with that email found."
     render :login_form
   end
+  
   def show
     @user = User.find(params[:id])
   end
