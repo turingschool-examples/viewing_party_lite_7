@@ -18,6 +18,14 @@ RSpec.describe '/register', type: :feature do
       expect(page).to have_field('E-mail Address:')
     end
 
+    it 'form should include a password field' do
+      expect(page).to have_field('Password:')
+    end
+
+    it 'form should include a password confirmation field' do
+      expect(page).to have_field('Password Confirmation:')
+    end
+
     it 'form should include a register button' do
       expect(page).to have_button('Register')
     end
@@ -25,6 +33,8 @@ RSpec.describe '/register', type: :feature do
     it 'should take user to their user dashboard on successful registration' do
       fill_in 'Name', with: 'Jane Doe'
       fill_in 'E-mail Address:', with: 'jane-doe@gmail.com'
+      fill_in 'Password:', with: '123password'
+      fill_in 'Password Confirmation:', with: '123password'
       click_button 'Register'
 
       expected_user = User.last
@@ -34,29 +44,59 @@ RSpec.describe '/register', type: :feature do
     it 'should not allow users to register without a unique e-mail address' do
       user = create(:user)
 
-      fill_in 'Name', with: "#{user.name}"
+      fill_in 'Name', with: "Jane Doe"
       fill_in 'E-mail Address:', with: "#{user.email}"
+      fill_in 'Password:', with: "Password123"
+      fill_in 'Password Confirmation:', with: "Password123"
       click_button 'Register'
 
-      expect(page).to have_content("A name and unique email must be present.")
+      expect(page).to have_content("Email has already been taken")
     end
 
     it 'should not allow users to register without a name' do
-      user = create(:user)
-
-      fill_in 'E-mail Address:', with: "#{user.email}"
+      fill_in 'E-mail Address:', with: "test@test.com"
+      fill_in 'Password:', with: "Password123"
+      fill_in 'Password Confirmation:', with: "Password123"
       click_button 'Register'
 
-      expect(page).to have_content("A name and unique email must be present.")
+      expect(page).to have_content("Name can't be blank")
     end
 
     it 'should not allow users to register without an e-mail address' do
-      user = create(:user)
-
-      fill_in 'Name', with: "#{user.name}"
+      fill_in 'Name', with: "Jane Doe"
+      fill_in 'Password:', with: "Password123"
+      fill_in 'Password Confirmation:', with: "Password123"
       click_button 'Register'
 
-      expect(page).to have_content("A name and unique email must be present.")
+      expect(page).to have_content("Email can't be blank")
+    end
+
+    it 'should not allow users to register without matching passwords' do
+      fill_in 'Name', with: "Jane Doe"
+      fill_in 'E-mail Address:', with: "test@test.com"
+      fill_in 'Password:', with: "Password123"
+      fill_in 'Password Confirmation:', with: "XXX"
+      click_button 'Register'
+
+      expect(page).to have_content("Password confirmation doesn't match Password")
+    end
+
+    it 'should not allow users to register without filling in the password' do
+      fill_in 'Name', with: "Jane Doe"
+      fill_in 'E-mail Address:', with: "test@test.com"
+      fill_in 'Password Confirmation:', with: "XXX"
+      click_button 'Register'
+
+      expect(page).to have_content("Password can't be blank")
+    end
+
+    it 'should not allow users to register without filling in the password confirmation' do
+      fill_in 'Name', with: "Jane Doe"
+      fill_in 'E-mail Address:', with: "test@test.com"
+      fill_in 'Password:', with: "XXX"
+      click_button 'Register'
+
+      expect(page).to have_content("Password confirmation doesn't match Password")
     end
   end
 end

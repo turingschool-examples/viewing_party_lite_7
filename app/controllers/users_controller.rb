@@ -6,11 +6,17 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
-    if @user.save
-      redirect_to user_path(@user)
+    user = user_params
+    user[:email] = user[:email].downcase
+    new_user = User.new(user)
+
+    if new_user.valid?
+      new_user.save
+      session[:user_id] = new_user.id
+      redirect_to user_path(new_user)
     else
-      flash[:error] = 'A name and unique email must be present.'
+      message = new_user.errors.full_messages.join(", ")
+      flash[:error] = message
       redirect_to new_user_path
     end
   end
@@ -19,9 +25,24 @@ class UsersController < ApplicationController
     @facade = MovieFacade
   end
 
+  def login_form
+  end
+
+  def login_user
+    user = User.find_by(email: params[:email])
+    if user.authenticate(params[:password])
+      session[:user_id] = user.id
+      flash[:success] = "Welcome, #{user.email}!"
+      redirect_to user_path(user)
+    else
+      flash[:error] = "Sorry, your credentials are not valid."
+      render :login_form
+    end
+  end
+
   private
   def user_params
-    params.require(:user).permit(:name, :email)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 
   def get_user
