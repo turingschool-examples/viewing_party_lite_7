@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
     if new_user.valid?
       new_user.save
+      session[:user_id] = new_user.id
       redirect_to user_path(new_user)
     else
       message = new_user.errors.full_messages.join(", ")
@@ -30,6 +31,7 @@ class UsersController < ApplicationController
   def login_user
     user = User.find_by(email: params[:email])
     if user.authenticate(params[:password])
+      session[:user_id] = user.id
       flash[:success] = "Welcome, #{user.email}!"
       redirect_to user_path(user)
     else
