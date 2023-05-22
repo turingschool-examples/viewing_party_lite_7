@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'login', to: 'users#login_form', as: :login_form
   post 'login', to: 'users#login_user', as: :login_user
 
+  get 'logout', to: 'users#logout', as: :logout
+
   resources :users, only: [:create, :show] do
     get 'discover', to: 'users/discover#index'
     resources :movies, only: [:index, :show], controller: 'users/movies' do
