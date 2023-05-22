@@ -32,6 +32,9 @@ class UsersController < ApplicationController
     if user.authenticate(params[:password])
       flash[:success] = "Welcome, #{user.email}!"
       redirect_to user_path(user)
+    else
+      flash[:error] = "Sorry, your credentials are not valid."
+      render :login_form
     end
   end
 
