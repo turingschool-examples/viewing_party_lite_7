@@ -20,7 +20,6 @@ class UsersController < ApplicationController
   end
 
   def login_user
-    # require 'pry'; binding.pry
     user = User.find_by(email: params[:email])
     if !user.nil?
       if
@@ -36,7 +35,6 @@ class UsersController < ApplicationController
       flash[:error] = 'Sorry, your credentials are bad.'
       render :login_form
     end
-
   end
 
   def show
