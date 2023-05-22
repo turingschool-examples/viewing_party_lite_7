@@ -6,13 +6,23 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(strong_params)
-    if @user.save
-      redirect_to user_dashboard_path(@user)
+    user = User.create(strong_params)
+    if user.save
+      redirect_to user_dashboard_path(user)
     else
-      flash[:alert] = 'Please fill in all fields, email must be unique'
-      redirect_to new_user_path
+      flash[:alert] = 'Please fill in all fields, email must be unique, and passwords must match'
+      # flash[:alert] = user.errors.full_messages.to_sentence <possible refactor>
+      redirect_to register_path
     end
+  end
+
+  def login_form
+  end
+
+  def login
+    require 'pry'; binding.pry
+    user = User.find_by(email: params[:email])
+    
   end
 
   def show
@@ -26,6 +36,6 @@ class UsersController < ApplicationController
   end
 
   def strong_params
-    params.require(:user).permit(:email, :name)
+    params.require(:user).permit(:email, :name, :password, :password_confirmation)
   end
 end
