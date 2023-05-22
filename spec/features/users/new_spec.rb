@@ -18,6 +18,14 @@ RSpec.describe '/register', type: :feature do
       expect(page).to have_field('E-mail Address:')
     end
 
+    it 'form should include a password field' do
+      expect(page).to have_field('Password:')
+    end
+
+    it 'form should include a password confirmation field' do
+      expect(page).to have_field('Password Confirmation:')
+    end
+
     it 'form should include a register button' do
       expect(page).to have_button('Register')
     end
@@ -25,6 +33,8 @@ RSpec.describe '/register', type: :feature do
     it 'should take user to their user dashboard on successful registration' do
       fill_in 'Name', with: 'Jane Doe'
       fill_in 'E-mail Address:', with: 'jane-doe@gmail.com'
+      fill_in 'Password:', with: '123password'
+      fill_in 'Password Confirmation:', with: '123password'
       click_button 'Register'
 
       expected_user = User.last
