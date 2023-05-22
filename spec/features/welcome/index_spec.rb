@@ -16,7 +16,7 @@ RSpec.describe 'Visit Landing Page', type: :feature do
   it 'includes button to create a new user' do
     expect(page).to have_button('Create New User')
     click_button 'Create New User'
-    expect(current_path).to eq(new_user_path)
+    expect(current_path).to eq(register_path)
   end
 
   it 'includes a list of existing users which link to their dashboard' do
@@ -28,5 +28,11 @@ RSpec.describe 'Visit Landing Page', type: :feature do
 
   it 'includes a link to go back to the landing page(present on all pages)' do
     expect(page).to have_link('Home')
+  end
+
+  it 'includes a link to log in' do 
+    expect(page).to have_link('Log In')
+    click_link 'Log In'
+    expect(current_path).to eq(login_path)
   end
 end

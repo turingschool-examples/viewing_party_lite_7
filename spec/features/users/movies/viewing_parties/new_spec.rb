@@ -4,9 +4,9 @@ RSpec.describe 'New Viewing Party Page', vcr: { record: :new_episodes } do
   describe 'Create a new viewing party' do
 
     it 'I can create a new viewing party' do
-      user1 = User.create!(email: 'jon@jon.com', name: 'Jon')
-      user2 = User.create!(email: 'bob@bob.com', name: 'Bob')
-      user3 = User.create!(email: 'sally@sally.com', name: 'Sally')
+      user1 = User.create!(email: 'jon@jon.com', name: 'Jon', password: 'password')
+      user2 = User.create!(email: 'bob@bob.com', name: 'Bob', password: '123test')
+      user3 = User.create!(email: 'sally@sally.com', name: 'Sally', password: 'test456')
       movie = MovieService.new.top_rated_movies.first
       movie_details = MovieService.new.full_movie_details(movie[:id])
 
@@ -35,8 +35,8 @@ RSpec.describe 'New Viewing Party Page', vcr: { record: :new_episodes } do
     end
 
     it 'I can create a new viewing party' do
-      user = User.create!(email: 'jon@jon.com', name: 'Jon')
-      user2 = User.create!(email: 'bob@bob.com', name: 'Bob')
+      user = User.create!(email: 'jon@jon.com', name: 'Jon', password: 'password')
+      user2 = User.create!(email: 'bob@bob.com', name: 'Bob', password: '123test')
       movie = MovieService.new.top_rated_movies.first
       movie_details = MovieService.new.full_movie_details(movie[:id])
 
@@ -46,6 +46,7 @@ RSpec.describe 'New Viewing Party Page', vcr: { record: :new_episodes } do
       fill_in :start_time, with: '12:00'
       fill_in :duration, with: movie[:runtime]
       check "user_ids[#{user2.id}]"
+      
       click_on 'Create Party'
 
       expect(current_path).to eq(user_dashboard_path(user))

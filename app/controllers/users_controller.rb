@@ -6,12 +6,34 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(strong_params)
-    if @user.save
-      redirect_to user_dashboard_path(@user)
+    user = User.create(strong_params)
+    if user.save
+      redirect_to user_dashboard_path(user)
     else
-      flash[:alert] = 'Please fill in all fields, email must be unique'
-      redirect_to new_user_path
+      flash[:alert] = 'Please fill in all fields, email must be unique, and passwords must match'
+      # flash[:alert] = user.errors.full_messages.to_sentence <possible refactor>
+      redirect_to register_path
+    end
+  end
+
+  def login_form
+  end
+
+  def login_user
+    user = User.find_by(email: params[:email])
+    if !user.nil?
+      if
+        user.authenticate(params[:password])
+        session[:user_id] = user.id
+        flash[:success] = "Welcome, #{user.name}!"
+        redirect_to user_dashboard_path(user)
+      else
+        flash[:error] = 'Sorry, your credentials are bad.'
+        render :login_form
+      end
+    else
+      flash[:error] = 'Sorry, your credentials are bad.'
+      render :login_form
     end
   end
 
@@ -26,6 +48,6 @@ class UsersController < ApplicationController
   end
 
   def strong_params
-    params.require(:user).permit(:email, :name)
+    params.require(:user).permit(:email, :name, :password, :password_confirmation)
   end
 end
