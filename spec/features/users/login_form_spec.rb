@@ -21,5 +21,27 @@ RSpec.describe 'User Login Form' do
 
       expect(current_path).to eq(user_path(user))
     end
+
+    it 'redirects back to the form if no email is found' do
+      user = create(:user)
+
+      fill_in 'Email', with: 'fake_email@gmail.com'
+      fill_in 'Password', with: user.password
+      click_button 'Log In'
+
+      expect(current_path).to eq(login_path)
+      expect(page).to have_content('No user with that email found.')
+    end
+
+    it 'redirects back to the form if password doesn\'t authentica' do
+      user = create(:user)
+
+      fill_in 'Email', with: user.email
+      fill_in 'Password', with: "Well this sure isn\'t my password! I hope"
+      click_button 'Log In'
+
+      expect(current_path).to eq(login_path)
+      expect(page).to have_content('Incorrect password.')
+    end
   end
 end
