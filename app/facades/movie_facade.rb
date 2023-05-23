@@ -36,11 +36,10 @@ class MovieFacade
   def movie_summary
     movie.summary
   end
-
+  
   private
   def format_movie_data
     movie = movie_data
-
     data = {
       id: movie[:id],
       title: movie[:title],
