@@ -7,7 +7,10 @@ rescue_from ActiveRecord::RecordNotFound, with: :not_found
   end
   
   def show
-    @user = User.find(params[:id])
+    unless current_user
+      flash[:alert] = "You must be logged in to view this page."
+      redirect_to root_path
+    end
   end
 
   def new
@@ -17,6 +20,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :not_found
     user = User.new(user_params)
 
     if user.save
+      session[:user_id] = user.id
       redirect_to user_path(user)
     else
       flash[:alert] = user.errors.full_messages.to_sentence
@@ -30,7 +34,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
   def login_user
     user = User.find_by!(email: params[:email])
-      
+
     if user.authenticate(params[:password])
       session[:user_id] = user.id
       flash[:success] = "Welcome, #{user.user_name}!"
@@ -39,6 +43,12 @@ rescue_from ActiveRecord::RecordNotFound, with: :not_found
       flash[:error] = "Incorrect password."
       render :login_form
     end
+  end
+
+  def logout
+    reset_session
+    flash[:success] = "You have been logged out."
+    redirect_to '/'
   end
 
   private
