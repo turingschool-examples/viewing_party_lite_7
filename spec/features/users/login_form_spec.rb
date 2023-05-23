@@ -12,7 +12,7 @@ RSpec.describe 'User Login Form' do
       expect(page).to have_button('Log In')
     end
 
-    it 'when I fill out the form with valid credentials I am redirected to my dashboard' do
+    it 'when I fill out the form with valid credentials I am redirected to my dashboard and see a log out link from the landing page' do
       user = create(:user)
 
       fill_in 'Email', with: user.email
@@ -20,6 +20,10 @@ RSpec.describe 'User Login Form' do
       click_button 'Log In'
 
       expect(current_path).to eq(user_path(user))
+      
+      visit '/'
+
+      expect(page).to have_link('Log Out')
     end
 
     it 'redirects back to the form if no email is found' do
