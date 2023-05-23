@@ -14,7 +14,7 @@ RSpec.describe 'Movie Show', :vcr do
       expect(page).to have_button("Create Viewing Party For The Godfather")
 
       click_on("Create Viewing Party For The Godfather")
-      expect(current_path).to eq(new_viewing_party_path(@user, @movie))
+      expect(current_path).to eq(new_viewing_party_path(@user, @movie.id))
     end
 
     it "has a button to return to discover page" do
