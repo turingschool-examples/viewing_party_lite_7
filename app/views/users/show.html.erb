@@ -1,6 +1,6 @@
 <h3><%= current_user.user_name %>'s Dashboard</h3>
 
-<%= button_to "Discover Movies", user_discover_index_path(current_user), method: 'get' %>
+<%= button_to "Discover Movies", discover_index_path, method: 'get' %>
 
 <section class='viewing-parties' style="display:flex;justify-content:space-evenly">
   <%= "click 'Discover Movies' and start a party!" if current_user.parties.empty? %>

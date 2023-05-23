@@ -4,7 +4,8 @@ RSpec.describe 'Discover Movies Page', type: :feature do
   before(:each) do
     @user = create(:user)
 
-    visit user_discover_index_path(@user)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+    visit discover_index_path
   end
 
   describe 'top rated movies button', :vcr do
@@ -13,7 +14,7 @@ RSpec.describe 'Discover Movies Page', type: :feature do
 
       click_button 'Find Top Rated Movies'
 
-      expect(current_path).to eq(user_movies_path(@user))
+      expect(current_path).to eq(movies_path)
     end
   end
   
@@ -28,14 +29,14 @@ RSpec.describe 'Discover Movies Page', type: :feature do
 
       click_on 'Find Movies'
 
-      expect(current_path).to eq(user_movies_path(@user))
+      expect(current_path).to eq(movies_path)
     end
 
     it 'returns an error if the field is left empty', :vcr do
       click_on 'Find Movies'
 
       expect(page).to have_content('Please enter a movie')
-      expect(current_path).to eq(user_discover_index_path(@user))
+      expect(current_path).to eq(discover_index_path)
     end
   end
 end

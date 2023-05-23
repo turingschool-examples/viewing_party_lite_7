@@ -19,7 +19,7 @@ RSpec.describe 'User Login Form' do
       fill_in 'Password', with: user.password
       click_button 'Log In'
 
-      expect(current_path).to eq(user_path(user))
+      expect(current_path).to eq(dashboard_path)
       
       visit '/'
 
@@ -55,7 +55,7 @@ RSpec.describe 'User Login Form' do
       fill_in 'Password', with: user.password
       click_button 'Log In'
 
-      expect(current_path).to eq(user_path(user))
+      expect(current_path).to eq(dashboard_path)
       
       visit '/'
 

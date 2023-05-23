@@ -36,7 +36,7 @@ RSpec.describe 'user registration page', type: :feature do
       fill_in 'Password confirmation', with: 'password123'
       click_button 'Create New User'
       
-      expect(current_path).to eq(user_path(User.last))
+      expect(current_path).to eq(dashboard_path)
 
       visit '/'
 
