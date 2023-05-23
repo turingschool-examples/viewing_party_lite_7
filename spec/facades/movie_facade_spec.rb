@@ -9,6 +9,6 @@ RSpec.describe MovieFacade do
   it 'initializes', :vcr do
     expect(@movie_facade).to be_a(MovieFacade)
 
-    expect(@movie_facade.movie[:title]).to eq('The Godfather')
+    expect(@movie_facade.movie.title).to eq('The Godfather')
   end
 end

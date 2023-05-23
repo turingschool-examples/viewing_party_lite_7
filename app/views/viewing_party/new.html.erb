@@ -1,11 +1,9 @@
-<%= form_with url: new_viewing_party_path(@user.id, @movie.id), method: :post do |f| %>
-  <%= f.hidden_field :movie_title, value: @movie.title %>
-  <%= f.hidden_field :host_id, value: @user.id %>
-  <%= f.hidden_field :movie_runtime, value: @movie.runtime %>
-  <%= f.hidden_field :poster_path, value: @movie.poster_path %>
-
-  <%= form.label :duration %>
-  <%= form.number_field :duration, value: @movie.runtime %>
-  <%= f.submit %>
-
-<%= end %>
+<%= form_with url: viewing_party_path(@user.id, @facade.id), method: :post do |f| %>
+<%= f.label :duration, 'Duration of Party' %>
+  <%= f.number_field :duration, value: @facade.movie_runtime, min: @facade.movie_runtime, max: 300 %><br><br>
+  <%= f.label :date, 'Day' %>
+  <%= f.date_field :date %><br><br>
+  <%= f.label :start_time %>
+  <%= f.time_field :start_time %><br><br>
+  <%= f.submit 'Create Party!' %>
+<% end %>
