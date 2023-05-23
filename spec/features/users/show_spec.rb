@@ -10,6 +10,7 @@ RSpec.describe 'users dashboard show page', type: :feature do
     it 'redirects to the landing page' do
       visit user_path(@user1)
 
+      expect(page).to have_content('You must be logged in to view this page.')
       expect(current_path).to eq(root_path) 
     end
   end

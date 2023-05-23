@@ -7,7 +7,10 @@ rescue_from ActiveRecord::RecordNotFound, with: :not_found
   end
   
   def show
-    @user = User.find(params[:id])
+    unless current_user
+      flash[:alert] = "You must be logged in to view this page."
+      redirect_to root_path
+    end
   end
 
   def new

@@ -58,9 +58,9 @@ RSpec.describe 'landing page', type: :feature do
       within('#existing-users') do
         expect(page).to have_content('Existing Users')
         
-        expect(page).to have_link(@user_1.email)
-        expect(page).to have_link(@user_2.email)
-        expect(page).to have_link(@user_3.email)
+        expect(page).to have_content(@user_1.email)
+        expect(page).to have_content(@user_2.email)
+        expect(page).to have_content(@user_3.email)
       end
     end
 

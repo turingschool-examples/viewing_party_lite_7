@@ -40,7 +40,7 @@ RSpec.describe 'user registration page', type: :feature do
 
       visit '/'
 
-      expect(page).to have_link(User.last.email)
+      expect(page).to have_content(User.last.email)
     end
 
     it 'when I fill our the password and password confirmation with different values I should see an error message' do
