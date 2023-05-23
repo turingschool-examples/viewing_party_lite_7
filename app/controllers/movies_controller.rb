@@ -1,5 +1,4 @@
-class Users::MoviesController < ApplicationController
-  # before_action :find_user, only: [:index, :show]
+class MoviesController < ApplicationController
 
   def index
     if params[:q].empty?
@@ -13,10 +12,4 @@ class Users::MoviesController < ApplicationController
   def show
     @facade = MovieFacade.new(params[:id])
   end
-
-  private
-
-  # def find_user
-  #   # @user = User.find(params[:user_id])
-  # end
 end

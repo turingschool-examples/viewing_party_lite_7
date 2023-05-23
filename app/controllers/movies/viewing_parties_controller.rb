@@ -1,4 +1,4 @@
-class Users::Movies::ViewingPartiesController < ApplicationController
+class Movies::ViewingPartiesController < ApplicationController
   def new
     if current_user
       @movie = MovieFacade.new(params[:movie_id]).find_movie

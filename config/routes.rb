@@ -21,8 +21,8 @@ Rails.application.routes.draw do
   #   end
   # end
 
-  resources :discover, only: [:index], controller: 'users/discover'
-  resources :movies, only: [:index, :show], controller: 'users/movies' do
-    resources :viewing_parties, only: [:new, :create], controller: 'users/movies/viewing_parties'
+  resources :discover, only: [:index]
+  resources :movies, only: [:index, :show] do
+    resources :viewing_parties, only: [:new, :create], controller: 'movies/viewing_parties'
   end
 end
