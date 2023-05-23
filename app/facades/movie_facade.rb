@@ -36,7 +36,17 @@ class MovieFacade
   def movie_summary
     movie.summary
   end
-  
+
+  def reviews
+    @_reviews ||= reviews_data.map do |review|
+      Review.new(review)
+    end
+  end
+
+  def reviews_count
+    reviews.count
+  end
+
   private
   def format_movie_data
     movie = movie_data
@@ -60,11 +70,11 @@ class MovieFacade
   end
 
   def reviews_data
-    @_reviews_data ||= service.find_reviews(@id)[:results]
+    @_reviews_data ||= service.get_reviews(@id)[:results]
   end
 
   def cast_data
-    @_cast_data ||= service.find_cast(@id)[:cast][0..9]
+    @_cast_data ||= service.get_cast(@id)[:cast][0..9]
   end
 
   def get_genres(genres)

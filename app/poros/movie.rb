@@ -36,7 +36,7 @@ class Movie
   end
 
   def format_runtime
-    if @runtime > 120
+    if @runtime >= 120
       "#{@runtime / 60} hours #{@runtime % 60} minutes"
     else
       "#{@runtime / 60} hour #{@runtime % 60} minutes"

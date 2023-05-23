@@ -48,8 +48,11 @@ RSpec.describe 'Movie Show', :vcr do
     end
 
     it "displays the movie's reviews" do  
-    # expect(page).to have_content("Reviews:")
-    # expect(page).to have_content("Author: ")
+    expect(page).to have_content("Author: futuretv\nReview:")
+    end
+
+    it 'countes reviews' do
+      expect(page).to have_content("Review Count: 3")
     end
   end
 end
