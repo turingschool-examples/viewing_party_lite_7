@@ -8,12 +8,27 @@ class UsersController < ApplicationController
   def create
     user = User.create(strong_params)
     if user.save
-      redirect_to user_dashboard_path(user)
+      # require 'pry'; binding.pry
+    session[:user_id] = user.id
+    flash[:success] = "Welcome, #{user.name}!"
+    redirect_to user_dashboard_path(user)
     else
-      flash[:alert] = 'Please fill in all fields, email must be unique, and passwords must match'
-      # flash[:alert] = user.errors.full_messages.to_sentence <possible refactor>
+      flash[:alert] = 'Invalid credentials, please try again'
       redirect_to register_path
     end
+    # if user.save
+    #   redirect_to user_dashboard_path(user)
+    # else
+    #   flash[:alert] = 'Please fill in all fields, email must be unique, and passwords must match'
+    #   # flash[:alert] = user.errors.full_messages.to_sentence <possible refactor>
+    #   redirect_to register_path
+    # end
+  end
+
+  def logout_session
+  #   user = User.find(session[:user_id]).destroy
+    session[:user_id] = nil
+    redirect_to root_path
   end
 
   def login_form
