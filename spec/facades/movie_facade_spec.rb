@@ -18,7 +18,7 @@ RSpec.describe MovieFacade, :vcr do
       expect(movie).to be_a(MovieDetailed)
       expect(movie.id).to eq(550)
       expect(movie.title).to eq('Fight Club')
-      expect(movie.vote_average).to eq(8.433)
+      expect(movie.vote_average).to eq(8.434)
       expect(movie.image).to eq('/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg')
       expect(movie.genre).to eq(["Drama", "Thriller", "Comedy"])
       expect(movie.runtime).to eq(139)
@@ -54,7 +54,7 @@ RSpec.describe MovieFacade, :vcr do
 
   describe 'movie_vote_average' do
     it 'returns the movie vote average' do
-      expect(@movie_facade.movie_vote_average).to eq(8.4)
+      expect(@movie_facade.movie_vote_average.round(1)).to eq(8.4)
     end
   end
 

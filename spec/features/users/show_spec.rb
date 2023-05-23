@@ -8,7 +8,7 @@ RSpec.describe 'users dashboard show page', type: :feature do
 
   describe 'as a visitor' do
     it 'redirects to the landing page' do
-      visit user_path(@user1)
+      visit dashboard_path
 
       expect(page).to have_content('You must be logged in to view this page.')
       expect(current_path).to eq(root_path) 
@@ -22,20 +22,20 @@ RSpec.describe 'users dashboard show page', type: :feature do
     end
 
     it 'displays the user dashboard header' do
-      visit user_path(@user1)
+      visit dashboard_path
 
       expect(page).to have_content("#{@user1.user_name}'s Dashboard")
       expect(page).to_not have_content(@user2.user_name)
     end
     
     it 'has a button linking to the user discover page' do
-      visit user_path(@user1)
+      visit dashboard_path
       
       expect(page).to have_button('Discover Movies')
       
       click_button('Discover Movies')
       
-      expect(current_path).to eq(user_discover_index_path(@user1))
+      expect(current_path).to eq(discover_index_path)
     end
     
     describe 'viewing party list', :vcr do
@@ -60,7 +60,7 @@ RSpec.describe 'users dashboard show page', type: :feature do
       
       describe 'happy path' do
         it 'displays a list of viewing parties the user is going to', :vcr do
-          visit user_path(@user1)
+          visit dashboard_path
           
           within('.viewing-parties') do
             within("#party-#{@party1.id}") do
@@ -80,7 +80,7 @@ RSpec.describe 'users dashboard show page', type: :feature do
         end
         
         it 'lists Hosting with attendees names when the user is the host', :vcr do
-          visit user_path(@user1)
+          visit dashboard_path
           
           within('.viewing-parties') do
             within("#party-#{@party1.id}") do
@@ -95,7 +95,7 @@ RSpec.describe 'users dashboard show page', type: :feature do
         end
         
         it 'lists Invited by host name with the user bolded in attendees list when the user is not the host', :vcr  do
-          visit user_path(@user1)
+          visit dashboard_path
           
           within('.viewing-parties') do
             within("#party-#{@party2.id}") do
@@ -112,7 +112,7 @@ RSpec.describe 'users dashboard show page', type: :feature do
         
         it 'displays message when no parties exist', :vcr do
           allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user5)
-          visit user_path(@user5)
+          visit dashboard_path
           
           within('.viewing-parties') do
             expect(page).to have_content("click 'Discover Movies' and start a party!")

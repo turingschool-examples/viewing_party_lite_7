@@ -21,7 +21,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
     if user.save
       session[:user_id] = user.id
-      redirect_to user_path(user)
+      redirect_to dashboard_path
     else
       flash[:alert] = user.errors.full_messages.to_sentence
 
@@ -38,7 +38,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :not_found
     if user.authenticate(params[:password])
       session[:user_id] = user.id
       flash[:success] = "Welcome, #{user.user_name}!"
-      redirect_to user_path(user)
+      redirect_to dashboard_path
     else
       flash[:error] = "Incorrect password."
       render :login_form
