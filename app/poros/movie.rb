@@ -42,4 +42,10 @@ class Movie
       "#{@runtime / 60} hour #{@runtime % 60} minutes"
     end
   end
+
+  def format_genres
+    @genres.map do |genre|
+      genre[:name]
+    end.join(', ')
+  end
 end

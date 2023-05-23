@@ -27,16 +27,24 @@ RSpec.describe 'Movie Show', :vcr do
 
   describe "general info section" do
     it "displays movie's details" do
-      save_and_open_page
       expect(page).to have_content("The Godfather")
       expect(page).to have_content("Vote Average: 8.7")
       expect(page).to have_content("Runtime: 2 hours 55 minutes")
-      expect(page).to have_content("Genre: Drama, Crime")
+      expect(page).to have_content("Genres: Drama, Crime")
       expect(page).to have_content("Summary: Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge.")
     end
     
     it "displays movie's cast and characters" do
-      expect(page).to have_content("Cast: Al Pacino, ")
+      expect(page).to have_content("Name: Al Pacino")
+      expect(page).to have_content("Character: Michael Corleone")
+      expect(page).to have_content("Name: Marlon Brando")
+      expect(page).to have_content("Character: Vito Corleone")
+      expect(page).to have_content("Name: James Caan")
+      expect(page).to have_content("Character: Sonny Corleone")
+      expect(page).to have_content("Name: Richard S. Castellano")
+      expect(page).to have_content("Character: Peter Clemenza")
+      expect(page).to have_content("Name: Robert Duvall")
+      expect(page).to have_content("Character: Tom Hagen")
     end
 
     it "displays the movie's reviews" do  
