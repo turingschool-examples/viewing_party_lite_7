@@ -12,8 +12,8 @@ RSpec.describe 'new session - login page', type: :feature do
       it 'I see a link for Log In that goes to a Log In page with fields for e-mail and password' do
         visit root_path
 
-        expect(page).to have_link('Log In')
-        click_link 'Log In'
+        expect(page).to have_button('Log In')
+        click_button 'Log In'
 
         expect(current_path).to eq(new_session_path)
 
