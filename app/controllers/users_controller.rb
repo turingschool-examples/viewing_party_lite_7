@@ -31,7 +31,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
   def login_user
     user = User.find_by!(email: params[:email])
-    
+
     if user.authenticate(params[:password])
       session[:user_id] = user.id
       flash[:success] = "Welcome, #{user.user_name}!"
@@ -40,6 +40,12 @@ rescue_from ActiveRecord::RecordNotFound, with: :not_found
       flash[:error] = "Incorrect password."
       render :login_form
     end
+  end
+
+  def logout
+    reset_session
+    flash[:success] = "You have been logged out."
+    redirect_to '/'
   end
 
   private
