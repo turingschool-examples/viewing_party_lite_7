@@ -1,7 +1,8 @@
 class ViewingPartiesController < ApplicationController
   def new
-    user = User.find(params[:user_dashboard_id])
-    @facade = MovieFacade.new(user: user, type: :details, movie_id: params[:movie_id])
+    # user = User.find(params[:id])
+    # require 'pry'; binding.pry
+    @facade = MovieFacade.new(user: user, type: :details, movie_id: params[:id])
     @all_users = User.all
   end
 
@@ -26,5 +27,9 @@ class ViewingPartiesController < ApplicationController
   private
     def viewing_party_params
       params.permit(:movie_id, :created_at, :start_time, :duration)
+    end
+
+    def user
+      current_user
     end
 end

@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       # require 'pry'; binding.pry
     session[:user_id] = user.id
     flash[:success] = "Welcome, #{user.name}!"
-    redirect_to user_dashboard_path(user)
+    redirect_to dashboard_path
     else
       flash[:alert] = 'Invalid credentials, please try again'
       redirect_to register_path
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
         user.authenticate(params[:password])
         session[:user_id] = user.id
         flash[:success] = "Welcome, #{user.name}!"
-        redirect_to user_dashboard_path(user)
+        redirect_to dashboard_path
       else
         flash[:error] = 'Sorry, your credentials are bad.'
         render :login_form
@@ -53,13 +53,19 @@ class UsersController < ApplicationController
   end
 
   def show
-    @facade = MovieFacade.new(user: user, type: :viewing_parties)
+    if current_user
+      @facade = MovieFacade.new(user: user, type: :viewing_parties)
+    else
+      flash[:error] = 'Please log in to view this page'
+      redirect_to login_path
+    end
   end
 
   private
 
   def user
-    User.find(params[:id])
+    # require 'pry'; binding.pry
+    current_user
   end
 
   def strong_params

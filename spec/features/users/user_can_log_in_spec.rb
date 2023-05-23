@@ -6,7 +6,7 @@ RSpec.describe "Logging In" do
   end
   it "can visit login page" do
     visit root_path
-    
+
     expect(page).to have_link("Log In")
     click_on "Log In"
     expect(current_path).to eq(login_path)
@@ -20,7 +20,7 @@ RSpec.describe "Logging In" do
 
     click_on "Log In"
 
-    expect(current_path).to eq(user_dashboard_path(@user))
+    expect(current_path).to eq(dashboard_path)
     expect(page).to have_content("Welcome, Meg!")
   end
 
