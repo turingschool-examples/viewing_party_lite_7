@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-  before_action :get_user, only: [:show]
-
   def new
     @user = User.new
   end
@@ -22,15 +20,17 @@ class UsersController < ApplicationController
   end
 
   def show
-    @facade = MovieFacade
+    if current_user
+      @user = current_user
+      @facade = MovieFacade
+    else
+      flash[:error] = "You must be logged in or registered to access your dashboard."
+      redirect_to root_path
+    end
   end
 
   private
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
-  end
-
-  def get_user
-    @user = User.find(session[:user_id])
   end
 end
