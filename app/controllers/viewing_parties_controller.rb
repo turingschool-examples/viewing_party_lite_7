@@ -7,8 +7,8 @@ class ViewingPartiesController < ApplicationController
   end
 
   def create
-    user = User.find(params[:user_dashboard_id])
-    facade = MovieFacade.new(user: user, type: :details, movie_id: params[:movie_id])
+    # user = User.find(params[:user_dashboard_id])
+    facade = MovieFacade.new(user: user, type: :details, movie_id: params[:id])
     viewing_party = ViewingParty.new(viewing_party_params)
     if viewing_party.save
       UserViewingParty.create(user_id: user.id, viewing_party_id: viewing_party.id, user_type: 'Hosting')
@@ -20,7 +20,7 @@ class ViewingPartiesController < ApplicationController
       redirect_to user_dashboard_path(user)
     else
       flash[:error] = 'Please fill in all fields'
-      redirect_to new_user_dashboard_movie_viewing_party_path(user, facade.movies.id)
+      redirect_to "/dashboard/movies/#{facade.movies.id}/viewing_parties/new"
     end
   end
 

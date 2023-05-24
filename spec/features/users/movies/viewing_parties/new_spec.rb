@@ -13,7 +13,7 @@ RSpec.describe 'New Viewing Party Page', vcr: { record: :new_episodes } do
     it 'I can create a new viewing party' do
       # require 'pry'; binding.pry
       visit "/dashboard/movies/#{@movie[:id]}/viewing_parties/new"
-      save_and_open_page
+      # save_and_open_page
       expect(page).to have_content('Viewing Party')
       expect(page).to have_link('Home')
       expect(page).to have_link('Discover Movies')
@@ -52,7 +52,7 @@ RSpec.describe 'New Viewing Party Page', vcr: { record: :new_episodes } do
       
       click_on 'Create Party'
 
-      expect(current_path).to eq(user_dashboard_path(user))
+      expect(current_path).to eq(dashboard_path)
     end
   end
 end

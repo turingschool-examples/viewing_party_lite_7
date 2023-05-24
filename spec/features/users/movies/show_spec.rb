@@ -9,7 +9,7 @@ RSpec.describe 'User Movies Show Page', feature: true, vcr: { record: :new_episo
       movie = MovieService.new.top_rated_movies.first
       movie_details = MovieService.new.full_movie_details(movie[:id])
 
-      visit dashboard_movies_path(movie[:id])
+      visit "/dashboard/movies/#{movie[:id]}"
 
       expect(page).to have_content('Viewing Party')
       expect(page).to have_link('Home')
