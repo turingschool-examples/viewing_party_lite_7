@@ -37,8 +37,8 @@ RSpec.describe '/register', type: :feature do
       fill_in 'Password Confirmation:', with: '123password'
       click_button 'Register'
 
-      expected_user = User.last
-      expect(current_path).to eq(user_path(expected_user))
+      expect(current_path).to eq(user_path)
+      expect(page).to have_content('Jane Doe')
     end
 
     it 'should not allow users to register without a unique e-mail address' do

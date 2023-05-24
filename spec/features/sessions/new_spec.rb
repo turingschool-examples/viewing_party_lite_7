@@ -28,7 +28,7 @@ RSpec.describe 'new session - login page', type: :feature do
         fill_in :password, with: @user1.password
         click_button 'Log In'
 
-        expect(current_path).to eq(user_path(@user1))
+        expect(current_path).to eq(user_path)
         expect(page).to have_content("Welcome, #{@user1.email}!")
       end
     end

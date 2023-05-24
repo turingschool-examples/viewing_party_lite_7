@@ -1,4 +1,4 @@
-class Users::MoviesController < ApplicationController
+class MoviesController < ApplicationController
   before_action :get_user
 
   def index
@@ -12,6 +12,6 @@ class Users::MoviesController < ApplicationController
   private
 
   def get_user
-    @user = User.find(params[:user_id])
+    @user = User.find(session[:user_id])
   end
 end

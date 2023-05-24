@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def index
+    @user = User.find(session[:user_id])
+  end
+
   def new
     @user = User.new
   end
@@ -11,7 +15,7 @@ class UsersController < ApplicationController
     if new_user.valid?
       new_user.save
       session[:user_id] = new_user.id
-      redirect_to user_path(new_user)
+      redirect_to user_path
     else
       message = new_user.errors.full_messages.join(", ")
       flash[:error] = message
