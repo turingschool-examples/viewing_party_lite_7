@@ -59,4 +59,10 @@ RSpec.describe "Logging In" do
     expect(current_path).to eq(login_path)
     expect(page).to have_content("Sorry, your credentials are bad.")
   end
+
+  it "a visitor cannot visit the dashboard" do
+    visit dashboard_path
+
+    expect(page).to have_content('Please log in to view this page')
+  end
 end

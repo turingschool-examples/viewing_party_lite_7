@@ -23,7 +23,7 @@ RSpec.describe 'User Movies Index Page', type: :feature do
       expect(page).to have_content('Title')
       expect(page).to have_content('Rating')
       click_on "The Godfather"
-      expect(current_path).to eq(dashboard_movies_path(movie[:id]))
+      expect(current_path).to eq("/dashboard/movies/#{movie[:id]}")
     end
   end
 
