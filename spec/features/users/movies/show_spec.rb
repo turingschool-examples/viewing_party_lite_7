@@ -9,7 +9,7 @@ RSpec.describe 'User Movies Show Page', feature: true, vcr: { record: :new_episo
       movie = MovieService.new.top_rated_movies.first
       movie_details = MovieService.new.full_movie_details(movie[:id])
 
-      visit "/dashboard/movies/#{movie[:id]}"
+      visit "/movies/#{movie[:id]}"
 
       expect(page).to have_content('Viewing Party')
       expect(page).to have_link('Home')
@@ -28,6 +28,19 @@ RSpec.describe 'User Movies Show Page', feature: true, vcr: { record: :new_episo
       expect(page).to have_content("Reviews")
       expect(page).to have_content(movie_details[:reviews][2][:author])
       # expect(page).to have_content(movie_details[:reviews][2][:content])
+    end
+  end
+  describe 'As a visitor', vcr: { record: :new_episodes } do
+    it 'I can not visit the movie show page' do
+      movie = MovieService.new.top_rated_movies.first
+      movie_details = MovieService.new.full_movie_details(movie[:id])
+
+      visit '/movies/238'
+
+      click_on "Create a Viewing Party for #{movie[:title]}"
+
+      expect(current_path).to eq("/movies/#{movie[:id]}")
+      expect(page).to have_content('Please log in to create a viewing party')
     end
   end
 end
