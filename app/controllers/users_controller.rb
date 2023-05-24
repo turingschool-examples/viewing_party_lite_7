@@ -53,6 +53,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    # require 'pry'; binding.pry
     if current_user
       @facade = MovieFacade.new(user: user, type: :viewing_parties)
     else
@@ -64,7 +65,6 @@ class UsersController < ApplicationController
   private
 
   def user
-    # require 'pry'; binding.pry
     current_user
   end
 
