@@ -1,15 +1,19 @@
 class ViewingPartiesController < ApplicationController
+  before_action :user, only: [:new, :create]
   def new
-    # user = User.find(params[:id])
-    # require 'pry'; binding.pry
     @facade = MovieFacade.new(user: user, type: :details, movie_id: params[:id])
-    @all_users = User.all
+    if current_user
+      @all_users = User.all
+    else
+      flash[:error] = 'Please log in to create a viewing party'
+      redirect_to "/movies/#{@facade.movies.id}"
+    end
   end
 
   def create
-    # user = User.find(params[:user_dashboard_id])
     facade = MovieFacade.new(user: user, type: :details, movie_id: params[:id])
     viewing_party = ViewingParty.new(viewing_party_params)
+    # require 'pry'; binding.pry
     if viewing_party.save
       UserViewingParty.create(user_id: user.id, viewing_party_id: viewing_party.id, user_type: 'Hosting')
       params[:user_ids].each do |user_id, invited|
@@ -17,7 +21,7 @@ class ViewingPartiesController < ApplicationController
           UserViewingParty.create(user_id: user_id, viewing_party_id: viewing_party.id, user_type: 'Invited')
         end
       end
-      redirect_to user_dashboard_path(user)
+      redirect_to dashboard_path
     else
       flash[:error] = 'Please fill in all fields'
       redirect_to "/dashboard/movies/#{facade.movies.id}/viewing_parties/new"
