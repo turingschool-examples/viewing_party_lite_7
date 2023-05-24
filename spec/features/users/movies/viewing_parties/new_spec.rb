@@ -6,6 +6,11 @@ RSpec.describe '/users/:id/movies/:id/viewing_party/new', type: :feature do
     @user2 = create(:user)
     @user3 = create(:user)
 
+    visit new_session_path
+
+    fill_in :email, with: @user1.email
+    fill_in :password, with: @user1.password
+    click_button 'Log In'
   end
 
   describe 'When I visit the new viewing party page' do

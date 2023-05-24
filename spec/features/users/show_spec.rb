@@ -19,14 +19,24 @@ RSpec.describe '/users/:id', type: :feature do
   describe 'When I visit the users dashboard page' do
     it 'I see <users name> Dashboard" at the top of the page' do
       VCR.use_cassette('all_movie_data_by_id_550_551', :allow_playback_repeats => true) do
-        visit user_path(@user1)
+        visit new_session_path
+
+        fill_in :email, with: @user1.email
+        fill_in :password, with: @user1.password
+        click_button 'Log In'
+
         expect(page).to have_content("#{@user1.name}'s Dashboard")
       end
     end
 
     it 'has a button (Discover Movies)' do
       VCR.use_cassette('all_movie_data_by_id_550_551', :allow_playback_repeats => true) do
-        visit user_path(@user1)
+        visit new_session_path
+
+        fill_in :email, with: @user1.email
+        fill_in :password, with: @user1.password
+        click_button 'Log In'
+
         expect(page).to have_button('Discover Movies')
       end
     end
@@ -36,7 +46,11 @@ RSpec.describe '/users/:id', type: :feature do
         title_550 = MovieFacade.get_movie_title(550)
         title_551 = MovieFacade.get_movie_title(551)
 
-        visit user_path(@user1)
+        visit new_session_path
+
+        fill_in :email, with: @user1.email
+        fill_in :password, with: @user1.password
+        click_button 'Log In'
 
         expect(page).to have_content('Parties Hosting')
         expect(page).to have_content('Parties Attending')
@@ -74,7 +88,12 @@ RSpec.describe '/users/:id', type: :feature do
   describe 'When I visit the users dashboard page and click "Discover Movies"' do
     it 'redirects to a discover page for the specific user' do
       VCR.use_cassette('all_movie_data_by_id_550_551', :allow_playback_repeats => true) do
-        visit user_path(@user1)
+        visit new_session_path
+
+        fill_in :email, with: @user1.email
+        fill_in :password, with: @user1.password
+        click_button 'Log In'
+
         click_button 'Discover Movies'
 
         expect(current_path).to eq(user_discover_path(@user1))
