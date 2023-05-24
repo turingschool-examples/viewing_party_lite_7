@@ -11,7 +11,7 @@ RSpec.describe 'User Movies Index Page', type: :feature do
         I should see headers and links" do
       visit dashboard_discover_path
       movie = MovieService.new.top_rated_movies.first
-      # require 'pry'; binding.pry
+
       click_link 'Top Rated Movies'
 
       expect(current_path).to eq(dashboard_movies_path)
@@ -23,7 +23,7 @@ RSpec.describe 'User Movies Index Page', type: :feature do
       expect(page).to have_content('Title')
       expect(page).to have_content('Rating')
       click_on "The Godfather"
-      expect(current_path).to eq("/dashboard/movies/#{movie[:id]}")
+      expect(current_path).to eq("/movies/#{movie[:id]}")
     end
   end
 
