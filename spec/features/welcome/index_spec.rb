@@ -70,4 +70,15 @@ RSpec.describe 'Visit Landing Page', type: :feature do
       expect(page).to have_content(user3.email)
     end
   end
+  
+  describe 'As a visitor' do
+    it 'I cannot visit a user show page' do
+      visit dashboard_path 
+
+      expect(current_path).to eq(root_path)
+      expect(page).to have_content('Please log in to view this page')
+      expect(page).to have_link('Log In')
+      expect(page).to have_button('Create New User')
+    end
+  end
 end
