@@ -1,0 +1,6 @@
+<h2>Existing Users</h2>
+<% @users.each do |user| %>
+<ul>
+  <li id="user_<%= user.id %>"><%= link_to user.email, "/users/#{user.id}" %></li>
+</ul>
+<% end %>
