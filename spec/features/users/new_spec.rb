@@ -24,7 +24,7 @@ RSpec.describe 'User Registration', type: :feature do
       fill_in 'Password:', with: 'password123'
       fill_in 'Password Confirmation:', with: 'password123'
       click_button 'Create New User'
-      expect(current_path).to eq(user_dashboard_path(User.last))
+      expect(current_path).to eq(dashboard_path)
     end
   end
 
@@ -39,14 +39,14 @@ RSpec.describe 'User Registration', type: :feature do
       click_button 'Create New User'
 
       expect(current_path).to eq(register_path)
-      expect(page).to have_content('Please fill in all fields, email must be unique, and passwords must match')
+      expect(page).to have_content('Invalid credentials, please try again')
     end
 
     it 'should not create a new user if both fields are blank' do
       click_button 'Create New User'
 
       expect(current_path).to eq(register_path)
-      expect(page).to have_content('Please fill in all fields, email must be unique, and passwords must match')
+      expect(page).to have_content('Invalid credentials, please try again')
     end
 
     it 'should not create a new user if name field is blank' do
@@ -54,14 +54,14 @@ RSpec.describe 'User Registration', type: :feature do
       click_button 'Create New User'
 
       expect(current_path).to eq(register_path)
-      expect(page).to have_content('Please fill in all fields, email must be unique, and passwords must match')
+      expect(page).to have_content('Invalid credentials, please try again')
     end
 
     it 'should not create a new user if email field is blank' do
       fill_in 'Name', with: 'John Doe'
       click_button 'Create New User'
       expect(current_path).to eq(register_path)
-      expect(page).to have_content('Please fill in all fields, email must be unique, and passwords must match')
+      expect(page).to have_content('Invalid credentials, please try again')
     end
 
     it 'should not create a new user if password field is blank' do
@@ -71,7 +71,7 @@ RSpec.describe 'User Registration', type: :feature do
       click_button 'Create New User'
 
       expect(current_path).to eq(register_path)
-      expect(page).to have_content('Please fill in all fields, email must be unique, and passwords must match')
+      expect(page).to have_content('Invalid credentials, please try again')
     end
 
     it 'should not create a new user if password confirmation field is blank' do
@@ -81,7 +81,7 @@ RSpec.describe 'User Registration', type: :feature do
       click_button 'Create New User'
 
       expect(current_path).to eq(register_path)
-      expect(page).to have_content('Please fill in all fields, email must be unique, and passwords must match')
+      expect(page).to have_content('Invalid credentials, please try again')
     end
 
     it 'should not create a new user if password and password confirmation do not match' do
@@ -92,7 +92,7 @@ RSpec.describe 'User Registration', type: :feature do
       click_button 'Create New User'
       
       expect(current_path).to eq(register_path)
-      expect(page).to have_content('Please fill in all fields, email must be unique, and passwords must match')
+      expect(page).to have_content('Invalid credentials, please try again')
     end
   end
 end

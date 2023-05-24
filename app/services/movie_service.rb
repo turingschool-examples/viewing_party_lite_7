@@ -22,7 +22,7 @@ class MovieService
     else
       IMAGES_DOMAIN + details[:poster_path]
     end
-
+    # require 'pry'; binding.pry
     {
       id: movie_id,
       title: details[:title],

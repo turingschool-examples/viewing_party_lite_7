@@ -4,7 +4,7 @@ RSpec.describe 'Discover Index Page', type: :feature do
   user = create(:user)
 
   before(:each) do
-    visit user_dashboard_discover_index_path(user)
+    visit dashboard_discover_path
   end
 
   describe 'As a registered user', :vcr do
@@ -19,7 +19,7 @@ RSpec.describe 'Discover Index Page', type: :feature do
 
       click_link 'Top Rated Movies'
 
-      expect(current_path).to eq(user_dashboard_movies_path(user))
+      expect(current_path).to eq(dashboard_movies_path)
     end
   end
 end

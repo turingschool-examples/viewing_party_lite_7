@@ -2,9 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'User Dashboard', type: :feature do
   user = create(:user)
-
   before(:each) do
-    visit user_dashboard_path(user)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+    visit dashboard_path
   end
 
   it 'has a header' do

@@ -1,6 +1,6 @@
 <%= @facade_movies.title %>
 <%= render "shared/discover" %>
-<%= link_to "Create a Viewing Party for #{@facade_movies.title}", new_user_dashboard_movie_viewing_party_path(@facade.user, @facade_movies.id) %>
+<%= link_to "Create a Viewing Party for #{@facade_movies.title}", "/dashboard/movies/#{@facade_movies.id}/viewing_parties/new" %>
 <table>
   <tr><th>Rating: <%= @facade_movies.rating %></th><th>Runtime: <%= @facade_movies.runtime %></th><th>Genre(s): <%= @facade_movies.genres %></th></tr>
 </table>
