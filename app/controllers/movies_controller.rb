@@ -3,6 +3,7 @@ class MoviesController < ApplicationController
   def index
     # require 'pry'; binding.pry
     # user = User.find(params[:format])
+    # require 'pry'; binding.pry
     if params[:q] == 'top rated'
       @facade = MovieFacade.new(user: user, type: :top_rated)
     else
@@ -12,7 +13,7 @@ class MoviesController < ApplicationController
 
   def show
     # user = User.find(params[:user_dashboard_id])
-    require 'pry'; binding.pry
+    # require 'pry'; binding.pry
     @facade = MovieFacade.new(user: user, type: :details, movie_id: params[:id])
     @facade_movies = @facade.movies
   end
