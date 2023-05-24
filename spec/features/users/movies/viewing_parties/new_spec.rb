@@ -11,9 +11,9 @@ RSpec.describe 'New Viewing Party Page', vcr: { record: :new_episodes } do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user1)
     end
     it 'I can create a new viewing party' do
-      # require 'pry'; binding.pry
+
       visit "/dashboard/movies/#{@movie[:id]}/viewing_parties/new"
-      # save_and_open_page
+
       expect(page).to have_content('Viewing Party')
       expect(page).to have_link('Home')
       expect(page).to have_link('Discover Movies')
@@ -37,17 +37,12 @@ RSpec.describe 'New Viewing Party Page', vcr: { record: :new_episodes } do
     end
 
     it 'I can create a new viewing party' do
-      # user = User.create!(email: 'jon@jon.com', name: 'Jon', password: 'password')
-      # user2 = User.create!(email: 'bob@bob.com', name: 'Bob', password: '123test')
-      # movie = MovieService.new.top_rated_movies.first
-      # movie_details = MovieService.new.full_movie_details(movie[:id])
-# require 'pry'; binding.pry
+    
       visit "/dashboard/movies/#{@movie[:id]}/viewing_parties/new"
-      # visit dashboard_movies_path(movie[:id])
 
       fill_in :date, with: '2023-08-01'
       fill_in :start_time, with: '12:00'
-      fill_in :duration, with: @movie[:runtime]
+      fill_in :duration, with: 180
       check "user_ids[#{@user2.id}]"
       
       click_on 'Create Party'

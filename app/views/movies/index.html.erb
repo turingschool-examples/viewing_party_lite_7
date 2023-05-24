@@ -9,7 +9,7 @@
   <tr><th>Title</th><th>Rating</th>
   <% @facade.movies.each do |movie| %>
     <tr>
-      <td><%= link_to "#{movie.title}", "/dashboard/movies/#{movie.id}" %></td>
+      <td><%= link_to "#{movie.title}", "/movies/#{movie.id}" %></td>
       <td><%= movie.rating %></td>
     </tr>
   <% end %>
