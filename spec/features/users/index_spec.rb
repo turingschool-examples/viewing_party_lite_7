@@ -3,7 +3,11 @@ require 'rails_helper'
 RSpec.describe '/users/:id/discover', type: :feature do
   before(:each) do
     @user1 = create(:user)
-    visit user_discover_path(@user1)
+    visit new_session_path
+    fill_in :email, with: @user1.email
+    fill_in :password, with: @user1.password
+    click_button 'Log In'
+    visit discover_path
   end
 
   describe 'When a user visits their users discover page' do
@@ -21,7 +25,7 @@ RSpec.describe '/users/:id/discover', type: :feature do
     it 'They are taken to the movies results page' do
       VCR.use_cassette('top_20_movies', allow_playback_repeats: true) do
         click_button('Discover Top Rated Movies')
-        expect(current_path).to eq(user_movies_path(@user1))
+        expect(current_path).to eq(movies_path)
       end
     end
   end
@@ -30,10 +34,10 @@ RSpec.describe '/users/:id/discover', type: :feature do
     it 'They are taken to the movies results page' do
       VCR.use_cassette('search_movies_tremors', allow_playback_repeats: true) do
         fill_in :q, with: 'Tremors'
-        
+
         click_button('Search')
-        
-        expect(current_path).to eq(user_movies_path(@user1))
+
+        expect(current_path).to eq(movies_path)
       end
     end
   end

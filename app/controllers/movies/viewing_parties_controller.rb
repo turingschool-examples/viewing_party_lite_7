@@ -1,5 +1,7 @@
-class Users::Movies::ViewingPartiesController < ApplicationController
+class Movies::ViewingPartiesController < ApplicationController
+  before_action :check_for_login, only: [:new]
   before_action :get_user
+
   def new
     @facade = MovieFacade.new(params[:movie_id])
     @users = User.other_users(@user.id)
@@ -10,16 +12,23 @@ class Users::Movies::ViewingPartiesController < ApplicationController
     if party.save
       create_user_parties(params[:invite], party.id)
       create_host_party(@user.id, party.id)
-      redirect_to user_path(@user)
+      redirect_to user_path
     else
       flash[:error] = 'Please fill out all fields!'
-      redirect_to new_user_movie_viewing_party_path(@user, params[:movie_id])
+      redirect_to new_movie_viewing_party_path(params[:movie_id])
     end
   end
 
   private
+    def check_for_login
+      if session[:user_id].nil?
+        flash[:error] = 'You must be logged in or registered to create a party.'
+        redirect_to movie_path(params[:movie_id])
+      end
+    end
+
     def get_user
-      @user = User.find(params[:user_id])
+      @user = User.find(session[:user_id])
     end
 
     def party_params

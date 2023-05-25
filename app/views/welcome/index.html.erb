@@ -7,10 +7,6 @@
   <%= button_to 'Create a New User', new_user_path, method: :get %>
 <% end %>
 
-
-<h2>Existing Users</h2>
-<% @users.each do |user| %>
-<ul>
-  <li id="user_<%= user.id %>"><%= link_to user.email, "/users/#{user.id}" %></li>
-</ul>
+<% if !session[:user_id].nil? %>
+  <%= render "shared/existing_users" %>
 <% end %>
