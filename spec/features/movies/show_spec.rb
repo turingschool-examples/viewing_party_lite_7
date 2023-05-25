@@ -29,7 +29,7 @@ RSpec.describe '/users/:id/movies/:id' do
     end
   end
 
-  describe 'When I visit a movies details page' do
+  describe 'When I visit a movies details page as a registered user' do
     it 'should have a button that links to a page to create a new viewing party' do
       VCR.use_cassette('movie_details', :allow_playback_repeats => true) do
         expect(page).to have_button('Create Viewing Party')
@@ -77,5 +77,20 @@ RSpec.describe '/users/:id/movies/:id' do
           end
         end
       end
+  end
+
+  describe 'When I visit the movies show page as a visitor (not logged in)' do
+    it 'when I click the button to create a viewing party, I am redirected to the movie show page and see an error message' do
+      VCR.use_cassette('movie_details_550', :allow_playback_repeats => true) do
+        visit root_path
+        click_on 'Log Out'
+
+        visit movie_path(550)
+        click_button 'Create Viewing Party'
+
+        expect(current_path).to eq(movie_path(550))
+        expect(page).to have_content("You must be logged in or registered to create a party.")
+      end
+    end
   end
 end
