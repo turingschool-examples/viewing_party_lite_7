@@ -1,6 +1,5 @@
-require "factory_bot_rails"
-require "faker"
+require "rails helper"
 
 10.times do
- FactoryBot.create(:user)
+  create(:user)
 end
