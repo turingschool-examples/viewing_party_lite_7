@@ -14,8 +14,17 @@ class PartiesController < ApplicationController
 
   def create
     @user = current_user
-    party = Party.new(party_params)
+    party = Party.create(party_params)
+  
+    if party.save
+      flash[:success] = "Viewing party created successfully!"
+      redirect_to user_path(@user)
+    else
+      flash[:error] = "Error creating the viewing party"
+      redirect_to user_movies_path(params[:user_id], params[:movie_id])
+    end
   end
+  
 
   private
 
