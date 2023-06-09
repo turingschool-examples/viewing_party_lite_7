@@ -13,11 +13,10 @@
     <%= f.label :time, "Start Time" %>
     <%= f.time_field :time %><br><br>
 
-    <strong>Invite Other Users</strong><br>
-	  <%= f.label :users, "Invite Other Users" %>
+	  <strong><%= f.label :users, "Invite Other Users" %></strong><br>
     <%= f.collection_check_boxes(:guests, User.all, :id, :name, include_hidden: false) %>
 
-	  <%= f.hidden_field :movie_id, value: @movie_facade.movie.id %>
+	  <%= f.hidden_field :movie_id, value: @movie_facade.movie.id %><br>
 
     <%= f.submit "Create Party" %>
   <% end %>
