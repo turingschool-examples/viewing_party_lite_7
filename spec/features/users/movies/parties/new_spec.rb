@@ -35,19 +35,21 @@ RSpec.describe 'User Story 12' do
         expect(page).to have_content(@friend_3.name)
       end
 
-      xit "creates a new party" do
-        fill_in "Duration of Party", with: 100
-        fill_in :day, with: "12/02/23"
-        fill_in :time, with: "8:00 PM"
-
-        
-
-        check @friend_1.name
-        check @friend_2.name
-
-        click_button "Create Party"
-
-        # expect(Party.all.count).to eq(1)
+      it "creates a new party" do
+        VCR.use_cassette("create_party_request") do
+          fill_in "Duration of Party", with: 100
+          fill_in :day, with: "12/02/23"
+          fill_in :time, with: "8:00 PM"
+  
+          
+  
+          check @friend_1.name
+          check @friend_2.name
+  
+          click_button "Create Party"
+  
+          expect(Party.all.count).to eq(1)
+        end
       end
     end
 
