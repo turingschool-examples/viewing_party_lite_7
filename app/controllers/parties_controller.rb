@@ -18,6 +18,11 @@ class PartiesController < ApplicationController
   
     if party.save
       UserParty.create(user_id: @user.id, party_id: party.id)
+
+      params[:guests].each do |guest_id|
+        UserParty.create(user_id: guest_id, party_id: party.id)
+      end
+
       flash[:success] = "Viewing party created successfully!"
       redirect_to user_path(@user)
     else

@@ -26,6 +26,7 @@ class UsersController < ApplicationController
     @user = current_user
     if @user
       @user_viewing_parties = @user.parties
+      require 'pry'; binding.pry
       @movie_facade = MovieFacade.new
     else
       flash[:error] = "You must be logged in to view this page!"
