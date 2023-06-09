@@ -47,7 +47,7 @@ RSpec.describe 'User Story 12' do
           click_button "Create Party"
   
           expect(Party.all.count).to eq(1)
-          expect(UserParty.all.count).to eq(1)
+          expect(UserParty.all.count).to eq(3)
         end
       end
     end
