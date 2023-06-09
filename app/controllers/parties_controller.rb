@@ -17,11 +17,13 @@ class PartiesController < ApplicationController
     party = Party.create(party_params)
   
     if party.save
+      UserParty.create(user_id: @user.id, party_id: party.id)
       flash[:success] = "Viewing party created successfully!"
       redirect_to user_path(@user)
     else
-      flash[:error] = "Error creating the viewing party"
-      redirect_to user_movies_path(params[:user_id], params[:movie_id])
+      @movie_facade = MovieFacade.new(params[:movie_id])
+      flash.now[:error] = "Error creating the viewing party: #{party.errors.full_messages.join(', ')}"
+      render :new
     end
   end
   

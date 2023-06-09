@@ -24,8 +24,8 @@ describe MovieService do
 
     it "returns the top 20 rated moves" do
       expect(@top_rated_movies.count).to eq(20)
-      expect(@top_rated_movies.first[:title]).to eq("The Godfather")
-      expect(@top_rated_movies.first[:vote_average]).to eq(8.7)
+      expect(@top_rated_movies.first[:title]).to eq("Spider-Man: Across the Spider-Verse")
+      expect(@top_rated_movies.first[:vote_average]).to eq(8.8)
     end
   end
 

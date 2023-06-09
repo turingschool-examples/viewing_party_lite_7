@@ -90,7 +90,6 @@ RSpec.describe "User Registration", type: :feature do
       describe "I click the button to create a viewing party" do
         it "I'm redirected to the movies show page, and a message appears to let me know I must be logged in or registered to create a movie party.", :vcr do
           visit user_movie_path(@sarah, 550)
-          save_and_open_page
           click_button "Create Viewing Party"
           expect(page).to have_content("You must be logged in to view this page!")
         end
