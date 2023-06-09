@@ -3,6 +3,6 @@ require "faker"
 
 User.create(name: "test", email: "test@test.com", password: "test")
 
-10.times do
+5.times do
   FactoryBot.create(:user)
 end
