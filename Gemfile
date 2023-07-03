@@ -51,6 +51,13 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "pry"
+  gem 'rubocop', '~> 1.54', require: false
+  gem 'rspec-rails'
+  gem 'orderly'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'shoulda-matchers'
+  
 end
 
 group :development do
