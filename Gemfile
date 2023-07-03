@@ -57,7 +57,7 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'shoulda-matchers'
-  
+
 end
 
 group :development do
@@ -73,8 +73,5 @@ group :development do
 end
 
 group :test do
-  gem "rspec-rails"
-  gem "capybara"
-  gem "launchy"
-  gem "simplecov"
+
 end
