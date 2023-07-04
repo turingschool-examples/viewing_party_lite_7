@@ -1,9 +1,9 @@
 inherit_from: .rubocop_todo.yml
-require:
-  - rubocop-rails
-  - rubocop-rspec
-  - rubocop-capybara
-  - rubocop-factory_bot
+AllCops:
+  SuggestExtensions: false
+  Exclude:
+    - db/schema.rb
+    - spec/factories/factories.rb
 
 Style/BlockComments:
   Description: 'Do not use block comments.'
@@ -11,3 +11,13 @@ Style/BlockComments:
   Enabled: false
   VersionAdded: '0.9'
   VersionChanged: '0.23'
+
+Style/Documentation:
+  Description: 'Style/Documentation: Missing top-level documentation comment for class <name>'
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
