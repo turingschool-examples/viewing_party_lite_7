@@ -12,7 +12,12 @@ class UsersController < ApplicationController
 
   def create
     user = User.create(user_params)
-    redirect_to "/users/#{user.id}"
+    if user.save
+      redirect_to "/users/#{user.id}"
+    else
+      redirect_to "/register"
+      flash[:alert] = "Name and email must be valid"
+    end
   end
 
   private

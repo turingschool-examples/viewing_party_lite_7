@@ -1,3 +1,6 @@
 <p> Viewing Party Manager </p>
 <%= button_to "Create new user", "/register", method: :get %>
-<%= link_to "All Users", "/users" %>
+<p> All Users </p>
+<% @users.each do |user| %>
+  <%= link_to user.name, "users/#{user.id}" %>
+<% end %>
