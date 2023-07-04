@@ -23,6 +23,8 @@ RSpec.describe 'Home Page' do
       expect(page).to have_content(@user3.name)
     end
 
-    it 'I see Link to go back to the landing page (this link will be present at the top of all pages)'
+    it 'I see Link to go back to the landing page (this link will be present at the top of all pages)' do
+      expect(page).to have_link("Home Page")
+    end
   end
 end
