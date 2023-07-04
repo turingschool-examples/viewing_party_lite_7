@@ -13,7 +13,6 @@ RSpec.describe "landing page", type: :feature do
       expect(page).to have_link("Home")
       expect(page).to have_content("Viewing Party")
       expect(page).to have_button("Register")
-      
       within("#current-users") do
         expect(page).to have_content("Current Users")
         expect(page).to have_link(@user1.name)
