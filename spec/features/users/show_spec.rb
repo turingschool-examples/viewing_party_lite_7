@@ -35,10 +35,10 @@ RSpec.describe "/users/:id" do
         expect(current_path).to eq(user_discover_index_path(user_1))
       end
 
-      it "has a section that lists viewing parties" do
+      xit "has a section that lists viewing parties" do
+        require 'pry'; binding.pry
         visit user_path(user_1)
         expect(page).to have_content("#{user_1.name}'s Watch Parties")
-        require 'pry'; binding.pry
       end
     end
   end

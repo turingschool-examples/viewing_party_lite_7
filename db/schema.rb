@@ -18,6 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_04_152850) do
     t.bigint "watch_parties_id", null: false
     t.bigint "movies_id", null: false
     t.bigint "users_id", null: false
+    t.integer "user_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["movies_id"], name: "index_movie_watch_parties_on_movies_id"
