@@ -1,1 +1,9 @@
 <p> Registration </p>
+<%= form_with url: "/users", method: :post do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.submit "Submit" %>
+<% end %>
