@@ -1,5 +1,5 @@
 <p> Registration </p>
-<%= form_with url: "/users", method: :post do |f| %>
+<%= form_with url: "/users", method: :post, data: { turbo: false } do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :email %>

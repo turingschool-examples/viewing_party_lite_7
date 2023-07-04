@@ -9,10 +9,10 @@ RSpec.describe "index page" do
     expect(page).to have_content("Bill")
     expect(page).to have_content("Bill@email.com")
   end
-  xit "expects valid form" do
+  it "expects valid form" do
     visit "/register"
     fill_in(:name, with: "Bill")
     click_button "Submit"
-    expect(page).to have_content("Name and email must be valid")
+    expect(current_path).to eq("/register")
   end
 end
