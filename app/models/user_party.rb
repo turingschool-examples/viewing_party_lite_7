@@ -4,4 +4,5 @@ class UserParty < ApplicationRecord
 
   validates :user_id, presence: true
   validates :party_id, presence: true
+  validates :is_host, inclusion: [true, false]
 end
