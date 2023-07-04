@@ -18,9 +18,9 @@ RSpec.describe "index page" do
     it "displays list of all users that links to users dashboard" do
       visit "/"
       expect(page).to have_content("All Users")
-      click_link "All Users"
-      expect(current_path).to eq("/users")
-      expect(page).to have_content("All Users")
+      click_link "#{user_1.name}"
+      expect(current_path).to eq("/users/#{user_1.id}")
+      expect(page).to have_content("#{user_1.name}'s Dashboard")
       expect(page).to have_content(user_1.name)
     end
 
