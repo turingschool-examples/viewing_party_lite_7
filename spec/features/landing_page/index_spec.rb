@@ -20,4 +20,10 @@ RSpec.describe "index page" do
     expect(current_path).to eq("/users")
     expect(page).to have_content("All Users")
   end
+
+  it "links to welcome page" do 
+    visit "/users"
+    click_link "Welcome Page"
+    expect(current_path).to eq("/")
+  end
 end
