@@ -1,3 +1,3 @@
 class Movie < ApplicationRecord
-  belongs_to :movie_watch_party
+  belongs_to :movie_watch_party, optional: true
 end
