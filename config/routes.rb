@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 
   get "/register", to: 'users#new', as: 'new_user'
   resources :users, only: [:create] 
-  get "/dashboard", to: 'users#create', as: 'user'
+  get "/dashboard", to: 'users#show', as: 'user'
 end
