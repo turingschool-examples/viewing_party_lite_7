@@ -22,12 +22,20 @@ RSpec.describe 'landing page' do
     expect(page).to have_button("Create New User")
   end
 
-  xit "displays existing users with links to users dashboard" do 
+  it "displays existing users with links to users dashboard" do 
     expect(page).to have_link(@user_1.name)
     expect(page).to have_link(@user_2.name)
 
     click_link(@user_1.name)
-    expect(current_path).to eq()
+    expect(current_path).to eq("/users/#{@user_1.id}")
+  end
+
+  it "displays link to return to landing page" do 
+    expect(page).to have_link("Return Home")
+
+    click_link("Return Home")
+
+    expect(current_path).to eq("/")
   end
 
 end
