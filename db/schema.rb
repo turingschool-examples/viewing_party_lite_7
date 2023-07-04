@@ -34,13 +34,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_04_163905) do
 
   create_table "viewing_party_users", force: :cascade do |t|
     t.bigint "users_id", null: false
-    t.bigint "viewing_party_id", null: false
+    t.bigint "viewing_parties_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["users_id"], name: "index_viewing_party_users_on_users_id"
-    t.index ["viewing_party_id"], name: "index_viewing_party_users_on_viewing_party_id"
+    t.index ["viewing_parties_id"], name: "index_viewing_party_users_on_viewing_parties_id"
   end
 
   add_foreign_key "viewing_party_users", "users", column: "users_id"
-  add_foreign_key "viewing_party_users", "viewing_parties"
+  add_foreign_key "viewing_party_users", "viewing_parties", column: "viewing_parties_id"
 end

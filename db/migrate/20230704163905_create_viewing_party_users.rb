@@ -2,7 +2,7 @@ class CreateViewingPartyUsers < ActiveRecord::Migration[7.0]
   def change
     create_table :viewing_party_users do |t|
       t.references :users, null: false, foreign_key: true
-      t.references :viewing_party, null: false, foreign_key: true
+      t.references :viewing_parties, null: false, foreign_key: true
 
       t.timestamps
     end
