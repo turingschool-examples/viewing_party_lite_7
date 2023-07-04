@@ -5,5 +5,8 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   root 'landing#index'
-  
+
+
+  get '/users/:id', to: 'users#show'
+  get '/register', to: 'users#new'
 end
