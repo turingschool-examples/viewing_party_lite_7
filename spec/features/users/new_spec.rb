@@ -6,6 +6,10 @@ RSpec.describe '/register', type: :feature do
       visit "/register"
     end
 
+    it 'form to register has a descriptive header' do 
+      expect(page).to have_content('Register a New User')
+    end
+
     it 'has a form to register' do 
       expect(page).to have_field(:name)
       expect(page).to have_field(:email)
