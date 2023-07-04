@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   get "/", to: "application#index"
   get "/register", to: "users#new"
-  get "/users", to: "users#index"
+
+  resources :users, only: [:index, :show]
 end
