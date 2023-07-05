@@ -1,3 +1,12 @@
+<div id="existing-users">
+  <h3>Existing Users</h3>
+  <ul>
+    <% @users.each do |user| %>
+      <li><%= link_to "#{user.name}", "/users/#{user.id}" %></li>
+    <% end %>
+  </ul>
+<div><br>
+
 <div id="create-user">
   <%= button_to "Create User", "/register", method: :get %>
-</div><br>
+</div>
