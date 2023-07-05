@@ -13,7 +13,7 @@ RSpec.describe 'Home Page' do
     it 'I see the Title of the Application and a Button to Create New User' do
       save_and_open_page
       expect(page).to have_content('Viewing Party Lite 7')
-      click_button('Create New User')
+      click_button('Register a New User')
       expect(current_path).to eq(new_user_path)
     end
 
