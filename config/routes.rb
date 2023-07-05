@@ -3,8 +3,7 @@ Rails.application.routes.draw do
   root 'dashboard#index'
 
   get '/register', to: 'users#new'
-  post '/register', to: 'users#create'
-
-  resources :users, only: [:show]
+  
+  resources :users, only: [:show, :create]
 end
 
