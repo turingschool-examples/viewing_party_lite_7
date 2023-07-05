@@ -2,3 +2,12 @@
 <%= @user.email %>
 
 <p><%= button_to "Discover Movies", user_discover_index_path(@user), method: :get %></p>
+
+<div class="attending">
+<h4> <%= "#{@user.name}'s Watch Parties: Attending" %></h4>
+
+</div>
+
+<div class="hosting">
+
+</div>
