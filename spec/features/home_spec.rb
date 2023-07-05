@@ -11,10 +11,9 @@ RSpec.describe 'Home Page' do
       visit '/'
     end
     it 'I see the Title of the Application and a Button to Create New User' do
-      save_and_open_page
       expect(page).to have_content('Viewing Party Lite 7')
       click_button('Register a New User')
-      expect(current_path).to eq(new_user_path)
+      expect(current_path).to eq("/register")
     end
 
     it 'I see a List of Existing Users which links to the users dashboard' do
