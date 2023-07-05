@@ -13,6 +13,7 @@ RSpec.describe "New User Form", type: :feature do
       expect(current_path).to eq("/users/#{User.all.last.id}")
       expect(page).to have_content("Wolfie")
       expect(page).to have_content("wolfie@gmail.com")
+      expect(page).to have_content("User successfully registered.")
     end
   end
 end
