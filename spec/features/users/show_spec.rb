@@ -11,12 +11,16 @@ RSpec.describe "User Show Page" do
     end
 
     it "has user's name Dash at top of page" do 
-
       expect(page).to have_content("#{@user_1.name}'s Dashboard")
     end 
 
     it "has Button to Discover Movies" do 
       expect(page).to have_button("Discover Movies")
+    end
+
+    it "button to discover movies routes to user discover page" do 
+      click_on 'Discover Movies'
+      expect(current_path).to eq(user_discover_index_path(@user_1))
     end
 
     it "has section that lists viewing parties" do 
