@@ -17,6 +17,9 @@
     <div id="title" style="text-align: center;">
       <h1>Viewing Party</h1>
     </div>
+    <% flash.each do |type, message| %>
+      <p><%= message %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>
