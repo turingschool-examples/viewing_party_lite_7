@@ -23,6 +23,7 @@ RSpec.describe '/register', type: :feature do
       fill_in(:email, with: 'jjjs@gmail.com')
       click_button 'Register' 
       expect(current_path).to eq(user_path)
+      
     end
     
     it 'if email validation fails, try again' do 

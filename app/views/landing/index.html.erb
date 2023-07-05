@@ -1,0 +1,9 @@
+<h1>Viewing Party</h1>
+
+<ul class="user-list">
+  <% @users.each do |user| %>
+    <%= link_to "#{user.name}", "/users/#{user.id}" %>
+  <% end %>
+</ul>
+
+<%= button_to "Create New User", register_path %>
