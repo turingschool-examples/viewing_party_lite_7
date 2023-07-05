@@ -29,4 +29,12 @@ RSpec.describe 'User registration page' do
 
     expect(current_path).to eq("/users/#{User.last.id}")
   end
+
+  it 'displays an error if form is incomplete' do 
+    fill_in 'email', with: 'jadams6@gmail.com'
+    click_button 'Create'
+
+    expect(current_path).to eq('/register')
+    expect(page).to have_content("Name can't be blank")
+  end
 end
