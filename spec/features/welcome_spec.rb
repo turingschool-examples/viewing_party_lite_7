@@ -18,10 +18,12 @@ RSpec.describe '/', type: :feature do
     end
 
     it "should display existing users with links to the users dashboard" do
-      expect(page).to have_content("#{@user1.name}")
-      expect(page).to have_content("#{@user2.name}")
-      expect(page).to have_content("#{@user3.name}")
-      expect(page).to have_content("#{@user4.name}")
+      within("#existing-users") do
+        expect(page).to have_content("#{@user1.name}")
+        expect(page).to have_content("#{@user2.name}")
+        expect(page).to have_content("#{@user3.name}")
+        expect(page).to have_content("#{@user4.name}")
+      end
     end
 
     it "should have a nav home page link" do

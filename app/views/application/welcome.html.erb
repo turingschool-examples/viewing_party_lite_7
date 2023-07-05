@@ -4,8 +4,10 @@
 
 
 <h2>Existing Users</h2>
+<section  id="existing-users"> 
 <% @users.each do |user| %>
   <ul> 
     <li id="user-<%= user.id %>"> <%= link_to user.name, "/users/#{user.id}" %> </li>
   </ul>  
 <% end %>
+</section>
