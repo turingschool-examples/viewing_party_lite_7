@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "welcome#index"
 
-  resources :users, only: [:show, :create, :new]
+  resources :users, only: [:show, :create]
+
+  get "/register", to: "users#new"
 end
 
 # this comment is to test pr requests
