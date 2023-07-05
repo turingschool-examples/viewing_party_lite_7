@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   get '/', to: 'application#home'
   get "/register", to: "users#new"
+  get "/users", to: "users#index"
+  post "/users", to: "users#create"
   get "/users/:id", to: "users#show"
 end

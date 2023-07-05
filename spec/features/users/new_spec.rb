@@ -6,9 +6,10 @@ RSpec.describe "New User Form", type: :feature do
   end
   describe "create a new user" do 
     it "using valid data" do 
-      fill_in "Name", with "Wolfie"
-      fill_in "Email", with "wolfie@gmail.com"
-      click_button "Submit" 
+      save_and_open_page
+      fill_in "Name", with: "Wolfie"
+      fill_in "Email", with: "wolfie@gmail.com"
+      click_button "Create User" 
 
       expect(current_path).to eq("/users/#{User.all.last.id}")
       expect(page).to have_content("Wolfie")
