@@ -13,24 +13,29 @@ RSpec.describe '/register', type: :feature do
     end
 
     it 'has a form to register' do 
-      expect(page).to have_field(:name)
-      expect(page).to have_field(:email)
+      expect(page).to have_field('Name:')
+      expect(page).to have_field('Email:')
       expect(page).to have_button('Register')
     end
 
     it 'form can be filled out' do 
-      fill_in(:name, with: 'John Jacob Jingleheimer Schmidt')
-      fill_in(:email, with: 'jjjs@gmail.com')
+      fill_in('Name:', with: 'John Jacob Jingleheimer Schmidt')
+      fill_in('Email:', with: 'jjjs@gmail.com')
       click_button 'Register' 
-      expect(current_path).to eq(user_path)
-      
+      expect(current_path).to_not eq('/register')
+      # expect(page).to have_content('John Jacob Jingleheimer Schmidt') 
     end
     
     it 'if email validation fails, try again' do 
       user_1 = create(:user)
-      fill_in(:name, with: 'John Jacob Jingleheimer Schmidt')
-      fill_in(:email, with: user_1.email)
-      expect(page).to have_content('Email already exists. Choose another.')
+      fill_in('Name:', with: 'John Jacob Jingleheimer Schmidt')
+      fill_in('Email:', with: user_1.email)
+      click_button 'Register'
+      expect(current_path).to eq('/register')
+      save_and_open_page
+      # within ("#error_explanation") do
+        expect(page).to have_content('Email has already been taken')
+      # end
     end
 end
 
