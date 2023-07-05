@@ -6,7 +6,7 @@ RSpec.describe '/', type: :feature do
     @user2 = User.create!(name: "Jimmy", email: "Jimmy@gmail.com")
     @user3 = User.create!(name: "Alex", email: "Alex@gmail.com")
     @user4 = User.create!(name: "John", email: "John@gmail.com")
-    visit "/"
+    visit root_path
   end
   describe "User visits root path" do
     it "should display title of application" do
