@@ -1,0 +1,2 @@
+class ViewingPartyUsersController < ApplicationController
+end
