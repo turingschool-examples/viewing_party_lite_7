@@ -208,7 +208,7 @@ GEM
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
     rspec-support (3.12.1)
-    rubocop (1.54.0)
+    rubocop (1.54.1)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
@@ -281,7 +281,7 @@ DEPENDENCIES
   pg (~> 1.1)
   pry
   puma (~> 5.0)
-  rails (~> 7.0.4, >= 7.0.4.2)
+  rails (~> 7.0.6, >= 7.0.4.2)
   rspec-rails
   rubocop (~> 1.54)
   rubocop-rails
