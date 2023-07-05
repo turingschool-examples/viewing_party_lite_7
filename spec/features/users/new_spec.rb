@@ -40,7 +40,15 @@ RSpec.describe "user registration page", type: :feature do
         fill_in "Name", with: ""
         fill_in "Email", with: "Myles@example.com"
         click_button "Register User"
-save_and_open_page
+        
+        expect(page).to have_content("Please fill in all fields. Email must be unique.")
+      end
+
+      it "I see a flash message if I do not use a unique email" do
+        fill_in "Name", with: "boston"
+        fill_in "Email", with: "boston@example.com"
+        click_button "Register User"
+
         expect(page).to have_content("Please fill in all fields. Email must be unique.")
       end
     end
