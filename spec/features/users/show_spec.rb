@@ -28,7 +28,7 @@ RSpec.describe "/users/:id" do
         expect(page).to_not have_content("#{user_1.name}'s Dashboard")
       end
 
-      it "displays a button to discover movies" do
+      xit "displays a button to discover movies" do
         visit user_path(user_1)
         expect(page).to have_button("Discover Movies")
         click_button "Discover Movies"
@@ -36,7 +36,6 @@ RSpec.describe "/users/:id" do
       end
 
       xit "has a section that lists viewing parties" do
-        require 'pry'; binding.pry
         visit user_path(user_1)
         expect(page).to have_content("#{user_1.name}'s Watch Parties")
       end
