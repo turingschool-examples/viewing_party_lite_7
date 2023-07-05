@@ -1,16 +1,16 @@
 require "rails_helper"
 
 RSpec.describe "/register", type: :feature do
-  describe "when a user visits register_index path" do
-    it "should be the register index page" do
-      visit register_index_path
+  describe "when a user visits register path" do
+    it "should be the register page" do
+      visit register_path
 
       expect(page).to have_content("Viewing Party")
       expect(page).to have_content("Register a New User")
     end
 
     it "displays a form to register a user" do
-      visit register_index_path
+      visit register_path
       within ".register_form" do
         expect(page).to have_field("Name:")
         expect(page).to have_field("Email:")
@@ -20,23 +20,22 @@ RSpec.describe "/register", type: :feature do
 
     # Happy Path 1 - User fills in name and unique email, and submits
     it "creates a new user, when successfully completing and submitting the form" do
-      visit register_index_path
+      visit register_path
       within ".register_form" do
         fill_in "Name", with: "John Doe"
         fill_in "Email", with: "johndoe@email.com"
-
         click_button "Create a New User"
         new_user = User.all.last
-        expect(current_path).to eq(user_path(new_user.id))
+        expect(current_path).to eq(user_path(new_user))
       end
     end
     # Sad Path 1 - both Name and Email are required.
     it "does not create a new user, when unsuccessfully completing and submitting the form" do
-      visit register_index_path
+      visit register_path
       within ".register_form" do
         fill_in "Email", with: "johndoe@email.com"
         click_button "Create a New User"
-        expect(current_path).to eq(register_index_path)
+        expect(current_path).to eq(register_path)
       end
       expect(page).to have_content("'Name' and 'Email' fields are required, please try again.")
     end
