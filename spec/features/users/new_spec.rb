@@ -15,16 +15,14 @@ RSpec.describe "New User Form", type: :feature do
       expect(page).to have_content("wolfie@gmail.com")
       expect(page).to have_content("User successfully registered.")
     end
-    
-    it "using valid data" do 
-      fill_in "Name", with: "Wolfie"
+
+    it "using invalid data" do 
+      fill_in "Name", with: ""
       fill_in "Email", with: "wolfie@gmail.com"
       click_button "Save" 
       
-      expect(current_path).to eq("/users/#{User.all.last.id}")
-      expect(page).to have_content("Wolfie")
-      expect(page).to have_content("wolfie@gmail.com")
-      expect(page).to have_content("User successfully registered.")
+      expect(current_path).to eq("/register")
+      expect(page).to have_content("Error: Name can't be blank")
     end
   end
 end
