@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :user do 
     name { Faker::App.name }
     email { Faker::Internet.email }
-    # password { Faker::Internet.password }
+    password { Faker::Internet.password }
   end
 
   factory :viewing_party do 
