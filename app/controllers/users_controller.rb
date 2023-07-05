@@ -7,13 +7,13 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to "/users/#{@user.id}"
     else
+      flash[:notice] = @user.errors.full_messages.to_sentence
       redirect_to '/register'
-    
     end
   end
   
   def show
-    
+
   end
 
   private
