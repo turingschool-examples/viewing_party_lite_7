@@ -25,8 +25,6 @@ RSpec.describe "/register", type: :feature do
         fill_in "Name", with: "John Doe"
         fill_in "Email", with: "johndoe@email.com"
         click_button "Create a New User"
-        save_and_open_page
-        # require 'pry'; binding.pry
         new_user = User.all.last
         expect(current_path).to eq(user_path(new_user))
       end
