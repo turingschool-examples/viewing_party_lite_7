@@ -34,9 +34,9 @@ RSpec.describe "root" do
 
     it 'verifies functionality of Create New User button' do
       visit root_path
-      save_and_open_page
+      
       click_button('Create New User')
-      expect(current_path).to eq(new_user_path)
+      expect(current_path).to eq(register_path)
     end
   end
 end
