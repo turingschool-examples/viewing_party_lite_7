@@ -1,0 +1,2 @@
+class ViewingUsersController < ApplicationController
+end
