@@ -76,4 +76,5 @@ group :test do
   gem 'launchy'
   gem 'rspec-rails'
   gem 'simplecov'
+  gem "shoulda-matchers", "~> 5.0"
 end
