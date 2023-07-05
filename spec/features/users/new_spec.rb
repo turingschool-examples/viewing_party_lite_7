@@ -32,12 +32,11 @@ RSpec.describe '/register', type: :feature do
       fill_in('Email:', with: user_1.email)
       click_button 'Register'
       expect(current_path).to eq('/register')
-      save_and_open_page
-      # within ("#error_explanation") do
-        expect(page).to have_content('Email has already been taken')
-      # end
+      
+      expect(page).to have_content('Email has already been taken')
     end
-end
+    #sad path: field isn't filled in
+  end
 
 # When a user visits the '/register' path they should see a form to register.
 

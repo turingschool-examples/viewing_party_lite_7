@@ -10,6 +10,7 @@ class UsersController < ApplicationController
       @user.save
       redirect_to(user_path(@user))
     else
+      require 'pry'; binding.pry
       error_message = @user.errors.full_messages
       flash[:error] = error_message
       redirect_to register_path
