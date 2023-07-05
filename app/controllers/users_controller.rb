@@ -1,14 +1,13 @@
 class UsersController < ApplicationController
-  def show
-  end
+  def show; end
 
-  def create 
+  def create
     user = User.new(user_params)
     if user.save
       redirect_to user_path(user.id)
     else
       flash[:error] = "'Name' and 'Email' fields are required, please try again."
-      redirect_to (register_index_path)
+      redirect_to register_index_path
     end
   end
 

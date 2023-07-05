@@ -7,5 +7,4 @@ Rails.application.routes.draw do
 
   resources :register, only: [:index]
   resources :users, only: [:show, :create]
-
 end

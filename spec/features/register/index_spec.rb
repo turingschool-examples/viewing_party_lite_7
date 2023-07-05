@@ -9,20 +9,19 @@ RSpec.describe "/register", type: :feature do
       expect(page).to have_content("Register a New User")
     end
 
-    it "displays a form to register a user" do 
+    it "displays a form to register a user" do
       visit register_index_path
-      within ".register_form" do 
+      within ".register_form" do
         expect(page).to have_field("Name:")
         expect(page).to have_field("Email:")
         expect(page).to have_button("Create a New User")
       end
     end
-    
-    #Happy Path 1 - User fills in name and unique email, and submits
-    it "creates a new user, when successfully completing and submitting the form" do 
+
+    # Happy Path 1 - User fills in name and unique email, and submits
+    it "creates a new user, when successfully completing and submitting the form" do
       visit register_index_path
-      
-      within ".register_form" do 
+      within ".register_form" do
         fill_in "Name", with: "John Doe"
         fill_in "Email", with: "johndoe@email.com"
 
@@ -31,20 +30,17 @@ RSpec.describe "/register", type: :feature do
         expect(current_path).to eq(user_path(new_user.id))
       end
     end
-    
-    #Sad Path 1 - both Name and Email are required.
-    it "does not create a new user, when unsuccessfully completing and submitting the form" do 
+    # Sad Path 1 - both Name and Email are required.
+    it "does not create a new user, when unsuccessfully completing and submitting the form" do
       visit register_index_path
-      
-      within ".register_form" do 
+      within ".register_form" do
         fill_in "Email", with: "johndoe@email.com"
         click_button "Create a New User"
         expect(current_path).to eq(register_index_path)
       end
-        expect(page).to have_content("'Name' and 'Email' fields are required, please try again.")
+      expect(page).to have_content("'Name' and 'Email' fields are required, please try again.")
     end
 
-    #Sad Path 2 - Email must be unique to data table.
-  
+    # Sad Path 2 - Email must be unique to data table.
   end
 end
