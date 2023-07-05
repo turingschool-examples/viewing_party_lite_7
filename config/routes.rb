@@ -6,4 +6,6 @@ Rails.application.routes.draw do
 
   root "application#welcome"
 
+  get "/users/:id", to: "users#show", as: "user"
+
 end
