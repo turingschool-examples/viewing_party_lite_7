@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     if user.save
       redirect_to user_path(user)
     else
-      render :new
+      redirect_to "/register"
       flash[:alert] = "Please fill in all fields. Email must be unique."
     end
   end
