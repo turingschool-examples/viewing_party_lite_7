@@ -1,3 +1,5 @@
 class WatchParty < ApplicationRecord
-  belongs_to :movie_watch_party, optional: true 
+  has_many :movie_watch_parties
+  has_many :movies, through: :movie_watch_parties
+  has_many :users, through: :movie_watch_parties
 end

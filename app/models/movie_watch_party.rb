@@ -1,7 +1,7 @@
 class MovieWatchParty < ApplicationRecord
-  has_many :movies
-  has_many :users
-  has_many :watch_parties
+  belongs_to :movie
+  belongs_to :user
+  belongs_to :watch_party
 
   enum user_status: ["attending", "hosting"]
 end
