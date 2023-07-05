@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to users_path(@user)
+      redirect_to "/users/#{@user.id}"
       flash[:notice] = "User successfully registered."
     else
       redirect_to new_user_path
