@@ -8,12 +8,8 @@ module ApplicationHelper
 
   def flash_class(type)
     case type.to_sym
-    when :success
-      'alert-success'
-    when :error, :alert, :notice
+    when :error
       'alert-error'
-    else
-      'alert-info'
     end
   end
 end
