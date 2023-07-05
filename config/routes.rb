@@ -6,7 +6,10 @@ Rails.application.routes.draw do
 
   root 'landing#index'
 
+  # get '/users/:id', to: 'users#show', as: 'user'
 
-  get '/users/:id', to: 'users#show'
+  get "/register", to: 'users#new', as: 'register'
+  resources :users, only: [:create, :show] 
+
   get '/register', to: 'users#new'
 end
