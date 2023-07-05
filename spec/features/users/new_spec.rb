@@ -9,7 +9,7 @@ RSpec.describe "New User Form", type: :feature do
       fill_in "Name", with: "Wolfie"
       fill_in "Email", with: "wolfie@gmail.com"
       click_button "Save" 
-      save_and_open_page
+      
       expect(current_path).to eq("/users/#{User.all.last.id}")
       expect(page).to have_content("Wolfie")
       expect(page).to have_content("wolfie@gmail.com")
