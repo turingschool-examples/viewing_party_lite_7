@@ -27,9 +27,6 @@ RSpec.describe "/users/:id" do
       let!(:movie_watch_party_8) { create(:movie_watch_party, watch_party_id: wapa_3.id, user_id: user_2.id) }
       let!(:movie_watch_party_9) { create(:movie_watch_party, watch_party_id: wapa_3.id, user_id: user_3.id) }
 
-
-
-
       it "displays the user's name at the top of the page" do
         visit user_path(user_1)
         expect(page).to have_content("#{user_1.name}'s Dashboard")
@@ -52,7 +49,7 @@ RSpec.describe "/users/:id" do
         movie_watch_party_2.update(user_status: 1) # makes user_2 the host of wapa_1
 
         movie_watch_party_4.update(user_status: 0)
-        movie_watch_party_5.update(user_status: 1) # makes user_2 the host of wapa_2
+        movie_watch_party_5.update(user_status: 1) # makes user_5 the host of wapa_2
 
         movie_watch_party_7.update(user_status: 1)
 
@@ -65,16 +62,21 @@ RSpec.describe "/users/:id" do
           expect(page).to have_content("Watch Date: #{wapa_1.date}")
           expect(page).to have_content("Start Time: #{wapa_1.start_time}")
           expect(page).to have_content("Attendees")
-          # expect(page).to have_content("Host")
 
           expect(page).to have_content("Movie: #{movie_2.title}")
           expect(page).to have_content("Watch Date: #{wapa_2.date}")
           expect(page).to have_content("Start Time: #{wapa_2.start_time}")
 
+
+          # within "##{wapa_1.id}" do
+          #   expect(page).to have_content(user_1.name)
+          #   expect(page).to have_content(user_2.name)
+          #   expect(page).to have_content(user_3.name)
+          # end
           # movie image
           # movie title needs link to movie show page
-        #   who is hosting
-        #   list of users invited, my name in bold
+          # who is hosting
+          # list of users invited, my name in bold
         end
 
         within ".hosting" do
@@ -88,7 +90,6 @@ RSpec.describe "/users/:id" do
           # That I am the host of the party
           # List of friends invited to the viewing party
         end
-
       end
     end
   end

@@ -1,6 +1,8 @@
 require "rails_helper"
 RSpec.describe "index page" do
+
   let!(:user_1) { create(:user) }
+
   it "can create a new user" do
     visit "/register"
     fill_in(:name, with: "Bill")
@@ -9,6 +11,7 @@ RSpec.describe "index page" do
     expect(page).to have_content("Bill")
     expect(page).to have_content("Bill@email.com")
   end
+
   it "expects valid form" do
     visit "/register"
     fill_in(:name, with: "Bill")
