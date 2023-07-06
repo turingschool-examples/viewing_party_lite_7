@@ -83,7 +83,6 @@ RSpec.describe "/users/:id" do
           expect(page).to have_content("Movie: #{movie_3.title}")
           expect(page).to have_content("Watch Date: #{wapa_3.date}")
           expect(page).to have_content("Start Time: #{wapa_3.start_time}")
-
           # Movie Image
           # Movie Title, which links to the movie show page
           # That I am the host of the party
