@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root 'welcome#index'
+  root "welcome#index"
 
   resources :register, only: [:index]
   resources :users, only: [:index, :show, :create], controller: "users"
@@ -13,4 +13,3 @@ Rails.application.routes.draw do
   # post "/users/:id/discover", to: "users#create"
   get "/users/:id/discover", to: "users/discover#index"
 end
-

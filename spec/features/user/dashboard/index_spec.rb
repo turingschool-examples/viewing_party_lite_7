@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "User Dashboard Page" do
   before :each do
-    @user1 = User.create!(name: "Simon", email: "simon@gmail.com")
+    @user_1 = User.create!(name: "Simon", email: "simon@gmail.com")
 
     visit "/users/#{@user1.id}"
   end

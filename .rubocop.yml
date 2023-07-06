@@ -3922,7 +3922,7 @@ Style/HashSyntax:
                  Prefer Ruby 1.9 hash syntax { a: 1, b: 2 } over 1.8 syntax
                  { :a => 1, :b => 2 }.
   StyleGuide: '#hash-literals'
-  Enabled: true
+  Enabled: false
   VersionAdded: '0.9'
   VersionChanged: '1.24'
   EnforcedStyle: ruby19
@@ -5248,7 +5248,7 @@ Style/SwapValues:
 Style/SymbolArray:
   Description: 'Use %i or %I for arrays of symbols.'
   StyleGuide: '#percent-i'
-  Enabled: true
+  Enabled: false
   VersionAdded: '0.9'
   VersionChanged: '0.49'
   EnforcedStyle: percent

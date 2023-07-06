@@ -1,5 +1,3 @@
 class RegisterController < ApplicationController
-  def index
-
-  end
+  def index; end
 end

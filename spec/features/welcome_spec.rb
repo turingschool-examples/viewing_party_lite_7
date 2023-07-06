@@ -1,28 +1,28 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe '/', type: :feature do
+RSpec.describe "/", type: :feature do
   before(:each) do
-    @user1 = create(:user)
-    @user2 = create(:user)
-    @user3 = create(:user)
+    @user_1 = create(:user)
+    @user_2 = create(:user)
+    @user_3 = create(:user)
     visit root_path
   end
 
-  describe 'When a user visits the root path' do
+  describe "When a user visits the root path" do
     it "should be on the landing page ('/') and I see the title of the applications" do
-      expect(page).to have_content('Viewing Party')
+      expect(page).to have_content("Viewing Party")
     end
 
-    it 'I see a button to create a new user' do
-      expect(page).to have_button('Create a New User')
+    it "I see a button to create a new user" do
+      expect(page).to have_button("Create a New User")
 
       click_button "Create a New User"
 
       expect(current_path).to eq(register_index_path)
     end
 
-    it 'I see a list of existing users which links to the their dashboard' do
-      expect(page).to have_content('Existing Users')
+    it "I see a list of existing users which links to the their dashboard" do
+      expect(page).to have_content("Existing Users")
 
       within "#user_#{@user1.id}" do
         expect(page).to have_content(@user1.email)
@@ -35,10 +35,10 @@ RSpec.describe '/', type: :feature do
       end
     end
 
-    it 'I see a link (Home) that will take me back to the welcome page' do
-      expect(page).to have_link('Home')
+    it "I see a link (Home) that will take me back to the welcome page" do
+      expect(page).to have_link("Home")
 
-      click_link('Home')
+      click_link("Home")
 
       expect(current_path).to eq(root_path)
     end
