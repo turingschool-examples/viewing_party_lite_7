@@ -14,7 +14,6 @@ describe "User Dashboard Page" do
   end
 
   it "should have a button to the user's discover page" do
-    save_and_open_page
     expect(page).to have_button("Discover Movies")
     click_button "Discover Movies"
     expect(page).to have_current_path("/users/#{@user1.id}/discover")
