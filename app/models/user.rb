@@ -9,4 +9,8 @@ class User < ApplicationRecord
   def parties_hosting
     viewing_parties.where('user_viewing_parties.host = true')
   end
+
+  def parties_invited
+    viewing_parties.where('user_viewing_parties.host = false')
+  end
 end

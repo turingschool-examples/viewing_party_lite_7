@@ -17,6 +17,7 @@ RSpec.describe User, type: :model do
     
     @userparty4 = UserViewingParty.create!(user_id: @user1.id, viewing_party_id: @viewing_party4.id, host: false)
     @userparty5 = UserViewingParty.create!(user_id: @user1.id, viewing_party_id: @viewing_party5.id, host: false)
+    @userparty6 = UserViewingParty.create!(user_id: @user2.id, viewing_party_id: @viewing_party5.id, host: false)
   end
 
   describe "validations" do 
@@ -38,7 +39,9 @@ RSpec.describe User, type: :model do
     end
 
     it "parties_invited" do 
-
+      expect(@user1.parties_invited).to eq([@viewing_party4, @viewing_party5])
+      expect(@user2.parties_invited).to eq([@viewing_party5])
+      expect(@user1.parties_invited).to_not include([@viewing_party1, @viewing_party2, @viewing_party3])
     end
   end
 end
