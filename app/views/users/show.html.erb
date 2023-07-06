@@ -11,6 +11,12 @@
         <ul>
           <li>Day: <%= party.day %></li>
           <li>Time: <%= party.start_time %></li>
+          <li>Invitees: </li>
+            <ul>
+              <% party.invitee_names.each do |name| %>
+                <li><%= name %></li>
+              <% end %>
+            </ul>
         </ul>
     <% end %>
   </ol>
@@ -24,6 +30,11 @@
         <ul>
           <li>Day: <%= party.day %></li>
           <li>Time: <%= party.start_time %></li>
+          <li>Host: 
+          <% party.host_name.each do |name| %>
+            <%= name %> 
+          <% end %>
+          </li>
         </ul>
     <% end %>
   </ol>
