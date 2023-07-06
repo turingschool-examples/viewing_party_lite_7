@@ -1,15 +1,5 @@
 require 'rails_helper'
 
- 
-#When a user visits the '/register' path they should see a form to register.
-
-# The form should include:
-
-# Name
-# Email (must be unique)
-# Register Button
-# Once the user registers they should be taken to a dashboard page '/users/:id', where :id is the id for the user that was just created.
-
 RSpec.describe 'User registration page' do
   before(:each) do
     visit '/register'
