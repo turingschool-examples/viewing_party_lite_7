@@ -7,15 +7,17 @@
   <h4><%= "#{@user.name}'s Watch Parties: Attending" %></h4>
   <ol>
     <% @user.movie_watch_parties.sort_attending.each do |p| %>
-      <li><p>Movie: <%=  p.watch_party.movie.title %></p></li>
+      <li><p>Movie: <%=  link_to p.watch_party.movie.title, movie_path(p.watch_party.movie.id)%></p></li>
           <p>Watch Date: <%=  p.watch_party.date %></p>
           <p>Start Time: <%=  p.watch_party.start_time %></p>
           <p>Attendees: </p>
-          <% p.watch_party.movie_watch_parties.each do |u| %>
-              <% if u.user_status == "hosting" %>
-                <%= "Host: #{u.user.name}"%><br>
+          <% p.watch_party.movie_watch_parties.each do |party| %>
+              <% if party.user_status == "hosting" %>
+                <%= "Host: #{party.user.name}"%><br>
+              <% elsif party.user.id == @user.id %>
+                <b> <%= party.user.name  %> </b><br>
               <% else %>
-                <%= u.user.name %><br>
+                <%= party.user.name %><br>
               <% end %>
           <% end %>
     <% end %>
@@ -25,15 +27,15 @@
   <h4><%= "#{@user.name}'s Watch Parties: Hosting" %></h4>
   <ol>
     <% @user.movie_watch_parties.sort_hosting.each do |p| %>
-      <li><p>Movie: <%=  p.watch_party.movie.title %></p></li>
+      <li><p>Movie: <%=  link_to p.watch_party.movie.title, movie_path(p.watch_party.movie.id) %></p></li>
           <p>Watch Date: <%=  p.watch_party.date %></p>
           <p>Start Time: <%=  p.watch_party.start_time %></p>
           <p>Attendees: </p>
-          <% p.watch_party.movie_watch_parties.each do |u| %>
-              <% if u.user_status == "hosting" %>
-                <%= "Host: #{u.user.name}"%><br>
+          <% p.watch_party.movie_watch_parties.each do |party| %>
+              <% if party.user_status == "hosting" %>
+                <b><%= "Host: #{party.user.name}"%> <b><br>
               <% else %>
-                <%= u.user.name %><br>
+                <%= party.user.name %><br>
               <% end %>
           <% end %>
     <% end %>
