@@ -27,18 +27,18 @@ RSpec.describe "User's Discover Movies page" do
     end
   end
 
-  xit 'displays a text field to enter keyword(s) to search by movie title' do
+  it 'displays a text field to enter keyword(s) to search by movie title' do
     within('#search-movies') do
-      expect(page).to have_field('Search by Movie Title', type: 'text')
+      expect(page).to have_field(:search, type: 'text')
       expect(page).to have_button('Find Movies')
     end
   end
 
-  xit 'has a button to Search by Movie Title' do
+  it 'has a button to Search by Movie Title' do
     within('#search-movies') do
       expect(page).to have_button('Find Movies')
 
-      fill_in 'Search by Movie Title', with: 'The Matrix'
+      fill_in :search, with: 'The Matrix'
       click_button('Find Movies')
       expect(current_path).to eq(user_movies_path(@user1))
     end
