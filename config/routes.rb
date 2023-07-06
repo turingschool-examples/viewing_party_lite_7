@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   resources :viewing_users
   resources :viewing_parties
   resources :movies
-  resources :users, only: [:show] 
+  namespace :users do
+    resources :register, only:[:index, :show, :create]
+  end
+  resources :users, only:[:show]
   #   resources :dashboard, only: [:index]
   # end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
