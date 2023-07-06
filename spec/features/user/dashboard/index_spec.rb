@@ -8,7 +8,6 @@ describe "User Dashboard Page" do
   end
 
   it "should display the dashboard content" do
-    save_and_open_page
     expect(page).to have_content("#{@user1.name}'s Dashboard")
     expect(page).to have_button("Discover Movies")
     expect(page).to have_content("Viewing Parties")
