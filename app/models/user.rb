@@ -3,5 +3,5 @@ class User < ApplicationRecord
   has_many :parties, through: :user_parties
 
   validates :name, presence: true
-  validates :email, presence: true
+  validates :email, uniqueness: true, presence: true
 end
