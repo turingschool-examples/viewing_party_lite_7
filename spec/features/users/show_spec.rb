@@ -3,6 +3,7 @@ require "rails_helper"
 RSpec.describe "User Show Page" do 
   before(:each) do 
     @user1 = User.create!(name: "Maggie", email: "maggie@gmail.com")
+    @viewing_party1 = @user1.viewing_parties.create!()
     visit "/users/#{@user1.id}"
   end
   describe "displays attributes" do 
@@ -23,7 +24,7 @@ RSpec.describe "User Show Page" do
     end
   end
 
-  it "A section that lists viewing parties" 
-  
-  
+  it "A section that lists viewing parties" do
+
+  end
 end
