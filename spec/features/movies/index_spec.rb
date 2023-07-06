@@ -32,18 +32,18 @@ RSpec.describe 'movies results page' do
       end
     end
 
-    xit 'movies results page lists relevant movies if search button clicked' do
+    it 'movies results page lists relevant movies if search button clicked' do
       fill_in(:movie_search, with: 'neverending')
       click_button 'Find Movies'
-      expect(page).to have_css('.search_results')
-      within '.search_results' do
+      expect(page).to have_css('.movies')
+      within '.movies' do
         expect(page).to have_css('.movie', count: 20)
       end
 
       within(first('.movie')) do
         expect(page).to have_css('.title')
         expect(page).to have_css('.average_vote')
-        # expect(page).to have_content('The NeverEnding Story')
+        expect(page).to have_content('The NeverEnding Story')
       end
     end
   end
@@ -53,11 +53,11 @@ RSpec.describe 'movies results page' do
       visit user_movies_path(@user_1)
     end
 
-    xit 'title of movie is link to movie details page'
+    it 'title of movie is link to movie details page'
 
-    xit 'vote average of movie is listed below movie title'
+    it 'vote average of movie is listed below movie title'
 
-    xit 'has a button to return to Discover page' do
+    it 'has a button to return to Discover page' do
       expect(page).to have_button('Discover Page')
       click_button 'Discover Page'
       expect(current_path).to eq(user_discover_index_path(@user_1))
