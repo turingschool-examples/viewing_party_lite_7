@@ -19,7 +19,7 @@ describe MovieService do
     end
 
     describe '#search_movies' do
-      it 'returns the movies that matched the search' do
+      it 'returns the movies that matched the search name' do
         movies = MovieService.new.search_movies('Pulp Fiction')
         results = movies[:results]
 
@@ -40,6 +40,33 @@ describe MovieService do
         
         expect(results).to eq([])
         expect(results.count).to eq(0)
+      end
+    end
+
+    describe '#search_movies_by_id' do
+      it 'returns the movie that matched the search ID' do
+        movie = MovieService.new.search_movies_by_id(221)
+
+        expect(movie).to be_a(Hash)
+        expect(movie).to have_key(:title)
+        expect(movie[:title]).to be_a(String)
+        expect(movie[:title]).to eq('Rebel Without a Cause')
+
+        expect(movie).to have_key(:vote_average)
+        expect(movie[:vote_average]).to be_a(Float)
+        expect(movie[:vote_average]).to eq(7.56)
+      end
+    end
+
+    describe '#find_cast' do
+      it 'returns the cast of the movie that matched the search ID' do
+        movie = MovieService.new.find_cast(221)
+        cast = movie[:cast]
+
+        expect(cast).to be_an(Array)
+        expect(cast.count).to eq(42)
+        expect(cast.first).to have_key(:name)
+        expect(cast.first[:name]).to be_a(String)
       end
     end
   end
