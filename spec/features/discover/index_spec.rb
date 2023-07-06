@@ -39,16 +39,16 @@ RSpec.describe 'Discover Movies Page', type: :feature do
       visit user_discover_index_path(@user_2)
     end
     it 'has a search field' do 
-      expect(page).to have_field('Search by Movie Title')
+      expect(page).to have_field(:movie_search)
     end
 
     it 'has search button' do 
-      expect(page).to have_button('Search')
+      expect(page).to have_button('Find Movies')
     end
 
     it 'movie search by title' do 
       fill_in :movie_search, with: 'Neverending' 
-      click_button 'Search' 
+      click_button 'Find Movies' 
       expect(current_path).to eq(user_movies_path(@user_2))
     end
   end
