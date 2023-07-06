@@ -8,7 +8,7 @@ RSpec.describe "user registration page", type: :feature do
 
   describe "when I visit the user registration page" do
     context "Happy Path" do
-      it 'I see a link to return to the landing page' do
+      it "I see a link to return to the landing page" do
         expect(page).to have_link("Home")
         click_link "Home"
         expect(current_path).to eq("/")
@@ -29,18 +29,18 @@ RSpec.describe "user registration page", type: :feature do
         fill_in "Name", with: "Myles"
         fill_in "Email", with: "Myles@example.com"
         click_button "Register User"
-        
+
         expect(current_path).to eq("/users/#{User.last.id}")
         expect(User.all.count).to eq(2)
       end
     end
-    
+
     context "Sad Path" do
       it "I see a flash message if I do not fill out all fields" do
         fill_in "Name", with: ""
         fill_in "Email", with: "Myles@example.com"
         click_button "Register User"
-        
+
         expect(page).to have_content("Please fill in all fields. Email must be unique.")
       end
 
