@@ -27,8 +27,8 @@ RSpec.describe 'movies results page' do
 
       within(first('.movie')) do
         expect(page).to have_css('.title')
-        expect(page).to have_css('.average_vote')
-        # expect(page).to have_content('The Godfather')
+        expect(page).to have_css('.vote_average')
+        expect(page).to have_content('The Godfather')
       end
     end
 
