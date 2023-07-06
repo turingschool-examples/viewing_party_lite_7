@@ -35,11 +35,18 @@ RSpec.describe "User Show Page" do
 
     it "A section that lists viewing parties user is invited to" do
       within("#viewing_party_invitations") do
-        save_and_open_page
         expect(page).to have_content("#{@viewing_party4.movie_title}- Viewing Party")
         expect(page).to have_content("#{@viewing_party5.movie_title}- Viewing Party")
         expect(page).to_not have_content("#{@viewing_party3.movie_title}- Viewing Party")
       end
+    end
+  end
+
+  describe "link to movie show page" do 
+    xit "links to a movie show page in title of each movie" do 
+      click_link "Jaws"
+
+      expect(current_path).to eq("/movies/")
     end
   end
 end
