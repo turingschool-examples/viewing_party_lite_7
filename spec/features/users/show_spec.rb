@@ -8,8 +8,8 @@ RSpec.describe "user_path(user)", type: :feature do
     it "should render only the user's name" do
       visit user_path(user)
 
-      expect(page).to have_content(user.name)
-      expect(page).to_not have_content(user2.name)
+      expect(page).to have_content("#{user.name}'s Dashboard")
+      expect(page).to_not have_content("#{user2.name}'s Dashboard")
     end
 
     it "routes me to the discover movies dashboard" do
