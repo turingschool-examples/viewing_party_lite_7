@@ -1,3 +1,13 @@
 <div style="text-align: center;">
   <h1>Discover Page</h1>
 </div>
+
+<%= button_to 'Discover Top Rated Movies', movies_path, method: :get %>
+<br>
+<h3>Search by Movie Title</h3>
+<%= form_with url: search_path, method: :post do |f| %>
+  <%= f.hidden_field :user_id, value: @user.id %>
+  <%= f.label :search, "Search by Movie Title" %>
+  <%= f.text_field :search %>
+  <%= f.submit 'Search' %>
+<% end %>
