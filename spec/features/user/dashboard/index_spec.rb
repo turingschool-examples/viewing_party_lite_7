@@ -13,4 +13,9 @@ describe "User Dashboard Page" do
     expect(page).to have_content("Viewing Parties")
   end
 
+  it "should have a button to the user's discover page" do
+    expect(page).to have_button("Discover Movies")
+    click_button "Discover Movies"
+    expect(page).to have_current_path("/users/#{@user1.id}/discover")
+  end
 end
