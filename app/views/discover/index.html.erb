@@ -1,0 +1,12 @@
+<h3 id="title"><%= "Discover Movies" %></h3>
+
+<%= button_to "Discover Top Rated Movies", user_movies_path(@user.id), {method: "get"} %>
+<br>
+
+<div id="movie-search">
+  <%= form_with url: user_movies_path(@user.id), local: true do |form| %>
+    <%= form.label :search, "Movie Title: " %>
+    <%= form.text_field :search %>
+    <%= form.submit "Find Movies" %>
+  <% end %>
+</div>
