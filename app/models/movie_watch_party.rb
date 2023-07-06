@@ -2,7 +2,8 @@ class MovieWatchParty < ApplicationRecord
   belongs_to :user
   belongs_to :watch_party
 
-  enum user_status: ["attending", "hosting"]
+  enum user_status: %w[attending hosting]
+  # enum user_status: ["attending", "hosting"]
 
   def self.sort_attending
     where(user_status: "attending")

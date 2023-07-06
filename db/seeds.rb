@@ -12,16 +12,6 @@ Movie.destroy_all
 WatchParty.destroy_all
 MovieWatchParty.destroy_all
 
-# 3.times do
-#   FactoryBot.create :user
-# end
-
-# 3.times do
-#   FactoryBot.create :movie
-# end
-
-
-
 user_1 = User.create!(name: "Ricky", email: "Email@email.com")
 
 user_2 = FactoryBot.create(:user)

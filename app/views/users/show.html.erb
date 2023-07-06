@@ -12,14 +12,17 @@
           <p>Start Time: <%=  p.watch_party.start_time %></p>
           <p>Attendees: </p>
           <% p.watch_party.movie_watch_parties.each do |party| %>
-              <% if party.user_status == "hosting" %>
-                <%= "Host: #{party.user.name}"%><br>
-              <% elsif party.user.id == @user.id %>
-                <b> <%= party.user.name  %> </b><br>
-              <% else %>
-                <%= party.user.name %><br>
-              <% end %>
-          <% end %>
+
+            <div id="<%= party.watch_party_id %>">
+                <% if party.user_status == "hosting" %>
+                  <%= "Host: #{party.user.name}"%><br>
+                <% elsif party.user.id == @user.id %>
+                  <b> <%= party.user.name  %> </b><br>
+                <% else %>
+                  <%= party.user.name %><br>
+                <% end %>
+                </div>
+            <% end %>
     <% end %>
   </ol>
 </div>
