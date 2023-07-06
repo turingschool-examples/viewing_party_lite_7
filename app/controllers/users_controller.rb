@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     if user.save
       redirect_to user_path(user.id)
     else
-      flash[:error] = "'Name' and 'Email' fields are required, please try again."
+      flash[:error] = "Error: #{user.errors.full_messages.to_sentence}"
       redirect_to register_path
     end
   end
