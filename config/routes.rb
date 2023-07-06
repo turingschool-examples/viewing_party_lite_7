@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   root 'welcome#index'
   
   get 'register', to: 'users#new', as: :new_user
-  get "/users/:id", to: "users#index"
+  get "/users/:id", to: "users#show"
   post "/users/:id/discover", to: "users#create"
 end
