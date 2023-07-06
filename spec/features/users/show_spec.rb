@@ -11,7 +11,6 @@ RSpec.describe "User Show Page" do
     end
 
     it "has user's name Dash at top of page" do 
-
       expect(page).to have_content("#{@user_1.name}'s Dashboard")
     end 
 
