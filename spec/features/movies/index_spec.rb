@@ -16,7 +16,7 @@ RSpec.describe 'movies results page' do
     end
 
     it 'movies results page lists top movies if top movies button clicked' do 
-      click_on 'Discover Top Rated Moves' 
+      click_on 'Discover Top Rated Movies' 
       expect(page).to have_css(".top_rated")
       
       within ".top_rated" do 
