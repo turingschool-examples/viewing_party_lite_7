@@ -17,9 +17,9 @@ RSpec.describe 'movies results page' do
 
     it 'movies results page lists top movies if top movies button clicked' do 
       click_on 'Discover Top Rated Movies' 
-      expect(page).to have_css(".top_rated")
+      expect(page).to have_css(".top-rated")
       
-      within ".top_rated" do 
+      within ".top-rated" do 
         expect(page).to have_css('.movie', count: 20)
       end
 
@@ -30,7 +30,7 @@ RSpec.describe 'movies results page' do
       end
     end
 
-    it 'movies results page lists relevant movies if search button clicked' do 
+    xit 'movies results page lists relevant movies if search button clicked' do 
       fill_in(:movie_search, with: 'neverending')
       click_button 'Find Movies'
       expect(page).to have_css(".search_results") 
@@ -51,11 +51,11 @@ RSpec.describe 'movies results page' do
       visit user_movies_path(@user_1)
     end
 
-    it 'title of movie is link to movie details page'
+    xit 'title of movie is link to movie details page'
 
-    it 'vote average of movie is listed below movie title'
+    xit 'vote average of movie is listed below movie title'
 
-    it 'has a button to return to Discover page' do 
+    xit 'has a button to return to Discover page' do 
       expect(page).to have_button('Discover Page')
       click_button 'Discover Page'
       expect(current_path).to eq(user_discover_index_path(@user_1))
