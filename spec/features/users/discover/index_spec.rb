@@ -23,7 +23,7 @@ RSpec.describe "User's Discover Movies page" do
       expect(page).to have_button('Find Top Rated Movies')
 
       click_button('Find Top Rated Movies')
-      expect(current_path).to eq("/users/#{@user1.id}/movies")
+      expect(current_path).to eq(user_movies_path(@user1))
     end
   end
 
@@ -37,6 +37,10 @@ RSpec.describe "User's Discover Movies page" do
   xit 'has a button to Search by Movie Title' do
     within('#search-movies') do
       expect(page).to have_button('Find Movies')
+
+      fill_in 'Search by Movie Title', with: 'The Matrix'
+      click_button('Find Movies')
+      expect(current_path).to eq(user_movies_path(@user1))
     end
   end
 end
