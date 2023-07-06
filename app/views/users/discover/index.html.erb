@@ -1,1 +1,14 @@
-<h3>Discover Movies</h3>
+<div style="text-align: center;">
+  <h2>Discover Movies</h2><br>
+
+  <div id="discover-top-movies">
+    <%= button_to "Find Top Rated Movies", user_movies_path(@user), method: :get, params: {q: "top20rated"} %>
+  </div><br><br>
+
+  <div id="search-movies">
+    <%= form_with url: user_movies_path(@user), method: :get, local: true do |form| %>
+      <%= form.text_field :search %>
+      <%= form.submit "Find Movies" %>
+    <% end %>
+  </div>
+</div>
