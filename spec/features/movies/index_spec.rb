@@ -17,6 +17,7 @@ RSpec.describe "/users/:id/movies", type: :feature do
         within(first(".movie")) do
           expect(page).to have_css(".title")
           expect(page).to have_css(".vote_avg")
+          expect(page).to have_content("Vote Average:")
         end
       end
     end
@@ -36,6 +37,7 @@ RSpec.describe "/users/:id/movies", type: :feature do
         within(first(".movie")) do
           expect(page).to have_css(".title")
           expect(page).to have_css(".vote_avg")
+          expect(page).to have_content("Vote Average:")
         end
       end
     end

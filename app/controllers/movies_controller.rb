@@ -14,7 +14,9 @@ class MoviesController < ApplicationController
     end
 
     json = JSON.parse(response.body, symbolize_names: true)
-    @movies = json[:results]
+    @movies = json[:results].map do |movie_data|
+      Movie.new(movie_data)
+    end
   end
 
   def show; end
