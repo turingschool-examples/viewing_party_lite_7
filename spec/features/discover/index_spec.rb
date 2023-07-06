@@ -47,7 +47,7 @@ RSpec.describe 'Discover Movies Page', type: :feature do
     end
 
     it 'movie search by title' do 
-      fill_in :search, with: 'Neverending' 
+      fill_in :movie_search, with: 'Neverending' 
       click_button 'Search' 
       expect(current_path).to eq(user_movies_path(@user_2))
     end
