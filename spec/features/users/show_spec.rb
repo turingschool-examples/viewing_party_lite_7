@@ -13,7 +13,7 @@ RSpec.describe "User Show Page" do
   
   describe "US6 Dashboard (Show) Page" do
     it "I see user's name's Dashboard at the top of the page and a button to Discover Movies* " do
-      save_and_open_page
+      # save_and_open_page
       expect(page).to have_content("#{@user1.name}'s Dashboard")
     end
     
