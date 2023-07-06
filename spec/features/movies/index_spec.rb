@@ -15,9 +15,35 @@ RSpec.describe 'movies results page' do
       expect(current_path).to eq(user_movies_path(@user_1))
     end
 
-    it 'movies results page lists top movies if top movies button clicked'
+    it 'movies results page lists top movies if top movies button clicked' do 
+      click_on 'Discover Top Rated Moves' 
+      expect(page).to have_css(".top_rated")
+      
+      within ".top_rated" do 
+        expect(page).to have_css('.movie', count: 20)
+      end
 
-    it 'movies results page lists relevant movies if search button clicked' 
+      within(first(".movie")) do 
+        expect(page).to have_css(".title")
+        expect(page).to have_css(".average_vote")
+        # expect(page).to have_content('The Godfather')
+      end
+    end
+
+    it 'movies results page lists relevant movies if search button clicked' do 
+      fill_in(:movie_search, with: 'neverending')
+      click_button 'Find Movies'
+      expect(page).to have_css(".search_results") 
+      within ".search_results" do 
+        expect(page).to have_css(".movie", count: 20)
+      end
+
+      within(first(".movie")) do 
+        expect(page).to have_css(".title")
+        expect(page).to have_css(".average_vote")
+        # expect(page).to have_content('The NeverEnding Story')
+      end
+    end
   end
 
   describe 'movies results page content' do 
@@ -28,8 +54,6 @@ RSpec.describe 'movies results page' do
     it 'title of movie is link to movie details page'
 
     it 'vote average of movie is listed below movie title'
-
-    it 'only lists 20 results on page' 
 
     it 'has a button to return to Discover page' do 
       expect(page).to have_button('Discover Page')
