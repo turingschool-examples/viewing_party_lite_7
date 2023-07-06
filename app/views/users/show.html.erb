@@ -1,0 +1,7 @@
+<div style="text-align: center;">
+  <h1><%= "#{@user.name}'s Dashboard" %></h1>
+</div>
+
+<%= button_to "Discover Movies", '/users/:id/discover', method: :get %>
+
+<h3>Viewing Parties</h3>
