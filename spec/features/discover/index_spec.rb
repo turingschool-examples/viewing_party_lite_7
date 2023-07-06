@@ -21,7 +21,7 @@ RSpec.describe 'Discover Movies Page', type: :feature do
     end
   end
   
-  describe 'page has button to discover top rated movies' do 
+  describe 'button to discover top rated movies' do 
     it 'has button' do 
       visit user_discover_index_path(@user_2)
       expect(page).to have_button('Discover Top Rated Movies')
@@ -30,6 +30,25 @@ RSpec.describe 'Discover Movies Page', type: :feature do
     it 'button has path' do 
       visit user_discover_index_path(@user_2)
       click_on 'Discover Top Rated Movies'
+      expect(current_path).to eq(user_movies_path(@user_2))
+    end
+  end
+  
+  describe 'search field for movies' do 
+    before(:each) do 
+      visit user_discover_index_path(@user_2)
+    end
+    it 'has a search field' do 
+      expect(page).to have_field('Search by Movie Title')
+    end
+
+    it 'has search button' do 
+      expect(page).to have_button('Search')
+    end
+
+    it 'movie search by title' do 
+      fill_in :search, with: 'Neverending' 
+      click_button 'Search' 
       expect(current_path).to eq(user_movies_path(@user_2))
     end
   end
