@@ -24,8 +24,12 @@ RSpec.describe "user dashboard page", type: :feature do
         end
       end
 
-      it "displays a button to 'Discover Movies'" do
+      it "displays a button that links to 'Discover Movies'" do
         expect(page).to have_button("Discover Movies")
+
+        click_button "Discover Movies"
+
+        expect(current_path).to eq(user_discover_index_path(@user1.id))
       end
 
       it "displays a section for viewing parties" do
@@ -48,6 +52,10 @@ RSpec.describe "user dashboard page", type: :feature do
 
       it "displays a button to 'Discover Movies'" do
         expect(page).to have_button("Discover Movies")
+
+        click_button "Discover Movies"
+
+        expect(current_path).to eq(user_discover_index_path(@user2.id))
       end
 
       it "displays a section for viewing parties" do
