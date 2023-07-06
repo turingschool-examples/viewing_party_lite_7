@@ -3,11 +3,43 @@
 
 <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get  %>
 
-<section id="viewing_parties">
-  <h4> Viewing Parties </h4>
+<section id="viewing_party_invitations">
+  <h4> Viewing Party Invitations </h4>
   <ol>
-    <% @viewing_parties.each do |party| %>
-      <li><%= party.movie_title %> Viewing Party </li>
+    <% @user.parties_invited.each do |party| %>
+      <li><%= party.movie_title %>- Viewing Party </li>
+        <ul>
+          <li>Day: <%= party.day %></li>
+          <li>Time: <%= party.start_time %></li>
+          <li>Invitees: </li>
+            <ul>
+              <% party.invitee_names.each do |name| %>
+                <% if name == @user.name %>
+                  <li><b> <%= name %> </b></li>
+                <% else%>
+                  <li><%= name %></li>
+                  <% end %>
+              <% end %>
+            </ul>
+        </ul>
+    <% end %>
+  </ol>
+</section>
+
+<section id="viewing_parties_hosting">
+  <h4> Viewing Parties I'm Hosting </h4>
+  <ol>
+    <% @user.parties_hosting.each do |party| %>
+      <li><%= party.movie_title %>- Viewing Party </li>
+        <ul>
+          <li>Day: <%= party.day %></li>
+          <li>Time: <%= party.start_time %></li>
+          <li>Host: 
+          <% party.host_name.each do |name| %>
+            <%= name %> 
+          <% end %>
+          </li>
+        </ul>
     <% end %>
   </ol>
 </section>
