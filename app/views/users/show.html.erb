@@ -1,7 +1,7 @@
 <h3><%= "#{@user.name}'s Dashboard" %></h3>
 <%= @user.email %>
 
-<p><%= button_to "Discover Movies", user_discover_index_path(@user), method: :get %></p>
+<p><%= button_to "Discover Movies", "/users/#{user.id}/discover", method: :get %></p>
 
 <div class="attending">
   <h4><%= "#{@user.name}'s Watch Parties: Attending" %></h4>
