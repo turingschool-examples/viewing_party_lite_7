@@ -9,7 +9,7 @@ class Movie
               :genres,
               :cast
 
-  def initialize(data)
+  def initialize(data, cast = nil)
     @id = data[:id]
     @title = data[:title]
     @vote_average = data[:vote_average]
@@ -18,7 +18,7 @@ class Movie
     @summary = data[:overview]
     @poster_path = data[:poster_path]
     @genres = genre_names(data[:genres]) if data[:genres]
-    @cast = data[:cast] if data[:cast]
+    @cast = cast[:cast][0..9] if cast
   end
 
   def genre_names(genres)
