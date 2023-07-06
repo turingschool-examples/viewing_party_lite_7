@@ -14,7 +14,11 @@
           <li>Invitees: </li>
             <ul>
               <% party.invitee_names.each do |name| %>
-                <li><%= name %></li>
+                <% if name == @user.name %>
+                  <li><b> <%= name %> </b></li>
+                <% else%>
+                  <li><%= name %></li>
+                <% end %>
               <% end %>
             </ul>
         </ul>
