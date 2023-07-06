@@ -1,7 +1,7 @@
 <h3><%= "#{@user.name}'s Dashboard" %></h3>
 <%= @user.email %>
 
-<p><%= button_to "Discover Movies", "/users/#{user.id}/discover", method: :get %></p>
+<p><%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %></p>
 
 <div class="attending">
   <h4><%= "#{@user.name}'s Watch Parties: Attending" %></h4>
@@ -17,7 +17,7 @@
                 <% if party.user_status == "hosting" %>
                   <%= "Host: #{party.user.name}"%><br>
                 <% elsif party.user.id == @user.id %>
-                  <b> <%= party.user.name  %> </b><br>
+                  <b> <%= party.user.name  %> </b> <br>
                 <% else %>
                   <%= party.user.name %><br>
                 <% end %>
@@ -36,9 +36,9 @@
           <p>Attendees: </p>
           <% p.watch_party.movie_watch_parties.each do |party| %>
               <% if party.user_status == "hosting" %>
-                <b><%= "Host: #{party.user.name}"%> <b><br>
+                <b><%= "Host: #{party.user.name}"%> </b> <br>
               <% else %>
-                <%= party.user.name %><br>
+                <%= party.user.name %> <br>
               <% end %>
           <% end %>
     <% end %>

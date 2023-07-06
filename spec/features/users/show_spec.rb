@@ -41,7 +41,7 @@ RSpec.describe "/users/:id" do
         visit user_path(user_1)
         expect(page).to have_button("Discover Movies")
         click_button "Discover Movies"
-        expect(current_path).to eq(user_discover_index_path(user_1))
+        expect(current_path).to eq("/users/#{user_1.id}/discover")
       end
 
       it "has a section that lists viewing parties" do
