@@ -30,7 +30,7 @@ RSpec.describe 'Discover Movies Page', type: :feature do
     it 'button has path' do 
       visit user_discover_index_path(@user_2)
       click_on 'Discover Top Rated Movies'
-      expect(current_path).to eq("/users/#{@user_2.id}/movies")
+      expect(current_path).to eq(user_movies_path(@user_2))
     end
   end
 end
