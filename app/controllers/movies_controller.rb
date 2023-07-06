@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :get_user
+  before_action :find_user
 
   def index
     conn = Faraday.new(url: "https://api.themoviedb.org/3/") do |faraday|
@@ -17,12 +17,11 @@ class MoviesController < ApplicationController
     @movies = json[:results]
   end
 
-  def show
-  end
+  def show; end
 
   private
 
-  def get_user
+  def find_user
     @user = User.find(params[:user_id])
   end
 end
