@@ -39,16 +39,10 @@ RSpec.describe 'User Dashboard page' do
     expect(page).to have_button('Discover Movies')
   end
   
-  # As a user,
-  # When I go to a user dashbaord,
-  # and click "Discover Movies" button,
-  # I am redirected to a discover page '/users/:id/discover', where :id is the user id of the user who's dashboard I was just on.
-  
   it 'redirects to the Discover Movies page when the Discover Movies button is clicked' do
     visit user_path(@user1)
 
     click_button('Discover Movies')
     expect(current_path).to eq("/users/#{@user1.id}/discover")
   end
-
 end
