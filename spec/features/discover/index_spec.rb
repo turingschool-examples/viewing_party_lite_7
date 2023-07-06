@@ -24,7 +24,7 @@ RSpec.describe 'Discover Movies Page', type: :feature do
   describe 'page has button to discover top rated movies' do 
     it 'has button' do 
       visit user_path(@user_2)
-      expect(page).to have_button('Discover Top Rated Movies')
+      expect(page).to have_button('Discover Top Rated Movies', href: "/users/#{@user_2.id}/movies")
     end
   end
 end
