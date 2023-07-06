@@ -15,4 +15,8 @@ class MovieService
   def top_rated_movies
     get_url("/3/movie/top_rated?language=en-US&page=1")
   end
+
+  def search_movies(query)
+    get_url("/3/search/movie?query=#{query}&include_adult=false&language=en-US&page=1")
+  end
 end
