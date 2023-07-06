@@ -22,7 +22,7 @@ RSpec.describe "/users/:id/movies", type: :feature do
     end
 
     describe "they search for a movie in the search bar" do
-      xit "routes to the movie index page where search results are rendered" do
+      it "routes to the movie index page where search results are rendered" do
         visit user_discover_index_path(user)
 
         within ".search-movies" do
