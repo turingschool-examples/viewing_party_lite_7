@@ -8,5 +8,7 @@ Rails.application.routes.draw do
 
   get "/users/:id", to: "users#show", as: "user"
   get "/users/:id/discover", to: "movies#discover", as: "discover"
+  get "/register", to: "users#new", as: "register"
 
+  resources :users, only: [:create]
 end
