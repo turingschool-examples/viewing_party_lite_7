@@ -7,7 +7,7 @@ RSpec.describe "user registration page", type: :feature do
   end
 
   describe "when I visit the user registration page" do
-    describe "Happy Path" do
+    context "Happy Path" do
       it 'I see a link to return to the landing page' do
         expect(page).to have_link("Home")
         click_link "Home"
