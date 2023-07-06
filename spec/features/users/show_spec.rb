@@ -15,8 +15,12 @@ RSpec.describe 'Users Show Page', type: :feature do
       expect(page).to_not have_content("#{@user2.name}'s Dashboard")
     end
 
-    it 'displays a button to Discover Movies' do
+    it 'displays a button to Discover Movies and redirects to that page' do
       expect(page).to have_button('Discover Movies')
+
+      click_button 'Discover Movies'
+
+      expect(current_path).to eq(discover_path(@user1))
     end
 
     it 'displays a section that lists viewing parties' do
