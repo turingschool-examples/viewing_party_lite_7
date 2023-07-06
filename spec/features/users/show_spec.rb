@@ -30,4 +30,13 @@ RSpec.describe 'Users Dashboard' do
       # expect(page).to have_content("The Constant Gardener")
     end
   end
+
+  describe 'Verifies links' do 
+    it 'discover movie button directs you to /users/:id/discover' do
+      visit user_path(user_1)
+
+      click_button('Discover Movies')
+      expect(current_path).to eq("/users/#{user_1.id}/discover")
+    end
+  end
 end
