@@ -1,2 +1,13 @@
-<p> Name: <%= @user.name %></p>
+<h3> <%= @user.name %>'s Dashboard </h3>
 <p> Email: <%= @user.email %></p>
+
+<%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get  %>
+
+<section id="viewing_parties">
+  <h4> Viewing Parties </h4>
+  <ol>
+    <% @viewing_parties.each do |party| %>
+      <li><%= party.movie_title %> Viewing Party </li>
+    <% end %>
+  </ol>
+</section>

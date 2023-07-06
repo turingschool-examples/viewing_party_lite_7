@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show 
     @user = User.find(params[:id])
+    @viewing_parties = @user.viewing_parties
   end
 
   def new; end
@@ -18,6 +19,10 @@ class UsersController < ApplicationController
       redirect_to "/register"
       flash[:alert] = "Error: #{error_message(user.errors)}"
     end
+  end
+
+  def discover
+    
   end
 
   private 
