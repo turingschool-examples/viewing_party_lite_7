@@ -11,6 +11,12 @@
   </head>
 
   <body>
+    <%= link_to 'Home', root_path %>
+
+    <% flash.each do |type, message| %>
+      <p><%= message %></p>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
