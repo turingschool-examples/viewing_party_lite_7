@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   namespace :users do
     resources :register, only:[:index, :show, :create]
   end
-  resources :users, only:[:show]
+  resources :users, only:[:show] do
+    resources :discover, only:[:index]
+  end
   #   resources :dashboard, only: [:index]
   # end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
