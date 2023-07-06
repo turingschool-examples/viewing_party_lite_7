@@ -3,4 +3,6 @@ class User < ApplicationRecord
                         :name
 
   validates :email, uniqueness: true
+  has_many :viewing_users
+  has_many :viewing_parties, through: :viewing_users
 end
