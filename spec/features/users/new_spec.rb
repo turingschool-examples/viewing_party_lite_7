@@ -14,7 +14,7 @@ RSpec.describe "user registration page", type: :feature do
         expect(current_path).to eq("/")
       end
 
-      it "I see a for to register a user" do
+      it "I see a form to register a user" do
         expect(page).to have_content("New User Registration")
         within("#user-registration") do
           expect(page).to have_content("Name")
