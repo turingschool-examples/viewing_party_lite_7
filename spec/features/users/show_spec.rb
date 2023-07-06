@@ -19,7 +19,7 @@ RSpec.describe "User Show Page" do
 
     visit "/users/#{@user1.id}"
   end
-  
+
   describe "displays attributes" do 
     it "displays name and email" do 
       expect(page).to have_content("Email: #{@user1.email}")
@@ -40,17 +40,19 @@ RSpec.describe "User Show Page" do
   describe "viewing parties" do 
     it "A section that lists viewing parties hosted by user" do
       within("#viewing_parties_hosting") do
-        expect(page).to have_content("#{@viewing_party1.movie_title} Viewing Party")
-        expect(page).to have_content("#{@viewing_party2.movie_title} Viewing Party")
-        expect(page).to have_content("#{@viewing_party3.movie_title} Viewing Party")
+        expect(page).to have_content("#{@viewing_party1.movie_title}- Viewing Party")
+        expect(page).to have_content("#{@viewing_party2.movie_title}- Viewing Party")
+        expect(page).to have_content("#{@viewing_party3.movie_title}- Viewing Party")
+        expect(page).to_not have_content("#{@viewing_party5.movie_title}- Viewing Party")
       end
     end
 
     it "A section that lists viewing parties user is invited to" do
       within("#viewing_party_invitations") do
-        # expect(page).to have_content("#{@viewing_party1.movie_title} Viewing Party")
-        # expect(page).to have_content("#{@viewing_party2.movie_title} Viewing Party")
-        # expect(page).to have_content("#{@viewing_party3.movie_title} Viewing Party")
+        save_and_open_page
+        expect(page).to have_content("#{@viewing_party4.movie_title}- Viewing Party")
+        expect(page).to have_content("#{@viewing_party5.movie_title}- Viewing Party")
+        expect(page).to_not have_content("#{@viewing_party3.movie_title}- Viewing Party")
       end
     end
   end
