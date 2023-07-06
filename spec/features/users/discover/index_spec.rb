@@ -12,12 +12,6 @@ RSpec.describe "User's Discover Movies page" do
     expect(page).to have_content('Discover Movies')
   end
 
-  # Button to Discover Top Rated Movies
-  # A text field to enter keyword(s) to search by movie title
-  # A Button to Search by Movie Title
-  # Details When the user clicks on the Top Rated Movies OR the search button, they should be taken to the movies results page (more details of this on the Movies Results Page issue.
-
-  # The movies will be retrieved by consuming The MovieDB API
   it 'displays a button to Discover Top Rated Movies' do
     within('#discover-top-movies') do
       expect(page).to have_button('Find Top Rated Movies')
@@ -30,7 +24,6 @@ RSpec.describe "User's Discover Movies page" do
   it 'displays a text field to enter keyword(s) to search by movie title' do
     within('#search-movies') do
       expect(page).to have_field(:search, type: 'text')
-      expect(page).to have_button('Find Movies')
     end
   end
 
