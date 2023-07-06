@@ -35,7 +35,7 @@ RSpec.describe "user registration page", type: :feature do
       end
     end
     
-    describe "Sad Path" do
+    context "Sad Path" do
       it "I see a flash message if I do not fill out all fields" do
         fill_in "Name", with: ""
         fill_in "Email", with: "Myles@example.com"
