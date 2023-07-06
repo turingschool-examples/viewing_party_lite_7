@@ -1,12 +1,12 @@
 <div id="title">
   <h1> Movie Viewing Party! </h1>
-  <p><%=  button_to "Create New User" %></p> 
+  <p><%=  button_to "Create New User", users_register_index_path, method: :get %></p>
   <p><%=  link_to "Return to Movie Viewing Party Landing Page" %></p>
 </div>
 
 <div id="users">
   <h2> Movie Viewing Users: </h2>
-  <p><%  @users.each do |person| %></p> 
+  <p><%  @users.each do |person| %></p>
     <p><%= link_to "#{person.name}", user_path(person.id) %>
-  <p><%  end %></p> 
+  <p><%  end %></p>
 </div>
