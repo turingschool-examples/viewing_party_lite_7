@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   root "application#welcome"
 
   get "/users/:id", to: "users#show", as: "user"
+  get "/users/:id/discover", to: "movies#discover", as: "discover"
 
 end
