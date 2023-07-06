@@ -23,6 +23,11 @@ RSpec.describe "User Show Page" do
       within "#parties" do
         expect(page).to have_content("Available Viewing Parties")
       end
+    end
+
+    it "Discover Movies directes to 'user' discover page"do
+      click_button "Discover Movies"
+      expect(current_path).to eq(user_discover_index_path(@user1.id))
       save_and_open_page
     end
   end
