@@ -1,6 +1,6 @@
 <h2>Register New User</h2>
 
-<%= form_with url: user_path(@user), method: :post do |f| %>
+<%= form_with model: @user do |f| %>
   <%= f.label :name, "Name:" %>
   <%= f.text_field :name %>
 

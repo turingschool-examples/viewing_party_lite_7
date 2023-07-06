@@ -25,5 +25,22 @@ RSpec.describe "/register", type: :feature do
       created_user = User.last
       expect(current_path).to eq(user_path(created_user))
     end
+
+    it "displays flash error if email is not unique" do
+      fill_in 'Name', with: 'Jonah Hill'
+      fill_in 'Email Address', with: 'Jhill@gmail.com'
+      click_button 'Register'
+
+      created_user = User.last
+      expect(current_path).to eq(user_path(created_user))
+
+      visit register_path
+
+      fill_in 'Name', with: 'James Hill'
+      fill_in 'Email Address', with: 'Jhill@gmail.com'
+      click_button 'Register'
+
+      expect(page).to have_content("Email Address Must Be Unique")
+    end
   end
 end
