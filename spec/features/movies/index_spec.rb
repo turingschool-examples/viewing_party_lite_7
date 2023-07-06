@@ -22,13 +22,17 @@ RSpec.describe 'movies results page' do
       expect(page).to have_css('.movies')
 
       within '.movies' do
-        expect(page).to have_css('.movie', count: 20)
+        expect(page).to have_css('.movie', maximum: 20 )
       end
 
       within(first('.movie')) do
         expect(page).to have_css('.title')
-        expect(page).to have_css('.vote_average')
         expect(page).to have_content('The Godfather')
+        expect(page).to have_css('.vote-average')
+
+        within('.vote-average') do 
+          expect(page).to have_content('8.7')
+        end
       end
     end
 
@@ -37,14 +41,20 @@ RSpec.describe 'movies results page' do
       click_button 'Find Movies'
       expect(page).to have_css('.movies')
       within '.movies' do
-        expect(page).to have_css('.movie', count: 20)
+        expect(page).to have_css('.movie', maximum: 20)
       end
 
       within(first('.movie')) do
-        expect(page).to have_css('.title')
-        expect(page).to have_css('.vote_average')
         expect(page).to have_content('The NeverEnding Story')
+        expect(page).to have_css('.title')
+        expect(page).to have_css('.vote-average')
+
+        within('.vote-average') do 
+          expect(page).to have_content('7.192')
+        end
       end
+
+      
     end
   end
 
@@ -55,7 +65,6 @@ RSpec.describe 'movies results page' do
 
     it 'title of movie is link to movie details page'
 
-    it 'vote average of movie is listed below movie title'
 
     it 'has a button to return to Discover page' do
       expect(page).to have_button('Discover Page')
