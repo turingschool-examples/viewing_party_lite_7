@@ -68,9 +68,12 @@ group :development do
   # gem "spring"
   gem "rubocop-rails"
 end
-
+gem "faraday"
+gem "figaro"
 group :test do
   gem "rspec-rails"
   gem "capybara"
   gem "launchy"
+  gem "webmock"
+  gem "vcr"
 end
