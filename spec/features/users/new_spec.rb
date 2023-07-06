@@ -32,14 +32,30 @@ RSpec.describe "/register", type: :feature do
     # Sad Path 1 - both Name and Email are required.
     it "does not create a new user, when unsuccessfully completing and submitting the form" do
       visit register_path
+
       within ".register_form" do
         fill_in "Email", with: "johndoe@email.com"
         click_button "Create a New User"
-        expect(current_path).to eq(register_path)
       end
-      expect(page).to have_content("'Name' and 'Email' fields are required, please try again.")
+
+      expect(current_path).to eq(register_path)
+      expect(page).to have_content("Name can't be blank")
     end
 
     # Sad Path 2 - Email must be unique to data table.
+    it "should not allow users to register without a unqiue email" do
+      user = create(:user)
+
+      visit register_path
+
+      within ".register_form" do
+        fill_in "Name", with: user.name
+        fill_in "Email", with: user.email
+        click_button "Create a New User"
+      end
+
+      expect(current_path).to eq(register_path)
+      expect(page).to have_content("Email has already been taken")
+    end
   end
 end
