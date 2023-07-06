@@ -19,9 +19,9 @@ RSpec.describe 'movies results page' do
 
     it 'movies results page lists top movies if top movies button clicked' do
       click_on 'Discover Top Rated Movies'
-      expect(page).to have_css('.top-rated')
+      expect(page).to have_css('.movies')
 
-      within '.top-rated' do
+      within '.movies' do
         expect(page).to have_css('.movie', count: 20)
       end
 
@@ -42,7 +42,7 @@ RSpec.describe 'movies results page' do
 
       within(first('.movie')) do
         expect(page).to have_css('.title')
-        expect(page).to have_css('.average_vote')
+        expect(page).to have_css('.vote_average')
         expect(page).to have_content('The NeverEnding Story')
       end
     end

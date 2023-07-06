@@ -11,7 +11,7 @@ class MoviesController < ApplicationController
 
     if params[:movie_search] 
       conn.params['query'] = params[:movie_search]
-      response = conn.get("movie/search")
+      response = conn.get("search/movie")
     else
       response = conn.get('movie/top_rated')
     end
