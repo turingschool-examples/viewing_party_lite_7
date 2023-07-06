@@ -14,7 +14,6 @@ RSpec.describe "user_path(user)", type: :feature do
 
     it "routes me to the discover movies dashboard" do
       visit user_path(user)
-      save_and_open_page
       click_button "Discover Movies"
       expect(current_path).to eq(user_discover_index_path(user))
     end
