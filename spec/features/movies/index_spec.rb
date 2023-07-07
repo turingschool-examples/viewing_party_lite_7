@@ -20,8 +20,8 @@ RSpec.describe "Movie Results page", type: :feature do
         expect(page).to have_link("The Godfather")
         expect(page).to have_content("8.7")
 
-        expect(page).to have_button("Back")
-        click_button("Back")
+        expect(page).to have_button("Discover Page")
+        click_button("Discover Page")
         expect(current_path).to eq(user_discover_index_path(@user1))
       end
 
