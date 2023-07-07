@@ -1,6 +1,3 @@
-require './app/services/tmdb_search'
-require './app/services/tmdb_discover'
-
 class MoviesController < ApplicationController
   def index
     @user = User.find(params[:id])
@@ -9,5 +6,13 @@ class MoviesController < ApplicationController
     else
       @results = TmdbDiscover.new.top_rated_list.top_rated_movies
     end
+  end
+
+  def show 
+    @user = User.find(params[:id])
+    @movie = params[:movie_id]
+    @actors = TmdbActors.new.movie_actors(@movie).actors
+    @reviews = TmdbReviews.new.movie_reviews(@movie)
+    @details = TmdbDetails.new.movie_details(@movie)
   end
 end

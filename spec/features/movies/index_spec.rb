@@ -8,6 +8,7 @@ RSpec.describe 'Discover Movies Page', type: :feature do
   describe 'displays search results of discovery with title and vote average of 20max movies' do
     it "should display the movie results' title and scores of top movies", :vcr do
       visit "users/#{user_1.id}/discover"
+
       click_button("Discover Top Rated Movies")
       expect(current_path).to eq("/users/#{user_1.id}/movies")
       expect(page).to have_content("The Godfather")
@@ -18,11 +19,19 @@ RSpec.describe 'Discover Movies Page', type: :feature do
   
     it "should display the movie results' title and scores of searched movies", :vcr do
       visit "users/#{user_1.id}/discover"
+
       fill_in(:search_field, with: "transformers")
       click_button("Search")
       expect(current_path).to eq("/users/#{user_1.id}/movies")
       expect(page).to have_content('Title: Transformers')
       expect(page).to have_content('Rating: 6.776')
+    end
+
+    it "should display each title as a link", :vcr do 
+      visit "users/#{user_1.id}/movies"
+
+      click_link("The Godfather")
+      expect(current_path).to eq("/users/#{user_1.id}/movies/238")
     end
   end
 end
