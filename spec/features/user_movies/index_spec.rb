@@ -23,5 +23,10 @@ RSpec.describe "Movie Results Page" do
       click_button "Discover Movies" 
       expect(current_path).to eq("/users/#{@user1.id}/discover")
     end
+
+    it "test service" do 
+      # MovieSearch.new.keyword_search("jaws")
+      MovieSearch.new.discover_popular
+    end
   end
 end
