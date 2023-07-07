@@ -9,7 +9,7 @@ class UserMoviesController < ApplicationController
     end
   end
 
-  def show 
-    @movie = 
-  end
+  # def show 
+  #   @movie = 
+  # end
 end

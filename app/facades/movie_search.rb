@@ -24,7 +24,8 @@ class MovieSearch
   end
 
   def full_movie_details_by_id(id)
-    movie_data = get_url("/3/movie/157336?append_to_response=credits,reviews,images")
+    movie_data = get_url("/3/movie/#{id}?append_to_response=credits,reviews,images")
     movie = Movie.new(movie_data) 
+    require 'pry'; binding.pry
   end
 end

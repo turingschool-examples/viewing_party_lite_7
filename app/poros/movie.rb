@@ -15,9 +15,9 @@ class Movie
     @runtime = movie_data[:runtime]
     @genres = movie_data[:genres]
     @summary = movie_data[:overview]
-    @cast = movie_data[:credits][:cast][0..9]
-    @num_reviews = movie_data[:reviews][:total_results]
-    @review_info = movie_data[:reviews][:results]
+    @cast = movie_data[:credits]&[:cast][0..9]
+    @num_reviews = movie_data[:reviews]&[:total_results]
+    @review_info = movie_data[:reviews]&[:results]
   end
 
   # handle in view:
