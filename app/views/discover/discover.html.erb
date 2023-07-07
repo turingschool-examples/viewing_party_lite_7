@@ -1,0 +1,14 @@
+<%= form_with url: "/users/user_id/discover", local: true do |form| %>
+  <%= form.label :search, 'Search For Movies' %>
+  <%= form.text_field :search %>
+  <%= form.submit 'Search' %>
+<% end %>
+<% if @movie %>
+  <h5>Movie <%= @movie[:title] %> was found! %></h5>
+<% end %>
+
+<% @facade.movies.each do |movie| %>
+  <ul class="member">
+    <li class="name"><%= movie.title %></li>
+  </ul>
+<% end %>
