@@ -15,9 +15,9 @@ class Movie
     #runtime and genre comes from details endpoint
     @runtime = movie_data[:runtime]
     # further work needed on genres, comes from movie details
-    @genres = movie_data[:genres].each do |hash|
-      @genres + [:name]
-    end
+    # @genres = movie_data[:genres].each do |hash|
+    #   @genres + [:name]
+    # end
     @summary = movie_data[:overview]
     # find endpoint for cast... first 10 only
     @cast = movie_data[:cast]

@@ -10,10 +10,16 @@ class MovieSearch
   end
 
   def keyword_search(keyword)
-    get_url("/3/search/movie?query=#{keyword}&include_adult=false&page=1")
+    movies = get_url("/3/search/movie?query=#{keyword}&include_adult=false&page=1")
+    movie_objects = movies[:results].map do |movie|
+      Movie.new(movie)
+    end
   end
 
   def discover_popular
-    data = get_url("/3/discover/movie?include_adult=false&page=1&sort_by=popularity.desc")
+    get_url("/3/discover/movie?include_adult=false&page=1&sort_by=popularity.desc")
+    movie_objects = movies[:results].map do |movie|
+      Movie.new(movie)
+    end
   end
 end

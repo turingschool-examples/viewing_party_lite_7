@@ -25,8 +25,8 @@ RSpec.describe "Movie Results Page" do
     end
 
     it "test service" do 
-      # MovieSearch.new.keyword_search("jaws")
-      MovieSearch.new.discover_popular
+      MovieSearch.new.keyword_search("jaws")
+      # MovieSearch.new.discover_popular
     end
   end
 end
