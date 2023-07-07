@@ -1,4 +1,4 @@
 <h2> Movies watched </h2>
 <% @user.watch_parties.each do |w| %>
-  <%= w.movie.title %> <br>
+  <%= link_to w.movie.title, movie_path(w.movie.id) %> <br>
 <% end %>
