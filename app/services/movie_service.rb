@@ -3,6 +3,10 @@ class MovieService
     get_url("/3/search/movie?query=#{key_word}")
   end
 
+  def top_rated
+    get_url("/3/movie/top_rated")
+  end
+
   def get_url(url)
     response = conn.get(url)
     JSON.parse(response.body, symbolize_names: true)
