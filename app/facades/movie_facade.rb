@@ -5,7 +5,7 @@ class MovieFacade
   end
 
   def search
-    if @search_type == "top_rated"
+    if @search_type == "top20rated"
       top_rated_movies
     else
       search_movies

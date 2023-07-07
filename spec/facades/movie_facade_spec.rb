@@ -4,7 +4,7 @@ RSpec.describe MovieFacade do
   describe 'class methods' do
     describe '#top_rated_movies' do
       it 'returns the top 20 movies' do
-        movies = MovieFacade.new({type: 'top_rated'}).search
+        movies = MovieFacade.new({type: 'top20rated'}).search
 
         expect(movies).to be_an(Array)
         expect(movies.count).to eq(20)
