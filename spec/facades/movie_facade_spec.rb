@@ -37,5 +37,12 @@ RSpec.describe MovieFacade do
       expect(movies.first).to be_a Movie
       expect(movies.count).to eq(20)
     end
+
+    it '#search_movies' do 
+      movies = @mf_search.search_movies
+      expect(movies).to be_a Array
+      expect(movies.first).to be_a Movie
+      expect(movies.count).to eq(20)
+    end
   end
 end

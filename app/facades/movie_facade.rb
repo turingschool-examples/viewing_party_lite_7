@@ -11,9 +11,10 @@ class MovieFacade
     create_movies(movies)
   end
 
-  # def search_movies(search)
-
-  # end
+  def search_movies
+    movies = service.search_movies(search)
+    create_movies(movies)
+  end
 
   def service 
     MovieService.new
