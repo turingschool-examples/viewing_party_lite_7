@@ -4,5 +4,9 @@ class MovieFacade
   def initialize(search = nil)
     @search = search
   end
+
+  def service 
+    MovieService.new
+  end
   
 end

@@ -13,4 +13,12 @@ RSpec.describe MovieFacade do
       expect(@mf_search.search).to eq('neverending')
     end
   end
+
+  describe 'class methods' do 
+    it '#service' do 
+      expect(@mf.service).to be_a MovieService
+    end
+
+    it '#'
+  end
 end
