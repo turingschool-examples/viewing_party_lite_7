@@ -25,7 +25,14 @@ RSpec.describe MovieFacade do
     end
 
     it '#create_movies' do 
-      movies = @mf.create_movies(@api_call_response)
+      movies = @mf.create_movies
+      expect(movies).to be_a Array
+      expect(movies.first).to be_a Movie
+      expect(movies.count).to eq(20)
+    end
+
+    it '#top_rated' do 
+      movies = @mf.top_movies
       expect(movies).to be_a Array
       expect(movies.first).to be_a Movie
       expect(movies.count).to eq(20)

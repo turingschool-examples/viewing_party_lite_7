@@ -5,6 +5,12 @@ class MovieFacade
     @search = search
   end
 
+  
+  def top_movies
+    movies = service.top_movies
+    create_movies(movies)
+  end
+
   def service 
     MovieService.new
   end
@@ -13,9 +19,5 @@ class MovieFacade
     movies_data[:results].map do |movie_data|
       Movie.new(movie_data)
     end
-  end
-
-  def retrieve_top_rated
-    service.
   end
 end
