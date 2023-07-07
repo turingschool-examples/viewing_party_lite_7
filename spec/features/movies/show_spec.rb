@@ -1,8 +1,7 @@
-require "rails_helper"
+require 'rails_helper'
 
-RSpec.describe "Movie Show Page", type: :feature do 
-  before(:each) do 
-
+RSpec.describe 'Movie Show Page', type: :feature do
+  before(:each) do
     # visit "/movies/"
   end
 end

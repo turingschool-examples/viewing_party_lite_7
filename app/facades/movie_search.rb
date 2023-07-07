@@ -17,7 +17,7 @@ class MovieSearch
   end
 
   def discover_popular
-    movies = get_url("/3/discover/movie?include_adult=false&page=1&sort_by=popularity.desc")
+    movies = get_url('/3/discover/movie?include_adult=false&page=1&sort_by=popularity.desc')
     movies[:results].map do |movie|
       Movie.new(movie)
     end
@@ -25,6 +25,6 @@ class MovieSearch
 
   def full_movie_details_by_id(id)
     movie_data = get_url("/3/movie/#{id}?append_to_response=credits,reviews,images")
-    Movie.new(movie_data) 
+    Movie.new(movie_data)
   end
 end

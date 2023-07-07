@@ -1,19 +1,24 @@
 def user_test_data
-  @user1 = User.create!(name: "Maggie", email: "maggie@gmail.com")
-  @user2 = User.create!(name: "Max", email: "max@gmail.com")
-  @user3 = User.create!(name: "Wolfie", email: "wolfie@gmail.com")
-  @user4 = User.create!(name: "Ink Jet Printer", email: "inkjet@gmail.com")
-  @viewing_party1 = ViewingParty.create!(day: "2023-07-01", start_time: "04:00 PM", movie_id: 1, duration: "120 minutes", movie_title: "Speed")
-  @viewing_party2 = ViewingParty.create!(day: "2023-07-02", start_time: "05:00 PM", movie_id: 2, duration: "125 minutes", movie_title: "Spirited Away")
-  @viewing_party3 = ViewingParty.create!(day: "2023-07-03", start_time: "04:30 PM", movie_id: 3, duration: "130 minutes", movie_title: "Up")
+  @user1 = User.create!(name: 'Maggie', email: 'maggie@gmail.com')
+  @user2 = User.create!(name: 'Max', email: 'max@gmail.com')
+  @user3 = User.create!(name: 'Wolfie', email: 'wolfie@gmail.com')
+  @user4 = User.create!(name: 'Ink Jet Printer', email: 'inkjet@gmail.com')
+  @viewing_party1 = ViewingParty.create!(day: '2023-07-01', start_time: '04:00 PM', movie_id: 1,
+                                         duration: '120 minutes', movie_title: 'Speed')
+  @viewing_party2 = ViewingParty.create!(day: '2023-07-02', start_time: '05:00 PM', movie_id: 2,
+                                         duration: '125 minutes', movie_title: 'Spirited Away')
+  @viewing_party3 = ViewingParty.create!(day: '2023-07-03', start_time: '04:30 PM', movie_id: 3,
+                                         duration: '130 minutes', movie_title: 'Up')
 
-  @viewing_party4 = ViewingParty.create!(day: "2023-07-05", start_time: "06:00 PM", movie_id: 4, duration: "140 minutes", movie_title: "Wolfie finds a bone!")
-  @viewing_party5 = ViewingParty.create!(day: "2023-07-08", start_time: "06:45 PM", movie_id: 5, duration: "144 minutes", movie_title: "Jaws")
-  
+  @viewing_party4 = ViewingParty.create!(day: '2023-07-05', start_time: '06:00 PM', movie_id: 4,
+                                         duration: '140 minutes', movie_title: 'Wolfie finds a bone!')
+  @viewing_party5 = ViewingParty.create!(day: '2023-07-08', start_time: '06:45 PM', movie_id: 5,
+                                         duration: '144 minutes', movie_title: 'Jaws')
+
   @userparty1 = UserViewingParty.create!(user_id: @user1.id, viewing_party_id: @viewing_party1.id, host: true)
   @userparty2 = UserViewingParty.create!(user_id: @user1.id, viewing_party_id: @viewing_party2.id, host: true)
   @userparty3 = UserViewingParty.create!(user_id: @user1.id, viewing_party_id: @viewing_party3.id, host: true)
-  
+
   @userparty4 = UserViewingParty.create!(user_id: @user1.id, viewing_party_id: @viewing_party4.id, host: false)
   @userparty5 = UserViewingParty.create!(user_id: @user1.id, viewing_party_id: @viewing_party5.id, host: false)
   @userparty6 = UserViewingParty.create!(user_id: @user2.id, viewing_party_id: @viewing_party5.id, host: false)
@@ -25,7 +30,7 @@ end
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
-require "simplecov"
+require 'simplecov'
 SimpleCov.start
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
@@ -40,7 +45,6 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
-
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are

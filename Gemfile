@@ -75,7 +75,7 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'rspec-rails'
+  gem 'shoulda-matchers', '~> 5.0'
   gem 'simplecov'
-  gem "shoulda-matchers", "~> 5.0"
-  gem "webmock"
+  gem 'webmock'
 end

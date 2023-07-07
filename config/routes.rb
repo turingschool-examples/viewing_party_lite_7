@@ -6,11 +6,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   get '/', to: 'application#home'
-  get "/register", to: "users#new"
-  get "/users/:id/discover", to: "movies#index"
-  get "/users/:user_id/movies", to: "user_movies#index"
-  get "/users/:user_id/movies/:movie_id", to: "user_movies#show"
+  get '/register', to: 'users#new'
+  get '/users/:id/discover', to: 'movies#index'
+  get '/users/:user_id/movies', to: 'user_movies#index'
+  get '/users/:user_id/movies/:movie_id', to: 'user_movies#show'
 
   resources :movies, only: [:show]
-  resources :users, only: [:index, :create, :show]
+  resources :users, only: %i[index create show]
 end

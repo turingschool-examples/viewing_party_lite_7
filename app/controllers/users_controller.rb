@@ -3,7 +3,7 @@
 class UsersController < ApplicationController
   def index; end
 
-  def show 
+  def show
     @user = User.find(params[:id])
   end
 
@@ -13,14 +13,15 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       redirect_to "/users/#{user.id}"
-      flash[:notice] = "User successfully registered."
+      flash[:notice] = 'User successfully registered.'
     else
-      redirect_to "/register"
+      redirect_to '/register'
       flash[:alert] = "Error: #{error_message(user.errors)}"
     end
   end
 
-  private 
+  private
+
   def user_params
     params.permit(:name, :email)
   end
