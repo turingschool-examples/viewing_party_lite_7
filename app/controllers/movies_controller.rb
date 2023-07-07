@@ -7,4 +7,8 @@ class MoviesController < ApplicationController
                   MovieFacade.new.top_rated
               end
   end
+
+  def show
+    @movie = MovieFacade.new.movie_details(params[:id])
+  end
 end

@@ -7,6 +7,10 @@ class MovieService
     get_url("/3/movie/top_rated")
   end
 
+  def movie_details(movie_id)
+    get_url("https://api.themoviedb.org/3/find/#{movie_id}")
+  end
+
   def get_url(url)
     response = conn.get(url)
     JSON.parse(response.body, symbolize_names: true)

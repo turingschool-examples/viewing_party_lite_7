@@ -15,6 +15,12 @@ class MovieFacade
     end
   end
 
+  def movie_details(movie_id)
+    require 'pry'; binding.pry
+
+    results = service.movie_details(movie_id)
+  end
+
   def service
     MovieService.new
   end
