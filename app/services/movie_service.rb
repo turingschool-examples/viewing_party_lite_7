@@ -5,8 +5,16 @@ class MovieService
     end
   end
 
-  def get_url(url)
+  def self.get_url(url)
     response = conn.get(url)
     JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.top_rated_movies
+    get_url("movie/top_rated")
+  end
+
+  def self.movie_search(query)
+    get_url("search/movie?query=#{query}")
   end
 end

@@ -1,0 +1,28 @@
+<h1> Discover Movies </h1>
+  <%= button_to "Back", user_discover_index_path(@facade.user_id), method: :get %>
+
+<section id="requested-movies">
+  <% unless @facade %>
+    <h3> No Movies Found </h3>
+  <% else %>
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Vote Average</th>
+      </tr>
+
+      <% @facade.movies.each do |movie| %>
+        <tr>
+          <td>
+            <%= link_to movie.title, user_movie_path(@facade.user_id, movie.id) %>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          </td>
+          <td>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <%= movie.rating %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+</section>
