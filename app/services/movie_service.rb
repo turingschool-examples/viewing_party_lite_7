@@ -8,8 +8,7 @@ class MovieService
   end
 
   def popular_movies
-    get_url("movie?include_adult=false&include_video=false
-    &language=en-US&page=1&sort_by=popularity.desc")
+    get_url("/3/movie/top_rated")
   end
 
   def get_url(url)

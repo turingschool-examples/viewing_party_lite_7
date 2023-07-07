@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "movies show page" do
+RSpec.describe "top rated movies" do
   let!(:user_1) { create(:user) }
   let!(:user_2) { create(:user) }
   let!(:user_3) { create(:user) }
@@ -20,11 +20,12 @@ RSpec.describe "movies show page" do
   let!(:movie_watch_party_7) { create(:movie_watch_party, watch_party_id: wapa_3.id, user_id: user_1.id) }
   let!(:movie_watch_party_8) { create(:movie_watch_party, watch_party_id: wapa_3.id, user_id: user_2.id) }
   let!(:movie_watch_party_9) { create(:movie_watch_party, watch_party_id: wapa_3.id, user_id: user_3.id) }
-  describe "As a visitor to movies show page" do
-    it "can display movie details", :vcr do
-      movie = MovieService.new.movie_by_id(455476)
-      visit "/movies/455476"
-      expect(page).to have_content("Knights of the Zodiac")
+
+  describe "As a visitor to top rated movies" do
+    it "can display movie by popularity", :vcr do
+      movies = MovieService.new.popular_movies
+      visit "/users/#{user_1.id}/movies"
+      save_and_open_page
     end
   end
 end
