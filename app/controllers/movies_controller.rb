@@ -9,7 +9,7 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @movie = MovieFacade.new.movie_details(params[:id])
-    # require 'pry'; binding.pry
+    @user = User.find(params[:user_id])
+    @movie = MovieFacade.new.find_movie(params[:id])
   end
 end
