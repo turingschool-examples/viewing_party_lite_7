@@ -9,7 +9,7 @@ RSpec.describe Movie do
       runtime: 55,
       genres: "drama",
       overview: "movie about ice and things"
-      }
+    }
 
     @movie = Movie.new(data)
   end

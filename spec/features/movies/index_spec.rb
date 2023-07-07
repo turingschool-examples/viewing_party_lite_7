@@ -7,9 +7,9 @@ RSpec.describe "Movie Results page", type: :feature do
       @user2 = User.create!(name: "Boston", email: "boston@example.com")
       visit user_discover_index_path(@user1.id)
       stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV['MOVIE_API_KEY']}")
-      .to_return(status: 200, body: File.read("./spec/fixtures/top_rated_movies.json"))
+        .to_return(status: 200, body: File.read("./spec/fixtures/top_rated_movies.json"))
       stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['MOVIE_API_KEY']}&query=The%20fellowship%20of%20the%20ring")
-      .to_return(status: 200, body: File.read("./spec/fixtures/search_movie.json"))
+        .to_return(status: 200, body: File.read("./spec/fixtures/search_movie.json"))
     end
     context "Happy Path" do
       it "I am taken to the results page and see the top rated movies" do
@@ -25,7 +25,7 @@ RSpec.describe "Movie Results page", type: :feature do
       end
 
       it "I am taken to the results page and see the movie I searched for" do
-        fill_in "Movie Title", with: ("The fellowship of the ring")
+        fill_in "Movie Title", with: "The fellowship of the ring"
         click_button("Find Movies")
         expect(current_path).to eq(user_movies_path(@user1.id))
 
