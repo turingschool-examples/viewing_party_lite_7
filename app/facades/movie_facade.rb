@@ -24,7 +24,9 @@ class MovieFacade
   def search_movies
     if @title.nil?
       movie = MovieService.new.search_movies_by_id(@id)
-      @movie = Movie.new(movie)
+      cast = MovieService.new.find_cast(@id)
+      reviews = MovieService.new.find_reviews(@id)
+      @movie = Movie.new(movie, cast, reviews)
     else
       movies = MovieService.new.search_movies(@title)
 

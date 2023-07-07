@@ -62,13 +62,16 @@ RSpec.describe "User's Movies page" do
         expect(page).to have_content(@movie2.vote_average)
       end
     end
-  end
 
-  it 'has a button to return to the Discover Movies page' do
-    visit user_movies_path(@user1)
+    it 'has a button to return to the Discover Movies page' do
+      visit user_discover_path(@user1)
 
-    expect(page).to have_button('Discover Page')
-    click_button('Discover Page')
-    expect(current_path).to eq(user_discover_path(@user1))
+      fill_in :title, with: 'Rebel Without a Cause'
+      click_button('Find Movies')
+  
+      expect(page).to have_button('Discover Page')
+      click_button('Discover Page')
+      expect(current_path).to eq(user_discover_path(@user1))
+    end
   end
 end
