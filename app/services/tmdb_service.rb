@@ -1,7 +1,7 @@
 class TmdbService
   def self.connect
     Faraday.new(url: "https://api.themoviedb.org") do |faraday|
-      faraday.headers["X-API-KEY"] = ENV["TMDB-KEY"]
+      faraday.params["api_key"] = ENV["TMDB-KEY"]
     end
   end
 end
