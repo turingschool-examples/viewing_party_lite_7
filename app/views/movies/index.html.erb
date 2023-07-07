@@ -1,0 +1,6 @@
+<h3> Movie Discovery Page </h3>
+
+<%= button_to "Discover Top Rated Movies", "/users/#{@user.id}/movies", method: :get %>
+
+<%= form_with url: "/users/#{@user.id}/movies", method: :get, local: true do |form| %>
+  <%= form.label "Search by Title" %>
