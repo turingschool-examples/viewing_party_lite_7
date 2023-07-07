@@ -63,7 +63,15 @@ RSpec.describe 'movies results page' do
       visit user_movies_path(@user_1)
     end
 
-    it 'title of movie is link to movie details page' 
+    it 'title of movie is link to movie details page' do 
+      within ".movies" do 
+        within(first(".movie")) do 
+          within ".title" do
+            expect(page).to have_link('The Godfather', href: "/users/#{@user_1.id}/movies/238")
+          end
+        end
+      end
+    end
 
     it 'has a button to return to Discover page' do
       expect(page).to have_button('Discover Page')
