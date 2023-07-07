@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   get "/register", to: "users#new"
   get '/users/:id/discover', to: "users#discover"
+  get '/users/:id/movies', to: 'movies#index'
 end
 
 # this comment is to test pr requests
