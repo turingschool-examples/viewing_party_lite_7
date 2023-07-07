@@ -18,8 +18,7 @@ RSpec.describe "User's Viewing Party page" do
     
     visit  user_viewing_party_path(@user1, 238)
   end
-  # When I visit the new viewing party page (/users/:user_id/movies/:movid_id/viewing-party/new, where :user_id is a valid user's id),
-  # I should see the name of the movie title rendered above a form with the following fields:
+ 
   
   # Duration of Party with a default value of movie runtime in minutes; a viewing party should NOT be created if set to a value less than the duration of the movie
   # When: field to select date
@@ -35,5 +34,47 @@ RSpec.describe "User's Viewing Party page" do
     expect(page).to have_button('Discover Page')
   end
 
+  it 'has a field for party duration that defaults to movie runtime' do
+    
+  end
+
+  it 'has a field for party date' do
+    
+  end
   
+  it 'has a field for party start time' do
+    
+  end
+  
+  xit 'has checkboxes for existing users' do
+    
+  end
+  
+  xit 'has a button to create a party' do 
+    
+  end
+  
+  xit 'redirects the user back to dashboard when Party is created' do 
+    
+  end
+  
+  xit 'displays new event on users dashboard' do 
+    
+  end
+  
+  xit 'displays events on other invited users dashboards' do
+    
+  end
+  
+  xit 'does not create a party if duration is less than the movie runtime' do
+  
+  end
+
+  xit 'does not create a party if any field is empty' do
+
+  end
+
+  xit 'does not create a party if no user is selected' do
+
+  end
 end
