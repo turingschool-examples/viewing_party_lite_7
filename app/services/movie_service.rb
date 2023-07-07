@@ -27,4 +27,8 @@ class MovieService
   def find_cast(movie_id)
     get_url("/3/movie/#{movie_id}/credits?language=en-US")
   end
+
+  def find_reviews(movie_id)
+    get_url("/3/movie/#{movie_id}/reviews?language=en-US")
+  end
 end

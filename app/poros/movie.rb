@@ -2,23 +2,27 @@ class Movie
   attr_reader :id,
               :title, 
               :vote_average, 
-              :num_reviews, 
+              :vote_count, 
               :runtime, 
               :summary, 
               :poster_path, 
               :genres,
-              :cast
+              :cast,
+              :num_reviews,
+              :reviews
 
-  def initialize(data, cast = nil)
+  def initialize(data, cast = nil, reviews = nil)
     @id = data[:id]
     @title = data[:title]
     @vote_average = data[:vote_average]
-    @num_reviews = data[:vote_count]
+    @vote_count = data[:vote_count]
     @runtime = convert_time(data[:runtime]) if data[:runtime]
     @summary = data[:overview]
     @poster_path = data[:poster_path]
     @genres = genre_names(data[:genres]) if data[:genres]
-    @cast = cast[:cast][0..9] if cast
+    @cast = convert_cast(cast[:cast][0..9]) if cast
+    @num_reviews = reviews[:total_results] if reviews
+    @reviews = reviews[:results] if reviews
   end
 
   def genre_names(genres)
@@ -31,5 +35,11 @@ class Movie
     hours = mins / 60
     minutes = mins % 60
     "#{hours}h #{minutes}m"
+  end
+
+  def convert_cast(cast)
+    cast.map do |actor|
+      actor[:name]
+    end
   end
 end
