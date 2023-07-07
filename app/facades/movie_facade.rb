@@ -14,7 +14,7 @@ class MovieFacade
 
   def top_rated_movies
     movies = MovieService.new.top_rated_movies
-    
+
     movies[:results].map do |movie|
       Movie.new(movie)
     end
