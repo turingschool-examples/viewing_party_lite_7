@@ -5,6 +5,8 @@ RSpec.describe MovieFacade do
     @mf = MovieFacade.new 
     @mf_search = MovieFacade.new('neverending')
 
+    # json_response = File.read('spec/fixtures/top_movies.json')
+    # @stub = stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated").to_return(status: 200, body: json_response)
     json = File.read('spec/fixtures/top_movies.json')
     @api_call_response = JSON.parse(json, symbolize_names: true)
   end
@@ -26,6 +28,7 @@ RSpec.describe MovieFacade do
       movies = @mf.create_movies(@api_call_response)
       expect(movies).to be_a Array
       expect(movies.first).to be_a Movie
+      expect(movies.count).to eq(20)
     end
   end
 end

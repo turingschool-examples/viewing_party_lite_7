@@ -14,4 +14,8 @@ class MovieFacade
       Movie.new(movie_data)
     end
   end
+
+  def retrieve_top_rated
+    service.
+  end
 end
