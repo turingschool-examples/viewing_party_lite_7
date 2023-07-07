@@ -1,0 +1,383 @@
+{
+  "page": 1,
+  "results": [
+      {
+          "adult": false,
+          "backdrop_path": "/xgU3KkqiME9pGe5gGCNpUYkoSWg.jpg",
+          "genre_ids": [
+              27,
+              53,
+              12
+          ],
+          "id": 578,
+          "original_language": "en",
+          "original_title": "Jaws",
+          "overview": "When an insatiable great white shark terrorizes the townspeople of Amity Island, the police chief, an oceanographer and a grizzled shark hunter seek to destroy the blood-thirsty beast.",
+          "popularity": 52.672,
+          "poster_path": "/lxM6kqilAdpdhqUl2biYp5frUxE.jpg",
+          "release_date": "1975-06-20",
+          "title": "Jaws",
+          "video": false,
+          "vote_average": 7.653,
+          "vote_count": 9280
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+              27
+          ],
+          "id": 645900,
+          "original_language": "en",
+          "original_title": "Jaws",
+          "overview": "Fessenden’s unfinished remake of Spielberg’s classic.",
+          "popularity": 0.825,
+          "poster_path": "/zQ790ksu8IXI0NO3ORz8MOCMuUG.jpg",
+          "release_date": "1978-01-01",
+          "title": "Jaws",
+          "video": false,
+          "vote_average": 10.0,
+          "vote_count": 1
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/bFJyNFux6UjM07tCKyNvh05xnPx.jpg",
+          "genre_ids": [
+              16
+          ],
+          "id": 514492,
+          "original_language": "en",
+          "original_title": "Jaws",
+          "overview": "A short film animation by Zaven Najjar about the movie \"Jaws\".",
+          "popularity": 0.6,
+          "poster_path": "/n29QyzfangOxBlNWtfukNXXu9YQ.jpg",
+          "release_date": "2018-05-29",
+          "title": "Jaws",
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/qNsLlAE9Sp34AYkaMw5083Xa660.jpg",
+          "genre_ids": [
+              27,
+              53
+          ],
+          "id": 579,
+          "original_language": "en",
+          "original_title": "Jaws 2",
+          "overview": "Police chief Brody must protect the citizens of Amity after a second monstrous shark begins terrorizing the waters.",
+          "popularity": 27.271,
+          "poster_path": "/cN3ijEwsn4kBaRuHfcJpAQJbeWe.jpg",
+          "release_date": "1978-06-16",
+          "title": "Jaws 2",
+          "video": false,
+          "vote_average": 5.964,
+          "vote_count": 1657
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/mkTHOurFPTI0tobrregK7NpaLzy.jpg",
+          "genre_ids": [
+              53,
+              27
+          ],
+          "id": 17692,
+          "original_language": "en",
+          "original_title": "Jaws 3-D",
+          "overview": "This third film in the series follows a group of marine biologists attempting to capture a young great white shark that has wandered into Florida's Sea World Park. However, later it is discovered that the shark's 35-foot mother is also a guest at Sea World. What follows is the shark wreaking havoc on the visitors in the park.",
+          "popularity": 30.54,
+          "poster_path": "/kqDXj53F9paqVGJLGfHtz7giJ3s.jpg",
+          "release_date": "1983-07-22",
+          "title": "Jaws 3-D",
+          "video": false,
+          "vote_average": 4.4,
+          "vote_count": 1111
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/cJyQfwSEa5IjOdeNTuiWjciVbou.jpg",
+          "genre_ids": [
+              12,
+              53,
+              27
+          ],
+          "id": 580,
+          "original_language": "en",
+          "original_title": "Jaws: The Revenge",
+          "overview": "After another deadly shark attack, Ellen Brody decides she has had enough of New England's Amity Island and moves to the Caribbean to join her son, Michael, and his family. But a great white shark has followed her there, hungry for more lives.",
+          "popularity": 16.765,
+          "poster_path": "/kGiaOztahZV2x7bil7sbk7fb6ob.jpg",
+          "release_date": "1987-07-17",
+          "title": "Jaws: The Revenge",
+          "video": false,
+          "vote_average": 4.067,
+          "vote_count": 889
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [],
+          "id": 843519,
+          "original_language": "en",
+          "original_title": "Jaws Ruin the Prom",
+          "overview": "William Davies' life goal is to become his school's \"Prom King\". He's finished his final exams and now must convince his classmates to vote for him to become the \"Prom King\". However, the beach near his school has recently become shark-infested.",
+          "popularity": 0.6,
+          "poster_path": "/rGXekmKHibBXNuX9IF7RqNPQRxz.jpg",
+          "release_date": "2021-09-05",
+          "title": "Jaws Ruin the Prom",
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [],
+          "id": 707083,
+          "original_language": "en",
+          "original_title": "Air Jaws: Back from the Dead",
+          "overview": "After great whites, known as \"Air Jaws\", vanished from their hunting grounds in South Africa, photographer Chris Fallows and filmmaker Jeff Kurr seek a new location in New Zealand.",
+          "popularity": 0.6,
+          "poster_path": "/q96iiyVGgzBQxuNAdRcR3uf6uJ8.jpg",
+          "release_date": "2018-07-25",
+          "title": "Air Jaws: Back From The Dead",
+          "video": false,
+          "vote_average": 4.0,
+          "vote_count": 3
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/Wi9bgiwfJPYKFcJIiUqCNDFNtf.jpg",
+          "genre_ids": [
+              10749,
+              35
+          ],
+          "id": 185008,
+          "original_language": "hi",
+          "original_title": "ये जवानी है दीवानी",
+          "overview": "Bunny and Naina meet when they graduate from college and again in their late 20s.",
+          "popularity": 7.186,
+          "poster_path": "/em39H81XLCDgXsI7V4IcBZseEO6.jpg",
+          "release_date": "2013-05-31",
+          "title": "Yeh Jawaani Hai Deewani",
+          "video": false,
+          "vote_average": 7.247,
+          "vote_count": 219
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/vCQRs9QMADZEbGiS4hJkjAzis36.jpg",
+          "genre_ids": [
+              27,
+              12,
+              35,
+              53,
+              28
+          ],
+          "id": 84060,
+          "original_language": "en",
+          "original_title": "Cruel Jaws",
+          "overview": "A tiger shark bred by the Navy as a killing machine is wreaking havoc in the sleepy tourist town of Hampton Bay.",
+          "popularity": 6.924,
+          "poster_path": "/3aLabIgttFYtHaN7eVQAA9nGdHz.jpg",
+          "release_date": "1995-05-05",
+          "title": "Cruel Jaws",
+          "video": false,
+          "vote_average": 4.407,
+          "vote_count": 70
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/u7tH5YKGnnET6tHRAWMLFsF9pdI.jpg",
+          "genre_ids": [
+              35,
+              18,
+              10749
+          ],
+          "id": 266699,
+          "original_language": "sh",
+          "original_title": "U raljama života",
+          "overview": "Two parallel tales about two modern women. One is Štefica Cvek, average and lonely girl who desperately tries to find the man of her dreams. The other story is about a woman director who is making the movie about Štefica and has the same problem.",
+          "popularity": 0.6,
+          "poster_path": "/5VdK0ASt6R2BqrlwKnoVQg0XXQw.jpg",
+          "release_date": "1984-04-04",
+          "title": "In the Jaws of Life",
+          "video": false,
+          "vote_average": 5.5,
+          "vote_count": 4
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/lVzuxAoV8qaEWuBHGfTlhCnUU1T.jpg",
+          "genre_ids": [
+              18
+          ],
+          "id": 95080,
+          "original_language": "de",
+          "original_title": "Ein toter Taucher nimmt kein Gold",
+          "overview": "Two divers find a treasure map, which apparently points to a sunken treasure below the ocean. They hire a professional to help them get the gold but this guy turns out to have a few secrets of his own.",
+          "popularity": 0.6,
+          "poster_path": "/32O4nax9Ka2EeiGcuVqXkUg1TW8.jpg",
+          "release_date": "1974-03-15",
+          "title": "Deadly Jaws",
+          "video": false,
+          "vote_average": 3.0,
+          "vote_count": 1
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/iZkXyDAbxahR2OjLA0ZwoS4nLqM.jpg",
+          "genre_ids": [
+              27,
+              9648,
+              53
+          ],
+          "id": 85512,
+          "original_language": "en",
+          "original_title": "Jaws of Satan",
+          "overview": "A preacher whose ancestors were Druids battles Satan, who has taken the form of a huge snake.",
+          "popularity": 1.986,
+          "poster_path": "/rMr9cwQAJst3dKZmxdA8rFS13aZ.jpg",
+          "release_date": "1981-07-24",
+          "title": "Jaws of Satan",
+          "video": false,
+          "vote_average": 5.0,
+          "vote_count": 29
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/1CTQ5HgCi6gpD8sEsgBsyzGvtie.jpg",
+          "genre_ids": [
+              18,
+              28,
+              53
+          ],
+          "id": 872906,
+          "original_language": "hi",
+          "original_title": "जवान",
+          "overview": "",
+          "popularity": 2.651,
+          "poster_path": "/iziN1ingpHwHo02jP4yAH30XzJ5.jpg",
+          "release_date": "2023-09-07",
+          "title": "Jawan",
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/x0k953pB77nzQf5K2K14HoNTT5X.jpg",
+          "genre_ids": [
+              99
+          ],
+          "id": 106262,
+          "original_language": "en",
+          "original_title": "The Shark Is Still Working: The Impact & Legacy of 'Jaws'",
+          "overview": "After three decades, Jaws continues to intrigue, thrill and frighten viewers. This documentary focuses on the many ways in which Jaws has helped to shape popular culture.",
+          "popularity": 4.181,
+          "poster_path": "/vPMkNgpHfgGP38Ula9SN48TakhY.jpg",
+          "release_date": "2009-05-02",
+          "title": "The Shark Is Still Working: The Impact & Legacy of 'Jaws'",
+          "video": false,
+          "vote_average": 7.2,
+          "vote_count": 20
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/7MANnNbpsIQlRNim3unUl5QQPd3.jpg",
+          "genre_ids": [
+              99,
+              10770
+          ],
+          "id": 988337,
+          "original_language": "en",
+          "original_title": "Counting Jaws",
+          "overview": "Shark encounters off the coast of California are skyrocketing. Now, a team of researchers is on a mission to investigate a newly discovered white shark hot spot close to popular beaches and determine how many great whites are out there. Their expedition will bring them face-to-face with some of the biggest sharks on the planet.",
+          "popularity": 1.779,
+          "poster_path": "/kAc1NGeGW5INfPZstuoysYRARAz.jpg",
+          "release_date": "2022-07-10",
+          "title": "Counting Jaws",
+          "video": false,
+          "vote_average": 2.0,
+          "vote_count": 1
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/gqO9RdweTGyBzfGmnr19zcazSbV.jpg",
+          "genre_ids": [
+              99
+          ],
+          "id": 167065,
+          "original_language": "en",
+          "original_title": "The Making of 'Jaws'",
+          "overview": "A documentary on the making of one of the greatest films ever made, filled with trivia, interviews from cast and crew and never-before-seen footage.",
+          "popularity": 2.042,
+          "poster_path": "/osyj5B7WrVn0Oc2oDWvDVoSCQ9y.jpg",
+          "release_date": "1995-11-28",
+          "title": "The Making of 'Jaws'",
+          "video": false,
+          "vote_average": 6.6,
+          "vote_count": 26
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/noCk9K1YrZexDGqTMlDDDNhbzFn.jpg",
+          "genre_ids": [
+              35
+          ],
+          "id": 607297,
+          "original_language": "hi",
+          "original_title": "जवानी जान",
+          "overview": "The carefree life of a 40-year-old playboy comes to a standstill when he comes to know that he has a 20 something-year-old daughter.",
+          "popularity": 3.298,
+          "poster_path": "/705gRohjQM7v3yuX9kHMNM9fjEy.jpg",
+          "release_date": "2020-01-31",
+          "title": "Jawaani Jaaneman",
+          "video": false,
+          "vote_average": 6.1,
+          "vote_count": 27
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/pu9uJL70t7fMEBRJO0CaxS3bSCm.jpg",
+          "genre_ids": [
+              35
+          ],
+          "id": 693838,
+          "original_language": "hi",
+          "original_title": "इंदु की जवानी",
+          "overview": "A feisty girl from Ghaziabad makes her profile on an online dating app and her left and right swipes on the app lead to hilarious consequences.",
+          "popularity": 1.589,
+          "poster_path": "/sqFi1T7MMUSZ0nTGL1UphBykz3a.jpg",
+          "release_date": "2020-12-11",
+          "title": "Indoo Ki Jawani",
+          "video": false,
+          "vote_average": 4.0,
+          "vote_count": 6
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/fh0qZukZprA4WTf8HL0cbJ4IqyN.jpg",
+          "genre_ids": [
+              28,
+              14,
+              27
+          ],
+          "id": 542476,
+          "original_language": "en",
+          "original_title": "Santa Jaws",
+          "overview": "Trying to survive the family Christmas, Cody makes a wish to be alone, which ends up backfiring when a shark manifests and kills his entire family.",
+          "popularity": 2.364,
+          "poster_path": "/Aa83AOi5XnyR2gPmb1CRJbtZw1y.jpg",
+          "release_date": "2018-08-15",
+          "title": "Santa Jaws",
+          "video": false,
+          "vote_average": 4.7,
+          "vote_count": 21
+      }
+  ],
+  "total_pages": 5,
+  "total_results": 89
+}
