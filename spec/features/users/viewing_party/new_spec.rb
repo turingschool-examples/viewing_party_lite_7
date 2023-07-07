@@ -24,7 +24,6 @@ RSpec.describe "User's Viewing Party page" do
   end
 
   it 'has a field for party duration that defaults to movie runtime' do
-    save_and_open_page
     expect(page).to have_field('duration', with: "2h 55m") ##change to minutes 
   end
 
@@ -43,12 +42,19 @@ RSpec.describe "User's Viewing Party page" do
     expect(page).to_not have_field('selected_users[]', with: @user1.id)
   end
   
-  xit 'has a button to create a party' do 
-    
+  it 'has a button to create a party' do 
+    expect(page).to have_button('Create Party')
   end
   
-  xit 'redirects the user back to dashboard when Party is created' do 
-    
+  it 'redirects the user back to dashboard when Party is created' do 
+    fill_in 'duration', with: 210
+    fill_in 'date', with: "2024-01-01"
+    fill_in 'start_time', with: "07:00"
+    check("selected_users[]", option: @user2.id)
+    check("selected_users[]", option: @user3.id)
+    click_button('Create Party')
+
+    expect(current_path).to eq(user_path(@user1))
   end
   
   xit 'displays new event on users dashboard' do 
