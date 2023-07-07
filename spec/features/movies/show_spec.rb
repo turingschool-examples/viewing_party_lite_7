@@ -15,7 +15,7 @@ RSpec.describe 'Movie Show Page' do
       expect(current_path).to eq("/users/#{@user1.id}/movies")
       expect(page).to have_link("The Shawshank Redemption")
 
-      click_link movies.first.title
+      click_link("#{movies.first.title}")
 
       expect(current_path).to eq("/users/#{@user1.id}/movies/#{movies.first.id}")
     end
@@ -32,7 +32,7 @@ RSpec.describe 'Movie Show Page' do
       expect(current_path).to eq("/users/#{@user1.id}/movies")
       expect(page).to have_link("The Matrix")
 
-      click_link movies.first.title
+      click_link("#{movies.first.title}")
 
       expect(current_path).to eq("/users/#{@user1.id}/movies/#{movies.first.id}")
     end
