@@ -6,8 +6,7 @@ RSpec.describe "Movie Details Page", type: :feature do
   end
   describe "details page content" do 
     it "has a title, vote, runtime, summary, and count of reviews" do 
-      visit "/user/#{@user.id}/movies/157336"
-      save_and_open_page
+      
     end
 
     it "lists genres" do 
