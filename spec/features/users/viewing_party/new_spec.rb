@@ -36,8 +36,11 @@ RSpec.describe "User's Viewing Party page" do
     expect(page).to have_field('start_time')
   end
   
-  xit 'has checkboxes for existing users' do
-    
+  it 'has checkboxes for all other existing users' do
+    expect(page).to have_field('selected_users[]', with: @user2.id)
+    expect(page).to have_field('selected_users[]', with: @user3.id)
+    expect(page).to have_field('selected_users[]', with: @user4.id)
+    expect(page).to_not have_field('selected_users[]', with: @user1.id)
   end
   
   xit 'has a button to create a party' do 
