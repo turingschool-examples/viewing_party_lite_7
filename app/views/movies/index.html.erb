@@ -1,4 +1,8 @@
+<br><%= link_to "Movie Discover Page", "/users/#{@user.id}/discover", method: :get %>
 <h2> Movies watched </h2>
 <% @user.watch_parties.each do |w| %>
-  <%= link_to w.movie.title, movie_path(w.movie.id) %> <br>
+  <p>
+  Movie: <%= link_to w.movie.title, movie_path(w.movie.id) %> <br>
+  Rating: <% w.movie.rating %>
+  </p>
 <% end %>
