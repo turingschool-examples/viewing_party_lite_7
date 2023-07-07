@@ -43,7 +43,7 @@ RSpec.describe 'Users Discover Page', type: :feature do
       fill_in :search, with: 'Batman Forever'
       click_button "Search"
 
-      expect(current_path).to eq(movies_path(@user1))
+      expect(current_path).to eq(search_path(@user1))
     end
   end
 end
