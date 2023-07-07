@@ -19,23 +19,4 @@ class Movie
     @num_reviews = movie_data[:reviews]
     @review_info = movie_data[:reviews]
   end
-
-  # handle in view:
-  # def get_genre_details
-  #   @genres.map! do |hash|
-  #     @genres << [:name]
-  #   end
-  # end
-
-  # do in view
-  # def get_cast_details
-
-  # end
-
-  # do this in the movie detials view:
-  # def get_review_details
-  #   @review_info.map! do |review|
-  #     review[]
-  #   end
-  # end
 end

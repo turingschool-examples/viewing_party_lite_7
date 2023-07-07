@@ -11,20 +11,20 @@ class MovieSearch
 
   def keyword_search(keyword)
     movies = get_url("/3/search/movie?query=#{keyword}&include_adult=false&page=1")
-    movie_objects = movies[:results].map do |movie|
+    movies[:results].map do |movie|
       Movie.new(movie)
     end
   end
 
   def discover_popular
     movies = get_url("/3/discover/movie?include_adult=false&page=1&sort_by=popularity.desc")
-    movie_objects = movies[:results].map do |movie|
+    movies[:results].map do |movie|
       Movie.new(movie)
     end
   end
 
   def full_movie_details_by_id(id)
     movie_data = get_url("/3/movie/#{id}?append_to_response=credits,reviews,images")
-    movie = Movie.new(movie_data) 
+    Movie.new(movie_data) 
   end
 end

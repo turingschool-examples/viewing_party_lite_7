@@ -17,8 +17,6 @@ RSpec.describe "Discover Movies Page", type: :feature do
 
   describe "discovery links that route to users/:user_id/movies" do 
     it "button to discover top rated movies" do 
-      
-
       click_button "Discover Top Rated Movies"
 
       expect(page.status_code).to eq 200
