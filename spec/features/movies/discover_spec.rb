@@ -31,7 +31,7 @@ RSpec.describe 'Users Discover Page', type: :feature do
       expect(page).to have_button("Search")
     end
 
-    it 'redirect to movies result page after clicking Discover Top Rated Movies or search button' do
+    it 'redirect to movies result page after clicking Discover Top Rated Movies or search button', :vcr do
       visit discover_path(@user1)
 
       click_button("Discover Top Rated Movies")
