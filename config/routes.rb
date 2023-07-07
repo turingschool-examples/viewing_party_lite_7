@@ -9,8 +9,11 @@ Rails.application.routes.draw do
   get "/register", to: "users#new"
   post "/register", to: "users#create"
 
-  get "/users/:id/discover", to: "discover#index" 
+  # get "/users/:id/discover", to: "discover#index"
 
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    resources :discover, only: [:index]
+    resources :movies, only: [:index]
+  end
 
 end
