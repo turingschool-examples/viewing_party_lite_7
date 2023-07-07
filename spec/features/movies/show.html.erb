@@ -1,43 +1,33 @@
 require "rails_helper"
 
 RSpec.describe "/users/:id" do
-  describe "As a visitor" do
-    describe "when I visit the users show page" do
-      let!(:user_1) { create(:user) }
-      let!(:user_2) { create(:user) }
-      let!(:user_3) { create(:user) }
+  let!(:user_1) { create(:user) }
+  let!(:user_2) { create(:user) }
+  let!(:user_3) { create(:user) }
 
-      let!(:wapa_1) { create(:watch_party) }
-      let!(:wapa_2) { create(:watch_party) }
-      let!(:wapa_3) { create(:watch_party) }
+  let!(:wapa_1) { create(:watch_party) }
+  let!(:wapa_2) { create(:watch_party) }
+  let!(:wapa_3) { create(:watch_party) }
 
-      let!(:movie_watch_party_1) { create(:movie_watch_party, watch_party_id: wapa_1.id, user_id: user_1.id) }
-      let!(:movie_watch_party_2) { create(:movie_watch_party, watch_party_id: wapa_1.id, user_id: user_2.id) }
-      let!(:movie_watch_party_3) { create(:movie_watch_party, watch_party_id: wapa_1.id, user_id: user_3.id) }
+  let!(:movie_watch_party_1) { create(:movie_watch_party, watch_party_id: wapa_1.id, user_id: user_1.id) }
+  let!(:movie_watch_party_2) { create(:movie_watch_party, watch_party_id: wapa_1.id, user_id: user_2.id) }
+  let!(:movie_watch_party_3) { create(:movie_watch_party, watch_party_id: wapa_1.id, user_id: user_3.id) }
 
-      let!(:movie_watch_party_4) { create(:movie_watch_party, watch_party_id: wapa_2.id, user_id: user_1.id) }
-      let!(:movie_watch_party_5) { create(:movie_watch_party, watch_party_id: wapa_2.id, user_id: user_2.id) }
-      let!(:movie_watch_party_6) { create(:movie_watch_party, watch_party_id: wapa_2.id, user_id: user_3.id) }
+  let!(:movie_watch_party_4) { create(:movie_watch_party, watch_party_id: wapa_2.id, user_id: user_1.id) }
+  let!(:movie_watch_party_5) { create(:movie_watch_party, watch_party_id: wapa_2.id, user_id: user_2.id) }
+  let!(:movie_watch_party_6) { create(:movie_watch_party, watch_party_id: wapa_2.id, user_id: user_3.id) }
 
-      let!(:movie_watch_party_7) { create(:movie_watch_party, watch_party_id: wapa_3.id, user_id: user_1.id) }
-      let!(:movie_watch_party_8) { create(:movie_watch_party, watch_party_id: wapa_3.id, user_id: user_2.id) }
-      let!(:movie_watch_party_9) { create(:movie_watch_party, watch_party_id: wapa_3.id, user_id: user_3.id) }
+  let!(:movie_watch_party_7) { create(:movie_watch_party, watch_party_id: wapa_3.id, user_id: user_1.id) }
+  let!(:movie_watch_party_8) { create(:movie_watch_party, watch_party_id: wapa_3.id, user_id: user_2.id) }
+  let!(:movie_watch_party_9) { create(:movie_watch_party, watch_party_id: wapa_3.id, user_id: user_3.id) }
+  feature "As a visitor" do
+    scenario "when I visit the users show page" do
     end
 
-    it "can display movie details" do
-      attrs = {
-      title: "Ant-Man and the Wasp: Quantumania",
-      length: 120,
-      rating: 85,
-      id: 1
-      }
-
-      movie = Movie.new(attrs)
-      visit "/movies/#{movie.id}"
-      require 'pry'; binding.pry
-      expect(page).to have_content("Ant-Man and the Wasp: Quantumania")
-
-
+    it "can display movie details", :vcr do
+      movie = MovieService.new.movie_by_id(455476)
+      visit "/movies/455476"
+      expect(page).to have_content("Knights of the Zodiac")
     end
   end
 end

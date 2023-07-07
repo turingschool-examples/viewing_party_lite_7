@@ -46,15 +46,17 @@ http_interactions:
       - Accept-Encoding
       - Origin
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 b6caa49e59026d07a8e0859900a10572.cloudfront.net (CloudFront)
+      - 1.1 c34bd35d24f6df50307d1ac92d0f6110.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - IAD55-P1
+      - IAD89-C3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - h2OKXWVJjNyHzKsV19jNR8XbPl4_b8GuG2in52DeeLF12HrxyGgndA==
+      - on-ZCZfNJ1zmBc0_cm2ZF9Pb-TwON5EIXbjjpA9StsJn-cOVF6runQ==
+      Age:
+      - '19687'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/oqP1qEZccq5AD9TVTIaO6IGUj7o.jpg","belongs_to_collection":null,"budget":60000000,"genres":[{"id":14,"name":"Fantasy"},{"id":28,"name":"Action"},{"id":12,"name":"Adventure"}],"homepage":"https://kotzmovie.com","id":455476,"imdb_id":"tt6528290","original_language":"en","original_title":"Knights
@@ -67,5 +69,5 @@ http_interactions:
         Animation","origin_country":"JP"}],"production_countries":[{"iso_3166_1":"JP","name":"Japan"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"2023-04-27","revenue":6794519,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Go
         beyond your destiny.","title":"Knights of the Zodiac","video":false,"vote_average":6.533,"vote_count":318}'
-  recorded_at: Fri, 07 Jul 2023 14:33:35 GMT
+  recorded_at: Fri, 07 Jul 2023 20:01:42 GMT
 recorded_with: VCR 6.2.0

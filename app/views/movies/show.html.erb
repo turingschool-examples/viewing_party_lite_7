@@ -1,4 +1,5 @@
-require 'pry'; binding.pry
-<br><%= @movie.title %>
-<%= @movie.length %>
-<%= @movie.rating %>
+<p>
+Movie: <%= @facade.details[:title] %> <br>
+Length:<%= @facade.details[:length] %> <br>
+Rating: <%= @facade.details[:rating] %> <br>
+</p>

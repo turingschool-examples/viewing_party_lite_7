@@ -1,4 +1,5 @@
 class SearchFacade
+  attr_reader :movie_by_id
   def initialize(movie_id)
     @movie_id = movie_id
   end

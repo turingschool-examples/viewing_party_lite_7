@@ -4,7 +4,7 @@ class MovieService
   end
 
   def all_movies(movies)
-    get_url("3/movie")
+    get_url("/3/movie")
   end
 
   def popular_movies
