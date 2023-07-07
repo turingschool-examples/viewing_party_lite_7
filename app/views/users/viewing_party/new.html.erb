@@ -6,19 +6,20 @@
     <h3>Viewing Party Details</h3>
     <p>Movie Title <%= @movie.title %></p>
     <%= form_with url: user_new_viewing_party_path(@user, @movie), method: :post, local: true do |form| %>
-      <%= form.label :duration %>
-      <%= form.text_field :duration, value: @movie.runtime %>
-      <%= form.label :date %>
-      <%= form.date_field :date %>
-      <%= form.label :time %>
-      <%= form.time_field :start_time%>
+      <p><%= form.label :duration %>
+      <%= form.text_field :duration, value: @movie.runtime %></p>
+      <p><%= form.label :date %>
+      <%= form.date_field :date %></p>
+      <p><%= form.label :time %>
+      <%= form.time_field :start_time%></p>
 
-      
+      <p>Invite Other Users</p>
+      <% @users.each do |user| %>
+        <%= form.check_box :selected_users, { multiple: true }, user.id, nil %>
+        <%= user.name %><br>
+      <% end %><br>
 
-
+      <%= form.submit "Create Party" %>
     <% end %>
   </div>
-  
-  
-
 </div>
