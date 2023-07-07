@@ -11,8 +11,9 @@ Rails.application.routes.draw do
   get "/register", to: "users#new", as: "register"
   
   get "/users/:id/movies", to: "movies#index", as: "movies"
+  post "/users/:id/movies", to: "movies#index", as: "search"
 
-  post "/search", to: "search#search"
+  # post "/search", to: "search#search"
 
   resources :users, only: [:create]
 end
