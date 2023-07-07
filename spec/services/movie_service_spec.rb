@@ -15,6 +15,7 @@ RSpec.describe MovieService do
     it '#conn' do 
       response = @ms.conn
       expect(response).to be_a Faraday::Connection
+      expect(response.headers).to have_key('Authorization')
     end
 
     it '#get_url' do 
@@ -31,7 +32,18 @@ RSpec.describe MovieService do
       expect(movie_data[:vote_average]).to be_a Float
     end
 
-    it '#top_movies' 
+    it '#top_movies' do 
+      top_movies = @ms.top_movies
+      expect(top_movies).to be_a Hash
+
+      first_movie = top_movies[:results].first
+
+      expect(first_movie).to have_key(:title)
+      expect(first_movie[:title]).to be_a String
+
+      expect(first_movie).to have_key(:vote_average)
+      expect(first_movie[:vote_average]).to be_a Float
+    end
 
     it '#search_movies'
   end

@@ -1,6 +1,8 @@
 class MovieService 
   
-
+  def top_movies
+    get_url('movie/top_rated')
+  end
 
   def conn 
     Faraday.new(url: 'https://api.themoviedb.org/3/') do |faraday|
