@@ -1,12 +1,20 @@
 class Details
-  attr_reader :title, :vote_average, :runtime, :genres, :summary
+  attr_reader :title, 
+              :vote_average, 
+              :runtime, 
+              :genres, 
+              :summary,
+              :default_runtime, 
+              :id
 
   def initialize(data)
     @title = data[:title]
     @vote_average = data[:vote_average]
     @runtime = format_time(data[:runtime])
+    @default_runtime = data[:runtime]
     @genres = data[:genres]
     @summary = data[:overview]
+    @id = data[:id]
   end
 
   def format_time(i)

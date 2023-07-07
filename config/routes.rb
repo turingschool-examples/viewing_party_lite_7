@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :viewing_party_users
-  resources :viewing_parties
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -9,10 +7,12 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :create]
 
+  post "/viewing_parties", to: "viewing_parties#create"
   get "/register", to: "users#new"
   get '/users/:id/discover', to: "users#discover"
   get '/users/:id/movies', to: 'movies#index'
   get '/users/:id/movies/:movie_id', to: 'movies#show'
+  get '/users/:id/movies/:movie_id/viewing-party/new', to: "viewing_parties#new"
 end
 
 # this comment is to test pr requests
