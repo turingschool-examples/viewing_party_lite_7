@@ -5,6 +5,8 @@ require_relative '../config/environment'
 # Prevent database truncation if the environment is production
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
+require 'webmock/rspec'
+
 # require 'shoulda/matchers'
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -69,4 +71,11 @@ RSpec.configure do |config|
       with.library :rails
     end
   end
+end
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+  config.hook_into :webmock
+  config.filter_sensitive_data('<TMDB_AUTH>') { ENV["TMDB_AUTH"] }
+  config.configure_rspec_metadata!
+  config.allow_http_connections_when_no_cassette = true
 end
