@@ -15,22 +15,25 @@ RSpec.describe "Movie Results page", type: :feature do
       it "I am taken to the results page and see the top rated movies" do
         click_button("Discover Top Rated Movies")
         expect(current_path).to eq(user_movies_path(@user1.id))
-
+        expect(page).to have_content("Title")
+        expect(page).to have_content("Vote Average")
         expect(page).to have_link("The Godfather")
-        expect(page).to have_content("Rating: 8.7")
+        expect(page).to have_content("8.7")
 
-        expect(page).to have_link("Back")
-        click_link("Back")
+        expect(page).to have_button("Back")
+        click_button("Back")
         expect(current_path).to eq(user_discover_index_path(@user1))
       end
 
       it "I am taken to the results page and see the movie I searched for" do
         fill_in "Movie Title", with: "The fellowship of the ring"
         click_button("Find Movies")
+        expect(page).to have_content("Title")
+        expect(page).to have_content("Vote Average")
         expect(current_path).to eq(user_movies_path(@user1.id))
 
         expect(page).to have_link("The Lord of the Rings: The Fellowship of the Ring")
-        expect(page).to have_content("Rating: 8.399")
+        expect(page).to have_content("8.399")
       end
     end
   end
