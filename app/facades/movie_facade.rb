@@ -29,10 +29,7 @@ class MovieFacade
       @movie = Movie.new(movie, cast, reviews)
     else
       movies = MovieService.new.search_movies(@title)
-
-      movies[:results].map do |movie|
-        Movie.new(movie)
-      end
+      movies[:results].map { |movie| Movie.new(movie) }
     end
   end
 end

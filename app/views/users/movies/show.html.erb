@@ -19,5 +19,11 @@
     <p><strong>Cast:</strong></p>
     <p><%= @movie.cast.join(", ") %></p><br>
     <p><strong><%= @movie.num_reviews %> Reviews </strong></p>
+    <div id="reviews">
+      <% @movie.reviews.each do |review| %>
+        <p><strong><%= review[:author] %>: </strong>
+        <%= review[:content] %></p>
+      <% end %>
+    </div>
   </div>
 </div>

@@ -62,6 +62,11 @@ RSpec.describe "User's Movie Show page" do
   end
 
   it "displays each review's author and information" do
-
+    within('#movie-info') do
+      within('#reviews') do
+        expect(page).to have_content(@movie1_by_id.reviews.first[:author])
+        expect(page).to have_content(@movie1_by_id.reviews.last[:content])
+      end
+    end
   end
 end
