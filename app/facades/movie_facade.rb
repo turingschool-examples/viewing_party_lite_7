@@ -1,4 +1,4 @@
-class MoviesFacade
+class MovieFacade
   attr_reader :keyword
 
   def initialize(keyword = nil)

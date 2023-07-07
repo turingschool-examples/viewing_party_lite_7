@@ -2,7 +2,7 @@ class MoviesController < ApplicationController
   before_action :find_user
 
   def index
-    @facade = search_keyword? ? MoviesFacade.new(params[:keyword]) : MoviesFacade.new
+    @facade = search_keyword? ? MovieFacade.new(params[:keyword]) : MovieFacade.new
   end
 
   def show; end
