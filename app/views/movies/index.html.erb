@@ -1,0 +1,7 @@
+<%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %>
+<h3>Results:<h3>
+
+<% @results.each do |result| %>
+  <p>Title: <%= result[:title] %></p>
+  <p>Rating: <%= result[:vote_average] %></p>
+<% end %>
