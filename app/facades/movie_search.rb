@@ -22,4 +22,9 @@ class MovieSearch
       Movie.new(movie)
     end
   end
+
+  def full_movie_details_by_id(id)
+    movie_data = get_url("/3/movie/157336?append_to_response=credits,reviews,images")
+    movie = Movie.new(movie_data) 
+  end
 end

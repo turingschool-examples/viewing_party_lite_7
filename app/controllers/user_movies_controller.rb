@@ -10,6 +10,6 @@ class UserMoviesController < ApplicationController
   end
 
   def show 
-    
+    @movie = 
   end
 end
