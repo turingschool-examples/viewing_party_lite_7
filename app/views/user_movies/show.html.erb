@@ -11,16 +11,16 @@
 <p> Summary: <%= @movie.summary %> </p>
 <p> Cast: 
   <ul>
-    <% @movie.cast.each do |actor| %>
+    <% @movie.cast[:cast][0..9].each do |actor| %>
       <li><%= actor[:name] %></li>
     <% end %>
   </ul>
 </p>
-<p>Total Reviews: <%= @movie.num_reviews %></p>
+<p>Total Reviews: <%= @movie.num_reviews[:total_results] %></p>
 <p>Reviews: 
   <ul>
-    <% @movie.review_info.each do |review| %>
-      <li> Author: <%= reveiw[:author] %><br>
+    <% @movie.review_info[:results].each do |review| %>
+      <li> Author: <%= review[:author] %>
       Review: <%= review[:content] %> </li>
     <% end %>
   </ul>
