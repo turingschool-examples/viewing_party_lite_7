@@ -3,7 +3,7 @@ class MovieService
     get_url("/3/movie/#{movie_id}")
   end
 
-  def all_movies(movies)
+  def all_movies
     get_url("/3/movie")
   end
 
@@ -21,4 +21,5 @@ class MovieService
       faraday.headers["Authorization"] = ENV["MOVIE_API_KEY"]
     end
   end
+
 end

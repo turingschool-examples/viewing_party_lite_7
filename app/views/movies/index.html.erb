@@ -2,8 +2,9 @@
 <h2> Movies watched </h2>
 
 <h2> Top Rated Movies </h2>
-<% require 'pry'; binding.pry %>
-<%= @facade.movies.each do |movie| %>
-  <%= movie.title %>
-  <%= movie.rating %>
+<% @facade.details.each do |movie| %>
+  <p>
+  Movie: <%= movie.title %> <br>
+  Popularity: <%= movie.popularity %> <br>
+  <p>
 <% end %>

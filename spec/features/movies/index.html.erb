@@ -25,7 +25,6 @@ RSpec.describe "top rated movies" do
     it "can display movie by popularity", :vcr do
       movies = MovieService.new.popular_movies
       visit "/users/#{user_1.id}/movies"
-      save_and_open_page
     end
   end
 end
