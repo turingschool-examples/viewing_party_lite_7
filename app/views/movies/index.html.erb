@@ -1,0 +1,10 @@
+<h1>Movie Index</h1>
+
+<nav><%= button_to 'Discover Page', discover_path, method: :get %></nav>
+
+<% @movies.each do |movie| %>
+<li class ="movie">
+  <ul>Movie Title: <%= movie.title %></ul>
+  <ul>Vote Average: <%= movie.vote_average %></ul>
+</li>
+<% end %>
