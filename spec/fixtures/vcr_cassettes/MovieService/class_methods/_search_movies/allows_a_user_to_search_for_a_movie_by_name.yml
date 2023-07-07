@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?query=Forrest%20Gump
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <TMDB_BEARER_TOKEN>
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 07 Jul 2023 19:50:43 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=21967
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - ae062f879090a8ccd3ed4b35fc7c68ac
+      X-Memc-Age:
+      - '20105'
+      X-Memc-Expires:
+      - '5204'
+      Etag:
+      - W/"75a0f6e7b8456a0fcb2baf77e48cbbda"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 36e36df999d8d13e1e708941d33a5866.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD58-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 2C8ZXMXLbpyTy8XReO7H4n2OAIERpEYt3QdGNonz2oRVluUvDZq-pQ==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJwYWdlIjoxLCJyZXN1bHRzIjpbeyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvcWRJTUhkNHNFZkpTY2tmVkpmS1F2aXNMMDJhLmpwZyIsImdlbnJlX2lkcyI6WzM1LDE4LDEwNzQ5XSwiaWQiOjEzLCJvcmlnaW5hbF9sYW5ndWFnZSI6ImVuIiwib3JpZ2luYWxfdGl0bGUiOiJGb3JyZXN0IEd1bXAiLCJvdmVydmlldyI6IkEgbWFuIHdpdGggYSBsb3cgSVEgaGFzIGFjY29tcGxpc2hlZCBncmVhdCB0aGluZ3MgaW4gaGlzIGxpZmUgYW5kIGJlZW4gcHJlc2VudCBkdXJpbmcgc2lnbmlmaWNhbnQgaGlzdG9yaWMgZXZlbnRz4oCUaW4gZWFjaCBjYXNlLCBmYXIgZXhjZWVkaW5nIHdoYXQgYW55b25lIGltYWdpbmVkIGhlIGNvdWxkIGRvLiBCdXQgZGVzcGl0ZSBhbGwgaGUgaGFzIGFjaGlldmVkLCBoaXMgb25lIHRydWUgbG92ZSBlbHVkZXMgaGltLiIsInBvcHVsYXJpdHkiOjYzLjY2MSwicG9zdGVyX3BhdGgiOiIvYXJ3MnZjQnZlV09WWnI2cHhkOVhUZDFUZFFhLmpwZyIsInJlbGVhc2VfZGF0ZSI6IjE5OTQtMDYtMjMiLCJ0aXRsZSI6IkZvcnJlc3QgR3VtcCIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo4LjQ3OCwidm90ZV9jb3VudCI6MjQ5MDN9LHsiYWR1bHQiOmZhbHNlLCJiYWNrZHJvcF9wYXRoIjpudWxsLCJnZW5yZV9pZHMiOls5OV0sImlkIjoyMzczNTMsIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF90aXRsZSI6IlRocm91Z2ggdGhlIEV5ZXMgb2YgRm9ycmVzdCBHdW1wIiwib3ZlcnZpZXciOiJBIGxvb2sgYmVoaW5kIHRoZSBzY2VuZXMgb2YgUm9iZXJ0IFplbWVja2lzJyAxOTk0IE9zY2FyLXdpbm5pbmcgZmlsbSwgJ0ZvcnJlc3QgR3VtcCcuIiwicG9wdWxhcml0eSI6Mi44MzUsInBvc3Rlcl9wYXRoIjoiL2RmakxFMUhqZFI5WGhFcE4wNGVsQ0dVT0pmQS5qcGciLCJyZWxlYXNlX2RhdGUiOiIxOTk0LTEwLTAxIiwidGl0bGUiOiJUaHJvdWdoIHRoZSBFeWVzIG9mIEZvcnJlc3QgR3VtcCIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo3LjgsInZvdGVfY291bnQiOjE3fV0sInRvdGFsX3BhZ2VzIjoxLCJ0b3RhbF9yZXN1bHRzIjoyfQ==
+  recorded_at: Fri, 07 Jul 2023 19:50:43 GMT
+recorded_with: VCR 6.2.0

@@ -7,6 +7,13 @@ class MovieService
     get_url("/3/search/movie?query=#{search}")
   end
 
+  def movie_details(id)
+    get_url("/3/movie/#{id}")
+  end
+
+  def movie_cast(id)
+    get_url("/3/movie/#{id}/credits")
+  end
 
   def get_url(url, params = {})
   response = conn.get(url, params)
