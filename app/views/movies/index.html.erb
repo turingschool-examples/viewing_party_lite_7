@@ -1,0 +1,9 @@
+<h1> Discover Movies </h1>
+  <%= link_to "Back", user_discover_index_path(@facade.user_id) %>
+
+<ul>
+ <% @facade.movies.each do |movie| %>
+    <li>Movie Title: <%= link_to "#{movie.title}", user_movies_path(@facade.user_id, movie.id), {method: "get"} %> </li>
+    <li> Rating: <%= movie.rating %> </li> <br>
+  <% end %>
+</ul>
