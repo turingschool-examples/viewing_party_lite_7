@@ -1,0 +1,25 @@
+<h3 class="title"><%= @movie_facade.show_movie_details.title %></h3>
+
+<%= button_to "Discover Page", user_discover_index_path(@user), method: :get %>
+
+<h5 class="vote_avg">Vote: <%= @movie_facade.show_movie_details.vote_average %></h5>
+<h5 class="runtime">Vote: <%= @movie_facade.show_movie_details.runtime %></h5>
+<h5 class="genre">Vote: <%= @movie_facade.show_movie_details.genres.join(', ') %></h5>
+
+</br>
+
+<div class ="summary">
+  <h4>Summary</h4>
+  <p><%= @movie_facade.show_movie_details.overview %></p>
+</div>
+
+</br>
+
+<div class="cast">
+  <h4>Cast</h4>
+   
+</div>
+
+<div class="reviews">
+
+</div>
