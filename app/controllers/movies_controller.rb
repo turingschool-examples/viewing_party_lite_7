@@ -1,4 +1,5 @@
 class MoviesController < ApplicationController
+
   def discover
     @user = User.find(params[:id])
   end
@@ -23,5 +24,11 @@ class MoviesController < ApplicationController
     @movies = json[:results].map do |movie_data|
       Movie.new(movie_data)
     end
+
+    def show
+      @user = User.find(params[:id])
+      @movie = Movie.find(params[:id])
+    end
   end
+
 end

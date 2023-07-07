@@ -6,7 +6,7 @@ RSpec.describe 'Movies Index Page', type: :feature do
     @user2 = User.create!(name: 'Jimmy', email: 'jimmy@gmail.com')
   end
   describe 'As a user, when I visit the Discover Movies page and I click on Top Movies or Search button' do
-    it 'displays the title and vote average for the top 20 movies', :vcr do
+    it 'displays the title with link and vote average for the top 20 movies', :vcr do
   
         visit discover_path(@user1)
   
@@ -16,6 +16,10 @@ RSpec.describe 'Movies Index Page', type: :feature do
         expect(current_path).to eq(movies_path(@user1))
         expect(page.status_code).to eq(200)
         expect(page).to have_content('Batman')
+
+        expect(page).to have_link('Batman')
+        expect(current_path).to eq(movie_show_path(@user1, Movie.first))
+
         expect(page).to have_css(".movie", count: 20)
         expect(page).to_not have_css(".movie", count: 21)
     end

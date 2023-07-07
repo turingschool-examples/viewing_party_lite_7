@@ -4,7 +4,7 @@
 
 <% @movies.each do |movie| %>
 <li class ="movie">
-  <ul>Movie Title: <%= movie.title %></ul>
+  <ul>Movie Title: <%= link_to movie.title, movie_show_path(movie.id, @user), method: :get %> </ul>
   <ul>Vote Average: <%= movie.vote_average %></ul>
 </li>
 <% end %>
