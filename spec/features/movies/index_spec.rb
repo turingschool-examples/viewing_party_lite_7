@@ -4,7 +4,7 @@ RSpec.describe "/users/:id/movies", type: :feature do
   let!(:user) { create(:user) }
 
   describe "when a user visits the discovery page" do
-    describe "and they click on Find Top Rated Movies" do
+    describe "and they click on Find Top Rated Movies", :vcr do
       it "routes to a movie index page where the top movies are rendered" do
         visit user_discover_index_path(user)
 
@@ -22,7 +22,7 @@ RSpec.describe "/users/:id/movies", type: :feature do
       end
     end
 
-    describe "they search for a movie in the search bar" do
+    describe "they search for a movie in the search bar", :vcr do
       it "routes to the movie index page where search results are rendered" do
         visit user_discover_index_path(user)
 
@@ -44,7 +44,7 @@ RSpec.describe "/users/:id/movies", type: :feature do
   end
 
   describe "as a user on the movie index page" do
-    it "displays a button to return back to the discover page" do
+    it "displays a button to return back to the discover page", :vcr do
       visit user_movies_path(user)
 
       click_button "Discover Page"

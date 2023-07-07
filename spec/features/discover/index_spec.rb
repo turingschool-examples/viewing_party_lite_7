@@ -9,7 +9,7 @@ RSpec.describe "/users/:id/discover, Discover Movies Dashboard", type: :feature 
       expect(page).to have_content("Discover Movies")
     end
 
-    it "has a button to discover top rated movies" do
+    it "has a button to discover top rated movies", :vcr do
       visit user_discover_index_path(user)
 
       click_button("Find Top Rated Movies")
@@ -17,7 +17,7 @@ RSpec.describe "/users/:id/discover, Discover Movies Dashboard", type: :feature 
       expect(current_path).to eq(user_movies_path(user))
     end
 
-    it "has a form to find movies via keyword" do
+    it "has a form to find movies via keyword", :vcr do
       visit user_discover_index_path(user)
 
       within ".search-movies" do

@@ -1,9 +1,9 @@
 require "rails_helper"
 
 RSpec.describe MovieService do
-  context "instance methods" do
+  describe "instance methods" do
     context "#get top movies" do
-      it "returns top movies data" do
+      it "returns top movies data", :vcr do
         search = MovieService.new.find_top_movies
 
         expect(search).to be_a(Hash)
@@ -23,7 +23,7 @@ RSpec.describe MovieService do
     end
 
     context "#search movies by keyword" do
-      it "returns movie data based on keyword" do
+      it "returns movie data based on keyword", :vcr do
         search = MovieService.new.search_movies_by_keyword("Princess")
 
         expect(search).to be_a(Hash)
