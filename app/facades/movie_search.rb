@@ -17,7 +17,7 @@ class MovieSearch
   end
 
   def discover_popular
-    get_url("/3/discover/movie?include_adult=false&page=1&sort_by=popularity.desc")
+    movies = get_url("/3/discover/movie?include_adult=false&page=1&sort_by=popularity.desc")
     movie_objects = movies[:results].map do |movie|
       Movie.new(movie)
     end

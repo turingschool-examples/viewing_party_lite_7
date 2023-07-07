@@ -9,6 +9,7 @@ RSpec.describe "Movie Results Page" do
       visit "/users/#{@user1.id}/discover"
       fill_in "keyword", with: "Jaws"
       click_button "Search"
+      save_and_open_page
 
       expect(current_path).to eq("/users/#{@user1.id}/movies")
       
@@ -22,11 +23,6 @@ RSpec.describe "Movie Results Page" do
       visit "/users/#{@user1.id}/movies"
       click_button "Discover Movies" 
       expect(current_path).to eq("/users/#{@user1.id}/discover")
-    end
-
-    it "test service" do 
-      MovieSearch.new.keyword_search("jaws")
-      # MovieSearch.new.discover_popular
     end
   end
 end
