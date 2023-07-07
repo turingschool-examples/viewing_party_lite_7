@@ -4,8 +4,8 @@ describe MovieService do
   context "class methods" do
     context "#movies" do
       it "returns movie data" do
-        search = MovieService.new.movies_by_id(385687)
-        require 'pry'; binding.pry
+        search = MovieService.new.movies_by_id(455476)
+
         expect(search).to be_a Hash
         expect(search[:results]).to be_an Array
         member_data = search[:results].first

@@ -1,0 +1,7 @@
+<% @facade.movies.each do |movie| %>
+  <ul class="member">
+    <li class="name"><%= movie.title %></li>
+  </ul>
+  <% end %>
+
+  <p><%= button_to "Discover Top Rated Movies", method: :get %></p>
