@@ -8,4 +8,8 @@ class UserMoviesController < ApplicationController
       @movies = MovieSearch.new.discover_popular
     end
   end
+
+  def show 
+    
+  end
 end

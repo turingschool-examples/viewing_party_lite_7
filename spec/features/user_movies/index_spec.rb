@@ -24,5 +24,15 @@ RSpec.describe "Movie Results Page" do
       click_button "Discover Movies" 
       expect(current_path).to eq("/users/#{@user1.id}/discover")
     end
+
+    # more work on stubbing to figure out this link: 
+    # it "has title links to each movies details (show) page" do 
+    #   visit "/users/#{@user1.id}/discover"
+    #   fill_in "keyword", with: "Jaws"
+    #   click_button "Search"
+    #   expect(current_path).to eq("/users/#{@user1.id}/movies")
+    #   click_link "Santa Jaws"
+    #   expect(current_path).to eq("")
+    # end
   end
 end
