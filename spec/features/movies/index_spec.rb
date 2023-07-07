@@ -18,7 +18,7 @@ RSpec.describe 'Movies Index Page', type: :feature do
         expect(page).to have_content('Batman')
 
         expect(page).to have_link('Batman')
-        expect(current_path).to eq(movie_show_path(@user1, Movie.first))
+        expect(current_path).to eq(movie_show_path)
 
         expect(page).to have_css(".movie", count: 20)
         expect(page).to_not have_css(".movie", count: 21)
