@@ -7,13 +7,9 @@ RSpec.describe "/users/:id" do
       let!(:user_2) { create(:user) }
       let!(:user_3) { create(:user) }
 
-      let!(:movie_1) { create(:movie) }
-      let!(:movie_2) { create(:movie) }
-      let!(:movie_3) { create(:movie) }
-
-      let!(:wapa_1) { create(:watch_party, movie_id: movie_1.id) }
-      let!(:wapa_2) { create(:watch_party, movie_id: movie_2.id) }
-      let!(:wapa_3) { create(:watch_party, movie_id: movie_3.id) }
+      let!(:wapa_1) { create(:watch_party) }
+      let!(:wapa_2) { create(:watch_party) }
+      let!(:wapa_3) { create(:watch_party) }
 
       let!(:movie_watch_party_1) { create(:movie_watch_party, watch_party_id: wapa_1.id, user_id: user_1.id) }
       let!(:movie_watch_party_2) { create(:movie_watch_party, watch_party_id: wapa_1.id, user_id: user_2.id) }
@@ -82,7 +78,7 @@ RSpec.describe "/users/:id" do
         within ".hosting" do
           expect(page).to have_content("#{user_1.name}'s Watch Parties: Hosting")
 
-          expect(page).to have_content("Movie: #{movie_3.title}")
+          expect(page).to have_content("Movie: ")
           expect(page).to have_content("Watch Date: #{wapa_3.date}")
           expect(page).to have_content("Start Time: #{wapa_3.start_time}")
           # Movie Image

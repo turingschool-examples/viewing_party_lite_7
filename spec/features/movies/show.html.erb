@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "/users/:id" do
   describe "As a visitor" do
-    describe "when I visit the users discover page" do
+    describe "when I visit the users show page" do
       let!(:user_1) { create(:user) }
       let!(:user_2) { create(:user) }
       let!(:user_3) { create(:user) }
@@ -22,17 +22,22 @@ RSpec.describe "/users/:id" do
       let!(:movie_watch_party_7) { create(:movie_watch_party, watch_party_id: wapa_3.id, user_id: user_1.id) }
       let!(:movie_watch_party_8) { create(:movie_watch_party, watch_party_id: wapa_3.id, user_id: user_2.id) }
       let!(:movie_watch_party_9) { create(:movie_watch_party, watch_party_id: wapa_3.id, user_id: user_3.id) }
-      let!(:movie_watch_party_10) { create(:movie_watch_party, watch_party_id: wapa_3.id, user_id: user_3.id) }
+    end
 
-      it "allows to search for movie by title" do
-        
-        visit "/users/#{user_1.id}/discover"
-        fill_in :search, with: "dog"
-        click_button "Search"
-        expect(current_path).to eq("/users/#{user_1.id}/movies")
-        expect(page).to have_content("dog")
+    it "can display movie details" do
+      attrs = {
+      title: "Ant-Man and the Wasp: Quantumania",
+      length: 120,
+      rating: 85,
+      id: 1
+      }
 
-      end
+      movie = Movie.new(attrs)
+      visit "/movies/#{movie.id}"
+      require 'pry'; binding.pry
+      expect(page).to have_content("Ant-Man and the Wasp: Quantumania")
+
+
     end
   end
 end

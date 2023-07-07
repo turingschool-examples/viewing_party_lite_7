@@ -1,12 +1,11 @@
 class SearchFacade
-  def initialize(movie)
-    @movie = movie
+  def initialize(movie_id)
+    @movie_id = movie_id
   end
 
   def details
     service = MovieService.new
-    require 'pry'; binding.pry
-    json = service.movie(@movie)
-    @details = json
+    request = service.movie_by_id(@movie_id)
+    @details = request
   end
 end

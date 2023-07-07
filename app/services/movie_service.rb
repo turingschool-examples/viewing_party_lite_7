@@ -1,6 +1,15 @@
 class MovieService
-  def movie(movie)
-    get_url("/3/movie/#{movie}")
+  def movie_by_id(movie_id)
+    get_url("/3/movie/#{movie_id}")
+  end
+
+  def all_movies(movies)
+    get_url("3/movie")
+  end
+
+  def popular_movies
+    get_url("movie?include_adult=false&include_video=false
+    &language=en-US&page=1&sort_by=popularity.desc")
   end
 
   def get_url(url)
