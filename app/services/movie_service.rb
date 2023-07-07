@@ -1,6 +1,6 @@
 class MovieService
-  def movies_by_id(movie)
-    get_url("/3/discover/movie.json")
+  def movie(movie_id)
+    get_url("/3/movie/#{movie_id}")
   end
 
   def get_url(url)
@@ -10,7 +10,7 @@ class MovieService
 
   def conn
     Faraday.new(url: "https://api.themoviedb.org") do |faraday|
-      faraday.params["api_key"] = ENV["MOVIE_API_KEY"]
+      faraday.headers["Authorization"] = ENV["MOVIE_API_KEY"]
     end
   end
 end

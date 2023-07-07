@@ -3,15 +3,13 @@ require 'rails_helper'
 describe MovieService do
   context "class methods" do
     context "#movies" do
-      it "returns movie data" do
-        search = MovieService.new.movies_by_id(455476)
-
+      it "returns movie data", :vcr do
+        search = MovieService.new.movie(455476)
         expect(search).to be_a Hash
-        expect(search[:results]).to be_an Array
-        member_data = search[:results].first
+        expect(search[:adult]).to be_a FalseClass
 
-        expect(member_data).to have_key :title
-        expect(member_data[:title]).to be_a(String)
+        expect(search).to have_key :title
+        expect(search[:title]).to eq("Knights of the Zodiac")
       end
     end
   end
