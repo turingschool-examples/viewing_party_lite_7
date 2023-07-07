@@ -4,7 +4,7 @@ RSpec.describe "User's Discover Movies page" do
   before(:each) do
     @user1 = User.create!(name: 'John Smith', email: 'jsmith@aol.com')
 
-    visit "/users/#{@user1.id}/discover"
+    visit user_discover_path(@user1)
   end
 
   it 'displays the users Discover Movies page' do
@@ -23,7 +23,7 @@ RSpec.describe "User's Discover Movies page" do
 
   it 'displays a text field to enter keyword(s) to search by movie title' do
     within('#search-movies') do
-      expect(page).to have_field(:search, type: 'text')
+      expect(page).to have_field(:title, type: 'text')
     end
   end
 
@@ -31,7 +31,7 @@ RSpec.describe "User's Discover Movies page" do
     within('#search-movies') do
       expect(page).to have_button('Find Movies')
 
-      fill_in :search, with: 'The Matrix'
+      fill_in :title, with: 'The Matrix'
       click_button('Find Movies')
       expect(current_path).to eq(user_movies_path(@user1))
     end
