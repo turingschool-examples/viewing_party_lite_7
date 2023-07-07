@@ -1,6 +1,6 @@
 class MovieService
-  def movie(movie_id)
-    get_url("/3/movie/#{movie_id}")
+  def movie(movie)
+    get_url("/3/movie/#{movie}")
   end
 
   def get_url(url)

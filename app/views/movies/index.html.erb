@@ -1,0 +1,4 @@
+<h2> Movies watched </h2>
+<% @user.watch_parties.each do |w| %>
+  <%= w.movie.title %> <br>
+<% end %>

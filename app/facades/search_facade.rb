@@ -3,12 +3,10 @@ class SearchFacade
     @movie = movie
   end
 
-  def movies
-
+  def details
     service = MovieService.new
+    require 'pry'; binding.pry
     json = service.movie(@movie)
-    @movies = json[:results].map do |movie_data|
-      Movie.new(movie_data)
-    end
+    @details = json
   end
 end
