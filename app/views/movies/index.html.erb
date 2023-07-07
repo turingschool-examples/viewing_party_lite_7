@@ -4,3 +4,6 @@
 
 <%= form_with url: "/users/#{@user.id}/movies", method: :get, local: true do |form| %>
   <%= form.label "Search by Title" %>
+  <%= form.text_field :keyword %>
+  <%= form.submit, "Search" %>
+<% end %>
