@@ -5,7 +5,7 @@ class Movie
               :genres,
               :overview,
               :runtime,
-              :poster
+              :poster_path
 
   def initialize(data)
     @id = data[:id]
@@ -14,7 +14,7 @@ class Movie
     @genres = data[:genres]
     @overview = data[:overview]
     @runtime = format_time(data[:runtime])
-    @poster = data[:poster_path]
+    @poster_path = data[:poster_path]
   end
 
   def format_time(time)
