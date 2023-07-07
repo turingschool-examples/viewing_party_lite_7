@@ -2,6 +2,7 @@ class MovieFacade
   def initialize(params)
     @title = params[:title]
     @search_type = params[:type]
+    @id = params[:id]
   end
 
   def search
@@ -21,10 +22,15 @@ class MovieFacade
   end
 
   def search_movies
-    movies = MovieService.new.search_movies(@title)
+    if @title.nil?
+      movie = MovieService.new.search_movies_by_id(@id)
+      @movie = Movie.new(movie)
+    else
+      movies = MovieService.new.search_movies(@title)
 
-    movies[:results].map do |movie|
-      Movie.new(movie)
+      movies[:results].map do |movie|
+        Movie.new(movie)
+      end
     end
   end
 end
