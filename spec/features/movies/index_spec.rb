@@ -6,23 +6,24 @@ RSpec.describe "Discover Movies Page", type: :feature do
 
     top_rated_response = File.read("spec/fixtures/discover_top_rated_movies.json")
     stub_request(:get, "https://api.themoviedb.org/3/discover/movie?api_key=#{ENV["TMDB-KEY"]}&include_adult=false&page=1&sort_by=popularity.desc").
-         with(
-           headers: {
-       	  'Accept'=>'*/*',
-       	  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-       	  'User-Agent'=>'Faraday v2.7.9'
-           }).
-         to_return(status: 200, body: top_rated_response, headers: {})
+        with(
+          headers: {
+        'Accept'=>'*/*',
+        'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+        'User-Agent'=>'Faraday v2.7.9'
+          }).
+        to_return(status: 200, body: top_rated_response, headers: {})
 
     keyword_response = File.read("spec/fixtures/keyword_movie_jaws.json")
     stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV["TMDB-KEY"]}&include_adult=false&page=1&query=Jaws").
-         with(
-           headers: {
-       	  'Accept'=>'*/*',
-       	  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-       	  'User-Agent'=>'Faraday v2.7.9'
-           }).
-         to_return(status: 200, body: keyword_response, headers: {})
+        with(
+          headers: {
+        'Accept'=>'*/*',
+        'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+        'User-Agent'=>'Faraday v2.7.9'
+          }).
+        to_return(status: 200, body: keyword_response, headers: {})
+        
     visit "/users/#{@user1.id}/discover"
   end
 
