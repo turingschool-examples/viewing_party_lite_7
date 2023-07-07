@@ -13,7 +13,6 @@ class MovieFacade
   end
 
   def movies
-
     if @commit == "Find Movies"
       movie_search(@title)
     else
