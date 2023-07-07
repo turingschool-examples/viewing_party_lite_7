@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
   before_action :find_user
+  before_action :find_keyword
 
   def index
     @facade = search_keyword? ? MovieFacade.new(params[:keyword]) : MovieFacade.new
@@ -15,5 +16,9 @@ class MoviesController < ApplicationController
 
   def search_keyword?
     params[:keyword].present?
+  end
+
+  def find_keyword
+    @keyword = params[:keyword]
   end
 end

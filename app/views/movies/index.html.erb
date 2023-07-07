@@ -1,7 +1,11 @@
 <%= button_to "Discover Page", user_discover_index_path(@user), method: :get %>
 
-<% @facade.find_movies.each do |movie| %>
+    <% if !@keyword.nil? %>
+      <h3><b>Movie results for:</b> <%= @keyword %></h3>
+    <% end %>
+    
   <div class="movie">
+    <% @facade.find_movies.each do |movie| %>
       <p class="title"><%= link_to "#{movie.title}", user_movie_path(@user, movie.id) %></p>
       <p class="vote_avg">Vote Average: <%= movie.vote_average%></p>
   </div>

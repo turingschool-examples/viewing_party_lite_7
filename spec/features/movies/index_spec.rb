@@ -12,6 +12,8 @@ RSpec.describe "/users/:id/movies", type: :feature do
 
         expect(current_path).to eq(user_movies_path(user))
 
+        expect(page).to_not have_content("Movie results for:")
+
         expect(page).to have_css(".movie", maximum: 20)
 
         within(first(".movie")) do
@@ -32,6 +34,8 @@ RSpec.describe "/users/:id/movies", type: :feature do
         end
 
         expect(current_path).to eq(user_movies_path(user))
+
+        expect(page).to have_content("Movie results for: Princess")
         expect(page).to have_css(".movie", maximum: 20)
 
         within(first(".movie")) do
