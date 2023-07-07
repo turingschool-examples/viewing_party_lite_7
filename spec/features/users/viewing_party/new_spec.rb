@@ -16,7 +16,7 @@ RSpec.describe "User's Viewing Party page" do
     @party_users4 = PartyUser.create!(user_id: @user2.id, party_id: @party2.id)
     @party_users5 = PartyUser.create!(user_id: @user4.id, party_id: @party2.id)
     
-    visit  user_viewing_party_path(@user1, movie_id: 238)
+    visit  user_viewing_party_path(@user1, 238)
   end
   # When I visit the new viewing party page (/users/:user_id/movies/:movid_id/viewing-party/new, where :user_id is a valid user's id),
   # I should see the name of the movie title rendered above a form with the following fields:
@@ -28,7 +28,12 @@ RSpec.describe "User's Viewing Party page" do
   # Button to create a party
   # Details When the party is created, the user should be redirected back to the dashboard where the new event is shown. The event should also be listed on any other user's dashbaords that were also invited to the party.
   it 'displays the movie title' do
-    
-
+    expect(page).to have_content('The Godfather')
   end
+
+  it 'has a button to Discover Page' do
+    expect(page).to have_button('Discover Page')
+  end
+
+  
 end
