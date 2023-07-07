@@ -2,6 +2,6 @@
 <h3>Results:<h3>
 
 <% @results.each do |result| %>
-  <p>Title: <%= result[:title] %></p>
+  <p>Title: <%= link_to "#{result[:title]}", "/users/#{@user.id}/movies/#{result[:id]}" %></p>
   <p>Rating: <%= result[:vote_average] %></p>
 <% end %>
