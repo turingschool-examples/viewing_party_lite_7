@@ -11,10 +11,10 @@ class MovieService
   end
 
   def self.top_rated_movies
-    get_url("https://api.themoviedb.org/3/movie/top_rated")
+    get_url("movie/top_rated")
   end
 
   def self.movie_search(query)
-    get_url("https://api.themoviedb.org/3/search/movie?query=#{query}")
+    get_url("search/movie?query=#{query}")
   end
 end
