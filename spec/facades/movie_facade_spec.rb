@@ -19,13 +19,13 @@ RSpec.describe MovieFacade do
     end
   end
 
-  describe 'class methods' do 
+  describe 'class methods', :vcr do 
     it '#service' do 
       expect(@mf.service).to be_a MovieService
     end
 
     it '#create_movies' do 
-      movies = @mf.create_movies
+      movies = @mf.create_movies(@api_call_response)
       expect(movies).to be_a Array
       expect(movies.first).to be_a Movie
       expect(movies.count).to eq(20)
