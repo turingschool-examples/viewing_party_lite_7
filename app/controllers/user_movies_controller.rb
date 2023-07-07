@@ -9,7 +9,7 @@ class UserMoviesController < ApplicationController
     end
   end
 
-  # def show 
-  #   @movie = 
-  # end
+  def show 
+    @movie = MovieSearch.new.full_movie_details_by_id(params[:movie_id])
+  end
 end
