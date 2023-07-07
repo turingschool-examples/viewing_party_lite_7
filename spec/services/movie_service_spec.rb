@@ -30,6 +30,7 @@ RSpec.describe MovieService do
 
       expect(movie_data).to have_key(:vote_average)
       expect(movie_data[:vote_average]).to be_a Float
+      require 'pry'; binding.pry
     end
 
     it '#top_movies', :vcr do 
@@ -43,6 +44,7 @@ RSpec.describe MovieService do
 
       expect(first_movie).to have_key(:vote_average)
       expect(first_movie[:vote_average]).to be_a Float
+      require 'pry'; binding.pry
     end
 
     it '#search_movies' do 

@@ -4,6 +4,9 @@ RSpec.describe MovieFacade do
   before(:each) do 
     @mf = MovieFacade.new 
     @mf_search = MovieFacade.new('neverending')
+
+    json = File.read('spec/fixtures/top_movies.json')
+    @api_call_response = JSON.parse(json, symbolize_names: true)
   end
 
   describe 'initialize' do 
@@ -19,6 +22,10 @@ RSpec.describe MovieFacade do
       expect(@mf.service).to be_a MovieService
     end
 
-    it '#'
+    it '#create_movies' do 
+      movies = @mf.create_movies(@api_call_response)
+      expect(movies).to be_a Array
+      expect(movies.first).to be_a Movie
+    end
   end
 end
