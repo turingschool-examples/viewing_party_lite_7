@@ -18,15 +18,8 @@ RSpec.describe "User Discover" do
     end
 
     it "can search for movies with keywords" do
-      expect(page).to have_field "Keyword"
-    end
-
-    it "has button to search movies" do
-      expect(page).to have_button "Search by Movie Title"
-      
-      fill_in "Keyword", with: "Sandlot"
-      click_button "Search by Movie Title"
-      expect(current_path).to eq user_movies_path(@user1.id)
+      expect(page).to have_field "keyword"
+      expect(page).to have_button "submit"
     end
   end
 
@@ -55,6 +48,24 @@ RSpec.describe "User Discover" do
         expect(page).to have_content("Vote Average: 6.5")
         expect(page).to have_link "Knights of the Zodiac"
       end
+    end
+  end
+
+  describe "user movie search results page" do
+    before :each do
+      @user1 = FactoryBot.create(:user)
+
+      json_response = File.read('spec/fixtures/movies_search.json')
+      stub_request(:get, "https://api.themoviedb.org/3/search/movie?query=Sandlot").
+        to_return(status: 200, body: json_response)
+      visit user_discover_index_path(@user1.id)
+    end
+    
+    it "user search movies button" do
+      fill_in "keyword", with: 'Sandlot'
+      click_button "submit"
+      expect(page).to have_content("Title: The Sandlot")
+      expect(page).to have_content("Vote Average: 7.517")
     end
   end
 end

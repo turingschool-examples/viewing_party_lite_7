@@ -38,7 +38,6 @@ RSpec.describe 'landing page' do
       expect(page).to have_link "Return to Movie Viewing Party Landing Page"
       click_link "Return to Movie Viewing Party Landing Page"
       expect(current_path).to eq "/"
-      save_and_open_page
     end
   end
 end
