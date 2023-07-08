@@ -64,22 +64,6 @@ RSpec.describe 'User Dashboard page' do
     expect(page).to_not have_content("The Godfather")
   end
 
-    #   As a user,
-    # When I visit a user dashboard,
-    # I should see the viewing parties that the user has been invited to with the following details:
-
-    # Movie Image
-    # Movie Title, which links to the movie show page
-    # Date and Time of Event
-    # who is hosting the event
-    # list of users invited, with my name in bold
-    # I should also see the viewing parties that the user has created with the following details:
-
-    # Movie Image
-    # Movie Title, which links to the movie show page
-    # Date and Time of Event
-    # That I am the host of the party
-    # List of friends invited to the viewing party
   describe 'Viewing Parties that the user has been invited to' do
     before(:each) do
       visit  user_viewing_party_path(@user1, 238)
@@ -91,14 +75,7 @@ RSpec.describe 'User Dashboard page' do
       check("selected_users[]", option: @user3.id)
       click_button('Create Party')
       visit user_path(@user2)
-    end
-    
-    xit 'displays movie image' do
-      within('#invited-parties') do
-
-      end
-    end
-    
+    end  
     
     it 'displays movie title, which links to the movie show page' do
       within('#invited-parties') do
@@ -143,11 +120,6 @@ RSpec.describe 'User Dashboard page' do
       click_button('Create Party')
     end
     
-    xit 'displays movie image' do
-      within('#hosted-parties') do
-      end
-    end
-
     it 'displays movie title, which links to the movie show page' do
       within('#hosted-parties') do
         expect(page).to have_link('The Godfather', href: user_movie_path(@user1, 238))
