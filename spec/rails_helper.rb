@@ -14,6 +14,8 @@ def user_test_data
                                          duration: 140, movie_title: 'Wolfie finds a bone!')
   @viewing_party5 = ViewingParty.create!(day: '2023-07-08', start_time: '06:45 PM', movie_id: 5,
                                          duration: 144, movie_title: 'Jaws')
+  @viewing_party6 = ViewingParty.create!(day: '2023-07-08', start_time: '06:45 PM', movie_id: 6,
+                                         duration: 144, movie_title: 'Max finds a cheese wheel!')
 
   @userparty1 = UserViewingParty.create!(user_id: @user1.id, viewing_party_id: @viewing_party1.id, host: true)
   @userparty2 = UserViewingParty.create!(user_id: @user1.id, viewing_party_id: @viewing_party2.id, host: true)

@@ -13,4 +13,11 @@ class ViewingParty < ApplicationRecord
   def invitee_names
     users.where('user_viewing_parties.host = false').pluck(:name)
   end
+
+  def create_associations(host, invitees)
+    UserViewingParty.create(viewing_party_id: self.id, user_id: host, host: true)
+    invitees.each do |invitee|
+      UserViewingParty.create(viewing_party_id: self.id, user_id: invitee, host: false)
+    end
+  end
 end

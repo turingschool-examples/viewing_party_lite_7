@@ -6,9 +6,10 @@ class UserViewingPartiesController < ApplicationController
 
   def create
     viewing_party = ViewingParty.new(viewing_party_params)
-    UserViewingParty.create!()
     if viewing_party.save
+      association = viewing_party.create_associations(params[:id], params[:invitees])
       redirect_to "/users/#{params[:id]}"
+      flash[:notice] = "#{params[:movie_title]} Viewing Party successfully created!"
     else
       redirect_to "/users/#{params[:id]}/movies/#{params[:movie_id]}/viewing-party/new"
       flash[:alert] = "Error: #{error_message(viewing_party.errors)}"
@@ -17,6 +18,6 @@ class UserViewingPartiesController < ApplicationController
 
   private 
   def viewing_party_params
-    params.permit(:movie_id, :duration, :day, :start_time, :movie_title)
+    params.permit(:movie_id, :duration, :day, :start_time, :movie_title, :invitees)
   end
 end
