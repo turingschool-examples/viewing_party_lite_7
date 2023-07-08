@@ -8,7 +8,7 @@ class Users::ViewingPartyController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     party = Party.new(party_params)
-    if party.save
+    if party.save && !params[:selected_users].nil?
       PartyUser.create(user_id: @user.id , party_id: party.id)
 
       params[:selected_users].each do |user_id|
@@ -16,6 +16,9 @@ class Users::ViewingPartyController < ApplicationController
       end
 
       redirect_to user_path(@user)
+    elsif params[:selected_users].nil? 
+      flash[:notice] = "Please select at least one user"
+      redirect_to user_viewing_party_path(@user, params[:movie_id])
     else
       flash[:notice] = party.errors.full_messages.to_sentence
       redirect_to user_viewing_party_path(@user, params[:movie_id])
