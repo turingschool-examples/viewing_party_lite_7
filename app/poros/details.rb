@@ -5,7 +5,8 @@ class Details
               :genres, 
               :summary,
               :default_runtime, 
-              :id
+              :id,
+              :poster_path
 
   def initialize(data)
     @title = data[:title]
