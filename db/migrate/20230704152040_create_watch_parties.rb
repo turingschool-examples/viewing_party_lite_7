@@ -4,6 +4,7 @@ class CreateWatchParties < ActiveRecord::Migration[7.0]
       t.string :date
       t.integer :duration
       t.string :start_time
+      t.integer :movie_id
 
       t.timestamps
     end
