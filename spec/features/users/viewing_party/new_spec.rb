@@ -19,7 +19,7 @@ RSpec.describe "User's Viewing Party page" do
   end
 
   it 'has a field for party duration that defaults to movie runtime' do
-    expect(page).to have_field('duration', with: "2h 55m") ##change to minutes 
+    expect(page).to have_field('duration', with: 175)
   end
 
   it 'has a field for party date' do

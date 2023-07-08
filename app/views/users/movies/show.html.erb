@@ -7,7 +7,7 @@
 <div style="text-align: center;">
   <div id="movie-details">
     <p><strong>Vote:</strong> <%= @movie.vote_average %></p>
-    <p><strong>Runtime:</strong> <%= @movie.runtime %></p>
+    <p><strong>Runtime:</strong> <%= @movie.convert_runtime %></p>
     <p><strong>Genre:</strong> <%= @movie.genres.join(", ") %></p>
   </div>
 </div>
