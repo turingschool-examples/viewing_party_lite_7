@@ -1,4 +1,4 @@
-class Review
+class Reviews
   attr_reader :author,
               :rating,
               :content

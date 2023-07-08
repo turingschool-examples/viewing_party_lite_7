@@ -17,7 +17,7 @@ class MovieFacade
   def reviews(movie_id)
     results = service.reviews(movie_id)[:results]
     results.map do |result|
-    Movie.new(result)
+    Reviews.new(result)
     end
   end
 
