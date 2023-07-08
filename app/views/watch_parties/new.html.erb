@@ -1,0 +1,39 @@
+<%= form_with url: "/users/#{@user.id}", local: true, method: :post  do |f| %>
+  <%= f.label :date %>
+  <%= f.date_field :date %>
+
+  <%= f.label :duration %>
+  <%= f.number_field :duration, value: @movie.details[:runtime], min: @movie.details[:runtime] %>
+
+  <%= f.label :start_time %>
+  <%= f.time_field :start_time %>
+
+  <%= f.hidden_field :movie_title, value: @movie.details[:title] %>
+  <%= f.collection_check_boxes :user, User.all, :id, :name %>
+
+  <%= f.submit %>
+<% end %>
+
+<p> 
+Movie: <%= @movie.details[:title] %> <br>
+Length: <%= @movie.details[:runtime] %> <br>
+Vote Average: <%= @movie.details[:vote_average] %> <br>
+Genre: <% @movie.details[:genres].each do |genre| %>
+  <%= genre[:name] %>,
+<% end %> <br>
+Summary: <%= @movie.details[:overview] %> <br>
+<ol>
+Cast: <% @actor.details.first(10).each do |actor| %>
+ <li> <%= actor.name %> </li>
+<% end %> <br>
+</ol>
+<br>Total Reviews: <%= @review_facade.details.count %> <br>
+
+Review info: <% @review_facade.details.each do |review| %>
+  <p>
+  Author: <%= review.author %> <br>
+  Name: <%= review.author_details[:name] %> <br>
+  Username: <%= review.author_details[:username] %> <br>
+  Rating: <%= review.author_details[:rating]%> <br>
+  </p>
+<% end %>

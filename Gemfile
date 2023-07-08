@@ -55,6 +55,7 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "faker"
   gem "simplecov"
+  gem "rspec-rails"
 end
 
 group :development do
@@ -71,7 +72,6 @@ end
 gem "faraday"
 gem "figaro"
 group :test do
-  gem "rspec-rails"
   gem "capybara"
   gem "launchy"
   gem "webmock"

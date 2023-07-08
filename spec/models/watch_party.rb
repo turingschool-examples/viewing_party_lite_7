@@ -8,4 +8,5 @@ RSpec.describe WatchParty, type: :model do
       it { should have_many(:users).through(:movie_watch_parties) }
     end
   end
+  
 end

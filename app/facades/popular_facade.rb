@@ -1,4 +1,3 @@
-require "ostruct"
 class PopularFacade
   attr_reader :popular_movies
   def initialize

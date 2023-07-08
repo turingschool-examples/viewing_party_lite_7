@@ -23,7 +23,7 @@ RSpec.describe "movies show page" do
   describe "As a visitor to movies show page" do
     it "can display movie details", :vcr do
       movie = MovieService.new.movie_by_id(455476)
-      visit "/movies/455476"
+      visit "/users/#{user_1.id}/movies/455476"
       expect(page).to have_content("Knights of the Zodiac")
     end
   end
