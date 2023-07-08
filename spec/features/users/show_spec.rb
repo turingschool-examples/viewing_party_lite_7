@@ -3,6 +3,15 @@ require 'rails_helper'
 RSpec.describe 'User Show Page' do
   before(:each) do
     user_test_data
+    movie_detailsj2 = File.read('spec/fixtures/movie_details_jaws2.json')
+    stub_request(:get, "https://api.themoviedb.org/3/movie/579?api_key=#{ENV['TMDB-KEY']}&append_to_response=credits,reviews,images").
+    with(
+      headers: {
+     'Accept'=>'*/*',
+     'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+     'User-Agent'=>'Faraday v2.7.9'
+      }).
+    to_return(status: 200, body: movie_detailsj2, headers: {})
     visit "/users/#{@user1.id}"
   end
 
@@ -17,7 +26,7 @@ RSpec.describe 'User Show Page' do
       expect(page).to have_content("#{@user1.name}'s Dashboard")
     end
 
-    it "US7 I go to a user dashbaord, and click 'Discover Movies button, I am redirected to a discover page '/users/:id/discover" do
+    it "US7 I go to a user dashboard, and click 'Discover Movies button, I am redirected to a discover page '/users/:id/discover" do
       click_button('Discover Movies')
       expect(current_path).to eq("/users/#{@user1.id}/discover")
     end
@@ -44,7 +53,7 @@ RSpec.describe 'User Show Page' do
 
   describe 'link to movie show page' do
     xit 'links to a movie show page in title of each movie' do
-      click_link 'Jaws'
+      click_link 'Jaws 2'
 
       expect(current_path).to eq('/movies/')
     end
