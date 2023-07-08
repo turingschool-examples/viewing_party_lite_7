@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/users/:user_id/movies', to: 'user_movies#index'
   get '/users/:user_id/movies/:movie_id', to: 'user_movies#show'
   get  "/users/:user_id/movies/:movid_id/viewing-party/new", to: "user_viewing_parties#new"
+  post "/users/:id", to: "user_viewing_parties#create"
 
   resources :movies, only: [:show]
   resources :users, only: %i[index create show]

@@ -2,6 +2,7 @@
 
 <%= form_with  url: user_path(@user), method: :post, local: true do |form|  %>
   <%= form.hidden_field :movie_id, value: @movie.id %>
+  <%= form.hidden_field :movie_title, value: @movie.title %>
   <%= form.label "Duration of Party (in minutes):" %>
   <%= form.number_field :duration, value: @movie.runtime %><br><br>
   <%= form.label "When:" %>
