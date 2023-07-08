@@ -16,7 +16,7 @@ RSpec.describe Movie do
     it 'has attributes' do 
       expect(@movie.title).to eq('Soul')
       expect(@movie.vote_average).to eq('9.75')
-      expect(@movie.id).to eq('9.75')
+      expect(@movie.id).to eq('3')
     end
   end
 end
