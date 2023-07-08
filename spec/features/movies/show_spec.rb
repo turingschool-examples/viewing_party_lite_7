@@ -37,26 +37,27 @@ RSpec.describe 'Movie Detail Page', type: :feature do
 
   describe 'review details' do 
     it 'has first 10 cast members' do 
-      within(".cast_members") do 
+      expect(page).to have_css(".cast-member", count: 10)
+      within(".cast-members") do 
         expect(page).to have_content("Cast Members:")
-        within(first(".cast_member"))
-        expect(page).to have_content(@cast.first.name)
+        within(first(".cast-member")) do 
+          expect(page).to have_content("Marlon Brando")
+        end
       end
     end
 
     it 'has reviews & count' do 
       within(".reviews") do 
         expect(page).to have_content("Reviews:")
-        expect(page).to have_content(@reviews.first)
-        expect(page).to have_content(@reviews.count)
+        expect(page).to have_content("Review Count:")
+        expect(page).to have_content('5')
       end
     end
 
     it 'has each reviews author and information' do 
-      within(first(".reviews")) do 
-        expect(page).to have_content(@reviews.first.author)
-        expect(page).to have_content(@reviews.first.rating)
-        expect(page).to have_content(@reviews.first.content)
+      within(first(".review")) do 
+        expect(page).to have_content("futuretv")
+        expect(page).to have_content("The Godfather Review by Al Carlson")
       end
     end
   end

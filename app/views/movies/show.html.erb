@@ -6,6 +6,24 @@
     <%= genre %>
   <% end %>
 <h3>Summary: </h3><%= @movie.overview %>
+<div class="cast-members">
+  <h3>Cast Members: </h3>
+  <% @cast.each do |cast_member| %>
+    <div class="cast-member"><%= cast_member.name %></div>
+  <% end %>
+</div>
+
+<div class="reviews">
+  <h3>Reviews: </h3>
+  <h4>Review Count: <%= @reviews.length %></h4>
+  <% @reviews.each do |review| %>
+    <div class="review">
+      <%= review.author %>
+      <%= review.rating %>
+      <%= review.content %>
+    </div>
+  <% end %>
+</div>
 
 <%= button_to 'Discover Page', user_discover_index_path(@user), method: :get %>
 
