@@ -4,4 +4,8 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :email, presence: true, uniqueness: { case_sensitive: false }
+
+  def self.other_users(id)
+    where.not(id: id)
+  end
 end
