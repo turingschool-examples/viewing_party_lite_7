@@ -21,7 +21,7 @@ RSpec.describe Movie do
       expect(@movie.title).to eq('Soul')
       expect(@movie.vote_average).to eq(9.75)
       expect(@movie.id).to eq(3)
-      expect(@movie.run_time).to eq(120)
+      expect(@movie.runtime).to eq(120)
       expect(@movie.genres).to eq(['family', 'animation'])
       expect(@movie.summary).to eq('this is a summary')
     end

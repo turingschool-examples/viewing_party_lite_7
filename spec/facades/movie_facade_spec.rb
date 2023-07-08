@@ -19,7 +19,7 @@ RSpec.describe MovieFacade do
     end
   end
 
-  describe 'class methods', :vcr do 
+  describe 'instance methods', :vcr do 
     it '#service' do 
       expect(@mf.service).to be_a MovieService
     end
@@ -43,6 +43,18 @@ RSpec.describe MovieFacade do
       expect(movies).to be_a Array
       expect(movies.first).to be_a Movie
       expect(movies.count).to eq(20)
+    end
+
+    xit '#movie' do 
+      response = @mf.movie(238)
+      expect(movie).to be_a Movie
+      expect(movie.id).to eq(238)
+      # require 'pry'; binding.pry
+    end
+
+    it 'extract_genres' do
+      genres = @mf.extract_genres(([{:id=>18, :name=>"Drama"}, {:id=>80, :name=>"Crime"}]))
+      expect(genres).to eq(['Drama', 'Crime'])
     end
   end
 end

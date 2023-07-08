@@ -5,6 +5,15 @@ class MovieFacade
     @search = search
   end
 
+  def movie(id) 
+    movie_details = service.find_movie(id)
+    movie_data = {
+      id: movie_details[:id],
+      title: movie_details[:title], 
+      genres: extract_genres(movie_details[:genres])
+    }
+    Movie.new(movie_details)
+  end
   
   def top_movies
     movies = service.top_movies
@@ -25,4 +34,6 @@ class MovieFacade
       Movie.new(movie_data)
     end
   end
+
+  
 end
