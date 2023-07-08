@@ -9,11 +9,18 @@
 <div id="hosted-parties">
   <% @user.hosted_parties.each do |party| %>
     <%= link_to party.movie_title(party.movie_id), user_movie_path(party.host_id, party.movie_id) %><br>
+    <%= party.date.strftime('%B %-d, %Y') %><br>
+    <%= party.start_time.strftime('%I:%M %p') %>
+    <p>Host: <%= party.host_name %></p>
   <% end %>
 </div>
 
 <div id="invited-parties">
   <% @user.invited_to_parties.each do |party| %>
     <%= link_to party.movie_title(party.movie_id), user_movie_path(party.host_id, party.movie_id) %><br>
+    <%= party.date.strftime('%B %-d, %Y') %><br>
+    <%= party.start_time.strftime('%I:%M %p') %>
+    <p>Host: <%= party.host_name %></p>
   <% end %>
 </div>
+
