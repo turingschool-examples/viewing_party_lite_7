@@ -33,7 +33,7 @@ RSpec.describe "Movie Results page", type: :feature do
         expect(current_path).to eq(user_movies_path(@user1.id))
 
         expect(page).to have_link("The Lord of the Rings: The Fellowship of the Ring")
-        expect(page).to have_content("8.399")
+        expect(page).to have_content("8.4")
       end
     end
   end
