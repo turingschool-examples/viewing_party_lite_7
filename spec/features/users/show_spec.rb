@@ -35,9 +35,9 @@ RSpec.describe "/users/:id" do
       let!(:user_2) { create(:user) }
       let!(:user_3) { create(:user) }
 
-      let!(:wapa_1) { create(:watch_party, movie_id: @movie_1.id) }
-      let!(:wapa_2) { create(:watch_party) }
-      let!(:wapa_3) { create(:watch_party) }
+      let!(:wapa_1) { create(:watch_party, movie_title: @movie_1.title) }
+      let!(:wapa_2) { create(:watch_party, movie_title: @movie_2.title) }
+      let!(:wapa_3) { create(:watch_party, movie_title: @movie_3.title) }
 
       let!(:movie_watch_party_1) { create(:movie_watch_party, watch_party_id: wapa_1.id, user_id: user_1.id) }
       let!(:movie_watch_party_2) { create(:movie_watch_party, watch_party_id: wapa_1.id, user_id: user_2.id) }
@@ -68,9 +68,7 @@ RSpec.describe "/users/:id" do
         expect(current_path).to eq("/users/#{user_1.id}/discover")
       end
 
-      it "has a section that lists viewing parties", :vcr do
-        # @movie = MovieService.new.movie_by_id(455476)
-        # wapa_1.update(movie_id: @movie[:id])
+      it "has a section that lists viewing parties" do
 
         movie_watch_party_1.update(user_status: 0)
         movie_watch_party_2.update(user_status: 1) # makes user_2 the host of wapa_1

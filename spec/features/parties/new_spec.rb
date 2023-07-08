@@ -33,10 +33,11 @@ RSpec.describe "Create watch party" do
       fill_in(:date, with: "8/8/23")
       fill_in(:duration, with: 120)
       fill_in(:start_time, with: "13:00")
-      find("#movie_title", visible: false).set("Knights of the Zodiac")
+      find("#movie_title", visible: false).set(movie[:title])
       click_button "Save"
       expect(current_path).to eq("/users/#{user_1.id}")
       expect(page).to have_content("Date: 8/8/23")
+      expect(page).to have_content("Movie: Knights of the Zodiac")
     end
 
     it "can display movie details on watch party create page", :vcr do

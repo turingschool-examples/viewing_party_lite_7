@@ -11,14 +11,40 @@ User.destroy_all
 WatchParty.destroy_all
 MovieWatchParty.destroy_all
 
+movie_1_attrs = {
+  title: "Ant-Man and the Wasp: Quantumania",
+  length: 120,
+  rating: 85,
+  id: 52345
+}
+
+movie_2_attrs = {
+  title: "Endless Summer",
+  length: 100,
+  rating: 60,
+  id: 45352
+
+}
+
+movie_3_attrs = {
+  title: "Hanna",
+  length: 80,
+  rating: 95,
+  id: 34233
+}
+
+@movie_1 = Movie.new(movie_1_attrs)
+@movie_2 = Movie.new(movie_2_attrs)
+@movie_3 = Movie.new(movie_3_attrs)
+
 user_1 = User.create!(name: "Ricky", email: "Email@email.com")
 
 user_2 = FactoryBot.create(:user)
 user_3 = FactoryBot.create(:user)
 
-wapa_1 = FactoryBot.create(:watch_party)
-wapa_2 = FactoryBot.create(:watch_party)
-wapa_3 = FactoryBot.create(:watch_party)
+wapa_1 = FactoryBot.create(:watch_party, movie_title: @movie_1.title)
+wapa_2 = FactoryBot.create(:watch_party, movie_title: @movie_2.title)
+wapa_3 = FactoryBot.create(:watch_party, movie_title: @movie_2.title)
 
 movie_watch_party_1 = FactoryBot.create(:movie_watch_party, watch_party_id: wapa_1.id, user_id: user_1.id)
 movie_watch_party_2 = FactoryBot.create(:movie_watch_party, watch_party_id: wapa_1.id, user_id: user_2.id)

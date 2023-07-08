@@ -16,6 +16,6 @@ class WatchPartiesController < ApplicationController
 
   private
   def watch_parties_params
-    params.permit(:date, :duration, :start_time, :movie_id)
+    params.permit(:date, :duration, :start_time, :movie_title)
   end
 end
