@@ -66,7 +66,7 @@ RSpec.describe 'Movie Show Page' do
       reviews = MovieFacade.new.reviews(movies.first.id)
       cast = MovieFacade.new.cast(movies.first.id)
       visit "/users/#{@user1.id}/movies/#{movies.first.id}"
-save_and_open_page
+
       expect(page).to have_content(movies.first.title)
       expect(page).to have_content(movies.first.vote_average)
       expect(page).to have_content(movies.first.runtime)

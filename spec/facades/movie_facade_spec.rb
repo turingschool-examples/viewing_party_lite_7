@@ -19,4 +19,30 @@ RSpec.describe MovieFacade, :vcr do
     end
   end
 
+  describe "find_movie" do
+    it "creates a movie object" do
+      movie_facade = MovieFacade.new
+      movie = movie_facade.find_movie(11)
+
+      expect(movie).to be_a(Movie)
+    end
+  end
+
+  describe "reviews" do
+    it "creates review objects" do
+      movie_facade = MovieFacade.new
+      reviews = movie_facade.reviews(11)
+
+      expect(reviews).to be_an(Array)
+    end
+  end
+
+  describe "cast" do
+    it "creates cast objects" do
+      movie_facade = MovieFacade.new
+      cast = movie_facade.cast(11)
+      
+      expect(cast).to be_an(Array)
+    end
+  end
 end
