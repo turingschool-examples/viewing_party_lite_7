@@ -8,7 +8,7 @@ RSpec.describe MovieService do
 
     # This stubs out the API call to the movie search endpoint
     stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['MOVIE_API_KEY']}&query=The%20ring")
-      .to_return(status: 200, body: File.read("./spec/fixtures/search_movie.json"))
+      .to_return(status: 200, body: File.read("./spec/fixtures/search_movies.json"))
 
     # This stubs out the API call to the movie details endpoint
     stub_request(:get, "https://api.themoviedb.org/3/movie/120?api_key=#{ENV['MOVIE_API_KEY']}")
