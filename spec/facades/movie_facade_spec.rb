@@ -35,5 +35,18 @@ RSpec.describe MovieFacade do
         expect(movies.count).to eq(0)
       end
     end
+
+    describe '#search_movies_by_id' do
+      it 'returns the movie that matches the id' do
+        movie = MovieFacade.new({id: 680}).search
+
+        expect(movie).to be_a(Movie)
+        expect(movie.title).to be_a(String)
+        expect(movie.title).to eq('Pulp Fiction')
+        expect(movie.vote_average).to be_a(Float)
+        expect(movie.runtime).to be_a(Integer)
+        expect(movie.summary).to be_a(String)
+      end
+    end
   end
 end

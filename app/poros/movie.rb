@@ -16,7 +16,7 @@ class Movie
     @title = data[:title]
     @vote_average = data[:vote_average]
     @vote_count = data[:vote_count]
-    @runtime = convert_time(data[:runtime]) if data[:runtime]
+    @runtime = data[:runtime] if data[:runtime]
     @summary = data[:overview]
     @poster_path = data[:poster_path]
     @genres = genre_names(data[:genres]) if data[:genres]
@@ -31,9 +31,9 @@ class Movie
     end
   end
 
-  def convert_time(mins)
-    hours = mins / 60
-    minutes = mins % 60
+  def convert_runtime
+    hours = @runtime / 60
+    minutes = @runtime % 60
     "#{hours}h #{minutes}m"
   end
 

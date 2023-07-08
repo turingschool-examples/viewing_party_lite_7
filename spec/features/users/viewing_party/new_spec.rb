@@ -19,7 +19,7 @@ RSpec.describe "User's Viewing Party page" do
   end
 
   it 'has a field for party duration that defaults to movie runtime' do
-    expect(page).to have_field('duration', with: "2h 55m") ##change to minutes 
+    expect(page).to have_field('duration', with: 175)
   end
 
   it 'has a field for party date' do
@@ -52,7 +52,7 @@ RSpec.describe "User's Viewing Party page" do
     expect(current_path).to eq(user_path(@user1))
   end
   
-  xit 'does not create a party if duration is less than the movie runtime' do
+  it 'does not create a party if duration is less than the movie runtime' do
     fill_in 'duration', with: 10
     fill_in 'date', with: "2024-01-01"
     fill_in 'start_time', with: "07:00"
@@ -61,7 +61,7 @@ RSpec.describe "User's Viewing Party page" do
     click_button('Create Party')
 
     expect(current_path).to eq(user_viewing_party_path(@user1, 238))
-    expect(page).to have_content("Party duration cannot be less than runtime")
+    expect(page).to have_content("Party duration cannot be less than movie runtime")
   end
   
   it 'does not create a party if any field is empty' do
