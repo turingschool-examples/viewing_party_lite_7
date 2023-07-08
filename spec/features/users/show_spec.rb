@@ -1,5 +1,5 @@
 require 'rails_helper'
-#
+
 RSpec.describe 'User Dashboard page' do
   before(:each) do
     @user1 = User.create!(name: 'John Smith', email: 'jsmith@aol.com')

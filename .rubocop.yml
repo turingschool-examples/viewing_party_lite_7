@@ -9,6 +9,8 @@ AllCops:
     - 'config/**'
     - 'db/**'
     - 'app/controllers/users/viewing_party_controller.rb'
+    - 'config/environments/production.rb'
+    - 'spec/spec_helper.rb'
 
 Style/StringLiterals:
   Enabled: false
@@ -44,4 +46,7 @@ Metrics/BlockLength:
   Enabled: false
 
 Style/EmptyMethod:
+  Enabled: false
+
+Style/NumericLiterals:
   Enabled: false

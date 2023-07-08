@@ -18,7 +18,7 @@ RSpec.describe Party, type: :model do
     describe '#movie_title' do
       it 'can find title of a movie by its id' do
         user = User.create!(name: 'John Smith', email: 'jsmith@aol.com')
-        party = Party.create!(date: '2021-07-04', start_time: '17:00:00 UTC' , duration: 120, movie_id: 238, host_id: user.id)
+        party = Party.create!(date: '2021-07-04', start_time: '17:00:00 UTC', duration: 120, movie_id: 238, host_id: user.id)
         expect(party.movie_title(238)).to eq("The Godfather")
       end
     end
@@ -27,7 +27,7 @@ RSpec.describe Party, type: :model do
       it 'finds the name of the host of a viewing party' do
         user1 = User.create!(name: 'John Smith', email: 'jsmith@aol.com')
         party1 = Party.create!(date: '2023-01-01', start_time: '08:00', duration: 275, movie_id: 238, host_id: user1.id)
-        party_user1 = PartyUser.create!(user_id: user1.id, party_id: party1.id)
+        PartyUser.create!(user_id: user1.id, party_id: party1.id)
         
         expect(party1.host_name).to eq('John Smith')
       end
@@ -41,11 +41,11 @@ RSpec.describe Party, type: :model do
       
         party1 = Party.create!(date: '2023-01-01', start_time: '08:00', duration: 275, movie_id: 238, host_id: user1.id)
         party2 = Party.create!(date: '2023-01-01', start_time: '08:00', duration: 275, movie_id: 238, host_id: user2.id)
-        party_user1 = PartyUser.create!(user_id: user1.id, party_id: party1.id)
-        party_user2 = PartyUser.create!(user_id: user2.id, party_id: party1.id)
-        party_user3 = PartyUser.create!(user_id: user3.id, party_id: party1.id)
-        party_user4 = PartyUser.create!(user_id: user1.id, party_id: party2.id)
-        party_user5 = PartyUser.create!(user_id: user2.id, party_id: party2.id)
+        PartyUser.create!(user_id: user1.id, party_id: party1.id)
+        PartyUser.create!(user_id: user2.id, party_id: party1.id)
+        PartyUser.create!(user_id: user3.id, party_id: party1.id)
+        PartyUser.create!(user_id: user1.id, party_id: party2.id)
+        PartyUser.create!(user_id: user2.id, party_id: party2.id)
 
         expect(party1.invited_users).to eq([user2, user3])
         expect(party2.invited_users).to eq([user1])
