@@ -15,9 +15,15 @@ class MovieService
     get_url("/3/movie/#{id}/credits")
   end
 
+  def movie_reviews(id)
+    get_url("/3/movie/#{id}/reviews")
+  end
+
+  private
+  
   def get_url(url, params = {})
-  response = conn.get(url, params)
-  JSON.parse(response.body, symbolize_names: true)
+    response = conn.get(url, params)
+    JSON.parse(response.body, symbolize_names: true)
   end
 
   def conn
