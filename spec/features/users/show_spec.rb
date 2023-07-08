@@ -87,7 +87,47 @@ RSpec.describe 'User Dashboard page' do
     # Date and Time of Event
     # That I am the host of the party
     # List of friends invited to the viewing party
-  describe 'User Dashboard with viewing party events' do
+  describe 'Viewing Parties that the user has been invited to' do
+    before(:each) do
+      visit  user_viewing_party_path(@user1, 238)
+
+      fill_in 'duration', with: 210
+      fill_in 'date', with: "2024-01-01"
+      fill_in 'start_time', with: "07:00"
+      check("selected_users[]", option: @user2.id)
+      check("selected_users[]", option: @user3.id)
+      click_button('Create Party')
+      visit user_path(@user2)
+    end
+
+    xit 'displays movie image' do
+
+    end
+
+    it 'displays movie title, which links to the movie show page' do
+      expect(page).to have_link('The Godfather', href: user_movie_path(@user1, 238))
+      click_link('The Godfather')
+      expect(current_path).to eq(user_movie_path(@user1, 238))
+    end
+
+    it 'displays date and time of the event' do
+      expect(page).to have_content("2024-01-01")
+      expect(page).to have_content("07:00")
+    end
+
+    it 'displays who is hosting the event' do
+      expect(page).to have_content("Host: #{@user1.name}")
+    end
+
+    it 'displays list of invited users with my name in bold' do
+      expect(page).to have_css('strong', text: @user2.name)
+      expect(page).to have_content(@user1.name)
+      expect(page).to have_content(@user3.name)
+      expect(page).to_not have_content(@user4.name)
+    end
+  end
+
+  describe 'Viewing Parties that the user has created' do
     before(:each) do
       visit  user_viewing_party_path(@user1, 238)
 
@@ -98,49 +138,31 @@ RSpec.describe 'User Dashboard page' do
       check("selected_users[]", option: @user3.id)
       click_button('Create Party')
     end
-  
-    describe 'Viewing Parties that the user has been invited to' do
-      it 'displays movie image' do
-        
-      end
-
-      it 'displays movie title, which links to the movie show page' do
-
-      end
-
-      it 'displays date and time of the event' do
-
-      end
-
-      it 'displays who is hosting the event' do
-
-      end
-
-      it 'displays list of invited users with host name in bold' do
-
-      end
+    
+    xit 'displays movie image' do
+      
     end
 
-    describe 'Viewing Parties that the user has created' do
-      it 'displays movie image' do
-        
-      end
+    it 'displays movie title, which links to the movie show page' do
+      expect(page).to have_link('The Godfather', href: user_movie_path(@user1, 238))
+      click_link('The Godfather')
+      expect(current_path).to eq(user_movie_path(@user1, 238))
+    end
 
-      it 'displays movie title, which links to the movie show page' do
+    it 'displays date and time of the event' do
+      expect(page).to have_content("2024-01-01")
+      expect(page).to have_content("07:00")
+    end
 
-      end
+    it 'displays who is hosting the event' do
+      expect(page).to have_content("Host: #{@user1.name}")
+    end
 
-      it 'displays date and time of the event' do
-
-      end
-
-      it 'displays who is hosting the event' do
-
-      end
-
-      it 'displays list of invited users' do
-
-      end
+    it 'displays list of invited users' do
+      expect(page).to_not have_content(@user1.name)
+      expect(page).to have_content(@user2.name)
+      expect(page).to have_content(@user3.name)
+      expect(page).to_not have_content(@user4.name)
     end
   end
 end
