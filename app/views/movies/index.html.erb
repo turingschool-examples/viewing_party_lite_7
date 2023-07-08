@@ -2,9 +2,9 @@
 
 <nav><%= button_to 'Discover Page', discover_path, method: :get %></nav>
 
-<% @movies.each do |movie| %>
-<li class ="movie">
-  <ul>Movie Title: <%= movie.title %></ul>
-  <ul>Vote Average: <%= movie.vote_average %></ul>
-</li>
+<% @facade.movies.each do |movie| %>
+  <li class ="movie">
+    <ul>Movie Title: <%= link_to movie.title, "/users/#{@user.id}/movies/#{movie.id}", method: :get %> </ul>
+    <ul>Vote Average: <%= movie.vote_average %>/ 10</ul>
+  </li>
 <% end %>
