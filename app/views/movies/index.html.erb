@@ -4,8 +4,8 @@
 <div id="movies">
   <p><%= button_to "Discover Movies", user_discover_index_path(@user.id), method: :get %></p>
   <% @movies.each do |movie| %>
-    <p>Title: <%= link_to movie[:original_title], user_movie_path(@user.id, movie[:id]) %></p>
-    <p>Vote Average: <%= movie[:vote_average] %></p>
+    <p>Title: <%= link_to movie.original_title, user_movie_path(@user.id, movie.id) %></p>
+    <p>Vote Average: <%= movie.vote_average %></p>
     </br>
   <% end %>
 </div>
