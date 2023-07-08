@@ -22,4 +22,9 @@ class Party < ApplicationRecord
   def invited_users
     users.where.not(id: host_id)
   end
+
+  def poster(movie_id)
+    movie = MovieService.new.search_movies_by_id(movie_id)
+    movie[:poster_path] 
+  end
 end
