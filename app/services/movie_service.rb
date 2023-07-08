@@ -17,4 +17,8 @@ class MovieService
   def self.movie_search(query)
     get_url("search/movie?query=#{query}")
   end
+
+  def self.find_by_id(id)
+    get_url("movie/#{id}")
+  end
 end

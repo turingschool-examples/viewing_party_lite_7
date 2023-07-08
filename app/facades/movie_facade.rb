@@ -1,8 +1,8 @@
 class MovieFacade
-  attr_reader :user_id, :movie_id
+  attr_reader :user_id
 
   def initialize(params)
-    @movie_id = params[:movie_id]
+    @movie_id = params[:id]
     @user_id = params[:user_id]
     @commit = params[:commit]
     @title = params[:search]
@@ -30,5 +30,13 @@ class MovieFacade
     MovieService.movie_search(search)[:results][0..19].map do |movie|
       Movie.new(movie)
     end
+  end
+
+  def self.movie_details(movie_id)
+    Movie.new(find_by_id(movie_id))
+  end
+
+  def self.find_by_id(movie_id)
+    results = MovieService.find_by_id(movie_id)
   end
 end
