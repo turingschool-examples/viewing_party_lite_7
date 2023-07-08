@@ -48,12 +48,8 @@ class MoviesController < ApplicationController
       faraday.headers["Authorization"] = ENV["api_access_key"]
     end
     response = conn.get("/3/search/movie/#{params[:id]}")
-
     data = JSON.parse(response.body, symbolize_names: true)
-    @movies = data[:results].map do |movie|
-      PopularMovie.new(movie)
-    end
-    require 'pry'; binding.pry
+    @movie = PopularMovie.new(data)
   end
 end
 
