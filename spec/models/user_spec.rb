@@ -30,6 +30,7 @@ RSpec.describe User, type: :model do
         expect(@user1.hosted_parties).to eq([@party1])
         expect(@user2.hosted_parties).to eq([@party2])
       end
+    end
 
     describe '#invited_to_parties' do
       it 'list parties the the user is invited to' do
