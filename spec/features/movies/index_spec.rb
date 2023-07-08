@@ -67,6 +67,7 @@ RSpec.describe 'movies results page' do
       within ".movies" do 
         within(first(".movie")) do 
           within ".title" do
+            save_and_open_page
             expect(page).to have_link('The Godfather', href: "/users/#{@user_1.id}/movies/238")
           end
         end
