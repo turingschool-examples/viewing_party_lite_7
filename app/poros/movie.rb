@@ -14,4 +14,6 @@ class Movie
     @genres = attributes[:genres]
     @overview = attributes[:overview]
   end
+
+  
 end

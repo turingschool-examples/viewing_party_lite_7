@@ -9,7 +9,6 @@ RSpec.describe 'Movie Detail Page', type: :feature do
   end
 
   describe 'movie details' do 
-     
     it 'displays title' do 
       expect(page).to have_content("#{@movie.title}")
     end
@@ -61,7 +60,6 @@ RSpec.describe 'Movie Detail Page', type: :feature do
         expect(page).to have_content("Summary:")
         expect(page).to have_content("The Godfather Review by Al Carlson")
       end
-      save_and_open_page
     end
   end
 
