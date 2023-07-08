@@ -9,7 +9,7 @@ RSpec.describe Movie do
         id: 3, 
         runtime: 120,
         genres: ['family', 'animation'], 
-        summary: 'this is a summary'
+        overview: 'this is a summary'
         })
     end
 
@@ -23,7 +23,7 @@ RSpec.describe Movie do
       expect(@movie.id).to eq(3)
       expect(@movie.runtime).to eq(120)
       expect(@movie.genres).to eq(['family', 'animation'])
-      expect(@movie.summary).to eq('this is a summary')
+      expect(@movie.overview).to eq('this is a summary')
     end
   end
 end

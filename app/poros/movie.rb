@@ -4,7 +4,7 @@ class Movie
               :id, 
               :runtime, 
               :genres, 
-              :summary
+              :overview
   
   def initialize(attributes)
     @title = attributes[:title]
@@ -12,6 +12,6 @@ class Movie
     @id = attributes[:id]
     @runtime = attributes[:run_time]
     @genres = attributes[:genres]
-    @summary = attributes[:summary]
+    @overview = attributes[:overview]
   end
 end

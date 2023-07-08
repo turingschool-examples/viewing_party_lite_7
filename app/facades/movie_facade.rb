@@ -7,12 +7,8 @@ class MovieFacade
 
   def movie(id) 
     movie_details = service.find_movie(id)
-    movie_data = {
-      id: movie_details[:id],
-      title: movie_details[:title], 
-      genres: extract_genres(movie_details[:genres])
-    }
-    Movie.new(movie_details)
+    details = movie_data(movie_details)
+    Movie.new(details)
   end
   
   def top_movies
@@ -30,14 +26,27 @@ class MovieFacade
   end
   
   def create_movies(movies_data)
-    movies_data[:results].map do |movie_data|
-      Movie.new(movie_data)
+    movies_data[:results].map do |data|
+      Movie.new(data)
     end
   end
+
+  # private 
 
   def extract_genres(genres_data)
     genres_data.map do |genre_data|
       genre_data[:name]
     end
+  end
+
+  def movie_data(details)
+    {
+      id: details[:id],
+      title: details[:title], 
+      genres: extract_genres(details[:genres]), 
+      overview: details[:overview], 
+      runtime: details[:runtime], 
+      vote_average: details[:vote_average]
+    }
   end
 end
