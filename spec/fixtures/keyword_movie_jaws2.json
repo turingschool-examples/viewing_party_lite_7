@@ -1,0 +1,121 @@
+{
+  "page": 1,
+  "results": [
+      {
+          "adult": false,
+          "backdrop_path": "/qNsLlAE9Sp34AYkaMw5083Xa660.jpg",
+          "genre_ids": [
+              27,
+              53
+          ],
+          "id": 579,
+          "original_language": "en",
+          "original_title": "Jaws 2",
+          "overview": "Police chief Brody must protect the citizens of Amity after a second monstrous shark begins terrorizing the waters.",
+          "popularity": 31.691,
+          "poster_path": "/cN3ijEwsn4kBaRuHfcJpAQJbeWe.jpg",
+          "release_date": "1978-06-16",
+          "title": "Jaws 2",
+          "video": false,
+          "vote_average": 5.966,
+          "vote_count": 1659
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/dxBLSZHVIrfiMaJVUp6cK2yWt14.jpg",
+          "genre_ids": [
+              35,
+              27,
+              53
+          ],
+          "id": 204473,
+          "original_language": "en",
+          "original_title": "Ghost Shark 2: Urban Jaws",
+          "overview": "Mayor Broody hires an expert shark-hunter to track down and eliminate a deadly ghost shark when it returns to terrorize Auckland.",
+          "popularity": 1.453,
+          "poster_path": "/lD38L3noqH82pJLVQrK7MP4uwhZ.jpg",
+          "release_date": "2015-07-01",
+          "title": "Ghost Shark 2: Urban Jaws",
+          "video": false,
+          "vote_average": 4.6,
+          "vote_count": 9
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/cZEQiHDWakZHDogh0MLIpcEEmhO.jpg",
+          "genre_ids": [
+              99
+          ],
+          "id": 539431,
+          "original_language": "en",
+          "original_title": "The Making of Jaws 2",
+          "overview": "A documentary giving film fans a behind-the-scenes look at the making of this sequel to the now-classic horror movie that had viewers too scared to go into the water. Includes interviews with the writer, director, and other members of the creative staff who relate some of their experiences with making the film, as well as giving their views on all the work that went into it.",
+          "popularity": 0.921,
+          "poster_path": "/24SSP7H3pK8z0RfWuWMHfo4NnWj.jpg",
+          "release_date": "2001-05-22",
+          "title": "The Making of Jaws 2",
+          "video": false,
+          "vote_average": 6.0,
+          "vote_count": 2
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/fKAnK4r7hYLrqyHrZFcrnvVU3E1.jpg",
+          "genre_ids": [
+              99,
+              10770
+          ],
+          "id": 1126542,
+          "original_language": "en",
+          "original_title": "Shark Eat Shark",
+          "overview": "Around the world, reports of shark-on-shark attacks are on the rise. Now, off South Africa's dramatic southern coast, a new hotspot has emerged — a bay where white sharks hunt other sharks. In a groundbreaking investigation, Enrico Gennari and Lacey Williams lead a team of experts into the deep to capture conclusive evidence of sharks eating sharks!",
+          "popularity": 6.486,
+          "poster_path": "/bfxLLn5OAUbZk54acU2t7zX8dPi.jpg",
+          "release_date": "2023-07-02",
+          "title": "Shark Eat Shark",
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/qTlWzBjpG1NztHrKKQO7LhqgOox.jpg",
+          "genre_ids": [
+              28,
+              27,
+              53
+          ],
+          "id": 28820,
+          "original_language": "it",
+          "original_title": "Shark - Rosso nell'oceano",
+          "overview": "A marine biologist, a dolphin trainer, a research scientist, and a local sheriff try to hunt down a large sea monster, a shark/octopus hybrid, that is devouring swimmers and fishermen off a south Florida coast.",
+          "popularity": 5.471,
+          "poster_path": "/v6X5tDgDTcPwCj28msTGEa3nVLf.jpg",
+          "release_date": "1984-09-07",
+          "title": "Devil Fish",
+          "video": false,
+          "vote_average": 3.3,
+          "vote_count": 57
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/ryDGUdlh4lymHKOrDDYzWuRM0kF.jpg",
+          "genre_ids": [
+              28
+          ],
+          "id": 215699,
+          "original_language": "en",
+          "original_title": "Robinson Crusoe of Clipper Island",
+          "overview": "A 14-episode serial in which Mala, a Polynesian in the employ of U.S. Intelligence investigates sabotage on Clipper Island. A gang of spies causes the eruption of a volcano, for which our hero is blamed. He convinces the local Princess Melani of his innocence and helps her ward off a takeover by rival high priest Porotu.",
+          "popularity": 0.6,
+          "poster_path": "/bGTZbNct50QSBUICi6VLAkotSdy.jpg",
+          "release_date": "1936-11-13",
+          "title": "Robinson Crusoe of Clipper Island",
+          "video": false,
+          "vote_average": 7.8,
+          "vote_count": 3
+      }
+  ],
+  "total_pages": 1,
+  "total_results": 6
+}
