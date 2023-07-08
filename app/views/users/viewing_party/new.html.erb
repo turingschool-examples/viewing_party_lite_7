@@ -1,7 +1,9 @@
 <div style="text-align: center;">
   <h3>Create a Movie Party for <%= @movie.title %></h3>
-  <%= button_to "Discover Page", user_discover_path(@user), method: :get %>
-  <br><br>
+  <%= button_to "Discover Page", user_discover_path(@user), method: :get %><br>
+
+  <hr color="black" size="3"><br>
+
   <div id="viewing-party-details">
     <h3>Viewing Party Details</h3>
     <p>Movie Title <%= @movie.title %></p>

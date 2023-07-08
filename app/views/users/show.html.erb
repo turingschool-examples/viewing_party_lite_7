@@ -6,6 +6,8 @@
   <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get  %><br>
 </div>
 
+<hr color="black" size="3"><br>
+
 <div id="hosted-parties">
   <% @user.hosted_parties.each do |party| %>
     <img src=<%= "https://image.tmdb.org/t/p/w500#{party.poster(party.movie_id)}" %> alt="poster", width="200", height="auto" ><br>
