@@ -15,7 +15,7 @@ class Party < ApplicationRecord
   end
 
   def host_name
-    host = User.find(self.host_id)
+    host = User.find(host_id)
     host.name
   end
 
@@ -25,6 +25,6 @@ class Party < ApplicationRecord
 
   def poster(movie_id)
     movie = MovieService.new.search_movies_by_id(movie_id)
-    movie[:poster_path] 
+    movie[:poster_path]
   end
 end

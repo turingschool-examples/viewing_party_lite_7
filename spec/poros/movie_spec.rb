@@ -29,7 +29,7 @@ RSpec.describe Movie do
 
   it 'can convert the genre info nested hash to an array of genre names' do
     expect(@data[:genres]).to be_an(Array)
-    expect(@data[:genres]).to eq([{:id=>28, :name=>"Action"}, {:id=>878, :name=>"Science Fiction"}])
+    expect(@data[:genres]).to eq([{ :id=>28, :name=>"Action" }, { :id=>878, :name=>"Science Fiction" }])
     expect(@movie.genre_names(@data[:genres])).to eq(['Action', 'Science Fiction'])
     expect(@movie.genres).to eq(['Action', 'Science Fiction'])
   end

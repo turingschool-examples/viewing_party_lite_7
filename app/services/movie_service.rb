@@ -1,7 +1,7 @@
 require 'faraday'
 
 class MovieService
-  def conn 
+  def conn
     Faraday.new(url: "https://api.themoviedb.org") do |faraday|
       faraday.params["api_key"] = ENV["MOVIEDB_API_KEY"]
     end

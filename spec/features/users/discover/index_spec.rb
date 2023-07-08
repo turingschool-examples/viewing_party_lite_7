@@ -37,4 +37,3 @@ RSpec.describe "User's Discover Movies page" do
     end
   end
 end
-

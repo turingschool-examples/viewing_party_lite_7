@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe "User's Movies page" do
   before(:each) do
     @user1 = User.create!(name: 'John Smith', email: 'jsmith@aol.com')
-    @movie1 = MovieFacade.new({type: 'top20rated'}).search.first
-    @movie2 = MovieFacade.new({title: 'Rebel Without a Cause'}).search.first
+    @movie1 = MovieFacade.new({ type: 'top20rated' }).search.first
+    @movie2 = MovieFacade.new({ title: 'Rebel Without a Cause' }).search.first
   end
 
   describe "when I choose to Discover Top Rated Movies" do
@@ -68,7 +68,7 @@ RSpec.describe "User's Movies page" do
 
       fill_in :title, with: 'Rebel Without a Cause'
       click_button('Find Movies')
-  
+
       expect(page).to have_button('Discover Page')
       click_button('Discover Page')
       expect(current_path).to eq(user_discover_path(@user1))
