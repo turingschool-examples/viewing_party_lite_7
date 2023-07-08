@@ -7,16 +7,33 @@ class MoviesController < ApplicationController
   end
 
   def show
-    movie_id = params[:id]
+    @movie_facade = MovieFacade.new(params[:id])
+    
+    # ---- movie details:
+    # movie_id = params[:id]
 
-    conn = Faraday.new(url: "https://api.themoviedb.org/3/") do |faraday|
-      faraday.params["api_key"] = ENV["TMDB_API_KEY"]
-    end
+    # conn = Faraday.new(url: "https://api.themoviedb.org/3/") do |faraday|
+    #   faraday.params["api_key"] = ENV["TMDB_API_KEY"]
+    # end
 
-    response = conn.get("movie/#{movie_id}")
+    # response = conn.get("movie/#{movie_id}")
 
-    json = JSON.parse(response.body, symbolize_names: true)
-    @movie = Movie.new(json)
+    # movie_details = JSON.parse(response.body, symbolize_names: true)
+    # @movie = Movie.new(movie_details)
+
+    # ---- movie credits/cast:
+    # movie_id = params[:id]
+
+    # conn = Faraday.new(url: "https://api.themoviedb.org/3/") do |faraday|
+    #   faraday.params["api_key"] = ENV["TMDB_API_KEY"]
+    # end
+
+    # response = conn.get("movie/#{movie_id}/credits")
+    # cast_details = JSON.parse(response.body, symbolize_names: true)
+    # @cast = Credit.new(cast_details)
+
+    # @movie_facade = MovieFacade.new(params[:id])
+    # @cast = MovieFacade.top_ten_cast(params[:id])
   end
 
   private
