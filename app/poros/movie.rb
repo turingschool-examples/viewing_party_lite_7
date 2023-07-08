@@ -28,6 +28,10 @@ class Movie
   end
 
   def format_genres(genre_details)
-    movie_genres = genre_details.map {|g| g[:name] }
+    if genre_details
+      movie_genres = genre_details.map {|g| g[:name] }
+    else
+      "no genres"
+    end
   end
 end

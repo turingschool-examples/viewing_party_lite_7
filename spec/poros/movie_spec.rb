@@ -33,7 +33,7 @@ RSpec.describe Movie do
     expect(@movie.vote_average).to be_an(Float)
     expect(@movie.vote_average).to eq(9.1)
     expect(@movie.genres).to be_an(Array)
-    expect(@movie.genres.first[:name]).to eq("Drama")
+    expect(@movie.genres).to eq(["Drama", "Crime"])
     expect(@movie.overview).to be_a(String)
     expect(@movie.overview).to eq("a tale of a lame movie")
     expect(@movie.runtime).to be_a(String)
