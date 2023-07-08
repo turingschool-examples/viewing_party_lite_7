@@ -21,6 +21,13 @@ class MovieFacade
     create_movies(movies)
   end
 
+  def cast(movie_id)
+    cast = service.movie_cast(movie_id).first(10)
+    cast.map do |cast_member|
+      CastMember.new(cast_member)
+    end
+  end
+
   def service 
     MovieService.new
   end

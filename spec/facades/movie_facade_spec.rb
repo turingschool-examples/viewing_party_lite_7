@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe MovieFacade do 
   before(:each) do 
     @mf = MovieFacade.new 
+    @service = MovieService.new
     @mf_search = MovieFacade.new('neverending')
     # json_response = File.read('spec/fixtures/top_movies.json')
     # @stub = stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated").to_return(status: 200, body: json_response)
@@ -60,8 +61,7 @@ RSpec.describe MovieFacade do
     end
     
     it '#movie_data' do 
-      service = MovieService.new
-      results = service.find_movie(238)
+      results = @service.find_movie(238)
       movie_details = @mf.movie_data(results)
       expect(movie_details).to be_a Hash
       expect(movie_details).to have_key(:id)
@@ -69,6 +69,13 @@ RSpec.describe MovieFacade do
       expect(movie_details).to have_key(:genres)
       expect(movie_details).to have_key(:runtime)
       expect(movie_details).to have_key(:vote_average)
+    end
+
+    it '#cast' do 
+      cast = @mf.cast(238)
+      expect(cast).to be_a Array
+      expect(cast.first).to be_a CastMember
+      expect(cast.count).to eq(10)
     end
   end
 end
