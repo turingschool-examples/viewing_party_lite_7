@@ -5,7 +5,8 @@ RSpec.describe Movie do
     before(:each) do 
       @movie = Movie.new({
         title: 'Soul',
-        vote_average: '9.75'})
+        vote_average: '9.75', 
+        id: '3'})
     end
 
     it 'exists' do 
@@ -15,6 +16,7 @@ RSpec.describe Movie do
     it 'has attributes' do 
       expect(@movie.title).to eq('Soul')
       expect(@movie.vote_average).to eq('9.75')
+      expect(@movie.id).to eq('9.75')
     end
   end
 end

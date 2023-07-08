@@ -3,9 +3,9 @@
 <div class="movies">
   <% @movies.each do |movie| %>
     <div class="movie">
-      <div class="title"><%= link_to movie[:title], url: "/users/#{@user}/movies/#{movie[:id]}" %></div>
+      <div class="title"><%= link_to movie.title, url: "/users/#{@user}/movies/#{movie.id}" %></div>
       <#% require 'pry'; binding.pry %>
-      <div class="vote-average"><%= movie[:vote_average] %></div>
+      <div class="vote-average"><%= movie.vote_average %></div>
     </div>
   <% end %>
 </div>
