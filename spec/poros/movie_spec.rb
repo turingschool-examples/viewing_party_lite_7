@@ -13,23 +13,25 @@ RSpec.describe Movie do
         })
     end
 
-    it 'exists' do 
-      expect(@movie).to be_a Movie
+    describe 'initialize' do 
+      it 'exists' do 
+        expect(@movie).to be_a Movie
+      end
+
+      it 'has attributes' do 
+        expect(@movie.title).to eq('Soul')
+        expect(@movie.vote_average).to eq(9.75)
+        expect(@movie.id).to eq(3)
+        expect(@movie.runtime).to eq(127)
+        expect(@movie.genres).to eq(['family', 'animation'])
+        expect(@movie.overview).to eq('this is a summary')
+      end
     end
 
-    it 'has attributes' do 
-      expect(@movie.title).to eq('Soul')
-      expect(@movie.vote_average).to eq(9.75)
-      expect(@movie.id).to eq(3)
-      expect(@movie.runtime).to eq(127)
-      expect(@movie.genres).to eq(['family', 'animation'])
-      expect(@movie.overview).to eq('this is a summary')
-    end
-  end
-
-  describe 'instance_methods' do 
-    it 'converts runtime into hours and minutes' do 
-      expect(@movie.formatted_runtime).to eq('2 hours, 7 minutes')
+    describe 'instance_methods' do 
+      it 'format_runtime' do 
+        expect(@movie.format_runtime).to eq('2 hours, 7 minutes')
+      end
     end
   end
 end

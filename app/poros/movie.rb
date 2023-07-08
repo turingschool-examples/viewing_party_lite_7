@@ -15,5 +15,9 @@ class Movie
     @overview = attributes[:overview]
   end
 
-  
+  def format_runtime
+    hours = @runtime / 60
+    minutes = @runtime % 60
+    "#{hours} hours, #{minutes} minutes"
+  end
 end
