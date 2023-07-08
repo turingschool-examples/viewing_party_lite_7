@@ -14,8 +14,4 @@ module ApplicationHelper
     minutes = runtime % 60
     "#{hours}h #{minutes}m"
   end
-
-  def count_reviews(reviews)
-    reviews.count
-  end
 end

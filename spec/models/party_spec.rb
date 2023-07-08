@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe User do
-  before :each do
+RSpec.describe Party do
+  before(:each) do
     @user1 = User.create!(name: "Cody", email: "code@gmail.com")
     @user2 = User.create!(name: "Javen", email: "javenb022@gmail.com")
 
@@ -18,27 +18,19 @@ RSpec.describe User do
 
   describe "relationships" do
     it { should have_many :user_parties }
-    it { should have_many(:parties).through(:user_parties) }
+    it { should have_many(:users).through(:user_parties) }
   end
 
   describe "instance methods" do
-    describe "#invited_parties" do
-      it "returns all parties a user is invited to" do
-        expect(@user1.invited_parties).to eq([@party2, @party3])
+    describe "#host_name" do
+      it "returns the name of the host of the party" do
+        expect(@party1.host_name).to eq(@user1.name)
       end
     end
-    describe "#hosting_parties" do
-      it "returns all parties a user is hosting" do
-        expect(@user1.hosted_parties).to eq([@party1])
-      end
-    end
-  end
 
-  describe "class methods" do
-    describe ".other_users" do
-      it "returns all users except the user with the given id" do
-        expect(User.other_users(@user1.id)).to be_a ActiveRecord::Relation
-        expect(User.other_users(@user1.id).first).to be_a User
+    describe "#invited_users" do
+      it "returns all users invited to the party" do
+        expect(@party1.invited_users).to eq([@user2])
       end
     end
   end
