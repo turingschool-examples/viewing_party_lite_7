@@ -85,5 +85,14 @@ RSpec.describe MovieService do
       expect(first_response).to have_key(:author)
       expect(first_response).to have_key(:content)
     end
+
+    it 'cast_members' do 
+      response = @ms.movie_cast(238)
+      first_response = response.first
+      expect(response).to be_a Array
+      expect(first_response).to be_a Hash
+      expect(first_response).to have_key(:name)
+      expect(first_response).to have_key(:character)
+    end
   end
 end
