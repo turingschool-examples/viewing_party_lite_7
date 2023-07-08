@@ -1,17 +1,20 @@
 <h3 class="title"><%= @movie_facade.show_movie_details.title %></h3>
 
 <%= button_to "Discover Page", user_discover_index_path(@user), method: :get %></br>
-<%= button_to "Create Viewing Party for #{@movie_facade.show_movie_details.title}",  new_user_movie_viewing_party_path(@user, @movie_facade.show_movie_details.id), method: :get %>
+<%= button_to "Create Viewing Party for #{@movie_facade.show_movie_details.title}",  new_user_movie_viewing_party_path(@user, @movie.id), method: :get %>
 
-<h5 class="vote_avg">Vote: <%= @movie_facade.show_movie_details.vote_average %></h5>
-<h5 class="runtime">Runtime: <%= @movie_facade.show_movie_details.runtime %></h5>
-<h5 class="genre">Genre: <%= @movie_facade.show_movie_details.genres.to_sentence %></h5>
+<h5 class="vote_avg">Vote: <%= @movie.vote_average %></h5>
+<h5 class="runtime">Runtime: <%= format_runtime(@movie.runtime) %></h5>
+<h5 class="genre">Genre: <% @movie.genres.each do |genre| %>
+    <ul><li><%= genre[:name]%></li></ul>
+  <% end %>
+</h5>
 
 </br>
 
 <div class ="summary">
   <h4>Summary</h4>
-  <p><%= @movie_facade.show_movie_details.overview %></p>
+  <p><%= @movie.overview %></p>
 </div>
 
 </br>
