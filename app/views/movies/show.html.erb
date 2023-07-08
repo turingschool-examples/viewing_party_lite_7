@@ -18,9 +18,8 @@
   <h4>Review Count: <%= @reviews.length %></h4>
   <% @reviews.each do |review| %>
     <div class="review">
-      <%= review.author %>
-      <%= review.rating %>
-      <%= review.content %>
+      <h5>Author: </h5><%= review.author %>
+      <h5> Summary: </h5><%= review.content %>
     </div>
   <% end %>
 </div>

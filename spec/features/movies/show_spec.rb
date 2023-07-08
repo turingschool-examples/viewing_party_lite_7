@@ -57,8 +57,11 @@ RSpec.describe 'Movie Detail Page', type: :feature do
     it 'has each reviews author and information' do 
       within(first(".review")) do 
         expect(page).to have_content("futuretv")
+        expect(page).to have_content("Author:")
+        expect(page).to have_content("Summary:")
         expect(page).to have_content("The Godfather Review by Al Carlson")
       end
+      save_and_open_page
     end
   end
 
