@@ -15,10 +15,12 @@
 
 </br>
 
-<div class="cast">
-  <h4>Cast</h4>
-   
-</div>
+<h4>Cast</h4>
+<% @credit_facade.show_credits.cast.each do |cast_member| %>
+  <div class="cast">
+      <p>Actor: <%= cast_member[0] %> as Character: <%= cast_member[1]%></p>
+  </div>
+<% end %>
 
 <div class="reviews">
 

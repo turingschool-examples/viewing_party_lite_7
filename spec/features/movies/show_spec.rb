@@ -14,14 +14,22 @@ RSpec.describe "/users/:user_id/movies/:movie_id", type: :feature do
       expect(page).to have_css(".runtime")
       expect(page).to have_css(".genre")
       expect(page).to have_css(".summary")
-      expect(page).to have_css(".cast")
+      expect(page).to have_css(".cast", maximum: 10)
       expect(page).to have_css(".reviews")
     end
 
-    xit "shows the first 10 cast members", :vcr do
-      within(".cast") do
-
-      end
+    it "shows the first 10 cast members", :vcr do
+      expect(page).to have_content("Cast")
+      expect(page).to have_content("Actor: Marlon Brando as Character: Don Vito Corleone")
+      expect(page).to have_content("Actor: Al Pacino as Character: Michael Corleone")
+      expect(page).to have_content("Actor: James Caan as Character: Sonny Corleone")
+      expect(page).to have_content("Actor: Robert Duvall as Character: Tom Hagen")
+      expect(page).to have_content("Actor: Richard S. Castellano as Character: Clemenza")
+      expect(page).to have_content("Actor: Diane Keaton as Character: Kay Adams")
+      expect(page).to have_content("Actor: Talia Shire as Character: Connie Corleone Rizzi")
+      expect(page).to have_content("Actor: Gianni Russo as Character: Carlo Rizzi")
+      expect(page).to have_content("Actor: Sterling Hayden as Character: Captain McCluskey")
+      expect(page).to have_content("Actor: John Marley as Character: Jack Woltz")
     end
 
     xit "total count of reviews", :vcr do

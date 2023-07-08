@@ -8,7 +8,7 @@ class MoviesController < ApplicationController
 
   def show
     @movie_facade = MovieFacade.new(params[:id])
-    
+    @credit_facade = CreditFacade.new(params[:id])
     # ---- movie details:
     # movie_id = params[:id]
 
@@ -31,9 +31,6 @@ class MoviesController < ApplicationController
     # response = conn.get("movie/#{movie_id}/credits")
     # cast_details = JSON.parse(response.body, symbolize_names: true)
     # @cast = Credit.new(cast_details)
-
-    # @movie_facade = MovieFacade.new(params[:id])
-    # @cast = MovieFacade.top_ten_cast(params[:id])
   end
 
   private
