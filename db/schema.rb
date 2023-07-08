@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_230_706_144_019) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_08_173954) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,7 +24,7 @@ ActiveRecord::Schema[7.0].define(version: 20_230_706_144_019) do
   end
 
   create_table "user_parties", force: :cascade do |t|
-    t.boolean "is_host"
+    t.boolean "is_host", default: false
     t.bigint "user_id", null: false
     t.bigint "party_id", null: false
     t.datetime "created_at", null: false
