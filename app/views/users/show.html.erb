@@ -7,7 +7,8 @@
   <h4><%= "#{@user.name}'s Watch Parties: Attending" %></h4>
   <ol>
   <% @user.movie_watch_parties.sort_attending.each do |p| %>
-
+    <% require 'pry'; binding.pry %>
+          <p>Movie: <%= p.watch_party.movie_title %>
           <p>Watch Date: <%=  p.watch_party.date %></p>
           <p>Start Time: <%=  p.watch_party.start_time %></p>
           <p>Attendees: </p>
@@ -30,7 +31,7 @@
   <h4><%= "#{@user.name}'s Watch Parties: Hosting" %></h4>
   <ol>
     <% @user.movie_watch_parties.sort_hosting.each do |p| %>
-
+          <p>Movie: <%= p.watch_party.movie_title %>
           <p>Watch Date: <%=  p.watch_party.date %></p>
           <p>Start Time: <%=  p.watch_party.start_time %></p>
           <p>Attendees: </p>
