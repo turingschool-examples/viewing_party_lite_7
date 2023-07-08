@@ -5,6 +5,11 @@ RSpec.describe MovieFacade do
     @facade = MovieFacade.new(155)
   end
   describe "class methods", :vcr do
+    it 'has poster path' do
+      expect(@facade.poster).to eq("https://image.tmdb.org/t/p/original/qJ2tW6WMUDux911r6m7haRef0WH.jpg")
+      expect(@facade.poster).to be_a String
+    end
+
     it 'can get movie poster' do
       expect(MovieFacade.get_movie_poster(155)).to be_a(String)
     end
@@ -35,10 +40,6 @@ RSpec.describe MovieFacade do
 
     it 'has summary' do
       expect(@facade.summary).to eq("Batman raises the stakes in his war on crime. With the help of Lt. Jim Gordon and District Attorney Harvey Dent, Batman sets out to dismantle the remaining criminal organizations that plague the streets. The partnership proves to be effective, but they soon find themselves prey to a reign of chaos unleashed by a rising criminal mastermind known to the terrified citizens of Gotham as the Joker.")
-    end
-
-    it 'has poster path' do
-      expect(@facade.poster).to eq("https://image.tmdb.org/t/p/original/qJ2tW6WMUDux911r6m7haRef0WH.jpg")
     end
   end
 

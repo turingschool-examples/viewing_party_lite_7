@@ -64,7 +64,7 @@ RSpec.describe 'user/movies/index.html' do
         expect(page).to have_content('Viewing Party')
         expect(page).to have_button('Discover Page')
 
-        click_link("#{search_movies.first.title}")
+        click_link("The Dark Knight")
         expect(current_path).to eq("/users/#{@user1.id}/movies/155")
       end
     end

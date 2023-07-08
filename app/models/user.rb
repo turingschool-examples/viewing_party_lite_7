@@ -10,7 +10,7 @@ class User < ApplicationRecord
   end
 
   def invited_parties
-    parties.where(user_parties: { is_host: false })
+    parties.where(user_parties: { is_host: nil })
   end
 
   def self.other_users(id)

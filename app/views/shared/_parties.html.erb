@@ -1,6 +1,6 @@
 <h2> <%=title%> </h2>
 <% parties.each do |party| %>
-  <p><%= @facade.get_movie_title(party.movie_id)%>
+  <p><%= link_to @facade.get_movie_title(party.movie_id), user_movie_path(@user, party.movie_id) %>
   <p><%= image_tag @facade.get_movie_poster(party.movie_id), size: "60x80" %></p>
 
   <p><%= format_date(party.date) %></p>
