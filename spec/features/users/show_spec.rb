@@ -19,12 +19,23 @@ RSpec.describe '/users/:id', type: :feature do
   describe 'When I visit the users dashboard page', :vcr do
     it 'I see <users name> Dashboard" at the top of the page' do
       visit user_path(@user1)
+
       expect(page).to have_content("#{@user1.name}'s Dashboard")
     end
 
     it 'has a button (Discover Movies)', :vcr do
       visit user_path(@user1)
+
       expect(page).to have_button('Discover Movies')
+    end
+
+    it 'has link to movie show page', :vcr do
+      visit user_path(@user1)
+
+      expect(page).to have_link('The Dark Knight')
+
+      click_link('The Dark Knight')
+      expect(current_path).to eq(user_movie_path(@user1, 155))
     end
 
     it 'has a section that list viewing parties', :vcr do
