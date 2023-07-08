@@ -76,5 +76,14 @@ RSpec.describe MovieService do
       expect(response).to have_key(:runtime)
       expect(response[:runtime]).to be_a Integer
     end
+
+    it 'movie_reviews' do 
+      response = @ms.movie_reviews(238)
+      first_response = response.first
+      expect(response).to be_a Array
+      expect(first_response).to be_a Hash
+      expect(first_response).to have_key(:author)
+      expect(first_response).to have_key(:content)
+    end
   end
 end
