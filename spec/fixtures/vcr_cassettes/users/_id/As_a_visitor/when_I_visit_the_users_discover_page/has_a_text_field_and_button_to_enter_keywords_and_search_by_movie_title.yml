@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?query=V%20for%20Vendetta
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Hide_API
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Sat, 08 Jul 2023 03:50:09 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=27571
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 5a1fe98d624c0a0e7151e7c4ba1761e2
+      X-Memc-Age:
+      - '6610'
+      X-Memc-Expires:
+      - '15432'
+      Etag:
+      - W/"27b300e41858a0d5269c82d458866053"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 cddde15c11afac53ac9fe7978dcfecd6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - EWN5nT-2qgyB5nONX506gSbwYwP0dtu2rJv4fqCSq1EH9BxBVzDY3w==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJwYWdlIjoxLCJyZXN1bHRzIjpbeyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvc0ZFWXNFZnpUeDdoaGpldGxOcm1lOEI1T1VvLmpwZyIsImdlbnJlX2lkcyI6WzI4LDUzLDg3OF0sImlkIjo3NTIsIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF90aXRsZSI6IlYgZm9yIFZlbmRldHRhIiwib3ZlcnZpZXciOiJJbiBhIHdvcmxkIGluIHdoaWNoIEdyZWF0IEJyaXRhaW4gaGFzIGJlY29tZSBhIGZhc2Npc3Qgc3RhdGUsIGEgbWFza2VkIHZpZ2lsYW50ZSBrbm93biBvbmx5IGFzIOKAnFbigJ0gY29uZHVjdHMgZ3VlcnJpbGxhIHdhcmZhcmUgYWdhaW5zdCB0aGUgb3BwcmVzc2l2ZSBCcml0aXNoIGdvdmVybm1lbnQuIFdoZW4gViByZXNjdWVzIGEgeW91bmcgd29tYW4gZnJvbSB0aGUgc2VjcmV0IHBvbGljZSwgaGUgZmluZHMgaW4gaGVyIGFuIGFsbHkgd2l0aCB3aG9tIGhlIGNhbiBjb250aW51ZSBoaXMgZmlnaHQgdG8gZnJlZSB0aGUgcGVvcGxlIG9mIEJyaXRhaW4uIiwicG9wdWxhcml0eSI6MzcuNzk3LCJwb3N0ZXJfcGF0aCI6Ii8xYXZEMUplYVJpSlg1TTRhaFBkWlB5cEdvR04uanBnIiwicmVsZWFzZV9kYXRlIjoiMjAwNi0wMi0yMyIsInRpdGxlIjoiViBmb3IgVmVuZGV0dGEiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6Ny44OTksInZvdGVfY291bnQiOjEzMzQwfV0sInRvdGFsX3BhZ2VzIjoxLCJ0b3RhbF9yZXN1bHRzIjoxfQ==
+  recorded_at: Sat, 08 Jul 2023 03:50:09 GMT
+recorded_with: VCR 6.2.0

@@ -7,7 +7,7 @@ describe MovieService do
         search = MovieService.new.movie_by_id(455476)
         expect(search).to be_a Hash
         expect(search[:adult]).to be_a FalseClass
-        
+
         expect(search).to have_key :title
         expect(search[:title]).to eq("Knights of the Zodiac")
       end
