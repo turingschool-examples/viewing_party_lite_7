@@ -1,15 +1,12 @@
 class SearchFacade
-  def initialize(movie)
-    @movie = movie
+  attr_reader :movie_by_id
+  def initialize(movie_id)
+    @movie_id = movie_id
   end
 
-  def movies
-
+  def details
     service = MovieService.new
-    json = service.movie(@movie)
-
-    @movies = json[:results].map do |movie_data|
-      Movie.new(movie_data)
-    end
+    request = service.movie_by_id(@movie_id)
+    @details = request
   end
 end

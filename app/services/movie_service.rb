@@ -1,6 +1,18 @@
 class MovieService
-  def movie(movie_id)
+  def movie_by_id(movie_id)
     get_url("/3/movie/#{movie_id}")
+  end
+
+  def all_movies
+    get_url("/3/movie")
+  end
+
+  def popular_movies
+    get_url("/3/movie/top_rated")
+  end
+
+  def search_movie_by_keyword(keyword)
+    get_url("/3/search/movie?&query=#{keyword}")
   end
 
   def get_url(url)
@@ -13,4 +25,5 @@ class MovieService
       faraday.headers["Authorization"] = ENV["MOVIE_API_KEY"]
     end
   end
+
 end

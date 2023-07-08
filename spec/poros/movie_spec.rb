@@ -4,6 +4,8 @@ RSpec.describe Movie do
   it "exists" do
     attrs = {
       title: "Ant-Man and the Wasp: Quantumania",
+      length: 120,
+      rating: 85
     }
 
     movie = Movie.new(attrs)

@@ -72,10 +72,10 @@ Shoulda::Matchers.configure do |config|
   end
 end
 VCR.configure do |config|
-  config.cassette_library_dir = "fixtures/vcr_cassettes"
+  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
   config.hook_into :webmock
   config.filter_sensitive_data("Hide_API") {ENV["MOVIE_API_KEY"]}
   config.default_cassette_options = { re_record_interval: 30.days }
   config.configure_rspec_metadata!
-  # config.allow_http_connections_when_no_cassette = true
+  config.default_cassette_options = { :record => :new_episodes, :erb => true }
 end

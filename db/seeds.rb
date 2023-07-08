@@ -8,7 +8,6 @@
 require "factory_bot_rails"
 
 User.destroy_all
-Movie.destroy_all
 WatchParty.destroy_all
 MovieWatchParty.destroy_all
 
@@ -17,13 +16,9 @@ user_1 = User.create!(name: "Ricky", email: "Email@email.com")
 user_2 = FactoryBot.create(:user)
 user_3 = FactoryBot.create(:user)
 
-movie_1 = FactoryBot.create(:movie)
-movie_2 = FactoryBot.create(:movie)
-movie_3 = FactoryBot.create(:movie)
-
-wapa_1 = FactoryBot.create(:watch_party, movie_id: movie_1.id)
-wapa_2 = FactoryBot.create(:watch_party, movie_id: movie_2.id)
-wapa_3 = FactoryBot.create(:watch_party, movie_id: movie_3.id)
+wapa_1 = FactoryBot.create(:watch_party)
+wapa_2 = FactoryBot.create(:watch_party)
+wapa_3 = FactoryBot.create(:watch_party)
 
 movie_watch_party_1 = FactoryBot.create(:movie_watch_party, watch_party_id: wapa_1.id, user_id: user_1.id)
 movie_watch_party_2 = FactoryBot.create(:movie_watch_party, watch_party_id: wapa_1.id, user_id: user_2.id)
