@@ -4,16 +4,34 @@ class Movie
               :vote_average,
               :genres,
               :overview,
-              :run_time,
-              :poster
+              :runtime,
+              :poster_path
 
   def initialize(data)
     @id = data[:id]
     @title = data[:title]
     @vote_average = data[:vote_average]
-    @genres = data[:genres]
+    @genres = format_genres(data[:genres])
     @overview = data[:overview]
-    @run_time = data[:runtime]
-    @poster = data[:poster_path]
+    @runtime = format_time(data[:runtime])
+    @poster_path = data[:poster_path]
+  end
+
+  def format_time(time)
+    if time
+      hours = time / 60
+      minutes = time % 60
+      "#{hours}hr #{minutes}min"
+    else
+      "no run time"
+    end
+  end
+
+  def format_genres(genre_details)
+    if genre_details
+      genre_details.map { |g| g[:name] }
+    else
+      "no genres"
+    end
   end
 end

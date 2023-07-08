@@ -6,7 +6,34 @@ class MoviesController < ApplicationController
     @facade = search_keyword? ? MovieFacade.new(params[:keyword]) : MovieFacade.new
   end
 
-  def show; end
+  def show
+    @movie_facade = MovieFacade.new(params[:id])
+    @credit_facade = CreditFacade.new(params[:id])
+    @review_facade = ReviewFacade.new(params[:id])
+
+    # ---- movie details:
+    # movie_id = params[:id]
+
+    # conn = Faraday.new(url: "https://api.themoviedb.org/3/") do |faraday|
+    #   faraday.params["api_key"] = ENV["TMDB_API_KEY"]
+    # end
+
+    # response = conn.get("movie/#{movie_id}")
+
+    # movie_details = JSON.parse(response.body, symbolize_names: true)
+    # @movie = Movie.new(movie_details)
+
+    # ---- movie credits/cast:
+    # movie_id = params[:id]
+
+    # conn = Faraday.new(url: "https://api.themoviedb.org/3/") do |faraday|
+    #   faraday.params["api_key"] = ENV["TMDB_API_KEY"]
+    # end
+
+    # response = conn.get("movie/#{movie_id}/credits")
+    # cast_details = JSON.parse(response.body, symbolize_names: true)
+    # @cast = Credit.new(cast_details)
+  end
 
   private
 
