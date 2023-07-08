@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
   resources :users, only:[:show] do
     resources :discover, only:[:index]
-    resources :movies, only: [:index]
+    resources :movies, only: [:index, :show]
   end
 
   
