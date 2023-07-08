@@ -1,4 +1,5 @@
 <h3> <%= @movie.title %> </h3>
+<%= button_to "Create a Viewing Party", "/users/#{@user.id}/movies/#{@movie.id}/viewing-party/new", method: :get %>
 <p> Vote Average: <%= @movie.vote %></p>
 <p> Runtime: <%= @movie.runtime %></p>
 <p> Genres: 

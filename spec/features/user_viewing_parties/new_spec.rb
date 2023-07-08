@@ -31,7 +31,7 @@ RSpec.describe "New Viewing Party Page", type: :feature do \
       expect(page).to have_field("duration", with: "116")
     end
 
-    it "has a form to create a new party" do 
+    it "has a form to create a new party with valid data" do 
       select "2023", from: "[day(1i)]"
       select "July", from: "[day(2i)]"
       select "8", from: "[day(3i)]"
@@ -46,19 +46,19 @@ RSpec.describe "New Viewing Party Page", type: :feature do \
       within('#viewing_parties_hosting') do
         expect(page).to have_content("Jaws 2- Viewing Party")
       end
-
+      
       visit user_path(@user2)
-      within('#viewing_parties_invitations') do
+      within('#viewing_party_invitations') do
         expect(page).to have_content("Jaws 2- Viewing Party")
       end
       
       visit user_path(@user4)
-      within('#viewing_parties_invitations') do
+      within('#viewing_party_invitations') do
         expect(page).to have_content("Jaws 2- Viewing Party")
       end
 
       visit user_path(@user5)
-      within('#viewing_parties_invitations') do
+      within('#viewing_party_invitations') do
         expect(page).to have_content("Jaws 2- Viewing Party")
       end
     end

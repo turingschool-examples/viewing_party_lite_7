@@ -3,11 +3,11 @@ class UserViewingPartiesController < ApplicationController
     @movie = MovieSearch.new.full_movie_details_by_id(params[:movie_id])
     @user = User.find(params[:user_id])
   end
-
+  
   def create
     viewing_party = ViewingParty.new(viewing_party_params)
     if viewing_party.save
-      association = viewing_party.create_associations(params[:id], params[:invitees])
+      viewing_party.create_associations(params[:id], params[:invitees])
       redirect_to "/users/#{params[:id]}"
       flash[:notice] = "#{params[:movie_title]} Viewing Party successfully created!"
     else
