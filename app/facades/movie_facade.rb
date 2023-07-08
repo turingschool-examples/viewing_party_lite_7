@@ -56,7 +56,7 @@ class MovieFacade
   end
 
   def cast
-    cast_attributes.map do |cast|
+    cast_attributes.take(10).map do |cast|
       Cast.new(cast)
     end
   end

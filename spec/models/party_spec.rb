@@ -10,10 +10,10 @@ RSpec.describe Party do
     @party3 = Party.create!(movie_id: 3, duration: 120, date: "2021-07-06", start_time: "2021-07-06 12:00:00")
 
     @user_party1 = UserParty.create!(user_id: @user1.id, party_id: @party1.id, is_host: true)
-    @user_party2 = UserParty.create!(user_id: @user1.id, party_id: @party2.id, is_host: nil)
-    @user_party3 = UserParty.create!(user_id: @user2.id, party_id: @party1.id, is_host: nil)
+    @user_party2 = UserParty.create!(user_id: @user1.id, party_id: @party2.id, is_host: false)
+    @user_party3 = UserParty.create!(user_id: @user2.id, party_id: @party1.id, is_host: false)
     @user_party4 = UserParty.create!(user_id: @user2.id, party_id: @party2.id, is_host: true)
-    @user_party5 = UserParty.create!(user_id: @user1.id, party_id: @party3.id, is_host: nil)
+    @user_party5 = UserParty.create!(user_id: @user1.id, party_id: @party3.id, is_host: false)
   end
 
   describe "relationships" do

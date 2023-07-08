@@ -11,6 +11,6 @@ class Party < ApplicationRecord
   end
 
   def invited_users
-    users.where(user_parties: { is_host: nil })
+    users.where(user_parties: { is_host: nil || false })
   end
 end
