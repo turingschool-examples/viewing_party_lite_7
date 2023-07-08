@@ -9,6 +9,7 @@ RSpec.describe 'Movie Detail Page', type: :feature do
   end
 
   describe 'movie details' do 
+     
     it 'displays title' do 
       expect(page).to have_content("#{@movie.title}")
     end
@@ -31,6 +32,32 @@ RSpec.describe 'Movie Detail Page', type: :feature do
     it 'displays summary' do 
       expect(page).to have_content("Summary:") 
       expect(page).to have_content(@movie.overview)
+    end
+  end
+
+  describe 'review details' do 
+    it 'has first 10 cast members' do 
+      within(".cast_members") do 
+        expect(page).to have_content("Cast Members:")
+        within(first(".cast_member"))
+        expect(page).to have_content(@cast.first.name)
+      end
+    end
+
+    it 'has reviews' do 
+      within(".reviews") do 
+        expect(page).to have_content("Reviews:")
+        expect(page).to have_content(@reviews.first)
+        expect(page).to have_content(@reviews.count)
+      end
+    end
+
+    it 'has each reviews author and information' do 
+      within(first(".reviews")) do 
+        expect(page).to have_content(@reviews.first.author)
+        expect(page).to have_content(@reviews.first.rating)
+        expect(page).to have_content(@reviews.first.content)
+      end
     end
   end
 
