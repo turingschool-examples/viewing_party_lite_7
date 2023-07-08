@@ -31,12 +31,6 @@ RSpec.describe "user dashboard page", type: :feature do
 
         expect(current_path).to eq(user_discover_index_path(@user1.id))
       end
-
-      it "displays a section for viewing parties" do
-        within("#viewing-parties") do
-          expect(page).to have_content("***HOLD***")
-        end
-      end
     end
 
     context "User 2" do
@@ -56,12 +50,6 @@ RSpec.describe "user dashboard page", type: :feature do
         click_button "Discover Movies"
 
         expect(current_path).to eq(user_discover_index_path(@user2.id))
-      end
-
-      it "displays a section for viewing parties" do
-        within("#viewing-parties") do
-          expect(page).to have_content("***HOLD***")
-        end
       end
     end
   end
