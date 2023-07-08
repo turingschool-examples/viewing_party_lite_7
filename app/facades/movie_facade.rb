@@ -15,6 +15,14 @@ class MovieFacade
     @_user ||= User.find(@user_id)
   end
 
+  def all_other_users
+    User.where.not(id: @user_id)
+  end
+
+  def party
+    ViewingParty.new
+  end
+
   def movies
     if @commit == "Find Movies"
       movie_search(@title)
