@@ -10,7 +10,7 @@ class Movie
     @title = attributes[:title]
     @vote_average = attributes[:vote_average]
     @id = attributes[:id]
-    @runtime = attributes[:run_time]
+    @runtime = attributes[:runtime]
     @genres = attributes[:genres]
     @overview = attributes[:overview]
   end

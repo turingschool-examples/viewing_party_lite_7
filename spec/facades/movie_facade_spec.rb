@@ -50,7 +50,7 @@ RSpec.describe MovieFacade do
       expect(movie.id).to be_a Integer
       expect(movie.genres).to be_a Array
       expect(movie.overview).to be_a String
-      # expect(movie.runtime).to be_a Integer
+      expect(movie.runtime).to be_a Integer
       expect(movie.vote_average).to be_a Float
     end
     

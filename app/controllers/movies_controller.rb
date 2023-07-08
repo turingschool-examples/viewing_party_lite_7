@@ -1,8 +1,8 @@
 class MoviesController < ApplicationController
-  before_action :find_user
+  before_action :find_user, :create_facade
 
   def index
-    @facade = MovieFacade.new(params[:movie_search])
+    # @facade = MovieFacade.new(params[:movie_search])
 
     if @facade.search != nil
       @movies = @facade.search_movies
@@ -12,12 +12,16 @@ class MoviesController < ApplicationController
   end
 
   def show
-    # require 'pry'; binding.pry
+    @movie = @facade.movie(params[:id])
   end
 
   private
 
   def find_user
     @user = User.find(params[:user_id])
+  end
+
+  def create_facade
+    @facade = MovieFacade.new(params[:movie_search])
   end
 end
