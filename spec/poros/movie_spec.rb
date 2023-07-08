@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Movie do
   before(:each) do
-    @data = MovieService.new.search_movies_by_id(603)
-    @cast = MovieService.new.find_cast(221)
-    @reviews = MovieService.new.find_reviews(221)
+    @data = movie_stub
+    @cast = cast_stub
+    @reviews = reviews_stub
     @movie = Movie.new(@data, @cast, @reviews)
   end
 
@@ -23,7 +23,7 @@ RSpec.describe Movie do
     expect(@movie.genres).to eq(['Action', 'Science Fiction'])
     expect(@movie.cast).to be_an(Array)
     expect(@movie.cast.count).to eq(10)
-    expect(@movie.num_reviews).to eq(0)
+    expect(@movie.num_reviews).to eq(5)
     expect(@movie.reviews).to be_an(Array)
   end
 
