@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe MovieService do
   describe 'instance methods' do
-    describe '#top_movies' do
+    describe '#top_rated_movies' do
       it 'returns the top 20 movies' do
         movies = MovieService.new.top_rated_movies
         results = movies[:results]
@@ -67,6 +67,18 @@ describe MovieService do
         expect(cast.count).to eq(42)
         expect(cast.first).to have_key(:name)
         expect(cast.first[:name]).to be_a(String)
+      end
+    end
+
+    describe '#find_reviews' do
+      it 'returns the reviews of the movie that matched the search ID' do
+        movie = MovieService.new.find_reviews(680)
+        reviews = movie[:results]
+
+        expect(reviews).to be_an(Array)
+        expect(reviews.count).to eq(6)
+        expect(reviews.first).to have_key(:author)
+        expect(reviews.first).to have_key(:content)
       end
     end
   end
