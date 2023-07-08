@@ -44,7 +44,7 @@ RSpec.describe 'Movie Detail Page', type: :feature do
       end
     end
 
-    it 'has reviews' do 
+    it 'has reviews & count' do 
       within(".reviews") do 
         expect(page).to have_content("Reviews:")
         expect(page).to have_content(@reviews.first)
