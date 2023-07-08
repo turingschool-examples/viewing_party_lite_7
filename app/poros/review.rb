@@ -8,7 +8,7 @@ class Review
   end
 
   def get_review_info(review_details)
-    review_data = review_details.map do |review|
+    review_details.map do |review|
       "#{review[:author]}'s review: #{review[:content]}"
     end
   end

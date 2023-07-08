@@ -4,6 +4,7 @@ AllCops:
   Exclude:
     - db/schema.rb
     - spec/factories/factories.rb
+    - spec/rails_helper.rb
 
 Style/BlockComments:
   Description: 'Do not use block comments.'
