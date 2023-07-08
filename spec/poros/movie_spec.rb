@@ -15,8 +15,8 @@ RSpec.describe Movie do
   it 'has attributes' do
     expect(@movie.id).to eq(603)
     expect(@movie.title).to eq('The Matrix')
-    expect(@movie.vote_average).to eq(8.205)
-    expect(@movie.vote_count).to eq(23406)
+    expect(@movie.vote_average).to eq(8.2)
+    expect(@movie.vote_count).to eq(23409)
     expect(@movie.runtime).to eq('2h 16m')
     expect(@movie.summary).to eq('Set in the 22nd century, The Matrix tells the story of a computer hacker who joins a group of underground insurgents fighting the vast and powerful computers who now rule the earth.')
     expect(@movie.poster_path).to eq('/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg')
