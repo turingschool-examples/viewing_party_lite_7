@@ -13,4 +13,18 @@ class Party < ApplicationRecord
     movie = MovieService.new.search_movies_by_id(movie_id)
     movie[:title]
   end
+
+  def host_name
+    host = User.find(self.host_id)
+    host.name
+  end
+
+  def invited_users
+    users.where.not(id: host_id)
+  end
+
+  def poster(movie_id)
+    movie = MovieService.new.search_movies_by_id(movie_id)
+    movie[:poster_path] 
+  end
 end
