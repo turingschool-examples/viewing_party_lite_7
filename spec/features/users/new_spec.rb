@@ -23,12 +23,18 @@ RSpec.describe "Creates a new User" do
     it "gives an error if all fields aren't filled out" do
       visit "/register"
 
-      # fill_in "Name", with: "Javen"
+      fill_in "Name", with: "Javen"
+      fill_in "Email", with: "javenb22@gmail.com"
+      click_button "Register User"
+
+      visit "/register"
+
+      fill_in "Name", with: "Javen"
       fill_in "Email", with: "javenb22@gmail.com"
       click_button "Register User"
 
       expect(current_path).to eq("/register")
-      expect(page).to have_content("Please fill out all fields")
+      expect(page).to have_content("A name and unique email must be present.")
     end
 
     it "gives an error if email is not unique" do
@@ -40,7 +46,7 @@ RSpec.describe "Creates a new User" do
       click_button "Register User"
 
       expect(current_path).to eq("/register")
-      expect(page).to have_content("This email is already taken")
+      expect(page).to have_content("A name and unique email must be present.")
     end
   end
 end

@@ -6,10 +6,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   root "welcome#index"
-
-  resources :register, only: [:index]
-  resources :users, only: [:index, :show, :create], controller: "users"
-
-  # post "/users/:id/discover", to: "users#create"
-  get "/users/:id/discover", to: "users/discover#index"
+  get 'register', to: 'users#new', as: :new_user
+  resources :users, only: [:create, :show] do
+    get 'discover', to: 'users/discover#index'
+    resources :movies, only: [:index, :show], controller: 'users/movies' do
+      resources :viewing_party, only: [:new, :create], controller: 'users/movies/viewing_parties'
+    end
+  end
 end

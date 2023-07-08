@@ -1,7 +1,5 @@
-module Users
-  class DiscoverController < ApplicationController
-    def index
-      @user = User.find(params[:id])
-    end
+class Users::DiscoverController < ApplicationController
+  def index
+    @user = User.find(params[:user_id])
   end
 end
