@@ -17,7 +17,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_04_152850) do
   create_table "movie_watch_parties", force: :cascade do |t|
     t.bigint "watch_party_id", null: false
     t.bigint "user_id", null: false
-    t.integer "user_status"
+    t.integer "user_status", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_movie_watch_parties_on_user_id"

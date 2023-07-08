@@ -3,7 +3,7 @@ class CreateMovieWatchParties < ActiveRecord::Migration[7.0]
     create_table :movie_watch_parties do |t|
       t.references :watch_party, null: false, foreign_key: true
       t.references :user, null: false, foreign_key: true
-      t.integer :user_status
+      t.integer :user_status, default: 1
 
       t.timestamps
     end
