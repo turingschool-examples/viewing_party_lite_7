@@ -33,6 +33,8 @@ RSpec.describe "New Viewing Party Page", type: :feature do
       movie = MovieFacade.new.find_movie(11)
       visit new_user_movie_viewing_party_path(user1, movie.id)
 
+      expect(find_field(:duration).value.to_i).to eq(movie.runtime)
+      
       fill_in :duration, with: 120
       fill_in :date, with: '2023-11-11'
       fill_in :start_time, with: '12:00'
