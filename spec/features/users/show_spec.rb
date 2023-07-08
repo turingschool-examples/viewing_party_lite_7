@@ -70,4 +70,77 @@ RSpec.describe 'User Dashboard page' do
     visit user_path(@user4)
     expect(page).to_not have_content("The Godfather")
   end
+
+    #   As a user,
+    # When I visit a user dashboard,
+    # I should see the viewing parties that the user has been invited to with the following details:
+
+    # Movie Image
+    # Movie Title, which links to the movie show page
+    # Date and Time of Event
+    # who is hosting the event
+    # list of users invited, with my name in bold
+    # I should also see the viewing parties that the user has created with the following details:
+
+    # Movie Image
+    # Movie Title, which links to the movie show page
+    # Date and Time of Event
+    # That I am the host of the party
+    # List of friends invited to the viewing party
+  describe 'User Dashboard with viewing party events' do
+    before(:each) do
+      visit  user_viewing_party_path(@user1, 238)
+
+      fill_in 'duration', with: 210
+      fill_in 'date', with: "2024-01-01"
+      fill_in 'start_time', with: "07:00"
+      check("selected_users[]", option: @user2.id)
+      check("selected_users[]", option: @user3.id)
+      click_button('Create Party')
+    end
+  
+    describe 'Viewing Parties that the user has been invited to' do
+      it 'displays movie image' do
+        
+      end
+
+      it 'displays movie title, which links to the movie show page' do
+
+      end
+
+      it 'displays date and time of the event' do
+
+      end
+
+      it 'displays who is hosting the event' do
+
+      end
+
+      it 'displays list of invited users with host name in bold' do
+
+      end
+    end
+
+    describe 'Viewing Parties that the user has created' do
+      it 'displays movie image' do
+        
+      end
+
+      it 'displays movie title, which links to the movie show page' do
+
+      end
+
+      it 'displays date and time of the event' do
+
+      end
+
+      it 'displays who is hosting the event' do
+
+      end
+
+      it 'displays list of invited users' do
+
+      end
+    end
+  end
 end
