@@ -39,7 +39,9 @@ RSpec.describe "New Viewing Party Page", type: :feature do
       check user2.email
       click_button 'Create Party'
 
-
+      expect(current_path).to eq("/users/#{user1.id}")
+      expect(page).to have_content(movie.title)
+      expect(page).to have_content("#{user2.user_name}")
     end
   end
 end
