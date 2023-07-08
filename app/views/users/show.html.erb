@@ -5,7 +5,8 @@
 <h4> List of Viewing Parties </h4>
 
 <h2><% @user.parties.each do |party| %></h2>
-  <p><%= party.movie_title %></p>
+  <p>Movie Title: <%= party.movie_title %></p>
+  <p>Party Host: <%= party.host %></p>
   <img width='100px' src=<%= party.movie_image %>>
     <p>Attendees<% party.attendees.each do |invite| %></p>
       <p><%= invite.user_name %></p>
