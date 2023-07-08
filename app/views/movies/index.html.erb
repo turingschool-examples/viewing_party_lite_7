@@ -4,7 +4,7 @@
 <h2> Top Rated Movies </h2>
 <% @facade.details.each do |movie| %>
   <p>
-  Movie: <%= movie.title %> <br>
+  Movie: <%= link_to movie.title, movie_path(movie.id) %> <br>
   Popularity: <%= movie.popularity %> <br>
   <p>
 <% end %>

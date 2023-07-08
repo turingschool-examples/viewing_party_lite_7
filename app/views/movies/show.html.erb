@@ -1,5 +1,7 @@
+<br><%= link_to "Movie Discover Page", "/users/#{@user.id}/discover", method: :get %>
+
 <p>
 Movie: <%= @facade.details[:title] %> <br>
-Length:<%= @facade.details[:length] %> <br>
-Rating: <%= @facade.details[:rating] %> <br>
+Length:<%= @facade.details[:runtime] %> <br>
+Vote Average: <%= @facade.details[:vote_average] %> <br>
 </p>

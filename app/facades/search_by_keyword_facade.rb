@@ -1,12 +1,11 @@
-class AllMoviesFacade
-  def initialize(movies)
-    @movies = movies
+class SearchByKeywordFacade
+  def initialize(keyword)
+    @keyword = keyword
   end
 
   def details
     service = MovieService.new
-    request = service.all_movies
-    require 'pry'; binding.pry
+    request = service.search_movie_by_keyword(@keyword)
     @movies = request[:results].map do |movie_data|
       Movie.new(movie_data)
     end
