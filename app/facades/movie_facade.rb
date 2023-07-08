@@ -28,6 +28,13 @@ class MovieFacade
     end
   end
 
+  def reviews(movie_id)
+    reviews = service.movie_reviews(movie_id)
+    reviews.map do |review|
+      Review.new(review)
+    end
+  end
+
   def service 
     MovieService.new
   end

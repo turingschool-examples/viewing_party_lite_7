@@ -77,5 +77,15 @@ RSpec.describe MovieFacade do
       expect(cast.first).to be_a CastMember
       expect(cast.count).to eq(10)
     end
+
+    it '#reviews' do 
+      reviews = @mf.reviews(238)
+      first_review = reviews.first
+      expect(reviews).to be_a Array
+      expect(first_review).to be_a Review
+      expect(first_review.author).to be_a String
+      expect(first_review.content).to be_a String
+      # exepect(first_review.rating).to be_a Float
+    end
   end
 end
