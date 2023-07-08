@@ -5,7 +5,7 @@ RSpec.describe MovieService do
     stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV['MOVIE_API_KEY']}")
       .to_return(status: 200, body: File.read("./spec/fixtures/top_rated_movies.json"))
 
-    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['MOVIE_API_KEY']}&query=The%20Fellowship%20of%20the%20ring")
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['MOVIE_API_KEY']}&query=The%20ring")
       .to_return(status: 200, body: File.read("./spec/fixtures/search_movie.json"))
   end
 
@@ -20,11 +20,11 @@ RSpec.describe MovieService do
     end
 
     it "movie_search" do
-      @response = MovieService.movie_search("The Fellowship of the ring")
+      @response = MovieService.movie_search("The ring")
       @movies = @response[:results]
 
       expect(@movies).to be_a(Array)
-      expect(@movies.first[:title]).to eq("The Lord of the Rings: The Fellowship of the Ring")
+      expect(@movies.first[:title]).to eq("The Ring")
     end
   end
 end
