@@ -9,6 +9,9 @@ RSpec.describe MovieFacade do
 
       top_movies.each do |top_movie|
         expect(top_movie).to be_a(Movie)
+        expect(top_movie.title).to be_a(String)
+        expect(top_movie.id).to be_an(Integer)
+        expect(top_movie.vote_average).to be_a(Float)
       end
     end
 
