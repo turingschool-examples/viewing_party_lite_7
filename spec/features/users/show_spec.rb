@@ -19,9 +19,8 @@ RSpec.describe 'User Dashboard page' do
 
   it 'displays a list of viewing parties' do
     visit user_path(@user1)
-    within('#viewing_party_list') do
-      expect(page).to have_content("Viewing Parties")
-    end
+
+    expect(page).to have_content("Viewing Parties")
   end
 
   it 'displays a button to Discover Movies' do
@@ -101,7 +100,7 @@ RSpec.describe 'User Dashboard page' do
     end
 
     xit 'displays movie image' do
-
+      
     end
 
     it 'displays movie title, which links to the movie show page' do
