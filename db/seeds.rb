@@ -20,13 +20,13 @@ Party.destroy_all
 @party3 = Party.create!(movie_id: 3, duration: 115, date: "2023-08-28", start_time: "2023-08-28 19:15:00")
 
 @user_party1 = UserParty.create!(user_id: @user1.id, party_id: @party1.id, is_host: true)
-@user_party3 = UserParty.create!(user_id: @user2.id, party_id: @party1.id, is_host: nil)
+@user_party3 = UserParty.create!(user_id: @user2.id, party_id: @party1.id, is_host: false)
 
 @user_party4 = UserParty.create!(user_id: @user2.id, party_id: @party2.id, is_host: true)
-@user_party2 = UserParty.create!(user_id: @user1.id, party_id: @party2.id, is_host: nil)
-@user_party9 = UserParty.create!(user_id: @user4.id, party_id: @party2.id, is_host: nil)
+@user_party2 = UserParty.create!(user_id: @user1.id, party_id: @party2.id, is_host: false)
+@user_party9 = UserParty.create!(user_id: @user4.id, party_id: @party2.id, is_host: false)
 
 @user_party7 = UserParty.create!(user_id: @user3.id, party_id: @party3.id, is_host: true)
-@user_party5 = UserParty.create!(user_id: @user1.id, party_id: @party3.id, is_host: nil)
-@user_party6 = UserParty.create!(user_id: @user2.id, party_id: @party3.id, is_host: nil)
-@user_party8 = UserParty.create!(user_id: @user4.id, party_id: @party3.id, is_host: nil)
+@user_party5 = UserParty.create!(user_id: @user1.id, party_id: @party3.id, is_host: false)
+@user_party6 = UserParty.create!(user_id: @user2.id, party_id: @party3.id, is_host: false)
+@user_party8 = UserParty.create!(user_id: @user4.id, party_id: @party3.id, is_host: false)
