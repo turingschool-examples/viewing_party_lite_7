@@ -33,7 +33,6 @@ RSpec.describe "New Viewing Party Page", type: :feature do \
   
   describe "new viewing party form" do 
     it "displays the name of the movie title above the form" do 
-      save_and_open_page
       expect(page).to have_content("Jaws 2 Viewing Party")
     end
 
