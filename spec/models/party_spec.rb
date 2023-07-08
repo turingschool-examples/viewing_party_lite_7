@@ -32,5 +32,24 @@ RSpec.describe Party, type: :model do
         expect(party1.host_name).to eq('John Smith')
       end
     end
+
+    describe '#invited_users' do
+      it 'lists users that are invited to a party' do
+        @user1 = User.create!(name: 'John Smith', email: 'jsmith@aol.com')
+        @user2 = User.create!(name: 'Emily Jones', email: '343ftl.com')
+        @user3 = User.create!(name: 'Jimmy johnson', email: 'jj33@aol.com')
+        
+        @party1 = Party.create!(date: '2023-01-01', start_time: '08:00', duration: 275, movie_id: 238, host_id: @user1.id)
+        @party2 = Party.create!(date: '2023-01-01', start_time: '08:00', duration: 275, movie_id: 238, host_id: @user2.id)
+        @party_user1 = PartyUser.create!(user_id: @user1.id, party_id: @party1.id)
+        @party_user2 = PartyUser.create!(user_id: @user2.id, party_id: @party1.id)
+        @party_user3 = PartyUser.create!(user_id: @user3.id, party_id: @party1.id)
+        @party_user4 = PartyUser.create!(user_id: @user1.id, party_id: @party2.id)
+        @party_user5 = PartyUser.create!(user_id: @user2.id, party_id: @party2.id)
+
+        expect(@party1.invited_users).to eq([@user2, @user3])
+        expect(@party2.invited_users).to eq([@user1])
+      end
+    end
   end
 end
