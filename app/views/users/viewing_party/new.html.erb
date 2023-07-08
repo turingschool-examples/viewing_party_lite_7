@@ -1,11 +1,11 @@
 <div style="text-align: center;">
-  <h3>Create a Movie Party for <%= @movie.title %></h3>
+  <h1>Create a Movie Party for <%= @movie.title %></h1>
   <%= button_to "Discover Page", user_discover_path(@user), method: :get %><br>
 
   <hr color="black" size="3"><br>
 
   <div id="viewing-party-details">
-    <h3>Viewing Party Details</h3>
+    <h2>Viewing Party Details</h2>
     <p>Movie Title <%= @movie.title %></p>
     <%= form_with url: user_new_viewing_party_path(@user, @movie), method: :post, local: true do |form| %>
       <p><%= form.label :duration %>
