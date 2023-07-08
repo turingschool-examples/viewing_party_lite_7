@@ -6,6 +6,6 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: { case_sensitive: false }
 
   def self.other_users(id)
-    where.not(id: id)
+    where.not(id:)
   end
 end

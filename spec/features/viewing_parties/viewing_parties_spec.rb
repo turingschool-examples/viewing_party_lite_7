@@ -36,14 +36,14 @@ RSpec.describe "/users/:user_id/movies/:movie_id/viewing-party/new" do
           fill_in :party_date, with: "12/02/22"
           fill_in :party_time, with: Time.now
           expect(page).to have_content("Invite Other Users")
-          check "#{@user2.name}"
+          check @user2.name.to_s
           click_button "Create Party"
         end
 
         expect(current_path).to eq(user_path(@user))
       end
 
-      #sad path
+      # sad path
       it "if form is not completely filled out, error message displays", :vcr do
         within(".party_details") do
           fill_in :duration, with: 200

@@ -11,7 +11,6 @@ class MoviesController < ApplicationController
     @credit_facade = CreditFacade.new(params[:id])
     @review_facade = ReviewFacade.new(params[:id])
     @movie = MovieFacade.get_movie(params[:id])
-
   end
 
   private

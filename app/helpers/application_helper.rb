@@ -1,6 +1,5 @@
 # # app/helpers/application_helper.rb
 module ApplicationHelper
-
   def format_runtime(time)
     if time
       hours = time / 60
