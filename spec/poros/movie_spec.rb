@@ -35,13 +35,9 @@ RSpec.describe Movie do
     expect(@movie.genres).to be_an(Array)
     expect(@movie.overview).to be_a(String)
     expect(@movie.overview).to eq("a tale of a lame movie")
-    expect(@movie.runtime).to be_a(String)
-    expect(@movie.runtime).to eq("3hr 9min")
+    expect(@movie.runtime).to be_an(Integer)
+    expect(@movie.runtime).to eq(189)
     expect(@movie.poster_path).to be_a(String)
     expect(@movie.poster_path).to eq("/movie/image.jpg")
-  end
-
-  it "shows movie formatted" do
-    expect(format_runtime(@movie.runtime)).to eq("3hr 9min")
   end
 end

@@ -16,6 +16,7 @@ RSpec.describe "/users/:user_id/movies/:movie_id", type: :feature do
       expect(page).to have_css(".summary")
       expect(page).to have_css(".cast", maximum: 10)
       expect(page).to have_css(".reviews")
+      expect(page).to have_content("Runtime: 2hr 55min")
     end
 
     it "shows the first 10 cast members", :vcr do
