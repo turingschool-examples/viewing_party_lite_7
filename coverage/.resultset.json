@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/spec/features/landing_spec.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/spec/features/landing_spec.rb": {
         "lines": [
           1,
           null,
@@ -48,7 +48,7 @@
           null
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/spec/rails_helper.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/spec/rails_helper.rb": {
         "lines": [
           null,
           1,
@@ -123,7 +123,7 @@
           null
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/config/environment.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/config/environment.rb": {
         "lines": [
           null,
           1,
@@ -132,7 +132,7 @@
           1
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/config/application.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/config/application.rb": {
         "lines": [
           1,
           null,
@@ -173,7 +173,7 @@
           null
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/config/boot.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/config/boot.rb": {
         "lines": [
           1,
           null,
@@ -181,7 +181,7 @@
           1
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/config/environments/test.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/config/environments/test.rb": {
         "lines": [
           1,
           null,
@@ -245,7 +245,7 @@
           null
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/config/initializers/assets.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -261,7 +261,7 @@
           null
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/config/initializers/content_security_policy.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/config/initializers/content_security_policy.rb": {
         "lines": [
           null,
           null,
@@ -272,38 +272,6 @@
           null,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/config/initializers/filter_parameter_logging.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/config/initializers/inflections.rb": {
-        "lines": [
           null,
           null,
           null,
@@ -322,7 +290,39 @@
           null
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/config/initializers/permissions_policy.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/config/initializers/filter_parameter_logging.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/bg/turing/3mod/viewing_party_lite_7/config/initializers/inflections.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/bg/turing/3mod/viewing_party_lite_7/config/initializers/permissions_policy.rb": {
         "lines": [
           null,
           null,
@@ -337,12 +337,12 @@
           null
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/spec/factories.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/spec/factories.rb": {
         "lines": [
           1,
           1,
-          41,
-          41,
+          52,
+          52,
           null,
           null,
           1,
@@ -369,7 +369,7 @@
           null
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/config/routes.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/config/routes.rb": {
         "lines": [
           1,
           1,
@@ -391,37 +391,37 @@
           null
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/app/helpers/application_helper.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/app/helpers/movies_helper.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/app/helpers/movies_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/app/helpers/users_helper.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/app/helpers/viewing_parties_helper.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/app/helpers/viewing_parties_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/app/helpers/viewing_users_helper.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/app/helpers/viewing_users_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/spec/features/movies/show_spec.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/spec/features/movies/show_spec.rb": {
         "lines": [
           1,
           null,
@@ -450,105 +450,6 @@
           1,
           1,
           1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/spec/features/users/create_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/spec/features/users/discover_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          2,
-          null,
-          2,
-          2,
-          null,
-          2,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          2,
-          null,
-          2,
-          2,
-          null,
-          2,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
           1,
           null,
           null,
@@ -562,7 +463,106 @@
           null
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/spec/features/users/show_spec.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/spec/features/users/create_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/bg/turing/3mod/viewing_party_lite_7/spec/features/users/discover_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          2,
+          null,
+          2,
+          2,
+          null,
+          2,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          2,
+          null,
+          2,
+          2,
+          null,
+          2,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/bg/turing/3mod/viewing_party_lite_7/spec/features/users/show_spec.rb": {
         "lines": [
           1,
           null,
@@ -577,6 +577,8 @@
           4,
           null,
           null,
+          null,
+          1,
           1,
           1,
           null,
@@ -599,38 +601,60 @@
           null
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/spec/features/viewing_party/new_spec.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/spec/features/viewing_party/new_spec.rb": {
         "lines": [
           1,
           null,
           1,
           1,
           1,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          null,
+          3,
+          3,
+          null,
+          3,
+          3,
+          null,
+          3,
+          null,
+          3,
+          3,
+          null,
+          3,
+          null,
+          3,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           1,
           1,
           1,
           null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
           null,
           1,
           1,
           1,
           1,
           1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
           1,
           1,
           1,
@@ -642,7 +666,7 @@
           null
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/spec/models/movie_spec.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/spec/models/movie_spec.rb": {
         "lines": [
           null,
           null,
@@ -667,44 +691,7 @@
           null
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/spec/models/user_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          2,
-          2,
-          2,
-          null,
-          null,
-          1,
-          2,
-          2,
-          null,
-          null
-        ]
-      },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/app/models/user.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/spec/models/viewing_party_spec.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/spec/models/user_spec.rb": {
         "lines": [
           1,
           null,
@@ -722,7 +709,44 @@
           null
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/app/models/viewing_party.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/bg/turing/3mod/viewing_party_lite_7/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/bg/turing/3mod/viewing_party_lite_7/spec/models/viewing_party_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/bg/turing/3mod/viewing_party_lite_7/app/models/viewing_party.rb": {
         "lines": [
           1,
           1,
@@ -735,7 +759,7 @@
           null
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/spec/models/viewing_user_spec.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/spec/models/viewing_user_spec.rb": {
         "lines": [
           1,
           null,
@@ -747,7 +771,7 @@
           null
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/app/models/viewing_user.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/app/models/viewing_user.rb": {
         "lines": [
           1,
           1,
@@ -755,7 +779,7 @@
           null
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/spec/poros/popular_movie_spec.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/spec/poros/popular_movie_spec.rb": {
         "lines": [
           1,
           null,
@@ -777,7 +801,7 @@
           null
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/app/poros/popular_movie.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/app/poros/popular_movie.rb": {
         "lines": [
           1,
           1,
@@ -788,26 +812,26 @@
           null,
           null,
           1,
-          71,
-          71,
-          71,
-          71,
-          71,
-          71,
-          71,
-          71,
-          71,
+          75,
+          75,
+          75,
+          75,
+          75,
+          75,
+          75,
+          75,
+          75,
           null,
           null,
           1,
-          2,
-          2,
-          2,
+          4,
+          4,
+          4,
           null,
           null
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/app/controllers/application_controller.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
@@ -816,11 +840,12 @@
           null
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/app/controllers/users_controller.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/app/controllers/users_controller.rb": {
         "lines": [
           1,
           1,
-          6,
+          7,
+          null,
           null,
           null,
           1,
@@ -830,7 +855,7 @@
           null
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/app/controllers/movies_controller.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/app/controllers/movies_controller.rb": {
         "lines": [
           1,
           null,
@@ -891,7 +916,7 @@
           null
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/app/controllers/discover_controller.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/app/controllers/discover_controller.rb": {
         "lines": [
           1,
           1,
@@ -900,38 +925,61 @@
           null
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/app/controllers/viewing_party_controller.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/app/controllers/viewing_party_controller.rb": {
         "lines": [
           1,
           1,
-          2,
-          2,
-          2,
+          4,
+          4,
           null,
-          2,
-          2,
-          2,
+          4,
+          4,
           null,
-          2,
-          2,
+          4,
+          4,
+          4,
           null,
-          2,
-          2,
-          2,
-          2,
+          4,
+          4,
           null,
-          2,
-          2,
+          4,
+          4,
+          4,
+          4,
           null,
-          2,
-          2,
-          2,
-          2,
+          4,
+          4,
+          null,
+          4,
+          4,
+          4,
+          4,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          0,
+          null,
+          null,
           null,
           null
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/app/controllers/users/register_controller.rb": {
+      "/Users/bg/turing/3mod/viewing_party_lite_7/app/controllers/users/register_controller.rb": {
         "lines": [
           1,
           1,
@@ -952,6 +1000,6 @@
         ]
       }
     },
-    "timestamp": 1688843621
+    "timestamp": 1688858087
   }
 }

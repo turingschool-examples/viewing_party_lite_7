@@ -1,6 +1,22 @@
 <h1>Create A New Viewing Party:</h1>
 <h3>Title: <%= @movie.title %></h3>
 </br>
+<%= form_with url: user_movie_viewing_party_index_path(@user.id, @movie.id), method: :POST, data: {turbo: false}, local: true do |f|%>
+  <%= f.label  :duration, "Party Duration:" %>
+  <%= f.number_field :duration, value: @movie.runtime || '' %></br>
+  <%= f.label  :date_time, "When:" %>
+  <%= f.text_field :date_time %></br>
+  <%= f.label  :time, "Start Time:" %>
+  <%= f.text_field :time %></br>
+  <% @users.each do |user| %>
+    <%= f.label :user, user.name.first %>
+    <%= f.check_box :user, { id: "user_#{user.id}" } %></br>
+  <% end %>
+  <% f.hidden_field :api_movie_id, value: @movie.id %>
+<%= f.submit "Create Party" %>
+<% end %>
+
+</br>
 <h3>Movie Details:</h3>
 <div id="movie">
   <p>Vote Average: <%= @movie.vote_average %></p>
