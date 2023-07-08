@@ -5,6 +5,5 @@ class MoviesController < ApplicationController
 
   def show
     @facade = MovieFacade.new(params)
-    @movie = MovieFacade.movie_details(params[:id])
   end
 end
