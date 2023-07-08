@@ -11,7 +11,7 @@ RSpec.describe MovieService do
     end
   end
 
-  describe 'instanc methods' do 
+  describe 'instance methods' do 
     it '#conn', :vcr do 
       response = @ms.conn
       expect(response).to be_a Faraday::Connection

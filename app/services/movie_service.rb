@@ -8,6 +8,10 @@ class MovieService
     get_url("search/movie?query=#{search}")    
   end
 
+  def find_movie
+    
+  end
+
   def conn 
     Faraday.new(url: 'https://api.themoviedb.org/3/') do |faraday|
       faraday.headers['Authorization'] = ENV['TMDB_AUTH']
