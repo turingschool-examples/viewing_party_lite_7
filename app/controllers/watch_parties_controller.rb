@@ -2,6 +2,7 @@ class WatchPartiesController < ApplicationController
   def new
     @user = User.find(params[:user_id])
     @users = User.all
+    @movie = SearchFacade.new(params[:movie_id])
   end
 
   def create
