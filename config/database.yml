@@ -84,3 +84,6 @@ production:
   database: viewing_party_lite_7_production
   username: viewing_party_lite_7
   password: <%= ENV["VIEWING_PARTY_LITE_7_DATABASE_PASSWORD"] %>
+  
+
+

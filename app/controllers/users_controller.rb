@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new
-    redirect_to user_path(@user.id)
+    # @user = User.new
+    # redirect_to user_path(@user.id)
   end
 end
