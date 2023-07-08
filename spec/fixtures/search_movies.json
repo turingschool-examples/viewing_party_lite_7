@@ -1,0 +1,391 @@
+{
+    "page": 1,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": "/6TBaTZCq0FdjrXcj9mKdHGpcr2D.jpg",
+            "genre_ids": [
+                27,
+                9648
+            ],
+            "id": 565,
+            "original_language": "en",
+            "original_title": "The Ring",
+            "overview": "Rachel Keller is a journalist investigating a videotape that may have killed four teenagers. There is an urban legend about this tape: the viewer will die seven days after watching it. Rachel tracks down the video... and watches it. Now she has just seven days to unravel the mystery of the Ring so she can save herself and her son.",
+            "popularity": 30.835,
+            "poster_path": "/e2t5CKMox7tjv3iD3Ko7NdFa5lJ.jpg",
+            "release_date": "2002-10-18",
+            "title": "The Ring",
+            "video": false,
+            "vote_average": 6.645,
+            "vote_count": 5588
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/lQUfHzMhHX01cQI69WvodojT8UK.jpg",
+            "genre_ids": [
+                35,
+                27
+            ],
+            "id": 1112284,
+            "original_language": "en",
+            "original_title": "The Ring",
+            "overview": "When resident mean girls Stephanie and Amber steal their classmate Guyliner's ring, they soon find that the ring brings out the worst traits of whoever wears it. Stephanie and Amber get rid of the ring, but will their daughters be so lucky?",
+            "popularity": 0.849,
+            "poster_path": "/3M85AzjWaX4NYfJsJjpUW0IfTKa.jpg",
+            "release_date": "2023-04-24",
+            "title": "The Ring",
+            "video": false,
+            "vote_average": 0.0,
+            "vote_count": 0
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/s6AE7NqfjiZYJIDsDdx2JBWPS93.jpg",
+            "genre_ids": [
+                18,
+                10749
+            ],
+            "id": 36056,
+            "original_language": "en",
+            "original_title": "The Ring",
+            "overview": "Both Jack Sander and Bob Corby are boxers in love with Mabel. Jack and Mabel wed, but their marriage is flat. The young wife looks to Bob for comfort.",
+            "popularity": 6.608,
+            "poster_path": "/elaDWaShjlB0y2eQ8zH6jLakMuu.jpg",
+            "release_date": "1927-10-01",
+            "title": "The Ring",
+            "video": false,
+            "vote_average": 5.9,
+            "vote_count": 78
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/zxWAv1A34kdYslBi4ekMDtgIGUt.jpg",
+            "genre_ids": [
+                28,
+                12,
+                14
+            ],
+            "id": 566525,
+            "original_language": "en",
+            "original_title": "Shang-Chi and the Legend of the Ten Rings",
+            "overview": "Shang-Chi must confront the past he thought he left behind when he is drawn into the web of the mysterious Ten Rings organization.",
+            "popularity": 111.057,
+            "poster_path": "/d08HqqeBQSwN8i8MEvpsZ8Cb438.jpg",
+            "release_date": "2021-09-01",
+            "title": "Shang-Chi and the Legend of the Ten Rings",
+            "video": false,
+            "vote_average": 7.602,
+            "vote_count": 8217
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/tqj7NKj11keFuLzPsBDMUq2dOUO.jpg",
+            "genre_ids": [
+                12,
+                14,
+                28
+            ],
+            "id": 120,
+            "original_language": "en",
+            "original_title": "The Lord of the Rings: The Fellowship of the Ring",
+            "overview": "Young hobbit Frodo Baggins, after inheriting a mysterious ring from his uncle Bilbo, must leave his home in order to keep it from falling into the hands of its evil creator. Along the way, a fellowship is formed to protect the ringbearer and make sure that the ring arrives at its final destination: Mt. Doom, the only place where it can be destroyed.",
+            "popularity": 102.552,
+            "poster_path": "/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg",
+            "release_date": "2001-12-18",
+            "title": "The Lord of the Rings: The Fellowship of the Ring",
+            "video": false,
+            "vote_average": 8.399,
+            "vote_count": 22916
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/2u7zbn8EudG6kLlBzUYqP8RyFU4.jpg",
+            "genre_ids": [
+                12,
+                14,
+                28
+            ],
+            "id": 122,
+            "original_language": "en",
+            "original_title": "The Lord of the Rings: The Return of the King",
+            "overview": "Aragorn is revealed as the heir to the ancient kings as he, Gandalf and the other members of the broken fellowship struggle to save Gondor from Sauron's forces. Meanwhile, Frodo and Sam take the ring closer to the heart of Mordor, the dark lord's realm.",
+            "popularity": 86.031,
+            "poster_path": "/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg",
+            "release_date": "2003-12-01",
+            "title": "The Lord of the Rings: The Return of the King",
+            "video": false,
+            "vote_average": 8.5,
+            "vote_count": 21804
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/kWYfW2Re0rUDE6IHhy4CRuKWeFr.jpg",
+            "genre_ids": [
+                12,
+                14,
+                28
+            ],
+            "id": 121,
+            "original_language": "en",
+            "original_title": "The Lord of the Rings: The Two Towers",
+            "overview": "Frodo and Sam are trekking to Mordor to destroy the One Ring of Power while Gimli, Legolas and Aragorn search for the orc-captured Merry and Pippin. All along, nefarious wizard Saruman awaits the Fellowship members at the Orthanc Tower in Isengard.",
+            "popularity": 82.852,
+            "poster_path": "/5VTN0pR8gcqV3EPUHHfMGnJYN9L.jpg",
+            "release_date": "2002-12-18",
+            "title": "The Lord of the Rings: The Two Towers",
+            "video": false,
+            "vote_average": 8.381,
+            "vote_count": 19914
+        },
+        {
+            "adult": false,
+            "backdrop_path": null,
+            "genre_ids": [
+                10770,
+                18,
+                10749
+            ],
+            "id": 72394,
+            "original_language": "en",
+            "original_title": "The Ring",
+            "overview": "During WW II, a young German woman is separated from her family and imprisoned by the Nazis. After being freed she falls in love with and marries a German officer. When Berlin falls to the Russians, and her husband killed, she flees to America, carrying his unborn child, all the while not giving up hope that she will find her family, tied together by her mother's ring.",
+            "popularity": 2.009,
+            "poster_path": "/13aZNi1Eosj1cVG2tm85z0nHEGB.jpg",
+            "release_date": "1996-10-20",
+            "title": "The Ring",
+            "video": false,
+            "vote_average": 5.7,
+            "vote_count": 10
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/sQTIc39GXS5Ead6Z38qnfg9U2q1.jpg",
+            "genre_ids": [
+                35,
+                18
+            ],
+            "id": 46486,
+            "original_language": "en",
+            "original_title": "The Ring",
+            "overview": "A young Mexican/American learns about life both inside and out of the ring when he takes up boxing.",
+            "popularity": 1.348,
+            "poster_path": "/vKsAs3habvFnzYVhQdzQBvbMV4y.jpg",
+            "release_date": "1952-09-26",
+            "title": "The Ring",
+            "video": false,
+            "vote_average": 4.5,
+            "vote_count": 5
+        },
+        {
+            "adult": false,
+            "backdrop_path": null,
+            "genre_ids": [],
+            "id": 1104287,
+            "original_language": "en",
+            "original_title": "The Ring",
+            "overview": "A kid picks up a superpowered ring outside of his school",
+            "popularity": 0.751,
+            "poster_path": null,
+            "release_date": "2023-03-10",
+            "title": "The Ring",
+            "video": false,
+            "vote_average": 0.0,
+            "vote_count": 0
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/x9McE1WFKnAHludiY7xfd7modDC.jpg",
+            "genre_ids": [
+                12,
+                16,
+                14
+            ],
+            "id": 123,
+            "original_language": "en",
+            "original_title": "The Lord of the Rings",
+            "overview": "The Fellowship of the Ring embark on a journey to destroy the One Ring and end Sauron's reign over Middle-earth.",
+            "popularity": 23.27,
+            "poster_path": "/liW0mjvTyLs7UCumaHhx3PpU4VT.jpg",
+            "release_date": "1978-11-15",
+            "title": "The Lord of the Rings",
+            "video": false,
+            "vote_average": 6.6,
+            "vote_count": 749
+        },
+        {
+            "adult": false,
+            "backdrop_path": null,
+            "genre_ids": [
+                18
+            ],
+            "id": 226905,
+            "original_language": "en",
+            "original_title": "The Ring",
+            "overview": "Though Mr. and Mrs. Gray are supposed to be in comfortable circumstances, the husband has met business reverses and has been declared a bankrupt. It is after the wife has just completed a lavish social that he tells her. Disgruntled, she goes with him to live at a cheap apartment house.  Pearl White starred in the Crystal FILMS short THE RING in 1914, just months before starting work at the Pathe studio on her break-out hit serial THE PERILS OF PAULINE.",
+            "popularity": 1.091,
+            "poster_path": null,
+            "release_date": "1914-01-11",
+            "title": "The Ring",
+            "video": false,
+            "vote_average": 0.0,
+            "vote_count": 0
+        },
+        {
+            "adult": false,
+            "backdrop_path": null,
+            "genre_ids": [],
+            "id": 809709,
+            "original_language": "en",
+            "original_title": "The Ring",
+            "overview": "A short film made during lockdown.",
+            "popularity": 0.612,
+            "poster_path": "/jYapTnRZeJDkYoWLcRyPCxrLQTf.jpg",
+            "release_date": "2021-04-08",
+            "title": "The Ring",
+            "video": false,
+            "vote_average": 0.0,
+            "vote_count": 0
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/yeGL4zCAbmTwuPrLUSqWl41WYMi.jpg",
+            "genre_ids": [
+                27,
+                53
+            ],
+            "id": 767585,
+            "original_language": "zh",
+            "original_title": "网络凶铃",
+            "overview": "A college student investigates a series of mysterious deaths.",
+            "popularity": 18.339,
+            "poster_path": "/dtuX98MlmtfMIlYRWqJn7aN7918.jpg",
+            "release_date": "2020-10-30",
+            "title": "The Perilous Internet Ring",
+            "video": false,
+            "vote_average": 6.9,
+            "vote_count": 56
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/aan0KdhVgJfAwUJ3n2HDFOWcxZ2.jpg",
+            "genre_ids": [
+                35
+            ],
+            "id": 252838,
+            "original_language": "en",
+            "original_title": "The Wedding Ringer",
+            "overview": "Doug Harris is a loveable but socially awkward groom-to-be with a problem: he has no best man.  With less than two weeks to go until he marries the girl of his dreams, Doug is referred to Jimmy Callahan, owner and CEO of Best Man, Inc., a company that provides flattering best men for socially challenged guys in need.  What ensues is a hilarious wedding charade as they try to pull off the big con, and an unexpected budding bromance between Doug and his fake\r best man Jimmy.",
+            "popularity": 28.126,
+            "poster_path": "/nh9VKA4LEPKkoCljnDNHtSIhKbF.jpg",
+            "release_date": "2015-01-16",
+            "title": "The Wedding Ringer",
+            "video": false,
+            "vote_average": 6.486,
+            "vote_count": 1470
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/kkGe91NKfGWLTkaw4WPj2GFVZWY.jpg",
+            "genre_ids": [
+                18,
+                27,
+                53
+            ],
+            "id": 10320,
+            "original_language": "en",
+            "original_title": "The Ring Two",
+            "overview": "Rachel Keller must prevent evil Samara from taking possession of her son's soul.",
+            "popularity": 20.713,
+            "poster_path": "/8Mnthy6ymdKHVwVw5gJB7RtaO1F.jpg",
+            "release_date": "2005-03-17",
+            "title": "The Ring Two",
+            "video": false,
+            "vote_average": 5.728,
+            "vote_count": 2061
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/hCaxuZ4VGXBUh2fdvCtyqhh4C9n.jpg",
+            "genre_ids": [
+                18,
+                80
+            ],
+            "id": 96936,
+            "original_language": "en",
+            "original_title": "The Bling Ring",
+            "overview": "Inspired by actual events, a group of fame-obsessed teenagers use the Internet to track the whereabouts of famous celebrities, then rob their homes of riches.",
+            "popularity": 15.397,
+            "poster_path": "/tYLHIM8LIhqCYKS2wdaIOX8tetf.jpg",
+            "release_date": "2013-06-12",
+            "title": "The Bling Ring",
+            "video": false,
+            "vote_average": 5.41,
+            "vote_count": 2864
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/tRnd8gTioOyEVAUmSrXSOnQ9aME.jpg",
+            "genre_ids": [
+                28,
+                12,
+                14,
+                10770
+            ],
+            "id": 11188,
+            "original_language": "en",
+            "original_title": "Ring of the Nibelungs",
+            "overview": "In this swords-and-sorcery tale, good-hearted blacksmith Eyvind hides away infant Prince Siegfried after two malevolent kings murder his father. But a fiery meteor sent by the gods reveals Siegfried's destiny, sending him on the quest of a lifetime. To save a crumbling kingdom claim the heart of his true love, he'll have to slay the nefarious dragon, Fafnir.",
+            "popularity": 16.108,
+            "poster_path": "/3Xo2uejRM81KBu6E25lcf6FXGbi.jpg",
+            "release_date": "2004-11-19",
+            "title": "Ring of the Nibelungs",
+            "video": false,
+            "vote_average": 6.211,
+            "vote_count": 114
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/g28qx5NED06pM2lK1mSxM24r6qs.jpg",
+            "genre_ids": [
+                10751,
+                16,
+                14,
+                35,
+                28
+            ],
+            "id": 14787,
+            "original_language": "en",
+            "original_title": "Tom and Jerry: The Magic Ring",
+            "overview": "The Oscar-winning cat-and-mouse twosome--Tom and Jerry--returns with another adventure. When Tom and Jerry's irrepressible curiosity gets the best of them, the mysterious magic ring that Tom guards with his life ends up stuck over Jerry's head. Now, Jerry must find a way to free himself of the ring while fleeing Tom, who wants to remove the ring any way he can! Find out if the pair can conjure up a solution in this fur-raising, madcap escapade.",
+            "popularity": 15.27,
+            "poster_path": "/fF6I48WGKktHfGYYSVKPTVildWE.jpg",
+            "release_date": "2002-03-12",
+            "title": "Tom and Jerry: The Magic Ring",
+            "video": false,
+            "vote_average": 6.335,
+            "vote_count": 218
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/zJVKeRlRVK2Zs1BWWsZcCUF0gnm.jpg",
+            "genre_ids": [
+                18,
+                10749
+            ],
+            "id": 13957,
+            "original_language": "en",
+            "original_title": "Closing the Ring",
+            "overview": "During the 1940s, a group of young men go off to war, leaving behind Ethel Ann, who is in love with one of them, Teddy. In modern-day Belfast, a man named Jimmy endeavors to return a ring found in the wreckage of a crashed plane. He travels to Michigan, where the grown Ethel Ann, who married another man after Teddy was killed in battle, now lives. Ethel Ann must decide whether to go with Jimmy to meet the soldier who last saw Teddy alive.",
+            "popularity": 8.117,
+            "poster_path": "/rsQp6ZlVN9DFj6wcxDcwgpFrOaH.jpg",
+            "release_date": "2007-09-14",
+            "title": "Closing the Ring",
+            "video": false,
+            "vote_average": 6.144,
+            "vote_count": 80
+        }
+    ],
+    "total_pages": 28,
+    "total_results": 543
+}

@@ -1,39 +1,107 @@
 require "rails_helper"
 
 RSpec.describe "Movie Results page", type: :feature do
-  context "when I press the button to discover top movies" do
-    before(:each) do
-      @user1 = User.create!(name: "Myles", email: "myles@example.com")
-      @user2 = User.create!(name: "Boston", email: "boston@example.com")
-      visit user_discover_index_path(@user1.id)
-      stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV['MOVIE_API_KEY']}")
-        .to_return(status: 200, body: File.read("./spec/fixtures/top_rated_movies.json"))
-      stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['MOVIE_API_KEY']}&query=The%20fellowship%20of%20the%20ring")
-        .to_return(status: 200, body: File.read("./spec/fixtures/search_movie.json"))
-    end
-    context "Happy Path" do
-      it "I am taken to the results page and see the top rated movies" do
-        click_button("Discover Top Rated Movies")
-        expect(current_path).to eq(user_movies_path(@user1.id))
-        expect(page).to have_content("Title")
-        expect(page).to have_content("Vote Average")
-        expect(page).to have_link("The Godfather")
-        expect(page).to have_content("8.7")
+  before(:each) do
+    top = File.read("./spec/fixtures/top_rated_movies.json")
+    search = File.read("./spec/fixtures/search_movies.json")
 
-        expect(page).to have_button("Back")
-        click_button("Back")
-        expect(current_path).to eq(user_discover_index_path(@user1))
+    @top_rated_movies = JSON.parse(top, symbolize_names: true)[:results]
+    @searched_movies = JSON.parse(search, symbolize_names: true)[:results]
+
+    @user1 = User.create!(name: "Myles", email: "myles@example.com")
+    @user2 = User.create!(name: "Boston", email: "boston@example.com")
+
+    # This stubs out the API call to the top rated movies endpoint
+    stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV['MOVIE_API_KEY']}")
+      .to_return(status: 200, body: top)
+
+    # This stubs out the API call to the movie search endpoint
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['MOVIE_API_KEY']}&query=The%20ring")
+      .to_return(status: 200, body: search)
+
+    visit user_discover_index_path(@user1.id)
+  end
+
+  describe "when I press the button to discover top movies" do
+    before(:each) do
+      click_button("Discover Top Rated Movies")
+    end
+
+    it "takes me to the results page and displays the top rated movies" do
+      expect(current_path).to eq(user_movies_path(@user1.id))
+    end
+
+    it "displays a link to the home page and 'Viewing Party' at the top of the page" do
+      expect(page).to have_link("Home")
+      expect(page).to have_content("Viewing Party")
+    end
+
+    it "displays 'Top Rated Movies' and button that takes the user back to the discover page" do
+      within("#query-type") do
+        expect(page).to have_content("Top Rated Movies")
       end
 
-      it "I am taken to the results page and see the movie I searched for" do
-        fill_in "Movie Title", with: "The fellowship of the ring"
-        click_button("Find Movies")
+      expect(page).to have_button("Discover Page")
+
+      click_button("Discover Page")
+
+      expect(current_path).to eq(user_discover_index_path(@user1))
+    end
+
+    it "displays the top 20 movies with their title as a link and vote average" do
+      within("#requested-movies") do
         expect(page).to have_content("Title")
         expect(page).to have_content("Vote Average")
-        expect(current_path).to eq(user_movies_path(@user1.id))
 
-        expect(page).to have_link("The Lord of the Rings: The Fellowship of the Ring")
-        expect(page).to have_content("8.399")
+        expect(@top_rated_movies.count).to eq(20)
+
+        @top_rated_movies.each do |movie|
+          expect(page).to have_link(movie[:title])
+          expect(page).to have_content(movie[:vote_average])
+        end
+      end
+    end
+  end
+
+  describe "when I search for movies" do
+    before(:each) do
+      fill_in :search, with: "The ring"
+
+      click_button("Find Movies")
+    end
+
+    it "takes me to the results page and displays the top rated movies" do
+      expect(current_path).to eq(user_movies_path(@user1.id))
+    end
+
+    it "displays a link to the home page and 'Viewing Party' at the top of the page" do
+      expect(page).to have_link("Home")
+      expect(page).to have_content("Viewing Party")
+    end
+
+    it "displays 'Movie Results for: <search>' and button that takes the user back to the discover page" do
+      within("#query-type") do
+        expect(page).to have_content("Movie Results for: \"The ring\"")
+      end
+
+      expect(page).to have_button("Discover Page")
+
+      click_button("Discover Page")
+
+      expect(current_path).to eq(user_discover_index_path(@user1))
+    end
+
+    it "displays the top 20 movie matches to search with their title as a link and vote average" do
+      within("#requested-movies") do
+        expect(page).to have_content("Title")
+        expect(page).to have_content("Vote Average")
+
+        expect(@searched_movies.count).to eq(20)
+
+        @searched_movies.each do |movie|
+          expect(page).to have_link(movie[:title])
+          expect(page).to have_content(movie[:vote_average].round(1))
+        end
       end
     end
   end
