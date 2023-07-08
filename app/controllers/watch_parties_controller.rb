@@ -15,13 +15,8 @@ class WatchPartiesController < ApplicationController
     end
   end
 
-
   private
   def watch_parties_params
     params.permit(:date, :duration, :start_time, :movie_title)
-  end
-
-  def movie_watch_party_params
-    params.permit(:watch_party_id, :user_id, user_status: 0)
   end
 end

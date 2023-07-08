@@ -8,7 +8,7 @@
   <ol>
   <% @user.movie_watch_parties.sort_attending.each do |p| %>
     <p>Movie: <%= p.watch_party.movie_title %>
-    <p>Watch Date: <%=  p.watch_party.date %></p>
+    <p>Watch Date: <%=  p.watch_party.date %>
           <p>Start Time: <%=  p.watch_party.start_time %></p>
           <p>Attendees: </p>
           <% p.watch_party.movie_watch_parties.each do |party| %>
@@ -31,6 +31,7 @@
   <ol>
     <% @user.movie_watch_parties.sort_hosting.each do |p| %>
           <p>Movie: <%= p.watch_party.movie_title %>
+
           <p>Watch Date: <%=  p.watch_party.date %></p>
           <p>Start Time: <%=  p.watch_party.start_time %></p>
           <p>Attendees: </p>

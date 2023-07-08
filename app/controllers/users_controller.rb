@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @image = SearchFacade.new(params[:movie_id])
   end
 
   def new
