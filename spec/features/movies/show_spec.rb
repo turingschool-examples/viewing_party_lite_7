@@ -5,7 +5,7 @@ RSpec.describe 'Movie Detail Page', type: :feature do
     @user_1 = create(:user)
     @movie = MovieFacade.new.movie(238)
 
-    visit "/users/#{@user_1.id}/movies/#{@movie.id}"
+    visit user_movie_path(@user_1, @movie.id) 
   end
 
   describe 'movie details' do 
@@ -35,15 +35,13 @@ RSpec.describe 'Movie Detail Page', type: :feature do
   end
 
   describe 'buttons' do
-    xit 'has button to discover movies' do
-      visit user_discover_index_path(@user_1)
-      expect(page).to have_button('Discover Top Rated Movies')
-      click_on 'Discover Top Rated Movies'
-      expect(current_path).to eq(user_movies_path(@user_1))
+    it 'has button to discover movies' do
+      expect(page).to have_button('Discover Page')
+      click_on 'Discover Page'
+      expect(current_path).to eq(user_discover_index_path(@user_1))
     end
 
-    xit 'has button to new viewing party page' do
-      visit user_discover_index_path(@user_1)
+    it 'has button to new viewing party page' do
       expect(page).to have_button('New Viewing Party')
       click_button('New Viewing Party')
       expect(current_path).to eq("/users/#{@user_1.id}/movies/#{@movie.id}/viewing-party/new")

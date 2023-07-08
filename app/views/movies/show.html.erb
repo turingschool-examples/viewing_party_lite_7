@@ -8,4 +8,5 @@
 <h3>Summary: </h3><%= @movie.overview %>
 
 <%= button_to 'Discover Page', user_discover_index_path(@user), method: :get %>
-<%= button_to 'New Viewing Party', "users/#{@user.id}/movies/#{@movie.id}/viewing-party/new" %>
+
+<%= button_to 'New Viewing Party', "/users/#{@user.id}/movies/#{@movie.id}/viewing-party/new", method: :get %>
