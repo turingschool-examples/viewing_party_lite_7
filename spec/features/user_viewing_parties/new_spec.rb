@@ -27,12 +27,40 @@ RSpec.describe "New Viewing Party Page", type: :feature do \
       expect(page).to have_content("Jaws 2 Viewing Party")
     end
 
-    xit "has a duration of party with default value of movie runtime in minutes" do 
-      expect(page).to have_content("Duration of Party: 116 minutes")
+    it "has a duration of party with default value of movie runtime in minutes" do 
+      expect(page).to have_field("duration", with: "116")
     end
 
-    xit "has a form to create a new party" do 
-      fill_in "When:", with: ""
+    it "has a form to create a new party" do 
+      select "2023", from: "[day(1i)]"
+      select "July", from: "[day(2i)]"
+      select "8", from: "[day(3i)]"
+      select "16", from: "[start_time(4i)]"
+      select "30", from: "[start_time(5i)]"
+      check("Maggie")
+      check("Taro Boba")
+      check("Momo")
+      click_button "Save"
+
+      expect(current_path).to eq(user_path(@user1))
+      within('#viewing_parties_hosting') do
+        expect(page).to have_content("Jaws 2- Viewing Party")
+      end
+
+      visit user_path(@user2)
+      within('#viewing_parties_invitations') do
+        expect(page).to have_content("Jaws 2- Viewing Party")
+      end
+      
+      visit user_path(@user4)
+      within('#viewing_parties_invitations') do
+        expect(page).to have_content("Jaws 2- Viewing Party")
+      end
+
+      visit user_path(@user5)
+      within('#viewing_parties_invitations') do
+        expect(page).to have_content("Jaws 2- Viewing Party")
+      end
     end
   end
 end
