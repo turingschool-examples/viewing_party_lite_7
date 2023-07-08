@@ -16,13 +16,27 @@ RSpec.describe MovieFacade do
     end
 
     it "can search movies by keyword" do
-      movies_by_keyword = MovieFacade.new('Princess').find_movies
+      movies_by_keyword = MovieFacade.new("Princess").find_movies
 
       expect(movies_by_keyword).to be_an(Array)
 
       movies_by_keyword.each do |keyword_movie|
         expect(keyword_movie).to be_a(Movie)
       end
+    end
+  end
+
+  describe "#show_movie_details", :vcr do
+    it "create a movie object with attributes" do
+      movie_fac = MovieFacade.new(238)
+      movie = movie_fac.show_movie_details
+  
+      expect(movie).to be_a(Movie)
+      expect(movie.title).to eq("The Godfather")
+      expect(movie.vote_average).to eq(8.71)
+      expect(movie.runtime).to eq("2hr 55min")
+      expect(movie.overview).to eq("Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge.")
+      expect(movie.genres).to eq(["Drama", "Crime"])
     end
   end
 end
