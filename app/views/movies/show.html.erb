@@ -1,6 +1,6 @@
 <br><%= link_to "Movie Discover Page", "/users/#{@user.id}/discover", method: :get %>
-
-<p>
+<%= button_to "Create Watch Party", "/users/#{@user.id}/movies/#{@facade.details[:id]}/viewing-party/new", method: :get %>
+<p> 
 Movie: <%= @facade.details[:title] %> <br>
 Length:<%= @facade.details[:runtime] %> <br>
 Vote Average: <%= @facade.details[:vote_average] %> <br>
