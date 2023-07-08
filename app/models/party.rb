@@ -10,7 +10,7 @@ class Party < ApplicationRecord
     users.where("user_parties.is_host = ?", true).pluck("users.name").first
   end
 
-  def invited_users 
-    users.where(user_parties: { is_host: false })
+  def invited_users
+    users.where(user_parties: { is_host: nil })
   end
 end

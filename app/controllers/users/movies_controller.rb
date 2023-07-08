@@ -2,7 +2,7 @@ class Users::MoviesController < ApplicationController
   before_action :get_user
 
   def index
-    @facade = MoviesFacade.new(params[:q])
+    @facade = MoviesFacade.new(params[:search_field])
   end
 
   def show
