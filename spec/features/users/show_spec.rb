@@ -4,14 +4,15 @@ RSpec.describe 'User Show Page' do
   before(:each) do
     user_test_data
     movie_detailsj2 = File.read('spec/fixtures/movie_details_jaws2.json')
-    stub_request(:get, "https://api.themoviedb.org/3/movie/579?api_key=#{ENV['TMDB-KEY']}&append_to_response=credits,reviews,images").
-    with(
-      headers: {
-     'Accept'=>'*/*',
-     'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-     'User-Agent'=>'Faraday v2.7.9'
-      }).
-    to_return(status: 200, body: movie_detailsj2, headers: {})
+    stub_request(:get, "https://api.themoviedb.org/3/movie/579?api_key=#{ENV['TMDB-KEY']}&append_to_response=credits,reviews,images")
+      .with(
+        headers: {
+          'Accept' => '*/*',
+          'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'User-Agent' => 'Faraday v2.7.9'
+        }
+      )
+      .to_return(status: 200, body: movie_detailsj2, headers: {})
     visit "/users/#{@user1.id}"
   end
 

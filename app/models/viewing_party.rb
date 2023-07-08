@@ -15,9 +15,9 @@ class ViewingParty < ApplicationRecord
   end
 
   def create_associations(host, invitees)
-    UserViewingParty.create(viewing_party_id: self.id, user_id: host, host: true)
+    UserViewingParty.create(viewing_party_id: id, user_id: host, host: true)
     invitees.each do |invitee|
-      UserViewingParty.create(viewing_party_id: self.id, user_id: invitee, host: false)
+      UserViewingParty.create(viewing_party_id: id, user_id: invitee, host: false)
     end
   end
 end
