@@ -5,6 +5,13 @@ RSpec.describe "user_path(user)", type: :feature do
     let(:user) { create(:user) }
     let(:user2) { create(:user) }
 
+    before(:each) do 
+      @party1 = Party.create!(duration: 100, party_date: "08/02/23" , party_time: "12:00", movie_id: 500)
+      @party2 = Party.create!(duration: 120, party_date: "08/03/23", party_time: "8:00", movie_id: 400)
+      @u1p1 = UserParty.create!(user_id: user.id, party_id: @party1.id, is_host: true)
+      @u2p1 = UserParty.create!(user_id: user2.id, party_id: @party1.id, is_host: false)
+    end
+
     it "should render only the user's name" do
       visit user_path(user)
 
@@ -16,6 +23,20 @@ RSpec.describe "user_path(user)", type: :feature do
       visit user_path(user)
       click_button "Discover Movies"
       expect(current_path).to eq(user_discover_index_path(user))
+    end
+
+    it "should render the parties the user is invited to " do 
+      visit user_path(user)
+      require 'pry'; binding.pry
+      within ".invited_to_parties" do
+        expect(page).to have_content(@party1.party_date)
+        expect(page).to have_content(@party1.party_time)
+        require 'pry'; binding.pry
+        expect(page).to have_content("Invited")
+        expect(page).to have_content("Hosted by: #{@user_1.name}")
+        expect(page).to have_content("#{@user_2.name}")
+      end
+
     end
   end
 end
