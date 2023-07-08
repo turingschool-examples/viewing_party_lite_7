@@ -47,10 +47,10 @@ RSpec.describe "/users/:user_id/movies/:movie_id", type: :feature do
       expect(current_path).to eq(user_discover_index_path(user))
     end
 
-    xit "has a button to create a viewing party for this movie", :vcr do
+    it "has a button to create a viewing party for this movie", :vcr do
       click_button "Create Viewing Party for The Godfather"
 
-      expect(current_path).to eq("/users/#{user.id}/movies/238/viewing_party/new")
+      expect(current_path).to eq(new_user_movie_viewing_party_path(user, 238))
     end
   end
 end
