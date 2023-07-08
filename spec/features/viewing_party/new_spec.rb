@@ -4,11 +4,14 @@ RSpec.describe "Viewing Party New Page" do
   describe "Sandlot viewing party" do
     before :each do
       @user1 = FactoryBot.create(:user)
+      @user2 = FactoryBot.create(:user)
+      @user3 = FactoryBot.create(:user)
+      @user4 = FactoryBot.create(:user)
       json_response = File.read('spec/fixtures/sandlot_id_search.json')
       response1 = stub_request(:get, "https://api.themoviedb.org/3/search/movie/11528").
         to_return(status: 200, body: json_response)
       @movie = JSON.parse(response1.response.body, symbolize_names: true)
-      @movie_id = @movie[:id] 
+      @movie_id = @movie[:id]
 
       json_response2 = File.read('spec/fixtures/sandlot_cast.json')
       response2 = stub_request(:get, "https://api.themoviedb.org/3/movie/11528/credits").
@@ -34,6 +37,25 @@ RSpec.describe "Viewing Party New Page" do
       expect(page).to have_content("Review Count: 5")
       expect(page).to have_content("Review Author: The Movie Mob")
       expect(page).to have_content("Review Content: What a disappointment!")
+    end
+
+    it "has form to create viewing party" do
+      expect(page).to have_field("Party Duration:")
+      expect(page).to have_field("When:")
+      expect(page).to have_field("Start Time:")
+      expect(page).to have_content(@user1.name.first)
+      expect(page).to have_content(@user2.name.first)
+      expect(page).to have_content(@user3.name.first)
+      expect(page).to have_content(@user4.name.first)
+      expect(page).to have_button("Create Party")
+    end
+
+    it "can create party" do
+      date = Date.today
+      fill_in "date_time", with: date
+      check "user_#{@user1.id}"
+      click_button "Create Party"
+      save_and_open_page
     end
   end
 end

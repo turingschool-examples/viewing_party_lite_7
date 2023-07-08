@@ -6,9 +6,11 @@ RSpec.describe "User Show Page" do
       @user1 = FactoryBot.create(:user)
 
       visit user_path(@user1.id)
+
     end
 
     it "dashboard title" do
+      save_and_open_page
       expect(page).to have_content("#{@user1.name}'s Dashboard")
     end
 
