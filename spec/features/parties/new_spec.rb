@@ -28,14 +28,25 @@ RSpec.describe "Create watch party" do
       expect(current_path).to eq("/users/#{user_1.id}/movies/455476/viewing-party/new")
     end
     it "can create new controller", :vcr do
+      movie = MovieService.new.movie_by_id(455476)
       visit "/users/#{user_1.id}/movies/455476/viewing-party/new"
       fill_in(:date, with: "8/8/23")
       fill_in(:duration, with: 120)
       fill_in(:start_time, with: "13:00")
-      fill_in(:movie_id, with: "455476")
+      find("#movie_id", visible: false).set("455476")
       click_button "Save"
       expect(current_path).to eq("/users/#{user_1.id}")
       expect(page).to have_content("Date: 8/8/23")
+    end
+
+    it "can display movie details on watch party create page", :vcr do
+      movie = MovieService.new.movie_by_id(455476)
+      visit "/users/#{user_1.id}/movies/455476/viewing-party/new"
+
+      expect(page).to have_content("Knights of the Zodiac")
+      expect(page).to have_content("Length: 112")
+      expect(page).to have_content("Vote Average: 6.549")
+
     end
   end
 end
