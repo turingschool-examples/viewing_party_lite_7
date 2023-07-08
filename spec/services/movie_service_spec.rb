@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe MovieService do
-  describe 'class methods' do
+  describe 'instance methods' do
     describe '#top_movies' do
       it 'returns the top 20 movies' do
         movies = MovieService.new.top_rated_movies
