@@ -12,13 +12,18 @@ RSpec.describe "New Viewing Party Page", type: :feature do \
         }).
     to_return(status: 200, body: movie_detailsj2, headers: {})
     
-    @user = User.create!(name: "Max", email: "max@gmail.com")
+    @user1 = User.create!(name: "Max", email: "max@gmail.com")
+    @user2 = User.create!(name: "Maggie", email: "maggie@gmail.com")
+    @user3 = User.create!(name: "Wolfie", email: "Wolfie@gmail.com")
+    @user4 = User.create!(name: "Taro Boba", email: "TaroBoba@gmail.com")
+    @user5 = User.create!(name: "Momo", email: "Momo@gmail.com")
 
-    visit "/users/#{@user.id}/movies/579/viewing-party/new"
+    visit "/users/#{@user1.id}/movies/579/viewing-party/new"
   end
-
+  
   describe "new viewing party form" do 
     it "displays the name of the movie title above the form" do 
+      save_and_open_page
       expect(page).to have_content("Jaws 2 Viewing Party")
     end
 
