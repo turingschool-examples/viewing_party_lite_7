@@ -1,0 +1,19 @@
+<h1> <%= @facade.movie_title %> Viewing Party </h1>
+
+<%= form_with model: @facade.party, url: user_movie_viewing_parties_path, local: true do |form| %>
+  <%= form.label :duration %>
+  <%= form.number_field :duration, min: @facade.movie_runtime, max: 999, value: @facade.movie_runtime %> min
+  <br>
+  <%= form.label :date %>
+  <%= form.date_field :date, min: Date.today %>
+  <br>
+  <%= form.label :time %>
+  <%= form.time_field :time, ignore_date: true %>
+  <br>
+  <%= form.label :invites, "Invite Others:" %>
+  <%= form.collection_check_boxes :user_ids, @facade.all_other_users, :id, :name %><br>
+
+  <br>
+  <%= form.hidden_field :movie_title, value: @facade.movie_title %>
+  <%= form.submit "Create Viewing Party" %>
+<% end %>
