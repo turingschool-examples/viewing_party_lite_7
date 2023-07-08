@@ -1,5 +1,5 @@
 class MoviesFacade
-  def initialize(search=nil)
+  def initialize(search = nil)
     @search = search
   end
 
@@ -10,15 +10,15 @@ class MoviesFacade
   private
 
   def service
-    @_service ||= MovieService.new
+    @service ||= MovieService.new
   end
 
   def top_movies_data
-    @_top_movies_data ||= service.top_rated
+    @top_movies_data ||= service.top_rated
   end
 
   def search_movies_data
-    @_search_movies_data ||= service.search_movies(@search)
+    @search_movies_data ||= service.search_movies(@search)
   end
 
   def create_movies(movies)
