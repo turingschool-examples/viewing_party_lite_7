@@ -11,7 +11,23 @@ RSpec.describe 'Movie Detail Page', type: :feature do
 
   describe 'movie details' do 
     it 'displays title' do 
-      expect(page).to have_content('The Godfather')
+      expect(page).to have_content("#{@movie.title}")
+    end
+
+    it 'displays vote average' do 
+      expect(page).to have_content("Vote Average: #{@movie.vote_average}")
+    end
+
+    it 'displays runtime' do 
+      expect(page).to have_content("Run Time: #{@movie.runtime}")
+    end
+
+    it 'displays genres' do 
+      expect(page).to have_content("Genres: #{@movie.genres}")
+    end
+
+    it 'displays summary' do 
+      expect(page).to have_content("Summary: #{@movie.overview}")
     end
   end
 
