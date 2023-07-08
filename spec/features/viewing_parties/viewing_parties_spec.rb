@@ -1,13 +1,11 @@
 require "rails_helper"
 
 RSpec.describe "/users/:user_id/movies/:movie_id/viewing-party/new" do
-  let!(:user) { create(:user) }
-
   before(:each) do
     @user = User.create!(name: "Silly Billy", email: "silly_billy@email.com")
+    @user2 = User.create!(name: "Michael", email: "michael@email.com")
+    @user3 = User.create!(name: "Tula", email: "tula@email.com")
     @movie = MovieFacade.get_movie(238)
-    @user2 = create(:user)
-    @user3 = create(:user)
 
     visit new_user_movie_viewing_party_path(@user, @movie.id)
   end
@@ -34,9 +32,9 @@ RSpec.describe "/users/:user_id/movies/:movie_id/viewing-party/new" do
         within(".party_details") do
           expect(page).to have_content("Movie Title: #{@movie.title}")
           expect(page).to have_content("Duration of Party")
-          expect(page).to have_content("#{@movie.runtime}")
-          fill_in :date, with: "12/02/22"
-          fill_in :start_time, with: Time.now
+          fill_in :duration, with: 190
+          fill_in :party_date, with: "12/02/22"
+          fill_in :party_time, with: Time.now
           expect(page).to have_content("Invite Other Users")
           check "#{@user2.name}"
           click_button "Create Party"
@@ -45,12 +43,17 @@ RSpec.describe "/users/:user_id/movies/:movie_id/viewing-party/new" do
         expect(current_path).to eq(user_path(@user))
       end
 
-      xit "duration autopopulates with the movie's runtime, but is editable", :vcr do
-        within(".duration") do
-          expect(page).to have_content("Duration of Party")
-          expect(page).to have_content("#{@movie.runtime}")
-          fill_in "Duration of Party", with: 190
+      #sad path
+      it "if form is not completely filled out, error message displays", :vcr do
+        within(".party_details") do
+          fill_in :duration, with: 200
+          fill_in :party_date, with: "01/01/2024"
+
+          click_button "Create Party"
         end
+        save_and_open_page
+        expect(current_path).to eq(new_user_movie_viewing_party_path(@user, @movie.id))
+        # expect(page).to have_content(error-message)
       end
     end
   end
