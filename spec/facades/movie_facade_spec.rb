@@ -18,5 +18,4 @@ RSpec.describe MovieFacade, :vcr do
       expect(movies.first).to be_a(Movie)
     end
   end
-
 end
