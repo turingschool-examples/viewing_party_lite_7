@@ -734,4 +734,63 @@ http_interactions:
         States of America"}],"release_date":"2023-04-27","revenue":6794519,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Go
         beyond your destiny.","title":"Knights of the Zodiac","video":false,"vote_average":6.549,"vote_count":338}'
   recorded_at: Sat, 08 Jul 2023 20:57:40 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/455476/reviews
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Hide_API
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Sat, 08 Jul 2023 21:50:52 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=24958
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 2ed012597d390310723b24a555b3701e
+      X-Memc-Age:
+      - '2791'
+      X-Memc-Expires:
+      - '20957'
+      Etag:
+      - W/"1465fd481f05160d41910452258e5531"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 d4b41c13595dcfd327649d8cdea72ce8.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-C3
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - qRbV-ClwHIRkj3ycHF9o1BHTZyOAQCJP6gCBzg5RX9CYfqBzO43dvg==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":455476,"page":1,"results":[],"total_pages":0,"total_results":0}'
+  recorded_at: Sat, 08 Jul 2023 21:50:52 GMT
 recorded_with: VCR 6.2.0

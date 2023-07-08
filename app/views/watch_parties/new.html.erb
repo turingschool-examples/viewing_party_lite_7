@@ -27,6 +27,13 @@ Cast: <% @actor.details.first(10).each do |actor| %>
  <li> <%= actor.name %> </li>
 <% end %> <br>
 </ol>
-<br>Total Reviews: <%= %><br>
-Review info: <%= %><br>
-</p>
+<br>Total Reviews: <%= @review_facade.details.count %> <br>
+
+Review info: <% @review_facade.details.each do |review| %>
+  <p>
+  Author: <%= review.author %> <br>
+  Name: <%= review.author_details[:name] %> <br>
+  Username: <%= review.author_details[:username] %> <br>
+  Rating: <%= review.author_details[:rating]%> <br>
+  </p>
+<% end %>

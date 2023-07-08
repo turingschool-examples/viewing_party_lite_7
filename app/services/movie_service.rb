@@ -25,6 +25,10 @@ class MovieService
     JSON.parse(response.body, symbolize_names: true)
   end
 
+  def search_reviews_by_movie(movie_id)
+    get_url("/3/movie/#{movie_id}/reviews")
+  end
+
   def conn
     Faraday.new(url: "https://api.themoviedb.org") do |faraday|
       faraday.headers["Authorization"] = ENV["MOVIE_API_KEY"]
