@@ -5,4 +5,14 @@ class User < ApplicationRecord
 
   validates_presence_of :name, :email
   validates_uniqueness_of :email, case_sensitive: false
+
+  def hosted_parties
+
+  end
+
+  def invited_to_parties
+
+  end
 end
+
+
