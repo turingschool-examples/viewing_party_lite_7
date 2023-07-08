@@ -7,7 +7,9 @@ RSpec.describe 'Movies Index Page', type: :feature do
   end
   describe 'As a user, when I visit the Discover Movies page and I click on Top Movies or Search button' do
     it 'displays the title with link and vote average for the top 20 movies', :vcr do
-  
+        movies = SearchFacade.new("Batman").movies
+        movie = movies.first
+
         visit discover_path(@user1)
   
         fill_in :search, with: 'Batman'
@@ -18,7 +20,6 @@ RSpec.describe 'Movies Index Page', type: :feature do
         expect(page).to have_content('Batman')
 
         expect(page).to have_link('Batman')
-        expect(current_path).to eq(movie_show_path)
 
         expect(page).to have_css(".movie", count: 20)
         expect(page).to_not have_css(".movie", count: 21)
@@ -40,7 +41,7 @@ RSpec.describe 'Movies Index Page', type: :feature do
       click_button("Discover Top Rated Movies")
 
       expect(current_path).to eq(movies_path(@user1))
-
+      
       expect(page).to have_content("The Godfather")
     end
   end

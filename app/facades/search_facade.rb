@@ -1,15 +1,19 @@
 class SearchFacade
-  def initialize(search)
+  def initialize(search=nil)
     @search = search
   end
 
   def movies
     service = MovieService.new
 
-    json = service.search_movies(@search)
+    @search.present? ? get_movies(service.search_movies(@search)) : get_movies(service.top_rates_movies)
 
-    @movies = json[:results].map do |movie_data|
+  end
+
+  def get_movies(movies)
+    @movies = movies[:results].map do |movie_data|
       Movie.new(movie_data)
     end
   end
+
 end

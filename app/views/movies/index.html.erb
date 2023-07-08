@@ -4,7 +4,7 @@
 
 <% @facade.movies.each do |movie| %>
   <li class ="movie">
-    <ul>Movie Title: <%= link_to movie.title, movie_show_path(movie.id, @user), method: :get %> </ul>
+    <ul>Movie Title: <%= link_to movie.title, "/users/#{@user.id}/movies/#{movie.id}", method: :get %> </ul>
     <ul>Vote Average: <%= movie.vote_average %>/ 10</ul>
   </li>
 <% end %>
