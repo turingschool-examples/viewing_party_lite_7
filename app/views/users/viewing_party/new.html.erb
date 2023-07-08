@@ -19,6 +19,7 @@
         <%= user.name %><br>
       <% end %><br>
 
+      <%= form.hidden_field :movie_id, value: @movie.id%>
       <%= form.submit "Create Party" %>
     <% end %>
   </div>
