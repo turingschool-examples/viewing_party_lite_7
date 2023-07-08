@@ -7,6 +7,7 @@ class MoviesController < ApplicationController
   def index
     @user = User.find(params[:id])
     @facade = SearchFacade.new(params[:search])
+    
   end
   def show
     @user = User.find(params[:user_id])
