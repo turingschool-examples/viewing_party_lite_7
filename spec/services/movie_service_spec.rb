@@ -82,5 +82,18 @@ RSpec.describe MovieService do
         expect(credits.first[:character]).to eq("Don Vito Corleone")
       end
     end
+
+    context "#movie_reviews", :vcr do
+      it "returns all reviews for that movie" do
+        search = MovieService.new.movie_reviews(238)
+        reviews = search[:results]
+
+        expect(reviews).to be_an(Array)
+        expect(reviews.count).to eq(5)
+        expect(reviews.first[:author]).to eq("futuretv")
+        expect(reviews.first[:author]).to be_a(String)
+        expect(reviews.first[:content]).to be_a(String)
+      end
+    end
   end
 end
