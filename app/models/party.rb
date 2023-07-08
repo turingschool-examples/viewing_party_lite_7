@@ -8,4 +8,9 @@ class Party < ApplicationRecord
                         :duration,
                         :movie_id,
                         :host_id
+
+  def movie_title(movie_id)
+    movie = MovieService.new.search_movies_by_id(movie_id)
+    movie[:title]
+  end
 end
