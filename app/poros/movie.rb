@@ -11,7 +11,7 @@ class Movie
     @id = data[:id]
     @title = data[:title]
     @vote_average = data[:vote_average]
-    @genres = data[:genres]
+    @genres = format_genres(data[:genres])
     @overview = data[:overview]
     @runtime = format_time(data[:runtime])
     @poster_path = data[:poster_path]
@@ -25,5 +25,9 @@ class Movie
     else
       "no run time"
     end
+  end
+
+  def format_genres(genre_details)
+    movie_genres = genre_details.map {|g| g[:name] }
   end
 end
