@@ -1,15 +1,19 @@
-<div id= "header" >
+<div id="header" >
   <h3> <%= @user.name %>'s Dashboard</h3>
 </div>
 
-<div id= "viewing_party_list" >
-  <h5>Viewing Parties</h5>
-</div>
+<h5>Viewing Parties</h5>
 
 <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get  %><br>
 
-  
-<% @user.parties.each do |party| %>
+<div id="hosted-parties">
+  <% @user.hosted_parties.each do |party| %>
+    <%= link_to party.movie_title(party.movie_id), user_movie_path(party.host_id, party.movie_id) %><br>
+  <% end %>
+</div>
 
-  <%= party.movie_title(party.movie_id) %>
-<% end %>
+<div id="invited-parties">
+  <% @user.invited_to_parties.each do |party| %>
+    <%= link_to party.movie_title(party.movie_id), user_movie_path(party.host_id, party.movie_id) %><br>
+  <% end %>
+</div>
