@@ -3,7 +3,7 @@ class Movie
               :title,
               :vote_average,
               :image,
-              :genre,
+              :genres,
               :runtime,
               :summary
 
@@ -12,7 +12,7 @@ class Movie
     @title = data[:title]
     @vote_average = data[:vote_average]
     @image = data[:poster_path]
-    @genre = data[:genres]
+    @genres = data[:genres]
     @runtime = data[:runtime]
     @summary = data[:overview]
   end
