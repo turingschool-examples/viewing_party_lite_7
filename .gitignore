@@ -32,3 +32,6 @@
 
 # Ignore simplecov files
 /coverage/
+
+# Ignore API keys
+/config/application.yml

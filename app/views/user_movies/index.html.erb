@@ -1,0 +1,8 @@
+<h3> Movie Search Results <h3>
+
+<% @movies.each do |movie| %>
+  <%= link_to "Title: #{movie.title}", "/users/#{@user.id}/movies/#{movie.id}" %> </p>
+  <p> Vote Average: <%= movie.vote %> </p>
+<% end %>
+
+<%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %>
