@@ -51,9 +51,9 @@ RSpec.describe "/users/:user_id/movies/:movie_id/viewing-party/new" do
 
           click_button "Create Party"
         end
-        save_and_open_page
+
         expect(current_path).to eq(new_user_movie_viewing_party_path(@user, @movie.id))
-        # expect(page).to have_content(error-message)
+        expect(page).to have_content("Error: All fields must be filled in!")
       end
     end
   end

@@ -1,5 +1,4 @@
 class ViewingPartiesController < ApplicationController
-  require 'pry'; binding.pry
   before_action :find_user
 
   def new
@@ -9,14 +8,14 @@ class ViewingPartiesController < ApplicationController
 
   def create
     movie_party = Party.new(party_params)
-    binding.pry
+    # binding.pry
     if movie_party.save
-      #create userparty between each user_id and movie_id, is_host: false
-      #if host, create is_host: true
-      #redirect to users/id page user_path(user)
+      create_user_parties(movie_party)
+      make_host(movie_party)
+      redirect_to user_path(@user)
     else
-      #flash[:error] = errors.message.full_sentence
-      #redirect to new_user_movie_viewing_party_path(@user, @movie.id)
+      flash[:error] = "Error: All fields must be filled in!"
+      redirect_to new_user_movie_viewing_party_path(@user, params[:movie_id])
     end
   end
 
@@ -30,15 +29,18 @@ class ViewingPartiesController < ApplicationController
     @user = User.find(params[:user_id])
   end
 
-
-  def make_host
-    host = find_user
-    host.update(is_host: true)
+  def find_party_user(id)
+    user = User.find(id)
   end
 
-  # def create__user_parties(party)
-  #   params[:user_ids].each do |user_id|
-  #     UserParty.create(user: find_user(user_id), party: party)
-  #   end
-  # end
+  def make_host(party)
+    host = find_user
+    UserParty.create(user_id: host.id, party_id: party, is_host: true)
+  end
+
+  def create_user_parties(party)
+    params[:user_ids].compact_blank.each do |user_id|
+      UserParty.create(user_id: find_party_user(user_id).id, party_id: party.id, is_host: false)
+    end
+  end
 end
