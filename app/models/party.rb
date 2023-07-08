@@ -18,4 +18,8 @@ class Party < ApplicationRecord
     host = User.find(self.host_id)
     host.name
   end
+
+  def invited_users
+    users.where.not(id: host_id)
+  end
 end
