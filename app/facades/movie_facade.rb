@@ -32,11 +32,15 @@ class MovieFacade
     end
   end
 
-  def self.movie_details(movie_id)
-    Movie.new(find_by_id(movie_id))
+  def movie_details
+    Movie.new(find_by_id(@movie_id))
   end
 
-  def self.find_by_id(movie_id)
+  def movie_title
+    movie_details.title
+  end
+
+  def find_by_id(movie_id)
     results = MovieService.find_by_id(movie_id)
   end
 end
