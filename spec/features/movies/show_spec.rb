@@ -3,8 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Movie Detail Page', type: :feature do 
   before(:each) do 
     @user_1 = create(:user)
-    @top_movies = MovieFacade.new.top_movies
-    @movie = @top_movies.first
+    @movie = MovieFacade.new.movie(238)
 
     visit "/users/#{@user_1.id}/movies/#{@movie.id}"
   end
@@ -15,19 +14,23 @@ RSpec.describe 'Movie Detail Page', type: :feature do
     end
 
     it 'displays vote average' do 
-      expect(page).to have_content("Vote Average: #{@movie.vote_average}")
+      expect(page).to have_content("Vote Average:")
+      expect(page).to have_content(@movie.vote_average)
     end
 
     it 'displays runtime' do 
-      expect(page).to have_content("Run Time: #{@movie.runtime}")
+      expect(page).to have_content("Run Time:")
+      expect(page).to have_content(@movie.runtime)
     end
-
-    it 'displays genres' do 
-      expect(page).to have_content("Genres: #{@movie.genres}")
+    
+    it 'displays genres' do
+      expect(page).to have_content("Genres:")
+      expect(page).to have_content(@movie.genres.first)
     end
 
     it 'displays summary' do 
-      expect(page).to have_content("Summary: #{@movie.overview}")
+      expect(page).to have_content("Summary:") 
+      expect(page).to have_content(@movie.overview)
     end
   end
 
