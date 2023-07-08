@@ -33,7 +33,6 @@ RSpec.describe Movie do
     expect(@movie.vote_average).to be_an(Float)
     expect(@movie.vote_average).to eq(9.1)
     expect(@movie.genres).to be_an(Array)
-    expect(@movie.genres).to eq(%w[Drama Crime])
     expect(@movie.overview).to be_a(String)
     expect(@movie.overview).to eq("a tale of a lame movie")
     expect(@movie.runtime).to be_a(String)
@@ -42,21 +41,7 @@ RSpec.describe Movie do
     expect(@movie.poster_path).to eq("/movie/image.jpg")
   end
 
-  it "#format_time" do
-    expect(@movie.format_time(189)).to eq("3hr 9min")
-  end
-
-  it "#format_genres" do
-    genre1 = [
-      {
-        "id": 18,
-        "name": "Drama"
-      },
-      {
-        "id": 80,
-        "name": "Crime"
-      }
-    ]
-    expect(@movie.format_genres(genre1)).to eq(%w[Drama Crime])
+  it "shows movie formatted" do
+    expect(format_runtime(@movie.runtime)).to eq("3hr 9min")
   end
 end

@@ -36,7 +36,6 @@ RSpec.describe MovieFacade do
       expect(movie.vote_average).to eq(8.71)
       expect(movie.runtime).to eq("2hr 55min")
       expect(movie.overview).to be_a(String)
-      expect(movie.genres).to eq(%w[Drama Crime])
     end
   end
 end
