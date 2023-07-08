@@ -45,4 +45,18 @@ RSpec.describe Movie do
   it "#format_time" do
     expect(@movie.format_time(189)).to eq("3hr 9min")
   end
+
+  it "#format_genres" do
+    genre1 = [
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 80,
+        "name": "Crime"
+      }
+    ]
+    expect(@movie.format_genres(genre1)).to eq(["Drama", "Crime"])
+  end
 end
