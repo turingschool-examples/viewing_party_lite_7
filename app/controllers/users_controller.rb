@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
+
+    @hosted_parties = ViewingParty.where(:user_id == @user.id)
+    @invited_parties = ViewingParty.where("user_id != #{@user.id}")
+
+    @details = TmdbFacade.new
   end
 
   def new

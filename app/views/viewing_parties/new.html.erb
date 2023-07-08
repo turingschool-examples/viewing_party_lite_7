@@ -15,8 +15,10 @@
   <%= f.time_select :start_time %>
   <br>
   <% @users.each do |user| %>
+    <% if user.id != @user.id %>
     <%= f.label user.id, "#{user.name}, #{user.email}" %>
     <%= f.check_box user.id %>
+    <% end %>
   <% end %>
   <%= f.hidden_field :user_id, value: @user.id %>
   <%= f.hidden_field :movie_duration, value: @details.default_runtime %>
