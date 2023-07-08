@@ -1,6 +1,8 @@
 class MovieFacade
   attr_reader :movie_id,
-              :user_id
+              :user_id,
+              :commit,
+              :title
 
   def initialize(params)
     @movie_id = params[:id]
