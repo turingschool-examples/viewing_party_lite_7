@@ -54,7 +54,7 @@ describe MovieService do
 
         expect(movie).to have_key(:vote_average)
         expect(movie[:vote_average]).to be_a(Float)
-        expect(movie[:vote_average]).to eq(7.56)
+        expect(movie[:vote_average]).to eq(7.561)
       end
     end
 
