@@ -29,10 +29,9 @@ RSpec.describe MovieService do
     describe "#search_movies" do
       it "allows a user to search for a movie by name", :vcr do
         data = @service.search_movies("The Dark Knight")
-
         expect(data).to be_a(Hash)
         expect(data[:results]).to be_an(Array)
-
+        
         movie_data = data[:results].first
 
         expect(movie_data).to have_key :title

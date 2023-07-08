@@ -1,8 +1,18 @@
-<h1>Viewing Party</h1>
-<h2><%= @user.name %>'s Dashboard</h2>
+<h1><%=@user.name%>'s Dashboard </h1>
 
-<p><%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %></p>
+<%= button_to 'Discover Movies', "/users/#{@user.id}/discover", method: :get  %>
+<hr>
 
-<div id="viewing_parties">
-<h3> Viewing Parties </h3>
+<div id='hosting'>
+  <%= render partial: 'shared/parties', locals: {
+                                        title: 'Parties Hosting',
+                                        parties: @user.hosted_parties,
+                                        host: @user.name
+    } %>
 </div>
+
+<div id='invited'>
+  <%= render partial: 'shared/parties', locals: {
+                                      title: 'Parties Attending',
+                                      parties: @user.invited_parties
+  } %>

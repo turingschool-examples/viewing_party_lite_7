@@ -6,13 +6,14 @@ class Movie
               :genres,
               :summary,
               :poster
-  def initialize(attributes)
-    @id = attributes[:id]
-    @title = attributes[:title]
-    @vote_average = attributes[:vote_average]
-    @runtime = attributes[:runtime]
-    @genres = attributes[:genres]
-    @summary = attributes[:overview]
-    @poster = attributes[:poster_path]
+
+  def initialize(data)
+    @id = data[:id]
+    @title = data[:title]
+    @vote_average = data[:vote_average]
+    @runtime = data[:runtime]
+    @genres = data[:genres]
+    @summary = data[:overview]
+    @poster = data[:poster_path]
   end
 end

@@ -1,24 +1,30 @@
 class UsersController < ApplicationController
-  def show
-    @user = User.find(params[:id])
+  before_action :get_user, only: [:show]
+
+  def new
+    @user = User.new
   end
 
   def create
-    user = User.new(user_params)
-    if user.save
-      redirect_to "/users/#{user.id}"
-    elsif user.errors.full_messages.include?("Email has already been taken")
-      flash[:alert] = "This email is already taken"
-      redirect_to "/register"
+    @user = User.new(user_params)
+    if @user.save
+      redirect_to user_path(@user)
     else
-      flash[:alert] = "Please fill out all fields"
-      redirect_to "/register"
+      flash[:error] = 'A name and unique email must be present.'
+      redirect_to new_user_path
     end
   end
 
-  private
+  def show
+    @facade = MovieFacade
+  end
 
+  private
   def user_params
-    params.permit(:name, :email)
+    params.require(:user).permit(:name, :email)
+  end
+
+  def get_user
+    @user = User.find(params[:id])
   end
 end
