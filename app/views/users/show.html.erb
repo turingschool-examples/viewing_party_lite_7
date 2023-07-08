@@ -1,6 +1,22 @@
 <h2><center><%= @user.name %>'s Dashboard</h2>
 <%= button_to 'Discover Movies', "/users/#{@user.id}/discover", method: :get %>
-<div style="border: solid black;"><%= img_tag poster %></div>
-
-
-<div style="border: solid black;"></div>
+<% @hosted_parties.each do |party| %>
+<% if @user.name == party.user.name || party.other_users.include?(@user.name) %>
+<div style='border: solid black; margin: 20px;'><center>
+<%= image_tag("https://image.tmdb.org/t/p/w200#{@details.movie_details(party.movie).poster}") %>
+<p>Movie Title: <%= link_to @details.movie_details(party.movie).title, "/users/#{@user.id}/movies/#{party.movie}" %></p>
+<p>Start Date: <%= party.start_date %></p>
+<p>Start Time: <%= party.start_time.strftime("%I:%M%p") %></p>
+<p>Host: <%= party.user.name %></p>
+<ul><h4>Attendees: </h4></ul>
+<% party.other_users.each do |user| %>
+<% if user != @user.name %>
+<ul><%= user %></ul>
+<% else %>
+<ul><b><%= user %></b></ul>
+<% end %>
+<% end %>
+</div>
+<br>
+<% end %>
+<% end %>
