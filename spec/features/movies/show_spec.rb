@@ -12,14 +12,14 @@ RSpec.describe "Movie Details Page", type: :feature do
 
     # This stubs out the API call to the movie details endpoint
     stub_request(:get, "https://api.themoviedb.org/3/movie/120?api_key=#{ENV['MOVIE_API_KEY']}")
-    .to_return(status: 200, body: lotr_details)
+      .to_return(status: 200, body: lotr_details)
 
     # This stubs out the API call to the movie credits endpoint
     stub_request(:get, "https://api.themoviedb.org/3/movie/120/credits?api_key=#{ENV['MOVIE_API_KEY']}")
-    .to_return(status: 200, body: lotr_credits)
+      .to_return(status: 200, body: lotr_credits)
 
     stub_request(:get, "https://api.themoviedb.org/3/movie/120/reviews?api_key=#{ENV['MOVIE_API_KEY']}")
-    .to_return(status: 200, body: lotr_reviews)
+      .to_return(status: 200, body: lotr_reviews)
   end
 
   describe "when I visit the movie details page" do

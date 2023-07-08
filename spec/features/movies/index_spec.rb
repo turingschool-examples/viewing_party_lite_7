@@ -12,10 +12,10 @@ RSpec.describe "Movie Results page", type: :feature do
     @user2 = User.create!(name: "Boston", email: "boston@example.com")
 
     stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV['MOVIE_API_KEY']}")
-    .to_return(status: 200, body: top)
+      .to_return(status: 200, body: top)
 
     stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['MOVIE_API_KEY']}&query=The%20ring")
-    .to_return(status: 200, body: search)
+      .to_return(status: 200, body: search)
 
     visit user_discover_index_path(@user1.id)
   end
