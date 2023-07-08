@@ -8,8 +8,8 @@ class MovieService
     get_url("search/movie?query=#{search}")    
   end
 
-  def find_movie
-    
+  def find_movie(id)
+    get_url("movie/#{id}")
   end
 
   def conn 

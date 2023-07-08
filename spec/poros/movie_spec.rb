@@ -7,7 +7,7 @@ RSpec.describe Movie do
         title: 'Soul',
         vote_average: 9.75, 
         id: 3, 
-        run_time: 120,
+        runtime: 120,
         genres: ['family', 'animation'], 
         summary: 'this is a summary'
         })

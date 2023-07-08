@@ -57,5 +57,24 @@ RSpec.describe MovieService do
       expect(first_movie).to have_key(:vote_average)
       expect(first_movie[:vote_average]).to be_a Float
     end
+
+    it '#find_movie' do 
+      response = @ms.find_movie('238')
+      expect(response).to have_key(:title)
+      expect(response[:title]).to be_a String
+
+      expect(response).to have_key(:vote_average)
+      expect(response[:vote_average]).to be_a Float
+
+      expect(response).to have_key(:genres)
+      expect(response[:genres]).to be_a Array
+      expect(response[:genres].first).to be_a Hash
+
+      expect(response).to have_key(:overview)
+      expect(response[:overview]).to be_a String
+
+      expect(response).to have_key(:runtime)
+      expect(response[:runtime]).to be_a Integer
+    end
   end
 end
