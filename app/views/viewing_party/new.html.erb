@@ -1,0 +1,20 @@
+<h1>Create A New Viewing Party:</h1>
+<h3>Title: <%= @movie.title %></h3>
+</br>
+<h3>Movie Details:</h3>
+<div id="movie">
+  <p>Vote Average: <%= @movie.vote_average %></p>
+  <p>Runtime: <%= @movie.convert_minutes(@movie.runtime) %></p>
+  Genre(s): <% @movie.genres.each do |genre| %>
+  <%= genre[:name] %>,
+  <% end %>
+  <p>Overview: <%= @movie.overview %></p>
+  <li>Cast: <% @cast.each do |person| %></li>
+  <ul><%= person[:name] %></ul>
+  <% end %>
+  <p>Review Count: <%= @review_count %></p>
+  <p><% @review_data.each do |data| %></p>
+  <li>Review Author: <%= data[:author] %></li>
+  <li>Review Content: <%= data[:content] %></li>
+  <% end %>
+</div>
