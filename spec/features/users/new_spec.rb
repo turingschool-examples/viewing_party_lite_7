@@ -20,7 +20,7 @@ RSpec.describe 'User registration page' do
     expect(current_path).to eq("/users/#{User.last.id}")
   end
 
-  it 'displays an error if form is incomplete' do 
+  it 'displays an error if form is incomplete' do
     fill_in 'email', with: 'jadams6@gmail.com'
     click_button 'Create'
 

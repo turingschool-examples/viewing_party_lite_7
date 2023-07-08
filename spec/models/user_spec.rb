@@ -18,7 +18,7 @@ RSpec.describe User, type: :model do
         @user1 = User.create!(name: 'John Smith', email: 'jsmith@aol.com')
         @user2 = User.create!(name: 'Emily Jones', email: '343ftl.com')
         @user3 = User.create!(name: 'Jimmy johnson', email: 'jj33@aol.com')
-        
+
         @party1 = Party.create!(date: '2023-01-01', start_time: '08:00', duration: 275, movie_id: 238, host_id: @user1.id)
         @party2 = Party.create!(date: '2023-01-01', start_time: '08:00', duration: 275, movie_id: 238, host_id: @user2.id)
         @party_user1 = PartyUser.create!(user_id: @user1.id, party_id: @party1.id)
@@ -37,7 +37,7 @@ RSpec.describe User, type: :model do
         @user1 = User.create!(name: 'John Smith', email: 'jsmith@aol.com')
         @user2 = User.create!(name: 'Emily Jones', email: '343ftl.com')
         @user3 = User.create!(name: 'Jimmy johnson', email: 'jj33@aol.com')
-        
+
         @party1 = Party.create!(date: '2023-01-01', start_time: '08:00', duration: 275, movie_id: 238, host_id: @user1.id)
         @party2 = Party.create!(date: '2023-01-01', start_time: '08:00', duration: 275, movie_id: 238, host_id: @user2.id)
         @party_user1 = PartyUser.create!(user_id: @user1.id, party_id: @party1.id)

@@ -4,7 +4,7 @@ RSpec.describe MovieFacade do
   describe 'class methods' do
     describe '#top_rated_movies' do
       it 'returns the top 20 movies' do
-        movies = MovieFacade.new({type: 'top20rated'}).search
+        movies = MovieFacade.new({ type: 'top20rated' }).search
 
         expect(movies).to be_an(Array)
         expect(movies.count).to eq(20)
@@ -17,7 +17,7 @@ RSpec.describe MovieFacade do
 
     describe '#search_movies' do
       it 'returns the movies that matched the search name' do
-        movies = MovieFacade.new({title: 'Pulp Fiction'}).search
+        movies = MovieFacade.new({ title: 'Pulp Fiction' }).search
 
         expect(movies).to be_an(Array)
         expect(movies.count).to eq(7)
@@ -29,7 +29,7 @@ RSpec.describe MovieFacade do
       end
 
       it 'returns an empty array if no movies matched the search' do
-        movies = MovieFacade.new({title: 'bruhbruhbruh'}).search
+        movies = MovieFacade.new({ title: 'bruhbruhbruh' }).search
 
         expect(movies).to eq([])
         expect(movies.count).to eq(0)
@@ -38,7 +38,7 @@ RSpec.describe MovieFacade do
 
     describe '#search_movies_by_id' do
       it 'returns the movie that matches the id' do
-        movie = MovieFacade.new({id: 680}).search
+        movie = MovieFacade.new({ id: 680 }).search
 
         expect(movie).to be_a(Movie)
         expect(movie.title).to be_a(String)

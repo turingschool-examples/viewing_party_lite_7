@@ -37,7 +37,7 @@ describe MovieService do
       it 'returns an empty array if no movies matched the search' do
         movies = MovieService.new.search_movies('bruhbruhbruh')
         results = movies[:results]
-        
+
         expect(results).to eq([])
         expect(results.count).to eq(0)
       end
