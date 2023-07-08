@@ -31,7 +31,7 @@ RSpec.describe MovieService do
         data = @service.search_movies("The Dark Knight")
         expect(data).to be_a(Hash)
         expect(data[:results]).to be_an(Array)
-        
+
         movie_data = data[:results].first
 
         expect(movie_data).to have_key :title

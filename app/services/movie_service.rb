@@ -20,15 +20,15 @@ class MovieService
   end
 
   private
-  
+
   def get_url(url, params = {})
     response = conn.get(url, params)
     JSON.parse(response.body, symbolize_names: true)
   end
 
   def conn
-    Faraday.new(url: 'https://api.themoviedb.org') do |req|
-      req.headers['Authorization'] = "Bearer #{ENV['TMDB_BEARER_TOKEN']}"
+    Faraday.new(url: "https://api.themoviedb.org") do |req|
+      req.headers["Authorization"] = "Bearer #{ENV['TMDB_BEARER_TOKEN']}"
     end
   end
 end

@@ -2504,7 +2504,7 @@ Metrics/AbcSize:
   Reference:
     - http://c2.com/cgi/wiki?AbcMetric
     - https://en.wikipedia.org/wiki/ABC_Software_Metric
-  Enabled: true
+  Enabled: false
   VersionAdded: '0.27'
   VersionChanged: '1.5'
   # The ABC size is a calculated magnitude, so this number can be an Integer or
@@ -2622,7 +2622,7 @@ Migration/DepartmentName:
 Naming/AccessorMethodName:
   Description: Check the naming of accessor methods for get_/set_.
   StyleGuide: '#accessor_mutator_method_names'
-  Enabled: true
+  Enabled: false
   VersionAdded: '0.50'
 
 Naming/AsciiIdentifiers:
@@ -2917,7 +2917,7 @@ Naming/VariableName:
 Naming/VariableNumber:
   Description: 'Use the configured style when numbering symbols, methods and variables.'
   StyleGuide: '#snake-case-symbols-methods-vars-with-numbers'
-  Enabled: true
+  Enabled: false
   VersionAdded: '0.50'
   VersionChanged: '1.4'
   EnforcedStyle: snake_case

@@ -17,10 +17,10 @@ class MovieFacade
     MovieFacade.new(id)
   end
 
-  def movie_id 
+  def movie_id
     movie.id
   end
-  
+
   def movie_title
     movie.title
   end
@@ -66,7 +66,7 @@ class MovieFacade
   def movie_attributes
     @_movie ||= service.movie_details(@id)
 
-    data = {
+    {
       id: @_movie[:id],
       title: @_movie[:title],
       vote_average: @_movie[:vote_average],
@@ -78,13 +78,13 @@ class MovieFacade
   end
 
   def poster_url(path)
-    'https://image.tmdb.org/t/p/original' + path
+    "https://image.tmdb.org/t/p/original#{path}"
   end
 
   def genre_names(genres)
     genres.map do |genre|
       genre[:name]
-    end.join(', ')
+    end.join(", ")
   end
 
   def reviews_attributes
@@ -96,6 +96,6 @@ class MovieFacade
   end
 
   def service
-    @_service ||= MovieService.new
+    @service ||= MovieService.new
   end
 end

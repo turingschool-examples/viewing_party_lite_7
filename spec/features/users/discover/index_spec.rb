@@ -7,7 +7,7 @@ RSpec.describe "User can search for movies" do
   describe "When a user visits the discover page", :vcr do
     it "can search by movie title" do
       visit "/users/#{@user1.id}/discover"
-      
+
       click_button "Discover Top Rated Movies"
       expect(current_path).to eq("/users/#{@user1.id}/movies")
     end

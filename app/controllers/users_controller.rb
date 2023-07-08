@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to user_path(@user)
     else
-      flash[:error] = 'A name and unique email must be present.'
+      flash[:error] = "A name and unique email must be present."
       redirect_to new_user_path
     end
   end
@@ -20,6 +20,7 @@ class UsersController < ApplicationController
   end
 
   private
+
   def user_params
     params.require(:user).permit(:name, :email)
   end
