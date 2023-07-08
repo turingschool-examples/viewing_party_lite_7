@@ -19,9 +19,13 @@
 <%= @movie.summary %> <br>
 
 <h3>Movie Cast:</h3>
+<% @cast.take(10).each do |actor| %>
+<p>Actor: <%= actor.name %> Character: <%= actor.character %> </p><br>
+<% end %> <br>
 
 
 <h3>Movie Reviews:</h3>
+<p> Total Reviews: <%= @reviews.count %> </p>
 <% @reviews.each do |review| %>
   <%= review.author %> <%= review.rating %> <br>
   <%= review.content %> <br> <br>

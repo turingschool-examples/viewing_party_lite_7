@@ -15,6 +15,10 @@ class MovieService
     get_url("https://api.themoviedb.org/3/movie/#{movie_id}/reviews")
   end
 
+  def cast(movie_id)
+    get_url("https://api.themoviedb.org/3/movie/#{movie_id}/credits")
+  end
+
   def get_url(url)
     response = conn.get(url)
     JSON.parse(response.body, symbolize_names: true)

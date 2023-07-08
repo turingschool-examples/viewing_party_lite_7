@@ -63,19 +63,21 @@ RSpec.describe 'Movie Show Page' do
 
     it 'displays movie title, vote average, runtime, genre, summary, cast(10), count of reviews, and reviews(author name and info)', :vcr do
       movies = MovieFacade.new.top_rated
-      reviews = MovieFacade.new.reviews(movies.last.id)
-      visit "/users/#{@user1.id}/movies/#{movies.last.id}"
-
-      # expect(page).to have_content(movies.first.title)
-      # expect(page).to have_content(movies.first.vote_average)
-      # expect(page).to have_content(movies.first.runtime)
-      # expect(page).to have_content(movies.first.genres)
-      # expect(page).to have_content(movies.first.summary)
-      # # expect(page).to have_content(movies.first.cast)
-      # expect(page).to have_content(reviews.count)
-      # expect(page).to have_content(reviews.first.author)
+      reviews = MovieFacade.new.reviews(movies.first.id)
+      cast = MovieFacade.new.cast(movies.first.id)
+      visit "/users/#{@user1.id}/movies/#{movies.first.id}"
+save_and_open_page
+      expect(page).to have_content(movies.first.title)
+      expect(page).to have_content(movies.first.vote_average)
+      expect(page).to have_content(movies.first.runtime)
+      expect(page).to have_content(movies.first.genres)
+      expect(page).to have_content(movies.first.summary)
+      expect(page).to have_content(cast.first.name)
+      expect(page).to have_content(cast.first.character)
+      expect(page).to have_content(reviews.count)
+      expect(page).to have_content(reviews.first.author)
       expect(page).to have_content(reviews.last.content)
-      # expect(page).to have_content(reviews.first.rating)
+      expect(page).to have_content(reviews.first.rating)
     end
   end
 
