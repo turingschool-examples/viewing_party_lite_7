@@ -32,20 +32,25 @@ RSpec.describe "/users/:user_id/movies/:movie_id", type: :feature do
       expect(page).to have_content("Actor: John Marley as Character: Jack Woltz")
     end
 
-    xit "total count of reviews", :vcr do
-
+    it "displays total number of reviews, each review with author and comments", :vcr do
+      within(".reviews") do
+        expect(page).to have_content("5 Reviews")
+        expect(page).to have_content("futuretv")
+        expect(page).to have_content("Suresh Chidurala")
+        expect(page).to have_content("Great Movie **Ever**")
+      end
     end
 
-    xit "displays each review with author and comments", :vcr do
+    it "has a button to route back to the discover page", :vcr do
+      click_button "Discover Page"
 
+      expect(current_path).to eq(user_discover_index_path(user))
     end
 
     xit "has a button to create a viewing party for this movie", :vcr do
+      click_button "Create Viewing Party for The Godfather"
 
-    end
-
-    xit "has a button to route back to the discover page", :vcr do
-
+      expect(current_path).to eq("/users/#{user.id}/movies/238/viewing_party/new")
     end
   end
 end

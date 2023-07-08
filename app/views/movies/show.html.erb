@@ -23,5 +23,8 @@
 <% end %>
 
 <div class="reviews">
-
+<h4><%= @review_facade.show_reviews.review_count %> Reviews</h4>
+  <% @review_facade.show_reviews.all_reviews.each do |review| %></p>
+    <p><%= review %></p>
+  <% end %>
 </div>
