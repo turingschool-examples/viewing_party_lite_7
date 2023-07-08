@@ -9,15 +9,12 @@ class WatchPartiesController < ApplicationController
 
   def create
     @user = User.find(params[:user_id])
-    selected_user_ids = params[:selected_users] || []
     watch_party = @user.watch_parties.create!(watch_parties_params)
     if watch_party.save
-      selected_user_ids.each do |user_id|
-        User.movie_watch_parties.create(user_id: user_id, watch_party_id: @watch_party.id)
-      end
       redirect_to "/users/#{@user.id}"
     end
   end
+
 
   private
   def watch_parties_params
