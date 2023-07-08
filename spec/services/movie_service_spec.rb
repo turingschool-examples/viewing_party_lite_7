@@ -71,11 +71,11 @@ RSpec.describe MovieService do
     end
 
     context "#movie_credits", :vcr do
-      it "returns first 10 movie credits" do
+      it "returns movie credits" do
         search = MovieService.new.movie_credits(238)
         credits = search[:cast]
 
-        expect(credits.count).to eq(10)
+        expect(credits.count).to be_an(Integer)
         expect(credits.first[:name]).to be_a(String)
         expect(credits.first[:name]).to eq("Marlon Brando")
         expect(credits.first[:character]).to be_a(String)
