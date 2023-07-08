@@ -70,10 +70,9 @@ RSpec.describe 'Movie Show Page' do
       expect(page).to have_content(movies.first.runtime)
       expect(page).to have_content(movies.first.genres)
       expect(page).to have_content(movies.first.summary)
-      save_and_open_page
-      # expect(page).to have_content(movies.first.cast)
-      # expect(page).to have_content(movies.first.reviews.count)
-      # expect(page).to have_content(movies.first.reviews.first.author)
+      expect(page).to have_content(movies.first.cast)
+      expect(page).to have_content(movies.first.reviews.count)
+      expect(page).to have_content(movies.first.reviews.first.author)
     end
   end
 
