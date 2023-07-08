@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe "Movie Results page", type: :feature do
   before(:each) do
     top = File.read("./spec/fixtures/top_rated_movies.json")
-    search = File.read("./spec/fixtures/search_movie.json")
+    search = File.read("./spec/fixtures/search_movies.json")
 
     @top_rated_movies = JSON.parse(top, symbolize_names: true)[:results]
     @searched_movies = JSON.parse(search, symbolize_names: true)[:results]
@@ -11,9 +11,11 @@ RSpec.describe "Movie Results page", type: :feature do
     @user1 = User.create!(name: "Myles", email: "myles@example.com")
     @user2 = User.create!(name: "Boston", email: "boston@example.com")
 
+    # This stubs out the API call to the top rated movies endpoint
     stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV['MOVIE_API_KEY']}")
       .to_return(status: 200, body: top)
 
+    # This stubs out the API call to the movie search endpoint
     stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['MOVIE_API_KEY']}&query=The%20ring")
       .to_return(status: 200, body: search)
 

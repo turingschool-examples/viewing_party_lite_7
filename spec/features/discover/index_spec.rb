@@ -6,11 +6,13 @@ RSpec.describe "user's discover page", type: :feature do
     @user2 = User.create!(name: "Myles", email: "myles@example.com")
     @user3 = User.create!(name: "Boston", email: "boston@example.com")
 
+    # This stubs out the API call to the top rated movies endpoint
     stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV['MOVIE_API_KEY']}")
       .to_return(status: 200, body: File.read("./spec/fixtures/top_rated_movies.json"))
 
+    # This stubs out the API call to the movie search endpoint
     stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['MOVIE_API_KEY']}&query=The%20ring")
-      .to_return(status: 200, body: File.read("./spec/fixtures/search_movie.json"))
+      .to_return(status: 200, body: File.read("./spec/fixtures/search_movies.json"))
   end
 
   describe "when I visit a user's discover page" do
