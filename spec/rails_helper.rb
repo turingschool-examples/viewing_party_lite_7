@@ -83,4 +83,5 @@ VCR.configure do |config|
   config.filter_sensitive_data("<TMDB_API_KEY>") { ENV["TMDB_API_KEY"] }
   config.configure_rspec_metadata!
   config.default_cassette_options = { :allow_playback_repeats => true }
+  config.default_cassette_options = { re_record_interval: 7.days }
 end
