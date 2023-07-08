@@ -7,11 +7,11 @@ class User < ApplicationRecord
   validates_uniqueness_of :email, case_sensitive: false
 
   def hosted_parties
-
+    parties.where(host_id: self.id)
   end
 
   def invited_to_parties
-
+    parties.where.not(host_id: self.id)
   end
 end
 
