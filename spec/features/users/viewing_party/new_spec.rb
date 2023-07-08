@@ -57,7 +57,7 @@ RSpec.describe "User's Viewing Party page" do
     expect(current_path).to eq(user_path(@user1))
   end
   
-  xit 'displays new event on users dashboard' do 
+  it 'displays new event on users dashboard' do 
     
   end
   
