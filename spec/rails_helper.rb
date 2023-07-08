@@ -4,16 +4,18 @@ def user_test_data
   @user3 = User.create!(name: 'Wolfie', email: 'wolfie@gmail.com')
   @user4 = User.create!(name: 'Ink Jet Printer', email: 'inkjet@gmail.com')
   @viewing_party1 = ViewingParty.create!(day: '2023-07-01', start_time: '04:00 PM', movie_id: 1,
-                                         duration: '120 minutes', movie_title: 'Speed')
+                                         duration: 120, movie_title: 'Speed')
   @viewing_party2 = ViewingParty.create!(day: '2023-07-02', start_time: '05:00 PM', movie_id: 2,
-                                         duration: '125 minutes', movie_title: 'Spirited Away')
+                                         duration: 125, movie_title: 'Spirited Away')
   @viewing_party3 = ViewingParty.create!(day: '2023-07-03', start_time: '04:30 PM', movie_id: 3,
-                                         duration: '130 minutes', movie_title: 'Up')
+                                         duration: 130, movie_title: 'Up')
 
   @viewing_party4 = ViewingParty.create!(day: '2023-07-05', start_time: '06:00 PM', movie_id: 4,
-                                         duration: '140 minutes', movie_title: 'Wolfie finds a bone!')
+                                         duration: 140, movie_title: 'Wolfie finds a bone!')
   @viewing_party5 = ViewingParty.create!(day: '2023-07-08', start_time: '06:45 PM', movie_id: 5,
-                                         duration: '144 minutes', movie_title: 'Jaws')
+                                         duration: 144, movie_title: 'Jaws')
+  @viewing_party6 = ViewingParty.create!(day: '2023-07-08', start_time: '06:45 PM', movie_id: 6,
+                                         duration: 144, movie_title: 'Max finds a cheese wheel!')
 
   @userparty1 = UserViewingParty.create!(user_id: @user1.id, viewing_party_id: @viewing_party1.id, host: true)
   @userparty2 = UserViewingParty.create!(user_id: @user1.id, viewing_party_id: @viewing_party2.id, host: true)

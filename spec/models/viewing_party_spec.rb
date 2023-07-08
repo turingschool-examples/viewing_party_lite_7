@@ -25,5 +25,13 @@ RSpec.describe ViewingParty, type: :model do
       expect(@viewing_party5.invitee_names).to match_array(%w[Maggie Max Wolfie])
       expect(@viewing_party5.invitee_names).to_not include(['Ink Jet Printer'])
     end
+
+    it 'create_associations' do
+      @viewing_party6.create_associations(@user1.id, [@user2.id, @user3.id, @user4.id])
+
+      expect(@viewing_party6.user_viewing_parties.count).to eq(4)
+      expect(@viewing_party6.host_name).to eq(['Maggie'])
+      expect(@viewing_party6.invitee_names).to match_array(['Max', 'Wolfie', 'Ink Jet Printer'])
+    end
   end
 end
