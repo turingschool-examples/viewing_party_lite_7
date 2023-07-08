@@ -41,5 +41,46 @@ RSpec.describe MovieService do
         expect(movie_data[:vote_average]).to be_a(Float)
       end
     end
+
+    context "#movie_details", :vcr do
+      it "returns details about a movie" do
+        search = MovieService.new.movie_details(238)
+
+        expect(search).to be_a(Hash)
+        expect(search).to have_key(:id)
+        expect(search[:id]).to be_an(Integer)
+
+        expect(search).to have_key(:title)
+        expect(search[:title]).to be_a(String)
+
+        expect(search).to have_key(:vote_average)
+        expect(search[:vote_average]).to be_a(Float)
+
+        expect(search).to have_key(:overview)
+        expect(search[:overview]).to be_a(String)
+
+        expect(search).to have_key(:genres)
+        expect(search[:genres]).to be_an(Array)
+
+        expect(search).to have_key(:runtime)
+        expect(search[:runtime]).to be_an(Integer)
+
+        expect(search).to have_key(:poster_path)
+        expect(search[:poster_path]).to be_a(String)
+      end
+    end
+
+    context "#movie_credits", :vcr do
+      it "returns first 10 movie credits" do
+        search = MovieService.new.movie_credits(238)
+        credits = search[:cast]
+
+        expect(credits.count).to eq(10)
+        expect(credits.first[:name]).to be_a(String)
+        expect(credits.first[:name]).to eq("Marlon Brando")
+        expect(credits.first[:character]).to be_a(String)
+        expect(credits.first[:character]).to eq("Don Vito Corleone")
+      end
+    end
   end
 end
