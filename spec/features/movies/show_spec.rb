@@ -8,6 +8,9 @@ RSpec.describe "Movie Details Page", type: :feature do
 
     @movie = Movie.new(JSON.parse(lotr_details, symbolize_names: true))
 
+    @credits = JSON.parse(lotr_credits, symbolize_names: true)
+    @reviews = JSON.parse(lotr_reviews, symbolize_names: true)
+
     @user = User.create!(name: "John", email: "john@example.com")
 
     # This stubs out the API call to the movie details endpoint
@@ -18,6 +21,7 @@ RSpec.describe "Movie Details Page", type: :feature do
     stub_request(:get, "https://api.themoviedb.org/3/movie/120/credits?api_key=#{ENV['MOVIE_API_KEY']}")
       .to_return(status: 200, body: lotr_credits)
 
+    # This stubs out the API call to the movie reviews endpoint
     stub_request(:get, "https://api.themoviedb.org/3/movie/120/reviews?api_key=#{ENV['MOVIE_API_KEY']}")
       .to_return(status: 200, body: lotr_reviews)
   end
@@ -55,6 +59,52 @@ RSpec.describe "Movie Details Page", type: :feature do
         end
 
         expect(current_path).to eq(new_user_movie_viewing_party_path(@user.id, @movie.id))
+      end
+
+      it "displays the movie's vote average rounded to one decimal place" do
+        within("#movie-details") do
+          expect(page).to have_content("Vote: 8.4")
+        end
+      end
+
+      it "displays the movie's runtime in hours and minutes" do
+        within("#movie-details") do
+          expect(page).to have_content("Runtime: 2hr 59min")
+        end
+      end
+
+      it "displays the movie's genres" do
+        within("#movie-details") do
+          expect(page).to have_content("Genre: Adventure, Fantasy, Action")
+        end
+      end
+
+      it "displays the movie's summary" do
+        within("#movie-summary") do
+          expect(page).to have_content("Summary:")
+          expect(page).to have_content(@movie.summary)
+        end
+      end
+
+      it "displays the movie's top 10 cast members" do
+        within("#movie-cast") do
+          expect(page).to have_content("Cast:")
+
+          @credits[:cast][0..9].each do |cast_member|
+            expect(page).to have_content("#{cast_member[:name]} as #{cast_member[:character]}")
+          end
+        end
+      end
+
+      it "displays the number of movie's reviews, the reviews, and thier authors" do
+        within("#movie-reviews") do
+          expect(page).to have_content("#{@reviews[:results].count} Reviews:")
+
+          @reviews[:results].each do |review|
+            expect(page).to have_content(review[:content][0..10])
+            expect(page).to have_content(review[:author])
+          end
+        end
       end
     end
   end

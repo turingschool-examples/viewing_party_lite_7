@@ -14,18 +14,24 @@
 
 <hr>
 
-<p>Summary:</p>
-<p><%= @facade.movie_summary %></p>
+<section id="movie-summary">
+  <p>Summary:</p>
+  <p><%= @facade.movie_summary %></p>
+</section>
 <br>
 
-<p>Cast:</p>
-<% @facade.movie_cast.each do |member| %>
-  <p><%= member %></p>
-<% end %>
+<section id="movie-cast">
+  <p>Cast:</p>
+  <% @facade.movie_cast.each do |member| %>
+    <p><%= member %></p>
+  <% end %>
+</section>
 <br>
 
-<p><%= "#{@facade.number_of_reviews} Reviews:" %></p>
-<% @facade.movie_reviews.each do |review| %>
-  <p><%= review %></p>
-<% end %>
+<section id="movie-reviews">
+  <p><%= "#{@facade.number_of_reviews} Reviews:" %></p>
+  <% @facade.movie_reviews.each do |review| %>
+    <p><%= review %></p>
+  <% end %>
+</section>
 <br>
