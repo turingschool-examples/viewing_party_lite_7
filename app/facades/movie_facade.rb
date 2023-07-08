@@ -35,5 +35,9 @@ class MovieFacade
     end
   end
 
-  
+  def extract_genres(genres_data)
+    genres_data.map do |genre_data|
+      genre_data[:name]
+    end
+  end
 end
