@@ -9,6 +9,8 @@ class MoviesController < ApplicationController
   def show
     @movie_facade = MovieFacade.new(params[:id])
     @credit_facade = CreditFacade.new(params[:id])
+    @review_facade = ReviewFacade.new(params[:id])
+
     # ---- movie details:
     # movie_id = params[:id]
 
