@@ -12,7 +12,6 @@ class UsersController < ApplicationController
       data = JSON.parse(response.body, symbolize_names: true)
       @movie = PopularMovie.new(data)
     end
-    # require 'pry'; binding.pry
   end
 
   def create

@@ -21,7 +21,6 @@ RSpec.describe "User Show Page" do
     end
 
     it "dashboard title" do
-      save_and_open_page
       expect(page).to have_content("#{@user1.name}'s Dashboard")
     end
 
