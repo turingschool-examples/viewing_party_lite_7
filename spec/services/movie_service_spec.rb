@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe MovieService do
   describe 'movie_search' do
-    xit 'returns a list of movies' do
-      search = MovieService.new.movie_search('Batman')
+    it 'returns a list of movies', :vcr do
+      search = MovieService.new.search_movies('Batman')
       expect(search).to be_a(Hash)
       expect(search[:results]).to be_an(Array)
       movie_data = search[:results].first

@@ -8,7 +8,6 @@ class MovieFacade
     service = MovieService.new
 
     results = service.find_movie(@id)
-
     new_movie = Movie.new(results)
   end
 
