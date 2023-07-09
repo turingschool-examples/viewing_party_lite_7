@@ -8,7 +8,6 @@ class ViewingPartiesController < ApplicationController
 
   def create
     movie_party = Party.new(party_params)
-    # binding.pry
     if movie_party.save
       create_user_parties(movie_party)
       make_host(movie_party)
@@ -30,7 +29,7 @@ class ViewingPartiesController < ApplicationController
   end
 
   def find_party_user(id)
-    user = User.find(id)
+    User.find(id)
   end
 
   def make_host(party)
