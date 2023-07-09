@@ -6,7 +6,6 @@
 <div id=parties>
   <h3>Viewing Party Invites</h3>
   <li>Image</li>
-  <li>Movie Title: <%= link_to @movie.title, user_movie_path(@user.id, @movie.id) %></li>
   <% @viewing_parties.each do |party|%>
   <li>Date & Time: <%= party.date_time %></li>
   <li>Party Host: <%= @host.name %></li>
@@ -17,7 +16,6 @@
   </br>
   <h3>Viewing Parties as Host</h3>
   <li>"/coverage/assets/0.12.3/images/</li>
-  <li>Movie Title: <%= link_to @movie.title, user_movie_path(@user.id, @movie.id) %></li>
   <% @viewing_parties.each do |party|%>
   <li>Date & Time: <%= party.date_time %></li>
   <li>Party Host: <%= @user.name %></li>

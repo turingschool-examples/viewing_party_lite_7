@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'factory_bot_rails'
 
 @user1 = FactoryBot.create(:user)
 @user2 = FactoryBot.create(:user)
