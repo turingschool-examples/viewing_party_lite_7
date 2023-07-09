@@ -8,6 +8,24 @@
 #  Button to create a party
 # Details When the party is created, the user should be redirected back to the dashboard where the new event is shown. The event should also be listed on any other user's dashbaords that were also invited to the party.
 
+
+# As a user,
+# When I visit a user dashboard,
+# I should see the viewing parties that the user has been invited to with the following details:
+
+# Movie Image
+# Movie Title, which links to the movie show page
+# Date and Time of Event
+# who is hosting the event
+# list of users invited, with my name in bold
+# I should also see the viewing parties that the user has created with the following details:
+
+# Movie Image
+# Movie Title, which links to the movie show page
+# Date and Time of Event
+# That I am the host of the party
+# List of friends invited to the viewing party
+
 require 'rails_helper'
 
 RSpec.describe 'New Viewing Page', type: :feature do
@@ -33,7 +51,7 @@ RSpec.describe 'New Viewing Page', type: :feature do
       expect(page).to have_field(:date)
 
       expect(page).to have_content("Start Time")
-      expect(page).to have_field(:start_time)
+      expect(page).to have_field(:time)
       
       expect(page).to have_content("#{@user2.name}")
 
@@ -44,10 +62,29 @@ RSpec.describe 'New Viewing Page', type: :feature do
     it "can create a new viewing party", :vcr do
       fill_in :duration, with: "175"
       fill_in :date, with: '2023/07/09'
-      fill_in :start_time, with: '9:00'
+      fill_in :time, with: '9:00'
       check @user2.id
       
       click_button("Create Party")
+
+      
+
+      expect(current_path).to eq(user_path(@user1))
+     
+      # expect(page).to have_content("#{@movie.title}")
+      # expect(page).to have_link("#{@movie.title}")
+
+      expect(page).to have_content("2023-07-09")
+      expect(page).to have_content("Saturday, January 1, 2000")
+
+      
+      expect(page).to have_content("#{@user1.name}")
+      # expect(page).to have_content("#{@user2.name}")
+
+
+
+
+
     end  
 
     xit 'cannot be less than movie runtime', :vcr do
@@ -55,7 +92,7 @@ RSpec.describe 'New Viewing Page', type: :feature do
 
       click_button('Create Party')
 
-      # expect(page).to have_content("Value must be greater or equal to 175")
+      expect(current_path).to eq(new_viewing_party_path(@user1, @movie.id))
       
     end
   end  

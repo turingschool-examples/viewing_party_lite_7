@@ -18,5 +18,4 @@ class MoviesController < ApplicationController
 
     @reviews = MovieFacade.new(params[:movie_id]).get_reviews
   end
-
 end
