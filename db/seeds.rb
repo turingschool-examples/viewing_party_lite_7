@@ -6,3 +6,9 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+@user1 = FactoryBot.create(:user)
+@user2 = FactoryBot.create(:user)
+@user3 = FactoryBot.create(:user)
+@user4 = FactoryBot.create(:user)
+@view_party1 = ViewingParty.create!(duration: 300, date_time: Date.today, api_movie_id: 11528)
+@view_user1 = ViewingUser.create!(user_id: @user1.id, viewing_party_id: @view_party1.id, host: 1)

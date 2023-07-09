@@ -55,7 +55,6 @@ RSpec.describe "Viewing Party New Page" do
       fill_in "date_time", with: date
       check "user_#{@user1.id}"
       click_button "Create Party"
-      save_and_open_page
     end
   end
 end

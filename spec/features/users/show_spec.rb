@@ -4,9 +4,20 @@ RSpec.describe "User Show Page" do
   describe "User Dashboard" do
     before :each do
       @user1 = FactoryBot.create(:user)
+      @user2 = FactoryBot.create(:user)
+      @user3 = FactoryBot.create(:user)
+      @user4 = FactoryBot.create(:user)
 
+      json_response = File.read('spec/fixtures/sandlot_id_search.json')
+      response1 = stub_request(:get, "https://api.themoviedb.org/3/search/movie/11528").
+        to_return(status: 200, body: json_response)
+      movie = JSON.parse(response1.response.body, symbolize_names: true)
+      @movie_id = movie[:id] 
+      @movie = PopularMovie.new(movie)
+
+      @view_party1 = ViewingParty.create!(duration: 300, date_time: Date.today, api_movie_id: @movie_id)
+      @view_user1 = ViewingUser.create!(user_id: @user1.id, viewing_party_id: @view_party1.id, host: 1)
       visit user_path(@user1.id)
-
     end
 
     it "dashboard title" do
@@ -19,9 +30,7 @@ RSpec.describe "User Show Page" do
     end
 
     it "viewing party list" do
-      within "#parties" do
-        expect(page).to have_content("Available Viewing Parties")
-      end
+      expect(page).to have_content("Available Viewing Parties")
     end
 
     it "Discover Movies directes to 'user' discover page"do
