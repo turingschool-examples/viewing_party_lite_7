@@ -3,6 +3,16 @@
 <%= button_to "Discover Movies", user_discover_index_path(@user.id), method: :get %>
 <br>
 
-<section id="viewing-parties">
-<p>***HOLD***</p>
+<section id="hosted-parties">
+  <h3> Parties I'm hosting </h3>
+  <% @user.hosted_parties.each do |party| %>
+    <%= link_to "#{party.movie_title}" %>
+  <% end %>
+</section>
+
+<section id="invited-parties">
+  <h3> Parties I'm invited too </h3>
+  <% @user.invited_parties.each do |party| %>
+    <%= link_to "#{party.movie_title}" %>
+  <% end %>
 </section>

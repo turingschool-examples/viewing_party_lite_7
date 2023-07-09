@@ -24,6 +24,9 @@ RSpec.describe "Movie Details Page", type: :feature do
     # This stubs out the API call to the movie reviews endpoint
     stub_request(:get, "https://api.themoviedb.org/3/movie/120/reviews?api_key=#{ENV['MOVIE_API_KEY']}")
       .to_return(status: 200, body: lotr_reviews)
+
+    stub_request(:get, "https://api.themoviedb.org/3/movie/?api_key=#{ENV['MOVIE_API_KEY']}")
+      .to_return(status: 200, body: lotr_details)
   end
 
   describe "when I visit the movie details page" do
@@ -57,7 +60,6 @@ RSpec.describe "Movie Details Page", type: :feature do
 
           click_button("Create Viewing Party for #{@movie.title}")
         end
-
         expect(current_path).to eq(new_user_movie_viewing_party_path(@user.id, @movie.id))
       end
 
