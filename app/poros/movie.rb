@@ -9,7 +9,11 @@ class Movie
   def initialize(movie_data)
     @id = movie_data[:id]
     @title = movie_data[:title].to_s
-    @rating = movie_data[:vote_average] ? nil : movie_data[:vote_average].round(1)
+    begin
+      @rating = movie_data[:vote_average].round(1)
+    rescue
+      @rating = nil
+    end
     @runtime = movie_data[:runtime]
     @genres = movie_data[:genres]
     @summary = movie_data[:overview].to_s
