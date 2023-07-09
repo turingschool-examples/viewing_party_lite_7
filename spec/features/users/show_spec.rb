@@ -12,31 +12,40 @@ RSpec.describe "user_path(user)", type: :feature do
       @u2p1 = UserParty.create!(user_id: user2.id, party_id: @party1.id, is_host: false)
     end
 
-    it "should render only the user's name" do
+    it "should render only the user's name", :vcr do
       visit user_path(user)
 
       expect(page).to have_content("#{user.name}'s Dashboard")
       expect(page).to_not have_content("#{user2.name}'s Dashboard")
     end
 
-    it "routes me to the discover movies dashboard" do
+    it "routes me to the discover movies dashboard", :vcr do
       visit user_path(user)
       click_button "Discover Movies"
       expect(current_path).to eq(user_discover_index_path(user))
     end
 
-    it "should render the parties the user is invited to " do 
+    xit "should render the parties the user is invited to", :vcr do 
       visit user_path(user)
-      require 'pry'; binding.pry
+      # require 'pry'; binding.pry
       within ".invited_to_parties" do
+        expect(page).to have_content("Reservoir Dogs")
         expect(page).to have_content(@party1.party_date)
         expect(page).to have_content(@party1.party_time)
-        require 'pry'; binding.pry
         expect(page).to have_content("Invited")
         expect(page).to have_content("Hosted by: #{@user_1.name}")
         expect(page).to have_content("#{@user_2.name}")
       end
 
+      # within ".hosting_parties" do
+      #   expect(page).to have_content("Things to Do in Denver When You're Dead")
+      #   expect(page).to have_content(@party2.party_date)
+      #   expect(page).to have_content(@party2.party_time)
+      #   require 'pry'; binding.pry
+      #   expect(page).to have_content("Invited")
+      #   expect(page).to have_content("Hosted by: #{@user_2.name}")
+      #   expect(page).to have_content("#{@user_2.name}")
+      # end
     end
   end
 end

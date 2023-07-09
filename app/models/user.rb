@@ -8,4 +8,12 @@ class User < ApplicationRecord
   def self.other_users(id)
     where.not(id:)
   end
+
+  def invitations
+    parties.joins(:user_parties).where("user_parties.is_host = false")
+  end
+
+  def parties_hosting
+    parties.joins(:user_parties).where("user_parties.is_host = true")
+  end
 end
