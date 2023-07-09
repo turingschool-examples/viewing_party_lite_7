@@ -10,7 +10,8 @@ RSpec.describe "viewing party create page", type: :feature do
 
   stub_request(:get, "https://api.themoviedb.org/3/movie/120?api_key=#{ENV['MOVIE_API_KEY']}")
     .to_return(status: 200, body: lotr_details)
-  stub_request(:get, "https://api.themoviedb.org/3/movie/?api_key=81d1e3020c43fb541567a483fbbd5a79")
+
+  stub_request(:get, "https://api.themoviedb.org/3/movie/?api_key=#{ENV['MOVIE_API_KEY']}")
     .to_return(status: 200, body: lotr_details)
 
     visit new_user_movie_viewing_party_path(@user1, 120)
