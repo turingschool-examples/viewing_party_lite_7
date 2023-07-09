@@ -37,6 +37,7 @@ RSpec.describe "Viewing Party New Page" do
       expect(page).to have_content("Review Count: 5")
       expect(page).to have_content("Review Author: The Movie Mob")
       expect(page).to have_content("Review Content: What a disappointment!")
+      save_and_open_page
     end
 
     it "has form to create viewing party" do
@@ -55,7 +56,6 @@ RSpec.describe "Viewing Party New Page" do
       fill_in "date_time", with: date
       check "user_#{@user1.id}"
       click_button "Create Party"
-      save_and_open_page
     end
   end
 end

@@ -1,3 +1,4 @@
+require 'faraday'
 class ViewingPartyController < ApplicationController
   def new
     @user = User.find(params[:user_id])
@@ -17,7 +18,6 @@ class ViewingPartyController < ApplicationController
     data_cast = JSON.parse(response_cast.body, symbolize_names: true)
     @movie_cast = PopularMovie.new(data_cast)
     @cast = @movie_cast.cast.first(10)
-
     conn_review = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
       faraday.headers["Authorization"] = ENV["api_access_key"]
     end
