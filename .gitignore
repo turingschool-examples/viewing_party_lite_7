@@ -35,3 +35,6 @@
 
 # Ignore Keys
 /config/application.yml
+
+# Ignore Mac OS X directory attributes
+.DS_Store
