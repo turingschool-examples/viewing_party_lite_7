@@ -5,9 +5,7 @@ class UsersController < ApplicationController
     @details = TmdbFacade.new
   end
 
-  def new
-    
-  end
+  def new; end
 
   def discover
     @user = User.find(params[:id])
@@ -20,13 +18,13 @@ class UsersController < ApplicationController
       redirect_to user_path(user)
     else
       redirect_to register_path
-      flash[:alert] = 'Email is not unique or form is not fully complete'
+      flash[:alert] = 'Email is not unique or form is not fully complete or passwords do not match'
     end
   end
 
   private
 
   def user_params
-    params.permit(:name, :email, :password)
+    params.permit(:name, :email, :password, :password_confirmation)
   end
 end
