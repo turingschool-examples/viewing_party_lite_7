@@ -16,19 +16,23 @@ RSpec.describe "User registration page", type: :feature do
 
       fill_in "User name", with: "Steve Test"
       fill_in "Email", with: "Steve@test.com"
+      fill_in "Password:", with: "test"
+      fill_in "Password Confirmation", with: "test"
       click_button "Create New User"
 
       expect(current_path).to eq(user_path(User.last))
     end
 
     it "displays an error message if email is already in use" do
-      test_user = User.create!(user_name: "Steve", email: "test@email.com")
+      test_user = User.create!(user_name: "Steve", email: "test@email.com", password: 'password123', password_confirmation: 'password123')
       visit "/register"
-
       fill_in "User name", with: "Kate Test"
       fill_in "Email", with: "test@email.com"
-      click_button "Create New User"
+      fill_in "Password:", with: "test"
+      fill_in "Password Confirmation", with: "test"
 
+
+      click_button "Create New User"
       expect(page).to have_content("Email has already been taken")
     end
   end
