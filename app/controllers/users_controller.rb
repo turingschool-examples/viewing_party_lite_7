@@ -22,6 +22,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def login_form
+  end
+
+  def login
+    # require 'pry'; binding.pry
+    user = User.find_by(email: params[:email])
+
+    redirect_to(user_path(user))
+  end
+
   private
 
   def user_params
