@@ -15,6 +15,31 @@ class UsersController < ApplicationController
     end
   end
 
+  def new
+  end
+
   def create
+    if params[:password] != params[:password_confirmation]
+      flash[:error] = "Invalid email or password"
+      redirect_to new_user_path
+    else
+      @user = User.new(user_params)
+      if @user.save
+        flash[:success] = "Welcome #{@user.name}, you have sucussfully registered"
+        redirect_to user_path(@user.id)
+      else
+        flash[:error] = "Invalid email or password"
+        redirect_to new_user_path
+      end
+    end
+  end
+
+  private
+
+  # def user_params
+  #   params.require(:user).permit(:email, :name, :password)
+  # end
+  def user_params
+    params.permit(:email, :name, :password)
   end
 end

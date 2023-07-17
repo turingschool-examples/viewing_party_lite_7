@@ -1,0 +1,17 @@
+<h1> New User Registration </h1>
+
+<%= form_with url: users_path, method: :post, data: {turbo: false}, local: true do |f|%>
+  <%= f.label  :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label  :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label  :password_digest %>
+  <%= f.text_field :password %>
+
+  <%= f.label  :password_confirmation %>
+  <%= f.text_field :password_confirmation %>
+  
+  <%= f.submit "Register" %>
+<% end %>
