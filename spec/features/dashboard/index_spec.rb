@@ -1,9 +1,3 @@
-# When a user visits the root path they should be on the landing page ('/') which includes:
-# Title of Application
-# Button to Create a New User
-# List of Existing Users which links to the users dashboard
-# Link to go back to the landing page (this link will be present at the top of all pages)
-
 require 'rails_helper'
 
 RSpec.describe 'Landing Page' do
@@ -42,6 +36,15 @@ RSpec.describe 'Landing Page' do
 
       click_link('Home')
       expect(current_path).to eq(root_path)
+    end
+  end
+
+  it 'displays a link to log in' do
+    within('#nav-bar') do
+      expect(page).to have_link('Log In')
+
+      click_link('Log In')
+      expect(current_path).to eq(login_path)
     end
   end
 end
