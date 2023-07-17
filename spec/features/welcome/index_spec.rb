@@ -17,8 +17,8 @@ RSpec.describe "root" do
       expect(page).to have_link('Home')
     end
   end
-  describe "links" do
-    it "verifies functionality of user dashboard link" do
+  describe 'links' do
+    it 'verifies functionality of user dashboard link' do
       visit root_path
 
       click_link(user_1.name)
@@ -34,9 +34,16 @@ RSpec.describe "root" do
 
     it 'verifies functionality of Create New User button' do
       visit root_path
-      
+
       click_button('Create New User')
       expect(current_path).to eq(register_path)
+    end
+
+    it 'verifies functionality of Login link' do
+      visit root_path
+
+      click_link('I already have an account')
+      expect(current_path).to eq(login_path)
     end
   end
 end
