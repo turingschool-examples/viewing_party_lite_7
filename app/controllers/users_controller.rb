@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(user_data)
 
     if @user.save
+      session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
       flash[:notice] = @user.errors.full_messages.to_sentence
@@ -24,6 +25,7 @@ class UsersController < ApplicationController
 
     if user
       if user.authenticate(params[:password])
+        session[:user_id] = user.id
         flash[:success] = "Welcome, #{user.name}"
         redirect_to user_path(user)
       else
