@@ -42,10 +42,6 @@ RSpec.describe "/users/:id" do
         expect(page).to have_button("Top Rated Movies")
         click_button "Top Rated Movies"
         expect(current_path).to eq("/users/#{user_1.id}/movies")
-        # visit the page
-        # expect the page to have the button "Discover Top Rated Movies"
-        # click button
-        # expect current_path to be X
       end
 
       it "has a text field and button to enter keywords and search by movie title", :vcr do
