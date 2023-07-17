@@ -59,7 +59,7 @@ RSpec.describe 'New User Form', type: :feature do
       fill_in 'Password', with: 'wolf'
       fill_in 'Password Confirmation', with: 'wolf'
       click_button 'Create User'
-save_and_open_page
+
       expect(current_path).to eq(register_path)
       expect(page).to have_content("Error: Email has already been taken")
     end
