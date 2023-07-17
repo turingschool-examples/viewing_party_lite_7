@@ -5,6 +5,10 @@
   <%= form.text_field :name %><br><br>
   <%= form.label :email %>
   <%= form.text_field :email %><br><br>
-  <%= form.submit 'Create' %>
+  <%= form.label :password, 'Password:' %>
+  <%= form.password_field :password %><br><br>
+  <%= form.label :password_confirmation, 'Confirm Password:' %>
+  <%= form.password_field :password_confirmation %><br><br>
+  <%= form.submit 'Register' %>
 <% end %>
 
