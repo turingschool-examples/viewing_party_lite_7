@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   before(:each) do
-    @user1 = User.create!(name: 'Maggie', email: 'maggie@gmail.com')
-    @user2 = User.create!(name: 'Max', email: 'max@gmail.com')
+    @user1 = User.create!(name: 'Maggie', email: 'maggie@gmail.com', password: 'test', password_confirmation: 'test')
+    @user2 = User.create!(name: 'Max', email: 'max@gmail.com', password: 'woof', password_confirmation: 'woof')
     @viewing_party1 = ViewingParty.create!(day: '2023-07-01', start_time: '04:00 PM', movie_id: 1,
                                            duration: 120, movie_title: 'Speed')
     @viewing_party2 = ViewingParty.create!(day: '2023-07-02', start_time: '05:00 PM', movie_id: 2,
@@ -28,6 +28,18 @@ RSpec.describe User, type: :model do
   describe 'validations' do
     it { should validate_presence_of(:name) }
     it { should validate_presence_of(:email) }
+    it { should validate_uniqueness_of(:email)}
+    # it {should validate_presence_of(:password)}
+
+    # it { should validate_presence_of(:password_confirmation)} 
+
+    it { should validate_presence_of(:password_digest)} 
+    # -- Remember, bcrypt will check out passwords, and store it as `password_digest`
+    it { should have_secure_password}
+    it "encrypts passwords with password_digest so they're not viewable in text form" do
+      expect(@user2).to_not have_attribute(:password)
+      expect(@user2.password_digest).to_not eq('woof')
+    end
   end
 
   describe 'associatons' do

@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       redirect_to "/users/#{user.id}"
       flash[:notice] = 'User successfully registered.'
     else
-      redirect_to '/register'
+      redirect_to register_path
       flash[:alert] = "Error: #{error_message(user.errors)}"
     end
   end
@@ -25,6 +25,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 end
