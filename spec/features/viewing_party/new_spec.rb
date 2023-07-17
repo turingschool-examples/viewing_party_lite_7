@@ -37,7 +37,6 @@ RSpec.describe "Viewing Party New Page" do
       expect(page).to have_content("Review Count: 5")
       expect(page).to have_content("Review Author: The Movie Mob")
       expect(page).to have_content("Review Content: What a disappointment!")
-      save_and_open_page
     end
 
     it "has form to create viewing party" do

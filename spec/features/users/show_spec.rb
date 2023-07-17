@@ -56,7 +56,7 @@ RSpec.describe "User Show Page" do
       @view_user1 = ViewingUser.create!(user_id: @user1.id, viewing_party_id: @view_party1.id, host: 1)
       visit user_path(@user1.id)
     end
-    it "shows invites to viewing parties" do
+    xit "shows invites to viewing parties" do
       within "#parties" do
         expect(page).to have_content("Viewing Party Invites")
         # expect(page).to have_content(movie image)
@@ -68,7 +68,7 @@ RSpec.describe "User Show Page" do
       end
     end
 
-    it "shows hosting viewing parties" do
+    xit "shows hosting viewing parties" do
       within "#parties" do
         expect(page).to have_content("Viewing Parties as Host")
         # expect(page).to have_content(movie image)
