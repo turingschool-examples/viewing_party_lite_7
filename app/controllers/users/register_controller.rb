@@ -4,13 +4,13 @@ class Users::RegisterController < ApplicationController
   end
 
   def create
-    @user = User.create(name: params[:name], email: params[:email])
-    #make User.new to test if email is unique
-    redirect_to user_path(@user.id)
+    @user = User.new(email: params[:email], name: params[:name], password_digest: params[:password])
+    if @user.save
+      redirect_to user_path(@user.id)
+    end
   end
 
   private
     def user_params
-      # params.require(:user).permit(:name, :email)
     end
 end
