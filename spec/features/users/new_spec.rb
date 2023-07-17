@@ -30,9 +30,13 @@ RSpec.describe "Creates a new User" do
       fill_in "Email", with: "javenb22@gmail.com"
       fill_in "Password", with: "password1"
       fill_in "Password confirmation", with: "password1"
-
       click_button "Register User"
 
+      expect(current_path).to eq("/register")
+      expect(page).to have_content("Invalid input")
+    end
+
+    it "gives an error if all fields aren't filled out" do
       visit "/register"
 
       fill_in "Name", with: "Javen"
