@@ -32,6 +32,10 @@ RSpec.describe User, type: :model do
     it { should validate_presence_of(:password_digest)} 
     # -- Remember, bcrypt will check out passwords, and store it as `password_digest`
     it { should have_secure_password}
+    it "encrypts passwords with password_digest so they're not viewable in text form" do
+      expect(@user2).to_not have_attribute(:password)
+      expect(@user2.password_digest).to_not eq('woof')
+    end
   end
 
   describe 'associatons' do
