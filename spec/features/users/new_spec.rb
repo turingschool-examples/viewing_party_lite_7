@@ -1,4 +1,9 @@
 require 'rails_helper'
+# As a visitor 
+# When I visit `/register`
+# I see a form to fill in my name, email, password, and password confirmation.
+# When I fill in that form with my name, email, and matching passwords,
+# I'm taken to my dashboard page `/users/:id`
 
 RSpec.describe 'New User Form', type: :feature do
   before(:each) do
