@@ -24,9 +24,9 @@ RSpec.describe User, type: :model do
   describe 'instance methods' do
     describe '#hosted_parties' do
       it 'list parties that the user is hosting' do
-        @user1 = User.create!(name: 'John Smith', email: 'jsmith@aol.com')
-        @user2 = User.create!(name: 'Emily Jones', email: '343ftl.com')
-        @user3 = User.create!(name: 'Jimmy johnson', email: 'jj33@aol.com')
+        @user1 = User.create!(name: 'John Smith', email: 'jsmith@aol.com', password: 'password', password_confirmation: 'password')
+        @user2 = User.create!(name: 'Emily Jones', email: '343ftl.com', password: 'password1', password_confirmation: 'password1')
+        @user3 = User.create!(name: 'Jimmy johnson', email: 'jj33@aol.com', password: 'password3', password_confirmation: 'password3')
 
         @party1 = Party.create!(date: '2023-01-01', start_time: '08:00', duration: 275, movie_id: 238, host_id: @user1.id)
         @party2 = Party.create!(date: '2023-01-01', start_time: '08:00', duration: 275, movie_id: 238, host_id: @user2.id)
@@ -43,9 +43,9 @@ RSpec.describe User, type: :model do
 
     describe '#invited_to_parties' do
       it 'list parties the the user is invited to' do
-        @user1 = User.create!(name: 'John Smith', email: 'jsmith@aol.com')
-        @user2 = User.create!(name: 'Emily Jones', email: '343ftl.com')
-        @user3 = User.create!(name: 'Jimmy johnson', email: 'jj33@aol.com')
+        @user1 = User.create!(name: 'John Smith', email: 'jsmith@aol.com', password: 'password', password_confirmation: 'password')
+        @user2 = User.create!(name: 'Emily Jones', email: '343ftl.com', password: 'password1', password_confirmation: 'password1')
+        @user3 = User.create!(name: 'Jimmy johnson', email: 'jj33@aol.com', password: 'password3', password_confirmation: 'password3')
 
         @party1 = Party.create!(date: '2023-01-01', start_time: '08:00', duration: 275, movie_id: 238, host_id: @user1.id)
         @party2 = Party.create!(date: '2023-01-01', start_time: '08:00', duration: 275, movie_id: 238, host_id: @user2.id)

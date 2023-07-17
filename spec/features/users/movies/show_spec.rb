@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "User's Movie Show page" do
   before(:each) do
-    @user1 = User.create!(name: 'John Smith', email: 'jsmith@aol.com')
+    @user1 = User.create!(name: 'John Smith', email: 'jsmith@aol.com', password: 'password', password_confirmation: 'password')
     @movie1 = MovieFacade.new({ type: "top20rated" }).search.first
     @movie1_by_id = MovieFacade.new({ id: @movie1.id.to_s }).search
 

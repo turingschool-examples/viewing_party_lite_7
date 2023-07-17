@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe "User's Viewing Party page" do
   before(:each) do
-    @user1 = User.create!(name: 'John Smith', email: 'jsmith@aol.com')
-    @user2 = User.create!(name: 'Emily Jones', email: '343ftl.com')
-    @user3 = User.create!(name: 'Jimmy johnson', email: 'jj33@aol.com')
-    @user4 = User.create!(name: 'Todd Guy', email: 'tg@gmail.com')
+    @user1 = User.create!(name: 'John Smith', email: 'jsmith@aol.com', password: 'password', password_confirmation: 'password')
+    @user2 = User.create!(name: 'Emily Jones', email: '343ftl.com', password: 'password1', password_confirmation: 'password1')
+    @user3 = User.create!(name: 'Jimmy johnson', email: 'jj33@aol.com', password: 'password3', password_confirmation: 'password3')
+    @user4 = User.create!(name: 'Todd Guy', email: 'tg@gmail.com', password: 'password4', password_confirmation: 'password4')
 
     visit  user_viewing_party_path(@user1, 238)
   end

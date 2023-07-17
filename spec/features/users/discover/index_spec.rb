@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "User's Discover Movies page" do
   before(:each) do
-    @user1 = User.create!(name: 'John Smith', email: 'jsmith@aol.com')
+    @user1 = User.create!(name: 'John Smith', email: 'jsmith@aol.com', password: 'password', password_confirmation: 'password')
 
     visit user_discover_path(@user1)
   end
