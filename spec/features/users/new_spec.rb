@@ -9,11 +9,16 @@ RSpec.describe 'New User Form', type: :feature do
   before(:each) do
     visit '/register'
   end
-  describe 'create a new user' do
+  describe 'Happy Path create a new user' do
     it 'using valid data' do
       fill_in 'Name', with: 'Wolfie'
       fill_in 'Email', with: 'wolfie@gmail.com'
+      fill_in 'Password', with: 'wolf'
+      fill_in 'Password Confirmation', with: 'wolf'
+
+
       click_button 'Create User'
+      # require 'pry'; binding.pry
       new_user = User.all.last
       expect(current_path).to eq("/users/#{User.all.last.id}")
       expect(page).to have_content("#{new_user.name}'s Dashboard")
@@ -37,6 +42,20 @@ RSpec.describe 'New User Form', type: :feature do
 
       expect(current_path).to eq('/register')
       expect(page).to have_content("Error: Email can't be blank")
+    end
+
+    it 'using invalid password confirmation' do
+      fill_in 'Name', with: 'Wolfie'
+      fill_in 'Email', with: 'wolfie@gmail.com'
+      fill_in 'Password', with: 'wolf'
+
+      click_button 'Create User'
+# save_and_open_page
+      # fill_in 'Password Confirmation', with: ''
+      expect(current_path).to eq('/register')
+      expect(page).to have_content("Error: Password confirmation doesn't match Password")
+
+      
     end
   end
 end
