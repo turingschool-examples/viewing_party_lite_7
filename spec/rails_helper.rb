@@ -1,8 +1,8 @@
 def user_test_data
-  @user1 = User.create!(name: 'Maggie', email: 'maggie@gmail.com')
-  @user2 = User.create!(name: 'Max', email: 'max@gmail.com')
-  @user3 = User.create!(name: 'Wolfie', email: 'wolfie@gmail.com')
-  @user4 = User.create!(name: 'Ink Jet Printer', email: 'inkjet@gmail.com')
+  @user1 = User.create!(name: 'Maggie', email: 'maggie2@gmail.com',  password: 'test', password_confirmation: 'test')
+  @user2 = User.create!(name: 'Max', email: 'max2@gmail.com', password: 'woof', password_confirmation: 'woof')
+  @user3 = User.create!(name: 'Wolfie', email: 'wolfie@gmail.com',  password: 'wolf', password_confirmation: 'wolf')
+  @user4 = User.create!(name: 'Ink Jet Printer', email: 'inkjet@gmail.com',  password: 'print', password_confirmation: 'print')
   @viewing_party1 = ViewingParty.create!(day: '2023-07-01', start_time: '04:00 PM', movie_id: 1,
                                          duration: 120, movie_title: 'Speed')
   @viewing_party2 = ViewingParty.create!(day: '2023-07-02', start_time: '05:00 PM', movie_id: 2,
