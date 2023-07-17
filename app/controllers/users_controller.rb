@@ -19,6 +19,23 @@ class UsersController < ApplicationController
   def login_form
   end
 
+  def login_user
+    user = User.find_by(email: params[:email].downcase)
+
+    if user
+      if user.authenticate(params[:password])
+        flash[:success] = "Welcome, #{user.name}"
+        redirect_to user_path(user)
+      else
+        flash[:error] = "Incorrect Password"
+        redirect_to login_path
+      end
+    else
+      flash[:error] = "Email not found"
+      redirect_to login_path
+    end
+  end
+
   def show
     @user = User.find(params[:id])
   end
