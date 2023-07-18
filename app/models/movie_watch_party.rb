@@ -3,6 +3,7 @@ class MovieWatchParty < ApplicationRecord
   belongs_to :watch_party
 
   enum user_status: %w[attending hosting]
+  # enum user_status: %w(attending hosting) # same same but different? 
   # enum user_status: ["attending", "hosting"]
 
   def self.sort_attending
