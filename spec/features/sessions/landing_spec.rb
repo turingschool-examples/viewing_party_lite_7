@@ -36,9 +36,9 @@ RSpec.describe 'Application landing page' do
 
     it "has link to login form" do
       within "#title" do
-        expect(page).to have_link "I already have an account"
+        expect(page).to have_link "Already have an account - Login"
 
-        click_link "I already have an account"
+        click_link "Already have an account - Login"
         expect(current_path).to eq login_path
       end
     end

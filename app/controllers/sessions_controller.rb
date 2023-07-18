@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
   
   def login_form
   end
-  
+
   def login
     if params[:email] == ""
       flash[:error] = "Invalid email or password"
@@ -44,10 +44,9 @@ class SessionsController < ApplicationController
     end
   end
 
-  def destroy
-  end
-
-  def Logout
+  def logout
+    reset_session
+    redirect_to root_path
   end
 
   private

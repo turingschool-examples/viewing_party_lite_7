@@ -54,8 +54,8 @@ RSpec.describe "User Login Form Page" do
       expect(current_path).to eq root_path 
       
       within "#title" do
-        expect(page).to have_link "Logout"
-        expect(page).to_not have_link "I already have an account"
+        expect(page).to have_button "Logout"
+        expect(page).to_not have_button "I already have an account"
       end
     end
   end

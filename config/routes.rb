@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   root "sessions#landing"
   get "/login", to: "sessions#login_form"
   post "/login", to: "sessions#login"
-  resources :sessions, only: [:new, :create, :destroy]
+  delete "/login", to: "sessions#logout"
+  resources :sessions, only: [:new, :create]
 end

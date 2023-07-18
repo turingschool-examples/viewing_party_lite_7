@@ -14,34 +14,13 @@ class UsersController < ApplicationController
       @movie = PopularMovie.new(data)
     end
   end
-  
-  # def login_form
-  # end
-
-  # def login
-  #   if params[:email] == ""
-  #     flash[:error] = "Invalid email or password"
-  #     redirect_to login_path
-  #   else
-  #     @user = User.find_by(email: params[:email])
-  #     if @user.authenticate(params[:password])
-  #       session[:user_id] = @user.id
-  #       flash[:success] = "Welcome, #{@user.name}!"
-  #       redirect_to user_path(@user.id)
-  #     else
-  #       flash[:error] = "Invalid email or password"
-  #       redirect_to login_path
-  #     end
-  #   end
-  # end
 
   private
+  # def user_params
+  #   params.require(:user).permit(:email, :name, :password)
+  # end
 
   def user_params
     params.permit(:email, :name, :password)
   end
-
-  # def user_params
-  #   params.require(:user).permit(:email, :name, :password)
-  # end
 end
