@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
+  
   def index; end
 
   def show
@@ -28,10 +29,17 @@ class UsersController < ApplicationController
 
   def login_user
     user = User.find_by(email: params[:email])
-    if user.authenticate(params[:password]) #user.password == params[:password]
+    if user && user.authenticate(params[:password]) #user.password == params[:password]
       session[:user_id] = user.id
       flash[:success]= "Welcome Back #{user.name}!"
-    redirect_to user_path(user)
+    # redirect_to user_path(user)
+    if user.admin?
+      redirect_to admin_dashboard_path
+    elsif user.manager?
+      redirect_to root_path
+    elsif
+      redirect_to root_path
+    end
     else
       flash[:error] = "Sorry your email or password is incorrect"
       redirect_to login_path
