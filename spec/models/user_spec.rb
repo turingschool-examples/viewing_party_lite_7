@@ -2,8 +2,8 @@ require "rails_helper"
 
 RSpec.describe User do
   before :each do
-    @user1 = User.create!(name: "Cody", email: "code@gmail.com")
-    @user2 = User.create!(name: "Javen", email: "javenb022@gmail.com")
+    @user1 = User.create!(name: "Cody", email: "code@gmail.com", password: "password")
+    @user2 = User.create!(name: "Javen", email: "javenb022@gmail.com", password: "password")
 
     @party1 = Party.create!(movie_id: 1, duration: 120, date: "2021-07-06", start_time: "2021-07-06 12:00:00")
     @party2 = Party.create!(movie_id: 2, duration: 120, date: "2021-07-06", start_time: "2021-07-06 12:00:00")
@@ -14,6 +14,13 @@ RSpec.describe User do
     @user_party3 = UserParty.create!(user_id: @user2.id, party_id: @party1.id, is_host: false)
     @user_party4 = UserParty.create!(user_id: @user2.id, party_id: @party2.id, is_host: true)
     @user_party5 = UserParty.create!(user_id: @user1.id, party_id: @party3.id, is_host: false)
+  end
+
+  describe "validations" do
+    it { should validate_presence_of :name }
+    it { should validate_uniqueness_of :email }
+    it { should validate_presence_of(:password_digest)}
+    it { should have_secure_password }
   end
 
   describe "relationships" do

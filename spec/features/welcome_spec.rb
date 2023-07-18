@@ -14,9 +14,9 @@ RSpec.describe "/", type: :feature do
     end
 
     it "I see a button to create a new user" do
-      expect(page).to have_button("Create a New User")
+      expect(page).to have_link("Register a New User")
 
-      click_button "Create a New User"
+      click_link "Register a New User"
 
       expect(current_path).to eq(new_user_path)
     end
