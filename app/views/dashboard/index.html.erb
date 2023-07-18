@@ -1,12 +1,12 @@
 <div style="text-align: center;">
-  <div id="existing-users">
+  <% if current_user %>
     <h1>Existing Users</h1>
     <% @users.each do |user| %>
-      <p><%= link_to "#{user.name}", "/users/#{user.id}" %></p>
-    <% end %>
-  <div><br>
-
-  <div id="create-user">
-    <%= button_to "Create User", "/register", method: :get %>
-  </div>
+      <p><%= user.email %></p>
+    <% end %><br>
+  <% else %>
+    <div id="create-user">
+      <%= button_to "Create User", "/register", method: :get %>
+    </div>
+  <% end %>
 </div>

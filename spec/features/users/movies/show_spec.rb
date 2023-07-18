@@ -6,6 +6,13 @@ RSpec.describe "User's Movie Show page" do
     @movie1 = MovieFacade.new({ type: "top20rated" }).search.first
     @movie1_by_id = MovieFacade.new({ id: @movie1.id.to_s }).search
 
+    visit root_path
+    click_link 'Log In'
+
+    fill_in :email, with: @user1.email
+    fill_in :password, with: @user1.password
+    click_button 'Log In'
+
     visit user_movie_path(@user1, @movie1.id)
   end
 
@@ -68,5 +75,16 @@ RSpec.describe "User's Movie Show page" do
         expect(page).to have_content(@movie1_by_id.reviews.last[:content])
       end
     end
+  end
+
+  it "does not allow viewing party creation prior to logging in" do
+    click_link('Log Out')
+
+    visit user_movie_path(@user1, @movie1.id)
+
+    click_button("Create Viewing Party for #{@movie1.title}")
+    
+    expect(current_path).to eq(user_movie_path(@user1, @movie1.id))
+    expect(page).to have_content("You must be logged in or registered to access this page")
   end
 end

@@ -38,8 +38,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    session.delete(:user_id)
+    redirect_to root_path
+  end
+
   def show
-    @user = User.find(params[:id])
+    if current_user
+      @user = User.find(params[:id])
+    else
+      flash[:notice] = "You must be logged in or registered to access your dashboard"
+      redirect_to root_path
+    end
   end
 
   private

@@ -6,6 +6,13 @@ RSpec.describe 'User Dashboard page' do
     @user2 = User.create!(name: 'Emily Jones', email: '343ftl.com', password: 'password1', password_confirmation: 'password1')
     @user3 = User.create!(name: 'Jimmy johnson', email: 'jj33@aol.com', password: 'password3', password_confirmation: 'password3')
     @user4 = User.create!(name: 'Todd Guy', email: 'tg@gmail.com', password: 'password4', password_confirmation: 'password4')
+  
+    visit root_path
+    click_link 'Log In'
+
+    fill_in :email, with: @user1.email
+    fill_in :password, with: @user1.password
+    click_button 'Log In'
   end
 
   it 'displays the users Dashboard' do
