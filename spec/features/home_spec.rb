@@ -5,10 +5,12 @@ require 'rails_helper'
 RSpec.describe 'Home Page' do
   describe 'Home page content' do
     before(:each) do
-      @user1 = User.create!(name: 'KD', email: 'kd@gmail.com')
-      @user2 = User.create!(name: 'Amy', email: 'amers@gmail.com')
-      @user3 = User.create!(name: 'Jess', email: 'jess@gmail.com')
-      visit '/'
+      @user1 = User.create!(name: 'KD', email: 'kd@gmail.com', password: 'kd', password_confirmation: 'kd')
+      @user2 = User.create!(name: 'Amy', email: 'amers@gmail.com', password: 'pw', password_confirmation: "pw")
+      @user3 = User.create!(name: 'Jess', email: 'jess@gmail.com', password: 'print', password_confirmation: 'print')
+      @user3 = User.create!(name: 'Wolfie', email: 'wolfie@gmail.com',  password: 'wolf', password_confirmation: 'wolf')
+
+      visit root_path
     end
     it 'I see the Title of the Application and a Button to Create New User' do
       expect(page).to have_content('Viewing Party Lite 7')

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Movie Results Page' do
   before(:each) do
-    @user1 = User.create!(name: 'Wolfie', email: 'wolfie@gmail.com')
+    @user1 = User.create!(name: 'Wolfie', email: 'wolfie@gmail.com', password: 'wolf', password_confirmation: 'wolf')
     top_rated_response = File.read('spec/fixtures/discover_top_rated_movies.json')
     stub_request(:get, "https://api.themoviedb.org/3/discover/movie?api_key=#{ENV['TMDB-KEY']}&include_adult=false&page=1&sort_by=popularity.desc")
       .with(

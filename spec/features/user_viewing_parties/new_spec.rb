@@ -24,11 +24,11 @@ RSpec.describe 'New Viewing Party Page', type: :feature do \
       )
       .to_return(status: 200, body: movie_detailsj2, headers: {})
 
-    @user1 = User.create!(name: 'Max', email: 'max@gmail.com')
-    @user2 = User.create!(name: 'Maggie', email: 'maggie@gmail.com')
-    @user3 = User.create!(name: 'Wolfie', email: 'Wolfie@gmail.com')
-    @user4 = User.create!(name: 'Taro Boba', email: 'TaroBoba@gmail.com')
-    @user5 = User.create!(name: 'Momo', email: 'Momo@gmail.com')
+      @user1 = User.create!(name: 'Maggie', email: 'maggie2@gmail.com',  password: 'test', password_confirmation: 'test')
+      @user2 = User.create!(name: 'Max', email: 'max2@gmail.com', password: 'woof', password_confirmation: 'woof')
+      @user3 = User.create!(name: 'Wolfie', email: 'wolfie@gmail.com',  password: 'wolf', password_confirmation: 'wolf')
+    @user4 = User.create!(name: 'Taro Boba', email: 'TaroBoba@gmail.com', password: 'boba', password_confirmation: 'boba')
+    @user5 = User.create!(name: 'Momo', email: 'Momo@gmail.com', password: 'password', password_confirmation: 'password')
 
     visit "/users/#{@user1.id}/movies/579/viewing-party/new"
   end
