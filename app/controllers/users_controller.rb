@@ -1,5 +1,9 @@
 require 'faraday'
 class UsersController < ApplicationController
+  def landing
+    @users = User.all
+  end
+  
   def show
     @user = User.find(params[:id])
     @viewing_parties = @user.viewing_parties
@@ -15,6 +19,51 @@ class UsersController < ApplicationController
     end
   end
 
-  def create
+  def new
   end
+
+  def create
+    if params[:password] != params[:password_confirmation]
+      flash[:error] = "Invalid email or password"
+      redirect_to new_user_path
+    else
+      @user = User.new(user_params)
+      if @user.save
+        flash[:success] = "Welcome #{@user.name}, you have sucussfully registered"
+        redirect_to user_path(@user.id)
+      else
+        flash[:error] = "Invalid email or password"
+        redirect_to new_user_path
+      end
+    end
+  end
+
+  def login_form
+  end
+
+  def login
+    if params[:email] == ""
+      flash[:error] = "Invalid email or password"
+      redirect_to login_path
+    else
+      @user = User.find_by(email: params[:email])
+      if @user.authenticate(params[:password])
+        flash[:success] = "Welcome, #{@user.name}!"
+        redirect_to user_path(@user.id)
+      else
+        flash[:error] = "Invalid email or password"
+        redirect_to login_path
+      end
+    end
+  end
+
+  private
+
+  def user_params
+    params.permit(:email, :name, :password)
+  end
+
+  # def user_params
+  #   params.require(:user).permit(:email, :name, :password)
+  # end
 end
