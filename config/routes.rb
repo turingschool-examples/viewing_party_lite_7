@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   end
 
   get "/", to: "application#landing", controller: [:user]
+
+  get "/login", to: "users#login_form"
+  post "/login", to: "users#login"
 end

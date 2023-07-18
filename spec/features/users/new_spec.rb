@@ -9,7 +9,7 @@ RSpec.describe "User Registration Page" do
       expect(page).to have_field("email")
       expect(page).to have_field("name")
       expect(page).to have_field("password")
-      expect(page).to have_field("password_confirmation")
+      expect(page).to have_field("Password confirmation")
       expect(page).to have_button("Register")
     end
 
@@ -19,6 +19,7 @@ RSpec.describe "User Registration Page" do
       fill_in :email, with: "email@email.com"
       fill_in :password, with: "secretpassword"
       fill_in :password_confirmation, with: "secretpassword"
+      save_and_open_page
       click_button "Register"
       user = User.last
       expect(current_path).to eq user_path(user.id)
