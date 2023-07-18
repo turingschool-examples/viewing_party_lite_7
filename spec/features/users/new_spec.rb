@@ -15,12 +15,12 @@ RSpec.describe "User Registration Page" do
 
     it "user created successfully" do
       visit new_user_path
-      fill_in :name, with: "Email"
       fill_in :email, with: "email@email.com"
+      fill_in :name, with: "Email"
       fill_in :password, with: "secretpassword"
       fill_in :password_confirmation, with: "secretpassword"
-      save_and_open_page
       click_button "Register"
+      
       user = User.last
       expect(current_path).to eq user_path(user.id)
       expect(page).to have_content("#{user.name}'s Dashboard")
@@ -28,8 +28,8 @@ RSpec.describe "User Registration Page" do
 
     it "missing password_confirmation" do
       visit new_user_path
-      fill_in :name, with: "Email"
       fill_in :email, with: "email@email.com"
+      fill_in :name, with: "Email"
       fill_in :password, with: "secretpassword"
       click_button "Register"
       
@@ -39,8 +39,8 @@ RSpec.describe "User Registration Page" do
 
     it "missing password" do
       visit new_user_path
-      fill_in :name, with: "Email"
       fill_in :email, with: "email@email.com"
+      fill_in :name, with: "Email"
       fill_in :password_confirmation, with: "secretpassword"
       click_button "Register"
       

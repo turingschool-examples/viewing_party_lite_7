@@ -24,10 +24,8 @@
 /tmp/storage/*
 !/tmp/storage/
 !/tmp/storage/.keep
-/coverage
-/coverage/last_run.json
-/coverage/resultset.json
-/coverage/index.html
+# /coverage
+
 
 /public/assets
 
