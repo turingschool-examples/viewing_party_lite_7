@@ -2,10 +2,10 @@
   <%=  link_to "Return to Movie Viewing Party Landing Page" %>
   <h1> Movie Viewing Party! </h1>
   <% if current_user %>
-    <%= link_to "Log Out" %>
+    <%= link_to "Logout" %>
   <% else %>
     <%= link_to "I already have an account", login_path %>
-    <%=  button_to "Create New User", new_user_path, method: :get %>
+    <%=  button_to "Create New User", new_session_path, method: :get %>
   <% end %>
 </div>
 

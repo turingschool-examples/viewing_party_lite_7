@@ -1,6 +1,6 @@
 <h1> New User Registration </h1>
-
-<%= form_with url: users_path, method: :post, data: {turbo: false}, local: true do |f|%>
+<p><%=  link_to "Return to Movie Viewing Party Landing Page", root_path %></p>
+<%= form_with url: sessions_path, method: :post, data: {turbo: false}, local: true do |f|%>
   <%= f.label  :email %>
   <%= f.text_field :email %>
   
