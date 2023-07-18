@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
   def new
-    # @user = User.find()
   end
 
   def create
@@ -9,6 +8,9 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       flash[:success] = "Welcome back, #{user.name}!"
       redirect_to user_path(user.id)
+    else
+      flash[:alert] = "Invalid credentials"
+      redirect_to login_path
     end
   end
 
