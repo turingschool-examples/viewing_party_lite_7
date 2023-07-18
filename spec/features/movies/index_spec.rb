@@ -28,6 +28,12 @@ RSpec.describe 'Discover Movies Page', type: :feature do
     end
 
     it "should display each title as a link", :vcr do 
+      visit login_path
+
+      fill_in(:email, with: user_1.email)
+      fill_in(:password, with: 'test')
+      click_button("Log In")
+
       visit "users/#{user_1.id}/movies"
 
       click_link("The Godfather")

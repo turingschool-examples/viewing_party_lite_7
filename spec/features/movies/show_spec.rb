@@ -10,11 +10,17 @@ RSpec.describe 'movie show page' do
       VCR.use_cassette('spec/fixtures/vcr_cassettes/movie_show_page/movie_show_page_contents.yml') do
         VCR.use_cassette('spec/fixtures/vcr_cassettes/movie_show_page/cast.yml') do
           VCR.use_cassette('spec/fixtures/vcr_cassettes/movie_show_page/reviews.yml') do
+            visit login_path
+
+            fill_in(:email, with: user_1.email)
+            fill_in(:password, with: 'test')
+            click_button('Log In')
+
             visit "/users/#{user_1.id}/movies/238"
 
             expect(page).to have_button('Create Viewing Party')
             expect(page).to have_button('Discover Page')
-            
+
             expect(page).to have_content('Title: The Godfather')
             expect(page).to have_content('Rating: 8.7')
             expect(page).to have_content('Runtime: 2h 55m')
@@ -38,6 +44,21 @@ RSpec.describe 'movie show page' do
             expect(page).to have_content('Author: CinemaSerf')
             expect(page).to have_content('Author: Suresh Chidurala')
           end
+        end
+      end
+    end
+  end
+  it "won't let you create a party if you are not signed in" do
+    VCR.use_cassette('spec/fixtures/vcr_cassettes/movie_show_page1/movie_show_page_contents.yml') do
+      VCR.use_cassette('spec/fixtures/vcr_cassettes/movie_show_page1/cast.yml') do
+        VCR.use_cassette('spec/fixtures/vcr_cassettes/movie_show_page1/reviews.yml') do
+          visit "/users/#{user_1.id}/movies/238"
+
+          click_button('Create Viewing Party')
+
+          expect(current_path).to eq("/users/#{user_1.id}/movies/238")
+
+          expect(page).to have_content('You must be signed in to create viewing party')
         end
       end
     end
