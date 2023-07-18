@@ -12,14 +12,17 @@ class UsersController < ApplicationController
   end
 
   def create
+    user = user_params
+    user[:email] = user[:email].downcase
+    new_user = User.new(user)
 
-    user = User.create(user_params)
-    if user.save
+    if new_user.save
+      # session[:user_id] = new_user.id
       flash[:success] = "Welcome, #{user_params[:name]}"
-      redirect_to "/users/#{user.id}"
+      redirect_to user_path(new_user.id)
     else
-      redirect_to "/register"
-      flash[:alert] = "Name and email must be valid"
+      redirect_to register_user_path
+      flash[:alert] = "Invalid credentials, please fill out form"
     end
   end
 
