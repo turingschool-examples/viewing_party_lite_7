@@ -34,9 +34,13 @@ RSpec.describe "login form" do
       end
 
       describe "sad path" do
-        xit "will not log a user in with invalid credentials" do
+        let!(:user_1) { create(:user) }
+
+        it "will not log a user in with invalid credentials" do
           visit login_path
+          fill_in :email, with: user_1.email
           fill_in :password, with: "not_test"
+          click_button "Submit"
           expect(current_path).to eq(login_path)
           expect(page).to have_content("Invalid credentials")
         end
