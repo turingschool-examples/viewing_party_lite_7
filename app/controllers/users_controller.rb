@@ -26,9 +26,16 @@ class UsersController < ApplicationController
   def login_form
   end
 
-  def login
+  def login_user
     user = User.find_by(email: params[:email])
-    redirect_to(user_path(user))
+    if user.authenticate(params[:password]) #user.password == params[:password]
+      session[:user_id] = user.id
+      flash[:success]= "Welcome back #{user.name}"
+    redirect_to user_path(user)
+    else
+      flash[:error] = "Sorry your email or password is incorrect"
+      redirect_to login_path
+    end
   end
 
   private
