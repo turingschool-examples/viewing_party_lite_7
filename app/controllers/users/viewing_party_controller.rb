@@ -2,7 +2,13 @@ class Users::ViewingPartyController < ApplicationController
   def new
     @movie = MovieFacade.new(params).search
     @user = User.find(params[:user_id])
-    @users = User.where.not(id: @user.id)
+
+    if current_user
+      @users = User.where.not(id: @user.id)
+    else
+      flash[:notice] = "You must be logged in or registered to access this page"
+      redirect_to user_movie_path(@user, @movie.id)
+    end
   end
 
   def create
@@ -30,11 +36,8 @@ class Users::ViewingPartyController < ApplicationController
   end
 
   private
-
   def party_params
     params[:host_id] = params[:user_id]
     params.permit(:date, :start_time, :duration, :movie_id, :host_id)
   end
-
-  
 end
