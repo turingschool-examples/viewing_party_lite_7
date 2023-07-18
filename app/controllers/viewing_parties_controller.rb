@@ -1,9 +1,14 @@
 class ViewingPartiesController < ApplicationController
   def new
-    @user = User.find(params[:id])
-    @users = User.all
-    @movie = params[:movie_id]
-    @details = TmdbFacade.new.movie_details(@movie)
+    if session[:user_id]
+      @user = User.find(params[:id])
+      @users = User.all
+      @movie = params[:movie_id]
+      @details = TmdbFacade.new.movie_details(@movie)
+    else
+      flash[:alert] = 'You must be signed in to create viewing party'
+      redirect_back(fallback_location: root_path)
+    end
   end
 
   def create
@@ -16,9 +21,7 @@ class ViewingPartiesController < ApplicationController
       viewing_party = ViewingParty.new(viewing_party_params)
       if viewing_party.save
         params.each do |key, value|
-          if key.to_i != 0 && value == "1"
-            ViewingPartyUser.create!(viewing_party_id: viewing_party.id, user_id: key)
-          end
+          ViewingPartyUser.create!(viewing_party_id: viewing_party.id, user_id: key) if key.to_i != 0 && value == '1'
         end
         redirect_to "/users/#{user.id}"
       end

@@ -41,9 +41,9 @@ RSpec.describe 'Users Dashboard' do
           expect(page).to have_content(vp_1.start_date)
           expect(page).to have_content(vp_2.start_date)
           expect(page).to have_content(vp_3.start_date)
-          expect(page).to have_content(vp_1.start_time.strftime("%I:%M%p"))
-          expect(page).to have_content(vp_2.start_time.strftime("%I:%M%p"))
-          expect(page).to have_content(vp_3.start_time.strftime("%I:%M%p"))
+          expect(page).to have_content(vp_1.start_time.strftime('%I:%M%p'))
+          expect(page).to have_content(vp_2.start_time.strftime('%I:%M%p'))
+          expect(page).to have_content(vp_3.start_time.strftime('%I:%M%p'))
 
           expect(page).to have_content("Host: #{user_1.name}")
           expect(page).to have_content("#{user_2.name}")
@@ -67,5 +67,33 @@ RSpec.describe 'Users Dashboard' do
         end
       end
     end
+
+    describe '/dashboard' do
+      it '/dashboard does not work if user is not signed in' do
+        VCR.use_cassette('spec/fixtures/vcr_cassettes/user_dashboard/user_dashboard_contents.yml') do
+          VCR.use_cassette('spec/fixtures/vcr_cassettes/user_dashboard/image.yml') do
+            visit '/dashboard'
+
+            expect(current_path).to eq(root_path)
+            expect(page).to have_content('You must be signed in to access your dashboard')
+          end
+        end
+      end
+    end
+    it '/dashboard works if you are signed in' do
+      VCR.use_cassette('spec/fixtures/vcr_cassettes/user_dashboard/user_dashboard_contents.yml') do
+        VCR.use_cassette('spec/fixtures/vcr_cassettes/user_dashboard/image.yml') do
+          visit login_path
+          fill_in(:email, with: user_1.email)
+          fill_in(:password, with: 'test')
+          click_button('Log In')
+
+          visit '/dashboard'
+
+          expect(current_path).to eq(user_path(user_1))
+        end
+      end
+    end
+    
   end
 end
