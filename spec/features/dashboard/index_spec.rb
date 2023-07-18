@@ -15,19 +15,25 @@ RSpec.describe 'Landing Page' do
     end
   end
 
-  it 'displays a button to create a new user' do
+  it 'displays a button to create a new user when not logged in' do
     within('#create-user') do
       expect(page).to have_button('Create User')
     end
   end
 
-  it 'displays a list of existing users which links to the users dashboard' do
-    within('#existing-users') do
-      expect(page).to have_content('Existing Users')
-      expect(page).to have_link(@user1.name)
-      expect(page).to have_link(@user2.name)
-      expect(page).to have_link(@user3.name)
-    end
+  it 'displays a list of existing user emails when logged in' do
+    click_link 'Log In'
+
+    fill_in :email, with: @user1.email
+    fill_in :password, with: @user1.password
+    click_button 'Log In'
+
+    visit root_path
+
+    expect(page).to have_content('Existing Users')
+    expect(page).to have_content(@user1.email)
+    expect(page).to have_content(@user2.email)
+    expect(page).to have_content(@user3.email)
   end
 
   it 'displays a link to go back to the landing page' do
@@ -46,5 +52,12 @@ RSpec.describe 'Landing Page' do
       click_link('Log In')
       expect(current_path).to eq(login_path)
     end
+  end
+
+  it 'does not display the list of existing user emails when not logged in' do
+    expect(page).to_not have_content('Existing Users')
+    expect(page).to_not have_content(@user1.email)
+    expect(page).to_not have_content(@user2.email)
+    expect(page).to_not have_content(@user3.email)
   end
 end
