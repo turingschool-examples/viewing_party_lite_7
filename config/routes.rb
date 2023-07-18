@@ -3,8 +3,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  get "/", to: "application#index"
-  get "/register", to: "users#new"
+
+  # get "/", to: "application#index"
+  root "application#index"
+  get "/register", to: "users#new", as: :register_user
+  post "/register", to: "users#create"
 
   resources :users, only: [:index, :show, :create] do
     resources :movies, only: [:index, :create]

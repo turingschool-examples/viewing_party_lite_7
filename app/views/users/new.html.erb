@@ -1,9 +1,16 @@
-<p> Registration </p>
-<%= form_with url: "/users", method: :post, data: { turbo: false } do |f| %>
+<h3> New User Registration Form </h3>
+<%= form_with(url: register_user_path, method: :post, data: { turbo: false }) do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
+
   <%= f.label :email %>
   <%= f.text_field :email %>
+
+  <%= f.label :password, "Password:" %>
+  <%= f.password_field :password %>
+
+  <%= f.label :password_confirmation, "Password Confirmation:" %>
+  <%= f.password_field :password_confirmation %>
 
   <%= f.submit "Submit" %>
 <% end %>
