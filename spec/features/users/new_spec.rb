@@ -1,16 +1,4 @@
 require 'rails_helper'
-# As a visitor 
-# When I visit `/register`
-# I see a form to fill in my name, email, password, and password confirmation.
-# When I fill in that form with my name, email, and matching passwords,
-# I'm taken to my dashboard page `/users/:id`
-#US2
-# As a visitor 
-# When I visit `/register`
-# and I fail to fill in my name, unique email, OR matching passwords,
-# I'm taken back to the `/register` page
-# and a flash message pops up, telling me what went wrong
-
 
 RSpec.describe 'New User Form', type: :feature do
   before(:each) do
