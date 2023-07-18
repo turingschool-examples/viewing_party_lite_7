@@ -70,6 +70,8 @@ RSpec.describe 'Home Page' do
       expect(current_path).to eq(root_path)
       expect(page).to have_content("Welcome Back #{@user3.name}!")
       expect(page).to have_link"Log Out"
+      expect(page).to_not have_button"Log In"
+      expect(page).to_not have_button'Register a New User'
     end
   end
 end
