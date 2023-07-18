@@ -40,12 +40,11 @@ RSpec.describe 'Home Page' do
       fill_in :password, with: @user3.password
       click_on "Log In"
   # save_and_open_page
-      expect(current_path).to eq(user_path(@user3))
+      expect(current_path).to eq(root_path)
       expect(page).to have_content("Welcome Back #{@user3.name}!")
     end
   
     it "cannot log in with bad credentials" do
-      visit root_path
   
       click_on"Log In"
       expect(current_path).to eq(login_path)
@@ -56,6 +55,21 @@ RSpec.describe 'Home Page' do
   
       expect(current_path).to eq(login_path)
       expect(page).to have_content("Sorry your email or password is incorrect")
+    end
+  end
+
+  describe "it verifies current user" do
+    it "it checks if a user is logged in" do
+
+      click_on"Log In"
+      expect(current_path).to eq(login_path)
+  
+      fill_in :email, with: @user3.email
+      fill_in :password, with: @user3.password
+      click_on "Log In"
+      expect(current_path).to eq(root_path)
+      expect(page).to have_content("Welcome Back #{@user3.name}!")
+      expect(page).to have_link"Log Out"
     end
   end
 end

@@ -1,7 +1,12 @@
 <h1> Viewing Party Lite 7 </h1>
 
+<% if current_user %>
+  <%= link_to "Log Out" %>
+<% else %>
+
 <%= button_to "Log In", login_path, method: :get %><br>
 <%= button_to "Register a New User", "/register", method: :get %> 
+<% end %>
 <h4> Existing Users </h4>
   <ul>
     <% @users.each do |user| %>
