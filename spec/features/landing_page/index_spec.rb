@@ -56,6 +56,5 @@ RSpec.describe "landing page - index '/' " do
     # And fail to fill in my correct credentials
     # I'm taken back to the Log In page
     # And I can see a flash message telling me that I entered incorrect credentials.
-    it ""
   end
 end
