@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Movie Details Page', type: :feature do
   before(:each) do
-    @user = User.create!(name: 'Neato', email: 'neato@gmail.com')
+    @user = User.create!(name: 'Neato', email: 'neato@gmail.com', password: 'wolf', password_confirmation: 'wolf')
     movie_detailsj2 = File.read('spec/fixtures/movie_details_jaws2.json')
     stub_request(:get, "https://api.themoviedb.org/3/movie/579?api_key=#{ENV['TMDB-KEY']}&append_to_response=credits,reviews,images")
       .with(
