@@ -42,7 +42,6 @@
           1,
           1,
           1,
-          1,
           null,
           1,
           1,
@@ -1014,20 +1013,15 @@
           null
         ]
       },
-      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          1,
-          6,
-          null,
-          null
-        ]
-      },
       "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/app/controllers/users_controller.rb": {
         "lines": [
           1,
           1,
           1,
+          6,
+          null,
+          null,
+          1,
           8,
           8,
           8,
@@ -1088,6 +1082,17 @@
           null,
           null,
           null,
+          null,
+          null
+        ]
+      },
+      "/Users/stillymonster/3Mod/3mod_work/viewing_party_lite_7/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          6,
           null,
           null
         ]
@@ -1204,6 +1209,6 @@
         ]
       }
     },
-    "timestamp": 1689702088
+    "timestamp": 1689704874
   }
 }

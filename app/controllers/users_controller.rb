@@ -1,5 +1,9 @@
 require 'faraday'
 class UsersController < ApplicationController
+  def landing
+    @users = User.all
+  end
+  
   def show
     @user = User.find(params[:id])
     @viewing_parties = @user.viewing_parties

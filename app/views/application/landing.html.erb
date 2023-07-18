@@ -1,8 +1,12 @@
 <div id="title">
+  <%=  link_to "Return to Movie Viewing Party Landing Page" %>
   <h1> Movie Viewing Party! </h1>
-  <p>Existing Customers Login Here: <%=  link_to "Login", login_path %></p>
-  <p><%=  button_to "Create New User", new_user_path, method: :get %></p>
-  <p><%=  link_to "Return to Movie Viewing Party Landing Page" %></p>
+  <% if current_user %>
+    <%= link_to "Log Out" %>
+  <% else %>
+    <%= link_to "I already have an account", login_path %>
+    <%=  button_to "Create New User", new_user_path, method: :get %>
+  <% end %>
 </div>
 
 <div id="users">

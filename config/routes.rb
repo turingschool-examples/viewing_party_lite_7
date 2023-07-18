@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :search, only: [:search]
   end
 
-  get "/", to: "application#landing", controller: [:user]
+  get "/", to: "users#landing", controller: [:user]
 
   get "/login", to: "users#login_form"
   post "/login", to: "users#login"
