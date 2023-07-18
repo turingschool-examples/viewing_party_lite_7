@@ -26,6 +26,18 @@ RSpec.describe "User Registration Page" do
       expect(page).to have_content("#{user.name}'s Dashboard")
     end
 
+    it "not matching passwords" do
+      visit new_user_path
+      fill_in :email, with: "email@email.com"
+      fill_in :name, with: "Email"
+      fill_in :password, with: "secretpassword"
+      fill_in :password_confirmation, with: "notsecretpassword"
+      click_button "Register"
+      
+      expect(current_path).to eq(new_user_path)
+      expect(page).to have_content("Invalid email or password")
+    end
+
     it "missing password_confirmation" do
       visit new_user_path
       fill_in :email, with: "email@email.com"

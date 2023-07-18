@@ -19,7 +19,7 @@ RSpec.describe "User Login Form Page" do
       fill_in :password, with: "secretpassword"
       click_button "Login"
       user = User.find_by(email: "email@email.com")
-      expect(current_path).to eq(user_path(user.id))
+      expect(current_path).to eq user_path(user.id)
       expect(page).to have_content("#{user.name}'s Dashboard")
     end
     
@@ -28,7 +28,7 @@ RSpec.describe "User Login Form Page" do
       fill_in :email, with: "email@email.com"
       click_button "Login"
       
-      expect(current_path).to eq(login_path)
+      expect(current_path).to eq login_path
       expect(page).to have_content("Invalid email or password")
     end
 
@@ -37,7 +37,7 @@ RSpec.describe "User Login Form Page" do
       fill_in :password, with: "secretpassword"
       click_button "Login"
 
-      expect(current_path).to eq(login_path)
+      expect(current_path).to eq login_path
       expect(page).to have_content("Invalid email or password")
     end
   end
