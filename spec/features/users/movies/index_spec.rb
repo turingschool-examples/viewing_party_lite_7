@@ -10,10 +10,10 @@ RSpec.describe "user/movies/index.html" do
       it "shows top rated movies" do
         top_movies = MoviesFacade.new.movies
 
-        visit user_discover_path(@user1)
+        visit discover_path
         click_button("Discover Top Rated Movies")
 
-        expect(current_path).to eq(user_movies_path(@user1))
+        expect(current_path).to eq(movies_path)
 
         expect(page).to have_content("Viewing Party")
         expect(page).to have_button("Discover Page")
@@ -29,43 +29,44 @@ RSpec.describe "user/movies/index.html" do
       it "has a link to movie show page" do
         top_movies = MoviesFacade.new.movies
 
-        visit user_discover_path(@user1)
+        visit discover_path
         click_button("Discover Top Rated Movies")
 
-        expect(current_path).to eq(user_movies_path(@user1))
+        expect(current_path).to eq(movies_path)
 
         expect(page).to have_content("Viewing Party")
         expect(page).to have_button("Discover Page")
 
         click_link(top_movies.first.title.to_s)
-        expect(current_path).to eq(user_movie_path(@user1, top_movies.first.id))
+        expect(current_path).to eq(movie_path(top_movies.first.id))
       end
     end
     describe "and search by title" do
       it "shows movies by title" do
         MoviesFacade.new("The Dark Knight").movies
-        visit user_discover_path(@user1)
+        visit discover_path
 
         fill_in :search_field, with: "The Dark Knight"
         click_button("Search")
 
-        expect(current_path).to eq(user_movies_path(@user1))
+        expect(current_path).to eq(movies_path)
       end
 
       it "has a link to movie show page" do
         MoviesFacade.new("The Dark Knight").movies
-        visit user_discover_path(@user1)
+        visit discover_path
 
         fill_in :search_field, with: "The Dark Knight"
         click_button("Search")
 
-        expect(current_path).to eq(user_movies_path(@user1))
+        expect(current_path).to eq(movies_path)
 
         expect(page).to have_content("Viewing Party")
         expect(page).to have_button("Discover Page")
 
         click_link("The Dark Knight")
-        expect(current_path).to eq("/users/#{@user1.id}/movies/155")
+        expect(current_path).to eq(movie_path(155))
+        # expect(current_path).to eq("/users/#{@user1.id}/movies/155")
       end
     end
   end

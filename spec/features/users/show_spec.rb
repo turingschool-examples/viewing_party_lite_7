@@ -18,31 +18,55 @@ RSpec.describe "/users/:id", type: :feature do
 
   describe "When I visit the users dashboard page", :vcr do
     it 'I see <users name> Dashboard" at the top of the page' do
-      visit user_path(@user1)
+      visit root_path
+      click_link "Log In"
+      fill_in :email, with: @user1.email
+      fill_in :password, with: @user1.password
+      click_button "Log In"
+
+      visit dashboard_path
 
       expect(page).to have_content("#{@user1.name}'s Dashboard")
     end
 
     it "has a button (Discover Movies)", :vcr do
-      visit user_path(@user1)
+      visit root_path
+      click_link "Log In"
+      fill_in :email, with: @user1.email
+      fill_in :password, with: @user1.password
+      click_button "Log In"
+
+      visit dashboard_path
 
       expect(page).to have_button("Discover Movies")
     end
 
     it "has link to movie show page", :vcr do
-      visit user_path(@user1)
+      visit root_path
+      click_link "Log In"
+      fill_in :email, with: @user1.email
+      fill_in :password, with: @user1.password
+      click_button "Log In"
+
+      visit dashboard_path
 
       expect(page).to have_link("The Dark Knight")
 
       click_link("The Dark Knight")
-      expect(current_path).to eq(user_movie_path(@user1, 155))
+      expect(current_path).to eq(movie_path(155))
     end
 
     it "has a section that list viewing parties", :vcr do
       MovieFacade.get_movie_title(155)
       forrest_gump = MovieFacade.get_movie_title(13)
 
-      visit user_path(@user1)
+      visit root_path
+      click_link "Log In"
+      fill_in :email, with: @user1.email
+      fill_in :password, with: @user1.password
+      click_button "Log In"
+
+      visit dashboard_path
 
       expect(page).to have_content("Parties Hosting")
       expect(page).to have_content("Parties Attending")
@@ -74,10 +98,17 @@ RSpec.describe "/users/:id", type: :feature do
 
   describe 'When I visit the users dashboard page and click "Discover Movies"' do
     it "redirects to a discover page for the specific user", :vcr do
-      visit user_path(@user1)
-      click_button "Discover Movies"
+      visit root_path
+      click_link "Log In"
+      fill_in :email, with: @user1.email
+      fill_in :password, with: @user1.password
+      click_button "Log In"
 
-      expect(current_path).to eq("/users/#{@user1.id}/discover")
+      visit dashboard_path
+
+      click_button "Discover Page"
+
+      expect(current_path).to eq(discover_path)
       expect(page).to have_content("Discover Movies")
     end
   end
