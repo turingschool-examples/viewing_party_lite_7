@@ -6,18 +6,18 @@ RSpec.describe "User can search for movies" do
   end
   describe "When a user visits the discover page", :vcr do
     it "can search by movie title" do
-      visit "/users/#{@user1.id}/discover"
+      visit discover_path
 
       click_button "Discover Top Rated Movies"
-      expect(current_path).to eq("/users/#{@user1.id}/movies")
+      expect(current_path).to eq(movies_path)
     end
 
     it "can search by title" do
-      visit "/users/#{@user1.id}/discover"
+      visit discover_path
 
       fill_in :search_field, with: "The Dark Knight"
       click_button "Search"
-      expect(current_path).to eq("/users/#{@user1.id}/movies")
+      expect(current_path).to eq(movies_path)
     end
   end
 end

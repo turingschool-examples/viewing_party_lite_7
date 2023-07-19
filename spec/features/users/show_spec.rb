@@ -53,7 +53,7 @@ RSpec.describe "/users/:id", type: :feature do
       expect(page).to have_link("The Dark Knight")
 
       click_link("The Dark Knight")
-      expect(current_path).to eq(user_movie_path(@user1, 155))
+      expect(current_path).to eq(movie_path(155))
     end
 
     it "has a section that list viewing parties", :vcr do
@@ -105,10 +105,10 @@ RSpec.describe "/users/:id", type: :feature do
       click_button "Log In"
 
       visit dashboard_path
-      
-      click_button "Discover Movies"
 
-      expect(current_path).to eq("/users/#{@user1.id}/discover")
+      click_button "Discover Page"
+save_and_open_page
+      expect(current_path).to eq(discover_path)
       expect(page).to have_content("Discover Movies")
     end
   end

@@ -11,7 +11,14 @@ RSpec.describe "/users/:id/movies/:id/viewing_party/new", type: :feature do
 
   describe "When I visit the new viewing party page", :vcr do
     it "I see the name of the movie title and movie duration" do
-      visit new_user_movie_viewing_party_path(@user1, 155)
+      visit root_path
+      click_link "Log In"
+      fill_in :email, with: @user1.email
+      fill_in :password, with: @user1.password
+      click_button "Log In"
+
+      visit new_movie_viewing_party_path(155)
+
       expect(page).to have_content("Create a Viewing Party for #{@movie.movie_title}")
       expect(page).to have_content("Duration of Party")
     end
@@ -25,7 +32,7 @@ RSpec.describe "/users/:id/movies/:id/viewing_party/new", type: :feature do
       fill_in :password, with: @user1.password
       click_button "Log In"
 
-      visit new_user_movie_viewing_party_path(@user1, 155)
+      visit new_movie_viewing_party_path(155)
 
       fill_in :duration, with: 300
       fill_in :date, with: "2023/07/8"
@@ -40,18 +47,30 @@ RSpec.describe "/users/:id/movies/:id/viewing_party/new", type: :feature do
 
   describe "If a user does not fill out the entire form", :vcr do
     it "The user does not fill out the date an error message displays" do
-      visit new_user_movie_viewing_party_path(@user1, 155)
+      visit root_path
+      click_link "Log In"
+      fill_in :email, with: @user1.email
+      fill_in :password, with: @user1.password
+      click_button "Log In"
+
+      visit new_movie_viewing_party_path(155)
 
       check @user2.name.to_s
 
       click_button "Create Party!"
 
-      expect(current_path).to eq(new_user_movie_viewing_party_path(@user1, 155))
+      expect(current_path).to eq(new_movie_viewing_party_path(155))
       expect(page).to have_content("All fields need to be filled out before creating a viewing party!")
     end
 
     it "The user does not fill out the time an error message displays" do
-      visit new_user_movie_viewing_party_path(@user1, 155)
+      visit root_path
+      click_link "Log In"
+      fill_in :email, with: @user1.email
+      fill_in :password, with: @user1.password
+      click_button "Log In"
+      
+      visit new_movie_viewing_party_path(155)
 
       fill_in :duration, with: 250
       fill_in :date, with: "2023/07/8"
@@ -60,7 +79,7 @@ RSpec.describe "/users/:id/movies/:id/viewing_party/new", type: :feature do
 
       click_button "Create Party!"
 
-      expect(current_path).to eq(new_user_movie_viewing_party_path(@user1, 155))
+      expect(current_path).to eq(new_movie_viewing_party_path(155))
       expect(page).to have_content("All fields need to be filled out before creating a viewing party!")
     end
   end
