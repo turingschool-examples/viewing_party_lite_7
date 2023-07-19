@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   post '/users/:id', to: 'user_viewing_parties#create'
   get '/login', to: "users#login_form"
   post '/login', to: 'users#login_user'
+  delete "/login", to: "users#log_out_user"
 
   resources :movies, only: [:show]
   resources :users, only: %i[index create show]
