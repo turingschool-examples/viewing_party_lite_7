@@ -1,8 +1,0 @@
-<p> Viewing Party Manager </p>
-<%= button_to "Create new user", "/register", method: :get %>
-<p> All Users </p>
-<% @users.each do |user| %>
-  <%= link_to user.name, "users/#{user.id}" %> <br>
-<% end %>
-
-<%= link_to "Log In", login_path %>
