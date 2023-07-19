@@ -42,5 +42,17 @@ RSpec.describe 'Application landing page' do
       expect(page).to_not have_link "#{@user.name}"
       expect(page).to_not have_content "Movie Viewing Users:"
     end
+
+    it "shows users without links to users when logged in" do
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+      visit root_path
+
+      expect(page).to have_button "Logout"
+      within "#users" do
+        expect(page).to have_content "Movie Viewing Users:"
+        expect(page).to have_content "#{@user.name}"
+        expect(page).to_not have_link "#{@user.name}"
+      end
+    end
   end
 end

@@ -13,7 +13,7 @@
   <div id="users">
     <h2> Movie Viewing Users: </h2>
     <p><%  @users.each do |person| %></p>
-      <p><%= link_to "#{person.name}", user_path(person.id) %>
+      <p><%= person.name %>
     <p><%  end %></p>
   </div>
 <% end %>
