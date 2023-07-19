@@ -4,9 +4,9 @@ Rails.application.routes.draw do
 
   get '/register', to: 'users#new'
   get '/login', to: 'users#login_form'
-  post '/login', to: 'users#login_user'
-  delete '/logout', to: 'users#destroy'
-  get '/logout', to: 'users#destroy'
+  post '/login', to: 'sessions#login_user'
+  delete '/logout', to: 'sessions#destroy'
+  get '/logout', to: 'sessions#destroy'
   
   resources :users, only: [:show, :create] do
     get '/discover', to: 'users/discover#index'
