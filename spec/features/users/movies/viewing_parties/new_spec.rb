@@ -19,6 +19,12 @@ RSpec.describe "/users/:id/movies/:id/viewing_party/new", type: :feature do
 
   describe "I see a form to create a new Viewing Party", :vcr do
     it "When a user fills out all fields in the form and clicks submit a new viewing party is created" do
+      visit root_path
+      click_link "Log In"
+      fill_in :email, with: @user1.email
+      fill_in :password, with: @user1.password
+      click_button "Log In"
+
       visit new_user_movie_viewing_party_path(@user1, 155)
 
       fill_in :duration, with: 300
@@ -28,7 +34,7 @@ RSpec.describe "/users/:id/movies/:id/viewing_party/new", type: :feature do
       check @user2.name.to_s
 
       click_button "Create Party!"
-      expect(current_path).to eq(user_path(@user1))
+      expect(current_path).to eq(dashboard_path)
     end
   end
 

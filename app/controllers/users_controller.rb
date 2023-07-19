@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :get_user, only: [:show]
+  # before_action :get_user, only: [:show]
 
   def new
     @user = User.new
@@ -23,26 +23,14 @@ class UsersController < ApplicationController
   end
 
   def show
-    @facade = MovieFacade
+    if current_user
+      @user = User.find(current_user.id)
+      @facade = MovieFacade
+    else
+      flash[:error] = "You must be logged in to visit that page."
+      redirect_to root_path
+    end
   end
-
-  # def login_form
-  # end
-
-  # def login
-  #   user = User.find_by(email: params[:email])
-  #   if user.nil?
-  #     flash[:error] = "Sorry, your credentials are bad."
-  #     redirect_to login_path
-  #   elsif user.authenticate(params[:password])
-  #     session[:user_id] = user.id
-  #     flash[:success] = "Welcome, #{user.name}!"
-  #     redirect_to root_path
-  #   else
-  #     flash[:error] = "Sorry, your credentials are bad."
-  #     redirect_to login_path
-  #   end
-  # end
 
   private
 
@@ -50,7 +38,12 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 
-  def get_user
-    @user = User.find(params[:id])
-  end
+  # def get_user
+  #   if session[:user_id]
+  #     @user = User.find(session[:user_id])
+  #   else
+  #     flash[:error] = "You must be logged in to visit that page."
+  #     redirect_to root_path
+  #   end
+  # end
 end

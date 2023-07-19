@@ -27,8 +27,4 @@ class SessionController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
-
-  # def get_user
-  #   @user = User.find(params[:id])
-  # end
 end

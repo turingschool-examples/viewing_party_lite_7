@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get "/login", to: "session#login_form"
   post "/login", to: "session#login"
   get "/logout", to: "session#logout", as: :logout
-  get "/dashboard", to: "users#show"
+  get "/dashboard", to: "users#show", as: :dashboard
 
   resources :users, only: [:create, :show] do
     get "discover", to: "users/discover#index"
