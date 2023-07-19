@@ -69,9 +69,21 @@ RSpec.describe 'Home Page' do
       click_on "Log In"
       expect(current_path).to eq(root_path)
       expect(page).to have_content("Welcome Back #{@user3.name}!")
-      expect(page).to have_link"Log Out"
+      expect(page).to have_button("Log Out")
       expect(page).to_not have_button"Log In"
       expect(page).to_not have_button'Register a New User'
+
+      click_on"Log Out"
+      expect(current_path).to eq(root_path)
+      expect(page).to_not have_button("Log Out")
+      expect(page).to have_button"Log In"
     end
   end
 end
+# As a logged in user 
+# When I visit the landing page
+# I no longer see a link to Log In or Create an Account
+# But I see a link to Log Out.
+# When I click the link to Log Out
+# I'm taken to the landing page
+# And I can see that the Log Out link has changed back to a Log In link

@@ -60,7 +60,7 @@ RSpec.describe 'New Viewing Party Page', type: :feature do \
 
       visit user_path(@user2)
       within('#viewing_party_invitations') do
-        expect(page).to have_content('Jaws 2- Viewing Party')
+        expect(page).to_not have_content('Jaws 2- Viewing Party')
       end
 
       visit user_path(@user4)
