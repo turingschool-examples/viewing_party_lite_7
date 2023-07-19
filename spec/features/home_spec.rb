@@ -13,16 +13,12 @@ RSpec.describe 'Home Page' do
   end
   describe 'Home page content' do
     it 'I see the Title of the Application and a Button to Create New User' do
+      save_and_open_page
       expect(page).to have_content('Viewing Party Lite 7')
       click_button('Register a New User')
       expect(current_path).to eq(register_path)
     end
 
-    it 'I do not see a List of Existing Users which links to the users dashboard' do
-      expect(page).to_not have_content(@user1.name)
-      expect(page).to_not have_content(@user2.name)
-      expect(page).to_not have_content(@user3.name)
-    end
 
     it 'I see Link to go back to the landing page (this link will be present at the top of all pages)' do
       expect(page).to have_link('Home Page')
@@ -80,7 +76,27 @@ RSpec.describe 'Home Page' do
     end
   end
 
-  describe
+  describe "Being a registered user I see a list of emails of existing users" do
+    it "If I'm a registered user see a List of Emails of Existing Users not their names" do
+      click_on"Log In"
+      expect(current_path).to eq(login_path)
+      
+      fill_in :email, with: @user3.email
+      fill_in :password, with: @user3.password
+      click_on "Log In"
+  
+      expect(current_path).to eq(root_path)
+      
+      expect(page).to have_content(@user1.email)
+      expect(page).to have_content(@user2.email)
+      expect(page).to have_content(@user3.email)
+      expect(page).to have_content(@user4.email)
+      
+      expect(page).to_not have_content(@user1.name)
+      expect(page).to_not have_content(@user2.name)
+      expect(page).to_not have_content(@user4.name)
+    end
+  end
 end
 
 # As a visitor
