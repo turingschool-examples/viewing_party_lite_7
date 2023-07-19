@@ -14,10 +14,12 @@ Rails.application.routes.draw do
   get "/logout", to: "session#logout", as: :logout
   get "/dashboard", to: "users#show", as: :dashboard
 
+  get "/discover", to: "discover#index"
+
+  resources :movies, only: [:index, :show] do
+    resources :viewing_party, only: [:new, :create], controller: "viewing_parties"
+  end
+
   resources :users, only: [:create, :show] do
-    get "discover", to: "users/discover#index"
-    resources :movies, only: [:index, :show], controller: "users/movies" do
-      resources :viewing_party, only: [:new, :create], controller: "users/movies/viewing_parties"
-    end
   end
 end
