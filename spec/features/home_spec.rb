@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.describe 'Home Page' do
@@ -19,7 +17,6 @@ RSpec.describe 'Home Page' do
       expect(current_path).to eq(register_path)
     end
 
-
     it 'I see Link to go back to the landing page (this link will be present at the top of all pages)' do
       expect(page).to have_link('Home Page')
     end
@@ -35,7 +32,7 @@ RSpec.describe 'Home Page' do
       fill_in :email, with: @user3.email
       fill_in :password, with: @user3.password
       click_on "Log In"
-  # save_and_open_page
+  
       expect(current_path).to eq(root_path)
       expect(page).to have_content("Welcome Back #{@user3.name}!")
     end
@@ -98,12 +95,3 @@ RSpec.describe 'Home Page' do
     end
   end
 end
-
-# As a visitor
-# When I visit the landing page
-# I do not see the section of the page that lists existing users
-
-# As a registered user
-# When I visit the landing page
-# The list of existing users is no longer a link to their show pages
-# But just a list of email addresses
