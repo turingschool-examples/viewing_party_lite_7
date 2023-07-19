@@ -3,6 +3,7 @@ require "rails_helper"
 RSpec.describe "User Show Page" do
   describe "User Dashboard" do
     before :each do
+      @user = User.create!(name: "Email", email: "email@email.com", password: "secretpassword")
       @user1 = FactoryBot.create(:user)
       @user2 = FactoryBot.create(:user)
       @user3 = FactoryBot.create(:user)
@@ -17,24 +18,32 @@ RSpec.describe "User Show Page" do
 
       @view_party1 = ViewingParty.create!(duration: 300, date_time: Date.today, api_movie_id: @movie_id)
       @view_user1 = ViewingUser.create!(user_id: @user1.id, viewing_party_id: @view_party1.id, host: 1)
-      visit user_path(@user1.id)
     end
-
+    
     it "dashboard title" do
-      expect(page).to have_content("#{@user1.name}'s Dashboard")
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+      visit user_path(@user.id)
+
+      expect(page).to have_content("#{@user.name}'s Dashboard")
     end
 
     it "discover movies button" do
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+      visit user_path(@user.id)
       expect(page).to have_button "Discover Movies"
     end
 
     it "viewing party list" do
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+      visit user_path(@user.id)
       expect(page).to have_content("Available Viewing Parties")
     end
 
     it "Discover Movies directes to 'user' discover page"do
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+      visit user_path(@user.id)
       click_button "Discover Movies"
-      expect(current_path).to eq(user_discover_index_path(@user1.id))
+      expect(current_path).to eq(user_discover_index_path(@user.id))
     end
   end
 

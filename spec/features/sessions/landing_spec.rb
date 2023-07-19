@@ -54,5 +54,12 @@ RSpec.describe 'Application landing page' do
         expect(page).to_not have_link "#{@user.name}"
       end
     end
+
+    it "shows error for visitor going to user dashboard" do
+      visit user_path(@user.id)
+      expect(current_path).to eq root_path
+      
+      expect(page).to have_content "You must login or register to view this page"
+    end
   end
 end
