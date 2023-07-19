@@ -18,10 +18,10 @@ RSpec.describe 'Home Page' do
       expect(current_path).to eq(register_path)
     end
 
-    it 'I see a List of Existing Users which links to the users dashboard' do
-      expect(page).to have_content(@user1.name)
-      expect(page).to have_content(@user2.name)
-      expect(page).to have_content(@user3.name)
+    it 'I do not see a List of Existing Users which links to the users dashboard' do
+      expect(page).to_not have_content(@user1.name)
+      expect(page).to_not have_content(@user2.name)
+      expect(page).to_not have_content(@user3.name)
     end
 
     it 'I see Link to go back to the landing page (this link will be present at the top of all pages)' do
@@ -79,11 +79,15 @@ RSpec.describe 'Home Page' do
       expect(page).to have_button"Log In"
     end
   end
+
+  describe
 end
-# As a logged in user 
+
+# As a visitor
 # When I visit the landing page
-# I no longer see a link to Log In or Create an Account
-# But I see a link to Log Out.
-# When I click the link to Log Out
-# I'm taken to the landing page
-# And I can see that the Log Out link has changed back to a Log In link
+# I do not see the section of the page that lists existing users
+
+# As a registered user
+# When I visit the landing page
+# The list of existing users is no longer a link to their show pages
+# But just a list of email addresses
