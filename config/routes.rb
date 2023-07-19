@@ -6,9 +6,14 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   root "welcome#index"
+
   get "register", to: "users#new", as: :new_user
-  get "/login", to: "users#login_form"
-  post "/login", to: "users#login"
+
+  get "/login", to: "session#login_form"
+  post "/login", to: "session#login"
+  get "/logout", to: "session#logout", as: :logout
+  get "/dashboard", to: "users#show"
+
   resources :users, only: [:create, :show] do
     get "discover", to: "users/discover#index"
     resources :movies, only: [:index, :show], controller: "users/movies" do

@@ -29,7 +29,7 @@ RSpec.describe "Creates a new User" do
       fill_in :user_password_confirmation, with: password
 
       click_button "Create User"
-# save_and_open_page
+
       expect(page).to have_content("#{name}'s Dashboard")
     end
 
@@ -48,7 +48,7 @@ RSpec.describe "Creates a new User" do
       click_button "Create User"
 
       expect(current_path).to eq("/register")
-      expect(page).to have_content("Sorry, your credentials are bad.")
+      expect(page).to have_content("You must fill in all fields.")
     end
 
     it "gives an error if email is not unique" do
@@ -62,18 +62,20 @@ RSpec.describe "Creates a new User" do
       click_button "Create User"
 
       expect(current_path).to eq("/register")
-      expect(page).to have_content("Sorry, your credentials are bad.")
+      expect(page).to have_content("Email already exists.")
     end
 
     it "gives an error if passwords don't match" do
-      user = User.create!(name: "Cody", email: "cody@gmail.com", password: "password")
-
       visit "/register"
 
-      fill_in :user_name, with: user.name
-      fill_in :user_email, with: user.email
+      name = "John"
+      email = "john@gmail.com"
+      password = "password"
+
+      fill_in :user_name, with: name
+      fill_in :user_email, with: email
       fill_in :user_password, with: "password1"
-      fill_in :user_password_confirmation, with: user.password
+      fill_in :user_password_confirmation, with: password
 
       click_button "Create User"
 
