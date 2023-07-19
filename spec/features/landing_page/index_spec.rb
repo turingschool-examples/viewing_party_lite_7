@@ -49,12 +49,41 @@ RSpec.describe "landing page - index '/' " do
       click_link "Log In"
       expect(current_path).to eq(login_path)
     end
+  end
 
-    # As a registered user
-    # When I visit the landing page `/`
-    # And click on the link to go to my dashboard
-    # And fail to fill in my correct credentials
-    # I'm taken back to the Log In page
-    # And I can see a flash message telling me that I entered incorrect credentials.
+  describe "as a logged in user" do
+    let!(:user_1) { create(:user) }
+
+    # As a logged in user
+    # When I visit the landing page
+    # I no longer see a link to Log In or Create an Account
+    # But I see a link to Log Out.
+    # When I click the link to Log Out
+    # I'm taken to the landing page
+    # And I can see that the Log Out link has changed back to a Log In link
+    it "doesn't display link to log in or create an accont" do
+      visit login_path
+      fill_in :email, with: user_1.email
+      fill_in :password, with: "test"
+      click_button "Submit"
+      visit root_path
+
+      expect(page).to_not have_link("Log In")
+      expect(page).to_not have_button("Create new user")
+    end
+
+    it "displays a button to log out" do
+      visit login_path
+      fill_in :email, with: user_1.email
+      fill_in :password, with: "test"
+      click_button "Submit"
+      visit root_path
+
+      expect(page).to have_button("Log Out")
+      click_button("Log Out")
+      expect(current_path).to eq(root_path)
+      expect(page).to_not have_button("Log Out")
+      expect(page).to have_link("Log In")
+    end
   end
 end
