@@ -46,6 +46,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def log_out_user
+    session[:user_id] = nil
+    # reset_session also works
+    redirect_to root_url, notice: "You have successfully logged out."
+  end
+
   private
 
   def user_params
