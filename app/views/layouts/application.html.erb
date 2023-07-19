@@ -13,6 +13,7 @@
   <body>
 
     <%= link_to 'Home', root_path %>
+    <%= button_to 'Discover Page', discover_path, method: :get  %>
 
     <% flash.each do |type, message| %>
       <p><%= message %></p>
