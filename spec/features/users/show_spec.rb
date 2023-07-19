@@ -107,7 +107,7 @@ RSpec.describe "/users/:id", type: :feature do
       visit dashboard_path
 
       click_button "Discover Page"
-save_and_open_page
+
       expect(current_path).to eq(discover_path)
       expect(page).to have_content("Discover Movies")
     end
