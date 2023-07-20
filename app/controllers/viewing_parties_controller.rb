@@ -1,6 +1,10 @@
 class ViewingPartiesController < ApplicationController
   def new
-    if current_user
+    movie_id = params[:movie_id].to_i
+    if !current_user
+      redirect_to movie_path(movie_id)
+      flash[:error] = "You must login or register to view this page"
+    else 
       @user = User.find(params[:user_id])
       @users = User.all
       conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
@@ -24,9 +28,14 @@ class ViewingPartiesController < ApplicationController
       data_review = JSON.parse(response_review.body, symbolize_names: true)
       @review_count = data_review.count
       @review_data = data_review[:results]
-    else 
-      redirect_to movie_path(@movie[:id])
-      flash[:error] = "You must login or register to view this page"
+    #   redirect_to movie_path(@movie[:id])
     end
+  end
+
+  def create
+    # require 'pry'; binding.pry
+    
+
+    # redirect_to user_movie_path(@user.id, @movie[:id])
   end
 end

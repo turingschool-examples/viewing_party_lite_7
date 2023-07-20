@@ -54,6 +54,7 @@ RSpec.describe "Viewing Party New Page" do
       fill_in "When:", with: date
       check "user_#{@user1.id}"
       click_button "Create Party"
+      # Test Route with another stub?
     end
   end
 end

@@ -39,11 +39,11 @@ RSpec.describe "User Show Page" do
       expect(page).to have_content("Available Viewing Parties")
     end
 
-    xit "Discover Movies directes to 'user' discover page"do
+    it "Discover Movies directes to 'user' discover page"do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
       visit user_path(@user.id)
       click_button "Discover Movies"
-      expect(current_path).to eq(user_discover_path(@user.id))
+      expect(current_path).to eq user_discover_path(@user.id)
     end
   end
 

@@ -65,7 +65,7 @@ RSpec.describe "User Discover" do
         to_return(status: 200, body: json_response)
     end
     
-    xit "user search movies button" do
+    it "user search movies button" do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user1)
       visit user_discover_path(@user1.id)
       fill_in "keyword", with: 'Sandlot'
