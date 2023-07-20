@@ -1,6 +1,6 @@
 <h1><%= @user.name %>'s Dashboard</h1>
 <p><%=  link_to "Return to Movie Viewing Party Landing Page", root_path %></p>
-<p><%= button_to "Discover Movies", user_discover_index_path(@user.id), method: :get %></p>
+<p><%= button_to "Discover Movies", user_discover_path(@user.id), method: :get %></p>
 </br>
 <h1>Available Viewing Parties</h1>
 </br>

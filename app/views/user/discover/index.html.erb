@@ -1,5 +1,5 @@
 <h1> Hi <%= @user.name %>, let's find a movie </h1>
-<p><%= button_to "Discover Top Rated Movies", user_movies_path(@user.id), method: :get %></p>
+<p><%= button_to "Discover Movies", user_movies_path(@user.id), method: :get %></p>
 
 <div id="search">
   <h3> Enter keyword(s) to search by movie title </h3>

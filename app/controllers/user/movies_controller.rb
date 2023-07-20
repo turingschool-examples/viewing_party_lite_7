@@ -1,8 +1,4 @@
-class MoviesController < ApplicationController
-
-  def create
-  end
-  
+class User::MoviesController < ApplicationController
   def index
     @user = User.find(params[:user_id])
 
@@ -17,19 +13,20 @@ class MoviesController < ApplicationController
         PopularMovie.new(movie)
       end
     else
-      conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
+      @conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
         faraday.headers["Authorization"] = ENV["api_access_key"]
       end
-      response = conn.get("/3/movie/popular")
+      @response = @conn.get("/3/movie/popular")
       
-      data = JSON.parse(response.body, symbolize_names: true)
-      @movies = data[:results].map do |movie|
+      @data = JSON.parse(@response.body, symbolize_names: true)
+      @movies = @data[:results].map do |movie|
         PopularMovie.new(movie)
       end
     end
   end
 
   def show
+    @user = User.find(params[:user_id])
     conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
       faraday.headers["Authorization"] = ENV["api_access_key"]
     end
@@ -38,6 +35,3 @@ class MoviesController < ApplicationController
     @movie = PopularMovie.new(data)
   end
 end
-
-
-
