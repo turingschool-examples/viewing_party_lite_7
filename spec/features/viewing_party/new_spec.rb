@@ -4,8 +4,18 @@ RSpec.describe "viewing party create page", type: :feature do
   before(:each) do
     lotr_details = File.read("./spec/fixtures/lord_of_the_rings_fellowship/details.json")
 
-    @user1 = User.create!(name: "John", email: "john@example.com")
-    @user2 = User.create!(name: "bob", email: "bob@example.com")
+    @user1 = User.create!(
+      name: "Myles",
+      email: "myles@example.com",
+      password: "random",
+      password_confirmation: "random"
+    )
+    @user2 = User.create!(
+      name: "Boston",
+      email: "boston@example.com",
+      password: "foobar",
+      password_confirmation: "foobar"
+    )
     @movie = Movie.new(JSON.parse(lotr_details, symbolize_names: true))
 
     stub_request(:get, "https://api.themoviedb.org/3/movie/120?api_key=#{ENV['MOVIE_API_KEY']}")

@@ -2,9 +2,24 @@ require "rails_helper"
 
 RSpec.describe "user dashboard page", type: :feature do
   before(:each) do
-    @user1 = User.create!(name: "John", email: "john@example.com")
-    @user2 = User.create!(name: "Myles", email: "myles@example.com")
-    @user3 = User.create!(name: "Boston", email: "boston@example.com")
+    @user1 = User.create!(
+      name: "John",
+      email: "john@example.com",
+      password: "abc123",
+      password_confirmation: "abc123"
+    )
+    @user2 = User.create!(
+      name: "Myles",
+      email: "myles@example.com",
+      password: "random",
+      password_confirmation: "random"
+    )
+    @user3 = User.create!(
+      name: "Boston",
+      email: "boston@example.com",
+      password: "foobar",
+      password_confirmation: "foobar"
+    )
   end
 
   describe "when I visit a user's dashboard" do
