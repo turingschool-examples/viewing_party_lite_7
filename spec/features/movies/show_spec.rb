@@ -11,7 +11,12 @@ RSpec.describe "Movie Details Page", type: :feature do
     @credits = JSON.parse(lotr_credits, symbolize_names: true)
     @reviews = JSON.parse(lotr_reviews, symbolize_names: true)
 
-    @user = User.create!(name: "John", email: "john@example.com")
+    @user = User.create!(
+      name: "John",
+      email: "john@example.com",
+      password: "abc123",
+      password_confirmation: "abc123"
+    )
 
     # This stubs out the API call to the movie details endpoint
     stub_request(:get, "https://api.themoviedb.org/3/movie/120?api_key=#{ENV['MOVIE_API_KEY']}")

@@ -8,8 +8,18 @@ RSpec.describe "Movie Results page", type: :feature do
     @top_rated_movies = JSON.parse(top, symbolize_names: true)[:results]
     @searched_movies = JSON.parse(search, symbolize_names: true)[:results]
 
-    @user1 = User.create!(name: "Myles", email: "myles@example.com")
-    @user2 = User.create!(name: "Boston", email: "boston@example.com")
+    @user1 = User.create!(
+      name: "Myles",
+      email: "myles@example.com",
+      password: "random",
+      password_confirmation: "random"
+    )
+    @user2 = User.create!(
+      name: "Boston",
+      email: "boston@example.com",
+      password: "foobar",
+      password_confirmation: "foobar"
+    )
 
     # This stubs out the API call to the top rated movies endpoint
     stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV['MOVIE_API_KEY']}")
