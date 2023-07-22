@@ -30,6 +30,7 @@ RSpec.describe "Movie Details Page", type: :feature do
     stub_request(:get, "https://api.themoviedb.org/3/movie/120/reviews?api_key=#{ENV['MOVIE_API_KEY']}")
       .to_return(status: 200, body: lotr_reviews)
 
+    # This stubs out the API call to the movie index endpoint
     stub_request(:get, "https://api.themoviedb.org/3/movie/?api_key=#{ENV['MOVIE_API_KEY']}")
       .to_return(status: 200, body: lotr_details)
   end
@@ -37,6 +38,12 @@ RSpec.describe "Movie Details Page", type: :feature do
   describe "when I visit the movie details page" do
     context "Happy Path" do
       before(:each) do
+        visit "/login"
+
+        fill_in :email, with: @user.email
+        fill_in :password, with: @user.password
+        click_button "Log In"
+
         visit user_movie_path(@user, 120)
       end
 
@@ -112,6 +119,19 @@ RSpec.describe "Movie Details Page", type: :feature do
             expect(page).to have_content(review[:author])
           end
         end
+      end
+    end
+
+    context "Sad Path" do
+      before(:each) do
+        visit user_movie_path(@user, 120)
+      end
+
+      it "displays a flash message when trying to add to viewing party if the user is not logged in" do
+        click_button("Create Viewing Party for The Lord of the Rings: The Fellowship of the Ring")
+
+        expect(current_path).to eq(user_movie_path(@user, 120))
+        expect(page).to have_content("You must be logged in to create a viewing party.")
       end
     end
   end

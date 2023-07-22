@@ -3,6 +3,8 @@ require "rails_helper"
 RSpec.describe "viewing party create page", type: :feature do
   before(:each) do
     lotr_details = File.read("./spec/fixtures/lord_of_the_rings_fellowship/details.json")
+    lotr_credits = File.read("./spec/fixtures/lord_of_the_rings_fellowship/credits.json")
+    lotr_reviews = File.read("./spec/fixtures/lord_of_the_rings_fellowship/reviews.json")
 
     @user1 = User.create!(
       name: "Myles",
@@ -18,11 +20,27 @@ RSpec.describe "viewing party create page", type: :feature do
     )
     @movie = Movie.new(JSON.parse(lotr_details, symbolize_names: true))
 
+    # This stubs out the API call to the movie details endpoint
     stub_request(:get, "https://api.themoviedb.org/3/movie/120?api_key=#{ENV['MOVIE_API_KEY']}")
       .to_return(status: 200, body: lotr_details)
 
+    # This stubs out the API call to the movie credits endpoint
+    stub_request(:get, "https://api.themoviedb.org/3/movie/120/credits?api_key=#{ENV['MOVIE_API_KEY']}")
+      .to_return(status: 200, body: lotr_credits)
+
+    # This stubs out the API call to the movie reviews endpoint
+    stub_request(:get, "https://api.themoviedb.org/3/movie/120/reviews?api_key=#{ENV['MOVIE_API_KEY']}")
+      .to_return(status: 200, body: lotr_reviews)
+
+    # This stubs out the API call to the movie index endpoint
     stub_request(:get, "https://api.themoviedb.org/3/movie/?api_key=#{ENV['MOVIE_API_KEY']}")
       .to_return(status: 200, body: lotr_details)
+
+    visit "/login"
+
+    fill_in :email, with: @user1.email
+    fill_in :password, with: @user1.password
+    click_button "Log In"
 
     visit new_user_movie_viewing_party_path(@user1, 120)
   end

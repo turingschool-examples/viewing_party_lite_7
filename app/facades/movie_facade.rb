@@ -5,7 +5,7 @@ class MovieFacade
               :title
 
   def initialize(params)
-    @movie_id = params[:id]
+    @movie_id = params[:id] || params[:movie_id]
     @user_id = params[:user_id]
     @commit = params[:commit]
     @title = params[:search]
