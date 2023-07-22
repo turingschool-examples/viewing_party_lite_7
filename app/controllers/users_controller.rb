@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find(params[:id])
+    if current_user
+      @user = User.find(params[:id])
+    else
+      redirect_to "/"
+      flash[:error] = "Sorry, you must be logged in or registered to access your dashboard."
+    end
   end
 
   def new
@@ -10,6 +15,7 @@ class UsersController < ApplicationController
   def create
     user = User.create(user_params)
     if user.save
+      session[:user_id] = user.id
       redirect_to user_path(user)
     else
       redirect_to "/register"
@@ -29,6 +35,11 @@ class UsersController < ApplicationController
       flash[:error] = "Sorry, your credentials are bad."
       render :login_form
     end
+  end
+
+  def logout
+    session.delete(:user_id)
+    redirect_to "/"
   end
 
   private

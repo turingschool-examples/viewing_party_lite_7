@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get "/login", to: "users#login_form"
   post "/login", to: "users#login_user"
+  delete "/logout", to: "users#logout"
 
   resources :users, only: [:create, :show] do
     resources :discover, only: [:index]

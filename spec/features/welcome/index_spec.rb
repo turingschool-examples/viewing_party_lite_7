@@ -34,9 +34,10 @@ RSpec.describe "landing page", type: :feature do
       expect(current_path).to eq("/")
     end
 
-    it "displays button log in an existing user" do
-      within("#login") do
+    it "displays button log in an existing user if no session exists" do
+      within("#buttons") do
         expect(page).to have_button("Log In")
+        expect(page).to_not have_button("Log Out")
 
         click_button "Log In"
       end
@@ -44,9 +45,10 @@ RSpec.describe "landing page", type: :feature do
       expect(current_path).to eq("/login")
     end
 
-    it "displays a button to register a new user" do
-      within("#register") do
+    it "displays a button to register a new user if no session exists" do
+      within("#buttons") do
         expect(page).to have_button("Create a New User")
+        expect(page).to_not have_button("Log Out")
 
         click_button "Create a New User"
       end
@@ -54,12 +56,55 @@ RSpec.describe "landing page", type: :feature do
       expect(current_path).to eq("/register")
     end
 
-    it "displays a list of existing users" do
+    it "displays a button to log out if session exists" do
+      visit "/login"
+
+      fill_in :email, with: @user1.email
+      fill_in :password, with: @user1.password
+      click_button "Log In"
+
+      expect(current_path).to eq(user_path(@user1))
+
+      visit "/"
+
+      within("#buttons") do
+        expect(page).to have_button("Log Out")
+        expect(page).to_not have_button("Log In")
+        expect(page).to_not have_button("Create a New User")
+
+        click_button "Log Out"
+      end
+
+      expect(current_path).to eq("/")
+
+      within("#buttons") do
+        expect(page).to have_button("Log In")
+        expect(page).to have_button("Create a New User")
+        expect(page).to_not have_button("Log Out")
+      end
+    end
+
+    it "displays a list of existing users only if session exists" do
+      within("#existing-users") do
+        expect(page).to_not have_content("Existing Users")
+        expect(page).to_not have_content(@user1.email)
+        expect(page).to_not have_content(@user2.email)
+        expect(page).to_not have_content(@user3.email)
+      end
+
+      visit "/login"
+
+      fill_in :email, with: @user1.email
+      fill_in :password, with: @user1.password
+      click_button "Log In"
+
+      visit "/"
+
       within("#existing-users") do
         expect(page).to have_content("Existing Users")
-        expect(page).to have_link(@user1.email)
-        expect(page).to have_link(@user2.email)
-        expect(page).to have_link(@user3.email)
+        expect(page).to have_content(@user1.email)
+        expect(page).to have_content(@user2.email)
+        expect(page).to have_content(@user3.email)
       end
     end
   end
