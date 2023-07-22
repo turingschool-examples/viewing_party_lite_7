@@ -22,7 +22,7 @@ RSpec.describe 'User Show Page' do
     visit user_path(@user1)
   end
 
-  describe 'to view the dashboard page you must be logged in view the page' do
+  describe 'Sad Path to view the dashboard page you must be logged in view the page' do
     it "prompts the user with a message to log in" do
       visit root_path
       click_button"Log Out"

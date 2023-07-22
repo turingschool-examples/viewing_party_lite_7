@@ -1,7 +1,13 @@
 class UserViewingPartiesController < ApplicationController
   def new
     @movie = MovieSearch.new.full_movie_details_by_id(params[:movie_id])
-    @user = User.find(params[:user_id])
+    if current_user
+      @user = User.find(current_user.id)
+    else
+      flash[:error] = "Please log in to visit your Dashboard"
+      redirect_to root_path
+    end
+    # @user = User.find(params[:user_id])
   end
 
   def create
