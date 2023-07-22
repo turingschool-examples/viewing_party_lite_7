@@ -11,7 +11,7 @@ RSpec.describe 'Home Page' do
   end
   describe 'Home page content' do
     it 'I see the Title of the Application and a Button to Create New User' do
-      save_and_open_page
+      # save_and_open_page
       expect(page).to have_content('Viewing Party Lite 7')
       click_button('Register a New User')
       expect(current_path).to eq(register_path)
@@ -94,4 +94,23 @@ RSpec.describe 'Home Page' do
       expect(page).to_not have_content(@user4.name)
     end
   end
+
+  describe "As a visitor I visit the home page and try to visit my dashboard page" do
+    it "Sad Path I see a message telling me that I must be logged in or registered to access it" do
+      visit dashboard_path
+
+      expect(page).to have_content("Please log in to visit your Dashboard")
+    end
+  end
 end
+# As a visitor
+# When I visit the landing page
+# And then try to visit '/dashboard'
+# I remain on the landing page
+# And I see a message telling me that I must be logged in or registered to access my dashboard
+
+# As a visitor
+# If I go to a movies show page 
+# And click the button to create a viewing party
+# I'm redirected to the movies show page, and a message appears 
+# to let me know I must be logged in or registered to create a movie party. 

@@ -13,12 +13,21 @@ RSpec.describe 'New User Form', type: :feature do
 
       click_button 'Create User'
       new_user = User.last
-      expect(current_path).to eq(user_path(new_user.id))
+     
+      expect(current_path).to eq(root_path)
+      expect(page).to have_content("User successfully registered. Please log in to visit your Dashboard")
+      
+      click_on"Log In"
+  
+      fill_in :email, with: 'wolfie@gmail.com'
+      fill_in :password, with: 'wolf'
+      click_on "Log In"
+      expect(page).to have_content("Welcome Back Wolfie!")
+      click_button"My Dashboard"
 
       # expect(current_path).to eq("/users/#{User.all.last.id}")
-      expect(page).to have_content("#{new_user.name}'s Dashboard")
-      expect(page).to have_content("#{new_user.email}")
-      expect(page).to have_content('User successfully registered.')
+      expect(page).to have_content("Wolfie's Dashboard")
+      expect(page).to have_content("Email: wolfie@gmail.com")
     end
 
     it 'Sad path name field is left blank' do

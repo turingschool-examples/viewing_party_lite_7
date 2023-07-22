@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/login', to: "users#login_form"
   post '/login', to: 'users#login_user'
   delete "/login", to: "users#log_out_user"
+  get "/dashboard", to: "users#show"
 
   resources :movies, only: [:show]
   resources :users, only: %i[index create show]
