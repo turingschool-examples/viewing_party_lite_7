@@ -25,6 +25,19 @@ RSpec.describe 'Movie Details Page', type: :feature do
       )
       .to_return(status: 200, body: movie_detailsj2_link, headers: {})
 
+
+      keyword_responsej2 = File.read('spec/fixtures/keyword_movie_jaws.json')
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['TMDB-KEY']}&include_adult=false&page=1&query=Jaws")
+      .with(
+        headers: {
+          'Accept' => '*/*',
+          'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'User-Agent' => 'Faraday v2.7.9'
+        }
+      )
+      .to_return(status: 200, body: keyword_responsej2, headers: {})
+
+
     visit "/users/#{@user.id}/movies/579"
   end
   describe 'details page content' do
