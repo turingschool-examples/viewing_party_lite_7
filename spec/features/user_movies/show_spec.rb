@@ -25,12 +25,55 @@ RSpec.describe 'Movie Details Page', type: :feature do
       )
       .to_return(status: 200, body: movie_detailsj2_link, headers: {})
 
+
+      keyword_responsej2 = File.read('spec/fixtures/keyword_movie_jaws.json')
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['TMDB-KEY']}&include_adult=false&page=1&query=Jaws")
+      .with(
+        headers: {
+          'Accept' => '*/*',
+          'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'User-Agent' => 'Faraday v2.7.9'
+        }
+      )
+      .to_return(status: 200, body: keyword_responsej2, headers: {})
+
+
     visit "/users/#{@user.id}/movies/579"
   end
   describe 'details page content' do
     it 'has a link to create a viewing party' do
       click_button 'Create a Viewing Party'
+      expect(current_path).to eq(root_path)
+      expect(page).to have_content("Please log in to visit your Dashboard")
+
+      click_on"Log In"
+      expect(current_path).to eq(login_path)
+      
+      fill_in :email, with: @user.email
+      fill_in :password, with: @user.password
+      click_on "Log In"
+      click_button"My Dashboard"
+      click_button"Discover Movies"
+      expect(current_path).to eq("/users/#{@user.id}/discover")
+
+      # click_button"Discover Top Rated Movies"
+      # click_link("Title Barbie")
+
+      fill_in 'keyword', with: 'Jaws'
+      click_button 'Search'
+
+      expect(current_path).to eq("/users/#{@user.id}/movies")
+      expect(page.status_code).to eq 200
+      expect(page).to have_link('Jaws 2')
+      click_link('Jaws 2')
+      
+      click_button 'Create a Viewing Party'
       expect(current_path).to eq("/users/#{@user.id}/movies/579/viewing-party/new")
+
+      # expect(current_path).to eq("/users/#{@user1.id}/movies/346698")
+      # click_button 'Create a Viewing Party'
+      # expect(current_path).to eq("/users/#{@user.id}/movies/346698/viewing-party/new")
+
     end
 
     it 'has a title, vote, runtime, summary, and count of reviews' do
@@ -67,4 +110,11 @@ RSpec.describe 'Movie Details Page', type: :feature do
       expect(page).to have_content('Ian Beale Review:')
     end
   end
+
+
 end
+# As a visitor
+# If I go to a movies show page 
+# And click the button to create a viewing party
+# I'm redirected to the movies show page, and a message appears to let me know I must be logged in or registered to create a movie party. 
+

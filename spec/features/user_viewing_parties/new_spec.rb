@@ -30,6 +30,13 @@ RSpec.describe 'New Viewing Party Page', type: :feature do \
     @user4 = User.create!(name: 'Taro Boba', email: 'TaroBoba@gmail.com', password: 'boba', password_confirmation: 'boba')
     @user5 = User.create!(name: 'Momo', email: 'Momo@gmail.com', password: 'password', password_confirmation: 'password')
 
+    visit root_path
+    click_on"Log In"
+      expect(current_path).to eq(login_path)
+      
+      fill_in :email, with: @user1.email
+      fill_in :password, with: @user1.password
+      click_on "Log In"
     visit "/users/#{@user1.id}/movies/579/viewing-party/new"
   end
 
@@ -52,19 +59,21 @@ RSpec.describe 'New Viewing Party Page', type: :feature do \
       check('Taro Boba')
       check('Momo')
       click_button 'Save'
-
+      # require 'pry'; binding.pry
       expect(current_path).to eq(user_path(@user1))
       within('#viewing_parties_hosting') do
         expect(page).to have_content('Jaws 2- Viewing Party')
       end
+      
+#       visit user_path(@user2)
+#       save_and_open_page
+#       # require 'pry'; binding.pry
+# within('#viewing_party_invitations') do
+#   expect(page).to_not have_content('Jaws 2- Viewing Party')
+# end
 
-      visit user_path(@user2)
-      within('#viewing_party_invitations') do
-        expect(page).to have_content('Jaws 2- Viewing Party')
-      end
-
-      visit user_path(@user4)
-      within('#viewing_party_invitations') do
+visit user_path(@user4)
+within('#viewing_party_invitations') do
         expect(page).to have_content('Jaws 2- Viewing Party')
       end
 

@@ -13,10 +13,24 @@ RSpec.describe 'User Show Page' do
         }
       )
       .to_return(status: 200, body: movie_detailsj2, headers: {})
-    visit "/users/#{@user1.id}"
+
+    visit root_path
+      click_on"Log In"
+      fill_in :email, with: @user1.email
+      fill_in :password, with: @user1.password
+      click_on "Log In"  
+    visit user_path(@user1)
   end
 
-  describe 'displays attributes' do
+  describe 'Sad Path to view the dashboard page you must be logged in view the page' do
+    it "prompts the user with a message to log in" do
+      visit root_path
+      click_button"Log Out"
+      expect(page).to have_content("You have successfully logged out")
+      visit "/users/#{@user1.id}"
+      expect(current_path).to eq(root_path)
+      expect(page).to have_content("Please log in to visit your Dashboard")
+    end
     it 'displays name and email' do
       expect(page).to have_content("Email: #{@user1.email}")
     end
@@ -43,6 +57,14 @@ RSpec.describe 'User Show Page' do
       end
     end
 
+    # describe 'link to movie show page' do
+  #   xit 'links to a movie show page in title of each movie' do
+  #     click_link 'Jaws 2'
+
+  #     expect(current_path).to eq('/movies/')
+  #   end
+  # end
+
     it 'A section that lists viewing parties user is invited to' do
       within('#viewing_party_invitations') do
         expect(page).to have_content("#{@viewing_party4.movie_title}- Viewing Party")
@@ -51,12 +73,7 @@ RSpec.describe 'User Show Page' do
       end
     end
   end
-
-  describe 'link to movie show page' do
-    xit 'links to a movie show page in title of each movie' do
-      click_link 'Jaws 2'
-
-      expect(current_path).to eq('/movies/')
-    end
-  end
 end
+
+
+  
