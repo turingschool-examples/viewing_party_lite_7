@@ -15,7 +15,7 @@ RSpec.describe Party, type: :model do
 
   describe "instance methods", :vcr do
     before(:each) do
-      @user1 = User.create!(user_name: "Steve", email: "Steve@email.com", password: 'password123', password_confirmation: 'password123')
+      @user1 = User.create!(user_name: "Steve", email: "ve@email.com", password: 'password123', password_confirmation: 'password123')
       @user2 = User.create!(user_name: "Ben", email: "Ben@email.com", password: 'password23', password_confirmation: 'password23')
       @user3 = User.create!(user_name: "Jane", email: "Jane@email.com", password: 'password12', password_confirmation: 'password12')
 

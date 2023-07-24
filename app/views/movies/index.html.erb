@@ -1,4 +1,4 @@
-<p> <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %> </p>
+<p> <%= button_to "Discover Movies", discover_index_path, method: :get %> </p>
 <h2>Movies<% @movies.each do |movie| %></h2>
-  <p><%= link_to movie.title, "/users/#{@user.id}/movies/#{movie.id}" %> <%= "Vote Average: #{movie.vote_average}" %> </p>
+  <p><%= link_to movie.title, movie_path(movie.id)%> <%= "Vote Average: #{movie.vote_average}" %> </p>
 <% end %>

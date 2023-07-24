@@ -29,7 +29,7 @@ RSpec.describe User, type: :model do
   describe "instance methods" do
     describe "#invitees" do
       it "returns all users except self" do
-        user1 = User.create!(user_name: "Steve", email: "Steve@email.com", password: 'password123', password_confirmation: 'password123')
+        user1 = User.create!(user_name: "Steve", email: "S-test@email.com", password: 'password123', password_confirmation: 'password123')
         user2 = User.create!(user_name: "Ben", email: "Ben@email.com", password: 'password345', password_confirmation: 'password345')
         user3 = User.create!(user_name: "Jane", email: "Jane@email.com", password: 'password567', password_confirmation: 'password567')
 
