@@ -1,15 +1,9 @@
-class DiscoverController < ApplicationController
+class User::DiscoverController < ApplicationController
   def index
     @user = User.find(params[:user_id])
 
     if params[:keyword].present?
-      @movies = MovieSearch.new.one_movie(params[:keyword])
-      
-
-
-
-
-
+      @movies = MovieSearch.new.movie_search(params[:keyword])
       # conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
       #   faraday.headers["Authorization"] = ENV["api_access_key"]
       # end
@@ -20,7 +14,7 @@ class DiscoverController < ApplicationController
       #   Movie.new(movie)
       # end
     else
-      @movies = MovieSearch.new.all_movies(params[:keyword])
+      @movies = MovieSearch.new.popular_movies
       # @conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
       #   faraday.headers["Authorization"] = ENV["api_access_key"]
       # end

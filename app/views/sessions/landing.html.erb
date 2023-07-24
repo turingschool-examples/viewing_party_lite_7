@@ -1,0 +1,19 @@
+<div id="title">
+  <%=  link_to "Return to Movie Viewing Party Landing Page" %>
+  <h1> Movie Viewing Party! </h1>
+  <% if current_user %>
+    <%= button_to "Logout", login_path, method: :delete %>
+  <% else %>
+    <%= link_to "Already have an account - Login", login_path %>
+    <%=  button_to "Create New User", new_session_path, method: :get %>
+  <% end %>
+</div>
+
+<% if current_user %>
+  <div id="users">
+    <h2> Movie Viewing Users: </h2>
+    <p><%  @users.each do |person| %></p>
+      <p><%= person.name %>
+    <p><%  end %></p>
+  </div>
+<% end %>
