@@ -1,8 +1,13 @@
 <p> Viewing Party Manager </p>
 
-<p> All Users </p>
-<% @users.each do |user| %>
-  <%= link_to user.name, user_path(user.id) %> <br>
+
+
+<% if session[:user_id] %>
+  <p> All Users </p>
+  <% @users.each do |user| %>
+    <p><%= user.name %><p>
+    <p>Email: <%= user.email %><p> <br>
+  <% end %>
 <% end %>
 
 

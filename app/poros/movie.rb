@@ -1,4 +1,4 @@
-class Movie
+  class Movie
   attr_reader :title, :length, :id, :cast, :popularity, :overview, :genres, name, :poster_path
   def initialize(attributes)
     @title = attributes[:title]
