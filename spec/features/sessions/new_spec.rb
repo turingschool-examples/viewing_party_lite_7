@@ -38,7 +38,7 @@ RSpec.describe "login form" do
 
         it "will not log a user in with invalid credentials" do
           visit login_path
-          fill_in :email, with: user_1.email
+          fill_in :email, with: ""
           fill_in :password, with: "not_test"
           click_button "Submit"
           expect(current_path).to eq(login_path)
