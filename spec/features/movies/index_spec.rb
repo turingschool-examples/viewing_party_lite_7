@@ -24,7 +24,7 @@ RSpec.describe "top rated movies" do
   describe "As a visitor to top rated movies" do
     it "can display movie by popularity", :vcr do
       movies = MovieService.new.popular_movies
-      visit "/users/#{user_1.id}/movies/455476"
+      visit user_movies_path(user_id: user_1.id, movie_id: 455476)
     end
   end
 end

@@ -52,6 +52,7 @@ RSpec.describe "/users/:id" do
       let!(:movie_watch_party_9) { create(:movie_watch_party, watch_party_id: wapa_3.id, user_id: user_3.id) }
 
       it "displays the user's name at the top of the page" do
+
         visit user_path(user_1)
         expect(page).to have_content("#{user_1.name}'s Dashboard")
         expect(page).to_not have_content("#{user_2.name}'s Dashboard")
