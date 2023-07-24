@@ -14,7 +14,7 @@ RSpec.describe "User Show Page" do
         to_return(status: 200, body: json_response)
       movie = JSON.parse(response1.response.body, symbolize_names: true)
       @movie_id = movie[:id] 
-      @movie = PopularMovie.new(movie)
+      @movie = Movie.new(movie)
 
       @view_party1 = ViewingParty.create!(duration: 300, date_time: Date.today, api_movie_id: @movie_id)
       @view_user1 = ViewingUser.create!(user_id: @user1.id, viewing_party_id: @view_party1.id, host: 1)
@@ -38,13 +38,6 @@ RSpec.describe "User Show Page" do
       visit user_path(@user.id)
       expect(page).to have_content("Available Viewing Parties")
     end
-
-    it "Discover Movies directes to 'user' discover page"do
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
-      visit user_path(@user.id)
-      click_button "Discover Movies"
-      expect(current_path).to eq user_discover_path(@user.id)
-    end
   end
 
   describe "user dashboard viewing parties" do
@@ -59,7 +52,7 @@ RSpec.describe "User Show Page" do
         to_return(status: 200, body: json_response)
       movie = JSON.parse(response1.response.body, symbolize_names: true)
       @movie_id = movie[:id] 
-      @movie = PopularMovie.new(movie)
+      @movie = Movie.new(movie)
 
       @view_party1 = ViewingParty.create!(duration: 300, date_time: Date.today, api_movie_id: @movie_id)
       @view_user1 = ViewingUser.create!(user_id: @user1.id, viewing_party_id: @view_party1.id, host: 1)

@@ -12,7 +12,7 @@ class UsersController < ApplicationController
         end
         response = conn.get("/3/search/movie/#{@viewing_parties[0].api_movie_id}")
         data = JSON.parse(response.body, symbolize_names: true)
-        @movie = PopularMovie.new(data)
+        @movie = Movie.new(data)
       end
     else
       flash[:error] = "You must login or register to view this page"

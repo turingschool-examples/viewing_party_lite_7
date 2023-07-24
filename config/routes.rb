@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :viewing_users
   resources :viewing_parties
-  resources :movies, only: [:index, :show]
+  resources :movies, only: [:index, :show] do
+    resources :viewing_parties, only: [:new, :create, :index]
+  end
   
   resources :users, only:[:show] do
     resources :movies, only: [:index, :show], controller: "user/movies" do

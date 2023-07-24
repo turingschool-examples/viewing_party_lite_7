@@ -1,5 +1,5 @@
 <h1>Create A New Viewing Party:</h1>
-<h3>Title: <%= @movie.title %></h3>
+<h3>Title: <%= @movie[:title] %></h3>
 </br>
 <%= form_with url: user_movie_viewing_parties_path(@user.id, @movie.id), method: :post, data: {turbo: false}, local: true do |f|%>
   <%= f.label  :duration, "Party Duration:" %>

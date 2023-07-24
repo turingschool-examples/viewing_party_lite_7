@@ -14,7 +14,7 @@ class MoviesController < ApplicationController
 
       data = JSON.parse(response.body, symbolize_names: true)
       @movies = data[:results].map do |movie|
-        PopularMovie.new(movie)
+        Movie.new(movie)
       end
     else
       conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
@@ -24,7 +24,7 @@ class MoviesController < ApplicationController
       
       data = JSON.parse(response.body, symbolize_names: true)
       @movies = data[:results].map do |movie|
-        PopularMovie.new(movie)
+        Movie.new(movie)
       end
     end
   end
@@ -35,7 +35,8 @@ class MoviesController < ApplicationController
     end
     response = conn.get("/3/search/movie/#{params[:id]}")
     data = JSON.parse(response.body, symbolize_names: true)
-    @movie = PopularMovie.new(data)
+    @movie = Movie.new(data)
+    # require 'pry'; binding.pry
   end
 end
 
