@@ -18,7 +18,7 @@ RSpec.describe "User Registration form" do
 
     click_button "Create New User"
 
-    expect(current_path).to eq(user_path(User.last))
+    expect(current_path).to eq(dashboard_path)
   end
 
   it "sad path/ can't create a new user because the passwords don't match" do

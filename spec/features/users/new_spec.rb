@@ -20,7 +20,7 @@ RSpec.describe "User registration page", type: :feature do
       fill_in "Password Confirmation", with: "test"
       click_button "Create New User"
 
-      expect(current_path).to eq(user_path(User.last))
+      expect(current_path).to eq(dashboard_path)
     end
 
     it "displays an error message if email is already in use" do
