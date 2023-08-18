@@ -7,6 +7,15 @@ Rails.application.routes.draw do
   # get "/", to: "application#index"
   root "landing#index"
 
+  resources :users, only: [:index, :show, :create] do
+    resources :movies, only: [:index, :create]
+    get "discover", to: "discover#discover"
+    get "movies/:movie_id", to: "movies#show"
+    get "movies/:movie_id/viewing-party/new", to: "watch_parties#new"
+    # post "watch_parties", to: "watch_parties#create"
+  end
+  post "/users/:user_id", to: "watch_parties#create"
+
   get "/register", to: "users#new", as: :register_user
   post "/register", to: "users#create"
 
@@ -14,14 +23,10 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   get "/exit", to: "sessions#destroy", as: :logout
 
-  resources :users, only: [:index, :show, :create] do
-    resources :movies, only: [:index, :create]
-  end
 
-  get "/users/:user_id/discover", to: "discover#discover"
-  get "/users/:user_id/movies", to: "movies#index"
-  get "/users/:user_id/movies/:movie_id", to: "movies#show"
-  get "/users/:user_id/movies/:movie_id/viewing-party/new", to: "watch_parties#new"
-  post "/users/:user_id", to: "watch_parties#create"
+  # get "/users/:user_id/discover", to: "discover#discover"
+  # get "/users/:user_id/movies", to: "movies#index"
+  # get "/users/:user_id/movies/:movie_id", to: "movies#show"
+  # get "/users/:user_id/movies/:movie_id/viewing-party/new", to: "watch_parties#new"
 
 end

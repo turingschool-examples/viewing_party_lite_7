@@ -4,4 +4,4 @@
   <%= f.submit "Search" %>
 <% end %>
 
-<%= button_to "Top Rated Movies", "/users/#{@user.id}/movies", method: :get %>
+<%= button_to "Top Rated Movies", user_movies_path(@user), method: :get %>

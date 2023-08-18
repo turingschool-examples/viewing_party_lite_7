@@ -27,386 +27,34 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 07 Jul 2023 20:44:40 GMT
+      - Wed, 16 Aug 2023 20:48:28 GMT
       Server:
       - openresty
       Cache-Control:
-      - public, max-age=25305
+      - public, max-age=25402
       X-Memc:
       - HIT
       X-Memc-Key:
       - 50e253f7e3769df8918cea1862b1c972
       X-Memc-Age:
-      - '3482'
+      - '15162'
       X-Memc-Expires:
-      - '19723'
+      - '11774'
       Etag:
-      - W/"1192fde4326a260f1802f136865e9bdc"
+      - W/"454cecf1d2d8ce294c1eaa9c29f85773"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
-      - Hit from cloudfront
+      - Miss from cloudfront
       Via:
-      - 1.1 97971aa6c140e2dfc8adaee6c929eedc.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - IAD89-C3
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - uA-9TRjRNqGhVBmkWAXiicmIzCpJmeUzABoDCtUkwo0bD_mMtP_5Pw==
-      Age:
-      - '2671'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/oqP1qEZccq5AD9TVTIaO6IGUj7o.jpg","belongs_to_collection":null,"budget":60000000,"genres":[{"id":14,"name":"Fantasy"},{"id":28,"name":"Action"},{"id":12,"name":"Adventure"}],"homepage":"https://kotzmovie.com","id":455476,"imdb_id":"tt6528290","original_language":"en","original_title":"Knights
-        of the Zodiac","overview":"When a headstrong street orphan, Seiya, in search
-        of his abducted sister unwittingly taps into hidden powers, he discovers he
-        might be the only person alive who can protect a reincarnated goddess, sent
-        to watch over humanity. Can he let his past go and embrace his destiny to
-        become a Knight of the Zodiac?","popularity":3369.887,"poster_path":"/qW4crfED8mpNDadSmMdi7ZDzhXF.jpg","production_companies":[{"id":11341,"logo_path":"/xytTBODEy3p20ksHL4Ftxr483Iv.png","name":"Stage
-        6 Films","origin_country":"US"},{"id":5542,"logo_path":"/ayE4LIqoAWotavo7xdvYngwqGML.png","name":"Toei
-        Animation","origin_country":"JP"}],"production_countries":[{"iso_3166_1":"JP","name":"Japan"},{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"2023-04-27","revenue":6794519,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Go
-        beyond your destiny.","title":"Knights of the Zodiac","video":false,"vote_average":6.575,"vote_count":326}'
-  recorded_at: Fri, 07 Jul 2023 21:29:11 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/455476
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Authorization:
-      - Hide_API
-      User-Agent:
-      - Faraday v2.7.10
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 07 Jul 2023 20:44:40 GMT
-      Server:
-      - openresty
-      Cache-Control:
-      - public, max-age=25305
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 50e253f7e3769df8918cea1862b1c972
-      X-Memc-Age:
-      - '3482'
-      X-Memc-Expires:
-      - '19723'
-      Etag:
-      - W/"1192fde4326a260f1802f136865e9bdc"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 98e30e5953336545df428a8f5923a288.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - IAD89-C3
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - YaDRTeupGy07gz22p8n2ssifpdmKOrhLFpkJmliNN8PW9sijQFzBEA==
-      Age:
-      - '2671'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/oqP1qEZccq5AD9TVTIaO6IGUj7o.jpg","belongs_to_collection":null,"budget":60000000,"genres":[{"id":14,"name":"Fantasy"},{"id":28,"name":"Action"},{"id":12,"name":"Adventure"}],"homepage":"https://kotzmovie.com","id":455476,"imdb_id":"tt6528290","original_language":"en","original_title":"Knights
-        of the Zodiac","overview":"When a headstrong street orphan, Seiya, in search
-        of his abducted sister unwittingly taps into hidden powers, he discovers he
-        might be the only person alive who can protect a reincarnated goddess, sent
-        to watch over humanity. Can he let his past go and embrace his destiny to
-        become a Knight of the Zodiac?","popularity":3369.887,"poster_path":"/qW4crfED8mpNDadSmMdi7ZDzhXF.jpg","production_companies":[{"id":11341,"logo_path":"/xytTBODEy3p20ksHL4Ftxr483Iv.png","name":"Stage
-        6 Films","origin_country":"US"},{"id":5542,"logo_path":"/ayE4LIqoAWotavo7xdvYngwqGML.png","name":"Toei
-        Animation","origin_country":"JP"}],"production_countries":[{"iso_3166_1":"JP","name":"Japan"},{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"2023-04-27","revenue":6794519,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Go
-        beyond your destiny.","title":"Knights of the Zodiac","video":false,"vote_average":6.575,"vote_count":326}'
-  recorded_at: Fri, 07 Jul 2023 21:29:11 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/455476
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Authorization:
-      - Hide_API
-      User-Agent:
-      - Faraday v2.7.10
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 07 Jul 2023 20:44:40 GMT
-      Server:
-      - openresty
-      Cache-Control:
-      - public, max-age=25305
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 50e253f7e3769df8918cea1862b1c972
-      X-Memc-Age:
-      - '3482'
-      X-Memc-Expires:
-      - '19723'
-      Etag:
-      - W/"1192fde4326a260f1802f136865e9bdc"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 a497eba714f030335fd7adebea6fe8b6.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - IAD89-C3
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - DfLJRz7k0ir3DVDpKRoB2VkxqYPrI_feGjFfN5bobNBj3RHjOqZ5OA==
-      Age:
-      - '2672'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/oqP1qEZccq5AD9TVTIaO6IGUj7o.jpg","belongs_to_collection":null,"budget":60000000,"genres":[{"id":14,"name":"Fantasy"},{"id":28,"name":"Action"},{"id":12,"name":"Adventure"}],"homepage":"https://kotzmovie.com","id":455476,"imdb_id":"tt6528290","original_language":"en","original_title":"Knights
-        of the Zodiac","overview":"When a headstrong street orphan, Seiya, in search
-        of his abducted sister unwittingly taps into hidden powers, he discovers he
-        might be the only person alive who can protect a reincarnated goddess, sent
-        to watch over humanity. Can he let his past go and embrace his destiny to
-        become a Knight of the Zodiac?","popularity":3369.887,"poster_path":"/qW4crfED8mpNDadSmMdi7ZDzhXF.jpg","production_companies":[{"id":11341,"logo_path":"/xytTBODEy3p20ksHL4Ftxr483Iv.png","name":"Stage
-        6 Films","origin_country":"US"},{"id":5542,"logo_path":"/ayE4LIqoAWotavo7xdvYngwqGML.png","name":"Toei
-        Animation","origin_country":"JP"}],"production_countries":[{"iso_3166_1":"JP","name":"Japan"},{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"2023-04-27","revenue":6794519,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Go
-        beyond your destiny.","title":"Knights of the Zodiac","video":false,"vote_average":6.575,"vote_count":326}'
-  recorded_at: Fri, 07 Jul 2023 21:29:12 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/455476
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Authorization:
-      - Hide_API
-      User-Agent:
-      - Faraday v2.7.10
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 07 Jul 2023 20:44:40 GMT
-      Server:
-      - openresty
-      Cache-Control:
-      - public, max-age=25305
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 50e253f7e3769df8918cea1862b1c972
-      X-Memc-Age:
-      - '3482'
-      X-Memc-Expires:
-      - '19723'
-      Etag:
-      - W/"1192fde4326a260f1802f136865e9bdc"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 156336391961f724345f6534c674b6ea.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - IAD89-C3
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - aw9vQPb6O2OtZwRLC3J7whdJVXoCrBVGIx6w8uGTTkXXJ1Z14lvEGw==
-      Age:
-      - '2672'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/oqP1qEZccq5AD9TVTIaO6IGUj7o.jpg","belongs_to_collection":null,"budget":60000000,"genres":[{"id":14,"name":"Fantasy"},{"id":28,"name":"Action"},{"id":12,"name":"Adventure"}],"homepage":"https://kotzmovie.com","id":455476,"imdb_id":"tt6528290","original_language":"en","original_title":"Knights
-        of the Zodiac","overview":"When a headstrong street orphan, Seiya, in search
-        of his abducted sister unwittingly taps into hidden powers, he discovers he
-        might be the only person alive who can protect a reincarnated goddess, sent
-        to watch over humanity. Can he let his past go and embrace his destiny to
-        become a Knight of the Zodiac?","popularity":3369.887,"poster_path":"/qW4crfED8mpNDadSmMdi7ZDzhXF.jpg","production_companies":[{"id":11341,"logo_path":"/xytTBODEy3p20ksHL4Ftxr483Iv.png","name":"Stage
-        6 Films","origin_country":"US"},{"id":5542,"logo_path":"/ayE4LIqoAWotavo7xdvYngwqGML.png","name":"Toei
-        Animation","origin_country":"JP"}],"production_countries":[{"iso_3166_1":"JP","name":"Japan"},{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"2023-04-27","revenue":6794519,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Go
-        beyond your destiny.","title":"Knights of the Zodiac","video":false,"vote_average":6.575,"vote_count":326}'
-  recorded_at: Fri, 07 Jul 2023 21:29:12 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/455476
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Authorization:
-      - Hide_API
-      User-Agent:
-      - Faraday v2.7.10
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Sat, 08 Jul 2023 05:08:52 GMT
-      Server:
-      - openresty
-      Cache-Control:
-      - public, max-age=26277
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 50e253f7e3769df8918cea1862b1c972
-      X-Memc-Age:
-      - '10052'
-      X-Memc-Expires:
-      - '16523'
-      Etag:
-      - W/"ca68328635d2595ee004a7fa88458041"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 1b0f041f103652001e37f5806000d24a.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - IAD55-P3
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - GZOs8vftxlA5B05qBKneY6jtg3Y2bw2NCrHaaQYf-u2MLlKYURBcmA==
-      Age:
-      - '652'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/oqP1qEZccq5AD9TVTIaO6IGUj7o.jpg","belongs_to_collection":null,"budget":60000000,"genres":[{"id":14,"name":"Fantasy"},{"id":28,"name":"Action"},{"id":12,"name":"Adventure"}],"homepage":"https://kotzmovie.com","id":455476,"imdb_id":"tt6528290","original_language":"en","original_title":"Knights
-        of the Zodiac","overview":"When a headstrong street orphan, Seiya, in search
-        of his abducted sister unwittingly taps into hidden powers, he discovers he
-        might be the only person alive who can protect a reincarnated goddess, sent
-        to watch over humanity. Can he let his past go and embrace his destiny to
-        become a Knight of the Zodiac?","popularity":3154.453,"poster_path":"/qW4crfED8mpNDadSmMdi7ZDzhXF.jpg","production_companies":[{"id":11341,"logo_path":"/xytTBODEy3p20ksHL4Ftxr483Iv.png","name":"Stage
-        6 Films","origin_country":"US"},{"id":5542,"logo_path":"/ayE4LIqoAWotavo7xdvYngwqGML.png","name":"Toei
-        Animation","origin_country":"JP"}],"production_countries":[{"iso_3166_1":"JP","name":"Japan"},{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"2023-04-27","revenue":6794519,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Go
-        beyond your destiny.","title":"Knights of the Zodiac","video":false,"vote_average":6.564,"vote_count":328}'
-  recorded_at: Sat, 08 Jul 2023 05:19:44 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/455476
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Authorization:
-      - Hide_API
-      User-Agent:
-      - Faraday v2.7.10
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Server:
-      - openresty
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 50e253f7e3769df8918cea1862b1c972
-      X-Memc-Age:
-      - '80'
-      X-Memc-Expires:
-      - '26351'
-      Date:
-      - Sat, 08 Jul 2023 23:01:19 GMT
-      Cache-Control:
-      - public, max-age=25819
-      Etag:
-      - W/"edf4dcfed767f4efb3b04d5811cda90a"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 2ad801a60bd36fbeb6a62fab7eabe330.cloudfront.net (CloudFront)
+      - 1.1 6c02603f677dd5669f8ab3b41062340e.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - o0SBCFeAg0hq4woFIymQ9U-jeL1d2asEpfow3lWPFYGrrYxCvBDclg==
-      Age:
-      - '1'
+      - wFcwzEph4BPHKSm3PlQKxNlHiBCSIliNwegBQS4Tw6aHSIaWc9uOiQ==
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/oqP1qEZccq5AD9TVTIaO6IGUj7o.jpg","belongs_to_collection":null,"budget":60000000,"genres":[{"id":14,"name":"Fantasy"},{"id":28,"name":"Action"},{"id":12,"name":"Adventure"}],"homepage":"https://kotzmovie.com","id":455476,"imdb_id":"tt6528290","original_language":"en","original_title":"Knights
@@ -414,10 +62,600 @@ http_interactions:
         of his abducted sister unwittingly taps into hidden powers, he discovers he
         might be the only person alive who can protect a reincarnated goddess, sent
         to watch over humanity. Can he let his past go and embrace his destiny to
-        become a Knight of the Zodiac?","popularity":3154.453,"poster_path":"/qW4crfED8mpNDadSmMdi7ZDzhXF.jpg","production_companies":[{"id":11341,"logo_path":"/xytTBODEy3p20ksHL4Ftxr483Iv.png","name":"Stage
+        become a Knight of the Zodiac?","popularity":596.191,"poster_path":"/qW4crfED8mpNDadSmMdi7ZDzhXF.jpg","production_companies":[{"id":11341,"logo_path":"/xytTBODEy3p20ksHL4Ftxr483Iv.png","name":"Stage
         6 Films","origin_country":"US"},{"id":5542,"logo_path":"/ayE4LIqoAWotavo7xdvYngwqGML.png","name":"Toei
         Animation","origin_country":"JP"}],"production_countries":[{"iso_3166_1":"JP","name":"Japan"},{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"2023-04-27","revenue":6794519,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Go
-        beyond your destiny.","title":"Knights of the Zodiac","video":false,"vote_average":6.549,"vote_count":338}'
-  recorded_at: Sat, 08 Jul 2023 23:01:20 GMT
+        States of America"}],"release_date":"2023-04-27","revenue":6794519,"runtime":113,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Go
+        beyond your destiny.","title":"Knights of the Zodiac","video":false,"vote_average":6.682,"vote_count":737}'
+  recorded_at: Wed, 16 Aug 2023 20:48:28 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/455476
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Hide_API
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 16 Aug 2023 20:48:28 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=25402
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 50e253f7e3769df8918cea1862b1c972
+      X-Memc-Age:
+      - '15162'
+      X-Memc-Expires:
+      - '11774'
+      Etag:
+      - W/"454cecf1d2d8ce294c1eaa9c29f85773"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 2c861897aa9389c1f47299b6fea5b59c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - agjH9awsU37Xj11INlosClTdPX2XjspI0mA87q_FVSZZ76jRBXbE2g==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/oqP1qEZccq5AD9TVTIaO6IGUj7o.jpg","belongs_to_collection":null,"budget":60000000,"genres":[{"id":14,"name":"Fantasy"},{"id":28,"name":"Action"},{"id":12,"name":"Adventure"}],"homepage":"https://kotzmovie.com","id":455476,"imdb_id":"tt6528290","original_language":"en","original_title":"Knights
+        of the Zodiac","overview":"When a headstrong street orphan, Seiya, in search
+        of his abducted sister unwittingly taps into hidden powers, he discovers he
+        might be the only person alive who can protect a reincarnated goddess, sent
+        to watch over humanity. Can he let his past go and embrace his destiny to
+        become a Knight of the Zodiac?","popularity":596.191,"poster_path":"/qW4crfED8mpNDadSmMdi7ZDzhXF.jpg","production_companies":[{"id":11341,"logo_path":"/xytTBODEy3p20ksHL4Ftxr483Iv.png","name":"Stage
+        6 Films","origin_country":"US"},{"id":5542,"logo_path":"/ayE4LIqoAWotavo7xdvYngwqGML.png","name":"Toei
+        Animation","origin_country":"JP"}],"production_countries":[{"iso_3166_1":"JP","name":"Japan"},{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2023-04-27","revenue":6794519,"runtime":113,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Go
+        beyond your destiny.","title":"Knights of the Zodiac","video":false,"vote_average":6.682,"vote_count":737}'
+  recorded_at: Wed, 16 Aug 2023 20:48:28 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/455476
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Hide_API
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 16 Aug 2023 20:48:28 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=25402
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 50e253f7e3769df8918cea1862b1c972
+      X-Memc-Age:
+      - '15162'
+      X-Memc-Expires:
+      - '11774'
+      Etag:
+      - W/"454cecf1d2d8ce294c1eaa9c29f85773"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 cddde15c11afac53ac9fe7978dcfecd6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - qLSmu6Q-nR4RhtmavBVphNh3UMTrDmwCZ572WzjVU0Tr3yIGNJizrw==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/oqP1qEZccq5AD9TVTIaO6IGUj7o.jpg","belongs_to_collection":null,"budget":60000000,"genres":[{"id":14,"name":"Fantasy"},{"id":28,"name":"Action"},{"id":12,"name":"Adventure"}],"homepage":"https://kotzmovie.com","id":455476,"imdb_id":"tt6528290","original_language":"en","original_title":"Knights
+        of the Zodiac","overview":"When a headstrong street orphan, Seiya, in search
+        of his abducted sister unwittingly taps into hidden powers, he discovers he
+        might be the only person alive who can protect a reincarnated goddess, sent
+        to watch over humanity. Can he let his past go and embrace his destiny to
+        become a Knight of the Zodiac?","popularity":596.191,"poster_path":"/qW4crfED8mpNDadSmMdi7ZDzhXF.jpg","production_companies":[{"id":11341,"logo_path":"/xytTBODEy3p20ksHL4Ftxr483Iv.png","name":"Stage
+        6 Films","origin_country":"US"},{"id":5542,"logo_path":"/ayE4LIqoAWotavo7xdvYngwqGML.png","name":"Toei
+        Animation","origin_country":"JP"}],"production_countries":[{"iso_3166_1":"JP","name":"Japan"},{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2023-04-27","revenue":6794519,"runtime":113,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Go
+        beyond your destiny.","title":"Knights of the Zodiac","video":false,"vote_average":6.682,"vote_count":737}'
+  recorded_at: Wed, 16 Aug 2023 20:48:28 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/455476
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Hide_API
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 16 Aug 2023 20:48:28 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=25402
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 50e253f7e3769df8918cea1862b1c972
+      X-Memc-Age:
+      - '15162'
+      X-Memc-Expires:
+      - '11774'
+      Etag:
+      - W/"454cecf1d2d8ce294c1eaa9c29f85773"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 9cefde3a3c84cc779d3c26a39c2e4430.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - wiqKu2w9h-q8M2L9uevR1WfKfS8Z86VC3nNm3xXvSJXADFExYy8YWg==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/oqP1qEZccq5AD9TVTIaO6IGUj7o.jpg","belongs_to_collection":null,"budget":60000000,"genres":[{"id":14,"name":"Fantasy"},{"id":28,"name":"Action"},{"id":12,"name":"Adventure"}],"homepage":"https://kotzmovie.com","id":455476,"imdb_id":"tt6528290","original_language":"en","original_title":"Knights
+        of the Zodiac","overview":"When a headstrong street orphan, Seiya, in search
+        of his abducted sister unwittingly taps into hidden powers, he discovers he
+        might be the only person alive who can protect a reincarnated goddess, sent
+        to watch over humanity. Can he let his past go and embrace his destiny to
+        become a Knight of the Zodiac?","popularity":596.191,"poster_path":"/qW4crfED8mpNDadSmMdi7ZDzhXF.jpg","production_companies":[{"id":11341,"logo_path":"/xytTBODEy3p20ksHL4Ftxr483Iv.png","name":"Stage
+        6 Films","origin_country":"US"},{"id":5542,"logo_path":"/ayE4LIqoAWotavo7xdvYngwqGML.png","name":"Toei
+        Animation","origin_country":"JP"}],"production_countries":[{"iso_3166_1":"JP","name":"Japan"},{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2023-04-27","revenue":6794519,"runtime":113,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Go
+        beyond your destiny.","title":"Knights of the Zodiac","video":false,"vote_average":6.682,"vote_count":737}'
+  recorded_at: Wed, 16 Aug 2023 20:48:28 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/455476
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Hide_API
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 16 Aug 2023 20:48:28 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=25402
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 50e253f7e3769df8918cea1862b1c972
+      X-Memc-Age:
+      - '15162'
+      X-Memc-Expires:
+      - '11774'
+      Etag:
+      - W/"454cecf1d2d8ce294c1eaa9c29f85773"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 28d79637e27f11e3ab19a9515e273a5a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - OUArYBLmqg_XkSnuaYdPhWCC-JfZdR-j9bXLHfxGrzWy-NppFhaiwg==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/oqP1qEZccq5AD9TVTIaO6IGUj7o.jpg","belongs_to_collection":null,"budget":60000000,"genres":[{"id":14,"name":"Fantasy"},{"id":28,"name":"Action"},{"id":12,"name":"Adventure"}],"homepage":"https://kotzmovie.com","id":455476,"imdb_id":"tt6528290","original_language":"en","original_title":"Knights
+        of the Zodiac","overview":"When a headstrong street orphan, Seiya, in search
+        of his abducted sister unwittingly taps into hidden powers, he discovers he
+        might be the only person alive who can protect a reincarnated goddess, sent
+        to watch over humanity. Can he let his past go and embrace his destiny to
+        become a Knight of the Zodiac?","popularity":596.191,"poster_path":"/qW4crfED8mpNDadSmMdi7ZDzhXF.jpg","production_companies":[{"id":11341,"logo_path":"/xytTBODEy3p20ksHL4Ftxr483Iv.png","name":"Stage
+        6 Films","origin_country":"US"},{"id":5542,"logo_path":"/ayE4LIqoAWotavo7xdvYngwqGML.png","name":"Toei
+        Animation","origin_country":"JP"}],"production_countries":[{"iso_3166_1":"JP","name":"Japan"},{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2023-04-27","revenue":6794519,"runtime":113,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Go
+        beyond your destiny.","title":"Knights of the Zodiac","video":false,"vote_average":6.682,"vote_count":737}'
+  recorded_at: Wed, 16 Aug 2023 20:48:28 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/455476
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Hide_API
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 16 Aug 2023 20:48:28 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=25402
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 50e253f7e3769df8918cea1862b1c972
+      X-Memc-Age:
+      - '15162'
+      X-Memc-Expires:
+      - '11774'
+      Etag:
+      - W/"454cecf1d2d8ce294c1eaa9c29f85773"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 38059ba65876500c040fb73e2cbaebf4.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - wYSKuTdmmdCfeDvJHgjLUZWx55vdYBWO_7kHIdwuTLDzsOgyg_7-uw==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/oqP1qEZccq5AD9TVTIaO6IGUj7o.jpg","belongs_to_collection":null,"budget":60000000,"genres":[{"id":14,"name":"Fantasy"},{"id":28,"name":"Action"},{"id":12,"name":"Adventure"}],"homepage":"https://kotzmovie.com","id":455476,"imdb_id":"tt6528290","original_language":"en","original_title":"Knights
+        of the Zodiac","overview":"When a headstrong street orphan, Seiya, in search
+        of his abducted sister unwittingly taps into hidden powers, he discovers he
+        might be the only person alive who can protect a reincarnated goddess, sent
+        to watch over humanity. Can he let his past go and embrace his destiny to
+        become a Knight of the Zodiac?","popularity":596.191,"poster_path":"/qW4crfED8mpNDadSmMdi7ZDzhXF.jpg","production_companies":[{"id":11341,"logo_path":"/xytTBODEy3p20ksHL4Ftxr483Iv.png","name":"Stage
+        6 Films","origin_country":"US"},{"id":5542,"logo_path":"/ayE4LIqoAWotavo7xdvYngwqGML.png","name":"Toei
+        Animation","origin_country":"JP"}],"production_countries":[{"iso_3166_1":"JP","name":"Japan"},{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2023-04-27","revenue":6794519,"runtime":113,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Go
+        beyond your destiny.","title":"Knights of the Zodiac","video":false,"vote_average":6.682,"vote_count":737}'
+  recorded_at: Wed, 16 Aug 2023 20:48:28 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Hide_API
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 18 Aug 2023 02:51:48 GMT
+      Server:
+      - openresty
+      X-Cascade:
+      - pass
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 a47d45d25cc354507eae77aba89ca252.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - hlma2Bn38twyZL2rFC7Pyv_rfLtqMfw4dGB0jKXpJEOOksgzd0bxgg==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"success":false,"status_code":34,"status_message":"The resource you
+        requested could not be found."}'
+  recorded_at: Fri, 18 Aug 2023 02:51:48 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Hide_API
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 18 Aug 2023 02:51:48 GMT
+      Server:
+      - openresty
+      X-Cascade:
+      - pass
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 dcee1124728af441beff75c95d9d9d74.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - ORBXHTHpdQBgZUflizUsQiw3QBA9M7OVQOV1iLRt42EWcgDVQlXKFA==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"success":false,"status_code":34,"status_message":"The resource you
+        requested could not be found."}'
+  recorded_at: Fri, 18 Aug 2023 02:51:48 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Hide_API
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 18 Aug 2023 02:51:48 GMT
+      Server:
+      - openresty
+      X-Cascade:
+      - pass
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 d29afc70fc2fdadee440493854714224.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - ltNHbaGoyeGy5_v2u4pT4NDvj7z-YomNGw_FykJJX1gQCOSP5T2XNQ==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"success":false,"status_code":34,"status_message":"The resource you
+        requested could not be found."}'
+  recorded_at: Fri, 18 Aug 2023 02:51:48 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Hide_API
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 18 Aug 2023 02:51:48 GMT
+      Server:
+      - openresty
+      X-Cascade:
+      - pass
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 cddde15c11afac53ac9fe7978dcfecd6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - RR5d7_-Y66Ebl8evO6JbiyAqdMlGwATG0IS_Ic2N0dVsbz2s7QoNDA==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"success":false,"status_code":34,"status_message":"The resource you
+        requested could not be found."}'
+  recorded_at: Fri, 18 Aug 2023 02:51:48 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Hide_API
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 18 Aug 2023 02:51:48 GMT
+      Server:
+      - openresty
+      X-Cascade:
+      - pass
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 23d87d8c2ce38e34462e6c134d187eea.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - zfwlf27Vk4YA-nbtkQNr3vWdGIAFBb69CwpDFV0CsmOkgI79gRxU0A==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"success":false,"status_code":34,"status_message":"The resource you
+        requested could not be found."}'
+  recorded_at: Fri, 18 Aug 2023 02:51:48 GMT
 recorded_with: VCR 6.2.0
