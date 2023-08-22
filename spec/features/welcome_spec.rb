@@ -17,7 +17,6 @@ describe 'Welcome page' do
       user_4 = create(:user)
       users = [user_1, user_2, user_3, user_4]
       visit '/'
-      save_and_open_page
       within '#existing_users' do
         users.each do |user|
           expect(page).to have_content(user.email)
