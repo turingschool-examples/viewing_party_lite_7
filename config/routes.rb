@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :register, only: [:index, :create]
-  resources :users, only: [:show, :create]
+  resources :users, only: [:show, :create] do
+    resources :discover, only: [:index]
+  end
 end
