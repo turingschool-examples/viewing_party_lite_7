@@ -1,10 +1,17 @@
 require "rails_helper"
 
 RSpec.describe "Landing pages" do
-  it "should display title of application" do
+  before(:each) do
+    @user1 = User.create!(name: "Flick Chick", email: "flick@yahoo.com")
+    @user2 = User.create!(name: "Rom Com Ron", email: "comron@yahoo.com")
+    @user3 = User.create!(name: "Action Jackson", email: "itsjack@aol.com")
+  end
+
+  it "should display title of application and link to landing page" do
     visit "/"
 
     expect(page).to have_content "Viewing Party"
+    expect(page).to have_link "Home"
   end
 
   it "should have a button to create a new user" do
@@ -17,21 +24,12 @@ RSpec.describe "Landing pages" do
     visit "/"
     expect(page).to have_content "Existing Users"
 
+    expect(page).to have_link(@user1.email)
+    expect(page).to have_link(@user2.email)
+    expect(page).to have_link(@user3.email)
 
-    # user = build(:user)
-    user1 = build(:user, name: "Movie person", email: "321movies@example.com")
-    user2 = build(:user, name: "Flick Chick", email: "312movies@example.com")
-    expect(page).to have_link("user.email")
-    expect(page).to have_link("user1.email")
-    expect(page).to have_link("user2.email")
+    click_link(@user1.email)
+    expect(current_path).to eq(user_path(@user1))
+    expect(page).to have_link("Home")
   end
-
 end
-
-
-# When a user visits the root path they should be on the landing page ('/') which includes:
-
-# Title of Application
-# Button to Create a New User
-# List of Existing Users which links to the users dashboard
-# Link to go back to the landing page (this link will be present at the top of all pages)
