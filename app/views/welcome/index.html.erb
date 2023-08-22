@@ -3,3 +3,10 @@
 <div id="new_user">
   <%= button_to "Create New User", "/register", method: :get %>
 </div>
+
+<ul id="existing_users">
+  <h3>Existing Users</h3>
+  <% @users.each do |user| %>
+    <li><%= link_to user.email, dashboard_path(user.id) %></li>
+  <% end %>
+</ul>
