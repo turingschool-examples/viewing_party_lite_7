@@ -221,7 +221,9 @@
           null,
           null,
           null,
+          1,
           null,
+          1,
           null
         ]
       },
@@ -245,8 +247,34 @@
           1,
           null
         ]
+      },
+      "/Users/danielgallagher/3mod/projects/viewing_party_lite_7/app/controllers/landing_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/danielgallagher/3mod/projects/viewing_party_lite_7/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/danielgallagher/3mod/projects/viewing_party_lite_7/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1692741328
+    "timestamp": 1692744456
   }
 }
