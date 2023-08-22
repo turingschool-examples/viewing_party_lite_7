@@ -8,8 +8,6 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  # get "register", to: "users#new", as: :new_user
-  # post "register", to: "users#create", as: :create_user
   resources :register, only: [:index, :create]
   resources :users, only: [:show, :create]
 end
