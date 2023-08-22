@@ -14,13 +14,13 @@ RSpec.describe 'Welcome Page' do
     end
   end
 
-  xit "has a button to create a new user" do
+  it "has a button to create a new user" do
     within("#new-user-button") do
       expect(page).to have_button('Create a New User')
-      click_on 'Create a new user'
+      click_on 'Create a New User'
     end
 
-    expect(current_path).to eq(register_path)
+    expect(current_path).to eq(new_user_path)
   end
 
   it "lists all existing users" do
@@ -36,7 +36,7 @@ RSpec.describe 'Welcome Page' do
     expect(current_path).to eq(user_path(@user_1))
   end
 
-  xit "has a link to the root page" do
+  it "has a link to the root page" do
     expect(page).to have_link('Home', href: root_path)
   end
 end
