@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'Welcome Page' do
   before do
-    @user_1 = User.create #however we create using factorybot, or something
-    @user_2 = User.create #however we create using factorybot, or something
-    @user_3 = User.create #however we create using factorybot, or something
+    @user_1 = create(:user)
+    @user_2 = create(:user)
+    @user_3 = create(:user)
     visit root_path
   end
 
@@ -23,15 +23,17 @@ RSpec.describe 'Welcome Page' do
     expect(current_path).to eq(register_path)
   end
 
-  xit "lists all existing users" do
+  it "lists all existing users" do
     within("#user-list") do
       expect(page).to have_content('Existing Users')
-      expect(page).to have_content(@user_1.email, @user_2.email, @user_3.email)
-      within("#user-#{user_1.id}") do
+      expect(page).to have_content(@user_1.email)
+      expect(page).to have_content(@user_2.email)
+      expect(page).to have_content(@user_3.email)
+      within("#user-#{@user_1.id}") do
         click_link "#{@user_1.email}"
       end
     end
-    expect(current_path).to eq(user_path(user_1))
+    expect(current_path).to eq(user_path(@user_1))
   end
 
   xit "has a link to the root page" do
