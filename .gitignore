@@ -31,3 +31,4 @@
 /config/master.key
 /docs/pull_request_template.md
 /coverage
+/config/application.yml
