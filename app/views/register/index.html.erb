@@ -1,0 +1,10 @@
+<%= form_with id:"registration_form", model: @user, local: true do |form| %>
+  <%= form.label :username %>
+  <%= form.text_field :username %>
+  
+  <%= form.label :email %>
+  <%= form.text_field :email %>
+  
+  <%= form.submit value: "Register" %>
+<% end %>
+
