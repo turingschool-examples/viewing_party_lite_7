@@ -6,7 +6,7 @@ describe 'Welcome page' do
       visit '/'
       expect(page).to have_content('Viewing Party')
     end
-    it 'should have a buttong to create a new user' do
+    it 'should have a button to create a new user' do
       visit '/'
       expect(page).to have_button('Create a New User')
     end
@@ -17,8 +17,6 @@ describe 'Welcome page' do
       user_4 = create(:user)
       users = [user_1, user_2, user_3, user_4]
       visit '/'
-      save_and_open_page
-
       within '#existing_users' do
         users.each do |user|
           expect(page).to have_content(user.email)

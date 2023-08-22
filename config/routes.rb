@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   root 'welcome#index'
-  resources :users, only: [:create]
+
+  resources :register, only: [:index, :create]
+  resources :users, only: [:show, :create]
 end
