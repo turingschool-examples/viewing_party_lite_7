@@ -13,6 +13,6 @@ RSpec.describe "User Registration", type: :feature do
     fill_in "Email", with: "Sophie@user.com"
     click_button "Register"
   
-    expect(current_path).to eq(user_path(User.first.id))
+    expect(current_path).to eq(user_path(User.last.id))
   end
 end
