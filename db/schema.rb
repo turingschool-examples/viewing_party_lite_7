@@ -41,12 +41,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_22_001654) do
     t.string "start_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "users_id", null: false
-    t.bigint "movies_id", null: false
-    t.index ["movies_id"], name: "index_viewing_parties_on_movies_id"
-    t.index ["users_id"], name: "index_viewing_parties_on_users_id"
+    t.bigint "user_id", null: false
+    t.bigint "movie_id", null: false
+    t.index ["movie_id"], name: "index_viewing_parties_on_movie_id"
+    t.index ["user_id"], name: "index_viewing_parties_on_user_id"
   end
 
-  add_foreign_key "viewing_parties", "movies", column: "movies_id"
-  add_foreign_key "viewing_parties", "users", column: "users_id"
+  add_foreign_key "viewing_parties", "movies"
+  add_foreign_key "viewing_parties", "users"
 end
