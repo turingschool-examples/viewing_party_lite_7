@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       redirect_to dashboard_path(@user.id)
     else
       flash[:error] = "Please fill in all fields."
-      render :new
+      redirect_to register_path
     end
   end
 

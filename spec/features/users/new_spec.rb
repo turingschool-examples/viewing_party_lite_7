@@ -4,7 +4,6 @@ RSpec.describe 'User Registration' do
   describe "When I visit the user registration page" do
     it "can create a new user" do
       visit register_path
-      save_and_open_page
       fill_in :user_name, with: "Bob"
       fill_in :user_email, with: "bob@bob.com"
       click_button "Register"
