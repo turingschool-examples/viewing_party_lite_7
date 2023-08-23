@@ -1,0 +1,14 @@
+<h3>New User Registration</h3>
+</br>
+<%= form_with(
+  url: users_path,
+  local: true,
+  method: :post,
+  data: { turbo: false }
+  )do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %></br>
+  <%= f.label :email %>
+  <%= f.text_field :email %></br>
+  <%= f.submit "Register" %>
+  <% end %>
