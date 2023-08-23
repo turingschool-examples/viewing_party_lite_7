@@ -19,5 +19,6 @@ class DiscoverMovie
     @review_authors = review_authors
   end
 
+  
   # runtime, top_10, and review_authors are not associated with the API
 end
