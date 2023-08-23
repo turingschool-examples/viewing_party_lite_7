@@ -4,6 +4,7 @@ class MoviesController < ApplicationController
   before_action :find_user, only: :index
 
   def index
+    require 'pry'; binding.pry
     @movies = MovieFacade.top_movies
   end
 

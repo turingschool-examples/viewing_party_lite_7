@@ -15,4 +15,8 @@ class MovieService
   def self.top_rated_movies
     get_url('movie/top_rated')
   end
+
+  def self.search_by_title
+    get_url("search/movie?q=Lol")
+  end
 end
