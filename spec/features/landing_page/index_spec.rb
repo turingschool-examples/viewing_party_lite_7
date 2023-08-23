@@ -23,9 +23,12 @@ RSpec.describe 'landing page', type: :feature do
       expect(current_path).to eq(user_path(u1))
     end
     
-
     click_link("Landing Page")
 
     expect(current_path).to eq(root_path)
+    
+    click_button("New User")
+
+    expect(current_path).to eq(new_register_path)
   end
 end
