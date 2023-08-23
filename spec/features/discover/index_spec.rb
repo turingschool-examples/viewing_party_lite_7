@@ -8,7 +8,7 @@ RSpec.describe "Discover Movies page '/users/:id/discover'", type: :feature do
   end
 
   describe "When I visit a user's discover movies page" do
-    it "Displays a button to find top rated movies" do
+    it "Displays a button to find top rated movies", :vcr do
       visit discover_path(@user_1.id)
 
       within "#discover_top_movies" do
@@ -19,7 +19,7 @@ RSpec.describe "Discover Movies page '/users/:id/discover'", type: :feature do
       expect(page).to have_content("Top Rated Movies")
     end
 
-    it "Displays a text field and button to search for a movie title" do
+    it "Displays a text field and button to search for a movie title", :vcr do
       visit discover_path(@user_2.id)
 
       within "#title_search" do
