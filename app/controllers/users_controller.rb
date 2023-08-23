@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   def new
     @user = User.new
@@ -12,7 +14,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to dashboard_path(@user.id)
     else
-      flash[:error] = "Please fill in all fields."
+      flash[:error] = 'Please fill in all fields.'
       redirect_to register_path
     end
   end
