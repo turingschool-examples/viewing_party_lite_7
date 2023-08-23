@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   post "/register", to: "users#create"
   
   get "/users/:id", to: "users#show", as: :dashboard
+  get "/users/:id/discover", to: "discover#index", as: :discover
 end
