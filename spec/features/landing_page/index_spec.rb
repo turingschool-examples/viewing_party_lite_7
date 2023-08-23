@@ -18,5 +18,9 @@ RSpec.describe 'landing page', type: :feature do
     end
     
     expect(page).to have_link("Landing Page")
+    
+    click_link("#{u1.name}")
+
+    expect(current_path).to eq(user_path(u1))
   end
 end
