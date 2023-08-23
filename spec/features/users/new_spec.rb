@@ -33,8 +33,6 @@ RSpec.describe 'New User' do
       fill_in "Name", with: "Ralph"
       fill_in "Email", with: "email2@example.com"
       click_button "Register"
-  
-      save_and_open_page
 
       expect(page).to have_content("Email has already been taken")
       
