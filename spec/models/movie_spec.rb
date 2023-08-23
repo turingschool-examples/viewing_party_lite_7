@@ -6,7 +6,6 @@ RSpec.describe Movie, type: :model do
   end
 
   describe "relationships" do
-    it { should have_many(:movies_users) }
-    it { should have_many(:users).through(:movies_users) }
+    it { should have_many(:viewing_parties) }
   end
 end
