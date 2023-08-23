@@ -31,8 +31,6 @@ describe 'User Discover page' do
         found_count = page.all('.movie_title').count
         expect(found_count).to be <= 20
 
-        save_and_open_page
-        
         click_on "Discover Page"
         
         expect(current_path).to eq("/users/#{user.id}/discover")
