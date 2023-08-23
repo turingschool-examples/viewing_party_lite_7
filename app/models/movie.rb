@@ -1,4 +1,4 @@
 class Movie < ApplicationRecord
-  belongs_to :user
-  has_and_belongs_to_many :viewing_parties
+  has_many :movies_users
+  has_many :users, through: :movies_users
 end
