@@ -1,0 +1,5 @@
+<ul>
+  <% @top_20.first(20).each do |movie| %>
+    <li><%= movie[:title] %>, <%= movie[:vote_average] %></li>
+  <% end %>
+</li>
