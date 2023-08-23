@@ -1,0 +1,10 @@
+<h2>Discover Movies</h2>
+<p>
+  <%= button_to "Discover Top Rated Movies", user_movies_path(@user, q: "top rated"), method: :get %>
+</p>
+<p>
+  <%= form_with(url: user_movies_path(@user, q: params[:q]), method: :get) do |form| %>
+    <%= form.text_field :q, placeholder: "Enter keyword", id: "keyword_search" %>
+    <%= form.submit "Search by Movie Title" %>
+  <% end %>
+</p>
