@@ -18,10 +18,8 @@ class TmdbService
           vote_average: data['vote_average']
         )
       end
-      return movies
-    else
-      return []
     end
+    return movies
   end
 
   def search_movies(query)
@@ -37,9 +35,7 @@ class TmdbService
           vote_average: data['vote_average']
         )
       end
-      return movies
-    else
-      return []
     end
+    return movies
   end
 end
