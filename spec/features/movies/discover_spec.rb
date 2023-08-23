@@ -7,17 +7,19 @@ describe "Discover Movies Page" do
   end
 
   it "has a button to discover top rated movies" do
-    expect(page).to have_button("Find Top Rated Movies").once
-
+    expect(page).to have_button("Find Top Rated Movies")
     click_button("Find Top Rated Movies")
+
+    expect(current_path).to eq(user_movies_path(@user))
   end
 
-  xit "has a field to enter keywords to search by movie title" do
-
+  xit "has a text field to enter keyword(s) to search by movie title" do
+    expect(page).to have_field("Keywords")
+    expect(page).to have_button("Find Movies")
   end
 
-  xit "has a button to search by movie title" do
-
+  it "has a link to the root page" do
+    expect(page).to have_link('Home', href: root_path)
   end
 end
 
