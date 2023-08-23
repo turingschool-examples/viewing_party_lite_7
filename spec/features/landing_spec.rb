@@ -15,7 +15,7 @@ RSpec.describe 'Landing Page' do
 
       expect(page).to have_link("Aquaria")
       click_link("Aquaria")
-      expect(current_path).to eq(user_path(aquaria))
+      expect(current_path).to eq(dashboard_path(aquaria.id))
     end
   end
 end
