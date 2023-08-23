@@ -18,7 +18,7 @@ RSpec.describe 'User welcome' do
       expect(page).to have_link("Home")
 
       click_on 'New User'
-      expect(current_path).to eq(new_user_path)
+      expect(current_path).to eq("/register")
       click_on 'Home'
       expect(current_path).to eq(root_path)
 
