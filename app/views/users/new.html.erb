@@ -2,7 +2,7 @@
 
 <%= render partial: "shared/landing_header" %><br><br>
 
-<%= form_with url: "/register", method: :post, local: true do |f| %>
+<%= form_with url: "/users", method: :post, local: true do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %><br><br>
   <%= f.label :email %>

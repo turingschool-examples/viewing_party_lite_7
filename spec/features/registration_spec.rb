@@ -9,7 +9,8 @@ RSpec.describe 'Registration Page' do
       fill_in :email, with: "Bobthehoe@hotmess.com"
       click_on "Register"
       new_user = User.last
-      expect(current_path).to eq(dashboard_path(new_user.id))
+      expect(current_path).to eq(user_path(new_user.id))
+      
     end
   end
   
@@ -20,7 +21,7 @@ RSpec.describe 'Registration Page' do
       visit register_path
 
       fill_in :name, with: "Monet Xchange"
-      fill_in :email, with: ""
+      fill_in :email, with: "Monet_Xchange@hotmess.com"
       click_on "Register"
       expect(current_path).to eq(register_path)
       
