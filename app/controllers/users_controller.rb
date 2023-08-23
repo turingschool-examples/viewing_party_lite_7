@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def show 
-    @user = User.find(params[:id])
+    # @user = User.find(params[:id])
   end
 
   def new 
@@ -11,8 +11,7 @@ class UsersController < ApplicationController
   def create 
     user = User.new(user_params)
     if user.save
-      flash.notice = "You have successfully registered, okurrr!"
-      redirect_to user_path(user)
+      redirect_to dashboard_path(user.id)
     else
       flash[:error] = "Sorry, I'ma need you to try harder."
       redirect_to register_path
@@ -22,7 +21,6 @@ class UsersController < ApplicationController
   private 
 
   def user_params
-    params[:email].downcase!
     params.permit(:name, :email)
   end
 

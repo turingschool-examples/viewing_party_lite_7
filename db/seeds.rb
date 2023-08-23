@@ -7,3 +7,5 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 # {model}.destroy_all
+
+User.destroy_all
