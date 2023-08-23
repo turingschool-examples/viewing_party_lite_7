@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   root "welcome#index"
   
   resources :users do
-    get "/discover", to: "discover_movies#search"
-    get "/movies", to: "discover_movies#index"
+    get "discover", on: :member
+    # , to: "users#discover"
+    get "movies", on: :member, to: "discover_movies#index"
   end
 
   get "/register", to: "users#new"
