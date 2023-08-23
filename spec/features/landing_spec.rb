@@ -12,10 +12,11 @@ RSpec.describe 'Landing Page' do
       expect(page).to have_content("Viewing Party")
       expect(page).to have_button("Create New User")
       expect(page).to have_content("Existing Users")
+      expect(page).to have_link("Home")
 
       expect(page).to have_link("Aquaria")
       click_link("Aquaria")
-      expect(current_path).to eq(dashboard_path(aquaria.id))
+      expect(current_path).to eq(user_path(aquaria.id))
     end
   end
 end

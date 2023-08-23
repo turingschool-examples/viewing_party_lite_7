@@ -1,14 +1,16 @@
 <h1> Viewing Party </h1><hr>
 
-<%= render partial: "shared/landing_header" %><br><br>
+<div class="partial">
+  <%= render partial: "shared/landing_header" %><br><br>
+</div>
 
 <div id="new_user">
-  <%= button_to "Create New User", register_path %>
+  <%= button_to "Create New User", register_path, method: :get %>
 </div>
 
 <ul id='existing_users'>
   <h3> Existing Users </h3>
   <% @users.each do |user| %>
-    <%= link_to user.name, dashboard_path(user.id)  %><br><br>
+    <%= link_to user.name, user_path(user.id)  %><br><br>
   <% end %>
   </ul>
