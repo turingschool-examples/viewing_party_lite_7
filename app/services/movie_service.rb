@@ -1,6 +1,12 @@
 class MovieService
 
-  def 
+  def top_rated
+    get_url("/3/movie/top_rated")
+  end
+
+  def search(keyword)
+    get_url("/3/search/movie?query=#{keyword}")
+  end
 
   def get_url(url)
     response = conn.get(url)
