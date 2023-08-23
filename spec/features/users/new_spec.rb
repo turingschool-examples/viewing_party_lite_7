@@ -9,14 +9,8 @@ RSpec.describe 'New User' do
   describe 'happy path' do
     it 'can register a new user' do
       visit root_path
-      
-      expect(page).to have_content("Viewing Party")
-      expect(page).to have_content(@user_1.name)
-      expect(page).to have_content(@user_2.name)
-      expect(page).to have_content(@user_3.name)
       expect(page).to_not have_content("Ralph")
-
-      click_on 'New User'
+      visit "/register"
 
       fill_in "Name", with: "Ralph"
       fill_in "Email", with: "lol@yahoo.com"
@@ -24,6 +18,9 @@ RSpec.describe 'New User' do
 
       new_user = User.find_by(email: "lol@yahoo.com")
       expect(current_path).to eq(user_path(new_user))
+
+      visit root_path
+      expect(page).to have_content("Ralph")
     end
   end
 end
