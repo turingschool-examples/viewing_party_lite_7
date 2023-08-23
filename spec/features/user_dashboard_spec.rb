@@ -18,7 +18,7 @@ RSpec.describe "User Dashboard" do
     it "displays the users name at the top of the page" do
       visit user_path(@user1.id)
       save_and_open_page
-      expect(page).to have_content("#{@user1.name} Dashboard")
+      expect(page).to have_content("#{@user1.name}'s Dashboard")
       expect(page).to have_button("Discover Movies")
       expect(page).to have_content(@viewing_party1.name)
     end
