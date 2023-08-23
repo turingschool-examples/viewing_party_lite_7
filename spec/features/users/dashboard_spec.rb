@@ -19,6 +19,6 @@ RSpec.describe "User Dashboard" do
     visit user_path(monet) 
 
     click_button "Discover Movies"
-    expect(current_path).to eq(user_discover_index_path(monet))
+    expect(current_path).to eq(user_discover_path(monet))
   end
 end
