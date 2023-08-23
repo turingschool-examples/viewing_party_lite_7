@@ -8,4 +8,7 @@ class MoviesController < ApplicationController
       tmdb_service.search_movies(params[:q])
     end
   end
+  def show
+    @user = User.find(params[:user_id])
+  end
 end
