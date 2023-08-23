@@ -8,9 +8,9 @@ class MovieService
     get_url("/3/discover/movie?language=en-US&page=1&sort_by=popularity.desc&append_to_response=credits")
   end
 
-  def top_rated
-    get_url("/3/movie/top_rated?language=en-US&page=1")
-  end
+  # def top_rated
+  #   get_url("/3/movie/top_rated?language=en-US&page=1")
+  # end
 
   def credits(movie_id)
     get_url("/3/movie/#{movie_id}/credits?language=en-US")
