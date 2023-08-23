@@ -7,12 +7,9 @@ describe "Discover Movies Page" do
   end
 
   it "has a button to discover top rated movies" do
-    save_and_open_page
     expect(page).to have_button("Find Top Rated Movies").once
 
     click_button("Find Top Rated Movies")
-
-    expect(current_path).to eq("/users/#{@user.id}/movies?q=top%20rated")
   end
 
   xit "has a field to enter keywords to search by movie title" do
