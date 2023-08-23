@@ -16,15 +16,16 @@ RSpec.describe "Dashboard Show Page" do
       end
     end
 
+      #US 7
     scenario "When I visit 'users/:id', I click a button to discover movies" do
       u1 = User.create!(name: "Sean", email: "champion4lyfe@gmail.com")
 
       visit user_path(u1)
 
       click_button("Discover Movies")
-
       
-
+      #Redirects to the user discover index page
+      expect(current_path).to eq(user_discover_index_path(u1))
     end
   end
 end
