@@ -2,10 +2,12 @@
 <h1>Welcome, <%= @user.name %></h1>
 <p>Email: <%= @user.email %></p>
 
+
+
 <section>
   <ul>
     <li>
-      <p> <%= button_to "Discover"  %></p>
+      <p> <%= button_to "Discover Movies", user_discover_index_path(@user), method: :get  %></p>
     </li>
   </ul>
 </section>
