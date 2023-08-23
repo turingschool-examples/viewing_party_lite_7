@@ -8,7 +8,8 @@ RSpec.describe 'Discover Movies', type: :feature do
       visit user_discover_index_path(u1)
 
       expect(page).to have_button("Discover Top Rated Movies")
-
+      expect(page).to have_button("Search by Movie Title")
+      
       click_button("Discover Top Rated Movies")
     end
   end

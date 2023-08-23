@@ -53,6 +53,7 @@ group :development, :test do
   gem "pry"
   gem "rspec-rails"
   gem "shoulda-matchers"
+  gem "figaro"
 end
 
 group :development do
@@ -68,8 +69,9 @@ group :development do
 end
 
 group :test do
-  gem "rspec-rails"
+  # gem "rspec-rails"
   gem "capybara"
   gem "launchy"
   gem "simplecov"
+  gem "webmock"
 end
