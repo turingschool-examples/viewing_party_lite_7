@@ -1,0 +1,11 @@
+<%= link_to "Discover Page", "users/#{@user.id}/discover" %>
+<br>
+<br>
+<% @movies.each do |movie| %>
+  <%= link_to movie.title, "users/#{@user.id}/movies/#{movie.id}" %>
+  <br>
+  <p> Movie Rating <%= movie.vote_average %> </p>
+  <br>
+  <br>
+  <br>
+<% end %>
