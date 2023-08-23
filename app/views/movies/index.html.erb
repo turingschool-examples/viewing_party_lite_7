@@ -3,13 +3,13 @@
 <% if @facade.discovery? %>
   <div class="discover-movies">
     <% @facade.get_discover_movies.each do |movie| %>
-      <p><%= movie.name %>   <%= "Vote Average: #{movie.vote_average}" %></p>
+      <p><%= movie.title %>   <%= "Vote Average: #{movie.vote_average}" %></p>
     <% end %>
   </div>
 <% else %>
   <div class="search-movies">
     <% @facade.get_search_movies.each do |movie| %>
-      <p><%= movie.name %>   <%= "Vote Average: #{movie.vote_average}" %></p>
+      <p><%= movie.title %>   <%= "Vote Average: #{movie.vote_average}" %></p>
     <% end %>
   </div>
 <% end %>
