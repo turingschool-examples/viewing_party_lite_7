@@ -1,15 +1,133 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* Title Header Styles */
+.title-header {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .title-link {
+    text-decoration: none;
+    color: black;
+  }
+
+  /* Navbar Styles */
+  .navbar-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .navbar {
+    padding: 0;
+  }
+
+  .navbar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+
+  .navbar-list li {
+    margin: 0 20px;
+  }
+
+  .current-menu-item a {
+    background: #D8DAD3;
+    padding: 10px;
+    border-radius: 10px 100px / 120px;
+    color: black;
+  }
+
+  .seperator {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+  /* Link Styles */
+  .navbar-list li a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .navbar-list li a:visited {
+    color: black;
+  }
+
+/* Submit Button Style */
+.button,
+form.button input[type="submit"] {
+    box-shadow: inset 0px 1px 0px 0px #bee2f9;
+    background: linear-gradient(to bottom, #63b8ee 5%, #468ccf 100%);
+    background-color: #63b8ee;
+    border-radius: 6px;
+    border: 1px solid #3866a3;
+    display: inline-block;
+    cursor: pointer;
+    color: #14396a;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #7cacde;
+}
+
+form.button input[type="submit"]:hover {
+    background: linear-gradient(to bottom, #468ccf 5%, #63b8ee 100%);
+    background-color: #468ccf;
+}
+
+form.button input[type="submit"]:active {
+    position: relative;
+    top: 1px;
+}
+
+/* Flash Message Styles */
+.flash-success {
+  color: green;
+}
+
+.flash-error {
+  color: red;
+}
+
+/* Table Styles */
+.table-container {
+  display: flex;
+  justify-content: center;
+}
+
+.table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: auto;  /* Change this to auto or a fixed width */
+}
+
+.td1,
+.th1 {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid #000000;
+}
+
+.th1 {
+  background-color: #8D8F8F;
+  color: #ffffff;
+  text-align: center;  /* Keep this if you want the header cells to be centered */
+}
+
+/* ... existing CSS ... */
+
+
+.column-header {
+  background-color: lavenderblush;
+  font-weight: bold;
+  text-align: center;
+  p[class$="-auto"] {
+     margin: 10px 0;
+  }
+
+}
+

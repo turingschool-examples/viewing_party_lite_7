@@ -1,0 +1,24 @@
+<div style="text-align: center;">
+  <a href=<%= register_user_path %> class="button">Create New User</a>
+</div>
+<br>
+<h2 style="text-align: center;">
+  Existing Users:</h2>
+<div class="table-container">
+  <table class="table">
+    <thead>
+      <tr class="tr">
+        <th class="th1">Name</th>
+        <th class="th1">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr class="tr">
+          <td class="td1"><%= link_to user.name, user_path(user) %></td>
+          <td class="td1"><%= user.email %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

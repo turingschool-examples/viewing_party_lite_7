@@ -1,0 +1,16 @@
+<div style="text-align: center;">
+  <h1>Register a New User</h1>
+  <%= form_with model: @user, url: register_path, 'data-turbo': false do |form| %>
+    <div>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+    <div>
+      <%= form.label :email %>
+      <%= form.text_field :email %>
+    </div>
+    <div>
+      <%= form.submit "Create New User" %>
+    </div>
+  </div>
+<% end %>
