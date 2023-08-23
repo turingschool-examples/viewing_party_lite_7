@@ -13,7 +13,10 @@ RSpec.describe "Discover Movies page '/users/:id/discover'", type: :feature do
 
       within "#discover_top_movies" do
         expect(page).to have_button("Find Top Rated Movies")
+        click_button("Find Top Rated Movies")
       end
+      expect(current_path).to eq(movies_path)
+      expect(page).to have_content("Top Rated Movies")
     end
 
     it "Displays a text field and button to search for a movie title" do
