@@ -24,6 +24,16 @@ RSpec.describe "User Dashboard page '/users/:id'", type: :feature do
         click_button("Discover Movies")
       end
       expect(current_path).to eq(discover_path(@user_1.id))
+      expect(current_path).to_not eq(discover_path(@user_2.id))
+    end
+
+    it "Has a section that lists viewing parties" do
+      visit dashboard_path(@user_1.id)
+
+      expect(page).to have_css("#viewing_parties")
+      # within "#viewing_parties" do
+      ## More tests will go here after api consumption is implemented
+      # end
     end
   end
 end
