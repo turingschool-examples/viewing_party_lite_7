@@ -7,7 +7,7 @@ RSpec.describe "user registration page" do
     @user3 = User.create!(name: "Action Jackson", email: "itsjack@aol.com")
   end
   it "should contain a user registration form and test uniqueness of email" do
-    visit "/register"
+    visit register_path
 
     expect(page).to have_field("Name")
     fill_in "Name", with: "PopCorn"
@@ -19,7 +19,7 @@ RSpec.describe "user registration page" do
     click_button "Register"
     expect(current_path).to eq(user_path(User.last))
     
-    visit "/register"
+    visit register_path
 
     expect(page).to have_field("Name")
     fill_in "Name", with: "PopCorn"
