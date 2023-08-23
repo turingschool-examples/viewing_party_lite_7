@@ -23,7 +23,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_22_004730) do
 
   create_table "viewing_parties", force: :cascade do |t|
     t.string "date"
-    t.string "movie_id"
+    t.bigint "movie_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false

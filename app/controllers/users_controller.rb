@@ -8,7 +8,7 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
     else
       flash[:notice] = "An account already exists with this email address."
-      render "new"
+      render :new
     end
   end
 
