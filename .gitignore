@@ -31,4 +31,5 @@
 /config/master.key
 
 /.git-commit-template
-/coverage/*
+coverage/*
+config/application.yml

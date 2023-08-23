@@ -1,6 +1,10 @@
 <h2>Discover Movies</h2>
 <p>
-  <%= button_to "Discover Top Rated Movies", user_movies_path(@user, q: "top rated"), method: :get %>
+  <%= form_tag(user_movies_path, method: :get) do %>
+    <%= hidden_field_tag(:q, "top rated") %>
+    <%= hidden_field_tag(:user_id, @user) %>
+    <%= submit_tag "Discover Top Rated Movies" %>
+  <% end %>
 </p>
 <p>
   <%= form_with(url: user_movies_path(@user, q: params[:q]), method: :get) do |form| %>
