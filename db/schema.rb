@@ -18,10 +18,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_23_180431) do
     t.string "title"
     t.float "vote_average"
     t.time "runtime"
-    t.string "genre_ids"
+    t.string "genre"
     t.string "overview"
     t.string "top_10"
-    t.integer "vote_count"
+    t.integer "total_reviews"
     t.string "review_authors"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -1,0 +1,17 @@
+<head>
+  <%= render "shared/welcome_link" %>
+  <h1>Viewing Party</h1>
+</head>
+
+<body>
+  <h3><%= @movie.title %></h3>
+  <ul>
+    <li><%= @movie.vote_average %></li>
+    <li><%= @movie.runtime %></li>
+    <li><%= @movie.genre %></li>
+    <li><%= @movie.overview %></li>
+    <li><%= @movie.top_10 %></li>
+    <li><%= @movie.total_reviews %></li>
+    <li><%= @movie.review_authors %></li>
+  </ul>
+</body>

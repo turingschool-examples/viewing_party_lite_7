@@ -1,23 +1,23 @@
 class DiscoverMovie
-  attr_reader :title,
+  attr_reader :id,
+              :title,
               :vote_average,
               :runtime,
-              :genre_ids,
+              :genre,
               :overview,
               :top_10,
-              :vote_count,
+              :total_reviews,
               :review_authors
 
   def initialize(attributes)
-    @title           = attributes[:title]
+    @id             = attributes[:id]
+    @title          = attributes[:title]
     @vote_average   = attributes[:vote_average]
     @runtime        = attributes[:runtime]
-    @genre_ids          = attributes[:genre_ids]
-    @overview        = attributes[:overview]
+    @genre          = attributes[:genre]
+    @overview       = attributes[:overview]
     @top_10         = attributes[:top_10]
-    @vote_count  = attributes[:vote_count]
+    @total_reviews  = attributes[:total_reviews]
     @review_authors = attributes[:review_authors]
   end
-  
-  # runtime, top_10, and review_authors are not associated with the API
 end
