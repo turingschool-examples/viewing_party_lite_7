@@ -20,4 +20,8 @@ class MovieFacade
       DiscoverMovie.new(movie)
     end
   end
+
+  def discovery?
+    @title.nil?
+  end
 end
