@@ -15,12 +15,31 @@ RSpec.describe 'New User' do
       fill_in "Name", with: "Ralph"
       fill_in "Email", with: "lol@yahoo.com"
       click_button "Register"
-
       new_user = User.find_by(email: "lol@yahoo.com")
       expect(current_path).to eq(user_path(new_user))
-
+      expect(page).to have_content("User successfully created.")
+      
       visit root_path
       expect(page).to have_content("Ralph")
+    end
+  end
+
+  describe 'sad path' do
+    it 'can register a new user' do
+      visit root_path
+      expect(page).to_not have_content("Ralph")
+      visit "/register"
+
+      fill_in "Name", with: "Ralph"
+      fill_in "Email", with: "email2@example.com"
+      click_button "Register"
+  
+      save_and_open_page
+
+      expect(page).to have_content("Email has already been taken")
+      
+      visit root_path
+      expect(page).to_not have_content("Ralph")
     end
   end
 end
