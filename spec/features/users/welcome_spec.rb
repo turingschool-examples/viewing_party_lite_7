@@ -10,7 +10,7 @@ RSpec.describe 'User welcome' do
   describe 'happy path' do
     it 'has a landing page' do
       visit root_path
-      
+      save_and_open_page
       expect(page).to have_content("Viewing Party")
       expect(page).to have_content(@user_1.name)
       expect(page).to have_content(@user_2.name)
