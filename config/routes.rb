@@ -9,5 +9,8 @@ Rails.application.routes.draw do
   get '/users/:id', to: 'users#show', as: :dashboard
   get '/users/:id/discover', to: 'discover#index', as: :discover
 
-  resources :movies, only: %i[index show]
+  get "/users/:id/movies", to: "movies#index", as: :movies
+  get "/users/:id/movies/:movie_id", to: "movies#show", as: :movie
+
+  # resources :movies, only: %i[index show]
 end
