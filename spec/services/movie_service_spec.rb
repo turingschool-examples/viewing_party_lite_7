@@ -17,5 +17,19 @@ RSpec.describe MovieService do
         expect(movie[:vote_average]).to be_a Float
       end
     end
+    
+    it '.search_by_title', :vcr do
+      response = MovieService.search_by_title("Jack")
+
+      expect(response).to be_a Hash
+      expect(response[:results]).to be_an Array
+
+      response[:results].each do |movie|
+        expect(movie).to have_key :original_title
+        expect(movie[:original_title]).to be_a String
+        expect(movie).to have_key :vote_average
+        expect(movie[:vote_average]).to be_a Float
+      end
+    end
   end
 end
