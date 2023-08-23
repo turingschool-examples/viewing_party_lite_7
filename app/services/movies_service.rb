@@ -10,7 +10,7 @@ class MoviesService
 
   def conn
     Faraday.new(url: "https://api.themoviedb.org") do |faraday|
-      faraday.headers["Authorization"] = ENV["TMBD_API_KEY"]
+      faraday.headers["Authorization"] = ENV["TMDB_API_KEY"]
     end
   end
 end
