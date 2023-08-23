@@ -31,6 +31,7 @@ RSpec.describe "Movie Results Page '/users/:id/movies'", type: :feature do
       within '#top_movies' do
         expect(current_path).to eq(movies_path(@user_1.id))
         expect(page).to have_link('Jack')
+        expect(page).to have_content("7.0")
       end
     end
 
