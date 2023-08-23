@@ -12,4 +12,13 @@ RSpec.describe "User Dashboard" do
     expect(page).to have_button("Discover Movies")
     expect(page).to have_content("Viewing Parties")
   end
+
+  it "has a button discover a user's movies" do
+    monet = User.create!(name: "Monet Xchange", email: "Monet_Xchange@hotmess.com")
+
+    visit user_path(monet) 
+
+    click_button "Discover Movies"
+    expect(current_path).to eq(user_discover_index_path(monet))
+  end
 end
