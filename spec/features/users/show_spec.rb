@@ -32,4 +32,19 @@ RSpec.describe "user show page" do
     expect(page).to have_content("at 4 PM")
     expect(page).to have_content("130 minutes long")
   end
+
+  it "takes us to discover page" do
+    visit user_path(@user3)
+
+    expect(page).to have_button "Discover Movies"
+    click_button "Discover Movies"
+    expect(current_path).to eq("/users/#{@user3.id}/discover")
+  end
+
 end
+
+
+# As a user,
+# When I go to a user dashbaord,
+# and click "Discover Movies" button,
+# I am redirected to a discover page '/users/:id/discover', where :id is the user id of the user who's dashboard I was just on.
