@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/kainacockett/Desktop/mod3/projects/viewing_party_lite_7/spec/features/user_dashboard_spec.rb": {
+      "/Users/derekchavez/3mod/projects/viewing_party_lite_7/spec/features/user_dashboard_spec.rb": {
         "lines": [
           1,
           null,
@@ -14,13 +14,20 @@
           1,
           1,
           1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
           1,
           null,
           null,
           null
         ]
       },
-      "/Users/kainacockett/Desktop/mod3/projects/viewing_party_lite_7/spec/rails_helper.rb": {
+      "/Users/derekchavez/3mod/projects/viewing_party_lite_7/spec/rails_helper.rb": {
         "lines": [
           null,
           null,
@@ -96,7 +103,7 @@
           null
         ]
       },
-      "/Users/kainacockett/Desktop/mod3/projects/viewing_party_lite_7/config/environment.rb": {
+      "/Users/derekchavez/3mod/projects/viewing_party_lite_7/config/environment.rb": {
         "lines": [
           null,
           null,
@@ -107,7 +114,7 @@
           1
         ]
       },
-      "/Users/kainacockett/Desktop/mod3/projects/viewing_party_lite_7/config/application.rb": {
+      "/Users/derekchavez/3mod/projects/viewing_party_lite_7/config/application.rb": {
         "lines": [
           null,
           null,
@@ -150,7 +157,7 @@
           null
         ]
       },
-      "/Users/kainacockett/Desktop/mod3/projects/viewing_party_lite_7/config/boot.rb": {
+      "/Users/derekchavez/3mod/projects/viewing_party_lite_7/config/boot.rb": {
         "lines": [
           null,
           null,
@@ -160,7 +167,7 @@
           1
         ]
       },
-      "/Users/kainacockett/Desktop/mod3/projects/viewing_party_lite_7/config/environments/test.rb": {
+      "/Users/derekchavez/3mod/projects/viewing_party_lite_7/config/environments/test.rb": {
         "lines": [
           null,
           null,
@@ -226,7 +233,7 @@
           null
         ]
       },
-      "/Users/kainacockett/Desktop/mod3/projects/viewing_party_lite_7/config/initializers/assets.rb": {
+      "/Users/derekchavez/3mod/projects/viewing_party_lite_7/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -244,7 +251,7 @@
           null
         ]
       },
-      "/Users/kainacockett/Desktop/mod3/projects/viewing_party_lite_7/config/initializers/content_security_policy.rb": {
+      "/Users/derekchavez/3mod/projects/viewing_party_lite_7/config/initializers/content_security_policy.rb": {
         "lines": [
           null,
           null,
@@ -274,7 +281,7 @@
           null
         ]
       },
-      "/Users/kainacockett/Desktop/mod3/projects/viewing_party_lite_7/config/initializers/filter_parameter_logging.rb": {
+      "/Users/derekchavez/3mod/projects/viewing_party_lite_7/config/initializers/filter_parameter_logging.rb": {
         "lines": [
           null,
           null,
@@ -288,7 +295,7 @@
           null
         ]
       },
-      "/Users/kainacockett/Desktop/mod3/projects/viewing_party_lite_7/config/initializers/inflections.rb": {
+      "/Users/derekchavez/3mod/projects/viewing_party_lite_7/config/initializers/inflections.rb": {
         "lines": [
           null,
           null,
@@ -309,7 +316,7 @@
           null
         ]
       },
-      "/Users/kainacockett/Desktop/mod3/projects/viewing_party_lite_7/config/initializers/permissions_policy.rb": {
+      "/Users/derekchavez/3mod/projects/viewing_party_lite_7/config/initializers/permissions_policy.rb": {
         "lines": [
           null,
           null,
@@ -325,78 +332,80 @@
           null
         ]
       },
-      "/Users/kainacockett/Desktop/mod3/projects/viewing_party_lite_7/spec/factories/users.rb": {
+      "/Users/derekchavez/3mod/projects/viewing_party_lite_7/spec/factories/users.rb": {
         "lines": [
           1,
+          1,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "/Users/derekchavez/3mod/projects/viewing_party_lite_7/config/routes.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/derekchavez/3mod/projects/viewing_party_lite_7/app/helpers/application_helper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/derekchavez/3mod/projects/viewing_party_lite_7/spec/support/factory_bot.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/derekchavez/3mod/projects/viewing_party_lite_7/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/derekchavez/3mod/projects/viewing_party_lite_7/app/models/application_record.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/derekchavez/3mod/projects/viewing_party_lite_7/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           1,
           2,
-          2,
-          null,
-          null
-        ]
-      },
-      "/Users/kainacockett/Desktop/mod3/projects/viewing_party_lite_7/config/routes.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/kainacockett/Desktop/mod3/projects/viewing_party_lite_7/app/helpers/application_helper.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/kainacockett/Desktop/mod3/projects/viewing_party_lite_7/spec/support/factory_bot.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/kainacockett/Desktop/mod3/projects/viewing_party_lite_7/app/models/user.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/kainacockett/Desktop/mod3/projects/viewing_party_lite_7/app/models/application_record.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/kainacockett/Desktop/mod3/projects/viewing_party_lite_7/app/controllers/users_controller.rb": {
-        "lines": [
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
           null,
           null,
           null,
@@ -417,15 +426,24 @@
           null
         ]
       },
-      "/Users/kainacockett/Desktop/mod3/projects/viewing_party_lite_7/app/controllers/application_controller.rb": {
+      "/Users/derekchavez/3mod/projects/viewing_party_lite_7/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
           1,
+          null
+        ]
+      },
+      "/Users/derekchavez/3mod/projects/viewing_party_lite_7/app/controllers/discover_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
           null
         ]
       }
     },
-    "timestamp": 1692745827
+    "timestamp": 1692747036
   }
 }
