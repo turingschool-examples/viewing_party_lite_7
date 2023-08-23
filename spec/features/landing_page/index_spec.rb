@@ -11,20 +11,16 @@ RSpec.describe 'landing page', type: :feature do
     expect(page).to have_content("Viewing Party Lite")
     expect(page).to have_button("New User")
 
+    expect(page).to have_link("Landing Page")
+
     within("#users") do 
       expect(page).to have_link("#{u1.name}")
       expect(page).to have_link("#{u2.name}")
       expect(page).to have_link("#{u3.name}")
+
+      click_link("#{u1.name}")
+
+      expect(current_path).to eq(user_path(u1))
     end
-
-    click_link("#{u1.name}")
-
-    expect(current_path).to eq(user_path(u1))
-    
-    expect(page).to have_link("Landing Page")
-    
-    click_link("#{u1.name}")
-
-    expect(current_path).to eq(user_path(u1))
   end
 end
