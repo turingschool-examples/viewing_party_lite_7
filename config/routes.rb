@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root to: "landing#index"
 
-  # Defines the root path route ("/")
-  # root "articles#index"
-  get "/", to: "landing#index"
-
-  resources :users, only: [:show]
+  resources :users, only: [:show, :create]
+  get "/register", to: "register#new"
 end
