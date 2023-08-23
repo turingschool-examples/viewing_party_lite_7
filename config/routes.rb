@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  resources :users, only: [:show] do
-    get "discover", on: :member
+  # Defines the root path route ("/")
+  # root "articles#index"
+  root "welcome#index"
+  
+  resources :users do
+    get "/discover", to: "discover_movies#search"
+    get "/movies", to: "discover_movies#index"
   end
 
-  resources :movies, only: [:index]
+  get "/register", to: "users#new"
 end
