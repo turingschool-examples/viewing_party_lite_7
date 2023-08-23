@@ -1,0 +1,12 @@
+<h1><%= @user.name %>'s Dashboard</h1>
+
+<%= button_to "Discover Movies" %>
+
+#add line break css here
+
+
+<% @user.viewing_parties.each do |viewing_party| %>
+  <li>You have a viewing party on <%= viewing_party.date %>
+  at <%= viewing_party.start_time %>
+  -- <%= viewing_party.duration %> minutes long</li></br>
+<% end %>
