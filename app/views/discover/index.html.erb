@@ -1,10 +1,11 @@
 <body>
-<% require 'pry';binding.pry %>
+  <%= render "shared/welcome_link" %>
+
   <%= button_to "Find Top Rated Movies", user_movies_path(@user), class: "button", method: :get %>
 
   <div>
     <%= form_tag user_movies_path(@user), method: :get do %>
-    <%= text_field_tag :search %>
+    <%= text_field_tag :title, params[:title] %>
     <%= submit_tag "Find Movies" %>
     <% end %>
   </div>

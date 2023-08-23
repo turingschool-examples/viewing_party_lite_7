@@ -3,13 +3,21 @@ class MovieFacade
     @title = title
   end
 
-  def movie
+  def get_discover_movies
+    movie = MovieService.new
+
+    json = movie.discover_movies
+    search_results = json[:results].map do |movie|
+      DiscoverMovie.new(movie)
+    end
+  end
+
+  def get_search_movies
     movie = MovieService.new
 
     json = movie.search_movies(@title)
-
-    @search_results = json[:results].map do |movie|
-      Movie.new(movie)
+    search_results = json[:results].map do |movie|
+      DiscoverMovie.new(movie)
     end
   end
 end

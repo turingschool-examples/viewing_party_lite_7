@@ -1,0 +1,13 @@
+<%= render "shared/welcome_link" %>
+
+<div class="discover-movies">
+  <% @facade.get_discover_movies.each do |movie| %>
+    <p><%= movie.name %>   <%= "Vote Average: #{movie.vote_average}" %></p>
+  <% end %>
+</div>
+
+<div class="search-movies">
+  <% @facade.get_search_movies.each do |movie| %>
+    <p><%= movie.name %>   <%= "Vote Average: #{movie.vote_average}" %></p>
+  <% end %>
+</div>

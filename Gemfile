@@ -67,6 +67,7 @@ group :development do
   # gem "spring"
   gem "rubocop-rails"
 end
+gem "faraday"
 
 group :test do
   gem "rspec-rails"

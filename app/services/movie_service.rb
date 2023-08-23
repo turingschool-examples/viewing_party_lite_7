@@ -1,10 +1,10 @@
 class MovieService
 
   def search_movies(title)
-    get_url("3/search/movie?language=en-US&page=#{title}")
+    get_url("/3/search/movie?language=en-US&page=1&query=#{title}")
   end
 
-  def discover_movies #logic to limit in model
+  def discover_movies 
     get_url("/3/discover/movie?language=en-US&page=1&sort_by=popularity.desc")
   end
 
@@ -15,7 +15,7 @@ class MovieService
 
   def conn
     Faraday.new(url: "https://api.themoviedb.org") do |f|
-      f.headers["api_key"] = ENV["API_KEY_AUTH"]
+      f.params["api_key"] = ENV["API_KEY_AUTH"]
     end
   end
 end
