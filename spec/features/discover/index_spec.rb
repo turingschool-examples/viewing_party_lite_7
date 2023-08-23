@@ -17,7 +17,10 @@ RSpec.describe "users discover path" do
       
       it "when the user clicks on the find top rated movies they should be taken to the movies results page" do
         click_on "Find Top Rated Movies"
+        
         expect(page).to have_current_path(user_movies_path(@user_1))
+        expect(page).to have_link("Elemental")
+        expect(page).to have_content("Vote Average")
       end
 
       it "when the user clicks on Find Movies, they should be taken to the movies results page" do
@@ -26,6 +29,14 @@ RSpec.describe "users discover path" do
         click_on "Find Movies"
   
         expect(page).to have_content("Harry Potter and the Philosopher's Stone")
+      end
+
+      it "also has a button to return to the Discover Page" do
+        click_on "Find Top Rated Movies"
+        expect(page).to have_button("Discover Page")
+
+        click_on "Discover Page"
+        expect(page).to have_current_path(user_discover_index_path(@user_1))
       end
     end
   end
