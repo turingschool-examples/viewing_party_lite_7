@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe MovieFacade do
   describe 'creates movie facade' do
     it 'returns top rated movies', :vcr do
-      movies = MovieFacade.top_rated_movies
+      movies = MovieFacade.top_movies
 
       expect(movies).to be_a Array
       expect(movies.first).to be_a Movie
