@@ -9,7 +9,7 @@ RSpec.describe "Discover Movies" do
   describe "discover movies show" do
     it "has a button called discover top rated movies" do
       visit discover_user_path(@user1)
-
+      save_and_open_page
       expect(page).to have_button("Discover Top Rated Movies")
     end
 
@@ -17,6 +17,7 @@ RSpec.describe "Discover Movies" do
       visit discover_user_path(@user1)
 
       expect(page).to have_field("Search Movie By Title")
+      expect(page).to have_button("Search")
     end
   end
 end
