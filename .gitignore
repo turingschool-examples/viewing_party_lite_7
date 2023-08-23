@@ -32,3 +32,4 @@
 coverage
 spec/spec_helper.rb
 .DS_Store
+config/application.yml
