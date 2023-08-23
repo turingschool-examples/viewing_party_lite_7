@@ -1,0 +1,5 @@
+<h2><%= @user.name %>'s Discovery Page</h2>
+
+<div id='discover_top_movies'>
+  <%= button_to "Find Top Rated Movies", movies_path(@user.id), method: :get %>
+</div>
