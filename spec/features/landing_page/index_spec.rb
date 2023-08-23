@@ -1,0 +1,22 @@
+require 'rails_helper'
+
+RSpec.describe 'landing page', type: :feature do
+  scenario 'landing page has title, new user button, and links' do
+    u1 = User.create!(name: "Sean", email: "championlyfe@gmail.com")
+    u2 = User.create!(name: "Volk", email: "primeathlete@gmail.com")
+    u3 = User.create!(name: "Izzy", email: "animeever@gmail.com")
+
+    visit root_path
+
+    expect(page).to have_content("Viewing Party Lite")
+    expect(page).to have_button("New User")
+
+    within("#users") do 
+      expect(page).to have_link("#{u1.name}")
+      expect(page).to have_link("#{u2.name}")
+      expect(page).to have_link("#{u3.name}")
+    end
+    
+    expect(page).to have_link("Landing Page")
+  end
+end
