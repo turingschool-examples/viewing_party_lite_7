@@ -1,5 +1,13 @@
 <h2><%= @user.name %>'s Discovery Page</h2>
 
 <div id='discover_top_movies'>
-  <%= button_to "Find Top Rated Movies", movies_path(@user.id), method: :get %>
+  <%= button_to "Find Top Rated Movies", movies_path, method: :get %>
+</div>
+<br>
+<div id='title_search'>
+  <%= form_with url: movies_path, local: true, method: :get do |form| %>
+    <%= form.label :title, "Movie Title" %>
+    <%= form.text_field :title %>
+    <%= form.submit "Find Movies" %>
+  <% end %>
 </div>

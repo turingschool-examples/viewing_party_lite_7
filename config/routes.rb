@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   
   get "/users/:id", to: "users#show", as: :dashboard
   get "/users/:id/discover", to: "discover#index", as: :discover
+
+  resources :movies, only: [:index]
 end
