@@ -19,7 +19,7 @@ RSpec.describe "Discover Movies page '/users/:id/discover'", type: :feature do
     it "Displays a text field and button to search for a movie title" do
       visit discover_path(@user_2.id)
 
-      within "title_search" do
+      within "#title_search" do
         expect(page).to have_field("Movie Title")
         expect(page).to have_button("Find Movies")
       end
