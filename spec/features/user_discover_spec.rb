@@ -22,20 +22,17 @@ describe 'User Discover page' do
         expect(current_path).to eq("/users/#{user.id}/movies")
         expect(page).to have_button("Discover Page")
         expect(page).to have_css('.movie_title', count: 20)
-        save_and_open_page
         
         visit "/users/#{user.id}/discover"
         fill_in "keyword_search", with: "Princess"
         click_button("Search by Movie Title")
         
-        save_and_open_page
         expect(current_path).to eq("/users/#{user.id}/movies")
         found_count = page.all('.movie_title').count
         expect(found_count).to be <= 20
         
         click_on "Discover Page"
         
-        save_and_open_page
         expect(current_path).to eq("/users/#{user.id}/discover")
       end
     end
