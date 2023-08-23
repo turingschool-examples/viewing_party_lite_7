@@ -9,4 +9,6 @@ Rails.application.routes.draw do
     resources :discover, only: [:index]
     resources :movies, only: [:index, :show]
   end
+
+  resources :viewing_parties
 end
