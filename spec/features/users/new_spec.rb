@@ -14,7 +14,7 @@ RSpec.describe 'New User' do
       expect(page).to have_content(@user_1.name)
       expect(page).to have_content(@user_2.name)
       expect(page).to have_content(@user_3.name)
-      expect(page).to_not have_content(@user_4.name)
+      expect(page).to_not have_content("Ralph")
 
       click_on 'New User'
 
