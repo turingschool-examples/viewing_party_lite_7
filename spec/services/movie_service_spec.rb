@@ -19,7 +19,7 @@ RSpec.describe MovieService do
     end
     
     it '.search_by_title', :vcr do
-      response = MovieService.search_by_title
+      response = MovieService.search_by_title("Jack")
 
       expect(response).to be_a Hash
       expect(response[:results]).to be_an Array

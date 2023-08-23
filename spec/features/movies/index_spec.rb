@@ -24,14 +24,13 @@ RSpec.describe "Movie Results Page '/users/:id/movies'", type: :feature do
 
     it 'displays top 20 movies by search query', :vcr do
       visit discover_path(@user_1.id)
-      fill_in :title, with: "Love"
+      fill_in :title, with: "Jack"
       click_button "Find Movies"
 
       expect(page).to have_content('Top Rated Movies')
       within '#top_movies' do
         expect(current_path).to eq(movies_path(@user_1.id))
-        expect(page).to have_link('The Godfather')
-        expect(page).to have_content('Vote Average: 8.7')
+        expect(page).to have_link('Jack')
       end
     end
 

@@ -12,5 +12,14 @@ RSpec.describe MovieFacade do
       expect(movies.first.title).to be_a String
       expect(movies.count).to eq(20)
     end
+
+    it 'returns top rated movies from search query', :vcr do
+      movies = MovieFacade.search_movies_by_title("Jack")
+
+      expect(movies).to be_a Array
+      expect(movies.first).to be_a Movie
+      expect(movies.first.title).to be_a String
+      expect(movies.count).to eq(20)
+    end
   end
 end
