@@ -14,6 +14,8 @@ RSpec.describe "The user dashboard" do
 
   it "has a button to discover movies" do
     expect(page).to have_button("Discover Movies")
+    click_button("Discover Movies")
+    expect(current_path).to eq(user_discover_path(@user))
   end
 
   it "has a section that lists viewing parties" do
