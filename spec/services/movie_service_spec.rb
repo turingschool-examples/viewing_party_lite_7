@@ -2,9 +2,9 @@ require 'rails_helper'
 
 describe MovieService do
     context "class methods" do
-        context "#discover" do
+        context "#top_rated" do
             it "returns 10 movies",:vcr do
-                discover = MovieService.new.discover
+                discover = MovieService.new.top_rated
 
                 expect(discover).to be_a Hash
                 expect(discover[:results]).to be_an Array

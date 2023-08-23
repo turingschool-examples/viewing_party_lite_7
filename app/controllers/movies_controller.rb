@@ -4,6 +4,6 @@ class MoviesController < ApplicationController
   end
 
   def index
-    
+    @facade = MovieFacade.new(params)
   end
 end
