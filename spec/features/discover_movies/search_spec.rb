@@ -9,7 +9,6 @@ RSpec.describe 'Discover movies page' do
     it 'has search options' do
       visit "/users/#{@user_1.id}/discover"
       
-
     end
   end
 end
