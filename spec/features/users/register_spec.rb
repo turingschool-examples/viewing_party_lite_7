@@ -22,12 +22,12 @@ RSpec.describe 'User register page' do
     expect(page).to have_button('Create New User')
   end
 
-  # it 'creates a new user and redirects to the user dashboard' do
-  #   visit(register_path)
-  #   fill_in 'Name', with: 'user4'
-  #   fill_in 'Email', with: 'user4@turing.edu'
-  #   click_button 'Create New User'
-  # end
+  it 'creates a new user and redirects to the user dashboard' do
+    visit(register_path)
+    fill_in 'Name', with: 'user4'
+    fill_in 'Email', with: 'user4@turing.edu'
+    click_button 'Create New User'
+  end
 
   it 'displays a link to go back to the landing page' do
     visit(register_path)
