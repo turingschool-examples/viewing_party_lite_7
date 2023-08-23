@@ -42,8 +42,8 @@ RSpec.describe "User Registration Page", type: :feature do
       within("#registration-form") do
         click_button("Create New User")
       end
-
-      expect(page).to have_content("Name and email can't be blank") #update this to include whatever the proper flash message is
+      
+      expect(page).to have_content("Error: Name can't be blank, Email can't be blank")
       expect(current_path).to eq(register_path)
       
       # Name is left blank
@@ -51,8 +51,8 @@ RSpec.describe "User Registration Page", type: :feature do
         fill_in("Email", with: "ethan@turing.edu")
         click_button("Create New User")
       end
-
-      expect(page).to have_content("Name can't be blank") #update this to include whatever the proper flash message is
+      
+      expect(page).to have_content("Error: Name can't be blank")
       expect(current_path).to eq(register_path)
 
       # Email is left blank
@@ -60,8 +60,8 @@ RSpec.describe "User Registration Page", type: :feature do
         fill_in("Name", with: "Ethan")
         click_button("Create New User")
       end
-
-      expect(page).to have_content("Email can't be blank") #update this to include whatever the proper flash message is
+      
+      expect(page).to have_content("Error: Email can't be blank")
       expect(current_path).to eq(register_path)
     end
 
@@ -77,11 +77,10 @@ RSpec.describe "User Registration Page", type: :feature do
         click_button("Create New User")
       end
 
-      expect(page).to have_content("\"#{not_email}\" is not a valid email") # You can change the flash message, whatever
+      expect(page).to have_content("Error: Email '#{not_email}' is not a valid email")
       expect(current_path).to eq(register_path)
     end
 
-    # this link might come in handy => https://guides.rubyonrails.org/active_record_validations.html#uniqueness
     it "returns an error if an email is not unique" do
       used_email = User.create(name: "Original Ethan", email: "ethan@turing.edu" )
       
@@ -90,8 +89,8 @@ RSpec.describe "User Registration Page", type: :feature do
         fill_in("Email", with: "ethan@turing.edu")
         click_button("Create New User")
       end
-
-      expect(page).to have_content("\"#{used_email.email}\" has already been taken") # You can change the flash message, whatever
+      
+      expect(page).to have_content("Error: Email has already been taken")
       expect(current_path).to eq(register_path)
     end
   end
