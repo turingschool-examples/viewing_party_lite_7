@@ -1,17 +1,18 @@
 class TmdbService
-  def self.top_rated_movies
-    response = conn.get("/3/movie/top_rated?api_key=#{ENV['TMDB_API_KEY']}&page=1")
+  def top_rated_movies
+    get_url("/3/movie/top_rated?api_key=#{ENV['TMDB_API_KEY']}&page=1")
+  end
+
+  def search_movies(query)
+    get_url("/3/search/movie?api_key=#{ENV['TMDB_API_KEY']}&query=#{query}&page=1")
+  end
+
+  def get_url(url)
+    response = conn.get(url)
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  def self.search_movies(query)
-    response = conn.get("/3/search/movie?api_key=#{ENV['TMDB_API_KEY']}&query=#{query}&page=1")
-    JSON.parse(response.body, symbolize_names: true)
-  end
-
-  private
-
-  def self.conn
+  def conn
     Faraday.new(url: 'https://api.themoviedb.org')
   end
 end
