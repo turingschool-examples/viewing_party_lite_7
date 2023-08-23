@@ -4,5 +4,15 @@ class MoviesController < ApplicationController
   end
 
   def index
+    search_type = params[:search_type]
+
+    conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
+      faraday.headers["Authorization"] = ENV["TMBD_API_KEY"]
+    end
+
+    response = conn.get("/3/movie/top_rated?language=en-US&with_original_language=en&page=1")
+
+    json = JSON.parse(response.body, symbolize_names: true)
+    @top_20 = json[:results]
   end
 end
