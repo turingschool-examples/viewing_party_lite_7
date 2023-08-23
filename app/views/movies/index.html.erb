@@ -1,0 +1,11 @@
+<%= button_to "Discover Page", user_discover_index_path(@user), method: :get %>
+<section id="top_20_list">
+  <table>
+    <% @movies.each do |movie| %>
+      <tr>
+        <td><%= link_to movie.title, user_movie_path(@user, movie), class: "movie_title" %></td>
+        <td>Vote Average: <%= movie.vote_average %></td>
+      </tr>
+    <% end %>
+  </table>
+</section>
