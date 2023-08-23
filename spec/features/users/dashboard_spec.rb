@@ -8,17 +8,16 @@ RSpec.describe "User Dashboard" do
 
   describe "user dashboard show" do
     it "displays the users name at the top of the page" do
-      visit user_path(@user1.id)
+      visit user_path(@user1)
       expect(page).to have_content("#{@user1.name}'s Dashboard")
       expect(page).to have_button("Discover Movies")
       expect(page).to have_content(@viewing_party1.name)
     end
 
     it "redirects me to users discover page when I click discover movies button" do
-      visit user_path(@user1.id)
-
+      visit user_path(@user1)
       click_button "Discover Movies"
-
+      
       expect(current_path).to eq(discover_user_path(@user1))
     end
   end
