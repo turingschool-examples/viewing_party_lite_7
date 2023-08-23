@@ -18,7 +18,6 @@ RSpec.describe "users discover path" do
       it "when the user clicks on the find top rated movies they should be taken to the movies results page" do
         click_on "Find Top Rated Movies"
         expect(page).to have_current_path(user_movies_path(@user_1))
-        expect(page).to have_content()
       end
 
       it "when the user clicks on Find Movies, they should be taken to the movies results page" do
