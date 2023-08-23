@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :users, only: [:show] do
-    get "/discover", to: "discover#home"
+    get "/discover", to: "users#discover"
   end
 end
