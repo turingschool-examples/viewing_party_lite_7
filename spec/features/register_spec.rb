@@ -23,6 +23,7 @@ RSpec.describe "user registration page" do
 
     expect(page).to have_field("Name")
     fill_in "Name", with: "PopCorn"
+
     expect(page).to have_field("Email")
 
     fill_in "Email", with: "beans"
@@ -35,6 +36,7 @@ RSpec.describe "user registration page" do
 
     expect(page).to have_button("Register")
     click_button "Register"
+
     expect(page).to have_content("Data Invalid")
   end
 end
