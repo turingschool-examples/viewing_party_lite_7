@@ -15,19 +15,17 @@ describe "Discover Movies Page" do
     end
   end
 
-  xit "has a text field to enter keyword(s) to search by movie title" do
+  it "has a text field to enter keyword(s) to search by movie title" do
     expect(page).to have_field("Keywords")
     expect(page).to have_button("Find Movies")
+
+    fill_in("Keywords", with: "Star Wars")
+    click_button("Find Movies")
+    # save_and_open_page
+    expect(current_path).to eq(user_movies_path(@user))
   end
 
   it "has a link to the root page" do
     expect(page).to have_link('Home', href: root_path)
   end
 end
-
-
-
-# I should see
-# Button to Discover Top Rated Movies
-# A text field to enter keyword(s) to search by movie title
-# A Button to Search by Movie Title
