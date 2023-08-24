@@ -31,5 +31,14 @@ RSpec.describe MovieService do
         expect(movie[:vote_average]).to be_a Float
       end
     end
+
+    it '.find_by_id', :vcr do
+      response = MovieService.find_by_id(5)
+      
+      expect(response).to be_a Hash
+      expect(response).to have_key :original_title
+      expect(response[:original_title]).to be_a String
+      expect(response[:original_title]).to eq("Four Rooms")
+    end
   end
 end

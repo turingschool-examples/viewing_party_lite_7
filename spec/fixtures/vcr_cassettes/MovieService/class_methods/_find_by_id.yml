@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/5?api_key=<MOVIE_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 24 Aug 2023 00:18:48 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=26124
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - d379eb3e75bb3df235b90ef1dca23cd7
+      X-Memc-Age:
+      - '6938'
+      X-Memc-Expires:
+      - '16792'
+      Etag:
+      - W/"c62a86e9f58fe0e64e56f0b0728bbaf3"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 c53ea9ac133c11d00dcd94dcb2a8b5ac.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - LAX53-P4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - JrqEt6IAjSFKo3WyxHcMDrNvMJ5VlNwKmZ-Tc7QhVpNd5w7VGKcpeQ==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/c1BaOxC8bo5ACFYkYYxL0bBWRaq.jpg","belongs_to_collection":null,"budget":4000000,"genres":[{"id":80,"name":"Crime"},{"id":35,"name":"Comedy"}],"homepage":"https://www.miramax.com/movie/four-rooms/","id":5,"imdb_id":"tt0113101","original_language":"en","original_title":"Four
+        Rooms","overview":"It''s Ted the Bellhop''s first night on the job...and the
+        hotel''s very unusual guests are about to place him in some outrageous predicaments.
+        It seems that this evening''s room service is serving up one unbelievable
+        happening after another.","popularity":23.246,"poster_path":"/75aHn1NOYXh4M7L5shoeQ6NGykP.jpg","production_companies":[{"id":14,"logo_path":"/m6AHu84oZQxvq7n1rsvMNJIAsMu.png","name":"Miramax","origin_country":"US"},{"id":59,"logo_path":"/yH7OMeSxhfP0AVM6iT0rsF3F4ZC.png","name":"A
+        Band Apart","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1995-12-09","revenue":4257354,"runtime":98,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Twelve
+        outrageous guests. Four scandalous requests. And one lone bellhop, in his
+        first day on the job, who''s in for the wildest New year''s Eve of his life.","title":"Four
+        Rooms","video":false,"vote_average":5.773,"vote_count":2414}'
+  recorded_at: Thu, 24 Aug 2023 00:18:48 GMT
+recorded_with: VCR 6.2.0
