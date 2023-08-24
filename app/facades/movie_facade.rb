@@ -19,10 +19,14 @@ class MovieFacade
   end
   
   def self.get_cast(id)
-    cast = []
     cast_data = MovieService.cast(id)[:cast][0..9].map do |cast_data|
-      cast << "#{cast_data[:name]} as #{cast_data[:character]}"
+       "#{cast_data[:name]} as #{cast_data[:character]}"
     end
-    cast
+  end
+
+  def self.get_reviews(id)
+    MovieService.reviews(id)[:results].map do |review_data|
+      Review.new(review_data)
+    end
   end
 end
