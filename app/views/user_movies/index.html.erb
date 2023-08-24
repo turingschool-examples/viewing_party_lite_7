@@ -1,3 +1,4 @@
 <% @top_twenty_movies.each do |movie| %>
-  <p><%= movie.title %></p>
+  <p><%= link_to movie.title, user_movie_path(@user, movie.id) %></p>
+  <p><%= movie.vote_average %></p>
 <% end %>
