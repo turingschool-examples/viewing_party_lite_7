@@ -9,11 +9,20 @@ RSpec.describe 'Movie Show Page' do
   describe 'When I visit a movie show page', :vcr do
     it "I see a button to create a viewing party" do
       visit movie_path(@user_1.id, 104)
-
+      
       expect(page).to have_button("Create Viewing Party")
       click_button("Create Viewing Party")
-
+      
       expect(current_path).to eq(new_party_path(@user_1.id, 104))
+    end
+    
+    it 'has a button to return to the discover page', :vcr do
+      visit movie_path(@user_1.id, 104)
+
+      expect(page).to have_button("Discover Page")
+      click_button("Discover Page")
+
+      expect(current_path).to eq(discover_path(@user_1.id))
     end
   end
 end
