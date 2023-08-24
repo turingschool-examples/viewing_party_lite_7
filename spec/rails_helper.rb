@@ -69,19 +69,19 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 
-  VCR.configure do |config|
-    config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
-    config.hook_into :webmock
-    config.filter_sensitive_data('<MOVIE_API_KEY>') { ENV['MOVIE_API_KEY'] }
-    config.configure_rspec_metadata!
-    config.allow_http_connections_when_no_cassette = true
-  end
+  # VCR.configure do |config|
+  #   config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+  #   config.hook_into :webmock
+  #   config.filter_sensitive_data('<MOVIE_API_KEY>') { ENV['MOVIE_API_KEY'] }
+  #   config.configure_rspec_metadata!
+  #   config.allow_http_connections_when_no_cassette = true
+  # end
 end
 
 VCR.configure do |config|
-  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+  config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
   config.hook_into :webmock
-  config.filter_sensitive_data("<HIDDEN KEY>"){ ENV["MOVIE_API_KEY"]}
+  config.filter_sensitive_data('<MOVIE_API_KEY>'){ ENV["MOVIE_API_KEY"] }
   config.configure_rspec_metadata!
   config.default_cassette_options = { re_record_interval: 20.days  }
 end
