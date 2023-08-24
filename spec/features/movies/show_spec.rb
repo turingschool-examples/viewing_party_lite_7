@@ -3,7 +3,7 @@ require 'rails_helper'
 describe "Movie Details Page", type: :feature do
   before do
     @user = create(:user)
-    @movie = # Some sort of movie object Godfather id is 238
+    @movie = nil# Some sort of movie object Godfather id is 238
     visit user_movie_path(@user, @movie)
   end
 
@@ -63,7 +63,7 @@ describe "Movie Details Page", type: :feature do
           within(".review-author")
             expect(page).to have_content(review1.author)
           end
-          
+
           expect(page).to have_content(review1.content)
         end
 
