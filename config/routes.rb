@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show] do
     get '/discover', to: 'users#discover'
-    resources :movies, only: [:show]
+    resources :movies, only: [:show] do
+      resources :viewing_party, only: [:new]
+    end
   end
 end
