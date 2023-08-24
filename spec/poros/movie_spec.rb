@@ -92,4 +92,6 @@ RSpec.describe Movie do
     expect(@movie.reviews).to be_an(Array)
     expect(@movie.reviews.count).to eq(@movie.total_reviews)
   end
+
+  # Sad Path Test for instances when something is nil-- no photo, no reviews, etc
 end
