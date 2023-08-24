@@ -1,1 +1,9 @@
-suh
+
+<%= button_to "Discover Top Rated Movies", user_movies_path(@user), method: :get %>
+
+<%= form_with url: user_movies_path(@user), method: :get, local: true do |f| %>
+<%= f.label :search_by_similar_word %>
+<%= f.text_field :search_by_similar_word, name: 'search' %>
+<% f.hidden_field :search %>
+<%= f.submit "Search by Movie Title" %>
+<% end %>
