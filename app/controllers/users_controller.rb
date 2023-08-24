@@ -51,6 +51,12 @@ class UsersController < ApplicationController
     @movies = movies_data.map { |movie_data| Movie.new(movie_data) }
   end
 
+  def movie_show
+    @user = User.find(params[:user_id])
+    @movie = MoviesService.new.find_movie(params[:movie_id])
+    # @movie = find movie in 'cached' movie facade?
+  end
+
   private
 
   def user_params
