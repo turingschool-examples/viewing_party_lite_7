@@ -1,5 +1,4 @@
 class MovieService
-
   def conn
     Faraday.new(url: "https://www.themoviedb.org") do |faraday|
       faraday.params["X-API-Key"] = ENV["TMDB_API_KEY"]
@@ -17,6 +16,5 @@ class MovieService
 
     json = JSON.parse(response.body, symbolize_names: true)
   end
-  require 'pry'; binding.pry
 end
 
