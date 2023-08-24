@@ -10,7 +10,7 @@ class TmdbService
     return [] unless response.success?
 
     movie_data = JSON.parse(response.body)['results']
-    MovieMapper.map_to_movies(movie_data)
+    MovieMapper.top_results(movie_data)
   end
 
   def search_movies(query)
@@ -18,6 +18,14 @@ class TmdbService
     return [] unless response.success?
 
     movie_data = JSON.parse(response.body)['results']
-    MovieMapper.map_to_movies(movie_data)
+    MovieMapper.top_results(movie_data)
+  end
+
+  def movie_details(id)
+    response = @connection.get("/3/movie/#{id}")
+    return [] unless response.success?
+
+    movie_data = JSON.parse(response.body)
+    MovieMapper.map_movie_details(movie_data)
   end
 end

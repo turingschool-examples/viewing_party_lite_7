@@ -9,9 +9,13 @@ class MoviesController < ApplicationController
     end
   end
   def show
+    
     @user = User.find(params[:user_id])
     tmdb_service = TmdbService.new
-    @movie = tmdb_service.find_movie(params[:id])
-    # Next step:  Find movie by ID
+    @movie = tmdb_service.movie_details(params[:id])
+
+    # @cast = tmdb_service.cast_details(params[:id])
+    # @review_count = tmdb_service.review_count(params[:id])
+    # @reviewers = tmdb_service.reviewers(params[:id])
   end
 end
