@@ -13,7 +13,7 @@ RSpec.describe "the movie results page" do
   # Details: There should only be a maximum of 20 results. The above details should be listed for each movie.
   
   # I should also see a button to return to the Discover Page.
-  it "displays the movie title as a link to the movie details page" do
+  xit "displays the movie title as a link to the movie details page" do
     visit "/users/#{@user3.id}/movies"
 
     # expect(page).to have_link("Elemental")

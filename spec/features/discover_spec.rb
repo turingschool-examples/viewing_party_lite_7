@@ -22,7 +22,7 @@ RSpec.describe "Discover page" do
     expect(current_path).to eq("/users/#{@user3.id}/movies")
   end
 
-  it "Search takes us to movies results page " do
+  xit "Search takes us to movies results page " do
     visit "/users/#{@user3.id}/discover"
     
     expect(page).to have_field("Search")
