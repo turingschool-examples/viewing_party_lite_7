@@ -24,5 +24,28 @@ RSpec.describe 'Movie Show Page' do
 
       expect(current_path).to eq(discover_path(@user_1.id))
     end
+
+    it 'displays the movie title, vote average, runtime, genre, and summary', :vcr do
+      visit movie_path(@user_1.id, 25)
+
+      within '#movie_info' do
+        expect(page).to have_content("Jarhead")
+        expect(page).to have_content("Vote: 6.617")
+        expect(page).to have_content("Runtime: 123 minutes")
+        expect(page).to have_content("Drama")
+        expect(page).to have_content("War")
+        expect(page).to have_content("Jarhead is a film about a US Marine Anthony Swofford's experience in the Gulf War.")
+      end
+    end
+
+    xit 'displays 10 cast members and their role', :vcr do
+      within '#cast' do
+      end
+    end
+
+    xit 'displays the number of reviews and all reviews with author', :vcr do
+      within '#reviews' do
+      end
+    end
   end
 end
