@@ -27,10 +27,10 @@ RSpec.describe MoviesService, :vcr do
     expect(movie.image).to be_a(String)
     expect(movie.vote_average).to be_a(Float)
     expect(movie.runtime).to be_an(Integer)
-    expect(movie.genres).to be_an(Array)
+    expect(movie.genres).to be_a(String)
     expect(movie.summary).to be_a(String)
-    expect(movie.cast.first).to be_a(Hash)
+    expect(movie.cast).to all be_a(CastMember)
     expect(movie.total_reviews).to be_an(Integer)
-    expect(movie.reviews.first).to be_a(Hash)
+    expect(movie.reviews).to all be_a(Review)
   end
 end
