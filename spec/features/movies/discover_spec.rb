@@ -17,7 +17,7 @@ RSpec.describe "Discover Movies Page" do
   it "has a form to search for movies by title", :vcr do
     expect(page).to have_field("search")
     expect(page).to have_button("Search")
-
+    fill_in "Search", with: "Lord Of The"
 
     click_button("Search")
     expect(current_path).to eq(user_movies_path(@user))

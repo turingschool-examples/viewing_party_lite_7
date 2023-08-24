@@ -3,7 +3,7 @@
 
 <h1>Discover Movies Page</h1><br><br>
 
-<%= button_to "Top Rated Movies", user_movies_path(@user), method: :get %>
+<%= button_to "Top Rated Movies", user_movies_path(@user), method: :get, params: { :search => "top_rated" } %>
 
 <br><br>
 

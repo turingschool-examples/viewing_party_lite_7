@@ -3,7 +3,7 @@ require 'rails_helper'
 describe MovieService do
     context "class methods" do
         context "#top_rated" do
-            it "returns 20 movies", :vcr do
+            it "returns top rated movies", :vcr do
                 discover = MovieService.new.top_rated
 
                 expect(discover).to be_a Hash
