@@ -11,7 +11,7 @@ RSpec.describe Movie do
       }).
     to_return(status: 200, body: json_response)
     
-    @parsed = JSON.parse(json_response)
+    @parsed = JSON.parse(json_response, symbolize_names: true)
     @movie = Movie.new(@parsed)
   end
 
@@ -40,15 +40,19 @@ RSpec.describe Movie do
     expect(@movie.runtime).to eq(78)
   end
 
+  it "can format runtime" do
+    expect(@movie.format_runtime).to be_a(String)
+    expect(@movie.format_runtime).to eq("1hr 18min")
+  end
+
   it "can format genres" do
-    result = @movie.format_genres([{"id"=>18, "name"=>"Drama"}, {"id"=>27, "name"=>"Horror"}, {"id"=>53, "name"=>"Thriller"}, {"id"=>80, "name"=>"Crime"}])
-    expect(result).to eq(["Drama", "Horror", "Thriller", "Crime"])
+    result = @movie.format_genres([{:id =>18, :name=>"Drama"}, {:id=>27, :name=>"Horror"}, {:id=>53, :name=>"Thriller"}, {:id=>80, :name=>"Crime"}])
+    expect(result).to eq("Drama, Horror, Thriller, Crime")
   end
 
   it "has genres" do
-    expect(@movie.genres).to be_an(Array)
-    expect(@movie.genres.count).to eq(4)
-    expect(@movie.genres).to eq(["Drama", "Horror", "Thriller", "Crime"])
+    expect(@movie.genres).to be_a(String)
+    expect(@movie.genres).to eq("Drama, Horror, Thriller, Crime")
   end
 
   it "has a summary" do
@@ -57,19 +61,17 @@ RSpec.describe Movie do
   end
   
   it "formats cast members into an array with maximum 10" do
-    result = @movie.format_cast(@parsed["credits"]["cast"])
+    result = @movie.generate_cast(@parsed[:credits][:cast])
 
     expect(result).to be_an(Array)
-    expect(result).to all be_a(Hash)
-    result.each { |hash| expect(hash.keys).to eq([:name, :character]) }
+    expect(result).to all be_a(CastMember)
     expect(result.count).to eq(10)
   end
 
   it "has an array of ten cast members" do
     expect(@movie.cast).to be_an(Array)
     expect(@movie.cast.count).to eq(10)
-    expect(@movie.cast.first).to be_a(Hash)
-    expect(@movie.cast.first.keys).to eq([:name, :character])
+    expect(@movie.cast).to all be_a(CastMember)
   end
 
   it "can count total reviews" do
@@ -78,19 +80,17 @@ RSpec.describe Movie do
   end
 
   it "can format reviews" do
-    result = @movie.format_reviews(@parsed["reviews"]["results"])
+    result = @movie.generate_reviews(@parsed[:reviews][:results])
 
-      expect(result).to be_an(Array)
-      expect(result.count).to eq(@movie.total_reviews)
-      expect(result).to all be_a(Hash)
-      result.each do |review|
-        expect(review.keys).to eq([:author, :rating, :comments])
-      end
+    expect(result).to be_an(Array)
+    expect(result.count).to eq(@movie.total_reviews)
+    expect(result).to all be_a(Review)
   end
 
   it "has reviews" do
     expect(@movie.reviews).to be_an(Array)
     expect(@movie.reviews.count).to eq(@movie.total_reviews)
+    expect(@movie.reviews).to all be_a(Review)
   end
 
   # Sad Path Test for instances when something is nil-- no photo, no reviews, etc
