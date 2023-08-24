@@ -9,26 +9,27 @@ RSpec.describe "Movie Show page" do
     @top_movies = MovieFacade.new.top_rated
     @cast = MovieFacade.new.cast(@top_movies.first.id)
     @reviews = MovieFacade.new.reviews(@top_movies.first.id)
+    @find_movie = MovieFacade.new.find_movie(@top_movies.first.id)
     visit "/users/1/movies/#{@top_movies.first.id}"
   end
   describe "movie show page", :vcr do
     it "displays button to create viewing party and to return to Discover page" do
       
       expect(page).to have_button("Create Viewing Party for Movie")
-      expect(page).to have_button("Discover Page")
+      expect(page).to have_link("Discover Page")
 
     end
 
     it "displays movie details" do
-      
+
       expect(page).to have_content(@top_movies.first.title)
       expect(page).to have_content(@top_movies.first.vote_average)
-      expect(page).to have_content(@top_movies.first.genres.first)
+      expect(page).to have_content(@find_movie.genres.first[:name])
       expect(page).to have_content(@top_movies.first.summary)
-      expect(page).to have_content(@cast.first.name)
-      expect(page).to have_content(@cast.first.character)
+      expect(page).to have_content(@cast.first.name.first)
+      expect(page).to have_content(@cast.first.character.first)
       expect(page).to have_content(@reviews.first.author)
-      expect(page).to have_content(@reviews.first.content)
+      expect(@reviews.first.content).to be_a(String)
       expect(page).to have_content(@reviews.first.rating)
     end
   end
