@@ -8,9 +8,9 @@
       <h4>Register New User</h4>
 
       <%= form_with url: "/users", method: :post, local: true do |f| %>
-        <%= f.label :name %><br>
+        <%= f.label :name %> &nbsp;
         <%= f.text_field :name %><br><br>
-        <%= f.label :email %><br>
+        <%= f.label :email %> &nbsp;
         <%= f.text_field :email %><br><br>
         <%= f.submit "Register" %>
       <% end %>
