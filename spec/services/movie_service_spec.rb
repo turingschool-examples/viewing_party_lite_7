@@ -37,7 +37,14 @@ RSpec.describe MovieService do
       expect(response).to be_a Hash
       expect(response).to have_key :original_title
       expect(response[:original_title]).to be_a String
-      expect(response[:original_title]).to eq("Jarhead")
+      expect(response).to have_key :vote_average
+      expect(response[:vote_average]).to be_a Float
+      expect(response).to have_key :runtime
+      expect(response[:runtime]).to be_a Integer
+      expect(response).to have_key :genres
+      expect(response[:genres]).to be_an Array
+      expect(response).to have_key :overview
+      expect(response[:overview]).to be_a String
     end
   end
 end

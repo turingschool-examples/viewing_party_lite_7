@@ -43,7 +43,7 @@ RSpec.describe 'Movie Show Page' do
       end
     end
 
-    xit 'displays the number of reviews and all reviews with author', :vcr do
+    xit 'displays the count of reviews and all reviews with author', :vcr do
       within '#reviews' do
       end
     end
