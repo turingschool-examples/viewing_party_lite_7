@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all
   end
-  
+
   def show
     @user = User.find(params[:id])
   end
@@ -21,9 +21,34 @@ class UsersController < ApplicationController
       redirect_to register_path
     end
   end
-    
+
   def discover
-    
+    @user = User.find(params[:user_id])
+    @top_rated_movies = MoviesService.new.top_rated
+  end
+
+  def movies
+    @user = User.find(params[:user_id])
+    query = params[:q]
+    movies_data = []
+
+    @title = if query == 'top_rated'
+               'Top Rated Movies'
+             elsif query.present?
+               "Search Results for '#{query}'"
+             else
+               'Error: No Query'
+             end
+
+    movies_data = if query == 'top_rated'
+                    MoviesService.new.top_rated.first(20)
+                  elsif query.present?
+                    MoviesService.new.search(query).first(20)
+                  else
+                    []
+                  end
+
+    @movies = movies_data.map { |movie_data| Movie.new(movie_data) }
   end
 
   private
