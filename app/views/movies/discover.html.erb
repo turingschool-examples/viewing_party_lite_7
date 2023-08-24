@@ -9,6 +9,6 @@
 <%# Find Movies by Name %>
 <%= form_with url: user_movies_path(@user), method: :get, local: true do |f| %>
   <%= f.hidden_field :q, value: :keywords %>
-  <%= f.text_field :keywords %>
+  <%= f.text_field :keywords, placeholder: "Search" %>
   <%= f.submit "Find Movies" %>
 <% end %>
