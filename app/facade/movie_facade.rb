@@ -1,9 +1,14 @@
 class MovieFacade
+
   def initialize(title)
     @title = title
     @movie = MovieService.new
   end
 
+  # def get_movie_by_id(movie_id)
+  #   @movie.movie_by_id(movie_id)
+  # end
+  
   def get_discover_movies
     discover = @movie.discover_movies
 
@@ -46,10 +51,7 @@ class MovieFacade
       review_authors: authors
     }
 
-    discover_movie = DiscoverMovie.new(attributes)
-    # discover_movie.save
-
-    discover_movie
+    DiscoverMovie.new(attributes)
   end
 
   def get_genre_names(genre_ids)

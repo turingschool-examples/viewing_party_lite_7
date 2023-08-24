@@ -1,5 +1,6 @@
 <%= render "shared/welcome_link" %>
 <%= render "shared/discover_button" %><br>
 
-<%= button_to "Create Viewing Party", new_viewing_party_path, method: :get, params: { user_id: @user.id, movid_id: @movie.id } %>
+<%= button_to "Create Viewing Party", new_viewing_party_path, method: :get, params: { user_id: @user.id, id: @movie_id } %>
+
 

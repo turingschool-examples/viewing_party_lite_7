@@ -10,7 +10,7 @@
 <% else %>
   <div class="search-movies">
     <% @facade.get_search_movies.each do |movie| %>
-      <p><%= link_to movie.title, user_movie_path(@user, movie.id), method: :get %>   <%= "Vote Average: #{movie.vote_average}" %></p>
+      <p><%= link_to movie.title, user_movie_path(@user, movie.id), method: :get%>   <%= "Vote Average: #{movie.vote_average}" %></p>
     <% end %>
   </div>
 <% end %>
