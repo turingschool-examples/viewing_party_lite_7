@@ -22,30 +22,45 @@ describe 'User Movies detail page' do
         expect(current_path).to eq("/users/#{user.id}/movies/#{movie_id}/viewing_party/new")
       end
     end
-
+    
     it "And I should see the following information about the movie:
     Movie Title
     Vote Average of the movie
     Runtime in hours & minutes
     Genre(s) associated to movie
-    Summary description
-    List the first 10 cast members (characters&actress/actors)
-    Count of total reviews
-    Each review's author and information" do
-      VCR.use_cassette('themoviedb_details_3') do
-        user = create(:user)
-        movie_id = 238
-        visit "/users/#{user.id}/movies/#{movie_id}"
-        save_and_open_page
+    Summary description" do
+    VCR.use_cassette('themoviedb_details_3') do
+      user = create(:user)
+      movie_id = 238
+      visit "/users/#{user.id}/movies/#{movie_id}"
+      save_and_open_page
+      
+      expect(page).to have_content("The Godfather")
+      expect(page).to have_content("8.7")
+      expect(page).to have_content("175")
+      expect(page).to have_content("Drama Crime")
+      expect(page).to have_content("Summary")
+    end
+  end
+  
+  it "And I should see:  List the first 10 cast members (characters&actress/actors)" do
+    VCR.use_cassette('themoviedb_details_4') do
+      user = create(:user)
+      movie_id = 238
+      visit "/users/#{user.id}/movies/#{movie_id}"
 
-        expect(page).to have_content("The Godfather")
-        expect(page).to have_content("8.7")
-        expect(page).to have_content("120")
-        expect(page).to have_content("Drama")
-        expect(page).to have_content("Summary")
-        expect(page).to have_content("Cast 1")
-        expect(page).to have_content("Cast 2")
-        expect(page).to have_content("Cast 3")
+      expect(page).to have_content("Character: Don Vito Corleone, Actor: Marlon Brando")
+      expect(page).to have_content("Character: Michael Corleone, Actor: Al Pacino")
+      expect(page).to have_content("Character: Sonny Corleone, Actor: James Caan")
+    end
+  end
+  
+  it "And I should see:  Count of total reviews and Each review's author and information" do
+    VCR.use_cassette('themoviedb_details_5') do
+      user = create(:user)
+      movie_id = 238
+      visit "/users/#{user.id}/movies/#{movie_id}"
+      
         expect(page).to have_content("500 reviews")
         within ("#reviewers") do
           expect(page).to have_content("Reviewer1")

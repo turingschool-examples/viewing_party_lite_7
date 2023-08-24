@@ -28,4 +28,12 @@ class TmdbService
     movie_data = JSON.parse(response.body)
     MovieMapper.map_movie_details(movie_data)
   end
+
+  def cast_details(id)
+    response = @connection.get("/3/movie/#{id}/credits")
+    return [] unless response.success?
+
+    cast_data = JSON.parse(response.body)
+    CastMapper.map_cast_details(cast_data)
+  end
 end

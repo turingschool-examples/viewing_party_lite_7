@@ -17,9 +17,14 @@
   <b>Summary:</b><br />
   <%= @movie.summary %>
 </p>
-<p>
-  Cast:<br />
+<p style="text-align: left">
+  <b>Cast:</b><br />
+  <ol>
+    <% @cast.each do |cast_member| %>
+      <li style="text-align: left">Character: <%= cast_member.character %>, Actor: <%= cast_member.name%><br /></li>
+    <% end %>
+  </ol>
 </p>
-<p>
+<p style="text-align: left">
   # Reviews:<br />
 </p>
