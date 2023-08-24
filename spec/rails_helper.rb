@@ -83,5 +83,5 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.filter_sensitive_data('<MOVIE_API_KEY>'){ ENV["MOVIE_API_KEY"] }
   config.configure_rspec_metadata!
-  config.default_cassette_options = { re_record_interval: 20.days  }
+  config.default_cassette_options = { re_record_interval: 20.days, record: :new_episodes  }
 end
