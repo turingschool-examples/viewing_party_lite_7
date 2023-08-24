@@ -11,5 +11,4 @@ Rails.application.routes.draw do
 
   get "/users/:id/movies", to: "movies#index", as: :movies
   get "/users/:id/movies/:movie_id", to: "movies#show", as: :movie
-
 end

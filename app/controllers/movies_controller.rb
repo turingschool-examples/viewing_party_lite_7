@@ -11,6 +11,10 @@ class MoviesController < ApplicationController
     end
   end
 
+  def show
+    
+  end
+
   private
   def find_user
     @user = User.find(params[:id])
