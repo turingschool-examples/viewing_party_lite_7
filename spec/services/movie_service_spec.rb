@@ -34,6 +34,7 @@ RSpec.describe MovieService do
 
     it '.find_by_id', :vcr do
       response = MovieService.find_by_id(25)
+
       expect(response).to be_a Hash
       expect(response).to have_key :original_title
       expect(response[:original_title]).to be_a String
@@ -45,6 +46,21 @@ RSpec.describe MovieService do
       expect(response[:genres]).to be_an Array
       expect(response).to have_key :overview
       expect(response[:overview]).to be_a String
+    end
+
+    it '.cast', :vcr do
+      response = MovieService.cast(25)
+
+      expect(response).to be_a Hash
+      expect(response).to have_key :cast
+      expect(response[:cast]).to be_an Array
+      
+      response[:cast].each do |cast|
+        expect(cast).to have_key :name
+        expect(cast[:name]).to be_a String
+        expect(cast).to have_key :character
+        expect(cast[:character]).to be_a String
+      end
     end
   end
 end
