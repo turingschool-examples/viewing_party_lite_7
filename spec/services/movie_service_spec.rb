@@ -62,5 +62,19 @@ RSpec.describe MovieService do
         expect(cast[:character]).to be_a String
       end
     end
+
+    it '.reviews', :vcr do
+      response = MovieService.reviews(569094)
+      expect(response).to be_a Hash
+      expect(response).to have_key :results
+      expect(response[:results]).to be_an Array
+
+      response[:results].each do |review|
+        expect(review).to have_key :author
+        expect(review[:author]).to be_a String
+        expect(review).to have_key :content
+        expect(review[:content]).to be_a String
+      end
+    end
   end
 end

@@ -27,4 +27,8 @@ class MovieService
   def self.cast(id)
     get_url("movie/#{id}/credits")
   end
+
+  def self.reviews(id)
+    get_url("movie/#{id}/reviews")
+  end
 end
