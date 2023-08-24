@@ -9,7 +9,7 @@ RSpec.describe Movie do
                           vote_average: 6.617,
                           runtime: 123,
                           genres: "Drama",
-                          summary: "Jarhead is a film about a US Marine Anthony Swofford's experience in the Gulf War."
+                          overview: "Jarhead is a film about a US Marine Anthony Swofford's experience in the Gulf War."
                         })
 
       expect(movie).to be_a Movie

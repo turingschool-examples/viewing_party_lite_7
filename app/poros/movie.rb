@@ -14,6 +14,6 @@ class Movie
     @vote_average = movie_data[:vote_average]
     @runtime = movie_data[:runtime]
     @genres = movie_data[:genres]
-    @summary = movie_data[:summary]
+    @summary = movie_data[:overview]
   end
 end
