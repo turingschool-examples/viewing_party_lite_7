@@ -1,11 +1,19 @@
-<h1>Register New User</h1>
 
 <%= render partial: "shared/landing_header" %><br><br>
 
-<%= form_with url: "/users", method: :post, local: true do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %><br><br>
-  <%= f.label :email %>
-  <%= f.text_field :email %><br><br>
-  <%= f.submit "Register" %>
-<% end %>
+<body>
+  <div class="content">
+    <center><table>
+      <h1>Viewing Party</h1>
+      <h4>Register New User</h4>
+
+      <%= form_with url: "/users", method: :post, local: true do |f| %>
+        <%= f.label :name %><br>
+        <%= f.text_field :name %><br><br>
+        <%= f.label :email %><br>
+        <%= f.text_field :email %><br><br>
+        <%= f.submit "Register" %>
+      <% end %>
+    </center></table>
+  </div>
+</body>
