@@ -9,6 +9,7 @@ RSpec.describe "Movie results page" do
     it "displays movies" do
       visit movies_user_path(@user1)
 
+
     end
   end
 end
