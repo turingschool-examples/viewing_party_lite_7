@@ -1,0 +1,6 @@
+<h1> Top 20 Most Popular Movies </h1>
+<h1><%= @movie_facade.top_twenty %> Results </h1>
+<% @movie_facade.top_twenty.each do |movie| %>
+  <li class="name"><%= movie.title %></li>
+  <li class="role"><%= movie.vote_average %></li>
+<% end %>
