@@ -5,10 +5,10 @@ RSpec.describe "Movies Results Page" do
     create_list(:user, 1)
     @user = User.first
 
-    visit user_movies_path(@user)
   end
-
-  it "has a title" do
+  
+  it "has a title", :vcr do
+    visit user_movies_path(@user)
     expect(page).to have_content("Movies Results Page")
   end
 end
