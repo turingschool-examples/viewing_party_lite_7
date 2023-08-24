@@ -17,4 +17,10 @@ class Movie
     @genres = movie_data[:genres]
     @summary = movie_data[:overview]
   end
+
+  def runtime_conversion
+    hours = @runtime / 60
+    minutes = @runtime % 60
+    "#{hours}hr #{minutes}min"
+  end
 end

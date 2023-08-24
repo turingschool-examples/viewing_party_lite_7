@@ -14,6 +14,8 @@ class MoviesController < ApplicationController
   def show
     @movie = MovieFacade.get_movie(params[:movie_id])
     @cast = MovieFacade.get_cast(params[:movie_id])
+    @reviews = MovieFacade.get_reviews(params[:movie_id])
+    @review_count = MovieFacade.count_reviews(params[:movie_id])
   end
 
   private

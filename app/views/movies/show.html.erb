@@ -6,7 +6,7 @@
 <br>
 <div id='movie_info'>
   <p>Vote: <%= @movie.vote_average %></p>
-  <p>Runtime: <%= @movie.runtime %> minutes</p>
+  <p>Runtime: <%= @movie.runtime_conversion %></p>
   <ul>Genres: <% @movie.genres.each do |genre| %>
     <li><%= genre[:name] %></li>
   <% end %>
@@ -17,4 +17,9 @@
       <%= person %>
     <% end %>
   </div>
+  <div id='reviews'>
+    <p><%= @review_count %> Reviews: <% @reviews.each do |review| %>
+      <%= review.author %>
+      <%= review.content %>
+    <% end %>
 </div>

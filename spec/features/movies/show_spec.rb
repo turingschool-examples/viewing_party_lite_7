@@ -31,7 +31,7 @@ RSpec.describe 'Movie Show Page' do
       expect(page).to have_content("Jarhead")
       within '#movie_info' do
         expect(page).to have_content("Vote: 6.617")
-        expect(page).to have_content("Runtime: 123 minutes")
+        expect(page).to have_content("Runtime: 2hr 3min")
         expect(page).to have_content("Drama")
         expect(page).to have_content("War")
         expect(page).to have_content("Jarhead is a film about a US Marine")
@@ -40,7 +40,7 @@ RSpec.describe 'Movie Show Page' do
     
     it 'displays 10 cast members and their role', :vcr do
       visit movie_path(@user_1.id, 25)
-
+      
       within '#cast' do
         expect(page).to have_content("Jake Gyllenhaal as Anthony Swofford")
         expect(page).to have_content("Jamie Foxx as Staff Sgt. Sykes")
@@ -48,9 +48,14 @@ RSpec.describe 'Movie Show Page' do
         expect(page).to have_content("Chris Cooper as Lt. Col. Kazinski")
       end
     end
+    
+    it 'displays the count of reviews and all reviews with author', :vcr do
+      visit movie_path(@user_1.id, 569094)
 
-    xit 'displays the count of reviews and all reviews with author', :vcr do
       within '#reviews' do
+        expect(page).to have_content("8 Reviews")
+        expect(page).to have_content("garethmb")
+        expect(page).to have_content("Life as a teenager is never easy")
       end
     end
   end

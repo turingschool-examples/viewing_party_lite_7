@@ -29,4 +29,10 @@ class MovieFacade
       Review.new(review_data)
     end
   end
+
+  def self.count_reviews(id)
+    MovieService.reviews(id)[:results].map do |review_data|
+      Review.new(review_data)
+    end.count
+  end
 end

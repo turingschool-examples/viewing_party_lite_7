@@ -45,5 +45,11 @@ RSpec.describe MovieFacade do
       expect(movie_reviews.first.author).to be_a String
       expect(movie_reviews.first.content).to be_a String
     end
+
+    it 'returns count of reviews for movie', :vcr do
+      movie_reviews_count = MovieFacade.count_reviews(569094)
+      
+      expect(movie_reviews_count).to be_a Integer
+    end
   end
 end
