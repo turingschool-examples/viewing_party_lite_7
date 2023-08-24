@@ -1,7 +1,7 @@
 class Movie
   attr_reader :id,
               :title,
-              :vote_average,
+              :rating,
               :runtime,
               :genres,
               :summary,
@@ -13,7 +13,7 @@ class Movie
     @id = data[:id]
     @title = data[:original_title]
     @image = data[:backdrop_path]
-    @vote_average = data[:vote_average]
+    @rating= data[:vote_average]
     @runtime = data[:runtime]
     @genres = format_genres(data[:genres])
     @summary = data[:overview]
@@ -39,4 +39,3 @@ class Movie
   end
 
 end
-

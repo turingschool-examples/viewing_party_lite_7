@@ -1,4 +1,4 @@
-require "rails_helper"
+require 'rails_helper'
 
 RSpec.describe Movie do
   before do
@@ -30,9 +30,9 @@ RSpec.describe Movie do
     expect(@movie.title).to eq("Das Cabinet des Dr. Caligari")
   end
 
-  it "has a vote average" do
-    expect(@movie.vote_average).to be_a(Float)
-    expect(@movie.vote_average).to eq(7.955)
+  it "has a rating" do
+    expect(@movie.rating).to be_a(Float)
+    expect(@movie.rating).to eq(7.955)
   end
 
   it "has a runtime" do

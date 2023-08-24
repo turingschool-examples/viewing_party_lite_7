@@ -1,12 +1,15 @@
-class MoviesService 
-  def connection 
-    connection = Faraday.new("https://api.themoviedb.org/") do |faraday|
-      faraday.params["api_key"] = ENV["MOVIE_API_KEY"]
+class MoviesService
+  def connection
+    connection = Faraday.new('https://api.themoviedb.org/') do |faraday|
+      faraday.params['api_key'] = ENV['MOVIE_API_KEY']
     end
   end
 
   def search(keyword)
-
+    response = connection.get('3/search/movie') do |faraday|
+      faraday.params['query'] = keyword
+    end
+    JSON.parse(response.body)['results']
   end
 
   def top_rated

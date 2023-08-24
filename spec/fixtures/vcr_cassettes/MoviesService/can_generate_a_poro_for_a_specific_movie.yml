@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.themoviedb.org/3/movie/234?api_key=<HIDDEN KEY>&append_to_response=reviews,credits
+    uri: https://api.themoviedb.org/3/movie/234?api_key=<HIDDEN KEY>&append_to_response=reviews,credit
     body:
       encoding: US-ASCII
       string: ''

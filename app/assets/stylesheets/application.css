@@ -102,7 +102,7 @@ form.button input[type="submit"]:active {
 .table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: auto;  /* Change this to auto or a fixed width */
+  width: auto;
 }
 
 .td1,
@@ -115,11 +115,8 @@ form.button input[type="submit"]:active {
 .th1 {
   background-color: #8D8F8F;
   color: #ffffff;
-  text-align: center;  /* Keep this if you want the header cells to be centered */
+  text-align: center;
 }
-
-/* ... existing CSS ... */
-
 
 .column-header {
   background-color: lavenderblush;
