@@ -1,1 +1,17 @@
-suhhh
+<section>
+<% if @movie  %>
+Your search result = <%= link_to @movie[:title], user_movie_path(@user, @movie) %>, Vote Average: <%=  @movie[:vote_average]%>
+<% end %>
+
+</section>
+
+
+<section>
+<% @movies.each do |movie| %>
+  <ul>
+    <li>
+      <p>  <%= link_to movie[:title], user_movie_path(@user, movie) %>, Vote Average: <%=  movie[:vote_average] %> </p>
+    </li>
+  </ul>
+  <% end %>
+</section>
