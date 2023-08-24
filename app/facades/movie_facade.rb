@@ -4,13 +4,25 @@ class MovieFacade
   end
 
   def top_twenty
-    service = MovieService.new
-
-    json = service.top_20_flicks(@movie)
-
-    @top_twenty = json[:results].map do |top_twenty_data|
-      TopTwenty.new(top_twenty_data)
+    top_twenties_data[:results].map do |top_twenty_data|
+      Movie.new(top_twenty_data)
     end
+  end
+
+  def search
+    search_data[:results].map do |searched|
+      Movie.new(searched)
+    end
+  end
+
+  def search_data
+    @search_data = movie_service.movie_search
+  end
+
+  private
+
+  def top_twenties_data
+    @_top_twenties_data ||= movie_service.top_20_flicks
   end
 end
   
