@@ -10,5 +10,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show] do
     get '/discover', to: 'users#discover'
+    get '/movies', to: 'users#movies'
   end
 end
