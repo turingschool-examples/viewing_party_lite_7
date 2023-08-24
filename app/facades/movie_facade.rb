@@ -17,4 +17,12 @@ class MovieFacade
     movie_data = MovieService.find_by_id(id)
     Movie.new(movie_data)
   end
+  
+  def self.get_cast(id)
+    cast = []
+    cast_data = MovieService.cast(id)[:cast][0..9].map do |cast_data|
+      cast << "#{cast_data[:name]} as #{cast_data[:character]}"
+    end
+    cast
+  end
 end

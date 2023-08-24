@@ -29,5 +29,15 @@ RSpec.describe MovieFacade do
       expect(movie.title).to be_a String
       expect(movie.title).to eq("Four Rooms")
     end
+    
+    it 'returns cast and characters for movie', :vcr do
+      movie_cast = MovieFacade.get_cast(25)
+      
+      expect(movie_cast).to be_a Array
+      expect(movie_cast.count).to eq(10)
+      movie_cast.each do |cast|
+        expect(cast).to be_a String
+      end
+    end
   end
 end

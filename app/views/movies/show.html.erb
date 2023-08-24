@@ -2,7 +2,7 @@
 
 <%= button_to "Discover Page", discover_path(@user.id), method: :get %>
 <br>
-<%= button_to "Create Viewing Party", new_party_path(@user, @movie.id), method: :get %>
+<%= button_to "Create Viewing Party for #{@movie.title}", new_party_path(@user, @movie.id), method: :get %>
 <br>
 <div id='movie_info'>
   <p>Vote: <%= @movie.vote_average %></p>
@@ -12,4 +12,9 @@
   <% end %>
   </ul>
   <p>Summary: <%= @movie.summary %></p>
+  <div id='cast'>
+    <p>Cast: <% @cast.each do |person| %>
+      <%= person %>
+    <% end %>
+  </div>
 </div>

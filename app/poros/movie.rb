@@ -7,6 +7,7 @@ class Movie
               :runtime,
               :genres,
               :summary
+              
 
   def initialize(movie_data) ## < -- movie_data is coming in from the Movie Facade
     @id = movie_data[:id]
