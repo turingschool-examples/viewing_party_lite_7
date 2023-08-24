@@ -1,7 +1,41 @@
-<h1><%= @user.name %>'s Dashboard</p></h1>
-<h3>Viewing Parties</h3>
+<h1><%= @user.name %>'s Dashboard</h1>
+<h3>Invited to Parties</h3>
 <% @user.viewing_parties.each do |party| %>
-  <p><%= party.name %></p>
+  <% if party.host != @user.name %>
+    <p>Party name: <%= party.name %></p>
+    <p>Host: <%= party.host %></p>
+    <p>Movie Title: <%= party.movie_title %></p>
+    <p>Party Date: <%= party.event_date %></p>
+    <p>Start Time: <%= party.start_time %></p>
+    <p>Invitees:</p>
+    <% party.users.each do |user| %>
+      <% if user.name == @user.name %>
+        <strong><%= user.name %></strong>
+      <% else %>
+        <p><%= user.name %></p>
+      <% end %>
+    <% end %>
+    <p>---------------------------------------</p>
+  <% end %>
+<% end %>
+<h3>Hosted Parties</h3>
+<% @user.viewing_parties.each do |party| %>
+  <% if party.host == @user.name %>
+    <p>Party name: <%= party.name %></p>
+    <p>Host:<strong> <%= party.host %></strong></p>
+    <p>Movie Title: <%= party.movie_title %></p>
+    <p>Party Date: <%= party.event_date %></p>
+    <p>Start Time: <%= party.start_time %></p>
+    <p>Invitees:</p>
+    <% party.users.each do |user| %>
+      <% if user.name == @user.name %>
+        <strong><%= user.name %></strong>
+      <% else %>
+        <p><%= user.name %></p>
+      <% end %>
+    <% end %>
+    <p>---------------------------------------</p>
+  <% end %>
 <% end %>
 <br>
 <%= button_to "Discover Movies", discover_user_path(@user), method: :get %>
