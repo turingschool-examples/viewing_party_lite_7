@@ -1,9 +1,19 @@
-<h3> Discover Movies </h3>
+<div class="partial">
+  <%= render partial: "shared/landing_header" %><br><br>
+</div>
+<body>
+  <div class="content">
+    <center><table>
+      <h1>Viewing Party</h1>
+        <h3> Discover Movies </h3>
 
-<%= button_to "Top Rated Movies", user_movies_path(@user) %>
+        <%= button_to "Top Rated Movies", user_movies_path(@user) %><br><br>
 
-<%= form_with url: user_movies_path(@user), method: :get, local: true do |form| %>
-  <%= form.label :search %>
-  <%= form.text_field :search %>
-  <%= form.submit "Search By Movie Title" %>
-<% end %>
+        <%= form_with url: user_movies_path(@user), method: :get, local: true do |form| %>
+          
+          <%= form.text_field :search, placeholder: "Search" %> <label> &nbsp; <span>
+          <%= form.submit "Search By Movie Title" %></span></label>
+        <% end %>
+    </center></table>
+  </div>
+</body>
