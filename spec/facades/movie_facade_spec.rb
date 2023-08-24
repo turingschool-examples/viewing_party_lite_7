@@ -21,5 +21,13 @@ RSpec.describe MovieFacade do
       expect(movies.first.title).to be_a String
       expect(movies.count).to eq(20)
     end
+
+    it 'returns movie by id', :vcr do
+      movie = MovieFacade.get_movie(5)
+
+      expect(movie).to be_a Movie
+      expect(movie.title).to be_a String
+      expect(movie.title).to eq("Four Rooms")
+    end
   end
 end
