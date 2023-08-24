@@ -11,13 +11,13 @@ class MoviesService
 
   def top_rated
     response = connection.get("3/movie/top_rated")
-    JSON.parse(response.body)["results"]
+    JSON.parse(response.body, symbolize_names: true)["results"]
   end
 
   def find_movie(id)
     response = connection.get("3/movie/#{id}") do |f|
       f.params["append_to_response"] = "reviews,credits"
     end
-    Movie.new(JSON.parse(response.body))
+    Movie.new(JSON.parse(response.body, symbolize_names: true))
   end
 end
