@@ -6,12 +6,19 @@ RSpec.describe "Movie Details (Show) Page" do
     movie = MoviesService.new.find_movie(234)
     visit user_movie_path(ally, movie)
 
-    expect(page).to have_button("Create a Viewing Party")
-    # Update later: test that button links to viewing party page 
-    # (put in relevant viewing party spec)
     expect(page).to have_button("Back to Discover")
     click_button("Back to Discover")
     expect(current_path).to eq(user_discover_path(ally))
+  end
+
+  it "has a button to create a viewing party" do
+    ally = User.create!(name: "Ally Jean", email: "allyjean@example.com")
+    movie = MoviesService.new.find_movie(234)
+    visit user_movie_path(ally, movie)
+
+    expect(page).to have_button("Create a Viewing Party")
+    click_button("Create a Viewing Party")
+    expect(current_path).to eq(new_user_viewing_party_path(ally, movie))
   end
 
   it "has all the movie's details" do
