@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class MoviesController < ApplicationController
-  before_action :find_user, only: :index
+  before_action :find_user, only: [:index, :show]
 
   def index
     if params[:title].present?
@@ -9,6 +9,13 @@ class MoviesController < ApplicationController
     else
       @movies = MovieFacade.top_movies
     end
+  end
+
+  def show
+    @movie = MovieFacade.get_movie(params[:movie_id])
+    @cast = MovieFacade.get_cast(params[:movie_id])
+    @reviews = MovieFacade.get_reviews(params[:movie_id])
+    @review_count = MovieFacade.count_reviews(params[:movie_id])
   end
 
   private

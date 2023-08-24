@@ -35,8 +35,6 @@ RSpec.describe "Movie Results Page '/users/:id/movies'", type: :feature do
       end
     end
 
-
-
     it "displays a button to return to the Discover page", :vcr do
       visit discover_path(@user_1.id)
       click_button('Find Top Rated Movies')
