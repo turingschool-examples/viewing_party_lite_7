@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/bam/turing/3mod/projects/viewing_party_lite_7/config/environment.rb": {
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/config/environment.rb": {
         "lines": [
           null,
           1,
@@ -10,7 +10,7 @@
           1
         ]
       },
-      "/Users/bam/turing/3mod/projects/viewing_party_lite_7/config/application.rb": {
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/config/application.rb": {
         "lines": [
           1,
           null,
@@ -49,6 +49,11 @@
           null,
           1,
           1,
+          1,
+          1,
+          null,
+          1,
+          1,
           null,
           null,
           1,
@@ -56,7 +61,7 @@
           null
         ]
       },
-      "/Users/bam/turing/3mod/projects/viewing_party_lite_7/config/boot.rb": {
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/config/boot.rb": {
         "lines": [
           1,
           null,
@@ -64,7 +69,7 @@
           1
         ]
       },
-      "/Users/bam/turing/3mod/projects/viewing_party_lite_7/config/environments/test.rb": {
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/config/environments/test.rb": {
         "lines": [
           1,
           null,
@@ -128,7 +133,7 @@
           null
         ]
       },
-      "/Users/bam/turing/3mod/projects/viewing_party_lite_7/config/initializers/assets.rb": {
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -144,7 +149,7 @@
           null
         ]
       },
-      "/Users/bam/turing/3mod/projects/viewing_party_lite_7/config/initializers/content_security_policy.rb": {
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/config/initializers/content_security_policy.rb": {
         "lines": [
           null,
           null,
@@ -155,38 +160,6 @@
           null,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/bam/turing/3mod/projects/viewing_party_lite_7/config/initializers/filter_parameter_logging.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/bam/turing/3mod/projects/viewing_party_lite_7/config/initializers/inflections.rb": {
-        "lines": [
           null,
           null,
           null,
@@ -205,7 +178,39 @@
           null
         ]
       },
-      "/Users/bam/turing/3mod/projects/viewing_party_lite_7/config/initializers/permissions_policy.rb": {
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/config/initializers/filter_parameter_logging.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/config/initializers/inflections.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/config/initializers/permissions_policy.rb": {
         "lines": [
           null,
           null,
@@ -220,7 +225,7 @@
           null
         ]
       },
-      "/Users/bam/turing/3mod/projects/viewing_party_lite_7/spec/factories/user.rb": {
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/spec/factories/user.rb": {
         "lines": [
           1,
           1,
@@ -230,7 +235,7 @@
           null
         ]
       },
-      "/Users/bam/turing/3mod/projects/viewing_party_lite_7/config/routes.rb": {
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/config/routes.rb": {
         "lines": [
           1,
           1,
@@ -246,20 +251,20 @@
           null
         ]
       },
-      "/Users/bam/turing/3mod/projects/viewing_party_lite_7/app/helpers/application_helper.rb": {
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/bam/turing/3mod/projects/viewing_party_lite_7/spec/support/factory_bot.rb": {
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/spec/support/factory_bot.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/bam/turing/3mod/projects/viewing_party_lite_7/spec/features/landing_spec.rb": {
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/spec/features/landing_spec.rb": {
         "lines": [
           1,
           null,
@@ -298,7 +303,7 @@
           null
         ]
       },
-      "/Users/bam/turing/3mod/projects/viewing_party_lite_7/spec/features/register_spec.rb": {
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/spec/features/register_spec.rb": {
         "lines": [
           1,
           null,
@@ -344,7 +349,39 @@
           null
         ]
       },
-      "/Users/bam/turing/3mod/projects/viewing_party_lite_7/spec/features/users/show_spec.rb": {
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/spec/features/results_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/spec/features/users/show_spec.rb": {
         "lines": [
           1,
           null,
@@ -392,7 +429,7 @@
           null
         ]
       },
-      "/Users/bam/turing/3mod/projects/viewing_party_lite_7/spec/models/user_spec.rb": {
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/spec/models/user_spec.rb": {
         "lines": [
           1,
           null,
@@ -409,7 +446,7 @@
           null
         ]
       },
-      "/Users/bam/turing/3mod/projects/viewing_party_lite_7/app/models/user.rb": {
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -420,34 +457,14 @@
           null
         ]
       },
-      "/Users/bam/turing/3mod/projects/viewing_party_lite_7/app/models/application_record.rb": {
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/bam/turing/3mod/projects/viewing_party_lite_7/spec/models/user_viewing_party_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          2,
-          2,
-          null,
-          null
-        ]
-      },
-      "/Users/bam/turing/3mod/projects/viewing_party_lite_7/app/models/user_viewing_party.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/bam/turing/3mod/projects/viewing_party_lite_7/spec/models/viewing_party_spec.rb": {
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/spec/models/user_viewing_party_spec.rb": {
         "lines": [
           1,
           null,
@@ -459,7 +476,7 @@
           null
         ]
       },
-      "/Users/bam/turing/3mod/projects/viewing_party_lite_7/app/models/viewing_party.rb": {
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/app/models/user_viewing_party.rb": {
         "lines": [
           1,
           1,
@@ -467,12 +484,122 @@
           null
         ]
       },
-      "/Users/bam/turing/3mod/projects/viewing_party_lite_7/app/controllers/discover_controller.rb": {
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/spec/models/viewing_party_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/app/models/viewing_party.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/app/controllers/discover_controller.rb": {
         "lines": [
           1,
           null,
           1,
           4,
+          null,
+          null
+        ]
+      },
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/app/controllers/movies_controller.rb": {
+        "lines": [
+          1,
+          1,
+          3,
+          3,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/app/facades/movie_facade.rb": {
+        "lines": [
+          1,
+          1,
+          3,
+          null,
+          null,
+          1,
+          3,
+          null,
+          3,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/app/services/movie_service.rb": {
+        "lines": [
+          1,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/app/controllers/landing_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          3,
+          null,
           null,
           null
         ]
@@ -515,6 +642,7 @@
         ]
       },
       "/Users/bam/turing/3mod/projects/viewing_party_lite_7/app/controllers/users_controller.rb": {
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/app/controllers/users_controller.rb": {
         "lines": [
           1,
           1,
@@ -541,8 +669,18 @@
           null,
           null
         ]
+      },
+      "/Users/daniwilson/turing_work/3mod/projects/viewing_party_lite_7/app/controllers/discover_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1692833930
+    "timestamp": 1692844136
   }
 }
