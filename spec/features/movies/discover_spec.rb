@@ -7,10 +7,12 @@ describe "Discover Movies Page" do
   end
 
   it "has a button to discover top rated movies" do
-    expect(page).to have_button("Find Top Rated Movies")
-    click_button("Find Top Rated Movies")
-    # save_and_open_page
-    expect(current_path).to eq(user_movies_path(@user))
+    VCR.use_cassette("top_20_rated_movies") do
+      expect(page).to have_button("Find Top Rated Movies")
+      click_button("Find Top Rated Movies")
+
+      expect(current_path).to eq(user_movies_path(@user))
+    end
   end
 
   it "has a text field to enter keyword(s) to search by movie title" do
