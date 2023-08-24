@@ -70,10 +70,10 @@ RSpec.configure do |config|
   end
 end
 
-VCR.configure do |config|
-  config.cassette_library_dir = "spec/fixtures/vcr_cassettes" #it makes this directory for us
-  config.hook_into :webmock
-  config.filter_sensitive_data("<HIDDEN KEY>") { ENV["TMDB_API_KEY"] }
-  config.configure_rspec_metadata!
-  config.default_cassette_options = { re_record_interval: 1.days }
-end
+# VCR.configure do |config|
+#   config.cassette_library_dir = "spec/fixtures/vcr_cassettes" #it makes this directory for us
+#   config.hook_into :webmock
+#   config.filter_sensitive_data("<HIDDEN KEY>") { ENV["TMDB_API_KEY"] }
+#   config.configure_rspec_metadata!
+#   config.default_cassette_options = { re_record_interval: 1.days }
+# end
