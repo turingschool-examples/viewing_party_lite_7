@@ -5,6 +5,6 @@ class MoviesController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    @facade = MoviesFacade.new(params[:q])
+    @facade = MoviesFacade.new(params[:q], params[:keywords])
   end
 end
