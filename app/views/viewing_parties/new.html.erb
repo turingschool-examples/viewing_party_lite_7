@@ -4,14 +4,28 @@
 </head>
 
 <body>
-  <h3><%= @movie.title %></h3>
-  <ul>
-    <li><%= @movie.vote_average %></li>
-    <li><%= @movie.runtime %></li>
-    <li><%= @movie.genre %></li>
-    <li><%= @movie.overview %></li>
-    <li><%= @movie.top_10 %></li>
-    <li><%= @movie.total_reviews %></li>
-    <li><%= @movie.review_authors %></li>
-  </ul>
+  <h3>Viewing Party Details</h3>
+  <p>Movie Title: </p><%= @movie.title %>
+
+  <%= form_with model: @viewing_party, url: user_viewing_parties_path(@user), local: true do |form| %>
+
+    <%= form.label :duration %>
+    <%= form.time_field :duration %>
+
+    <%= form.label :date %>
+    <%= form.date_field :date %>
+
+    <%= form.label :start_time %>
+    <%= form.time_field :start_time %>
+
+    <%= form.label :users, "Invite Other Users" %>
+    <% User.all.each do |user| %>
+      <%= form.check_box :user_ids, { multiple: true }, user.id %>
+      <%= user.name %>
+      <br>
+    <% end %>
+      
+    <%= form.submit %>
+  <% end %>
+    
 </body>

@@ -1,5 +1,4 @@
 class MovieService
-
   def search_movies(title)
     get_url("/3/search/movie?language=en-US&page=1&query=#{title}")
   end
@@ -12,8 +11,8 @@ class MovieService
   #   get_url("/3/movie/top_rated?language=en-US&page=1")
   # end
   
-  # def movie_by_id(movie_id)
-  #   get_url("/3/movie/#{movie_id}?language=en-US")
+  # def get_movie_image(movie_id)
+  #   get_url()
   # end
 
   def credits(movie_id)
@@ -22,7 +21,6 @@ class MovieService
 
   def get_runtime(movie_id)
     get_url("/3/movie/#{movie_id}?append_to_response=runtime&language=en-US")
-
   end
 
   def reviews(movie_id)

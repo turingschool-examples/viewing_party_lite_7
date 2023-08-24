@@ -4,10 +4,6 @@ class MovieFacade
     @title = title
     @movie = MovieService.new
   end
-
-  # def get_movie_by_id(movie_id)
-  #   @movie.movie_by_id(movie_id)
-  # end
   
   def get_discover_movies
     discover = @movie.discover_movies
@@ -37,7 +33,7 @@ class MovieFacade
     movie_id = movie_data[:id]
     movie_runtime = get_movie_runtime(movie_id)
     cast = get_movie_cast(movie_id)
-    authors = get_movie_review_authors(movie_id)
+    authors = get_movie_review_authors_and_content(movie_id)
 
     attributes = {
       id: movie_data[:id],
@@ -69,16 +65,26 @@ class MovieFacade
   end
 
   def get_movie_cast(movie_id)
+    cast_and_char = []
     credits = @movie.credits(movie_id)
-    credits[:cast].map do |cast_member|
-      cast_member[:name]
+
+    credits[:cast].each do |cast_member|
+      key = cast_member[:name]
+      value = cast_member[:character]
+      cast_and_char << { key => value }
     end
+
+    cast_and_char
   end
 
-  def get_movie_review_authors(movie_id)
+  def get_movie_review_authors_and_content(movie_id)
+    author_and_content = []
     reviews = @movie.reviews(movie_id)
-    authors = reviews[:results].map do |review|
-      review[:author]
+
+    authors = reviews[:results].each do |review|
+      key = review[:author]
+      value = review[:content]
+      author_and_content << { key => value }
     end
   end
 end
