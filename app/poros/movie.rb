@@ -10,37 +10,32 @@ class Movie
               :reviews,
               :image
   def initialize(data)
-    @id = data["id"]
-    @title = data["original_title"]
-    @image = data["backdrop_path"]
-    @vote_average = data["vote_average"]
-    @runtime = data["runtime"]
-    @genres = format_genres(data["genres"])
-    @summary = data["overview"]
-    @cast = format_cast(data["credits"]["cast"])
-    @total_reviews = data["reviews"]["total_results"]
-    @reviews = format_reviews(data["reviews"]["results"])
+    @id = data[:id]
+    @title = data[:original_title]
+    @image = data[:backdrop_path]
+    @vote_average = data[:vote_average]
+    @runtime = data[:runtime]
+    @genres = format_genres(data[:genres])
+    @summary = data[:overview]
+    @cast = generate_cast(data[:credits][:cast])
+    @total_reviews = data[:reviews][:total_results]
+    @reviews = generate_reviews(data[:reviews][:results])
   end
 
   def format_genres(genres)
-    genres.map { |genre| genre["name"] }
+    genres.map { |genre| genre[:name] }.join(", ")
   end
 
-  def format_cast(cast)
-    formatted = cast.map do |cast|
-      {name: cast["name"], character: cast["character"]}
-    end
-    formatted[0..9]
+  def generate_cast(cast)
+    cast.map { |cast_member| CastMember.new(cast_member) }[0..9]
   end
 
-  def format_reviews(reviews)
-    reviews.map do |review|
-      {
-        author: review["author"], 
-        rating: review["author_details"]["rating"], 
-        comments: review["content"]
-      }
-    end
+  def generate_reviews(reviews)
+    reviews.map { |review| Review.new(review)}
+  end
+
+  def format_runtime
+    "#{@runtime / 60}hr #{@runtime % 60 }min"
   end
 
 end
