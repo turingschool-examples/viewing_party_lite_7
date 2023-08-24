@@ -4,8 +4,10 @@
 <h1>Movies Results Page</h1><br><br>
 <% @facade.top_movies.each do |movie| %>
     <br>
-    <%= movie.title %>
-    <%= movie.vote_average %>
+    <ul class="movie" >
+    <li class="title"><%= movie.title %></li>
+    <li class="vote_average"><%= movie.vote_average %></li>
+    </ul>
     <br>
 <% end %>
 
