@@ -1,7 +1,7 @@
 <%= button_to "Discover Movies", user_discover_path(@user.id), method: :get %>
 
-<ul>
-  <% @facade.top_20_rated.each do |movie| %>
-    <li><%= movie.title %>, <%= movie.rating %></li>
-  <% end %>
-</li>
+<% if @facade.search == "top_20rated" %>
+  <%= render partial: "top_rated" %>
+<% elsif @facade.search == "keywords"%>
+  <%= render partial: "keyword_movies" %>
+<% end %>
