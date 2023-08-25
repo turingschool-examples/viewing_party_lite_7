@@ -104,12 +104,15 @@ RSpec.describe 'movie details page', type: :feature do
       expect(page).to have_content("Total Reviews: #{total_reviews}")
 
         save_and_open_page
-          #within("reviews") do
+          within("#reviews") do
             reviews.each do |r|
               expect(page).to have_content("#{r[:author]}")
+              #This is appearing on the page, but the expect statement is not picking it up. 
+              #This is because the special characters (maybe use ruby method, .scrub?) are messing with the formatting of the review
               #expect(page).to have_content("#{r[:content]}")
             end  
-          #end
+            
+          end
 
       end
     end

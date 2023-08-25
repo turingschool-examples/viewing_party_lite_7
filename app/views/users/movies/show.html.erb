@@ -18,18 +18,18 @@
 <% end %>
 </section>
 
-<section>
-<div id= "reviews">
 
-<h1>Reviews</h1>
-<p>Total Reviews: <%= @total_reviews %></p>
-    <p><% @reviews.each do |r| %></p>
-      <p>Author: <%= r[:author] %> Their hot take: </p>
-  
-      <p><%= r[:content] %> </p>
-    <% end %>
-</div>
-</section>
+  <div id= "reviews">
+
+    <h1>Reviews</h1>
+    <p>Total Reviews: <%= @total_reviews %></p>
+        <p><% @reviews.each do |r| %></p>
+          <p>Author: <%= r[:author] %> Their hot take: </p>
+      
+          <p><%= r[:content] %> </p>
+        <% end %>
+  </div>
+
 
 
 
