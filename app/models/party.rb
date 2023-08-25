@@ -9,4 +9,11 @@ class Party < ApplicationRecord
 
   has_many :user_parties
   has_many :users, through: :user_parties
+
+  def invited_users
+    User.joins(user_parties: :party)
+        .where(parties: {movie_id: movie_id})
+        .group(:name)
+        .pluck(:name)
+  end
 end

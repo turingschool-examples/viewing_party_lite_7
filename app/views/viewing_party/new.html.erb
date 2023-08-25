@@ -2,7 +2,7 @@
 
 <%= button_to "Discover Page", user_discover_index_path(@user), method: :get %>
 <h3> Viewing Party Details </h3>
-<%= form_with id:"new_viewing_party_form", model: @viewing_party, url: "/users/#{@user.id}/movies/#{@movie.id}/viewing_party?movie_title=#{@movie.title}&movie_thumbnail=#{@movie_thumbnail}", local: true do |form| %>
+<%= form_with id:"new_viewing_party_form", model: @viewing_party, url: "/users/#{@user.id}/movies/#{@movie.id}/viewing_party?movie_title=#{@movie.title}&movie_thumbnail=#{@movie_thumbnail}&host_name=#{@user.name}", local: true do |form| %>
   <table>
     <tr>
       <td>Movie Title</td>
