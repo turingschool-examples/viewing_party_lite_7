@@ -24,6 +24,31 @@ RSpec.describe ViewingParty, :vcr do
   end
 
   it "can send invites" do
+    movie = MoviesService.new.find_movie(234)
+    party = ViewingParty.create!(movie_id: 234, duration: 78, party_date: Date.today, start_time: Time.now)
+    ally = User.create!(name: "Ally Jean", email: "allyjean@example.com")
+    jimmy = User.create!(name: "Jimmy Jean", email: "jimmyjean@example.com")
+    bobby = User.create!(name: "Bobby Jean", email: "bobbyjean@example.com")
+    dennis = User.create!(name: "Dennis Jean", email: "dennisjean@example.com")
 
+    expect(party.users).to eq([])
+  
+    party.send_invites(ally.id, {"#{jimmy.id}" => "1", "#{bobby.id}" => "1", "#{dennis.id}" => "0"})
+    
+    expect(party.users).to eq([ally, jimmy, bobby])
+    expect(party.users).to_not include(dennis)
+  end
+
+  it "can report the host" do
+    movie = MoviesService.new.find_movie(234)
+    party = ViewingParty.create!(movie_id: 234, duration: 78, party_date: Date.today, start_time: Time.now)
+    ally = User.create!(name: "Ally Jean", email: "allyjean@example.com")
+    jimmy = User.create!(name: "Jimmy Jean", email: "jimmyjean@example.com")
+    bobby = User.create!(name: "Bobby Jean", email: "bobbyjean@example.com")
+    dennis = User.create!(name: "Dennis Jean", email: "dennisjean@example.com")
+
+    expect(party.users).to eq([])
+    party.send_invites(ally.id, {"#{jimmy.id}" => "1", "#{bobby.id}" => "1", "#{dennis.id}" => "0"})
+    expect(party.host).to eq(ally)
   end
 end
