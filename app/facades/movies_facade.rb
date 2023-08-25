@@ -6,6 +6,11 @@ class MoviesFacade
     @keywords = keywords
   end
   
+  def movie_details
+    service = MoviesService.new
+    json = service.get_movie_details(@search)
+    Movie.new(json)
+  end
 
   def top_20_rated
     service = MoviesService.new
