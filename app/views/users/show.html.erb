@@ -28,9 +28,7 @@
     <p>Start Time: <%= party.start_time %></p>
     <p>Invitees:</p>
     <% party.users.each do |user| %>
-      <% if user.name == @user.name %>
-        <strong><%= user.name %></strong>
-      <% else %>
+      <% unless user.name == @user.name %>
         <p><%= user.name %></p>
       <% end %>
     <% end %>
