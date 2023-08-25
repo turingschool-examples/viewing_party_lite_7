@@ -1,0 +1,15 @@
+<li> Title: <%= @movie.title %></li>
+<li>Rotten Toe Mate Toes: <%= @movie.vote_average %></li>
+<li>Runtime: <%= @movie.runtime %></li>
+<li>Genres: <%= @movie.genres %></li>
+<li>Summary: <%= @movie.summary %></li>
+    <% binding.pry %>
+<li>Cast:
+  <ul>
+    <% @movie.each do |cast_member| %>
+      <li><%= cast_member[:name] %> </li>
+    <% end %>
+  </ul>
+</li>
+<li>Review Count: <%= @movie.total_review_count %></li>
+<li>Reviewed by: <%= @movie.reviewer %></li>
