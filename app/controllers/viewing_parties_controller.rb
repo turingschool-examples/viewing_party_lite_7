@@ -2,8 +2,10 @@ class ViewingPartiesController < ApplicationController
 
   def new
     @viewing_party = ViewingParty.new
+    @users = User.all
     @user = User.find(params[:user_id])
     @details = MovieDetailsFacade.movie_details(params[:movie_id])
+    @viewing_party = ViewingParty.find_by(movie_title: @details.title, host: @user.name) || ViewingParty.new
   end
 
   def create
