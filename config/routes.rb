@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     get '/movies', to: 'users#movies'
     get '/movies/:movie_id', to: 'users#movie_show', as: 'movie_show'
     # resources :movies, only: [:show] do
-      # resources :viewing_party, only: [:new]
+    # resources :viewing_party, only: [:new]
     # end
   end
 end
