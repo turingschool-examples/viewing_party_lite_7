@@ -1,16 +1,90 @@
-<h3><%= @user.name %>'s Dashboard</h3>
-<%= button_to "Discover Movies", user_discover_path(@user), method: :get %>
+<div style="text-align: center;">
+  <h2><%= @user.name %>'s Dashboard</h2>
+  <%= button_to "Discover Movies", user_discover_path(@user), method: :get %></div>
 <div id="my_parties">
-  <h5>My Parties</h5>
-  <h1>Your Dashboard</h1>
-  <% @viewing_parties.each do |party| %>
-    <% host_guest = party.party_guests.find_by(host: true) %>
-    <% if host_guest %>
-      <%= "Host: #{host_guest.user.name}" %>
-    <% else %>
-      <%= "No host found" %>
-    <% end %>
-    <% guest_list = party.party_guests.map { |pg| pg.user.name } %>
-    <% guest_list_str = guest_list.map { |name| name == @user.name ? name : name }.join(", ").html_safe %>
-    <%= "Guests: #{guest_list_str}" %>
+  <h3>My Parties</h3>
+</div>
+<div id='invited-parties'>
+  <h3>Parties I'm Hosting</h3>
+  <% @hosted_parties.each do |party| %>
+    <h3>Viewing Party ID: <%= party.id %></h3>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Movie Image</th>
+          <th>Movie Title</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Host</th>
+          <th>Guests</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <% if @movie_images[party.movie_id].present? %>
+              <img src="https://image.tmdb.org/t/p/w500<%= @movie_images[party.movie_id] %>" alt="<%= @movies[party.movie_id] %>" width="100">
+            <% else %>
+              <img src="path/to/your/default/image.jpg" alt="Default Image" width="100">
+            <% end %>
+          </td>
+          <td><%= link_to @movies[party.movie_id], user_movie_show_path(user_id: @user.id, movie_id: party.movie_id) %></td>
+          <td><%= party.party_date %></td>
+          <td><%= party.start_time.strftime("%I:%M %p") %></td>
+          <td>
+            <% host = party.party_guests.find_by(host: true).user %>
+            <%= host ? host.name : "No host found" %>
+          </td>
+          <td>
+            <% guest_names = party.party_guests.map { |pg| pg.user.name } %>
+            <% guest_list = guest_names.map { |name| name == @user.name ? "<strong>#{name}</strong>" : name }.join(", ").html_safe %>
+            <%= guest_list %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   <% end %>
+</div>
+<br>
+<br>
+<div id='hosted-parties'>
+  <h3>Parties I'm Invited To / Attending</h3>
+  <% @invited_parties.each do |party| %>
+    <h3>Viewing Party ID: <%= party.id %></h3>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Movie Image</th>
+          <th>Movie Title</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Host</th>
+          <th>Guests</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <% if @movie_images[party.movie_id].present? %>
+              <img src="https://image.tmdb.org/t/p/w500<%= @movie_images[party.movie_id] %>" alt="<%= @movies[party.movie_id] %>" width="100">
+            <% else %>
+              <img src="path/to/your/default/image.jpg" alt="Default Image" width="100">
+            <% end %>
+          </td>
+          <td><%= link_to @movies[party.movie_id], user_movie_show_path(user_id: @user.id, movie_id: party.movie_id) %></td>
+          <td><%= party.party_date %></td>
+          <td><%= party.start_time.strftime("%I:%M %p") %></td>
+          <td>
+            <% host = party.party_guests.find_by(host: true).user %>
+            <%= host ? host.name : "No host found" %>
+          </td>
+          <td>
+            <% guest_names = party.party_guests.map { |pg| pg.user.name } %>
+            <% guest_list = guest_names.map { |name| name == @user.name ? "<strong>#{name}</strong>" : name }.join(", ").html_safe %>
+            <%= guest_list %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  <% end %>
+</div>
