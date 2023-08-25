@@ -25,34 +25,36 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 25 Aug 2023 16:26:42 GMT
+      - Fri, 25 Aug 2023 15:55:00 GMT
       Server:
       - openresty
       Cache-Control:
-      - public, max-age=25203
+      - public, max-age=25294
       X-Memc:
       - HIT
       X-Memc-Key:
       - 9d48db5c244b9c3e3d162ef155211175
       X-Memc-Age:
-      - '3721'
+      - '1819'
       X-Memc-Expires:
-      - '19203'
+      - '21105'
       Etag:
       - W/"fca5e3555e619db2ab8c7c30c82b3d74"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 433684ff3df4bd5c49774dbbbd091e72.cloudfront.net (CloudFront)
+      - 1.1 43ef856f354a8f27601faed7d5395c74.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - ORD51-C4
+      - MIA3-C5
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - SMsNsFvSK_2Zlh9_bzfMBn-Z2yaZLlevHNimYnY43cDTR2vCX9o20A==
+      - kdEQpxwL_fW1N2FJ5moTjHIE8ywVmp0gAGOHWDfF39WquyiBfVcsYg==
+      Age:
+      - '22083'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
@@ -65,5 +67,5 @@ http_interactions:
         Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
         offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 16:26:42 GMT
+  recorded_at: Fri, 25 Aug 2023 22:03:03 GMT
 recorded_with: VCR 6.2.0

@@ -1,5 +1,23 @@
 <h1><%= @user.name %>'s Dashboard </h1>
 
-<%= link_to "Discover Movies", "/users/#{@user.id}/discover" %>
+<%= link_to "Discover Movies", "/users/#{@user.id}/discover" %> 
+<h2>Viewing Parties</h2>
+  <h3> Parties I’m hosting </h3>
+  <% @user.hosted_parties.each do |party| %>
+    <% movie = MovieFacade.new.find_movie(party.movie_id) %>
+    <img class='poster' src="https://image.tmdb.org/t/p/original/<%= movie.image %>" width='200' height='400'>
+    <p>Movie Title: <%= party.title(party.movie_id)%></p><br>
+    <p>Duration: <%= party.duration %></p><br>
+    <p>Date: <%= party.date %></p><br>
+    <p>Start Time: <%= party.start_time %></p><br>
+  <% end %>
 
-<h3> Viewing Parties </h3>
+  <h3> Parties I’m invited to </h3>
+  <% @user.invited_parties.each do |party| %>
+    <% movie = MovieFacade.new.find_movie(party.movie_id) %>
+    <img class='poster' src="https://image.tmdb.org/t/p/original/<%= movie.image %>" width='200' height='400'>
+    <p>Movie Title: <%= party.title(party.movie_id)%></p><br>
+    <p>Duration: <%= party.duration %></p><br>
+    <p>Date: <%= party.date %></p><br>
+    <p>Start Time: <%= party.start_time %></p><br>
+  <% end %>
