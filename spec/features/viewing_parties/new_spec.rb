@@ -50,7 +50,6 @@ RSpec.describe 'New Viewing Party' do
 
       click_button "Invite"
 
-      save_and_open_page
       expect(current_path).to eq(user_path(@user_1))
       # finish both happy and sad path testing for this test
     end
