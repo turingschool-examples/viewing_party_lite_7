@@ -1,7 +1,7 @@
 class ViewingPartyController < ApplicationController
   def new
     @user = User.find(params[:user_id])
-    @movie = MoviesService.new.find_movie(params[:movie_id])
+    @movie = facade.find_movie(params[:movie_id])
   end
 
   def create
@@ -23,5 +23,9 @@ class ViewingPartyController < ApplicationController
 
   def guest_hash
     params[:guests].permit!.to_h
+  end
+
+  def facade
+    @_facade ||= MoviesFacade.new
   end
 end
