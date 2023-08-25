@@ -7,4 +7,5 @@ class Party < ApplicationRecord
   validates :date , presence: true
   validates :time , presence: true
   validates :duration , numericality: { only_integer: true }
+  validates :movie_id , presence: true
 end

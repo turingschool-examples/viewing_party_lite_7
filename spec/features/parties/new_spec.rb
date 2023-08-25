@@ -26,11 +26,9 @@ RSpec.describe "New Viewing Party" do
       fill_in :party_duration, with: @movie.runtime
       fill_in :party_date, with: Date.today
       fill_in :party_time, with: Time.now
-      # save_and_open_page
-      check("#{@user_1.name} (#{@user_1.email})")
-      check("#{@user_2.name} (#{@user_2.email})")
-      # check(@user_2.name)
-      # check(@user_3.name)
+   
+      check(@user_2.id)
+      check(@user_3.id)
 
       click_button "Create Party"
 
