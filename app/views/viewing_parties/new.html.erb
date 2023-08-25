@@ -7,25 +7,26 @@
   <h3>Viewing Party Details</h3>
 
   <p>Movie Title: <%= @movie.title %></p>
-
   <%= form_with model: @viewing_party, url: user_viewing_parties_path(@user), local: true do |form| %>
-    <%= hidden_field_tag :movie_data, @movie %>
+    <%= hidden_field_tag :movie_title, @movie.title %>
     <%= hidden_field_tag :runtime, @movie.runtime %>
 
     <%= form.label :duration %>
-    <%= form.number_field :duration_minutes %>
+    <%= form.number_field :duration_minutes, value: @movie.runtime %>
 
-    <%= form.label :date %>
+    <%= form.label :when %>
     <%= form.date_field :date %>
 
     <%= form.label :start_time %>
-    <%= form.time_field :start_time %>
+    <%= form.time_field :start_time %><br><br>
     
     <%= form.label :users, "Invite Other Users" %>
     <% User.all.each do |user| %>
       <ul>
+        <% if @user != user %>
         <%= form.check_box :user_ids, { multiple: true }, user.id %>
         <%= user.name %>
+        <% end %>
       </ul>
     <% end %>
       
