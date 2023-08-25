@@ -2,7 +2,7 @@
   <%= render partial: "shared/landing_header" %><br><br>
 </div>
 
-<%# <%= button_to "Create Viewing Party for #{@movie.title}", new_user_movie_viewing_party_path(@user, @movie.id) %> %>
+<%= button_to "Create Viewing Party for #{@movie.title}", new_user_movie_viewing_party_path(@user, @movie.id), method: :get %><br>
 
 <%= button_to "Discover", user_discover_path(@user), method: :get %>
 
@@ -20,7 +20,6 @@
 
   <h3>Reviews: </h3>
   <p>Total Reviews: <%=  @movie.review_count %></p>
-  <% require 'pry'; binding.pry %>
   <% @movie.reviews.each do |review| %><br>
     <h4>Author: <%= review[:author] %></h4>
     <p>Username: <%= review[:username] %></p>

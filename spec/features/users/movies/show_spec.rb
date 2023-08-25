@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe "User Movies Show" do 
   it "has a button to return to discover" do 
     aquaria = User.create!(name: "Aquaria", email: "Aquariahoe@hotmess.com")
-    
 
     visit user_movie_path(aquaria, 238)
 
@@ -14,8 +13,17 @@ RSpec.describe "User Movies Show" do
     expect(current_path).to eq(user_discover_path(aquaria))
   end
 
-  xit "has a button to create a viewing party" do 
+  it "has a button to create a viewing party" do 
+    aquaria = User.create!(name: "Aquaria", email: "Aquariahoe@hotmess.com")
+    movie = MovieFacade.get_top_rated_movies[0]
 
+    visit user_movie_path(aquaria, movie.id)
+
+    expect(page).to have_button("Create Viewing Party for #{movie.title}")
+    
+    click_button "Create Viewing Party for #{movie.title}"
+
+    expect(current_path).to eq(new_user_movie_viewing_party_path(aquaria, movie.id))
   end
 
   it "displays movie details", :vcr do
@@ -31,8 +39,8 @@ RSpec.describe "User Movies Show" do
     expect(page).to have_content("Runtime: 2:55")
     expect(page).to have_content("Genre: Drama Crime")
     expect(page).to have_content(overview)
-    expect(page).to have_content("Marlon Brando, Don Vito Corleone")
-    expect(page).to have_content("John Marley, Jack Woltz")
+    expect(page).to have_content("Marlon Brando, as Don Vito Corleone")
+    expect(page).to have_content("John Marley, as Jack Woltz")
     expect(page).to have_content("Total Reviews: 5")
     expect(page).to have_content("Author: Suresh Chidurala")
     expect(page).to have_content("Username: Suresh17511")
