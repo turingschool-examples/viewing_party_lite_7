@@ -3,31 +3,76 @@ require "rails_helper"
 RSpec.describe "New Viewing Party Page", :vcr do
   before do
     @ally = User.create!(name: "Ally Jean", email: "allyjean@example.com")
+    @jimmy = User.create!(name: "Jimmy Jean", email: "jimmyjean@example.com")
+    @bobby = User.create!(name: "Bobby Jean", email: "bobbyjean@example.com")
+    @dennis = User.create!(name: "Dennis Jean", email: "dennisjean@example.com")
+    @guests = [@jimmy, @bobby, @dennis]
     @movie = MoviesService.new.find_movie(234)
-    visit new_user_movie_viewing_party_path(ally, movie.id)
+    visit new_user_movie_viewing_party_path(@ally, @movie.id)
   end
 
   it "has fields: duration, date, start time, checkboxes to invite users, and a submit button" do
-
+    expect(page).to have_content("Create A Movie Party for #{@movie.title}")
+    expect(page).to have_content("Viewing Party Details")
+    expect(page).to have_content("Movie Title")
+    expect(page).to have_content(@movie.title, count: 2)
+    expect(page).to have_content("Duration of Party")
+    expect(page).to have_field(:duration, value: @movie.duration)
+    expect(page).to have_content("Day")
+    expect(page).to have_field(:start_date, value: Date.today)
+    expect(page).to have_content("Start Time")
+    expect(page).to have_field(:start_time, value: Time.now)
+    expect(page).to have_button("Create Party")
   end
 
-  it "defaults to movie runtime for duration" do
-
+  it "has checkboxes to invite users" do
+    within("#users") do
+      expect(page).to have_content("Invite Other Users")
+      @guests.each do |guest|
+        within("#user-#{guest.id}") do
+          expect(page).to have_checkbox("#{guest.name} (#{guest.email})")
+        end
+      end
+    end
   end
 
-  it "cannot be set with a duration less than movie runtime" do
-
+  xit "cannot be set with a duration less than movie runtime" do
+    fill_in(:duration, with: 77)
+    click_button("Create Party")
+    expect(page).to have_content("Error: duration cannot be less than 78 minutes")
   end
 
-  it "cannot be set to a date earlier than current date" do
-
+  xit "cannot be set to a date earlier than current date" do
+    fill_in(:start_date, with: (Date.today - 1))
+    click_button("Create Party")
+    expect(page).to have_content("Error: start_date cannot be in the past")
   end
 
-  it "cannot be set to a time earlier than current time" do
-
+  xit "cannot be set to a time earlier than current time" do
+    fill_in(:start_time, with: (Time.now - 1))
+    click_button("Create Party")
+    expect(page).to have_content("Error: time cannot be in the past")
   end
 
-  it "will show this party on the dashboard pages of invited users" do
+  xit "will show this party on the dashboard pages of invited users" do
+    visit user_path(@jimmy)
 
+    expect(page).to_not have_content(@movie.title)
+
+    visit new_user_movie_viewing_party_path(@ally, @movie.id)
+    check_box("#{@jimmy.name} (#{@jimmy.email})")
+    click_button("Create Party")
+
+    visit user_path(@jimmy)
+    expect(page).to have_content(@movie.title)
+    expect(page).to have_content("Invited")
+
+    visit user_path(@ally)
+    expect(page).to have_content(@movie.title)
+    expect(page).to have_content("Hosting")
+  end
+
+  xit "has a button to return to discover page" do
+    expect(page).to have_button("Discover Page", user_discover_path(@ally))
   end
 end
