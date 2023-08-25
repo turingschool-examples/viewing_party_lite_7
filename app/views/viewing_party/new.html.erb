@@ -2,13 +2,29 @@
 
 <%= button_to "Discover Page", user_discover_index_path(@user), method: :get %>
 <h3> Viewing Party Details </h3>
-<p>
-<%= form_with id:"new_viewing_party_form", model: @viewing_party, local: true do |form| %>
-  <%= form.label : %>
-  <%= form.text_field :name %>
-  
-  <%= form.label :email %>
-  <%= form.text_field :email %>
-  
-  <%= form.submit value: "Register" %>
-  <% end %>
+<%= form_with id:"new_viewing_party_form", model: @viewing_party, url: "/users/#{@user.id}/movies/#{@movie.id}/viewing_party?movie_title=#{@movie.title}&movie_thumbnail=#{@movie_thumbnail}", local: true do |form| %>
+  <table>
+    <tr>
+      <td>Movie Title</td>
+      <td><%= @movie.title %></td>
+    </tr>
+    <tr>
+      <td><%= form.label "Duration of Party" %></td>
+      <td><%= form.text_field :duration_of_party %></td>
+    </tr>
+    <tr>
+      <td><%= form.label "Day" %></td>
+      <td><%= form.text_field :date %></td>
+    </tr>
+    <tr>
+      <td><%= form.label "Start Time" %></td>
+      <td><%= form.text_field :start_time %>
+    </tr>
+  </table>
+  <p>
+    <% @users.each do |user| %>
+      <%= form.check_box "#{user.name}" %> <%= user.name %> (<%= user.email %>)<br />
+    <% end %>
+  </p>
+  <%= form.submit "Create a Party" %>
+<% end %>

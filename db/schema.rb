@@ -15,10 +15,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_21_234105) do
   enable_extension "plpgsql"
 
   create_table "parties", force: :cascade do |t|
+    t.integer "movie_id"
     t.integer "duration"
     t.string "date"
     t.string "start_time"
     t.bigint "host_id"
+    t.string "movie_title"
+    t.string "thumbnail"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["host_id"], name: "index_parties_on_host_id"
