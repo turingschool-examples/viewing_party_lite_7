@@ -34,5 +34,13 @@ RSpec.describe "Movie results page" do
       expect(page).to have_content("Captain Nemo")
       expect(all('p', text: 'Title:').count).to be <= 20
     end
+
+    it "has a link back to the discover page" do
+      visit user_movies_path(@user1)
+ 
+      expect(page).to have_link("Discover")
+      click_link "Discover"
+      expect(current_path).to eq(discover_user_path(@user1))
+    end
   end
 end
