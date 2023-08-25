@@ -23,5 +23,6 @@ Movie Title: <%= @movie.title %>
     <%= form.check_box :user_ids, { multiple: true }, user.id %>
   <% end %>
   <br>
+  <%= form.hidden_field :movie_id, value: @movie.id %>
   <%= form.submit "Create Party" %>
 <% end %>
