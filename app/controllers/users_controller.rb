@@ -30,7 +30,6 @@ class UsersController < ApplicationController
   def movies
     @user = User.find(params[:user_id])
     query = params[:q]
-    movies_data = []
 
     @title = if query == 'top_rated'
                'Top Rated Movies'
@@ -63,6 +62,6 @@ class UsersController < ApplicationController
   end
 
   def facade
-    @_facade ||= MoviesFacade.new
+    @facade ||= MoviesFacade.new
   end
 end
