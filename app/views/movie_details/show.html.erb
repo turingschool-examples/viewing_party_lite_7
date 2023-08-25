@@ -1,0 +1,35 @@
+<%= link_to "Discover", discover_user_path(@user) %>
+<br />
+<br />
+<%= button_to "New Viewing Party", "/users/#{@user.id}/movies/#{@details.id}/viewing-party/new", method: :get %>
+<br />
+<div id="Movie_details" >
+<h3>Movie Details</h3>
+  <p>Title: <%= @details.title %></p>
+  <p>Vote average: <%= @details.vote_average %></p>
+  <p>Runtime: <%= @details.formatted_runtime %></p>
+  <p>Genre(s): <%= @details.genres.join(", ") %></p>
+  <p>Overview: <%= @details.overview %></p>
+</div>
+<p>---------------------------------------</p>
+<div id="Cast_members" >
+<h3>Cast Members</h3>
+<ol>
+<% @cast_members.first(10).each do |cast_member| %>
+    <li><p>Name: <%= cast_member.name %></p>
+        <p>Character: <%= cast_member.character %></p>
+    <% end %>
+</ol>
+</div>
+<p>---------------------------------------</p>
+<div id="Reviews" >
+<h3>Total reviews: <%= @reviews.count %></h3>
+<ul>
+<% @reviews.each do |review| %>
+<li><p> Author: <%= review.author %> <p>
+    <p> Name: <%= review.name %> <p>
+    <p> Username: <%= review.username %> <p>
+    <p> Rating: <%= review.rating %> <p>
+    <% end %>
+</ul>
+</div>

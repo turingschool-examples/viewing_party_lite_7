@@ -15,7 +15,8 @@ class MovieDetailsFacade
     service = TmdbService.new
     raw_cast = service.movie_cast(movie)[:cast]
     raw_cast.map do |cast_member|
-      MovieCast.new(name: cast_member[:name], 
+      MovieCast.new(name: cast_member[:name],
+                    character: cast_member[:character],
                     id: cast_member[:id])
     end
   end
