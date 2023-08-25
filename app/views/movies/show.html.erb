@@ -2,7 +2,7 @@
 
 <%= button_to "Discover Page", user_discover_path(@user.id), method: :get %>
 
-<%= button_to "Create Viewing Party for #{@facade.title}", user_movie_viewing_party_new_path(@user.id, @facade.id), method: :get, id: "create-viewing-party", params: {movie_title: } %>
+<%= button_to "Create Viewing Party for #{@facade.title}", user_movie_viewing_party_new_path(@user.id, @facade.id), method: :get, id: "create-viewing-party" %>
 
 <p id="movie-rating"><b>Vote:</b> <%= @facade.rating.round(1) %></p> 
 <p id="movie-runtime"><b>Runtime:</b> <%= @facade.runtime_formatted %></p> 
