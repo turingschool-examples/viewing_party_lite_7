@@ -30,8 +30,13 @@ RSpec.describe 'User index page' do
   end
 
   it 'does not display a user with a duplicate email' do
-    visit(root_path)
-    expect(page).to_not have_content(@user3_duplicate_email.name)
+    expect do
+      User.create!(name: 'user3', email: 'user2@turing.edu')
+    end.to raise_error(ActiveRecord::RecordInvalid, 'Validation failed: Email has already been taken')
+
+    expect do
+      User.create(name: 'user3', email: 'user2@turing.edu')
+    end.to_not(change { User.count })
   end
 
   it 'displays a link to go back to the landing page' do
