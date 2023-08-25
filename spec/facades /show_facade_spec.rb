@@ -31,5 +31,12 @@ describe ShowFacade do
         expect(review).to be_a Review
       end
     end
+
+    it 'returns the total count of reviews', :vcr do
+      params = { id: 238 }
+      facade = ShowFacade.new(params)
+
+      expect(facade.total_reviews).to eq(5)
+    end
   end
 end

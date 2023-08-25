@@ -8,5 +8,38 @@
 
 <h2>My Viewing Parties</h2>
 
-<% @user.viewing_parties.each do |vp| %>
+
+
+<h2>Parties Invited To</h2>
+
+<% @facade.invited_parties.each do |invited_party| %>
+    <br>
+    <%= image_tag(@facade.movie_image(invited_party.movie_id).url.to_s) %>
+    Title: <%= @facade.movie(invited_party.movie_id).title %>
+    <%= invited_party.date %>
+    <%= invited_party.duration %>   
+    <% invited_party.users.each do |user| %>
+    <br>
+        <%= user.name %>
+    <br>
+    <% end %>
+    <br>
+<% end %> 
+<br>
+<h2>Your Created Parties</h2>
+<h3><%= @user.name %></h3>
+<br>
+<% @facade.created_parties.each do |created_party| %>
+    <br>
+    <%= image_tag(@facade.movie_image(created_party.movie_id).url.to_s) %>
+    Title: <%= @facade.movie(created_party.movie_id).title %>
+    Start Date: <%= created_party.date %>
+    Duration: <%= created_party.duration %>
+    <h3> Users Invited </h3>
+    <% created_party.users.each do |user| %>
+    <br>
+        <%= user.name %>
+    <br>
+    <% end %>
+    <br>
 <% end %> 

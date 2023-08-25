@@ -115,5 +115,18 @@ describe MovieService do
                 expect(review_1[:author_details]).to be_a(Hash)
             end
         end
+
+        context "#movie_image"do 
+            it 'returns an image for a specific movie', :vcr do
+
+                movie_details = MovieService.new.movie_details(238)
+                movie_image = MovieService.new.movie_image(238)
+
+                expect(movie_details[:title]).to eq("The Godfather")
+
+                expect(movie_image).to eq("/kysDTCloxUPJ1BILI4f8gs74fcr.png")
+            end
+        end
+
     end
 end

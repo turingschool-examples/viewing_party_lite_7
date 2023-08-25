@@ -28,7 +28,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_25_162726) do
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
     t.integer "duration"
-    t.string "start_time"
     t.index ["user_id"], name: "index_viewing_parties_on_user_id"
   end
 
