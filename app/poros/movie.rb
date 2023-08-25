@@ -5,16 +5,15 @@ class Movie
               :overview,
               :title
 
-
   def initialize(info)
-    @cast_data    = info.dig(:credits, :cast)
-    @genres_data  = info.dig(:genres)
-    @id           = info.dig(:id)
-    @rating       = info.dig(:vote_average)
-    @reviews_data = info.dig(:reviews, :results)
-    @runtime      = info.dig(:runtime)
-    @overview     = info.dig(:overview)
-    @title        = info.dig(:title)
+    @id           = info[:id]
+    @title        = info[:title]
+    @rating       = info[:vote_average]
+    @runtime      = info[:runtime] || []
+    @overview     = info[:overview] || []
+    @cast_data    = info.dig(:credits, :cast) || []
+    @reviews_data = info.dig(:reviews, :results) || []
+    @genres       = info[:genres]&.map { |genre| genre[:name] } || []
   end
 
   def cast_list
