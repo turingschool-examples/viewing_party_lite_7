@@ -14,7 +14,7 @@ RSpec.describe MoviesService, :vcr do
 
     expect(movies).to be_an(Array)
     expect(movies.first).to have_key(:title)
-    # Test that at least one movie has the keyword in its title
+    
     titles = movies.map { |movie| movie[:title].downcase }
     expect(titles.any? { |title| title.include?(keyword.downcase) }).to be(true)
   end
