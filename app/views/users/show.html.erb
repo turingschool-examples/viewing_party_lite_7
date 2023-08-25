@@ -1,8 +1,16 @@
 <h3><%= @user.name %>'s Dashboard</h3>
-
 <%= button_to "Discover Movies", user_discover_path(@user), method: :get %>
-
 <div id="my_parties">
-<h5>My Parties</h5>
-
-</div>
+  <h5>My Parties</h5>
+  <h1>Your Dashboard</h1>
+  <% @viewing_parties.each do |party| %>
+    <% host_guest = party.party_guests.find_by(host: true) %>
+    <% if host_guest %>
+      <%= "Host: #{host_guest.user.name}" %>
+    <% else %>
+      <%= "No host found" %>
+    <% end %>
+    <% guest_list = party.party_guests.map { |pg| pg.user.name } %>
+    <% guest_list_str = guest_list.map { |name| name == @user.name ? name : name }.join(", ").html_safe %>
+    <%= "Guests: #{guest_list_str}" %>
+  <% end %>
