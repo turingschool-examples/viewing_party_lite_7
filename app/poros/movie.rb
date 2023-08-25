@@ -9,21 +9,22 @@ class Movie
               :total_reviews,
               :reviews,
               :image
+
   def initialize(data)
     @id = data[:id]
     @title = data[:original_title]
     @image = data[:backdrop_path]
-    @rating= data[:vote_average]
+    @rating = data[:vote_average]
     @runtime = data[:runtime]
-    @genres = format_genres(data[:genres])
+    @genres = data[:genres] ? format_genres(data[:genres]) : 'Unknown'
     @summary = data[:overview]
-    @cast = generate_cast(data[:credits][:cast])
-    @total_reviews = data[:reviews][:total_results]
-    @reviews = generate_reviews(data[:reviews][:results])
+    @cast = data.dig(:credits, :cast) ? generate_cast(data[:credits][:cast]) : []
+    @total_reviews = data.dig(:reviews, :total_results) || 0
+    @reviews = data.dig(:reviews, :results) ? generate_reviews(data[:reviews][:results]) : []
   end
 
   def format_genres(genres)
-    genres.map { |genre| genre[:name] }.join(", ")
+    genres.map { |genre| genre[:name] }.join(', ')
   end
 
   def generate_cast(cast)
@@ -31,11 +32,10 @@ class Movie
   end
 
   def generate_reviews(reviews)
-    reviews.map { |review| Review.new(review)}
+    reviews.map { |review| Review.new(review) }
   end
 
   def format_runtime
-    "#{@runtime / 60}hr #{@runtime % 60 }min"
+    "#{@runtime / 60}hr #{@runtime % 60}min"
   end
-
 end
