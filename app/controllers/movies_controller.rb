@@ -8,4 +8,8 @@ class MoviesController < ApplicationController
       MoviesFacade.top_twenty_movies[0..19]
     end
   end
+
+  def show
+    
+  end
 end
