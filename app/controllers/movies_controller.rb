@@ -1,16 +1,15 @@
 class MoviesController < ApplicationController
   def index
     @user = User.find(params[:id])
+    @movies = 
+    if params[:search].present?
+      MoviesFacade.movies_by_keyword(params[:search])
+    else
+      MoviesFacade.top_twenty_movies[0..19]
+    end
   end
 
-  def search
-    # if params[:search].blank?
-    #   redirect_to "/users/#{@user.id}/discover" and return
-    # else
-    #   @parameter = params[:search].downcase
-    #   @results = Movies.all.where("lower(title) LIKE :search", search: "%#{@parameter}%")
-    # end
+  def show
+    
   end
-
-
 end
