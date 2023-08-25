@@ -9,6 +9,7 @@ class Movie
               :total_reviews,
               :reviews,
               :image
+
   def initialize(data)
     @id = data[:id]
     @title = data[:original_title]
@@ -23,7 +24,7 @@ class Movie
   end
 
   def format_genres(genres)
-    genres.map { |genre| genre[:name] }.join(", ")
+    genres.map { |genre| genre[:name] }.join(', ')
   end
 
   def generate_cast(cast)
@@ -31,11 +32,10 @@ class Movie
   end
 
   def generate_reviews(reviews)
-    reviews.map { |review| Review.new(review)}
+    reviews.map { |review| Review.new(review) }
   end
 
   def format_runtime
-    "#{@runtime / 60}hr #{@runtime % 60 }min"
+    "#{@runtime / 60}hr #{@runtime % 60}min"
   end
-
 end

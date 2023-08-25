@@ -17,6 +17,7 @@ class ViewingPartyController < ApplicationController
   end
 
   private
+
   def party_params
     params.permit(:duration, :party_date, :start_time, :movie_id)
   end
@@ -26,6 +27,6 @@ class ViewingPartyController < ApplicationController
   end
 
   def facade
-    @_facade ||= MoviesFacade.new
+    @facade ||= MoviesFacade.new
   end
 end

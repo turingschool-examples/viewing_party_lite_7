@@ -1,5 +1,6 @@
 class MoviesFacade
   attr_reader :_cached_movies
+
   def initialize
     @_cached_movies = {}
   end
@@ -10,7 +11,7 @@ class MoviesFacade
 
   private
 
-  def service 
+  def service
     MoviesService.new
   end
 end
