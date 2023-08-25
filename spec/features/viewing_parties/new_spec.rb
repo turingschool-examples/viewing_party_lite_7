@@ -43,6 +43,7 @@ describe "New Viewing Party Page" do
     it "redirects to the user's dashboard where the new event is shown" do
       check (@user2.name_email)
       click_button("Create Party")
+      save_and_open_page
     end
   end
 
