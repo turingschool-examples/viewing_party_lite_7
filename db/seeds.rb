@@ -5,3 +5,30 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+# Destroy existing records
+PartyGuest.destroy_all
+ViewingParty.destroy_all
+User.destroy_all
+
+# Create users
+alice = User.create!(name: 'Alice', email: 'alice@example.com')
+bob = User.create!(name: 'Bob', email: 'bob@example.com')
+carol = User.create!(name: 'Carol', email: 'carol@example.com')
+
+# Create viewing parties
+party1 = ViewingParty.create!(duration: 120, party_date: '2023-09-01', start_time: '19:00:00')
+party2 = ViewingParty.create!(duration: 150, party_date: '2023-09-10', start_time: '20:00:00')
+
+# Assign hosts and guests to parties
+# Alice is the host of party1
+PartyGuest.create!(user: alice, viewing_party: party1, host: true)
+# Bob and Carol are guests of party1
+PartyGuest.create!(user: bob, viewing_party: party1, host: false)
+PartyGuest.create!(user: carol, viewing_party: party1, host: false)
+
+# Carol is the host of party2
+PartyGuest.create!(user: carol, viewing_party: party2, host: true)
+# Alice and Bob are guests of party2
+PartyGuest.create!(user: alice, viewing_party: party2, host: false)
+PartyGuest.create!(user: bob, viewing_party: party2, host: false)
