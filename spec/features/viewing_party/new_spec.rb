@@ -7,7 +7,7 @@ RSpec.describe "New Viewing Party Page", :vcr do
     @bobby = User.create!(name: "Bobby Jean", email: "bobbyjean@example.com")
     @dennis = User.create!(name: "Dennis Jean", email: "dennisjean@example.com")
     @guests = [@jimmy, @bobby, @dennis]
-    @movie = MoviesService.new.find_movie(234)
+    @movie = MoviesFacade.new.find_movie(234)
     visit new_user_movie_viewing_party_path(@ally, @movie.id)
   end
 
