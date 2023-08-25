@@ -43,15 +43,19 @@ describe "New Viewing Party Page" do
     it "redirects to the user's dashboard where the new event is shown" do
       check (@user2.name_email)
       click_button("Create Party")
-      save_and_open_page
     end
   end
 
   describe "sad path" do
-    xit "will return an error if the party's duration is less than the film's duration" do
+    it "will return an error if the party's duration is less than the film's duration" do
+      fill_in("Duration of Party", with: 132)
+      fill_in("start_time", with: "10:00")
+      VCR.use_cassette("godfather-movie-details") do
+        click_button("Create Party")
 
+        expect(current_path).to eq(user_movie_viewing_party_new_path(@user1.id, @movie.id))
+        expect(page).to have_content("Error: Viewing party duration must be longer than the movie's runtime")
+      end
     end
   end
-
-  
 end

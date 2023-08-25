@@ -10,7 +10,7 @@ class ViewingPartiesController < ApplicationController
     #sad path
     if party.duration < params[:movie_runtime].to_i
       flash[:error] = "Error: Viewing party duration must be longer than the movie's runtime"
-      redirect to user_movie_viewing_party_new_path(params[:user_id], params[:user_id])
+      redirect_to user_movie_viewing_party_new_path(params[:user_id], params[:movie_id])
     elsif party.save
       flash[:success] = "Viewing Party successfully created"
       assign_host(params[:user_id], party.id)
