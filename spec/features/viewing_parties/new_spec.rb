@@ -40,8 +40,9 @@ describe "New Viewing Party Page" do
   end
 
   describe "happy path" do
-    xit "redirects to the user's dashboard where the new event is shown" do
-      
+    it "redirects to the user's dashboard where the new event is shown" do
+      check (@user2.name_email)
+      click_button("Create Party")
     end
   end
 
