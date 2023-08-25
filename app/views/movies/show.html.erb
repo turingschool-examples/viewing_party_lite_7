@@ -1,24 +1,38 @@
-<h3><%= @facade.title%></h3>
+<h2 id="movie-title"><%= @facade.title%></h2>
 
 <%= button_to "Discover Page", user_discover_path(@user.id), method: :get %>
 
-<%= button_to "Create Viewing Party for #{@facade.title}", method: :post %>
+<%= button_to "Create Viewing Party for #{@facade.title}", user_movie_viewing_party_new_path(@user.id, @facade.id), method: :get, id: "create-viewing-party" %>
 
-<ul>
-  <li>Rating: <%= @facade.rating %> | Runtime: <%= @facade.runtime %></li>
-  <p>Genres:</p>
-  <% @facade.genres.each do |genre| %>
-  <li><%= genre %></li>
+<p id="movie-rating"><b>Vote:</b> <%= @facade.rating.round(1) %></p> 
+<p id="movie-runtime"><b>Runtime:</b> <%= @facade.runtime_formatted %></p> 
+<p id="movie-genre"><b>Genre:</b> <%= @facade.genres.join(", ") %></p>
+
+<hr>
+
+<div id="movie-summary">
+  <h3>Summary</h3>
+  <p><%= @facade.overview %></p>
+</div>
+
+<div id="movie-cast">
+  <h3>Cast</h3>
+  <ul>
+    <% @facade.cast_list.each do |member| %>
+      <li class="cast-member"><b><%= member.name %></b> as "<%= member.character %>"</li>
+    <% end %>
+  </ul>
+</div>
+
+<div id="movie-reviews">
+  <h3 id="movie-reviews-count"><%= @facade.reviews.count %> Reviews</h3>
+  <% @facade.reviews.each do |review| %>
+    <div class="movie-review">
+      <p>
+        <b class="review-author"><%= review.author %></b>'s Review
+        <blockquote><i><%= simple_format(review.content) %></i></blockquote></p>
+      </p>
+      <br>
+    </div>
   <% end %>
-</ul>
-<hr>
-<%= @facade.overview %>
-<hr>
-<% @facade.cast_list.each do |member| %>
-  <li><%= member.name %> | <%= member.character %></li>
-<% end %>
-<hr>
-<% @facade.reviews.each do |review| %>
-  <li><%= review.author %> | <%= review.content %></li>
-  <br>
-<% end %>
+</div>
