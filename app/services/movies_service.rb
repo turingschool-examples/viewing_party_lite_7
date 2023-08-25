@@ -23,4 +23,9 @@ class MoviesService
     end
     Movie.new(JSON.parse(response.body, symbolize_names: true))
   end
+
+  def find_movie_images(id)
+    response = connection.get("3/movie/#{id}/images")
+    JSON.parse(response.body, symbolize_names: true)[:backdrops]
+  end
 end
