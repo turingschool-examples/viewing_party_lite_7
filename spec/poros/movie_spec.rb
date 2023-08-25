@@ -3,23 +3,16 @@ require 'rails_helper'
 RSpec.describe Movie do
   it "exists w/ attrs", :vcr do
     attrs = {
-      :adult=>false,
-      :backdrop_path=>"/rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg",
       :genre_ids=>[18, 80],
       :id=>238,
-      :original_language=>"en",
       :original_title=>"The Godfather",
       :overview=>
       "Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge.",
-      :popularity=>118.008,
       :poster_path=>"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg", #we need to have this on the discover page 
-      :release_date=>"1972-03-14",
       :title=>"The Godfather",
-      :video=>false,
       :vote_average=>8.7,
-      :vote_count=>18470
     }
-  
+
     movie = Movie.new(attrs)
 
     overview = "Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge."
@@ -31,7 +24,6 @@ RSpec.describe Movie do
   end
 
   it "can create a genre array", :vcr do 
-
     genres = {
         "genres": [
             {
