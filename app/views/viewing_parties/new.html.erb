@@ -1,0 +1,21 @@
+<%= @movie[:title] %>
+Runtime in minutes: <%= @movie[:runtime] %>
+
+<%= form_with url: user_movie_viewing_parties_path(@user, @movie[:id]), method: :post, local: true do |form| %>
+  <%= form.label :duration %>
+  <%= form.number_field :duration, value: @movie[:runtime] %>
+
+  <%= form.label :date %>
+  <%= form.date_field :date %>
+
+  <%= form.label :start_time %>
+  <%= form.time_field :start_time %>
+
+  <% @users.each do |u| %>
+  <%= form.label u.name %>
+    <%= form.check_box(u.id) %>
+  <% end %>
+  
+  <%= form.submit "Create Party" %>
+
+<% end %>
