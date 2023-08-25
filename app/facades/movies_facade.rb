@@ -1,12 +1,17 @@
-# class MoviesFacade 
-#   def initialize(something)
-#     @something = collect "cached" movies here?
-#   end
+class MoviesFacade
+  attr_reader :_cached_movies
 
-  # def find_movie(id)
-  #   search through cached movies to see if already generated, 
-  #   or else create that movie through hitting api
-  # end
-# end
+  def initialize
+    @_cached_movies = {}
+  end
 
-# need to test this
+  def find_movie(id)
+    @_cached_movies[id] ||= service.find_movie(id)
+  end
+
+  private
+
+  def service
+    MoviesService.new
+  end
+end

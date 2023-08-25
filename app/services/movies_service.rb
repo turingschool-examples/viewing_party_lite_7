@@ -1,5 +1,4 @@
 class MoviesService
-
   def search(keyword)
     response = connection.get('3/search/movie') do |faraday|
       faraday.params['query'] = keyword
@@ -14,7 +13,7 @@ class MoviesService
 
   def find_movie(id)
     response = connection.get("3/movie/#{id}") do |f|
-      f.params["append_to_response"] = "reviews,credits"
+      f.params['append_to_response'] = 'reviews,credits'
     end
     Movie.new(JSON.parse(response.body, symbolize_names: true))
   end
@@ -22,7 +21,7 @@ class MoviesService
   private
 
   def connection
-    connection = Faraday.new('https://api.themoviedb.org/') do |faraday|
+    Faraday.new('https://api.themoviedb.org/') do |faraday|
       faraday.params['api_key'] = ENV['MOVIE_API_KEY']
     end
   end

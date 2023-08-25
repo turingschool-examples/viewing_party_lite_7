@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,34 +14,34 @@
 
 ActiveRecord::Schema[7.0].define(version: 2023_08_25_001133) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "party_guests", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "viewing_party_id", null: false
-    t.boolean "host"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_party_guests_on_user_id"
-    t.index ["viewing_party_id"], name: "index_party_guests_on_viewing_party_id"
+  create_table 'party_guests', force: :cascade do |t|
+    t.bigint 'user_id', null: false
+    t.bigint 'viewing_party_id', null: false
+    t.boolean 'host'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['user_id'], name: 'index_party_guests_on_user_id'
+    t.index ['viewing_party_id'], name: 'index_party_guests_on_viewing_party_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'users', force: :cascade do |t|
+    t.string 'name'
+    t.string 'email'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "viewing_parties", force: :cascade do |t|
-    t.integer "duration"
-    t.date "party_date"
-    t.time "start_time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "movie_id"
+  create_table 'viewing_parties', force: :cascade do |t|
+    t.integer 'duration'
+    t.date 'party_date'
+    t.time 'start_time'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.integer 'movie_id'
   end
 
-  add_foreign_key "party_guests", "users"
-  add_foreign_key "party_guests", "viewing_parties"
+  add_foreign_key 'party_guests', 'users'
+  add_foreign_key 'party_guests', 'viewing_parties'
 end

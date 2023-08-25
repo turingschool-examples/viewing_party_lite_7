@@ -1,15 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe 'User index page' do
+RSpec.describe 'User index page', :vcr do
   before :each do
     load_test_data
   end
-
-  #  When a user visits the root path they should be on the landing page ('/') which includes:
-  #  Title of Application
-  #  Button to Create a New User
-  #  List of Existing Users which links to the users dashboard
-  #  Link to go back to the landing page (this link will be present at the top of all pages)
 
   it 'displays a title' do
     visit(root_path)
@@ -30,8 +24,13 @@ RSpec.describe 'User index page' do
   end
 
   it 'does not display a user with a duplicate email' do
-    visit(root_path)
-    expect(page).to_not have_content(@user3_duplicate_email.name)
+    expect do
+      User.create!(name: 'user3', email: 'user2@turing.edu')
+    end.to raise_error(ActiveRecord::RecordInvalid, 'Validation failed: Email has already been taken')
+
+    expect do
+      User.create(name: 'user3', email: 'user2@turing.edu')
+    end.to_not(change { User.count })
   end
 
   it 'displays a link to go back to the landing page' do

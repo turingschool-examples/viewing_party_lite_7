@@ -1,30 +1,26 @@
 <h3><%= @movie.title %></h3>
-
 <%= button_to "Discover Page", user_discover_path(@user), method: :get %>
 <%= button_to "Create A Viewing Party For #{@movie.title}", new_user_movie_viewing_party_path(@user, @movie.id), method: :get %>
 
 <p>Vote: <%= @movie.rating %></p>
 <p>Runtime: <%= @movie.format_runtime %></p>
 <p>Genre: <%= @movie.genres %></p>
-
 <h4>Summary </h4>
 <%= @movie.summary %>
-
 <div id="cast_list">
-<h4>Cast List</h4>
-<% @movie.cast.each_with_index do |cast_member, index| %>
-  <div id="cast-<%= index %>">
-    <%= "#{cast_member.name} as #{cast_member.character}" %>
-  </div>
-<% end %>
+  <h4>Cast List</h4>
+  <% @movie.cast.each_with_index do |cast_member, index| %>
+    <div id="cast-<%= index %>">
+      <%= "#{cast_member.name} as #{cast_member.character}" %>
+    </div>
+  <% end %>
 </div>
-
 <div id="reviews">
-<h4><%= @movie.total_reviews %> Reviews </h4>
-<% @movie.reviews.each_with_index do |review, index| %>
-  <div id="review-<%= index %>">
-    <p>Author: <%= review.author %>, Rating: <%= review.rating %></p>
-    <p><%= review.comments %></p>
-  </div>
-<% end %>
+  <h4><%= @movie.total_reviews %> Reviews </h4>
+  <% @movie.reviews.each_with_index do |review, index| %>
+    <div id="review-<%= index %>">
+      <p>Author: <%= review.author %>, Rating: <%= review.rating %></p>
+      <p><%= review.comments %></p>
+    </div>
+  <% end %>
 </div>

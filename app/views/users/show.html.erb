@@ -1,8 +1,22 @@
-<h3><%= @user.name %>'s Dashboard</h3>
-
-<%= button_to "Discover Movies", user_discover_path(@user), method: :get %>
-
-<div id="my_parties">
-<h5>My Parties</h5>
-
+<div style="text-align: center;">
+  <h2><%= @user.name %>'s Dashboard</h2>
+  <%= button_to "Discover Movies", user_discover_path(@user), method: :get %>
 </div>
+<div id="my_parties">
+  <h3>My Parties</h3>
+  <% hosting_parties, invited_parties = @user.viewing_parties.partition { |party| party.party_guests.find { |pg| pg.host && pg.user_id == @user.id } } %>
+  <% if invited_parties.any? %>
+    <div id="invited-parties">
+      <h4>Parties I'm Invited To</h4>
+      <% invited_parties.each do |party| %>
+        <%= render 'party_table', party: party, id: 'invited-parties-table' %>
+      <% end %>
+    <% end %>
+    <% if hosting_parties.any? %>
+      <div id="hosted-parties">
+        <h4>Parties I'm Hosting</h4>
+        <% hosting_parties.each do |party| %>
+          <%= render 'party_table', party: party, class: 'invited-parties-table' %>
+        <% end %>
+      <% end %>
+    </div>
