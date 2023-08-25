@@ -37,6 +37,5 @@ RSpec.describe "User Movies Show" do
     expect(page).to have_content("Author: Suresh Chidurala")
     expect(page).to have_content("Username: Suresh17511")
     expect(page).to have_content("Rating: 9.0")
-    save_and_open_page
   end
 end

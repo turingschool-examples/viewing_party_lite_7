@@ -20,6 +20,7 @@ class Movie
     @cast = create_cast_array(data)
     @reviews = create_review_array(data)
     @review_count = create_review_count(data)
+    # @poster = data[:poster_path]
   end
 
   def create_genre_array(data)
@@ -43,7 +44,7 @@ class Movie
   def create_cast_array(data) 
     if data[:credits]
       data[:credits][:cast][0..9].map do |member|
-        member[:name] + ', ' + member[:character]
+        member[:name] + ', as ' + member[:character]
       end
     else
       []
