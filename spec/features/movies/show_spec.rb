@@ -20,9 +20,11 @@ describe "Movie Details Page", type: :feature do
   it "has a button to create a viewing party" do
     expect(page).to have_button("create-viewing-party").once
 
-    click_button("create-viewing-party")
-
-    expect(current_path).to eq("/users/#{@user.id}/movies/#{@movie.id}/viewing_party/new")
+    VCR.use_cassette("godfather-movie-details") do
+      click_button("create-viewing-party")
+      
+      expect(current_path).to eq("/users/#{@user.id}/movies/#{@movie.id}/viewing_party/new")
+    end
   end
 
   it "shows basic information about the movie" do

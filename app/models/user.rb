@@ -7,11 +7,17 @@ class EmailValidator < ActiveModel::EachValidator
 end
 
 class User < ApplicationRecord
+  has_many :viewing_party_users
+  has_many :viewing_parties, through: :viewing_party_users
+
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true, email: true
 
-  # placeholder method so that users/show_spec.rb test passes 
-  def viewing_parties
-    []
+  def name_email
+    "#{name} (#{email})"
+  end
+
+  def hosting_status_for(viewing_party)
+    viewing_party_users.find_by(viewing_party: viewing_party)&.hosting? || false
   end
 end

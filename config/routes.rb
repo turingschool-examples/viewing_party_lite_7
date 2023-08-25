@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get "/discover", to: "movies#discover"
     resources :movies, only: [:index, :show] do
       get "/viewing_party/new", to: "viewing_parties#new"
+      post "/viewing_party", to: "viewing_parties#create"
     end
   end
 end
