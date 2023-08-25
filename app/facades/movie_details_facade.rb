@@ -26,10 +26,7 @@ class MovieDetailsFacade
     raw_reviews = service.movie_reviews(movie)[:results]
     raw_reviews.map do |raw_review|
       MovieReview.new(author: raw_review[:author],
-                      name: raw_review[:author_details][:name],
-                      username: raw_review[:author_details][:username],
-                      avatar_path: raw_review[:author_details][:avatar_path],
-                      rating: raw_review[:author_details][:rating],
+                      content: raw_review[:content],
                       id: raw_review[:id])
     end
   end

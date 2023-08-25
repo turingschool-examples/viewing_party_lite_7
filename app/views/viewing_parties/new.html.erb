@@ -1,0 +1,34 @@
+<h3><%= @details.title %> Viewing Party</h3>
+
+<% if @viewing_party.id %>
+<b> Select the box next to their name and submit via Invite to notify those users of your party! </b>
+  <%= form_with url: "/users/#{@user.id}/movies/#{@details.id}/viewing-parties/#{@viewing_party.id}/user-viewing-parties", local: true do |f| %>  
+    <% @users.each do |user| %>
+      <% unless @user.id == user.id %>
+        <div id="<%= user.id %>">
+          <%= check_box_tag 'user_ids[]', user.id %>
+          <%= user.name %>
+        </div>
+      <% end %>
+    <% end %>
+  <%= submit_tag 'Invite' %>
+  <% end %>
+
+<% else %>
+
+  <%= form_with url: "/users/#{@user.id}/movies/#{@details.id}/viewing-parties", local: true do |f| %>  
+    <p><%= f.label :duration, 'Duration in minutes:' %></p>
+    <p><%=  f.number_field :duration, value: @details.runtime %></p> 
+
+    <p><%= f.label :event_date, 'Date for event:' %></p>
+    <p><%=  f.date_field :event_date%></p>
+
+    <p><%= f.label :start_time, 'Start time:' %></p>
+    <p><%=  f.time_field :start_time%></p>
+
+    <p><%= f.label :name, 'Name for event:' %></p>
+    <p><%=  f.text_field :name%></p>
+
+    <p><%= f.submit "Create" %></p>
+  <% end %>
+<% end %>

@@ -6,7 +6,7 @@ RSpec.describe "Movie details page" do
   end
 
   describe "movie details page" do
-    it "displays movie details" do
+    it "displays movie details", :vcr do
       visit user_movies_path(@user1)
       expect(page).to have_link("Parasite")
       click_link "Parasite"
@@ -29,13 +29,11 @@ RSpec.describe "Movie details page" do
       within "#Reviews" do
         expect(page).to have_content("Total reviews: 15")
         expect(page).to have_content("Author: SWITCH.")
-        expect(page).to have_content("Name: SWITCH.")
-        expect(page).to have_content("Rating: 10.0")
-        expect(page).to have_content("Username: maketheSWITCH")
+        expect(page).to have_content("Content: What makes ‘Parasite’ so satisfying is that it commits neither error.")
       end
     end
 
-    it "has a link back to the discover page" do
+    it "has a link back to the discover page", :vcr do
       visit user_movies_path(@user1)
  
       expect(page).to have_link("Parasite")
@@ -45,7 +43,7 @@ RSpec.describe "Movie details page" do
       expect(current_path).to eq(discover_user_path(@user1))
     end
 
-    it "has a button to create new viewing party" do
+    it "has a button to create new viewing party", :vcr do
       visit user_movies_path(@user1)
  
       expect(page).to have_link("Parasite")
