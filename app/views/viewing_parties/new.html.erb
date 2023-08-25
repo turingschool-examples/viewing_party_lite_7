@@ -18,7 +18,7 @@
 
   <%= form_with url: "/users/#{@user.id}/movies/#{@details.id}/viewing-parties", local: true do |f| %>  
     <p><%= f.label :duration, 'Duration in minutes:' %></p>
-    <p><%=  f.number_field :duration%></p> 
+    <p><%=  f.number_field :duration, value: @details.runtime %></p> 
 
     <p><%= f.label :event_date, 'Date for event:' %></p>
     <p><%=  f.date_field :event_date%></p>
