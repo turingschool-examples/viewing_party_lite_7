@@ -25,278 +25,6 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 25 Aug 2023 15:26:04 GMT
-      Server:
-      - openresty
-      Cache-Control:
-      - public, max-age=24931
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 9d48db5c244b9c3e3d162ef155211175
-      X-Memc-Age:
-      - '83'
-      X-Memc-Expires:
-      - '22841'
-      Etag:
-      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 167aa95f2f064fbc0c7566b3d55cc1ca.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - ATL58-P2
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - qRYwj-BUH3cTTAfoQ6oaOgUfls0Qvn8ndeWpou6AeZKTzsEhRrN0xw==
-      Age:
-      - '2325'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
-        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
-        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
-        fictional Italian-American Corleone crime family. When organized crime family
-        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
-        son, Michael steps in to take care of the would-be killers, launching a campaign
-        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
-        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 16:04:49 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.10
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 25 Aug 2023 15:26:04 GMT
-      Server:
-      - openresty
-      Cache-Control:
-      - public, max-age=24931
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 9d48db5c244b9c3e3d162ef155211175
-      X-Memc-Age:
-      - '83'
-      X-Memc-Expires:
-      - '22841'
-      Etag:
-      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 8320be7308887c5e1b64ebd8be6b078e.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - ATL58-P2
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - uYHm4vcDUm0-M9wmGvJx7hDLAf6BSXZeEO4sZ_oaVFj2GNzk-8E-fQ==
-      Age:
-      - '3907'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
-        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
-        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
-        fictional Italian-American Corleone crime family. When organized crime family
-        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
-        son, Michael steps in to take care of the would-be killers, launching a campaign
-        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
-        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 16:31:11 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.10
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 25 Aug 2023 15:26:04 GMT
-      Server:
-      - openresty
-      Cache-Control:
-      - public, max-age=24931
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 9d48db5c244b9c3e3d162ef155211175
-      X-Memc-Age:
-      - '83'
-      X-Memc-Expires:
-      - '22841'
-      Etag:
-      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 fea48d36741a5a8b0c278e8b50136aba.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - ATL58-P2
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - jWqd-ihAyLBt0hwV1rqvIC1BNe9kWjCnRvEZUm732fYUypFXGdO3FQ==
-      Age:
-      - '3944'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
-        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
-        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
-        fictional Italian-American Corleone crime family. When organized crime family
-        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
-        son, Michael steps in to take care of the would-be killers, launching a campaign
-        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
-        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 16:31:48 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.10
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 25 Aug 2023 15:26:04 GMT
-      Server:
-      - openresty
-      Cache-Control:
-      - public, max-age=24931
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 9d48db5c244b9c3e3d162ef155211175
-      X-Memc-Age:
-      - '83'
-      X-Memc-Expires:
-      - '22841'
-      Etag:
-      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 cac404716323a3fe7bf53c1e15d39508.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - ATL58-P2
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - XAtLqubjjYHPuuzS_lDKMCVMdUUc5jTTycxlSjl5B0Maq1iEEjZNyQ==
-      Age:
-      - '4030'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
-        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
-        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
-        fictional Italian-American Corleone crime family. When organized crime family
-        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
-        son, Michael steps in to take care of the would-be killers, launching a campaign
-        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
-        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 16:33:14 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.10
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
       - Fri, 25 Aug 2023 16:38:38 GMT
       Server:
       - openresty
@@ -316,15 +44,17 @@ http_interactions:
       - Accept-Encoding
       - Origin
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 e19510111c3ca1af222e637a577b0c5a.cloudfront.net (CloudFront)
+      - 1.1 a16b6423d8aef1185032c1f124bc04fe.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - ORD51-C4
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - _P07OaLWmvcvCBbVf1QNtqmxTPw3ZCnL8ZIWIypvlY2RQ6sO4yom6A==
+      - EJs2N6QMZ2FbKgipjGu8ZfRF2oZbQ-s-FOSV6YxYzUzza0iVTuXOAw==
+      Age:
+      - '15668'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
@@ -337,7 +67,7 @@ http_interactions:
         Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
         offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 16:38:38 GMT
+  recorded_at: Fri, 25 Aug 2023 20:59:46 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
@@ -384,15 +114,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 43684cbde7a46ef5524f47bc4254eff8.cloudfront.net (CloudFront)
+      - 1.1 e958e7d7aa09fa245ddba0749f6ba632.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - ORD51-C4
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - turxxF0H1VB2rTfl3YXrH_d-IeGgV30WQKDzg7rt-Cqn7otKlil8JA==
+      - Hbsn-LC09z1OXkHH1T672zDZBl-3bOq6Y4mre4PHpAii6EadkEmDMQ==
       Age:
-      - '3008'
+      - '15861'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
@@ -405,1367 +135,7 @@ http_interactions:
         Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
         offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 17:28:46 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.10
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 25 Aug 2023 16:38:38 GMT
-      Server:
-      - openresty
-      Cache-Control:
-      - public, max-age=28120
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 9d48db5c244b9c3e3d162ef155211175
-      X-Memc-Age:
-      - '3868'
-      X-Memc-Expires:
-      - '19056'
-      Etag:
-      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 17b1e7486c33e7b87db3badc162ff13a.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - ORD51-C4
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - Q5ReLZG7lhG1K54Fpr1ApFHvSor3B8edzhvQO8pM3V3ow7yo7M258A==
-      Age:
-      - '3028'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
-        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
-        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
-        fictional Italian-American Corleone crime family. When organized crime family
-        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
-        son, Michael steps in to take care of the would-be killers, launching a campaign
-        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
-        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 17:29:06 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.10
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 25 Aug 2023 16:38:38 GMT
-      Server:
-      - openresty
-      Cache-Control:
-      - public, max-age=28120
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 9d48db5c244b9c3e3d162ef155211175
-      X-Memc-Age:
-      - '3868'
-      X-Memc-Expires:
-      - '19056'
-      Etag:
-      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 4cbb89cd343b8f6e6698aa5a9e2ca87e.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - ORD51-C4
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - KotVNC7tcu9u4k8IPcGrGEjobEm7Qjr3arNzzmfU4ifYQowPXKDWnQ==
-      Age:
-      - '3045'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
-        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
-        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
-        fictional Italian-American Corleone crime family. When organized crime family
-        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
-        son, Michael steps in to take care of the would-be killers, launching a campaign
-        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
-        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 17:29:23 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.10
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 25 Aug 2023 16:38:38 GMT
-      Server:
-      - openresty
-      Cache-Control:
-      - public, max-age=28120
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 9d48db5c244b9c3e3d162ef155211175
-      X-Memc-Age:
-      - '3868'
-      X-Memc-Expires:
-      - '19056'
-      Etag:
-      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 8565c42040d6a7b1202dad75b2f0cd94.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - ORD51-C4
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - tx4UWb1FwVPYdE_AKSxYCg27X0E92CvmfOTvCGIOTH-sgo-0fnRE_Q==
-      Age:
-      - '3071'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
-        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
-        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
-        fictional Italian-American Corleone crime family. When organized crime family
-        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
-        son, Michael steps in to take care of the would-be killers, launching a campaign
-        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
-        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 17:29:49 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.10
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 25 Aug 2023 16:38:38 GMT
-      Server:
-      - openresty
-      Cache-Control:
-      - public, max-age=28120
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 9d48db5c244b9c3e3d162ef155211175
-      X-Memc-Age:
-      - '3868'
-      X-Memc-Expires:
-      - '19056'
-      Etag:
-      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 977219f9fca056a953830ed07e32854e.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - ORD51-C4
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - XTbtB2vdPxBwSNNPdfnRc5ol074fccT8oRWGavzX8PWIMa4JVZj6CQ==
-      Age:
-      - '3341'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
-        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
-        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
-        fictional Italian-American Corleone crime family. When organized crime family
-        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
-        son, Michael steps in to take care of the would-be killers, launching a campaign
-        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
-        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 17:34:19 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.10
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 25 Aug 2023 16:38:38 GMT
-      Server:
-      - openresty
-      Cache-Control:
-      - public, max-age=28120
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 9d48db5c244b9c3e3d162ef155211175
-      X-Memc-Age:
-      - '3868'
-      X-Memc-Expires:
-      - '19056'
-      Etag:
-      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 756055f1fedb18a26f8e830f747b36d4.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - ORD51-C4
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - sQU8pOEDkTd5cyo28pLNhZ1DRByH2qZUSBVRUR7-BDRep8kTmgCS8w==
-      Age:
-      - '3443'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
-        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
-        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
-        fictional Italian-American Corleone crime family. When organized crime family
-        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
-        son, Michael steps in to take care of the would-be killers, launching a campaign
-        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
-        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 17:36:01 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.10
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 25 Aug 2023 16:38:38 GMT
-      Server:
-      - openresty
-      Cache-Control:
-      - public, max-age=28120
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 9d48db5c244b9c3e3d162ef155211175
-      X-Memc-Age:
-      - '3868'
-      X-Memc-Expires:
-      - '19056'
-      Etag:
-      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 d0c11ba16e76543015532b1566c6a2ca.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - ORD51-C4
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - FQgMKjnBSDNbzwkmkQcx4d-yVC5fUs2ZiudqhaDA_h_aUCr2SUJy7w==
-      Age:
-      - '3490'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
-        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
-        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
-        fictional Italian-American Corleone crime family. When organized crime family
-        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
-        son, Michael steps in to take care of the would-be killers, launching a campaign
-        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
-        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 17:36:48 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.10
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 25 Aug 2023 16:38:38 GMT
-      Server:
-      - openresty
-      Cache-Control:
-      - public, max-age=28120
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 9d48db5c244b9c3e3d162ef155211175
-      X-Memc-Age:
-      - '3868'
-      X-Memc-Expires:
-      - '19056'
-      Etag:
-      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 73dca6335fec334b6898baa021fe28e0.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - ORD51-C4
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - q2WiruAD0jAdkHsAO_FzkVc9_zMpOD1A2YpWJeUhoLIge66kvyx5Rw==
-      Age:
-      - '3660'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
-        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
-        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
-        fictional Italian-American Corleone crime family. When organized crime family
-        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
-        son, Michael steps in to take care of the would-be killers, launching a campaign
-        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
-        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 17:39:38 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.10
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 25 Aug 2023 16:38:38 GMT
-      Server:
-      - openresty
-      Cache-Control:
-      - public, max-age=28120
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 9d48db5c244b9c3e3d162ef155211175
-      X-Memc-Age:
-      - '3868'
-      X-Memc-Expires:
-      - '19056'
-      Etag:
-      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 a6d603f19a2e0ac32a3fa1d428f95bb0.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - ORD51-C4
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - _LfT-k4ELi3NS4bbHvgX6AXjK-tEr8j9DEF-v2HIOvKrdl7givfKZQ==
-      Age:
-      - '3678'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
-        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
-        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
-        fictional Italian-American Corleone crime family. When organized crime family
-        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
-        son, Michael steps in to take care of the would-be killers, launching a campaign
-        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
-        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 17:39:56 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.10
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 25 Aug 2023 16:38:38 GMT
-      Server:
-      - openresty
-      Cache-Control:
-      - public, max-age=28120
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 9d48db5c244b9c3e3d162ef155211175
-      X-Memc-Age:
-      - '3868'
-      X-Memc-Expires:
-      - '19056'
-      Etag:
-      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 43684cbde7a46ef5524f47bc4254eff8.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - ORD51-C4
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - LgLAEh1_8Ga_p6JX9xaFACQBY-3Nzj7OG-4PUGUHgXzYawJCyQdbjA==
-      Age:
-      - '3735'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
-        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
-        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
-        fictional Italian-American Corleone crime family. When organized crime family
-        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
-        son, Michael steps in to take care of the would-be killers, launching a campaign
-        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
-        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 17:40:53 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.10
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 25 Aug 2023 16:38:38 GMT
-      Server:
-      - openresty
-      Cache-Control:
-      - public, max-age=28120
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 9d48db5c244b9c3e3d162ef155211175
-      X-Memc-Age:
-      - '3868'
-      X-Memc-Expires:
-      - '19056'
-      Etag:
-      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 977219f9fca056a953830ed07e32854e.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - ORD51-C4
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - _NVFTbE43jC5mb7h0dr5VPEcfw21aV6zoP3MyskKRZNyNWnqapkDmQ==
-      Age:
-      - '3751'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
-        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
-        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
-        fictional Italian-American Corleone crime family. When organized crime family
-        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
-        son, Michael steps in to take care of the would-be killers, launching a campaign
-        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
-        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 17:41:09 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.10
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 25 Aug 2023 16:38:38 GMT
-      Server:
-      - openresty
-      Cache-Control:
-      - public, max-age=28120
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 9d48db5c244b9c3e3d162ef155211175
-      X-Memc-Age:
-      - '3868'
-      X-Memc-Expires:
-      - '19056'
-      Etag:
-      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 c0ca097af85bee6ba7a02767d51e59b8.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - ORD51-C4
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - gJA3lvZHP3NyWp2xcUOv2ZlBFlTvxB4M1J8l4o0zBWqs3zZmegIJMg==
-      Age:
-      - '3787'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
-        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
-        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
-        fictional Italian-American Corleone crime family. When organized crime family
-        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
-        son, Michael steps in to take care of the would-be killers, launching a campaign
-        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
-        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 17:41:45 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.10
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 25 Aug 2023 16:38:38 GMT
-      Server:
-      - openresty
-      Cache-Control:
-      - public, max-age=28120
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 9d48db5c244b9c3e3d162ef155211175
-      X-Memc-Age:
-      - '3868'
-      X-Memc-Expires:
-      - '19056'
-      Etag:
-      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 4cbb89cd343b8f6e6698aa5a9e2ca87e.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - ORD51-C4
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - yXxl483Ij6MfXBaqVBerJQdhG0G4u828cyUch4A_VF9yXeVV4SIZ8A==
-      Age:
-      - '5787'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
-        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
-        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
-        fictional Italian-American Corleone crime family. When organized crime family
-        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
-        son, Michael steps in to take care of the would-be killers, launching a campaign
-        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
-        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 18:15:05 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.10
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 25 Aug 2023 16:38:38 GMT
-      Server:
-      - openresty
-      Cache-Control:
-      - public, max-age=28120
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 9d48db5c244b9c3e3d162ef155211175
-      X-Memc-Age:
-      - '3868'
-      X-Memc-Expires:
-      - '19056'
-      Etag:
-      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 42d4eaeaff822cf9612027ce7994d186.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - ORD51-C4
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - A909kIw7D-G5L9BXF4DIat883U1ehwJKj38w4Xp5df3IoBQkNTeKFQ==
-      Age:
-      - '5834'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
-        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
-        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
-        fictional Italian-American Corleone crime family. When organized crime family
-        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
-        son, Michael steps in to take care of the would-be killers, launching a campaign
-        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
-        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 18:15:52 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.10
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 25 Aug 2023 16:38:38 GMT
-      Server:
-      - openresty
-      Cache-Control:
-      - public, max-age=28120
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 9d48db5c244b9c3e3d162ef155211175
-      X-Memc-Age:
-      - '3868'
-      X-Memc-Expires:
-      - '19056'
-      Etag:
-      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 d0c11ba16e76543015532b1566c6a2ca.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - ORD51-C4
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - 2HnvOSkcCJFdb5a2TuBQ66fUFc-v9o5Axf3vFbFnNFBhHLPa0kFrag==
-      Age:
-      - '5990'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
-        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
-        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
-        fictional Italian-American Corleone crime family. When organized crime family
-        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
-        son, Michael steps in to take care of the would-be killers, launching a campaign
-        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
-        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 18:18:28 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.10
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 25 Aug 2023 16:38:38 GMT
-      Server:
-      - openresty
-      Cache-Control:
-      - public, max-age=28120
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 9d48db5c244b9c3e3d162ef155211175
-      X-Memc-Age:
-      - '3868'
-      X-Memc-Expires:
-      - '19056'
-      Etag:
-      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 a6d603f19a2e0ac32a3fa1d428f95bb0.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - ORD51-C4
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - 0TlYoeYL1mrkNN-ruV3us1Yt6LzpVR_zj3gXEPlEWBT0SSqSZg0fPQ==
-      Age:
-      - '6035'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
-        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
-        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
-        fictional Italian-American Corleone crime family. When organized crime family
-        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
-        son, Michael steps in to take care of the would-be killers, launching a campaign
-        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
-        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 18:19:13 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.10
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 25 Aug 2023 16:38:38 GMT
-      Server:
-      - openresty
-      Cache-Control:
-      - public, max-age=28120
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 9d48db5c244b9c3e3d162ef155211175
-      X-Memc-Age:
-      - '3868'
-      X-Memc-Expires:
-      - '19056'
-      Etag:
-      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 d9de93d509cc5d8f404dca5420b5aa22.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - ORD51-C4
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - 6NxsJmOLjkAmKfDWBbe798Ephao6fUEYLWBf4E7EJTdCtq57C33LfA==
-      Age:
-      - '6079'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
-        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
-        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
-        fictional Italian-American Corleone crime family. When organized crime family
-        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
-        son, Michael steps in to take care of the would-be killers, launching a campaign
-        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
-        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 18:19:57 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.10
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 25 Aug 2023 16:38:38 GMT
-      Server:
-      - openresty
-      Cache-Control:
-      - public, max-age=28120
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 9d48db5c244b9c3e3d162ef155211175
-      X-Memc-Age:
-      - '3868'
-      X-Memc-Expires:
-      - '19056'
-      Etag:
-      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 e19510111c3ca1af222e637a577b0c5a.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - ORD51-C4
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - wQNZxhF17f5T2cEdh40W4KWlhLO2MMu0fV6gVByO0Kt_hUAe54eEDQ==
-      Age:
-      - '6159'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
-        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
-        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
-        fictional Italian-American Corleone crime family. When organized crime family
-        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
-        son, Michael steps in to take care of the would-be killers, launching a campaign
-        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
-        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 18:21:17 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.10
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 25 Aug 2023 16:38:38 GMT
-      Server:
-      - openresty
-      Cache-Control:
-      - public, max-age=28120
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 9d48db5c244b9c3e3d162ef155211175
-      X-Memc-Age:
-      - '3868'
-      X-Memc-Expires:
-      - '19056'
-      Etag:
-      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 1bc5cb35fce618729d22b7ee2088cdce.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - ORD51-C4
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - EN4rEWQFSedNPlJ16ZLUq3N3jrtDb5shgWKl_oMnWLWTo-RY9zGhoA==
-      Age:
-      - '6225'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
-        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
-        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
-        fictional Italian-American Corleone crime family. When organized crime family
-        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
-        son, Michael steps in to take care of the would-be killers, launching a campaign
-        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
-        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 18:22:23 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.10
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 25 Aug 2023 16:38:38 GMT
-      Server:
-      - openresty
-      Cache-Control:
-      - public, max-age=28120
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 9d48db5c244b9c3e3d162ef155211175
-      X-Memc-Age:
-      - '3868'
-      X-Memc-Expires:
-      - '19056'
-      Etag:
-      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 433684ff3df4bd5c49774dbbbd091e72.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - ORD51-C4
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - 1g4ezmQG5VA-mEeruseGyYg6RiQ9EnQGWFMOeIKCp07qb1Lk_mOt7Q==
-      Age:
-      - '6254'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
-        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
-        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
-        fictional Italian-American Corleone crime family. When organized crime family
-        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
-        son, Michael steps in to take care of the would-be killers, launching a campaign
-        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
-        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 18:22:52 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.10
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 25 Aug 2023 16:38:38 GMT
-      Server:
-      - openresty
-      Cache-Control:
-      - public, max-age=28120
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 9d48db5c244b9c3e3d162ef155211175
-      X-Memc-Age:
-      - '3868'
-      X-Memc-Expires:
-      - '19056'
-      Etag:
-      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 dc01b6e587f452ad6063c93841e9d51e.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - ORD51-C4
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - jdRSiDZfuTXMY7WWvTPpdpaUL300rOzpS460LERXciMkMPSy2cKTrQ==
-      Age:
-      - '6467'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
-        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
-        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
-        fictional Italian-American Corleone crime family. When organized crime family
-        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
-        son, Michael steps in to take care of the would-be killers, launching a campaign
-        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
-        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 18:26:25 GMT
+  recorded_at: Fri, 25 Aug 2023 21:02:59 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
@@ -1818,9 +188,9 @@ http_interactions:
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - L5mAlqMyKNPbadVffe8dB5W1v3_6Sz4dZsp22WAMSgnAP9_Nq6HAJA==
+      - hHSEisd0cdfZ4rkj89pwG8Hvt25ARluhtJd8SPDaxmkFLMYU8CF49A==
       Age:
-      - '6673'
+      - '15981'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
@@ -1833,7 +203,7 @@ http_interactions:
         Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
         offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 18:29:51 GMT
+  recorded_at: Fri, 25 Aug 2023 21:04:59 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
@@ -1880,15 +250,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 4cbb89cd343b8f6e6698aa5a9e2ca87e.cloudfront.net (CloudFront)
+      - 1.1 8565c42040d6a7b1202dad75b2f0cd94.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - ORD51-C4
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - vJiibHdrPMTP20m7naNxxP9NuYqj9SzS-E2VLbxk46l-nJT6s0BlRw==
+      - RckqmHcFsZ4ted9UUxpJvWyMnvQLGnnVt9v152P2RQrmyHJKYWUZ5Q==
       Age:
-      - '6737'
+      - '16031'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
@@ -1901,143 +271,7 @@ http_interactions:
         Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
         offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 18:30:54 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.10
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 25 Aug 2023 16:38:38 GMT
-      Server:
-      - openresty
-      Cache-Control:
-      - public, max-age=28120
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 9d48db5c244b9c3e3d162ef155211175
-      X-Memc-Age:
-      - '3868'
-      X-Memc-Expires:
-      - '19056'
-      Etag:
-      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 43684cbde7a46ef5524f47bc4254eff8.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - ORD51-C4
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - f8nmC40gEOPUVmiyFYrKJ_ix36prx943-TwRzTauFVf6uiqdcjqacQ==
-      Age:
-      - '6918'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
-        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
-        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
-        fictional Italian-American Corleone crime family. When organized crime family
-        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
-        son, Michael steps in to take care of the would-be killers, launching a campaign
-        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
-        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 18:33:56 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.10
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 25 Aug 2023 16:38:38 GMT
-      Server:
-      - openresty
-      Cache-Control:
-      - public, max-age=28120
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 9d48db5c244b9c3e3d162ef155211175
-      X-Memc-Age:
-      - '3868'
-      X-Memc-Expires:
-      - '19056'
-      Etag:
-      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 e027f912c97cbcd70bdff61138a2cbfa.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - ORD51-C4
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - NZWLI0wpNwqnylzAGsrkclkBVifxu0y034aViGE4rJLPCb94kpoSWw==
-      Age:
-      - '6938'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
-        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
-        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
-        fictional Italian-American Corleone crime family. When organized crime family
-        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
-        son, Michael steps in to take care of the would-be killers, launching a campaign
-        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
-        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 18:34:16 GMT
+  recorded_at: Fri, 25 Aug 2023 21:05:49 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
@@ -2090,9 +324,9 @@ http_interactions:
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - kesy6Iy-69s55kfQmxDrBeYungXGOXG9pNvue2S4ez92m0UKqDCEoQ==
+      - LBDvEPaXG-aVsQ1PPBxXiY_LMKd8jbnhYtwIRO21sp-SfbxXsHDx3Q==
       Age:
-      - '7097'
+      - '16078'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
@@ -2105,7 +339,7 @@ http_interactions:
         Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
         offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 18:36:55 GMT
+  recorded_at: Fri, 25 Aug 2023 21:06:36 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
@@ -2152,15 +386,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 a086167ac002fd278f681a1c44914a46.cloudfront.net (CloudFront)
+      - 1.1 62cb87f302ffda6aad8c50cfc260c97a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - ORD51-C4
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - LkGSYVjP3nK8w4c-hYlkXEZ_Ja97XBDTp08Jv8LRFpUEvJFOHHiE9g==
+      - BXiGCQjk7JJUjj4c4NcBjtlgg_zunD-k65A5-8pc2a2JboCVmkbQTQ==
       Age:
-      - '8799'
+      - '16104'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
@@ -2173,7 +407,143 @@ http_interactions:
         Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
         offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 19:05:17 GMT
+  recorded_at: Fri, 25 Aug 2023 21:07:02 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 a11e280eadd42ef88fe03cd5ec96477c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - DN_eFDSfErEupzW0yqYczF-jMgXB1UxWaUjoqyRgRIfjWCT2Rk5pvA==
+      Age:
+      - '16236'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 21:09:14 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 34ccac3e353c6f55648aa60d390f3c88.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - uE6WmFYYKJl-FyCDc7rZ7X28xGGn4cOKc6yElPdmy_hT-MduEHIl5w==
+      Age:
+      - '16253'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 21:09:31 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
@@ -2226,9 +596,9 @@ http_interactions:
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 1tQp89BL1GDEnjbAkd9_GIwloJTTvRCiklmJ-c4UpwqVF3M5R_pDhw==
+      - 0dlWRAtddlvOeGMDaxuIOpWSYKuixkTkvtsTsehRJAlVL_Y6HU6-FA==
       Age:
-      - '8916'
+      - '16678'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
@@ -2241,7 +611,279 @@ http_interactions:
         Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
         offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 19:07:14 GMT
+  recorded_at: Fri, 25 Aug 2023 21:16:36 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 e027f912c97cbcd70bdff61138a2cbfa.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - AufIv_kyUbOSfPRES_ZxYWfehFw-fbb5smOuKjZgrKNRfUcrFMiCGw==
+      Age:
+      - '16693'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 21:16:51 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 34ccac3e353c6f55648aa60d390f3c88.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - ZrUhCnFo2qkHqGeopmzzZ0Re4Ii5dZWDdxs3H3H9E8PexDypDmYwvQ==
+      Age:
+      - '16712'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 21:17:10 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 6d6df3cff77ca7257114fa22468d9dbe.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 5ZWm3JrTUfmVqiFX94jAHLMngg7CL62zRGsZapUWfoAgD-kWBN6CbA==
+      Age:
+      - '16751'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 21:17:49 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 6713d1da0c4ef6b06c1b7602b567d76a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 6CELZnzOHoaREI3Ei_tAMgdE0Tt31lH9F9DQ4SSOcUMjmft2rOZBuw==
+      Age:
+      - '16876'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 21:19:54 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
@@ -2294,9 +936,9 @@ http_interactions:
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - WKUR31zl8iprSISD7-ISs8yVuZKDWNs7Snxz_gQfwyvdjy6A6hglGw==
+      - haxUTgIv-ke6yFWjPzjfx_g1YmNkNG9duQAdJQ_XD31go0A3Pgn2tw==
       Age:
-      - '9062'
+      - '16980'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
@@ -2309,5 +951,1977 @@ http_interactions:
         Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
         offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
-  recorded_at: Fri, 25 Aug 2023 19:09:40 GMT
+  recorded_at: Fri, 25 Aug 2023 21:21:38 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 dc01b6e587f452ad6063c93841e9d51e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - zBBtfHdNsfsqQ2_MSbrdgoBTRYteTl4LYHjeUM2o3oA5sB4xhgvrVw==
+      Age:
+      - '17003'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 21:22:01 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 6713d1da0c4ef6b06c1b7602b567d76a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 1LruuN6dP37YCHG2HA3uUBvEYfXEi2-VspKL2LY8PDxMCZKbByXRVA==
+      Age:
+      - '17061'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 21:22:59 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 6713d1da0c4ef6b06c1b7602b567d76a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - AAPz19mTj5ZIsUwhGuQKKZSX3nKw_CLZE3PZmf5pg7_r_nTSl572SQ==
+      Age:
+      - '18966'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 21:54:44 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 c0ca097af85bee6ba7a02767d51e59b8.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - KUbkqRWmhdBSbziSSAZSrS25SmnVUzoQZBNwrTCP95oKouRo6HQMFg==
+      Age:
+      - '18974'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 21:54:52 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 34ccac3e353c6f55648aa60d390f3c88.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - YEE0DkdFJGhd1uB8eTkmiMKwHX0t3tclgqIhPW5u8ieOMZ90V8RZ5g==
+      Age:
+      - '19126'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 21:57:24 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 9c0f6c031cf4ffc52f89552ee0df160c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - ee8czhqoL_lGanKs92Xs4Hx8w-qMGmTSqxjQ-4sgyJTyipWvDqYFkQ==
+      Age:
+      - '19513'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 22:03:51 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 c61ed55833f98dc012e73350de5485f0.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 9ko1M6ASrJhGsezvFBcBCQiyIy5lY8emkDRG4jkBewq0VM2I4juRLw==
+      Age:
+      - '19719'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 22:07:17 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 8565c42040d6a7b1202dad75b2f0cd94.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - mdlmWHIVnkVNGZqUbi6j-Ke5GvU6QxodwPVB2h2vYxYdlmJ7eIc2OQ==
+      Age:
+      - '19832'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 22:09:10 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 a086167ac002fd278f681a1c44914a46.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - NVd27TqwqZftjmEmVOCb2nLBXUdkOOjFNvzBRu7PoIR-VJcIQjrDrA==
+      Age:
+      - '20137'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 22:14:15 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 a11e280eadd42ef88fe03cd5ec96477c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - kKluCKDOaEV_r8zi3IMmH9S-odcR_fLfDGE7-PwhvBIin8WSzEBUXQ==
+      Age:
+      - '20147'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 22:14:25 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 e027f912c97cbcd70bdff61138a2cbfa.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - zAtSTnmxZ0uJxim-_8I_iO-37Dgn_WAjqNB5_1sFwFXITt1gjJCfbw==
+      Age:
+      - '20181'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 22:14:58 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 bd3a70e5a4a05660345df0e43c1f0b38.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - rqdbpnAJWKf2vFoNQ5ilmI-njKnsP06UJo05S4VihHhwZ4YPLgOKow==
+      Age:
+      - '20203'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 22:15:21 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 42d4eaeaff822cf9612027ce7994d186.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 00ZhOa69Jnc1kwpQwO5ntvZ_GeqvAgsOZyy8fjo0j6E118UhMEuw6Q==
+      Age:
+      - '20422'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 22:19:00 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 444bca304ff3e288c7dc16cd9c038358.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - OymFJkFWG8Su3_d2A7iGhElYthcJgMpwmsSpsUqdIy43jrSZmHvlXg==
+      Age:
+      - '20536'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 22:20:54 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 62cb87f302ffda6aad8c50cfc260c97a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - wUYrCMKXrGh7qv2Xgv4kjXF8iXQvwXYInQsip1eemBS6Ot2kcIRX_w==
+      Age:
+      - '21989'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 22:45:07 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 16159e59796a2988cad1e260b170aa7e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - ZOTw2oog1WS7dy3QKQlFU_CM6Av6O6yodufrdMUnkoq-75kusQ-MoQ==
+      Age:
+      - '22310'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 22:50:28 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 1bc5cb35fce618729d22b7ee2088cdce.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - DvDFs4X831nW42C57FBUZcI6eCLhpjNquANYdcoXzjRimp81WsKb1Q==
+      Age:
+      - '22327'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 22:50:45 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 6713d1da0c4ef6b06c1b7602b567d76a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - pGqjC2oGy-TpVwcc_shATRVL4tqab7SwKpWRUwVkjrq1VcTuCBN8Gg==
+      Age:
+      - '22381'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 22:51:39 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 d0c11ba16e76543015532b1566c6a2ca.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - SSgxGuZuUo_bUnz-sQ61XexWnlIvMNpQive2lk-T6Ue1q9kCe157Ow==
+      Age:
+      - '22411'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 22:52:09 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 c0ca097af85bee6ba7a02767d51e59b8.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - KxIiuWF0Gqhx5__PL4hv6YVRmsqm_eiO9XsLTDj3qVGOuhipNdp6Jg==
+      Age:
+      - '22468'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 22:53:06 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 c0ca097af85bee6ba7a02767d51e59b8.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 3otiFg-cLpzrgYvK72g07fjuzCxAu_olAM_OYBCYvXoN-c_I3jJ4YA==
+      Age:
+      - '22532'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 22:54:10 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 e958e7d7aa09fa245ddba0749f6ba632.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - Fhnf6NKssCPFaK2b8YKt_Dun_zwfT-Ca7D75OvrbqAJSabKqX8JBGg==
+      Age:
+      - '22881'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 22:59:59 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 6713d1da0c4ef6b06c1b7602b567d76a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - LohAUpoc-_Oz4OMLIPIpvpJ5RaowA2ZXxJaXS5wPvlpDLsfBHzmetQ==
+      Age:
+      - '22922'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 23:00:40 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 42d4eaeaff822cf9612027ce7994d186.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - W1OCnPW6CvOUP2wnZyHpQdtiduQWY9T0ww_GadAhgjxAl9_HNlS3oA==
+      Age:
+      - '22977'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 23:01:35 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 4657350ff2715d2be9ad9783d238616a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - LZ00PvDIjiflecsgXO6gNGKk5nmAIJp0lHi5JpLMRPX8nMVFYZl9Rg==
+      Age:
+      - '23053'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 23:02:51 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 c61ed55833f98dc012e73350de5485f0.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - o1N06lsz23xaHKie8LJ5WxfghDCqs_p4tjD8gXwWos81Hu19_6eEQw==
+      Age:
+      - '23086'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 23:03:24 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 43684cbde7a46ef5524f47bc4254eff8.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - aI96Fz_t8XCZXXH38feqXrF-cWIkai1wK1jc7jyw6xHZ7mSjqUBJDQ==
+      Age:
+      - '23112'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 23:03:50 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 428a2ed921cd3013591e242ee4178786.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 4runVfjnfJn_Jkt7iNk-VTLa_wuSgw8seKEXJw51g_YiQi9rZjzKsA==
+      Age:
+      - '23131'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 23:04:09 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 16:38:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28120
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3868'
+      X-Memc-Expires:
+      - '19056'
+      Etag:
+      - W/"fca5e3555e619db2ab8c7c30c82b3d74"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 4879fc9ab394c9467768d2a13b906c26.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD51-C4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - rsOt5-NaI8g_m5SoSoZV5S_DPq4KpBb_rURa6VBmuH7ByI4zSDpyfw==
+      Age:
+      - '23144'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18483}'
+  recorded_at: Fri, 25 Aug 2023 23:04:22 GMT
 recorded_with: VCR 6.2.0
