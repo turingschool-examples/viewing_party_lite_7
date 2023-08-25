@@ -10,6 +10,10 @@ RSpec.describe 'Welcome Page', type: :feature do
                 expect(page).to have_content("Viewing Party")
                 expect(page).to have_button("Create an account")
                 expect(page).to have_link("Viewing Party Home")
+
+                click_button "Create an account"
+
+                expect(current_path).to eq(register_path)
             end
 
             it 'Has a list of currently registered users' do

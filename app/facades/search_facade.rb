@@ -22,7 +22,7 @@ class SearchFacade
   end
 
   def search_type
-    if @params[:search] = "top_rated"
+    if @params[:search] == "top_rated"
       top_movies
     else
       movie_query(@params[:search])

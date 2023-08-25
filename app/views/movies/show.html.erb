@@ -22,6 +22,14 @@
     </ul>
     <br>
 <% end %>
+<% @facade.reviews.each do |review| %>
+    <br>
+    <ul class="review" >
+    <li class="author"><%= review.author %></li>
+    <li class="character"><%= review.author_details[:rating] %></li>
+    </ul>
+    <br>
+<% end %>
 
 
 

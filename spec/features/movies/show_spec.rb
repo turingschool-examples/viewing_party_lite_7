@@ -46,8 +46,12 @@ RSpec.describe "Movies Results Page" do
     end
   end
 
-  xit "displays the total review count, each review's author and info", :vcr do
-    expect(page).to have_content()
+  it "displays the total review count, each review's author and info", :vcr do
+    expect(page).to have_css(".review")
 
+    within(first(".review")) do
+      expect(page).to have_content("futuretv")
+      expect(page).to have_content(10.0)
+    end
   end
 end
