@@ -3,8 +3,8 @@ class MovieService
     get_url("/3/movie/top_rated")
   end
 
-  def self.movie_search(search)
-    get_url("/3/search/movie?search=#{search}")
+  def self.movie_search(query)
+    get_url("/3/search/movie?query=#{query}")
   end
 
   def self.get_url(url)
