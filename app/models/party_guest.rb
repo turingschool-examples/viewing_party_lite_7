@@ -1,5 +1,4 @@
 class PartyGuest < ApplicationRecord
   belongs_to :user
   belongs_to :viewing_party
-  validates :host, presence: true
 end
