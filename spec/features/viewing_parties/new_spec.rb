@@ -36,7 +36,6 @@ RSpec.describe 'New Viewing Party', type: :feature do
         to_return(status: 200, body: json_response)
           
         data = JSON.parse(json_response, symbolize_names: true)
-        # require 'pry'; binding.pry
   
         u1 = User.create!(name: "Sean", email: "sugasean777@gmail.com")
         u2 = User.create!(name: "Bob", email: "bobby@yahoo.com")
