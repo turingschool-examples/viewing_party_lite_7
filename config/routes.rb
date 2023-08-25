@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   resources :users do
     resources :discover, only: [:index]
     resources :movies, only: [:index, :show]
-    resources :viewing_parties
+    resources :viewing_parties, only: [:new, :create]
   end
+  resources :registrations, only: [:new, :create]
 
 end
