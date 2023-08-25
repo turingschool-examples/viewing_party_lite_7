@@ -1,7 +1,4 @@
 <%= button_to "Discover Page", user_discover_path(@user.id), method: :get %>
 
-<% if @facade.search == "top_20rated" %>
-  <%= render partial: "top_rated" %>
-<% elsif @facade.search == "keywords"%>
-  <%= render partial: "keyword_movies" %>
-<% end %>
+<%= render partial: "movie_results", locals: { movies: @facade.top_20_rated, user: @user, search: @facade.search } %>
+<%= render partial: "movie_results", locals: { movies: @facade.keyword_results, user: @user, search: @facade.search } %>
