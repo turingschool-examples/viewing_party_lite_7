@@ -1,0 +1,23 @@
+<h3><%= @facade.title%></h3>
+
+<%= button_to "Discover Page", user_discover_path(@user.id), method: :get %>
+
+<%= button_to "Create Viewing Party for #{@facade.title}", method: :post %>
+
+<ul>
+  <li>Rating: <%= @facade.rating %> | Runtime: <%= @facade.runtime %></li>
+  <% @facade.genres.each do |genre| %>
+  <li><%= genre %></li>
+  <% end %>
+</ul>
+<hr>
+<%= @facade.overview %>
+<hr>
+<% @facade.cast_list.each do |member| %>
+  <li><%= member.name %> | <%= member.character %></li>
+<% end %>
+<hr>
+<% @facade.reviews.each do |review| %>
+  <li><%= review.author %> | <%= review.content %></li>
+  <br>
+<% end %>
