@@ -25,5 +25,6 @@
   <%= f.collection_check_boxes :invitees, @users, :id, :name_email  %>
 
   <br><br>
+  <%= f.hidden_field :movie_runtime, value: @movie.runtime %>
   <%= f.submit "Create Party" %>
 <% end %>
