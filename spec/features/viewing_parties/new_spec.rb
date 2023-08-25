@@ -98,19 +98,3 @@ RSpec.describe "New Viewing Party Page" do
   end
 end
 
-# create_list(:user, 3)
-# @user_1 = User.all[0]
-# @user_2 = User.all[1]
-# @user_3 = User.all[2]
-
-# create_list(:viewing_party, 2, user: @user_1)
-# create(:viewing_party, user: @user_2)
-
-# @viewing_party_1 = ViewingParty.all[0]
-# @viewing_party_2 = ViewingParty.all[1]
-# @viewing_party_3 = ViewingParty.all[2]
-
-# create_list(:viewing_party_user, 4, viewing_party: @viewing_party_1)
-# create_list(:viewing_party_user, 6, viewing_party: @viewing_party_2)
-# create_list(:viewing_party_user, 2, viewing_party: @viewing_party_3)
-# create(:viewing_party_user, viewing_party: @viewing_party_3, user: @user_3)
