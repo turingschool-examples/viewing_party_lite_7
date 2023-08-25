@@ -24,12 +24,20 @@ RSpec.describe "the movie results page" do
   it "can return a list of like names from search" do
     visit "/users/#{@user3.id}/discover"
 
-    fill_in "Find Movies", with: "Spider"
+    fill_in "Search", with: "Spider"
 
     click_button "Find Movies"
 
     expect(current_path).to eq("/users/#{@user3.id}/movies")
 
-    expect(page).to have_content("Spiderman")
+    expect(page).to have_content("Spider-Man: Across the Spider-Verse")
+  end
+
+  it "the links take us to the movie show page" do
+    visit "/users/#{@user3.id}/movies"
+
+    click_link "The Godfather"
+    
+    expect(current_path).to eq("/users/#{@user3.id}/movies/238")
   end
 end
