@@ -12,19 +12,21 @@
     <%= hidden_field_tag :runtime, @movie.runtime %>
 
     <%= form.label :duration %>
-    <%= form.number_field :duration_minutes %>
+    <%= form.number_field :duration_minutes, value: @movie.runtime %>
 
-    <%= form.label :date %>
+    <%= form.label :when %>
     <%= form.date_field :date %>
 
     <%= form.label :start_time %>
-    <%= form.time_field :start_time %>
+    <%= form.time_field :start_time %><br><br>
     
     <%= form.label :users, "Invite Other Users" %>
     <% User.all.each do |user| %>
       <ul>
+        <% if @user != user %>
         <%= form.check_box :user_ids, { multiple: true }, user.id %>
         <%= user.name %>
+        <% end %>
       </ul>
     <% end %>
       

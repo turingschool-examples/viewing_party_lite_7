@@ -20,4 +20,14 @@ class DiscoverMovie
     @total_reviews  = attributes[:total_reviews]
     @review_authors = attributes[:review_authors]
   end
+
+  def format_runtime(runtime)
+    hours = runtime / 60
+    rest = runtime % 60
+    "#{hours}h #{rest}min"
+  end
+
+  def format_genre
+    @genre.join(', ')
+  end
 end
