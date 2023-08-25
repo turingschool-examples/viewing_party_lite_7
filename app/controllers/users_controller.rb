@@ -30,8 +30,16 @@ class UsersController < ApplicationController
   def movies
     @user = User.find(params[:user_id])
     query = params[:q]
-    movies_data = []
 
+    movies_data = if query == 'top_rated'
+                    MoviesService.new.top_rated
+                  elsif query.present?
+                    MoviesService.new.search(query)
+                  else
+                    []
+                  end
+
+    @movies = movies_data.map { |movie_data| Movie.new(movie_data) }
     @title = if query == 'top_rated'
                'Top Rated Movies'
              elsif query.present?
@@ -39,16 +47,6 @@ class UsersController < ApplicationController
              else
                'Error: No Query'
              end
-
-    movies_data = if query == 'top_rated'
-                    MoviesService.new.top_rated.first(20)
-                  elsif query.present?
-                    MoviesService.new.search(query).first(20)
-                  else
-                    []
-                  end
-
-    @movies = movies_data.map { |movie_data| Movie.new(movie_data) }
   end
 
   def movie_show
