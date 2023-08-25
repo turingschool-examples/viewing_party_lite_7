@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 
   def discover
     @user = User.find(params[:user_id])
-    @top_rated_movies = MoviesService.new.top_rated
+    # @top_rated_movies = MoviesService.new.top_rated
   end
 
   def movies
@@ -53,13 +53,16 @@ class UsersController < ApplicationController
 
   def movie_show
     @user = User.find(params[:user_id])
-    @movie = MoviesService.new.find_movie(params[:movie_id])
-    # @movie = find movie in 'cached' movie facade?
+    @movie = facade.find_movie(params[:movie_id])
   end
 
   private
 
   def user_params
     params.require(:user).permit(:name, :email)
+  end
+
+  def facade
+    @_facade ||= MoviesFacade.new
   end
 end
