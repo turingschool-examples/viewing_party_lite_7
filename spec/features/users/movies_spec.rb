@@ -22,7 +22,7 @@ RSpec.describe 'Discover Movies Page' do
         expect(page).to have_content('Top Rated Movies')
         # Checks that there are 20 results
         expect(all('tbody tr').count).to eq(20)
-        # Checks that the wrong title isn't shown
+        # Checks that the wrong page title isn't shown
         within('.title-header') do
           expect(page).not_to have_content('Search Results')
         end
@@ -55,6 +55,17 @@ RSpec.describe 'Discover Movies Page' do
         expect(current_path).to eq(user_discover_path(@user1))
       end
     end
+
+    it 'has a link to the movie show view', :vcr do
+      VCR.use_cassette('top_rated_movies') do
+        visit user_discover_path(@user1)
+        click_button 'Find Top Rated Movies'
+        expect(current_path).to eq(user_movies_path(@user1))
+        expect(page).to have_link('The Godfather')
+        click_link 'The Godfather'
+        expect(current_path).to eq(user_movie_show_path(@user1, 238))
+      end
+    end
   end
 
   describe 'search movies' do
@@ -67,7 +78,7 @@ RSpec.describe 'Discover Movies Page' do
         expect(page).to have_content('Search Results for \'The Matrix\'')
         # Checks that there are 20 results or less
         expect(all('tbody tr').count).to be <= 20
-        # Checks that the wrong title isn't shown
+        # Checks that the wrong page title isn't shown
         within('.title-header') do
           expect(page).not_to have_content('Top Rated Movies')
         end
@@ -98,6 +109,18 @@ RSpec.describe 'Discover Movies Page' do
         expect(page).to have_link('Discover Page', href: user_discover_path(@user1))
         click_link 'Discover Page'
         expect(current_path).to eq(user_discover_path(@user1))
+      end
+    end
+
+    it 'has a link to the movie show view', :vcr do
+      VCR.use_cassette('search_results') do
+        visit user_discover_path(@user1)
+        fill_in :q, with: 'The Matrix'
+        click_button 'Search'
+        expect(current_path).to eq(user_movies_path(@user1))
+        expect(page).to have_link('The Matrix')
+        click_link 'The Matrix'
+        expect(current_path).to eq(user_movie_show_path(@user1, 603))
       end
     end
   end
