@@ -1,0 +1,22 @@
+<h3>Create A Movie Party for <%= @movie.title %></h3>
+
+<h5>Viewing Party Details</h5>
+<p>Movie Title: <%= @movie.title %></p>
+<%= form_with url: user_movie_viewing_party_index_path(@user.id, @movie.id), turbo:false do |form| %>
+  <%= form.label "Duration of party" %>
+  <%= form.number_field :duration, value: @movie.runtime %>
+
+  <%= form.label "Day" %>
+  <%= form.date_field :start_date, value: Date.today %>
+
+  <%= form.label "Start time" %>
+  <%= form.time_field :start_time, value: Time.now %>
+
+  <p>Invite Other Users</p>
+  <% @user.friends.each do |friend| %>
+    <%= form.label "#{friend.name} (#{friend.email})"%>
+    <%= form.check_box "#{friend.name} (#{friend.email})" %>
+  <% end %>
+
+  <%= form.submit "Create Party" %>
+<% end %>
