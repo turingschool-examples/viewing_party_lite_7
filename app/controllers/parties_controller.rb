@@ -2,6 +2,8 @@ class PartiesController < ApplicationController
   before_action :find_user_and_movie, only: [:new]
 
   def new
+    @party = Party.new
+    @users = User.all
   end
 
   private
