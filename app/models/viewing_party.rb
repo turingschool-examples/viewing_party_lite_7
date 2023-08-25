@@ -14,8 +14,4 @@ class ViewingParty < ApplicationRecord
       nil
     end
   end
-
-  def find_movie(movie_id)
-    require 'pry'; binding.pry
-  end
 end
