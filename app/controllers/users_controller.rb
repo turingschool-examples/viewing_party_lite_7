@@ -4,19 +4,14 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.includes(viewing_parties: :party_guests).find(params[:id])
+
+    # Initialize @movies and @movie_images as empty hashes
     @movies = {}
     @movie_images = {}
-    @hosted_parties = []
-    @invited_parties = []
 
+    # Populate @movies and @movie_images
     @user.viewing_parties.each do |party|
-      if party.party_guests.find_by(user_id: @user.id, host: true)
-        @hosted_parties << party
-      else
-        @invited_parties << party
-      end
-
       movie_id = party.movie_id
       movie = MoviesService.new.find_movie(movie_id)
       @movies[movie_id] = movie.title
