@@ -16,23 +16,31 @@ RSpec.describe "New Viewing Party Page", :vcr do
     expect(page).to have_content("Viewing Party Details")
     expect(page).to have_content("Movie Title")
     expect(page).to have_content(@movie.title, count: 2)
-    expect(page).to have_content("Duration of Party")
-    expect(page).to have_field(:duration, value: @movie.duration)
+    expect(page).to have_content("Duration of party")
+    expect(page).to have_field(:duration, with: @movie.runtime)
     expect(page).to have_content("Day")
-    expect(page).to have_field(:start_date, value: Date.today)
-    expect(page).to have_content("Start Time")
-    expect(page).to have_field(:start_time, value: Time.now)
+    expect(page).to have_field(:start_date, with: Date.today)
+    expect(page).to have_content("Start time")
+    expect(page).to have_field(:start_time, with: Time.now)
     expect(page).to have_button("Create Party")
   end
 
+  it "creates a new viewing party" do
+    click_button("Create Party")
+    expect(current_path).to eq(user_path(@ally))
+    # expect(page).to have_content(@movie.title)
+    # expect(page).to have_content("Hosting")
+    expect(page).to have_content("Party Created Successfully")
+    party = ViewingParty.last
+    expect(party.duration).to eq(78)
+    expect(party.movie_id).to eq(234)
+    expect(party.host).to eq(@ally)
+  end
+
   it "has checkboxes to invite users" do
-    within("#users") do
-      expect(page).to have_content("Invite Other Users")
-      @guests.each do |guest|
-        within("#user-#{guest.id}") do
-          expect(page).to have_checkbox("#{guest.name} (#{guest.email})")
-        end
-      end
+    expect(page).to have_content("Invite Other Users")
+    @guests.each do |guest|
+      expect(page).to have_field("#{guest.name} (#{guest.email})")
     end
   end
 
@@ -61,15 +69,22 @@ RSpec.describe "New Viewing Party Page", :vcr do
 
     visit new_user_movie_viewing_party_path(@ally, @movie.id)
     check_box("#{@jimmy.name} (#{@jimmy.email})")
+    check_box("#{@bobby.name} (#{@bobby.email})")
     click_button("Create Party")
+
+    expect(page).to have_content(@movie.title)
+    expect(page).to have_content("Hosting")
 
     visit user_path(@jimmy)
     expect(page).to have_content(@movie.title)
     expect(page).to have_content("Invited")
 
-    visit user_path(@ally)
+    visit user_path(@bobby)
     expect(page).to have_content(@movie.title)
-    expect(page).to have_content("Hosting")
+    expect(page).to have_content("Invited")
+
+    visit user_path(@dennis)
+    expect(page).to_not have_content("Invited")
   end
 
   xit "has a button to return to discover page" do
