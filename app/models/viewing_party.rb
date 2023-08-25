@@ -5,4 +5,6 @@ class ViewingParty < ApplicationRecord
     validates_presence_of :date
     validates_presence_of :movie_id
     validates_presence_of :user_id
+    validates_presence_of :duration
+    validates_presence_of :start_time
 end
