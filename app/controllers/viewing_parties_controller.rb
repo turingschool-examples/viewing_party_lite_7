@@ -13,5 +13,11 @@ class ViewingPartiesController < ApplicationController
     found_movies = movies.find_all {|m| m[:id] == params[:movie_id].to_i}
     
     @movie = found_movies.first
+
+    @users = User.all
+  end
+
+  def create
+    
   end
 end
