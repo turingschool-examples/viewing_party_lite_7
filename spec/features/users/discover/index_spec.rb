@@ -38,3 +38,4 @@ RSpec.describe 'Discover Movies', type: :feature do
     end
   end
 end
+

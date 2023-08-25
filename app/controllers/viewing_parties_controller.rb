@@ -9,8 +9,9 @@ class ViewingPartiesController < ApplicationController
 
     response = conn.get("/3/discover/movie")
     data = JSON.parse(response.body, symbolize_names: true)
-    @movies = data[:results]
+    movies = data[:results]
+    found_movies = movies.find_all {|m| m[:id] == params[:movie_id].to_i}
     
-    end
+    @movie = found_movies.first
   end
 end
