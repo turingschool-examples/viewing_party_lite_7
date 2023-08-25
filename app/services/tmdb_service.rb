@@ -8,15 +8,15 @@ class TmdbService
   end
 
   def movie_details(movie)
-    get_url("/3/movie/#{movie.id}?api_key=#{ENV['TMDB_API_KEY']}")
+    get_url("/3/movie/#{movie}?api_key=#{ENV['TMDB_API_KEY']}")
   end
 
   def movie_cast(movie)
-    get_url("/3/movie/#{movie.id}/credits?api_key=#{ENV['TMDB_API_KEY']}")
+    get_url("/3/movie/#{movie}/credits?api_key=#{ENV['TMDB_API_KEY']}")
   end
 
   def movie_reviews(movie)
-    get_url("/3/movie/#{movie.id}/reviews?api_key=#{ENV['TMDB_API_KEY']}")
+    get_url("/3/movie/#{movie}/reviews?api_key=#{ENV['TMDB_API_KEY']}")
   end
 
   def get_url(url)
