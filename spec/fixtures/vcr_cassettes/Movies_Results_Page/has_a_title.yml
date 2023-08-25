@@ -4525,4 +4525,122 @@ http_interactions:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[],"total_pages":1,"total_results":0}'
   recorded_at: Fri, 25 Aug 2023 15:46:10 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=api_key&query=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 15:43:42 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=22054
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 0ad04c4a8f86817194f97d0815bf2d05
+      X-Memc-Age:
+      - '24870'
+      X-Memc-Expires:
+      - '1282'
+      Etag:
+      - W/"0e23279b004381f72a34159d5c7dfd1f"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 8f614da28d4c36b53d22affc0616b514.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL58-P5
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - IPEV6cY_zFBp3HlgLrjBupQrKsBBgt5BMRB6YOA3R5Z798ksl50GQQ==
+      Age:
+      - '869'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"page":1,"results":[],"total_pages":1,"total_results":0}'
+  recorded_at: Fri, 25 Aug 2023 15:58:11 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=api_key&query=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 15:43:42 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=22054
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 0ad04c4a8f86817194f97d0815bf2d05
+      X-Memc-Age:
+      - '24870'
+      X-Memc-Expires:
+      - '1282'
+      Etag:
+      - W/"0e23279b004381f72a34159d5c7dfd1f"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 52cf696b7d467b009c1bb9273fc4081c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL58-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 3AX4y6iah_lMFcQG0xCuQjaX1RIl3FvlKXKF7Qu2C0H1dg-7cOdv_w==
+      Age:
+      - '991'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"page":1,"results":[],"total_pages":1,"total_results":0}'
+  recorded_at: Fri, 25 Aug 2023 16:00:13 GMT
 recorded_with: VCR 6.2.0
