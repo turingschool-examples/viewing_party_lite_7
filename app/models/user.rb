@@ -14,4 +14,8 @@ class User < ApplicationRecord
   def viewing_parties
     []
   end
+
+  def name_email
+    "#{name} (#{email})"
+  end
 end
