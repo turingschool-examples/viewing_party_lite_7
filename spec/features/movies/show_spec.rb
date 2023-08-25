@@ -1,13 +1,14 @@
 require 'rails_helper'
 
-describe "Movie Details Page", type: :feature do
+describe "Movie Details Page", :vcr, type: :feature do
   before do
     @user = create(:user)
     @movie = nil# Some sort of movie object Godfather id is 238
-    visit user_movie_path(@user, @movie)
+    visit user_movie_path(@user, 238)
   end
-
-  it "has a button to return to the discover page"
+  
+  it "has a button to return to the discover page" do
+    save_and_open_page
     expect(page).to have_button("Discover Page").once
 
     click_button("Discover Page")
@@ -60,7 +61,7 @@ describe "Movie Details Page", type: :feature do
       if @movie.reviews_count > 0
         review1 = @movie.reviews.first
         within(".movie-review").first do
-          within(".review-author")
+          within(".review-author") do
             expect(page).to have_content(review1.author)
           end
 
@@ -71,7 +72,7 @@ describe "Movie Details Page", type: :feature do
         if @movie.reviews_count > 1
           review2 = @movie.reviews.second
           within(".movie-review").second do
-            within(".review-author")
+            within(".review-author") do
               expect(page).to have_content(review2.author)
             end
 
