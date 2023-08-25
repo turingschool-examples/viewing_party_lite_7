@@ -5,7 +5,7 @@
     <p>Party name: <%= party.name %></p>
     <p>Host: <%= party.host %></p>
     <p>Movie Title: <%= party.movie_title %></p>
-    <p>Party Date: <%= party.event_date %></p>
+    <p>Party Date: <%= party.event_date.strftime("%A, %B %d, %Y") %></p>
     <p>Start Time: <%= party.start_time %></p>
     <p>Invitees:</p>
     <% party.users.each do |user| %>
@@ -24,7 +24,7 @@
     <p>Party name: <%= party.name %></p>
     <p>Host:<strong> <%= party.host %></strong></p>
     <p>Movie Title: <%= party.movie_title %></p>
-    <p>Party Date: <%= party.event_date %></p>
+    <p>Party Date: <%= party.event_date.strftime("%A, %B %d, %Y") %></p>
     <p>Start Time: <%= party.start_time %></p>
     <p>Invitees:</p>
     <% party.users.each do |user| %>
