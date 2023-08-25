@@ -15,6 +15,7 @@ class Movie
     @cast_data    = info.dig(:credits, :cast) || []
     @reviews_data = info.dig(:reviews, :results) || []
     @genres       = info[:genres]&.map { |genre| genre[:name] } || []
+    @poster_path   = info[:poster_path] || ""
   end
 
   def cast_list
@@ -33,5 +34,9 @@ class Movie
     hrs_min = runtime.divmod(60)
 
     "#{hrs_min[0]}hr #{hrs_min[1]}min"
+  end
+
+  def poster_link
+    "https://image.tmdb.org/t/p/w185#{@poster_path}"
   end
 end

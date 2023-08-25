@@ -19,7 +19,6 @@ class ViewingPartiesController < ApplicationController
     end
   end
 
-
   def assign_host(user_id, vp_id)
     ViewingPartyUser.create(user_id: user_id, viewing_party_id: vp_id, hosting?: true)
   end
@@ -34,6 +33,6 @@ class ViewingPartiesController < ApplicationController
   private
 
   def viewing_party_params
-    params.permit(:movie_id, :duration, :date, :start_time)
+    params.permit(:movie_id, :duration, :date, :start_time, :movie_title, :movie_poster_path)
   end
 end

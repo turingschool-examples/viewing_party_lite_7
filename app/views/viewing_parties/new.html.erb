@@ -26,5 +26,7 @@
 
   <br><br>
   <%= f.hidden_field :movie_runtime, value: @movie.runtime %>
+  <%= f.hidden_field :movie_title, value: @movie.title %>
+  <%= f.hidden_field :movie_poster_path, value: @movie.poster_link %>
   <%= f.submit "Create Party" %>
 <% end %>
