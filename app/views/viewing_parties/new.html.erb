@@ -4,15 +4,26 @@
 
 <h2>Viewing Party Details</h2>
 
-<%= form_with url: user_movie_viewing_party_path(@user.id, @movie.id) do |f| %>
-  <%= f.label :title, "Movie Title" %>
+<%= form_with url: user_movie_viewing_party_path(@user.id, @movie.id), local: true do |f| %>
+  <%= f.label :title, "Movie Title" %><br>
+  <b><%= @movie.title %></b>  
+  <br><br>
 
-  <%= f.label "Duration of Party" %>
-  <%= f.number_field :duration %>
+  <%= f.label :duration, "Duration of Party" %><br>
+  <%= f.number_field :duration, value: @movie.runtime %>
+  <br><br>
 
-  <%= f.label "Day" %>
-  <%= f.date_field :date %>
+  <%= f.label :date, "When" %><br>
+  <%= f.date_field :date, value: DateTime.tomorrow %>
+  <br><br>
 
-  <%= f.label "Start Time" %>
+  <%= f.label :start_time, "Start Time" %><br>
+  <%= f.time_field :start_time, value: Time.parse("11:00:00") %>
+  <br><br>
 
+  <p>Invite Users</p>
+  <%= f.collection_check_boxes :invitees, @users, :id, :name_email  %>
+
+  <br><br>
+  <%= f.submit "Create Party" %>
 <% end %>
