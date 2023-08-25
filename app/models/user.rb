@@ -8,4 +8,12 @@ class User < ApplicationRecord
   def invitees
     User.where.not(id: id)
   end
+
+  def hosted_parties
+    parties.where(user_parties: { host: true })
+  end
+
+  def invited_parties
+    parties.where(user_parties: { host: false })
+  end
 end

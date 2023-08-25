@@ -1,4 +1,4 @@
-<%= link_to "Discover Page", "users/#{@user.id}/discover" %>
+<%= link_to "Discover Page", user_discover_index_path(@user) %>
 <br>
 <br>
 <% @movies.each do |movie| %>
