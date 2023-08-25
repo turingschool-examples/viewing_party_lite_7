@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Movie
   attr_reader :id,
               :genres,
@@ -15,7 +17,7 @@ class Movie
     @cast_data    = info.dig(:credits, :cast) || []
     @reviews_data = info.dig(:reviews, :results) || []
     @genres       = info[:genres]&.map { |genre| genre[:name] } || []
-    @poster_path   = info[:poster_path] || ""
+    @poster_path = info[:poster_path] || ''
   end
 
   def cast_list

@@ -1,16 +1,17 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @viewing_parties = @user.viewing_parties
   end
 
-  def new
-  end
+  def new; end
 
   def create
     user = User.new(user_params)
     if user.save
-      flash[:success] = "User successfully created"
+      flash[:success] = 'User successfully created'
       redirect_to user_path(user.id)
     else
       flash[:error] = "Error: #{error_message(user.errors)}"
