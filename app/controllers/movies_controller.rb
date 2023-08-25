@@ -6,14 +6,14 @@ class MoviesController < ApplicationController
   
   def show
     @user = User.find(params[:user_id])
-    @facade = MovieFacade.new(params[:title])
+    @facade = MovieFacade.new(params[:id])
 
-    param = params[:movie_data]
+    # param = params[:id]
 
-    if param.nil?
-      @movie = Movie.find(params[:id])
-    else
-      @movie = JSON.parse(params[:movie_data])
-    end
+    # if param.nil?
+    #   @movie = Movie.find(params[:id])
+    # else
+    @movie = @facade.get_movie_by_id(params[:id])
+    # end
   end
 end

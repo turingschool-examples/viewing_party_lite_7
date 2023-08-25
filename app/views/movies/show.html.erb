@@ -1,27 +1,27 @@
 <%= render "shared/welcome_link" %>
 <%= render "shared/discover_button" %><br>
 
-<%= link_to "Create Viewing Party", new_user_viewing_party_path(@user, movie_data: @movie), class: "button" %>
+<%= link_to "Create Viewing Party", new_user_viewing_party_path(@user, id: @movie.id), class: "button" %>
 
 <body>
-  <h3><%= @movie["title"] %></h3>
+  <h3><%= @movie.title %></h3>
   <ul>
-    <p><strong>Vote: </strong><%= @movie["vote_average"] %></p>
-    <p><strong>Runtime: </strong><%= @movie["runtime"] %></p>
-    <p><strong>Genre: </strong><%= @movie["genre"] %></p>
-    <p><strong>Summary: </strong><%= @movie["overview"] %></p>
+    <p><strong>Vote: </strong><%= @movie.vote_average %></p>
+    <p><strong>Runtime: </strong><%= @movie.runtime %></p>
+    <p><strong>Genre: </strong><%= @movie.genre %></p>
+    <p><strong>Summary: </strong><%= @movie.overview %></p>
     <p><strong>Cast and Characters: </strong><br>
 
-    <% @movie["top_10"].each do |cast| %>
+    <% @movie.top_10.each do |cast| %>
       <p><%= cast.keys.first %> as <%= cast.values.first %></p>
     <% end %>
       
-    <p><strong><%= @movie["total_reviews"] %> Reviews</strong></p>
+    <p><strong><%= @movie.total_reviews %> Reviews</strong></p>
     <p><strong>Review Authors</strong></p>
     
-    <% @movie["review_authors"].each do |author| %>
-      <p>Author: <%= author["author"] %></p>
-      <p>Review: <%= author["content"] %></p><br>
+    <% @movie.review_authors.each do |author| %>
+      <p>Author: <%= author[:author] %></p>
+      <p>Review: <%= author[:content] %></p><br>
     <% end %>
       
   </ul>

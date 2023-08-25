@@ -20,13 +20,40 @@ class MovieFacade
   def get_search_movies
     json = @movie.search_movies(@title)
     search_results = json[:results].map do |movie_data|
-      build_movie_from_api(movie_data)
+      build_movie_from_single_search(movie_data)
     end
 
     search_results
   end
 
+  def get_movie_by_id(movie_id)
+    movie_data = @movie.movie_by_id(movie_id)
+    build_movie_from_single_search(movie_data)
+  end
+  
   private
+  
+  def build_movie_from_single_search(movie_data)
+    movie_id = movie_data[:id]
+    authors = get_movie_review_authors_and_content(movie_id)
+    cast = get_movie_cast(movie_id)
+   
+    genre_names = movie_data[:genres].map { |genre| genre[:name] }
+
+    attributes = {
+      id: movie_data[:id],
+      title: movie_data[:title],
+      vote_average: movie_data[:vote_average],
+      runtime: movie_data[:runtime],
+      genre: genre_names,
+      overview: movie_data[:overview],
+      top_10: cast[0..9],
+      total_reviews: authors.count,
+      review_authors: authors
+    }
+
+    DiscoverMovie.new(attributes)
+  end
 
   def build_movie_from_api(movie_data)
     genre_names = get_genre_names(movie_data[:genre_ids])

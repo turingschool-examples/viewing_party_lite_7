@@ -15,6 +15,10 @@ class MovieService
   #   get_url()
   # end
 
+  def movie_by_id(movie_id)
+    get_url("/3/movie/#{movie_id}?language=en-US")
+  end
+
   def credits(movie_id)
     get_url("/3/movie/#{movie_id}/credits?language=en-US")
   end

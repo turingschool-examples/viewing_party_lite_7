@@ -2,10 +2,15 @@ class ViewingPartiesController < ApplicationController
   def new
     @user = User.find(params[:user_id])
     @viewing_party = @user.viewing_parties.new
-    @movie = params[:movie_data]
+    facade = MovieFacade.new(params[:id])
+
+    @movie = facade.get_movie_by_id(params[:id]) # should to the monocromium method to not hit the API more than needed
   end
 
   def create
+    facade = MovieFacade.new(params[:id])
+
+    @movie = facade.get_movie_by_id(params[:id])
     @user = User.find(params[:user_id])
     @viewing_party = @user.viewing_parties.new
     runtime = params[:runtime]
@@ -17,7 +22,7 @@ class ViewingPartiesController < ApplicationController
       redirect_to "/users/#{@user.id}"
     else
       flash[:error] = "Duration cannot be less than runtime - #{runtime} minutes"
-      # render :new, locals: { movie_data: params[:movie_data] }
+      render :new, locals: { movie_data: params[:movie_data] }
     end
   end
 end
