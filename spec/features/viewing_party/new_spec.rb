@@ -19,7 +19,7 @@ RSpec.describe "New Viewing Party Page", :vcr do
     expect(page).to have_content("Duration of party")
     expect(page).to have_field(:duration, with: @movie.runtime)
     expect(page).to have_content("Day")
-    expect(page).to have_field(:start_date, with: Date.today)
+    expect(page).to have_field(:party_date, with: Date.today)
     expect(page).to have_content("Start time")
     expect(page).to have_field(:start_time, with: Time.now)
     expect(page).to have_button("Create Party")
@@ -40,26 +40,27 @@ RSpec.describe "New Viewing Party Page", :vcr do
   it "has checkboxes to invite users" do
     expect(page).to have_content("Invite Other Users")
     @guests.each do |guest|
-      expect(page).to have_field("#{guest.name} (#{guest.email})")
+      expect(page).to have_content("#{guest.name} (#{guest.email})")
+      expect(page).to have_field("_guests_#{guest.id}")
     end
   end
 
-  xit "cannot be set with a duration less than movie runtime" do
+  it "cannot be set with a duration less than movie runtime" do
     fill_in(:duration, with: 77)
     click_button("Create Party")
-    expect(page).to have_content("Error: duration cannot be less than 78 minutes")
+    expect(page).to have_content("Error: Duration must be greater than or equal to 78")
   end
 
-  xit "cannot be set to a date earlier than current date" do
-    fill_in(:start_date, with: (Date.today - 1))
+  it "cannot be set to a date earlier than current date" do
+    fill_in(:party_date, with: (Date.today - 1))
     click_button("Create Party")
-    expect(page).to have_content("Error: start_date cannot be in the past")
+    expect(page).to have_content("Error: Party date cannot be in the past")
   end
 
-  xit "cannot be set to a time earlier than current time" do
-    fill_in(:start_time, with: (Time.now - 1))
+  it "cannot be set to a time earlier than current time" do
+    fill_in(:start_time, with: (Time.now - 1.hours).strftime("%H:%M"))
     click_button("Create Party")
-    expect(page).to have_content("Error: time cannot be in the past")
+    expect(page).to have_content("Error: Start time cannot be in the past")
   end
 
   xit "will show this party on the dashboard pages of invited users" do
@@ -68,8 +69,8 @@ RSpec.describe "New Viewing Party Page", :vcr do
     expect(page).to_not have_content(@movie.title)
 
     visit new_user_movie_viewing_party_path(@ally, @movie.id)
-    check_box("#{@jimmy.name} (#{@jimmy.email})")
-    check_box("#{@bobby.name} (#{@bobby.email})")
+    check("_guests_#{@jimmy.id}")
+    check("_guests_#{@bobby.id}")
     click_button("Create Party")
 
     expect(page).to have_content(@movie.title)
@@ -87,7 +88,9 @@ RSpec.describe "New Viewing Party Page", :vcr do
     expect(page).to_not have_content("Invited")
   end
 
-  xit "has a button to return to discover page" do
-    expect(page).to have_button("Discover Page", user_discover_path(@ally))
+  it "has a button to return to discover page" do
+    expect(page).to have_button("Discover Page")
+    click_button("Discover Page")
+    expect(current_path).to eq(user_discover_path(@ally))
   end
 end
