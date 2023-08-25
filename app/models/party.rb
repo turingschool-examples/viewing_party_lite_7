@@ -6,4 +6,9 @@ class Party < ApplicationRecord
   validates :duration, presence: true
   validates :date, presence: true
   validates :start_time, presence: true
+
+  def runtime
+    MovieFacade.new.find_movie(params[:movie_id]).runtime
+  end
+
 end

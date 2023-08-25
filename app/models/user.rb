@@ -4,4 +4,8 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true, presence: true
   validates :name, presence: true
+
+  def invitees
+    User.where.not(id: id)
+  end
 end
