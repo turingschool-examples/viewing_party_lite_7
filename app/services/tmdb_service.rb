@@ -44,4 +44,12 @@ class TmdbService
     review_data = JSON.parse(response.body)
     ReviewMapper.map_review_details(review_data)
   end
+
+  def get_movie_image(id)
+    response = @connection.get("/3/movie/#{id}/images")
+    return [] unless response.success?
+
+    review_data = JSON.parse(response.body)
+    return "https://image.tmdb.org/t/p/w500#{review_data['backdrops'].first['file_path']}"
+  end
 end

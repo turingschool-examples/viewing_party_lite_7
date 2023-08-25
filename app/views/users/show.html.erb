@@ -6,6 +6,19 @@
 <section id="viewing_parties">
   <h3>Viewing Parties</h3>
   <p>
-    Empty content
+    <h4>Hosted Parties</h4>
+    <% @user.parties.each do |party| %>
+      <div style="border: 1, margin:10px">
+        <img class="movie_thumbnail" src="<%=party.thumbnail%>"><br /><br />
+        <%= party.movie_title %><br /><br />
+        Date: <%= party.date %><br/>
+        Time: <%= party.start_time %><br/><br/>
+        <% if @user.id == party.host_id %>
+          Hosting
+        <% else %>
+          Invited
+        <% end %>
+      </div>
+    <% end %>
   </p>
 </section>

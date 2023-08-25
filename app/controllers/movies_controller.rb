@@ -18,4 +18,6 @@ class MoviesController < ApplicationController
     @review_count = tmdb_service.review_count(params[:id])
     # @reviewers = tmdb_service.reviewers(params[:id])
   end
+
+  
 end
