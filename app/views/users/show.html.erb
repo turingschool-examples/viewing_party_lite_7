@@ -2,8 +2,8 @@
 <%= button_to "Discover Movies", user_discover_path(@user.id), method: :get %>
 <hr>
 <div id="viewing-parties">
-  <h3>Viewing Parties</h3>
-  <% @user.viewing_parties.each do |viewing_party| %>
-    <%= render partial: "viewing_party", locals: { viewing_party: viewing_party } %>
-  <% end %>
+  <h2>Viewing Parties</h2><hr>
+    <% @user.viewing_parties.each do |viewing_party| %>
+      <%= render partial: "viewing_party", locals: { viewing_party: viewing_party } %>
+    <% end %>
 </div>

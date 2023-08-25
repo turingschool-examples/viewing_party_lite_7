@@ -10,6 +10,13 @@
         <p>Duration: <%= viewing_party.duration %> minutes</p>
         <p>Date: <%= viewing_party.date.strftime('%B %d, %Y') %></p>
         <p>Start Time: <%= viewing_party.start_time.strftime('%I:%M %p') %></p>
+        <p>
+          <% if @user.hosting_status_for(viewing_party) %>
+            Hosting
+          <% else %>
+            Invited
+          <% end %>
+        </p>
       </div>
     </div>
   </div>

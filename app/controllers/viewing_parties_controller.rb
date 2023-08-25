@@ -24,7 +24,7 @@ class ViewingPartiesController < ApplicationController
   end
 
   def assign_guests(invitees, vp_id)
-    invitees.flatten.map do |user_id|
+    invitees[1..].map do |user_id|
       ViewingPartyUser.create(user_id: user_id, viewing_party_id: vp_id, hosting?: false)
     end
   end
