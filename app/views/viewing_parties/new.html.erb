@@ -4,18 +4,15 @@
 
 <h2>Viewing Party Details</h2>
 
-<%= form_with url: user_movie_viewing_party(@user.id, @movie.id) %>
-  <%= f.label "Movie Title" %>
+<%= form_with url: user_movie_viewing_party(@user.id, @movie.id) do |f| %>
+  <%= f.label :title, "Movie Title" %>
 
   <%= f.label "Duration of Party" %>
   <%= f.number_field :duration %>
 
   <%= f.label "Day" %>
-  <%= f.date_field, :date %>
+  <%= f.date_field :date %>
 
   <%= f.label "Start Time" %>
-
-  <p>Invite Other Users</p>
-
 
 <% end %>
