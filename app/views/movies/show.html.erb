@@ -1,0 +1,38 @@
+<h2><%= @movie.title %></h2>
+<%= button_to "Discover Page", user_discover_index_path(@user), method: :get %>
+<%= button_to "Create a viewing party", new_user_movie_viewing_party_path(@user, params[:id]), method: :get %>
+<table style="width: 100%">
+  <tr>
+    <td>Vote Average: <%= @movie.vote_average %></td>
+    <td>Runtime: <%= @movie.runtime %></td>
+    <td>Genres: 
+      <% @movie.genres.each do |genre| %>
+        <%= genre %> 
+      <% end %>
+    </td>
+  </tr>
+</table>
+<hr />
+<p style="text-align: left">
+  <b>Summary:</b><br />
+  <%= @movie.summary %>
+</p>
+<p style="text-align: left">
+  <b>Cast:</b><br />
+  <ol>
+    <% @cast.each do |cast_member| %>
+      <li style="text-align: left">Character: <%= cast_member.character %>, Actor: <%= cast_member.name%><br /></li>
+    <% end %>
+  </ol>
+</p>
+<p style="text-align: left">
+<b>Reviews: <%= @review_count.count %> </b><br />
+  <div id="authors"> 
+    <ol>
+      <% @review_count.each do |review| %>
+        <li style="text-align: left"> Author: <%= review.author %><br />
+        <%= review.content %></li>
+      <% end %>
+    </ol>
+  </div>
+</p>

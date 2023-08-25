@@ -33,3 +33,5 @@
 /.git-commit-template
 coverage/*
 config/application.yml
+/coverage/*
+/config/application.yml
