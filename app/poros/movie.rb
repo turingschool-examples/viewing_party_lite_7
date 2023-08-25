@@ -3,7 +3,7 @@ class Movie
               :id,
               :rating,
               :runtime,
-              :summary,
+              :overview,
               :title
 
 
@@ -14,7 +14,7 @@ class Movie
     @rating      = info[:vote_average]
     @reviews_data = info[:reviews][:results]
     @runtime     = info[:runtime]
-    @summary     = info[:overview]
+    @overview     = info[:overview]
     @title       = info[:title]
   end
 
