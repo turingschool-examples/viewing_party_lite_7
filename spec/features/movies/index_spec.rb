@@ -1,18 +1,10 @@
 require "rails_helper"
 
-RSpec.describe "the movie results page" do
+RSpec.describe "the movie index page" do
   before(:each) do
     @user3 = User.create!(name: "Action Jackson", email: "itsjack@aol.com")
   end
-  # When I visit the discover movies page,
-  # and click on either the Top Movies button or the Search button,
-  # I should be taken to the movies results page (users/:user_id/movies) where I see:
   
-  # Title (As a Link to the Movie Details page)
-  # Vote Average of the movie
-  # Details: There should only be a maximum of 20 results. The above details should be listed for each movie.
-  
-  # I should also see a button to return to the Discover Page.
   it "displays the movie title as a link to the movie details page" do
     visit "/users/#{@user3.id}/movies"
 
@@ -39,5 +31,13 @@ RSpec.describe "the movie results page" do
     click_link "The Godfather"
     
     expect(current_path).to eq("/users/#{@user3.id}/movies/238")
+  end
+
+  it "should have a button that takes you to back to the Discover page" do
+    visit "/users/#{@user3.id}/movies"
+
+    expect(page).to have_button("Discover Page")
+    click_button "Discover Page"
+    expect(current_path).to eq("/users/#{@user3.id}/discover")
   end
 end

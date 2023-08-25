@@ -12,4 +12,18 @@ class MoviesFacade
     end
   end
 
+  def self.movie_by_id(id)
+    movie_data = MovieService.movies_by_id(id)
+    Movie.new(movie_data)
+  end
+
+  def self.movies_cast(id)
+    movie_data = MovieService.movie_cast(id)
+    Movie.new(movie_data)
+  end
+
+  def self.movie_reviewed(id)
+    movie_data = MovieService.movie_review(id)
+    Movie.new(movie_data)
+  end
 end

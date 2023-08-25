@@ -1,0 +1,10 @@
+<br>
+<%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %>
+<br>
+<br>
+<br>
+<%= @movie.title %>
+<br>
+<br>
+<br>
+<%= button_to "Create Viewing Party", "/users/#{@user.id}/movies/#{params[:movie_id]}/viewing_party", method: :get  %>

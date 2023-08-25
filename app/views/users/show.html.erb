@@ -2,8 +2,6 @@
 
 <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %>
 
-#add line break css here
-
 
 <% @user.viewing_parties.each do |viewing_party| %>
   <li>You have a viewing party on <%= viewing_party.date %>
