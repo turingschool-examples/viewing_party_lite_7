@@ -3,4 +3,8 @@ class User < ApplicationRecord
   validates :email, uniqueness: { case_sensitive: false }
   has_many :party_guests
   has_many :viewing_parties, through: :party_guests
+
+  def friends
+    User.all.excluding(self)
+  end
 end
