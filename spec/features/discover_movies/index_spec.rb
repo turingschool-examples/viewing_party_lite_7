@@ -6,7 +6,7 @@ RSpec.describe "Movie results page" do
   end
 
   describe "movie results page" do
-    it "each movie title is a link to the details page" do
+    it "each movie title is a link to the details page", :vcr do
       visit user_movies_path(@user1)
  
       expect(page).to have_link("Parasite")
@@ -15,7 +15,7 @@ RSpec.describe "Movie results page" do
       expect(current_path).to eq("/users/#{@user1.id}/movies/496243")
     end
 
-    it "displays 20 top rated movies" do
+    it "displays 20 top rated movies", :vcr do
       visit discover_user_path(@user1)
       click_button("Discover Top Rated Movies")
       expect(page).to have_content("Title: The Godfather")
@@ -24,7 +24,7 @@ RSpec.describe "Movie results page" do
       expect(all('p', text: 'Title:').count).to eq(20)
     end
 
-    it "displays searched for movies" do
+    it "displays searched for movies", :vcr do
       visit discover_user_path(@user1)
       fill_in :search, with: "Nemo"
 
@@ -35,7 +35,7 @@ RSpec.describe "Movie results page" do
       expect(all('p', text: 'Title:').count).to be <= 20
     end
 
-    it "has a link back to the discover page" do
+    it "has a link back to the discover page", :vcr do
       visit user_movies_path(@user1)
  
       expect(page).to have_link("Discover")

@@ -5,7 +5,7 @@ RSpec.describe 'New Viewing Party' do
     @user_1 = User.create!(name: "User1", email: "email1@example.com")
   end
   describe 'happy path' do
-    it 'can create a new viewing party' do
+    it 'can create a new viewing party', :vcr do
       visit user_movies_path(@user_1)
  
       expect(page).to have_link("Parasite")
@@ -22,7 +22,7 @@ RSpec.describe 'New Viewing Party' do
       expect(page).to have_content("Viewing party successfully created! Now it's time to invite your friends!")
     end
 
-    it 'can invite other users to viewing party' do
+    it 'can invite other users to viewing party', :vcr do
       @user_2 = User.create!(name: "User2", email: "email2@example.com")
       @user_3 = User.create!(name: "User3", email: "email3@example.com")
       @user_4 = User.create!(name: "User4", email: "email4@example.com")
@@ -61,7 +61,7 @@ RSpec.describe 'New Viewing Party' do
   end
 
   describe 'sad path' do
-    it 'will display an error message if movie runtime > viewing party duration' do
+    it 'will display an error message if movie runtime > viewing party duration', :vcr do
       visit user_movies_path(@user_1)
  
       expect(page).to have_link("Parasite")
