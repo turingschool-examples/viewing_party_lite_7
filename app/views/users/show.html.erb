@@ -6,7 +6,10 @@
       <h1>Viewing Party</h1>
       <h4><%= @user.name%>'s Dashboard</h4>
       <%= button_to "Discover Movies", user_discover_path(@user), method: :get %><hr> 
-      <h4> Viewing Parties </h4>
+      <h4> Viewing Parties: </h4>
+      <% @user.viewing_parties.each do |vp| %>
+        <p>Date: <%= vp.date.strftime('%B %d, %Y') %></p>
+      <% end %>
     </center></table>
   </div>
 </body>

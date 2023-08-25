@@ -54,6 +54,7 @@ RSpec.describe Movie do
     movie = Movie.new(runtime)
 
     expect(movie.runtime).to eq("2:55")
+    expect(movie.minutes).to eq(175)
   end
 
   it "can create a cast and character array limited to the first 10 members", :vcr do
