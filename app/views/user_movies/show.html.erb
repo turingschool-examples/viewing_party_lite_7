@@ -1,0 +1,27 @@
+<div class="partial">
+  <%= render partial: "shared/landing_header" %><br><br>
+</div>
+
+<%= button_to "Create Viewing Party for #{@movie.title}", new_user_movie_viewing_party_path(@user, @movie.id), method: :get %><br>
+
+<%= button_to "Discover", user_discover_path(@user), method: :get %>
+
+  <h2>Title: <%= @movie.title %></h2>
+  <p>Average Rating: <%= @movie.vote_average %></p>
+  <p>Runtime: <%= @movie.runtime %></p>
+  <p>Genre: <% @movie.genres.each do |genre| %>
+    <%= genre %>
+  <% end %></p>
+  <p>Overview: <%= @movie.summary%></p>
+  <h3>Cast and Characters:</h3>
+  <% @movie.cast.each do |member| %>
+    <p><%= member %></p>
+  <% end %><br>
+
+  <h3>Reviews: </h3>
+  <p>Total Reviews: <%=  @movie.review_count %></p>
+  <% @movie.reviews.each do |review| %><br>
+    <h4>Author: <%= review[:author] %></h4>
+    <p>Username: <%= review[:username] %></p>
+    <p>Rating: <%= review[:rating] %></p>
+  <% end %>
