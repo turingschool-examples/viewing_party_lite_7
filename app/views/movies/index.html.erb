@@ -1,0 +1,17 @@
+<%= render partial: "shared/nav" %>
+
+
+<h1>Movies Results Page</h1><br><br>
+
+<% @facade.search_type.each do |movie| %>
+    <br>
+    <ul class="movie" >
+    <li class="title"><%= link_to movie.title, user_movie_path(@user, movie.id) %></li>
+    <li class="vote_average"><%= movie.vote_average %></li>
+    </ul>
+    <br>
+<% end %>
+
+<br><br>
+
+<%= render partial: "shared/discover_nav" %>
