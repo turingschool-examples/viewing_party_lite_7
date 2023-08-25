@@ -14,4 +14,12 @@
 
 <div id="viewing">
 <h2>Viewing Parties</h2>
+    <ul>
+      <% @viewing_parties.each do |p| %>
+        <li>
+          <p><%= p.movie_title %></p>
+      
+        </li>
+      <% end %>
+    </ul>
 </div>

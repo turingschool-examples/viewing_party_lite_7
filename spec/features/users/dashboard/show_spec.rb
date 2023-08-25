@@ -27,5 +27,10 @@ RSpec.describe "Dashboard Show Page" do
       #Redirects to the user discover index page
       expect(current_path).to eq(user_discover_index_path(u1))
     end
+
+    #US_12
+    # scenario "displays viewing parties on page" do
+
+    # end
   end
 end

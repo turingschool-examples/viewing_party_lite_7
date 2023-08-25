@@ -32,6 +32,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_25_175025) do
   end
 
   create_table "viewing_parties", force: :cascade do |t|
+    t.string "movie_title"
     t.integer "duration"
     t.string "date"
     t.datetime "start_time"

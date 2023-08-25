@@ -53,15 +53,14 @@ RSpec.describe 'New Viewing Party', type: :feature do
         fill_in :duration, with: 117
         fill_in :date, with: "2024-9-25"
         fill_in :start_time, with: "12:00 PM"
+        check(u1.id)
         check(u2.id)
-        
         click_button "Create Party"
-
+        save_and_open_page
+        
         expect(current_path).to eq(user_path(u1))
-
+        expect(page).to have_content("Spider Man: Across the Spider-Verse")
       end
-
-      
     end
   end
 end
