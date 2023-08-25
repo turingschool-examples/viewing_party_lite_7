@@ -3,7 +3,6 @@
 <hr>
 <div id="viewing-parties">
   <h3>Viewing Parties</h3>
-  <%# Will build out the @user.viewing_parties method in future stories %>
   <% @user.viewing_parties.each do |viewing_party| %>
     <%= render partial: "viewing_party", locals: { viewing_party: viewing_party } %>
   <% end %>

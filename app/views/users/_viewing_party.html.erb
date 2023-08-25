@@ -1,18 +1,16 @@
 <div id ="vp-<%= viewing_party.id %>">
-  Placeholder for a future Viewing Party card which will include a movie image, title, date, host, and attending guests.
   <div class="viewing-party-cards">
-  <% @viewing_parties.each do |viewing_party| %>
     <div class="card">
       <div class="card-header">
         <h3>Viewing Party</h3>
       </div>
       <div class="card-body">
-        <p>Movie ID: <%= viewing_party.movie_id %></p>
+        <img src="<%= viewing_party.movie_poster_path %>">
+        <p>Movie: <%= viewing_party.movie_title %></p>
         <p>Duration: <%= viewing_party.duration %> minutes</p>
         <p>Date: <%= viewing_party.date.strftime('%B %d, %Y') %></p>
         <p>Start Time: <%= viewing_party.start_time.strftime('%I:%M %p') %></p>
       </div>
     </div>
-  <% end %>
-</div>
+  </div>
 </div>
