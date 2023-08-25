@@ -32,7 +32,7 @@ RSpec.describe "Movie results page" do
 
       expect(page).to have_content("Finding Nemo")
       expect(page).to have_content("Captain Nemo")
-      expect(all('p', text: 'Title:').count).to be_less_than(20)
+      expect(all('p', text: 'Title:').count).to be <= 20
     end
   end
 end
