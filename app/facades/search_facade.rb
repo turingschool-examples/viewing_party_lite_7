@@ -1,10 +1,6 @@
-class SearchFacade
+class SearchFacade < DashboardFacade
   def initialize(params)
     @params = params
-  end
-
-  def service
-    @_movie_service ||= MovieService.new
   end
 
   def top_movies
