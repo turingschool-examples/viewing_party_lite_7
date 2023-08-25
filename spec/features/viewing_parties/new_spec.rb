@@ -54,6 +54,7 @@ RSpec.describe 'New Viewing Party', type: :feature do
         check("Bob")
         
         click_button "Create Party"
+        
         expect(current_path).to eq(user_movie_viewing_parties_path(u1, "569094"))
       end
     end
