@@ -14,8 +14,10 @@
         Date: <%= party.date %><br/>
         Time: <%= party.start_time %><br/><br/>
         Attendees: <% party.invited_users.each do |name| %>
-          <% if name == @user.name %>
-            <b><%= name %></b>,
+          <% if @user.id != party.host_id && name == @user.name %>
+              <b><%= name %></b>,
+          <% elsif @user.id == party.host_id && name == @user.name %>
+
           <% else %>
             <%= name %>,
           <% end %>
@@ -29,3 +31,15 @@
     <% end %>
   </p>
 </section>
+
+
+
+
+
+
+
+
+
+
+
+

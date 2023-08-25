@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-08-25T16:34:22-06:00">2023-08-25T16:34:22-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-08-25T16:55:18-06:00">2023-08-25T16:55:18-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>478</b> relevant lines,
-    <span class="green"><b>475</b> lines covered</span> and
+    <b>477</b> relevant lines,
+    <span class="green"><b>474</b> lines covered</span> and
     <span class="red"><b>3</b> lines missed. </span>
     (<span class="green">
   99.37%
@@ -392,9 +392,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#0f92c5b8bc39c42873f2ac7780190e3163b6ec5f" class="src_link" title="spec/features/user_dashboard_spec.rb">spec/features/user_dashboard_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">82</td>
-            <td class="cell--number">42</td>
-            <td class="cell--number">42</td>
+            <td class="cell--number">79</td>
+            <td class="cell--number">41</td>
+            <td class="cell--number">41</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -528,7 +528,7 @@
             <td class="cell--number">22</td>
             <td class="cell--number">22</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">2.32</td>
+            <td class="cell--number">2.23</td>
             
           </tr>
         
@@ -6907,8 +6907,8 @@
     
 
     <div class="t-line-summary">
-      <b>42</b> relevant lines.
-      <span class="green"><b>42</b> lines covered</span> and
+      <b>41</b> relevant lines.
+      <span class="green"><b>41</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -7531,7 +7531,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">        </code>
           </li>
         </div>
       
@@ -7542,7 +7542,7 @@
 
             
 
-            <code class="ruby">        save_and_open_page</code>
+            <code class="ruby">        within &quot;##{party_1.id}_info&quot; do</code>
           </li>
         </div>
       
@@ -7553,7 +7553,7 @@
 
             
 
-            <code class="ruby">        within &quot;##{party_1.id}_info&quot; do</code>
+            <code class="ruby">          expect(page).to have_css(&quot;.movie_thumbnail&quot;)</code>
           </li>
         </div>
       
@@ -7564,7 +7564,7 @@
 
             
 
-            <code class="ruby">          expect(page).to have_css(&quot;.movie_thumbnail&quot;)</code>
+            <code class="ruby">          expect(page).to have_link(&quot;The Godfather&quot;)</code>
           </li>
         </div>
       
@@ -7575,7 +7575,7 @@
 
             
 
-            <code class="ruby">          expect(page).to have_link(&quot;The Godfather&quot;)</code>
+            <code class="ruby">          expect(page).to have_content(&quot;8-01-2023&quot;)</code>
           </li>
         </div>
       
@@ -7586,7 +7586,7 @@
 
             
 
-            <code class="ruby">          expect(page).to have_content(&quot;8-01-2023&quot;)</code>
+            <code class="ruby">          expect(page).to have_content(&quot;7:00pm&quot;)</code>
           </li>
         </div>
       
@@ -7597,7 +7597,7 @@
 
             
 
-            <code class="ruby">          expect(page).to have_content(&quot;7:00pm&quot;)</code>
+            <code class="ruby">          expect(page).to have_content(&quot;Hosting&quot;)</code>
           </li>
         </div>
       
@@ -7608,18 +7608,18 @@
 
             
 
-            <code class="ruby">          expect(page).to have_content(&quot;Hosting&quot;)</code>
+            <code class="ruby">          expect(page).to have_content(&quot;Hosted By: #{user_1.name}&quot;)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="64">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="64">
+            
             
 
             
 
-            <code class="ruby">          expect(page).to have_content(&quot;Hosted By: #{user_1.name}&quot;)</code>
+            <code class="ruby">        end</code>
           </li>
         </div>
       
@@ -7630,23 +7630,12 @@
 
             
 
-            <code class="ruby">        end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="66">
-            
-            
-
-            
-
             <code class="ruby">        </code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="67">
+          <li class="covered" data-hits="1" data-linenumber="66">
             <span class="hits">1</span>
             
 
@@ -7657,7 +7646,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="68">
+          <li class="covered" data-hits="1" data-linenumber="67">
             <span class="hits">1</span>
             
 
@@ -7668,7 +7657,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="69">
+          <li class="covered" data-hits="1" data-linenumber="68">
             <span class="hits">1</span>
             
 
@@ -7679,7 +7668,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="70">
+          <li class="covered" data-hits="1" data-linenumber="69">
             <span class="hits">1</span>
             
 
@@ -7690,7 +7679,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="71">
+          <li class="covered" data-hits="1" data-linenumber="70">
             <span class="hits">1</span>
             
 
@@ -7701,7 +7690,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="72">
+          <li class="covered" data-hits="1" data-linenumber="71">
             <span class="hits">1</span>
             
 
@@ -7712,7 +7701,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="73">
+          <li class="covered" data-hits="1" data-linenumber="72">
             <span class="hits">1</span>
             
 
@@ -7723,7 +7712,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="74">
+          <li class="covered" data-hits="1" data-linenumber="73">
             <span class="hits">1</span>
             
 
@@ -7734,7 +7723,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="75">
+          <li class="covered" data-hits="1" data-linenumber="74">
             <span class="hits">1</span>
             
 
@@ -7745,7 +7734,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="76">
+          <li class="never" data-hits="" data-linenumber="75">
             
             
 
@@ -7756,7 +7745,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="77">
+          <li class="never" data-hits="" data-linenumber="76">
             
             
 
@@ -7767,7 +7756,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="78">
+          <li class="never" data-hits="" data-linenumber="77">
             
             
 
@@ -7778,29 +7767,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="79">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="80">
-            
-            
-
-            
-
-            <code class="ruby">    # it &quot;&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="81">
+          <li class="never" data-hits="" data-linenumber="78">
             
             
 
@@ -7811,7 +7778,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="82">
+          <li class="never" data-hits="" data-linenumber="79">
             
             
 
@@ -12968,8 +12935,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="29" data-linenumber="79">
-            <span class="hits">29</span>
+          <li class="covered" data-hits="27" data-linenumber="79">
+            <span class="hits">27</span>
             
 
             

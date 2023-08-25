@@ -53,7 +53,7 @@ describe 'User Dashboard' do
         user_party_3 = UserParty.create!(user_id: user_1.id, party_id: party_2.id)
         user_party_4 = UserParty.create!(user_id: user_2.id, party_id: party_2.id)
         visit "/users/#{user_1.id}"
-
+        
         within "##{party_1.id}_info" do
           expect(page).to have_css(".movie_thumbnail")
           expect(page).to have_link("The Godfather")
