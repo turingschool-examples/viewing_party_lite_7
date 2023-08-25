@@ -43,7 +43,7 @@ RSpec.describe DiscoverMovie do
     describe "format_genre" do
       it "can list genre with humanized format" do
         genre = @discover_movie.genre
-        expect(@discover_movie.format_genre).to eq("")
+        expect(@discover_movie.format_genre).to eq("Action, Crime")
       end
     end
   end
