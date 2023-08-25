@@ -43,6 +43,12 @@ describe "New Viewing Party Page" do
     it "redirects to the user's dashboard where the new event is shown" do
       check (@user2.name_email)
       click_button("Create Party")
+
+      expect(current_path).to eq(user_path(@user1.id))
+      expect(page).to have_content(@movie.title)
+
+      visit user_path(@user2.id)
+      expect(page).to have_content(@movie.title)
     end
   end
 
