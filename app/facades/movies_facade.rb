@@ -20,7 +20,6 @@ class MoviesFacade
   def self.movies_cast(id)
     movie_data = MovieService.movie_cast(id)
     Movie.new(movie_data)
-    
   end
 
   def self.movie_reviewed(id)
@@ -28,9 +27,3 @@ class MoviesFacade
     Movie.new(movie_data)
   end
 end
-
-
-# [14] pry(MoviesFacade)> movie_data[:cast].map do |x|
-#   [14] pry(MoviesFacade)*   x[:name]
-#   [14] pry(MoviesFacade)* end  
-#   => ["Marlon Brando",
