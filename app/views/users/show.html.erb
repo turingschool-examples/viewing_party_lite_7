@@ -2,6 +2,7 @@
 <h3>Invited to Parties</h3>
 <% @user.viewing_parties.each do |party| %>
   <% if party.host != @user.name %>
+  <div id="<%= party.id %>">
     <%= image_tag "https://image.tmdb.org/t/p/w500#{party.poster_path}", alt: "Movie poster", width: "150" %>
     <p>Party name: <%= party.name %></p>
     <p>Host: <%= party.host %></p>
@@ -18,10 +19,12 @@
     <% end %>
     <p>---------------------------------------</p>
   <% end %>
+  </div>
 <% end %>
 <h3>Hosted Parties</h3>
 <% @user.viewing_parties.each do |party| %>
   <% if party.host == @user.name %>
+  <div id="<%= party.id %>">
     <%= image_tag "https://image.tmdb.org/t/p/w500#{party.poster_path}", alt: "Movie poster", width: "150" %>
     <p>Party name: <%= party.name %></p>
     <p>Host:<strong> <%= party.host %></strong></p>
@@ -36,6 +39,7 @@
     <% end %>
     <p>---------------------------------------</p>
   <% end %>
+  </div>
 <% end %>
 <br>
 <%= button_to "Discover Movies", discover_user_path(@user), method: :get %>

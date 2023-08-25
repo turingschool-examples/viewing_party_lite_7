@@ -1,17 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe "User Dashboard" do
-  before do
-    @user1 = User.create!(name: "Marvin", email: "Marvin@gmail.com")
-    @user2 = User.create!(name: "Vincent", email: "VincentVega@gmail.com")
-    @viewing_party1 = @user1.viewing_parties.create!(name: "Marvin's Pulp Fiction Party", movie_title: "Pulp Fiction", host: "Marvin", event_date: "2023-08-28", start_time: "1:00 AM" )
-    @viewing_party2 = @user2.viewing_parties.create!(name: "Vincent's 5 Dollar Shake Party", movie_title: "Shake it", host: "Vincent", event_date: "2023-08-29", start_time: "2:00 PM" )
-    @viewing_party3 = @user2.viewing_parties.create!(name: "Butch's Watch Polishing Party", movie_title: "Watches a Documentary", host: "Vincent", event_date: "2023-08-23", start_time: "3:00 AM" )
-    @user1.viewing_parties << @viewing_party2
-    @user1.viewing_parties << @viewing_party3
-  end
-
   describe "user dashboard show" do
+    before do
+      @user1 = User.create!(name: "Marvin", email: "Marvin@gmail.com")
+      @user2 = User.create!(name: "Vincent", email: "VincentVega@gmail.com")
+      @viewing_party1 = @user1.viewing_parties.create!(name: "Marvin's Pulp Fiction Party", movie_title: "Pulp Fiction", host: "Marvin", event_date: "2023-08-28", start_time: "1:00 AM" )
+      @viewing_party2 = @user2.viewing_parties.create!(name: "Vincent's 5 Dollar Shake Party", movie_title: "Shake it", host: "Vincent", event_date: "2023-08-29", start_time: "2:00 PM" )
+      @viewing_party3 = @user2.viewing_parties.create!(name: "Butch's Watch Polishing Party", movie_title: "Watches a Documentary", host: "Vincent", event_date: "2023-08-23", start_time: "3:00 AM" )
+      @user1.viewing_parties << @viewing_party2
+      @user1.viewing_parties << @viewing_party3
+    end
+
     it "displays the users name at the top of the page" do
       visit user_path(@user1)
       expect(page).to have_content("#{@user1.name}'s Dashboard")
@@ -42,6 +42,41 @@ RSpec.describe "User Dashboard" do
           expect(page).to have_content(user.name)
         end
       end
+    end
+  end
+
+  describe "Movie poster image links" do
+    it "displays a movie poster image for each viewing party", :vcr do
+      @user1 = User.create!(name: "Marvin", email: "Marvin@gmail.com")
+      @user_2 = User.create!(name: "User2", email: "email2@example.com")
+      @user_3 = User.create!(name: "User3", email: "email3@example.com")
+      @user_4 = User.create!(name: "User4", email: "email4@example.com")
+      visit user_path(@user1)
+      expect(page).to_not have_selector("img[alt='Movie poster']")
+      expect(page).to_not have_selector("img")
+      
+      visit user_movies_path(@user1)
+      expect(page).to have_link("Parasite")
+      click_link "Parasite"
+      expect(page).to have_button("New Viewing Party")
+      click_button "New Viewing Party"
+      
+      fill_in :duration, with: 240
+      fill_in :event_date, with: "2024-05-09"
+      fill_in :start_time, with: "1:30 PM"
+      fill_in :name, with: "Super Mega Ultra Party"
+      click_button "Create"
+      
+      within "##{@user_2.id}" do
+        check("user_ids[]")
+      end
+      within "##{@user_3.id}" do
+        check("user_ids[]")
+      end
+      click_button "Invite"
+
+      expect(page).to have_selector("img[alt='Movie poster']")
+      expect(page).to have_selector("img")
     end
   end
 end
