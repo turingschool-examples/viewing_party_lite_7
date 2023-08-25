@@ -44,7 +44,8 @@ class Users::MoviesController < ApplicationController
   response3 = conn3.get("/3/movie/#{@movie[:id]}/reviews")
   data3 = JSON.parse(response3.body, symbolize_names: true)
   @reviews = data3[:results].take(10)
-  @total_reviews = data[:total_results]
+  @total_reviews = data3[:total_results]
+  
   #-----------------details--------------------
   conn4 = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
     faraday.params["api_key"] = ENV["MOVIES_API_KEY"]
@@ -52,6 +53,8 @@ class Users::MoviesController < ApplicationController
 
   response4 = conn4.get("/3/movie/#{@movie[:id]}")
   @data4 = JSON.parse(response4.body, symbolize_names: true)
+  @runtime = @data4[:runtime] / 60
+  @runtime_minutes = @data4[:runtime] % 60
   end
 
   def search 

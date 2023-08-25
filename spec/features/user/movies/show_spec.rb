@@ -98,13 +98,19 @@ RSpec.describe 'movie details page', type: :feature do
 
       reviews = data[:results].take(10)
       total_reviews = data[:total_results]
-      visit user_movie_path(u1, "346698")
 
-        reviews.each do |r|
-          expect(page).to have_content("#{r[:author]}")
-          # expect(page).to have_content("#{r[:content]}")
-        end  
-        # expect(page).to have_content("Total Reviews: #{total_reviews}")
+      visit user_movie_path(u1, "346698")
+      
+      expect(page).to have_content("Total Reviews: #{total_reviews}")
+
+        save_and_open_page
+          #within("reviews") do
+            reviews.each do |r|
+              expect(page).to have_content("#{r[:author]}")
+              #expect(page).to have_content("#{r[:content]}")
+            end  
+          #end
+
       end
     end
 
@@ -120,14 +126,15 @@ RSpec.describe 'movie details page', type: :feature do
         data = JSON.parse(json_response, symbolize_names: true)
 
         genres = data[:genres]
-        runtime = data[:runtime]
+        runtime = data[:runtime] / 60
+        runtime_minutes = data[:runtime] % 60
 
         visit user_movie_path(u1, "346698")
 
         genres.each do |g|
           expect(page).to have_content("#{g[:name]}")
         end
-        expect(page).to have_content("Runtime: #{runtime} minutes")
+        expect(page).to have_content("Runtime: #{runtime} hour(s) & #{runtime_minutes} minutes")
       end
     end
   end

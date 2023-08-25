@@ -4,7 +4,7 @@
 <section>
   <h1>Title: <%= @movie[:title] %></h1>
   <p>Vote Average: <%= @movie[:vote_average] %></p>
-  <p>Runtime: <%= @data4[:runtime] %> minutes</p>
+  <p>Runtime: <%= @runtime %> hour(s) & <%= @runtime_minutes%> minutes</p>
   <p>Genres: <% @data4[:genres].each do |g| %></p>
     <p><%= g[:name] %></p>
   <% end %>
@@ -18,12 +18,17 @@
 <% end %>
 </section>
 
-<section> 
+<section>
+<div id= "reviews">
+
 <h1>Reviews</h1>
 <p>Total Reviews: <%= @total_reviews %></p>
-<p><% @reviews.each do |r| %></p>
-  <p>Author: <%= r[:author] %> Their hot take: </p><p><%= r[:content] %> </p>
-<% end %>
+    <p><% @reviews.each do |r| %></p>
+      <p>Author: <%= r[:author] %> Their hot take: </p>
+  
+      <p><%= r[:content] %> </p>
+    <% end %>
+</div>
 </section>
 
 
