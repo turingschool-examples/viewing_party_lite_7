@@ -1,16 +1,12 @@
 class MovieReview
   attr_reader :author, 
-              :name,
-              :username,
-              :avatar_path,
-              :rating
+              :content,
+              :id
 
   def initialize(attributes)
     @author = attributes[:author]
-    @name = attributes[:name]
-    @username = attributes[:username]
-    @avatar_path = attributes[:avatar_path]
-    @rating = attributes[:rating]
+    @content = attributes[:content]
+    @id = attributes[:id]
   end
 end
 

@@ -29,9 +29,7 @@ RSpec.describe "Movie details page" do
       within "#Reviews" do
         expect(page).to have_content("Total reviews: 15")
         expect(page).to have_content("Author: SWITCH.")
-        expect(page).to have_content("Name: SWITCH.")
-        expect(page).to have_content("Rating: 10.0")
-        expect(page).to have_content("Username: maketheSWITCH")
+        expect(page).to have_content("Content: What makes ‘Parasite’ so satisfying is that it commits neither error.")
       end
     end
 
