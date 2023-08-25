@@ -6,9 +6,12 @@
 <% @facade.search_type.each do |movie| %>
     <br>
     <ul class="movie" >
-    <li class="title"><%= movie.title %></li>
+    <li class="title"><%= link_to movie.title, user_movie_path(@user, movie.id) %></li>
     <li class="vote_average"><%= movie.vote_average %></li>
     </ul>
     <br>
 <% end %>
 
+<br><br>
+
+<%= button_to "Return to Discover", user_discover_path(@user.id), method: :get %>

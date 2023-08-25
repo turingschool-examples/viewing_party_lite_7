@@ -19,4 +19,16 @@ class MovieService
   def movie_query(keyword)
     get_url("/3/search/movie?query=#{keyword}")
   end
+
+  def movie_details(movie_id)
+    get_url("/3/movie/#{movie_id}")
+  end
+
+  def cast_members(movie_id)
+    get_url("/3/movie/#{movie_id}/credits")
+  end
+
+  def reviews(movie_id)
+    get_url("/3/movie/#{movie_id}/reviews")
+  end
 end

@@ -1,0 +1,28 @@
+<%= render partial: "shared/nav" %>
+
+
+<h1>Movies Details Page</h1><br><br>
+
+<%= @facade.movie.title %><br>
+<%= @facade.movie.vote_average %><br>
+<%= @facade.movie.runtime %><br>
+
+<ul>
+<% @facade.movie.genres.each do |genre| %>
+  <li><%= genre[:name] %></li>
+<% end %>
+</ul>
+<br>
+<%= @facade.movie.summary %><br>
+<% @facade.cast_members.each do |cast_member| %>
+    <br>
+    <ul class="cast_member" >
+    <li class="name"><%= cast_member.name %></li>
+    <li class="character"><%= cast_member.character %></li>
+    </ul>
+    <br>
+<% end %>
+
+
+
+<%= button_to "Return to Discover", user_discover_path(@user.id), method: :get %>
