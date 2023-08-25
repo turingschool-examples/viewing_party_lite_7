@@ -1,7 +1,9 @@
 class ViewingPartiesController < ApplicationController
 
   def new
-    
+    @viewing_party = ViewingParty.new
+    @user = User.find(params[:user_id])
+    @details = MovieDetailsFacade.movie_details(params[:movie_id])
   end
 
   def create
