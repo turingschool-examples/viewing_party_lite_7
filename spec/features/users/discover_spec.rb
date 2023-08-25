@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'User Discover Movies Page' do
+RSpec.describe 'User Discover Movies Page', :vcr do
   before do
     @ally = User.create!(name: 'Ally Jean', email: 'allyjean@example.com')
   end

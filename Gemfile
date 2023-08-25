@@ -54,6 +54,7 @@ group :development, :test do
   gem "pry"
   gem "shoulda-matchers"
   gem "figaro"
+  gem 'validates_timeliness', '~> 7.0.0.beta1'
 end
 
 group :development do

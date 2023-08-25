@@ -5,6 +5,10 @@ class Review
   def initialize(data)
     @author = data[:author]
     @rating = data[:author_details][:rating]
-    @comments = data[:content]
+    @comments = format_comments(data[:content])
+  end
+
+  def format_comments(comments)
+    comments.delete("\n\r")
   end
 end
