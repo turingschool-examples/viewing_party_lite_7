@@ -85,8 +85,6 @@ RSpec.describe "User Dashboard" do
     
     visit user_path(aquaria)
 
-    save_and_open_page
-
     within(".my_parties") do
       expect(page).to have_link("Shawshank Redemption")
       expect(page).to have_content("September 01, 2023")
