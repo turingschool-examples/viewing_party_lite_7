@@ -1,9 +1,9 @@
+<%= button_to "Discover Page", "/users/#{@user.id}/discover"%>
+</br>
 <% @movies.each do |movie| %>
-  <li><%= link_to movie.title %>
+  <li><%= link_to movie.title, "/users/#{@user.id}/movies/#{movie.id}" %>
   -- <%= movie.vote_average %></li>
 <% end %>
-</br>
-<%= button_to "Discover Page", "/users/#{@user.id}/discover"%>
 
 
 
