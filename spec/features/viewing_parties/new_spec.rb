@@ -21,12 +21,10 @@ RSpec.describe 'New Viewing Party', type: :feature do
         data = JSON.parse(json_response, symbolize_names: true)
   
         movies = data[:results]
-        u1 = User.create!(name: "Sean", email: "champion4lyfe@gmail.com")
-    
 
         u1 = User.create!(name: "Sean", email: "sugasean777@gmail.com")
         visit new_user_movie_viewing_party_path(u1, "569094")
-
+        save_and_open_page
         expect(page).to have_content("Spider-Man: Across the Spider-Verse")
       end
     end
