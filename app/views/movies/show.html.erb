@@ -28,10 +28,11 @@
 <p style="text-align: left">
 <b>Reviews: <%= @review_count.count %> </b><br />
   <div id="authors"> 
-    <ul>
+    <ol>
       <% @review_count.each do |review| %>
-        <li style="text-align: left"> Author: <%= review.author %></li>
+        <li style="text-align: left"> Author: <%= review.author %><br />
+        <%= review.content %></li>
       <% end %>
-    </ul>
+    </ol>
   </div>
 </p>

@@ -3,6 +3,7 @@ class ReviewMapper
     review_data["results"].map do |review|
       Review.new(
         author: review["author"],
+        content: review["content"]
       )
     end
   end

@@ -59,12 +59,14 @@ describe 'User Movies detail page' do
       user = create(:user)
       movie_id = 238
       visit "/users/#{user.id}/movies/#{movie_id}"
-      
+      save_and_open_page
         expect(page).to have_content("Reviews: 5")
         within ("#authors") do
           expect(page).to have_content("Author: futuretv")
           expect(page).to have_content("Author: crastana")
           expect(page).to have_content("Author: drystyx")
+          expect(page).to have_content("The Godfather is a film considered by most to be one of the greatest ever made.")
+          expect(page).to have_content("the story telling is perfect")
         end
       end
     end

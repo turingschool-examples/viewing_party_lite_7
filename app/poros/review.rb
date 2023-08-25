@@ -1,7 +1,9 @@
 class Review
-  attr_reader :author
+  attr_reader :author,
+              :content
   
-  def initialize(author:)
+  def initialize(author:, content:)
     @author = author
+    @content = content
   end
 end
