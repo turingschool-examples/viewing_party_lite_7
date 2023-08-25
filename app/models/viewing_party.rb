@@ -10,7 +10,11 @@ class ViewingParty < ApplicationRecord
     MoviesService.new.find_movie(self.movie_id).runtime
   end
 
-  def send_invites(params)
-    require 'pry'; binding.pry
+  def send_invites(party, params)
+    PartyGuest.create(viewing_party: party, user_id: params[:user_id], host: true)
+  end
+
+  def host
+    users.joins(:party_guests).where('party_guests.host = ?', true).first
   end
 end
