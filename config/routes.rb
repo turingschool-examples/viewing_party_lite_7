@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get "movies", to: "discover_movies#index"
     get "movies/:movie_id", to: "movie_details#show"
     get "movies/:movie_id/viewing-party/new", to: "viewing_parties#new"
+    post "movies/:movie_id/viewing-parties", to: "viewing_parties#create"
   end
 
   get "/register", to: "users#new"

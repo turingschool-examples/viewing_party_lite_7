@@ -1,16 +1,18 @@
 <h3>@movie.title Viewing Party</h3>
-  <%= form_with model: @viewing_party, local: true do |f| %>  
-    <p><%= f.label :movie_title, 'Movie title:' %></p>
-    <p><%=  f.text_field :movie_title%></p>
-
+<% if flash[:custom_message] %>
+  <div class="alert alert-custom">
+    <%= flash[:custom_message] %>
+  </div>
+<% end %>
+  <%= form_with url: "/users/#{@user.id}/movies/#{@details.id}/viewing-parties", local: true do |f| %>  
     <p><%= f.label :duration, 'Duration in minutes:' %></p>
-    <p><%=  f.text_field :duration%></p> 
+    <p><%=  f.number_field :duration%></p> 
 
     <p><%= f.label :event_date, 'Date for event:' %></p>
-    <p><%=  f.text_field :event_date%></p>
+    <p><%=  f.date_field :event_date%></p>
 
     <p><%= f.label :start_time, 'Start time:' %></p>
-    <p><%=  f.text_field :start_time%></p>
+    <p><%=  f.time_field :start_time%></p>
 
     <p><%= f.label :name, 'Name for event:' %></p>
     <p><%=  f.text_field :name%></p>
