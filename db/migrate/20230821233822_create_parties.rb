@@ -10,7 +10,7 @@ class CreateParties < ActiveRecord::Migration[7.0]
       t.references :host, foreign_key: { to_table: :users }
       t.string :movie_title
       t.string :thumbnail
-      
+      t.string :host_name
 
       t.timestamps
     end

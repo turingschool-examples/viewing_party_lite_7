@@ -22,6 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_21_234105) do
     t.bigint "host_id"
     t.string "movie_title"
     t.string "thumbnail"
+    t.string "host_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["host_id"], name: "index_parties_on_host_id"

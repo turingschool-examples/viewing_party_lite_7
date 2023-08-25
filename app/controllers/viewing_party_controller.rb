@@ -8,7 +8,7 @@ class ViewingPartyController < ApplicationController
   end
 
   def create
-    viewing_party = Party.new(movie_id: params[:movie_id], duration: params[:duration_of_party], date: params[:date], start_time: params[:start_time], host_id: params[:user_id], movie_title: params[:movie_title], thumbnail: params[:movie_thumbnail])
+    viewing_party = Party.new(host_name: params[:host_name], movie_id: params[:movie_id], duration: params[:duration_of_party], date: params[:date], start_time: params[:start_time], host_id: params[:user_id], movie_title: params[:movie_title], thumbnail: params[:movie_thumbnail])
     if viewing_party.save
       users = User.all
       users.each do |user|
