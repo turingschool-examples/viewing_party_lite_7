@@ -5,7 +5,23 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @viewing_parties = @user.viewing_parties
+    @movies = {}
+    @movie_images = {}
+    @hosted_parties = []
+    @invited_parties = []
+
+    @user.viewing_parties.each do |party|
+      if party.party_guests.find_by(user_id: @user.id, host: true)
+        @hosted_parties << party
+      else
+        @invited_parties << party
+      end
+
+      movie_id = party.movie_id
+      movie = MoviesService.new.find_movie(movie_id)
+      @movies[movie_id] = movie.title
+      @movie_images[movie_id] = movie.image
+    end
   end
 
   def register
@@ -48,6 +64,7 @@ class UsersController < ApplicationController
              else
                'Error: No Query'
              end
+    @movies = movies_data.map { |movie_data| Movie.new(movie_data) }
   end
 
   def movie_show
