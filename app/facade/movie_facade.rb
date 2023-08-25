@@ -38,7 +38,7 @@ class MovieFacade
     authors = get_movie_review_authors_and_content(movie_id)
     cast = get_movie_cast(movie_id)
    
-    genre_names = movie_data[:genres].map { |genre| genre[:name] }
+    genre_names = movie_data[:genres]&.map { |genre| genre[:name] }
 
     attributes = {
       id: movie_data[:id],
@@ -48,7 +48,7 @@ class MovieFacade
       genre: genre_names,
       overview: movie_data[:overview],
       top_10: cast[0..9],
-      total_reviews: authors.count,
+      total_reviews: authors&.count,
       review_authors: authors
     }
 
@@ -95,7 +95,7 @@ class MovieFacade
     cast_and_char = []
     credits = @movie.credits(movie_id)
 
-    credits[:cast].each do |cast_member|
+    credits[:cast]&.each do |cast_member|
       key = cast_member[:name]
       value = cast_member[:character]
       cast_and_char << { key => value }
@@ -108,7 +108,7 @@ class MovieFacade
     author_and_content = []
     reviews = @movie.reviews(movie_id)
 
-    authors = reviews[:results].each do |review|
+    authors = reviews[:results]&.each do |review|
       key = review[:author]
       value = review[:content]
       author_and_content << { key => value }

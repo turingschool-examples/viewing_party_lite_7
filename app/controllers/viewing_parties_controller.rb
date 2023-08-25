@@ -3,26 +3,39 @@ class ViewingPartiesController < ApplicationController
     @user = User.find(params[:user_id])
     @viewing_party = @user.viewing_parties.new
     facade = MovieFacade.new(params[:id])
-
-    @movie = facade.get_movie_by_id(params[:id]) # should to the monocromium method to not hit the API more than needed
+    @movie = facade.get_movie_by_id(params[:id]) 
   end
 
   def create
-    facade = MovieFacade.new(params[:id])
-
-    @movie = facade.get_movie_by_id(params[:id])
     @user = User.find(params[:user_id])
-    @viewing_party = @user.viewing_parties.new
-    runtime = params[:runtime]
+    movie_runtime = params[:runtime].to_i
+    facade = MovieFacade.new(params[:id])
+    @movie = facade.get_movie_by_id(params[:id]) 
 
-    if params[:duration_minutes].to_i >= runtime.to_i
-
-      @viewing_party.save
-   
-      redirect_to "/users/#{@user.id}"
+    viewing_party_params = {
+      host: @user.name,
+      movie: @movie.title,
+      duration: params[:viewing_party][:duration_minutes],
+      viewing_time: params[:viewing_party][:start_time],
+      viewing_date: params[:viewing_party][:date],
+      users: params[:viewing_party][:user_ids]
+  }
+  
+    if params[:duration_minutes].to_i >= movie_runtime
+      
+      @viewing_party = @user.viewing_parties.build(viewing_party_params)
+      @viewing_party.users << User.find(params[:viewing_party][:user_ids])
+      
+      if @viewing_party.save
+        redirect_to user_path(@user, id: params[:id])
+      else
+        flash[:error] = "Failed to create a new viewing party."
+        redirect_to new_user_viewing_party_path(@user, id: params[:id])
+      end
     else
-      flash[:error] = "Duration cannot be less than runtime - #{runtime} minutes"
-      render :new, locals: { movie_data: params[:movie_data] }
+      flash[:error] = "Duration cannot be less than runtime - #{movie_runtime} minutes"
+      redirect_to new_user_viewing_party_path(@user, id: params[:id])
     end
   end
-end
+  
+end 
