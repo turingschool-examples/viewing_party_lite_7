@@ -28,8 +28,8 @@ RSpec.describe 'New Viewing Party Page', :vcr do
   it 'creates a new viewing party' do
     click_button('Create Party')
     expect(current_path).to eq(user_path(@ally))
-    # expect(page).to have_content(@movie.title)
-    # expect(page).to have_content("Hosting")
+    expect(page).to have_content(@movie.title)
+    expect(page).to have_content('Hosting')
     expect(page).to have_content('Party Created Successfully')
     party = ViewingParty.last
     expect(party.duration).to eq(78)
@@ -63,7 +63,7 @@ RSpec.describe 'New Viewing Party Page', :vcr do
     expect(page).to have_content('Error: Start time cannot be in the past')
   end
 
-  xit 'will show this party on the dashboard pages of invited users' do
+  it 'will show this party on the dashboard pages of invited users' do
     visit user_path(@jimmy)
 
     expect(page).to_not have_content(@movie.title)
