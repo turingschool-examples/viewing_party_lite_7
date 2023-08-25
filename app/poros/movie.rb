@@ -1,5 +1,6 @@
 class Movie
   attr_reader :id,
+              :genres,
               :rating,
               :runtime,
               :overview,
@@ -23,7 +24,7 @@ class Movie
   end
 
   def reviews
-    @reviews_data.first(10).map do |review_data|
+    @reviews_data.map do |review_data|
       Review.new(review_data)
     end
   end
@@ -32,11 +33,5 @@ class Movie
     hrs_min = runtime.divmod(60)
 
     "#{hrs_min[0]}hr #{hrs_min[1]}min"
-  end
-
-  def genres
-    if @genres_data
-      @genres_data.map { |genre| genre[:name] }
-    end
   end
 end
