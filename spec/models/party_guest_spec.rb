@@ -1,8 +1,8 @@
-require "rails_helper" 
+require 'rails_helper'
 
 RSpec.describe PartyGuest do
-  describe "relationships" do
+  describe 'relationships' do
     it { should belong_to :user }
-    it { should belong_to :viewing_party}
+    it { should belong_to :viewing_party }
   end
 end
