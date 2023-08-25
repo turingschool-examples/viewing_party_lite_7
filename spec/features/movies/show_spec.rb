@@ -31,7 +31,7 @@ describe "Movie Details Page", type: :feature do
     within("#movie-details") do
       expect(page).to have_content(@movie.vote_average)
       expect(page).to have_content(@movie.runtime) #test runtime method that displays the time in hours/minutes in movie PORO test
-      expect(page).to have_content(@movie.genre) #test genre method that displays the time in hours/minutes in movie PORO test
+      expect(page).to have_content(@movie.genres) #test genre method that displays the time genres concatenated together
     end
 
     within("#movie-summary") do
