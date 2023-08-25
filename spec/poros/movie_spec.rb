@@ -10,7 +10,7 @@ RSpec.describe Movie do
       :original_language=>"en",
       :original_title=>"The Godfather",
       :overview=>
-       "Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge.",
+      "Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge.",
       :popularity=>118.008,
       :poster_path=>"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg",
       :release_date=>"1972-03-14",
