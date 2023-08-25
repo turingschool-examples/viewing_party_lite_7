@@ -4,7 +4,7 @@ class MoviesFacade
   end
 
   def self.top_twenty_movies
-    MovieService.top_20_flicks.map do |movie_data|
+    MovieService.top_20_flicks[:results].map do |movie_data|
       Movie.new(movie_data)
     end
   end

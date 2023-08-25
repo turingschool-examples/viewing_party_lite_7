@@ -3,8 +3,8 @@ class MovieService
     get_url("/3/movie/top_rated")
   end
 
-  def self.movie_search
-    get_url("/3/search/movie")
+  def self.movie_search(search)
+    get_url("/3/search/movie?search=#{search}")
   end
 
   def self.get_url(url)
@@ -13,8 +13,8 @@ class MovieService
   end
 
   def self.conn
-    Faraday.new(url: "https://www.themoviedb.org") do |faraday|
-      faraday.params["api_key"] = ENV["f4a7c872399d352b616cad623bf1d25e"]
+    Faraday.new(url: "https://api.themoviedb.org") do |faraday|
+      faraday.params["api_key"] = ENV["TMDB_API_KEY"]
     end
   end
 end
