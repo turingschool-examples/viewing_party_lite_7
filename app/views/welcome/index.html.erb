@@ -4,7 +4,7 @@
 </head>
 
 <body>
-  <%= button_to "Create New User", new_user_path, class: "button", method: :post %>
+  <%= button_to "Create New User", new_registration_path, class: "button-link", method: :get, role: "button" %>
   <h3>Existing Users</h3>
   <ul>
     <% @users.each do |user| %>
