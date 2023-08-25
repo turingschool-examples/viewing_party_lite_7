@@ -7,7 +7,8 @@ class Movie
               :runtime,
               :cast,
               :reviews,
-              :review_count
+              :review_count,
+              :minutes
 
               # as attrs are added, be sure to test for them in PORO spec
   def initialize(data)
@@ -20,6 +21,7 @@ class Movie
     @cast = create_cast_array(data)
     @reviews = create_review_array(data)
     @review_count = create_review_count(data)
+    @minutes = data[:runtime]
     # @poster = data[:poster_path]
   end
 
