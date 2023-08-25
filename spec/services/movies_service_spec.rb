@@ -7,10 +7,16 @@ RSpec.describe MoviesService, :vcr do
     expect(movies.count).to eq(20)
   end
 
-  it 'can search for movies by keyword in title' do
-    movies = MoviesService.new.search('Inception')
+  it 'can search for movies by keyword in title', :vcr do
+    service = MoviesService.new
+    keyword = 'Inception'
+    movies = service.search(keyword)
+
     expect(movies).to be_an(Array)
     expect(movies.first).to have_key(:title)
+    # Test that at least one movie has the keyword in its title
+    titles = movies.map { |movie| movie[:title].downcase }
+    expect(titles.any? { |title| title.include?(keyword.downcase) }).to be(true)
   end
 
   it 'can generate a poro for a specific movie' do
