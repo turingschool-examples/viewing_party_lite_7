@@ -60,6 +60,7 @@ group :development, :test do
   gem "simplecov"
   gem "shoulda-matchers"
   gem "factory_bot_rails"
+  gem "orderly"
 end
 
 group :development do

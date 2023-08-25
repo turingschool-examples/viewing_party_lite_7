@@ -2,9 +2,32 @@
 <%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %>
 <br>
 <br>
-<br>
-<%= @movie.title %>
-<br>
-<br>
-<br>
 <%= button_to "Create Viewing Party", "/users/#{@user.id}/movies/#{params[:movie_id]}/viewing_party", method: :get  %>
+<br>
+<br>
+
+<li> Title: <%= @movie.title %></li>
+<br>
+<li>Rotten Toe Mate Toes: <%= @movie.vote_average %></li>
+<br>
+<li>Runtime: <%= @movie.runtime %> minutes</li>
+<br>
+<li>Genres: <%= @movie.genres %></li>
+<br>
+<br>
+<li>Summary: <%= @movie.summary %></li>
+<br>
+<br>
+Cast for <%=@movie.title %>: <% @movie1.cast.first(10).each do |cast_member| %>  
+                <li><%= cast_member[:name] %></li> 
+              <% end %></li>
+<br>
+<br>
+<li>Review Count: <%= @movie2.total_review_count %></li>
+<br>
+<br>
+Reviewed by: <% @movie2.reviewer.each do |result| %>
+                <br><li><%= result[:author] %></li> 
+                <li><%= result[:content] %></li> 
+                <br>
+              <% end %>
