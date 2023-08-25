@@ -11,7 +11,6 @@ class ViewingPartiesController < ApplicationController
     @movie = data    
 
     @users = User.all
-    @viewing_party = @user.viewing_parties.new
   end
 
   def create
@@ -20,12 +19,11 @@ class ViewingPartiesController < ApplicationController
     conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
       faraday.params["api_key"] = ENV["MOVIES_API_KEY"]
     end
-    response = conn.get("/3/movie/#{params[:movie_id]}")
+    response = conn.get("/3/movie/#{params[:movie_id]}.json")
     data = JSON.parse(response.body, symbolize_names: true)
-    @movie = data  
+    @movie = data
     
-    require 'pry'; binding.pry
-    @viewing_party = @user.viewing_parties.new(viewing_party_params)
+    @viewing_party = @user.viewing_parties.create!(viewing_party_params)
     @viewing_party.movie_title = @movie[:title]
     if @viewing_party.save
       redirect_to user_path((params[:user_id]))
