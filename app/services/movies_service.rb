@@ -6,6 +6,10 @@ class MoviesService
   def keyword_search(keyword)
     get_url("/3/search/movie?query=#{keyword}&page=1")
   end
+
+  def get_movie_details(movie_id)
+    get_url("/3/movie/#{movie_id}?language=en-US&append_to_response=credits,reviews&language=en-US")
+  end
   
   def get_url(url)
     response = conn.get(url)
