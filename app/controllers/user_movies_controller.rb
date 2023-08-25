@@ -6,7 +6,6 @@ class UserMoviesController < ApplicationController
   end
 
   def show
-    # require 'pry'; binding.pry
     @user = User.find(params[:user_id])
     @movie = MovieFacade.get_movie_details(params[:id])
   end
