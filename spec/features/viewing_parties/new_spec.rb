@@ -1,14 +1,16 @@
 require 'rails_helper'
 
-describe "New Viewing Party Page", :vcr do
+describe "New Viewing Party Page" do
   before do
-    @user1 = create(:user)
-    @user2 = create(:user)
-    @user3 = create(:user)
+    VCR.use_cassette("godfather-movie-details") do
+      @user1 = create(:user)
+      @user2 = create(:user)
+      @user3 = create(:user)
 
-    @movie = MoviesFacade.new(238, nil).movie_details
+      @movie = MoviesFacade.new(238, nil).movie_details
 
-    visit user_movie_viewing_party_new_path(@user1.id, @movie.id)
+      visit user_movie_viewing_party_new_path(@user1.id, @movie.id)
+    end
   end
 
   describe "new viewing party form" do
