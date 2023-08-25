@@ -26,5 +26,12 @@
   </ol>
 </p>
 <p style="text-align: left">
-  # Reviews:<br />
+<b>Reviews: <%= @review_count.count %> </b><br />
+  <div id="authors"> 
+    <ul>
+      <% @review_count.each do |review| %>
+        <li style="text-align: left"> Author: <%= review.author %></li>
+      <% end %>
+    </ul>
+  </div>
 </p>

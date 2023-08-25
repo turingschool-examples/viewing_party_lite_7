@@ -36,4 +36,12 @@ class TmdbService
     cast_data = JSON.parse(response.body)
     CastMapper.map_cast_details(cast_data)
   end
+
+  def review_count(id)
+    response = @connection.get("/3/movie/#{id}/reviews")
+    return [] unless response.success?
+
+    review_data = JSON.parse(response.body)
+    ReviewMapper.map_review_details(review_data)
+  end
 end

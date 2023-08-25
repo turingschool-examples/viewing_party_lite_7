@@ -33,7 +33,6 @@ describe 'User Movies detail page' do
       user = create(:user)
       movie_id = 238
       visit "/users/#{user.id}/movies/#{movie_id}"
-      save_and_open_page
       
       expect(page).to have_content("The Godfather")
       expect(page).to have_content("8.7")
@@ -61,11 +60,11 @@ describe 'User Movies detail page' do
       movie_id = 238
       visit "/users/#{user.id}/movies/#{movie_id}"
       
-        expect(page).to have_content("500 reviews")
-        within ("#reviewers") do
-          expect(page).to have_content("Reviewer1")
-          expect(page).to have_content("Reviewer2")
-          expect(page).to have_content("Reviewer3")
+        expect(page).to have_content("Reviews: 5")
+        within ("#authors") do
+          expect(page).to have_content("Author: futuretv")
+          expect(page).to have_content("Author: crastana")
+          expect(page).to have_content("Author: drystyx")
         end
       end
     end
