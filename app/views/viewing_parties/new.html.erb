@@ -1,25 +1,21 @@
-<li> Title: <%= @movie.title %></li>
+<li>Movie Title: <%= @movie.title  %>
 <br>
-<li>Rotten Toe Mate Toes: <%= @movie.vote_average %></li>
-<br>
-<li>Runtime: <%= @movie.runtime %> minutes</li>
-<br>
-<li>Genres: <%= @movie.genres %></li>
-<br>
-<br>
-<li>Summary: <%= @movie.summary %></li>
-<br>
-<br>
-Cast for <%=@movie.title %>: <% @movie1.cast.first(10).each do |cast_member| %>  
-                <li><%= cast_member[:name] %></li> 
-              <% end %></li>
-<br>
-<br>
-<li>Review Count: <%= @movie2.total_review_count %></li>
-<br>
-<br>
-Reviewed by: <% @movie2.reviewer.each do |result| %>
-                <br><li><%= result[:author] %></li> 
-                <li><%= result[:content] %></li> 
-                <br>
-              <% end %>
+
+<%= form_with url: "/users/#{@user.id}/movies/#{params[:movie_id]}/viewing_party", method: :post do |f| %>
+  <li><%= f.label :duration, value: :runtime %>
+  <%= f.text_field :runtime, :value => @movie.runtime %>
+  <br>
+
+  <li><%= f.date_select :dateinstructed, :order => [:day, :month, :year] %>
+  <br>
+  <li><%= f.time_select :result_time, :discard_hour => false, :default => {:hour => '00', :minute => '00'}, :include_seconds => false %>
+  <br>
+    <% @users.each do |user| %>
+      <%= f.check_box :user %>
+      <%= f.label :user, "#{user.name} (#{user.email})" %>
+    <% end %>
+
+  
+  <li><%= f.submit "Create Party" %></li>
+<% end %>
+
