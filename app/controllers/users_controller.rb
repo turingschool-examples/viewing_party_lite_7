@@ -5,18 +5,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.includes(viewing_parties: :party_guests).find(params[:id])
-
-    # Initialize @movies and @movie_images as empty hashes
-    @movies = {}
-    @movie_images = {}
-
-    # Populate @movies and @movie_images
-    @user.viewing_parties.each do |party|
-      movie_id = party.movie_id
-      movie = MoviesService.new.find_movie(movie_id)
-      @movies[movie_id] = movie.title
-      @movie_images[movie_id] = movie.image
-    end
   end
 
   def register
@@ -36,7 +24,6 @@ class UsersController < ApplicationController
 
   def discover
     @user = User.find(params[:user_id])
-    # @top_rated_movies = MoviesService.new.top_rated
   end
 
   def movies
