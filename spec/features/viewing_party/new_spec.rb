@@ -8,6 +8,7 @@ RSpec.describe 'New Viewing Party Page' do
     @trixie = User.create!(name: "Trixie Mattel", email: "Trixie@hotmess.com")
     @katya = User.create!(name: "Katya Zamolodchikova", email: "Katya@hotmess.com")
     @movie = MovieFacade.get_movie_details(238)
+
   end
 
   it 'displays the movie title for party' do 
@@ -29,13 +30,18 @@ RSpec.describe 'New Viewing Party Page' do
     expect(page).to have_field(:date)
     expect(page).to have_field(:start_time)
     expect(page).to have_button('Create Party')
-
+    save_and_open_page
     fill_in :duration, with: 180
     fill_in :date, with: '2023-09-01'
     fill_in :start_time, with: '12:00'
+    check(@bob.name)
+    check(@aquaria.name)
 
     click_button 'Create Party'
+    party = ViewingParty.last
+
     expect(current_path).to eq(user_path(@trixie))
+    expect(party.users).to match_array([@trixie, @bob, @aquaria])
   end
 
   it 'displays a message if the party is too short' do
@@ -46,8 +52,10 @@ RSpec.describe 'New Viewing Party Page' do
     fill_in :start_time, with: '12:00'
 
     click_button 'Create Party'
+    
     expect(current_path).to eq(new_user_movie_viewing_party_path(@trixie, @movie.id))
     expect(page).to have_content("Please, you gonna cut this party short?")
   end
+
 
 end
