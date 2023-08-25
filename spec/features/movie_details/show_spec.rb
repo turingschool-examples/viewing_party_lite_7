@@ -8,7 +8,6 @@ RSpec.describe "Movie details page" do
   describe "movie details page" do
     it "displays movie details" do
       visit user_movies_path(@user1)
- 
       expect(page).to have_link("Parasite")
       click_link "Parasite"
 

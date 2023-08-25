@@ -1,4 +1,4 @@
-<h1>MOVIES</h1>
+<h1>Results:</h1>
 <% @movies.each do |movie| %>
  <p>Title: <%= link_to movie.title, "/users/#{@user.id}/movies/#{movie.id}" %></p>
  <p>Vote average: <%= movie.vote_average %></p>
