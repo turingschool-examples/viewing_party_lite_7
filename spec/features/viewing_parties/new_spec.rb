@@ -52,12 +52,10 @@ describe "New Viewing Party Page" do
       fill_in("start_time", with: "10:00")
       VCR.use_cassette("godfather-movie-details") do
         click_button("Create Party")
-        save_and_open_page
+
         expect(current_path).to eq(user_movie_viewing_party_new_path(@user1.id, @movie.id))
         expect(page).to have_content("Error: Viewing party duration must be longer than the movie's runtime")
       end
     end
   end
-
-  
 end

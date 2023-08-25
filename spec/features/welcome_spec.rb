@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'Welcome Page' do
   before do
-    @user_1 = create(:user)
-    @user_2 = create(:user)
-    @user_3 = create(:user)
+    @user1 = create(:user)
+    @user2 = create(:user)
+    @user3 = create(:user)
     visit root_path
   end
 
@@ -26,14 +26,14 @@ RSpec.describe 'Welcome Page' do
   it "lists all existing users" do
     within("#user-list") do
       expect(page).to have_content('Existing Users')
-      expect(page).to have_content(@user_1.email)
-      expect(page).to have_content(@user_2.email)
-      expect(page).to have_content(@user_3.email)
-      within("#user-#{@user_1.id}") do
-        click_link "#{@user_1.email}"
+      expect(page).to have_content(@user1.email)
+      expect(page).to have_content(@user2.email)
+      expect(page).to have_content(@user3.email)
+      within("#user-#{@user1.id}") do
+        click_link "#{@user1.email}"
       end
     end
-    expect(current_path).to eq(user_path(@user_1))
+    expect(current_path).to eq(user_path(@user1))
   end
 
   it "has a link to the root page" do
