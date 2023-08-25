@@ -498,7 +498,6 @@
           1,
           1,
           1,
-          1,
           null,
           1,
           1,
@@ -614,6 +613,111 @@
           null,
           1,
           1,
+          null
+        ]
+      },
+      "/Users/derekchavez/3mod/projects/viewing_party_lite_7/spec/poros/cast_member_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/derekchavez/3mod/projects/viewing_party_lite_7/app/poros/cast_member.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          51,
+          51,
+          null,
+          null
+        ]
+      },
+      "/Users/derekchavez/3mod/projects/viewing_party_lite_7/spec/poros/movie_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/derekchavez/3mod/projects/viewing_party_lite_7/app/poros/movie.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          46,
+          46,
+          46,
+          46,
+          46,
+          46,
+          null,
+          null
+        ]
+      },
+      "/Users/derekchavez/3mod/projects/viewing_party_lite_7/spec/poros/review_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/derekchavez/3mod/projects/viewing_party_lite_7/app/poros/review.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          26,
+          null,
           null
         ]
       },
@@ -777,22 +881,6 @@
           null
         ]
       },
-      "/Users/derekchavez/3mod/projects/viewing_party_lite_7/app/poros/movie.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          45,
-          45,
-          45,
-          45,
-          45,
-          45,
-          null,
-          null
-        ]
-      },
       "/Users/derekchavez/3mod/projects/viewing_party_lite_7/app/services/cast_mapper.rb": {
         "lines": [
           1,
@@ -807,18 +895,6 @@
           null
         ]
       },
-      "/Users/derekchavez/3mod/projects/viewing_party_lite_7/app/poros/cast_member.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          50,
-          50,
-          null,
-          null
-        ]
-      },
       "/Users/derekchavez/3mod/projects/viewing_party_lite_7/app/services/review_mapper.rb": {
         "lines": [
           1,
@@ -828,17 +904,6 @@
           null,
           null,
           null,
-          null,
-          null
-        ]
-      },
-      "/Users/derekchavez/3mod/projects/viewing_party_lite_7/app/poros/review.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          25,
           null,
           null
         ]
@@ -862,6 +927,6 @@
         ]
       }
     },
-    "timestamp": 1692922381
+    "timestamp": 1692923354
   }
 }
