@@ -12,7 +12,6 @@ RSpec.describe 'New Viewing Party' do
       click_link "Parasite"
       expect(page).to have_button("New Viewing Party")
       click_button "New Viewing Party"
-      save_and_open_page
       fill_in :duration, with: 240
       fill_in :event_date, with: "2024-05-09"
       fill_in :start_time, with: "1:30 PM"
@@ -51,6 +50,7 @@ RSpec.describe 'New Viewing Party' do
 
       click_button "Invite"
 
+      save_and_open_page
       expect(current_path).to eq(user_path(@user_1))
       # finish both happy and sad path testing for this test
     end
