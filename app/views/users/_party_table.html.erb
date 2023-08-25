@@ -1,0 +1,34 @@
+<h4>Viewing Party ID: <%= party.id %></h4>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Movie Image</th>
+      <th>Movie Title</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Host</th>
+      <th>Guests</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <%= image_tag party.movie_image_url(@movie_images), width: 100 %>
+      </td>
+      <td>
+        <%= link_to @movies[party.movie_id], user_movie_show_path(user_id: @user.id, movie_id: party.movie_id) %>
+      </td>
+      <td><%= party.party_date %></td>
+      <td><%= party.start_time.strftime("%I:%M %p") %></td>
+      <td id="host-name-td-<%= party.id %>" class="party-host">
+        <% host = party.party_guests.find { |pg| pg.host } %>
+        <%= host ? host.user.name : "N/A" %>
+      </td>
+      <td>
+        <% guest_names = party.party_guests.map { |pg| pg.user.name } %>
+        <% guest_list = guest_names.map { |name| name == @user.name ? "<strong>#{name}</strong>" : name }.join(", ").html_safe %>
+        <%= guest_list %>
+      </td>
+    </tr>
+  </tbody>
+</table>
