@@ -4,6 +4,15 @@
   <%= button_to "Discover Movies", discover_path(@user.id), method: :get %>
 </div>
 <br>
-<div id='viewing_parties'>
-
+<div>
+  <% @parties.each do |user_party| %>
+    <p><%= link_to "#{user_party.party.movie.title}", movie_path(@user.id, user_party.party.movie_id) %></p>
+    <p><%= user_party.party.date.strftime("%A, %B %d, %Y") %></p>
+    <p><%= user_party.party.time.strftime("%I:%M%p") %></p>
+    <% if user_party.host == true && user_party.user_id == @user.id %>
+      <p><%= "Hosting" %></p>
+    <% else %>
+      <p><%= "Invited" %></p>
+    <% end %>
+  <% end %>
 </div>
