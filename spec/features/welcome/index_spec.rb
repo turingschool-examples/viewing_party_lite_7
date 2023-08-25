@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "root path" do
-  before(:each) do
+  before do
     @user_1 = User.create!(name: "Ringo", email: "ringo@gmail.com")
 
     visit welcome_index_path
@@ -18,9 +18,9 @@ RSpec.describe "root path" do
       end
 
       it "has a list of existing users which are links to user dashboard" do
-        expect(page).to have_link(@user_1.name)
+        expect(page).to have_link(@user_1.email)
 
-        click_on @user_1.name
+        click_on @user_1.email
 
         expect(page).to have_current_path(user_path(@user_1))
       end
