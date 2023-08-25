@@ -39,7 +39,7 @@ RSpec.describe Party do
       expect(page).to have_checked_field(@user2.email)
       
       click_button "Create Party"
-      expect(current_path).to eq("user/#{@user1.id}")
+      expect(current_path).to eq("/users/#{@user1.id}")
     end
   end
 end
