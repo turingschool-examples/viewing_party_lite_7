@@ -1,4 +1,4 @@
-class ViewingPartiesController < ApplicationController
+class PartiesController < ApplicationController
   before_action :find_user_and_movie, only: [:new]
 
   def new

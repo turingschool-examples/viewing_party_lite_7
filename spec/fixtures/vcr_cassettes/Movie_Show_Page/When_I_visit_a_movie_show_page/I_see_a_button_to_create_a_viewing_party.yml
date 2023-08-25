@@ -238,4 +238,64 @@ http_interactions:
       encoding: ASCII-8BIT
       string: '{"id":25,"page":1,"results":[],"total_pages":0,"total_results":0}'
   recorded_at: Thu, 24 Aug 2023 22:38:32 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/25?api_key=<MOVIE_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 24 Aug 2023 21:38:32 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=22868
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 12cd9d52ef2fec25a2b5a1203c082b32
+      X-Memc-Age:
+      - '13221'
+      X-Memc-Expires:
+      - '13552'
+      Etag:
+      - W/"e6692688752d00484fac3b8e68449284"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 40c475e2d065f592aa697890abbb3356.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - LAX53-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - av_yJwY0epQ5yTxUJt3cdFbIb06z0lcWUS58JZg5TDt0ZHVouVyxzg==
+      Age:
+      - '8968'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvYlE4ZlJVYWl0SnZpNTRPMmxVVDZUYTdGVkhLLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6eyJpZCI6Mjg1NTY0LCJuYW1lIjoiSmFyaGVhZCBDb2xsZWN0aW9uIiwicG9zdGVyX3BhdGgiOiIvYVJGcEJqQ3NlRkQ2VW1haEF1TGRxUzdPcjVxLmpwZyIsImJhY2tkcm9wX3BhdGgiOiIvaWZTbmlwNXR2YUh2eExQQXlqa2lpaEU2VDJJLmpwZyJ9LCJidWRnZXQiOjcyMDAwMDAwLCJnZW5yZXMiOlt7ImlkIjoxOCwibmFtZSI6IkRyYW1hIn0seyJpZCI6MTA3NTIsIm5hbWUiOiJXYXIifV0sImhvbWVwYWdlIjoiIiwiaWQiOjI1LCJpbWRiX2lkIjoidHQwNDE4NzYzIiwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiSmFyaGVhZCIsIm92ZXJ2aWV3IjoiSmFyaGVhZCBpcyBhIGZpbG0gYWJvdXQgYSBVUyBNYXJpbmUgQW50aG9ueSBTd29mZm9yZOKAmXMgZXhwZXJpZW5jZSBpbiB0aGUgR3VsZiBXYXIuIEFmdGVyIHB1dHRpbmcgdXAgd2l0aCBhbiBhcmR1b3VzIGJvb3QgY2FtcCwgU3dvZmZvcmQgYW5kIGhpcyB1bml0IGFyZSBzZW50IHRvIHRoZSBQZXJzaWFuIEd1bGYgd2hlcmUgdGhleSBhcmUgZWFnZXIgdG8gZmlnaHQsIGJ1dCBhcmUgZm9yY2VkIHRvIHN0YXkgYmFjayBmcm9tIHRoZSBhY3Rpb24uIFN3b2Zmb3JkIHN0cnVnZ2xlcyB3aXRoIHRoZSBwb3NzaWJpbGl0eSBvZiBoaXMgZ2lybGZyaWVuZCBjaGVhdGluZyBvbiBoaW0sIGFuZCBhcyBoaXMgbWVudGFsIHN0YXRlIGRldGVyaW9yYXRlcywgaGlzIGRlc2lyZSB0byBraWxsIGluY3JlYXNlcy4iLCJwb3B1bGFyaXR5IjoyNC43NjUsInBvc3Rlcl9wYXRoIjoiLzU1V0pDZGF5SHdvWEp3UnYzcHJwcXNjSHQycS5qcGciLCJwcm9kdWN0aW9uX2NvbXBhbmllcyI6W3siaWQiOjE0NDQwLCJsb2dvX3BhdGgiOm51bGwsIm5hbWUiOiJSZWQgV2Fnb24gRW50ZXJ0YWlubWVudCIsIm9yaWdpbl9jb3VudHJ5IjoiVVMifSx7ImlkIjoxNTIyLCJsb2dvX3BhdGgiOiIvOHVhb0VWZ054RkgwUjk0TzUzZ1VpQnlhaFZyLnBuZyIsIm5hbWUiOiJOZWFsIFN0cmVldCBQcm9kdWN0aW9ucyIsIm9yaWdpbl9jb3VudHJ5IjoiR0IifV0sInByb2R1Y3Rpb25fY291bnRyaWVzIjpbeyJpc29fMzE2Nl8xIjoiR0IiLCJuYW1lIjoiVW5pdGVkIEtpbmdkb20ifSx7Imlzb18zMTY2XzEiOiJVUyIsIm5hbWUiOiJVbml0ZWQgU3RhdGVzIG9mIEFtZXJpY2EifV0sInJlbGVhc2VfZGF0ZSI6IjIwMDUtMTEtMDQiLCJyZXZlbnVlIjo5NzA3NjE1MiwicnVudGltZSI6MTIzLCJzcG9rZW5fbGFuZ3VhZ2VzIjpbeyJlbmdsaXNoX25hbWUiOiJFbmdsaXNoIiwiaXNvXzYzOV8xIjoiZW4iLCJuYW1lIjoiRW5nbGlzaCJ9LHsiZW5nbGlzaF9uYW1lIjoiU3BhbmlzaCIsImlzb182MzlfMSI6ImVzIiwibmFtZSI6IkVzcGHDsW9sIn0seyJlbmdsaXNoX25hbWUiOiJBcmFiaWMiLCJpc29fNjM5XzEiOiJhciIsIm5hbWUiOiLYp9mE2LnYsdio2YrYqSJ9LHsiZW5nbGlzaF9uYW1lIjoiTGF0aW4iLCJpc29fNjM5XzEiOiJsYSIsIm5hbWUiOiJMYXRpbiJ9XSwic3RhdHVzIjoiUmVsZWFzZWQiLCJ0YWdsaW5lIjoiV2VsY29tZSB0byB0aGUgc3Vjay4iLCJ0aXRsZSI6IkphcmhlYWQiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6Ni42MTcsInZvdGVfY291bnQiOjI1OTB9
+  recorded_at: Fri, 25 Aug 2023 00:08:00 GMT
 recorded_with: VCR 6.2.0
