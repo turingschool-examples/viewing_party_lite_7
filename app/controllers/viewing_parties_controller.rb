@@ -12,7 +12,10 @@ class ViewingPartiesController < ApplicationController
     @user = User.find(params[:user_id])
     @details = MovieDetailsFacade.movie_details(params[:movie_id])
 
-    merged_params = viewing_party_params.merge(host: @user.name, movie_title: @details.title, poster_path: @details.poster_path)
+    merged_params = viewing_party_params.merge(host: @user.name,
+                                               movie_title: @details.title,
+                                               poster_path: @details.poster_path,
+                                               movie_id: @details.id)
 
     @viewing_party = ViewingParty.new(merged_params)
     if @details.runtime < @viewing_party.duration

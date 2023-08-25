@@ -21,10 +21,38 @@ RSpec.describe "User Dashboard" do
 
     it "redirects me to users discover page when I click discover movies button" do
       visit user_path(@user1)
-      
+
       click_button "Discover Movies"
 
       expect(current_path).to eq(discover_user_path(@user1))
+    end
+
+    it "each movie title is a link to the details page", :vcr do
+      visit user_path(@user1)
+
+      expect(page).to_not have_link("Parasite")
+
+      visit user_movies_path(@user1)
+
+      click_link "Parasite"
+
+      expect(page).to have_button("New Viewing Party")
+
+      click_button "New Viewing Party"
+      fill_in :duration, with: 240
+      fill_in :event_date, with: "2024-05-09"
+      fill_in :start_time, with: "1:30 PM"
+      fill_in :name, with: "Super Mega Ultra Party"
+      click_button "Create"
+      within "##{@user2.id}" do
+        check("user_ids[]")
+      end
+
+      click_button "Invite"
+
+      visit user_path(@user1)
+      
+      expect(page).to have_link("Parasite")
     end
 
     it "displays the viewing parties that the user has been invited to and created" do
