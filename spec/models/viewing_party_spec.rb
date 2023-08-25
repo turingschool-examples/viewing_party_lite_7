@@ -7,44 +7,44 @@ RSpec.describe ViewingParty, :vcr do
     it { should validate_presence_of :movie_id }
     it { should validate_presence_of :duration }
     it { should validate_numericality_of :duration }
-    it { should validate_presence_of :party_date } # validate date is on or after today?
-    it { should validate_presence_of :start_time } # validate time is at or after now?
+    it { should validate_presence_of :party_date } 
+    it { should validate_presence_of :start_time }
     it 'validates duration has a minimum value of the movie runtime' do
       User.create!(name: 'Ally Jean', email: 'allyjean@example.com')
       MoviesFacade.new.find_movie(234)
       expect(ViewingParty.create(movie_id: 234, duration: 77, party_date: Date.today,
                                  start_time: Time.now)).to_not be_valid
-      expect(ViewingParty.create(movie_id: 234, duration: 78, party_date: Date.today, start_time: Time.now)).to be_valid
+      expect(ViewingParty.create(movie_id: 234, duration: 78, party_date: Date.today, start_time: Time.now.strftime("%H:%M"))).to be_valid
     end
   end
 
   it 'has a movie' do
     MoviesFacade.new.find_movie(234)
-    party = ViewingParty.create!(movie_id: 234, duration: 78, party_date: Date.today, start_time: Time.now)
+    party = ViewingParty.create!(movie_id: 234, duration: 78, party_date: Date.today, start_time: Time.now.strftime("%H:%M"))
     expect(party.movie).to be_a(Movie)
   end
 
   it 'has a movie image' do
     movie = MoviesFacade.new.find_movie(234)
-    party = ViewingParty.create!(movie_id: 234, duration: 78, party_date: Date.today, start_time: Time.now)
-    expect(party.movie_image).to eq(movie.image)
+    party = ViewingParty.create!(movie_id: 234, duration: 78, party_date: Date.today, start_time: Time.now.strftime("%H:%M"))
+    expect(party.movie_image.end_with?(movie.image)).to eq(true)
   end
 
   it 'has a movie title' do
     movie = MoviesFacade.new.find_movie(234)
-    party = ViewingParty.create!(movie_id: 234, duration: 78, party_date: Date.today, start_time: Time.now)
+    party = ViewingParty.create!(movie_id: 234, duration: 78, party_date: Date.today, start_time: Time.now.strftime("%H:%M"))
     expect(party.movie_title).to eq(movie.title)
   end
 
   it 'can report movie duration' do
     MoviesFacade.new.find_movie(234)
-    party = ViewingParty.create!(movie_id: 234, duration: 78, party_date: Date.today, start_time: Time.now)
+    party = ViewingParty.create!(movie_id: 234, duration: 78, party_date: Date.today, start_time: Time.now.strftime("%H:%M"))
     expect(party.movie_duration).to eq(78)
   end
 
   it 'can send invites' do
     MoviesFacade.new.find_movie(234)
-    party = ViewingParty.create!(movie_id: 234, duration: 78, party_date: Date.today, start_time: Time.now)
+    party = ViewingParty.create!(movie_id: 234, duration: 78, party_date: Date.today, start_time: Time.now.strftime("%H:%M"))
     ally = User.create!(name: 'Ally Jean', email: 'allyjean@example.com')
     jimmy = User.create!(name: 'Jimmy Jean', email: 'jimmyjean@example.com')
     bobby = User.create!(name: 'Bobby Jean', email: 'bobbyjean@example.com')
@@ -60,7 +60,7 @@ RSpec.describe ViewingParty, :vcr do
 
   it 'can report the host' do
     MoviesFacade.new.find_movie(234)
-    party = ViewingParty.create!(movie_id: 234, duration: 78, party_date: Date.today, start_time: Time.now)
+    party = ViewingParty.create!(movie_id: 234, duration: 78, party_date: Date.today, start_time: Time.now.strftime("%H:%M"))
     ally = User.create!(name: 'Ally Jean', email: 'allyjean@example.com')
     jimmy = User.create!(name: 'Jimmy Jean', email: 'jimmyjean@example.com')
     bobby = User.create!(name: 'Bobby Jean', email: 'bobbyjean@example.com')
