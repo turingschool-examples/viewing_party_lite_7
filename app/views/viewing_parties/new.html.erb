@@ -1,0 +1,24 @@
+<%= render partial: "shared/nav" %>
+
+
+<h1>New Viewing Party Page</h1><br><br>
+
+<h2><%= @movie.title %></h2><br>
+
+<%= form_with(model: @viewing_party, url: user_movie_viewing_parties_path(@user.id, @movie.id, local: true, data: { turbo: false })) do |f| %>
+  <%= f.label :duration %>
+  <%= f.text_field :duration, value: @movie.runtime %><br>
+  <%= f.label :date %>
+  <%= f.date_field :date %><br>
+  <%= f.label :time %>
+  <%= f.time_field :time %><br>
+  <br><h4>Choose guests to invite:</h4><br>
+  <% @users.each do |user| %>
+    <div class=<%= "user" %>>
+      <%= f.check_box :user %>
+      <%= f.label :user, user.name %><br>
+    </div>
+  <% end %>
+  <%= f.submit "Create Party" %>
+  <% end %>
+
