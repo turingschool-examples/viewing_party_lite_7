@@ -58,7 +58,7 @@ RSpec.describe 'movie details page', type: :feature do
         expect(current_path).to eq(user_discover_index_path(u1))
 
         visit user_movie_path(u1, movies[0][:id])
-        save_and_open_page
+        
         expect(page).to have_content("Title: #{movies[0][:title]}")
         expect(page).to have_content("Vote Average: #{movies[0][:vote_average]}")
         expect(page).to have_content("Overview: #{movies[0][:overview]}")
