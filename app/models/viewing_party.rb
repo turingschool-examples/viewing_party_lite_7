@@ -6,8 +6,20 @@ class ViewingParty < ApplicationRecord
   validates :party_date, presence: true, timeliness: { on_or_after: Date.today, type: :date, message: "cannot be in the past" }
   validates :start_time, presence: true, timeliness: { on_or_after: Time.now.strftime("%H:%M"), type: :time, message: "cannot be in the past"}
 
+  def movie
+    @_movie ||= MoviesFacade.new.find_movie(self.movie_id)
+  end
+
   def movie_duration
-    MoviesService.new.find_movie(self.movie_id).runtime
+    movie.runtime
+  end
+
+  def movie_image
+    movie.image
+  end
+
+  def movie_title
+    movie.title
   end
 
   def users
