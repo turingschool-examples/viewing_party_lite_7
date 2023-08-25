@@ -1,11 +1,9 @@
 <li>Movie Title: <%= @movie.title  %>
 <br>
-
 <%= form_with url: "/users/#{@user.id}/movies/#{params[:movie_id]}/viewing_party", method: :post do |f| %>
   <li><%= f.label :duration, value: :runtime %>
   <%= f.text_field :runtime, :value => @movie.runtime %>
   <br>
-
   <li><%= f.date_select :dateinstructed, :order => [:day, :month, :year] %>
   <br>
   <li><%= f.time_select :result_time, :discard_hour => false, :default => {:hour => '00', :minute => '00'}, :include_seconds => false %>
@@ -14,8 +12,6 @@
       <%= f.check_box :user %>
       <%= f.label :user, "#{user.name} (#{user.email})" %>
     <% end %>
-
-  
   <li><%= f.submit "Create Party" %></li>
 <% end %>
 

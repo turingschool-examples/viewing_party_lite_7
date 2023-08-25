@@ -11,13 +11,8 @@ class ViewingPartiesController < ApplicationController
     @user = User.find(params[:id])
     @movie = MoviesFacade.movie_by_id(params[:movie_id])
     @VP = ViewingParty.new(viewing_party_params)
-    # if @movie.runtime < @VP.duration
-    #   flash[:notice] = "Runtime is too short"
-    #   redirect_to "/users/#{@user.id}/movies/#{params[:movie_id]}/viewing_party"
-    # else 
-      @VP.save
-      redirect_to user_path(@user)
-    # end
+    @VP.save
+    redirect_to user_path(@user)
   end
 
   private
