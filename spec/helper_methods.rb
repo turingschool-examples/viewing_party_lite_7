@@ -6,8 +6,8 @@ def load_test_data
 
   # Create viewing parties
 
-  @party1 = ViewingParty.create!(duration: 120, party_date: '2023-09-01', start_time: '19:00:00', movie_id: 13)
-  @party2 = ViewingParty.create!(duration: 150, party_date: '2023-09-10', start_time: '20:00:00', movie_id: 155)
+  @party1 = ViewingParty.create!(duration: 160, party_date: '2023-09-01', start_time: '19:00:00', movie_id: 13)
+  @party2 = ViewingParty.create!(duration: 170, party_date: '2023-09-10', start_time: '20:00:00', movie_id: 155)
 
   # Assign hosts and guests to parties
   # user1 is the host of party1
