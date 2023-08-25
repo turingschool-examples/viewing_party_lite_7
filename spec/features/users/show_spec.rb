@@ -15,23 +15,6 @@ RSpec.describe 'User dashboard' do
   end
 end
 
-# As a user,
-# When I visit a user dashboard,
-# I should see the viewing parties that the user has been invited to with the following details:
-
-#  Movie Image
-#  Movie Title, which links to the movie show page
-#  Date and Time of Event
-#  who is hosting the event
-#  list of users invited, with my name in bold
-# I should also see the viewing parties that the user has created with the following details:
-
-#  Movie Image
-#  Movie Title, which links to the movie show page
-#  Date and Time of Event
-#  That I am the host of the party
-#  List of friends invited to the viewing party
-
 describe 'User show page - parties', :vcr do
   before :each do
     load_test_data
@@ -49,8 +32,8 @@ describe 'User show page - parties', :vcr do
         expect(page).to have_content(@party2.party_date)
         expect(page).to have_content(@party2.start_time.strftime('%I:%M %p'))
         # looking for the host name in the table
-        host_name_td = find("#host-name-td-#{@party1.id}")
-        expect(host_name_td).to have_content(@user1.name)
+        host_name_td = find("#host-name-td-#{@party2.id}")
+        expect(host_name_td).to have_content(@user3.name)
         # looking for the invited guests in the table
         expect(page).to have_content(@user3.name)
         expect(page).to have_content(@user1.name)
@@ -65,17 +48,16 @@ describe 'User show page - parties', :vcr do
       visit user_path(@user1)
       expect(page).to have_content('My Parties')
       expect(page).to have_content("Parties I'm Hosting")
+
       within('#hosted-parties') do
-        puts "@party2.id: #{@party2.id}"
-        puts "@user3.name: #{@user3.name}"
         expect(page).to have_content('Forrest Gump')
         expect(page).to have_selector('img')
         expect(page).to have_content(movie.title)
         expect(page).to have_content(@party1.party_date)
         expect(page).to have_content(@party1.start_time.strftime('%I:%M %p'))
         # looking for the host name in the table
-        host_name_td = find("#host-name-td-#{@party2.id}")
-        expect(host_name_td).to have_content(@user3.name)
+        host_name_td = find("#host-name-td-#{@party1.id}")
+        expect(host_name_td).to have_content(@user1.name)
         # looking for the invited guests in the table
         expect(page).to have_content(@user3.name)
         expect(page).to have_content(@user1.name)
