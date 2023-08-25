@@ -31,13 +31,12 @@ RSpec.describe 'New Viewing Party', type: :feature do
 
     scenario 'I should see a form with fields' do
       VCR.use_cassette("I should see a form with fields") do 
-        json_response = File.read('spec/fixtures/movie_results.json')
-        stub_request(:get, "https://api.themoviedb.org/3/discover/movie.json").
+        json_response = File.read('spec/fixtures/movie_details.json')
+        stub_request(:get, "https://api.themoviedb.org/3/movie/569094.json").
         to_return(status: 200, body: json_response)
           
         data = JSON.parse(json_response, symbolize_names: true)
-    
-        movies = data[:results]
+        # require 'pry'; binding.pry
   
         u1 = User.create!(name: "Sean", email: "sugasean777@gmail.com")
         u2 = User.create!(name: "Bob", email: "bobby@yahoo.com")
@@ -47,16 +46,22 @@ RSpec.describe 'New Viewing Party', type: :feature do
         expect(page).to have_field(:date)
         expect(page).to have_field(:start_time)
         expect(page).to have_button("Create Party")
+        expect(page).to have_content(data[:title])
+        expect(page).to have_content(data[:runtime])
+        # expect(page).to have_field(:duration, 140)
 
         fill_in :duration, with: 117
         fill_in :date, with: "2024-9-25"
         fill_in :start_time, with: "12:00 PM"
-        check("Bob")
+        check(u2.id)
         
         click_button "Create Party"
-        
-        expect(current_path).to eq(user_movie_viewing_parties_path(u1, "569094"))
+
+        expect(current_path).to eq(user_path(u1))
+
       end
+
+      
     end
   end
 end
