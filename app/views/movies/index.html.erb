@@ -1,4 +1,4 @@
-<%= button_to "Discover Movies", user_discover_path(@user.id), method: :get %>
+<%= button_to "Discover Page", user_discover_path(@user.id), method: :get %>
 
 <% if @facade.search == "top_20rated" %>
   <%= render partial: "top_rated" %>

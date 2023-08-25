@@ -6,6 +6,7 @@
 
 <ul>
   <li>Rating: <%= @facade.rating %> | Runtime: <%= @facade.runtime %></li>
+  <p>Genres:</p>
   <% @facade.genres.each do |genre| %>
   <li><%= genre %></li>
   <% end %>
