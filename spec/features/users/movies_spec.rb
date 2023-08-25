@@ -4,15 +4,7 @@ RSpec.describe 'Discover Movies Page' do
   before :each do
     load_test_data
   end
-  #  When I visit the discover movies page,
-  # and click on either the Top Movies button or the Search button,
-  # I should be taken to the movies results page (users/:user_id/movies) where I see:
 
-  #  Title (As a Link to the Movie Details page)
-  #  Vote Average of the movie
-  # Details: There should only be a maximum of 20 results. The above details should be listed for each movie.
-
-  # I should also see a button to return to the Discover Page.
   describe 'top rated movies' do
     it 'shows the top rated movies', :vcr do
       VCR.use_cassette('top_rated_movies') do
