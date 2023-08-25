@@ -51,5 +51,10 @@ RSpec.describe MovieFacade do
       
       expect(movie_reviews_count).to be_a Integer
     end
+
+    it 'returns image for movie', :vcr do
+      movie_image = MovieFacade.image(569094)
+      expect(movie_image).to be_a String
+    end
   end
 end

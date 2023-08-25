@@ -6,7 +6,8 @@ class Movie
               :vote_average,
               :runtime,
               :genres,
-              :summary
+              :summary,
+              :image
               
 
   def initialize(movie_data) ## < -- movie_data is coming in from the Movie Facade
@@ -16,6 +17,7 @@ class Movie
     @runtime = movie_data[:runtime]
     @genres = movie_data[:genres]
     @summary = movie_data[:overview]
+    @image = movie_data[:poster_path]
   end
 
   def runtime_conversion

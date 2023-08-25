@@ -35,4 +35,8 @@ class MovieFacade
       Review.new(review_data)
     end.count
   end
+
+  def self.image(id)
+    MovieService.find_by_id(id)[:poster_path][0]
+  end
 end

@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/569094?api_key=<MOVIE_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 19:57:25 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28769
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 7c663a31aed32498e8e21c6615c90caa
+      X-Memc-Age:
+      - '20482'
+      X-Memc-Expires:
+      - '7910'
+      Etag:
+      - W/"7c582b678dcc813d29d2d7cbc4112279"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 73c3df19e5d007c253fa1378c993078e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - LAX50-P3
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - o_uGc5wEjIsDpDR1CzQBH-jdjXwNeOpRDezNTcG8GUEJEh8YGDEP8w==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvNEhvZFlZS0VJc0dPZGlua0dpMlVjejZYOWkwLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6eyJpZCI6NTczNDM2LCJuYW1lIjoiU3BpZGVyLU1hbjogU3BpZGVyLVZlcnNlIENvbGxlY3Rpb24iLCJwb3N0ZXJfcGF0aCI6Ii9lRDRiR1FOZm1xRXhJQXpLZHZYNWdESGhJMi5qcGciLCJiYWNrZHJvcF9wYXRoIjoiLzE0RjZnTWFSanpnc042RUVwaXdIODdSMUkwMC5qcGcifSwiYnVkZ2V0IjoxMDAwMDAwMDAsImdlbnJlcyI6W3siaWQiOjE2LCJuYW1lIjoiQW5pbWF0aW9uIn0seyJpZCI6MjgsIm5hbWUiOiJBY3Rpb24ifSx7ImlkIjoxMiwibmFtZSI6IkFkdmVudHVyZSJ9XSwiaG9tZXBhZ2UiOiJodHRwczovL3d3dy5hY3Jvc3N0aGVzcGlkZXJ2ZXJzZS5tb3ZpZSIsImlkIjo1NjkwOTQsImltZGJfaWQiOiJ0dDkzNjI3MjIiLCJvcmlnaW5hbF9sYW5ndWFnZSI6ImVuIiwib3JpZ2luYWxfdGl0bGUiOiJTcGlkZXItTWFuOiBBY3Jvc3MgdGhlIFNwaWRlci1WZXJzZSIsIm92ZXJ2aWV3IjoiQWZ0ZXIgcmV1bml0aW5nIHdpdGggR3dlbiBTdGFjeSwgQnJvb2tseW7igJlzIGZ1bGwtdGltZSwgZnJpZW5kbHkgbmVpZ2hib3Job29kIFNwaWRlci1NYW4gaXMgY2F0YXB1bHRlZCBhY3Jvc3MgdGhlIE11bHRpdmVyc2UsIHdoZXJlIGhlIGVuY291bnRlcnMgdGhlIFNwaWRlciBTb2NpZXR5LCBhIHRlYW0gb2YgU3BpZGVyLVBlb3BsZSBjaGFyZ2VkIHdpdGggcHJvdGVjdGluZyB0aGUgTXVsdGl2ZXJzZeKAmXMgdmVyeSBleGlzdGVuY2UuIEJ1dCB3aGVuIHRoZSBoZXJvZXMgY2xhc2ggb24gaG93IHRvIGhhbmRsZSBhIG5ldyB0aHJlYXQsIE1pbGVzIGZpbmRzIGhpbXNlbGYgcGl0dGVkIGFnYWluc3QgdGhlIG90aGVyIFNwaWRlcnMgYW5kIG11c3Qgc2V0IG91dCBvbiBoaXMgb3duIHRvIHNhdmUgdGhvc2UgaGUgbG92ZXMgbW9zdC4iLCJwb3B1bGFyaXR5IjoyNDMzLjYzMSwicG9zdGVyX3BhdGgiOiIvOFZ0Nm1XRVJldXk0T2Y2MUxuajVYajcwNG04LmpwZyIsInByb2R1Y3Rpb25fY29tcGFuaWVzIjpbeyJpZCI6NSwibG9nb19wYXRoIjoiLzcxQnFFRkFGNFYzcWpqTVBDcEx1eUpGQjlBLnBuZyIsIm5hbWUiOiJDb2x1bWJpYSBQaWN0dXJlcyIsIm9yaWdpbl9jb3VudHJ5IjoiVVMifSx7ImlkIjoyMjUxLCJsb2dvX3BhdGgiOiIvNWlsVjVtSDNneFRFVTdwNXdqeHB0SHZYa3lyLnBuZyIsIm5hbWUiOiJTb255IFBpY3R1cmVzIEFuaW1hdGlvbiIsIm9yaWdpbl9jb3VudHJ5IjoiVVMifSx7ImlkIjo3Nzk3MywibG9nb19wYXRoIjoiLzl5NWxXODZIbnhLVVpPRmVuY1lrM1RJSVJDTS5wbmciLCJuYW1lIjoiTG9yZCBNaWxsZXIiLCJvcmlnaW5fY291bnRyeSI6IlVTIn0seyJpZCI6ODQwNDEsImxvZ29fcGF0aCI6Ii9udzRreWMyOVFScE50RmJkc0JIa1JTRmF2dnQucG5nIiwibmFtZSI6IlBhc2NhbCBQaWN0dXJlcyIsIm9yaWdpbl9jb3VudHJ5IjoiVVMifSx7ImlkIjoxNDQzOSwibG9nb19wYXRoIjpudWxsLCJuYW1lIjoiQXJhZCBQcm9kdWN0aW9ucyIsIm9yaWdpbl9jb3VudHJ5IjoiVVMifV0sInByb2R1Y3Rpb25fY291bnRyaWVzIjpbeyJpc29fMzE2Nl8xIjoiVVMiLCJuYW1lIjoiVW5pdGVkIFN0YXRlcyBvZiBBbWVyaWNhIn1dLCJyZWxlYXNlX2RhdGUiOiIyMDIzLTA1LTMxIiwicmV2ZW51ZSI6NjgzMjQxNzUxLCJydW50aW1lIjoxNDAsInNwb2tlbl9sYW5ndWFnZXMiOlt7ImVuZ2xpc2hfbmFtZSI6IkVuZ2xpc2giLCJpc29fNjM5XzEiOiJlbiIsIm5hbWUiOiJFbmdsaXNoIn0seyJlbmdsaXNoX25hbWUiOiJIaW5kaSIsImlzb182MzlfMSI6ImhpIiwibmFtZSI6IuCkueCkv+CkqOCljeCkpuClgCJ9LHsiZW5nbGlzaF9uYW1lIjoiSXRhbGlhbiIsImlzb182MzlfMSI6Iml0IiwibmFtZSI6Ikl0YWxpYW5vIn0seyJlbmdsaXNoX25hbWUiOiJTcGFuaXNoIiwiaXNvXzYzOV8xIjoiZXMiLCJuYW1lIjoiRXNwYcOxb2wifV0sInN0YXR1cyI6IlJlbGVhc2VkIiwidGFnbGluZSI6Ikl0J3MgaG93IHlvdSB3ZWFyIHRoZSBtYXNrIHRoYXQgbWF0dGVycy4iLCJ0aXRsZSI6IlNwaWRlci1NYW46IEFjcm9zcyB0aGUgU3BpZGVyLVZlcnNlIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjguNDU3LCJ2b3RlX2NvdW50IjozNzM3fQ==
+  recorded_at: Fri, 25 Aug 2023 19:57:25 GMT
+recorded_with: VCR 6.2.0
