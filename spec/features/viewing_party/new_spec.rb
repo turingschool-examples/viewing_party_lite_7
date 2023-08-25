@@ -30,7 +30,6 @@ RSpec.describe 'New Viewing Party Page' do
     expect(page).to have_field(:date)
     expect(page).to have_field(:start_time)
     expect(page).to have_button('Create Party')
-    save_and_open_page
     fill_in :duration, with: 180
     fill_in :date, with: '2023-09-01'
     fill_in :start_time, with: '12:00'

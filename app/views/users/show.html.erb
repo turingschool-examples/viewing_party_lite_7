@@ -7,9 +7,31 @@
       <h4><%= @user.name%>'s Dashboard</h4>
       <%= button_to "Discover Movies", user_discover_path(@user), method: :get %><hr> 
       <h4> Viewing Parties: </h4>
-      <% @user.viewing_parties.each do |vp| %>
-        <p>Date: <%= vp.date.strftime('%B %d, %Y') %></p>
+      <% if !@user.viewing_parties.empty? %>
+        <% @user.viewing_parties.each do |vp| %>
+          <p>Movie Title: <%= link_to vp.movie_title, user_movie_path(@user, vp.movie_id) %><br>
+          <img src=<%="https://image.tmdb.org/t/p/w92/#{vp.movie_image}"%> alt="poster">
+          <p>Date: <%= vp.date.strftime('%B %d, %Y') %></p>
+          <p>Time: <%= vp.start_time.strftime("%I:%M") %></p>
+          <p>Host: <%= vp.find_host %></p>
+          <% @user.user_viewing_parties.each do |uvp| %>
+            <p>Invited Guests: <%= uvp.user.name %></p>
+          <% end %>
+        <% end %>
       <% end %>
+      <div class="my_parties">
+        <h4>My Hosted Viewing Parties: </h4>
+        <% @user.my_parties.each do |user_vp| %>
+          <p>Movie Title: <%= link_to user_vp.viewing_party.movie_title, user_movie_path(@user, user_vp.viewing_party.movie_id) %><br>
+          <img src=<%="https://image.tmdb.org/t/p/w92/#{user_vp.viewing_party.movie_image}"%> alt="poster">
+          <p>Date: <%= user_vp.viewing_party.date.strftime('%B %d, %Y') %></p>
+          <p>Time: <%= user_vp.viewing_party.start_time.strftime("%I:%M") %></p>
+          <p>Host: <%= user_vp.viewing_party.find_host %></p>
+          <p>Invited Guests: <% user_vp.viewing_party.users.each do |skank| %>
+            <%= skank.name %>
+          <% end %></p>
+        <% end %>
+      </div>
     </center></table>
   </div>
 </body>

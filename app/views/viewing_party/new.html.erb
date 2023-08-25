@@ -7,6 +7,8 @@
   <%= form_with(url: user_movie_viewing_party_index_path(@user, @movie.id), local: true) do |form| %>
       <%= form.hidden_field :movie_id, value: @movie.id %>
       <%= form.hidden_field :user_id, value: @user.id %>
+      <%= form.hidden_field :movie_title, value: @movie.title %>
+      <%= form.hidden_field :movie_image, value: @movie.poster %>
       
       <h3>Viewing Party Details</h3>
       <p><b>Movie Title: <%= @movie.title %></b></p>

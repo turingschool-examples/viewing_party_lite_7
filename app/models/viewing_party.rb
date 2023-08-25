@@ -5,4 +5,17 @@ class ViewingParty < ApplicationRecord
   validates :duration, presence: true
   validates :date, presence: true
   validates :start_time, presence: true
+
+  def find_host
+    host = user_viewing_parties.where(host: true)[0] 
+    if host
+      host.user.name
+    else
+      nil
+    end
+  end
+
+  def find_movie(movie_id)
+    require 'pry'; binding.pry
+  end
 end
