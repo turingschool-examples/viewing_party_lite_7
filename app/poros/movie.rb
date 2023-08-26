@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Movie
   attr_reader :id,
               :title,
@@ -21,9 +23,9 @@ class Movie
     @review_authors = attributes[:review_authors]
   end
 
-  def format_runtime(runtime)
-    hours = runtime / 60
-    rest = runtime % 60
+  def format_runtime
+    hours = @runtime / 60
+    rest = @runtime % 60
     "#{hours}h #{rest}min"
   end
 
