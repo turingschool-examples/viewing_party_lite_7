@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class EmailValidator < ActiveModel::EachValidator
   def validate_each(record, attribute, value)
-    unless value =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
-      record.errors.add attribute, options[:message] || "'#{value}' is not a valid email"
-    end
+    return if value =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+
+    record.errors.add attribute, options[:message] || "'#{value}' is not a valid email"
   end
 end
 
@@ -18,6 +20,6 @@ class User < ApplicationRecord
   end
 
   def hosting_status_for(viewing_party)
-    viewing_party_users.find_by(viewing_party: viewing_party)&.hosting? || false
+    viewing_party_users.find_by(viewing_party:)&.hosting? || false
   end
 end
