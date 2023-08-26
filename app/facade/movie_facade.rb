@@ -1,43 +1,52 @@
-class MovieFacade
+# frozen_string_literal: true
 
+class MovieFacade
   def initialize(title)
     @title = title
     @movie = MovieService.new
   end
-  
+
   def get_discover_movies
     discover = @movie.discover_movies
 
-    search_results = discover[:results].map do |movie_data|
+    discover[:results].map do |movie_data|
       build_movie_from_api(movie_data)
     end
   end
-  
+
+  def get_movie_image_by_id(movie_id)
+    base_image_url = 'https://image.tmdb.org/t/p/original'.freeze
+
+    image = @movie.movie_by_id(movie_id)
+    poster_path = image[:poster_path]
+
+    full_image_url = "#{base_image_url}#{poster_path}"
+    full_image_url
+  end
+
   def discovery?
     @title.nil?
   end
 
   def get_search_movies
     json = @movie.search_movies(@title)
-    search_results = json[:results].map do |movie_data|
+    json[:results].map do |movie_data|
       build_movie_from_single_search(movie_data)
     end
-
-    search_results
   end
 
   def get_movie_by_id(movie_id)
     movie_data = @movie.movie_by_id(movie_id)
     build_movie_from_single_search(movie_data)
   end
-  
+
   private
-  
+
   def build_movie_from_single_search(movie_data)
     movie_id = movie_data[:id]
     authors = get_movie_review_authors_and_content(movie_id)
     cast = get_movie_cast(movie_id)
-   
+
     genre_names = movie_data[:genres]&.map { |genre| genre[:name] }
 
     attributes = {
@@ -108,7 +117,7 @@ class MovieFacade
     author_and_content = []
     reviews = @movie.reviews(movie_id)
 
-    authors = reviews[:results]&.each do |review|
+    reviews[:results]&.each do |review|
       key = review[:author]
       value = review[:content]
       author_and_content << { key => value }

@@ -10,6 +10,7 @@
   <%= form_with model: @viewing_party, url: user_viewing_parties_path(@user), local: true do |form| %>
     <%= hidden_field_tag :movie_title, @movie.title %>
     <%= hidden_field_tag :runtime, @movie.runtime %>
+    <%= hidden_field_tag :movie_id, @movie.id %>
 
     <%= form.label :duration %>
     <%= form.number_field :duration_minutes, value: @movie.runtime %>

@@ -9,3 +9,19 @@
 </body>
 <br>
 <h3><%= "#{@user.name}'s Viewing Parties" %></h3>
+
+<div>
+<% if !@viewing_party.nil? %>
+  <%=  image_tag(@image, size: "300x450") %><br>
+  <%= link_to @viewing_party[:movie], user_movie_path(@user, @movie.id), method: :get %>
+  
+  <p>Date: <%= @viewing_party[:viewing_date] %></p>
+  <p>Time: <%= @viewing_party[:viewing_time] %></p>
+  
+  <h4>Invited</h4>
+  <% @attendees.each do |attendee| %>
+    <p>Name: <%= attendee.name %></p>
+    <p>Email: <%= attendee.email %></p>
+  <% end %>
+<% end %>
+</div>

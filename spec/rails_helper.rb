@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
-require "simplecov"
+require 'simplecov'
 SimpleCov.start
 
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 # Prevent database truncation if the environment is production
-abort("The Rails environment is running in production mode!") if Rails.env.production?
+abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -72,8 +74,17 @@ RSpec.configure do |config|
 end
 
 VCR.configure do |config|
-  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
-  config.hook_into :webmock
-  config.filter_sensitive_data('<API_KEY_AUTH>') { ENV["API_KEY_AUTH"] }
-  config.configure_rspec_metadata!
+  if Rails.env.test?
+    vcr_mode = ENV['VCR_MODE'] =~ /rec/i ? :all : :once
+    config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+    config.hook_into :webmock
+  
+    config.default_cassette_options = {
+      record: vcr_mode,
+      match_requests_on: %i[method uri body]
+    }
+  
+    config.allow_http_connections_when_no_cassette = true
+    config.configure_rspec_metadata!
+  end
 end
