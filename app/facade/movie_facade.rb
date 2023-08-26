@@ -52,7 +52,7 @@ class MovieFacade
       review_authors: authors
     }
 
-    DiscoverMovie.new(attributes)
+    Movie.new(attributes)
   end
 
   def build_movie_from_api(movie_data)
@@ -74,7 +74,7 @@ class MovieFacade
       review_authors: authors
     }
 
-    DiscoverMovie.new(attributes)
+    Movie.new(attributes)
   end
 
   def get_genre_names(genre_ids)
