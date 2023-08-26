@@ -1,0 +1,2017 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 22:37:06 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=27074
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3012'
+      X-Memc-Expires:
+      - '21026'
+      Etag:
+      - W/"377750b7c6a227ad0a0eb45d42a5b1e8"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 fea48d36741a5a8b0c278e8b50136aba.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL58-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 6s2kez1zkEcEzgw6O6mxncM6hy62gYTE7X96ng2YPqxbOo5ZTbARvw==
+      Age:
+      - '4276'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18487}'
+  recorded_at: Fri, 25 Aug 2023 23:48:22 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 22:37:06 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=27074
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3012'
+      X-Memc-Expires:
+      - '21026'
+      Etag:
+      - W/"377750b7c6a227ad0a0eb45d42a5b1e8"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 fea48d36741a5a8b0c278e8b50136aba.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL58-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - m5sRqwdVlIrhav9MKfs1_59cT5olVFL47pYakgjj3_SH1znnPzFFEg==
+      Age:
+      - '4276'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18487}'
+  recorded_at: Fri, 25 Aug 2023 23:48:22 GMT
+- request:
+    method: get
+    uri: https://image.tmdb.org/t/p/w92//3bhkrj58Vtu7enYsRolD1fZdja1.jpg?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 25 Aug 2023 23:48:23 GMT
+      Content-Type:
+      - image/jpeg
+      Content-Length:
+      - '2538'
+      Connection:
+      - keep-alive
+      Server:
+      - BunnyCDN-IL1-845
+      Cdn-Pullzone:
+      - '775336'
+      Cdn-Uid:
+      - 29af4e0e-bcbd-4fcb-8635-74ddc38a1ebf
+      Cdn-Requestcountrycode:
+      - US
+      Cache-Control:
+      - public, max-age=31919000
+      Etag:
+      - '"6272c6cf-9ea"'
+      Last-Modified:
+      - Wed, 04 May 2022 18:32:47 GMT
+      Cdn-Storageserver:
+      - NY-430
+      Cdn-Requestpullsuccess:
+      - 'True'
+      Cdn-Fileserver:
+      - '267'
+      Perma-Cache:
+      - HIT
+      Cdn-Proxyver:
+      - '1.04'
+      Cdn-Requestpullcode:
+      - '200'
+      Cdn-Cachedat:
+      - '08/15/2023 12:28:31'
+      Cdn-Edgestorageid:
+      - '1069'
+      Cdn-Status:
+      - '200'
+      Cdn-Requestid:
+      - 1a4a22bb468d9b0717e19f75f45c6fa8
+      Cdn-Cache:
+      - HIT
+      Accept-Ranges:
+      - bytes
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+  recorded_at: Fri, 25 Aug 2023 23:48:23 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 22:37:06 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=27074
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3012'
+      X-Memc-Expires:
+      - '21026'
+      Etag:
+      - W/"377750b7c6a227ad0a0eb45d42a5b1e8"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 4b03860b1b9cb623000b474ffbb510b2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL58-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - ciVOLYJfjNPT_GqoWFl1ig2e0O13UX3EgVdUIqlMi2VSDU1tIaT7SA==
+      Age:
+      - '4292'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18487}'
+  recorded_at: Fri, 25 Aug 2023 23:48:38 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 22:37:06 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=27074
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3012'
+      X-Memc-Expires:
+      - '21026'
+      Etag:
+      - W/"377750b7c6a227ad0a0eb45d42a5b1e8"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 d2a8134957dfaa119e0955491e61bb9c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL58-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - LQfnO0D7FwxQ-WaMBMp8zpnk7FoJvyrcLJmbAPXMZ86aYYUnqO_C2Q==
+      Age:
+      - '4292'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18487}'
+  recorded_at: Fri, 25 Aug 2023 23:48:38 GMT
+- request:
+    method: get
+    uri: https://image.tmdb.org/t/p/w92//3bhkrj58Vtu7enYsRolD1fZdja1.jpg?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 25 Aug 2023 23:48:39 GMT
+      Content-Type:
+      - image/jpeg
+      Content-Length:
+      - '2538'
+      Connection:
+      - keep-alive
+      Server:
+      - BunnyCDN-IL1-845
+      Cdn-Pullzone:
+      - '775336'
+      Cdn-Uid:
+      - 29af4e0e-bcbd-4fcb-8635-74ddc38a1ebf
+      Cdn-Requestcountrycode:
+      - US
+      Cache-Control:
+      - public, max-age=31919000
+      Etag:
+      - '"6272c6cf-9ea"'
+      Last-Modified:
+      - Wed, 04 May 2022 18:32:47 GMT
+      Cdn-Storageserver:
+      - NY-430
+      Cdn-Requestpullsuccess:
+      - 'True'
+      Cdn-Fileserver:
+      - '267'
+      Perma-Cache:
+      - HIT
+      Cdn-Proxyver:
+      - '1.04'
+      Cdn-Requestpullcode:
+      - '200'
+      Cdn-Cachedat:
+      - '08/15/2023 12:28:31'
+      Cdn-Edgestorageid:
+      - '1069'
+      Cdn-Status:
+      - '200'
+      Cdn-Requestid:
+      - 46d6c04c5d6f3d185cab1f9868220981
+      Cdn-Cache:
+      - HIT
+      Accept-Ranges:
+      - bytes
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+  recorded_at: Fri, 25 Aug 2023 23:48:39 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 22:37:06 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=27074
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3012'
+      X-Memc-Expires:
+      - '21026'
+      Etag:
+      - W/"377750b7c6a227ad0a0eb45d42a5b1e8"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 e529324611aee618447444dc1aa96308.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL58-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - XCONMZOuL5G1pvgjUSK6MNaFp1rBwZSuGeG926uJyVkLtwbubZyqPw==
+      Age:
+      - '4398'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18487}'
+  recorded_at: Fri, 25 Aug 2023 23:50:24 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 22:37:06 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=27074
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3012'
+      X-Memc-Expires:
+      - '21026'
+      Etag:
+      - W/"377750b7c6a227ad0a0eb45d42a5b1e8"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 7b72973d4641bd6bda77655d7cf0cc30.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL58-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - _zRQpe4to465GmeEHVWMwOznLQ43S9q4uinAVYjTjRKYy1i_Si2TWA==
+      Age:
+      - '4398'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18487}'
+  recorded_at: Fri, 25 Aug 2023 23:50:24 GMT
+- request:
+    method: get
+    uri: https://image.tmdb.org/t/p/w92//3bhkrj58Vtu7enYsRolD1fZdja1.jpg?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 25 Aug 2023 23:50:25 GMT
+      Content-Type:
+      - image/jpeg
+      Content-Length:
+      - '2538'
+      Connection:
+      - keep-alive
+      Server:
+      - BunnyCDN-IL1-718
+      Cdn-Pullzone:
+      - '775336'
+      Cdn-Uid:
+      - 29af4e0e-bcbd-4fcb-8635-74ddc38a1ebf
+      Cdn-Requestcountrycode:
+      - US
+      Cache-Control:
+      - public, max-age=31919000
+      Etag:
+      - '"6272c6cf-9ea"'
+      Last-Modified:
+      - Wed, 04 May 2022 18:32:47 GMT
+      Cdn-Storageserver:
+      - NY-430
+      Cdn-Requestpullsuccess:
+      - 'True'
+      Cdn-Fileserver:
+      - '267'
+      Perma-Cache:
+      - HIT
+      Cdn-Proxyver:
+      - '1.04'
+      Cdn-Requestpullcode:
+      - '200'
+      Cdn-Cachedat:
+      - '08/15/2023 12:28:31'
+      Cdn-Edgestorageid:
+      - '1069'
+      Cdn-Status:
+      - '200'
+      Cdn-Requestid:
+      - cb80f2af3c3012c4bd16970378e81237
+      Cdn-Cache:
+      - HIT
+      Accept-Ranges:
+      - bytes
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+  recorded_at: Fri, 25 Aug 2023 23:50:25 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 22:37:06 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=27074
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3012'
+      X-Memc-Expires:
+      - '21026'
+      Etag:
+      - W/"377750b7c6a227ad0a0eb45d42a5b1e8"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 8320be7308887c5e1b64ebd8be6b078e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL58-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 7JE-YDH1QdXL61tjcOsgUFKS7rtAqc1-ZaP456ClPTIu3rf6AhO4LQ==
+      Age:
+      - '4510'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18487}'
+  recorded_at: Fri, 25 Aug 2023 23:52:16 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 22:37:06 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=27074
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3012'
+      X-Memc-Expires:
+      - '21026'
+      Etag:
+      - W/"377750b7c6a227ad0a0eb45d42a5b1e8"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 4dd647f2c0221dd5d8526e120eae7942.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL58-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 6rl21I7bFNUW-AV081nZuJJNINw0HhLlIxsz6zzFXLriXB2tT7h9mg==
+      Age:
+      - '4510'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18487}'
+  recorded_at: Fri, 25 Aug 2023 23:52:16 GMT
+- request:
+    method: get
+    uri: https://image.tmdb.org/t/p/w92//3bhkrj58Vtu7enYsRolD1fZdja1.jpg?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - image/jpeg
+      Content-Length:
+      - '2538'
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 03 Aug 2023 07:19:49 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=31536000
+      Last-Modified:
+      - Fri, 28 Aug 2020 18:32:43 GMT
+      Imagery:
+      - degrade=81, sample=2x2, difference=1.071
+      Cache-Tag:
+      - 3bhkrj58Vtu7enYsRolD1fZdja1
+      Etag:
+      - 7d3bc17b2d77ffca0db0d463ccfcfbac
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 03b474db824c472de7c4629c50b35ac4.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL58-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - pDt_mMVi_p8TilgOcUaO7roV0g5rqTfo8zp8TMuXZtSgKBTnkNqlEg==
+      Age:
+      - '1960347'
+      Vary:
+      - Origin
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+  recorded_at: Fri, 25 Aug 2023 23:52:16 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 22:37:06 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=27074
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3012'
+      X-Memc-Expires:
+      - '21026'
+      Etag:
+      - W/"377750b7c6a227ad0a0eb45d42a5b1e8"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 ac5c3ac6e5d87e9394ed00e7554c9aee.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL58-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - DHfemk8irtByLR6GNBmtt6WP2RlnL0kKXo26lmM5bgF2KqJ74UMJ3Q==
+      Age:
+      - '4579'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18487}'
+  recorded_at: Fri, 25 Aug 2023 23:53:25 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 22:37:06 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=27074
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3012'
+      X-Memc-Expires:
+      - '21026'
+      Etag:
+      - W/"377750b7c6a227ad0a0eb45d42a5b1e8"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 4dd647f2c0221dd5d8526e120eae7942.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL58-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - S28uQbjHPDieyEJ4HXbnuZhVihqJUN-vwaAolm3GEd1UfhjZ9wzt-g==
+      Age:
+      - '4579'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18487}'
+  recorded_at: Fri, 25 Aug 2023 23:53:25 GMT
+- request:
+    method: get
+    uri: https://image.tmdb.org/t/p/w92//3bhkrj58Vtu7enYsRolD1fZdja1.jpg?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 25 Aug 2023 23:53:25 GMT
+      Content-Type:
+      - image/jpeg
+      Content-Length:
+      - '2538'
+      Connection:
+      - keep-alive
+      Server:
+      - BunnyCDN-IL1-1068
+      Cdn-Pullzone:
+      - '775336'
+      Cdn-Uid:
+      - 29af4e0e-bcbd-4fcb-8635-74ddc38a1ebf
+      Cdn-Requestcountrycode:
+      - US
+      Cache-Control:
+      - public, max-age=31919000
+      Etag:
+      - '"6272c6cf-9ea"'
+      Last-Modified:
+      - Wed, 04 May 2022 18:32:47 GMT
+      Cdn-Storageserver:
+      - NY-430
+      Cdn-Requestpullsuccess:
+      - 'True'
+      Cdn-Fileserver:
+      - '267'
+      Perma-Cache:
+      - HIT
+      Cdn-Proxyver:
+      - '1.04'
+      Cdn-Requestpullcode:
+      - '200'
+      Cdn-Cachedat:
+      - '08/15/2023 12:28:31'
+      Cdn-Edgestorageid:
+      - '1069'
+      Cdn-Status:
+      - '200'
+      Cdn-Requestid:
+      - e3bb2532a6a3f9ea94f5b6876a79c121
+      Cdn-Cache:
+      - HIT
+      Accept-Ranges:
+      - bytes
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+  recorded_at: Fri, 25 Aug 2023 23:53:25 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 22:37:06 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=27074
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3012'
+      X-Memc-Expires:
+      - '21026'
+      Etag:
+      - W/"377750b7c6a227ad0a0eb45d42a5b1e8"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 1c154fd264f63b7337d5237240584530.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL58-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 9V10V147z6Nq899bKksl-1gOyBgHnP8bmjogjVUjBekGqNtSCSLfdQ==
+      Age:
+      - '4694'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18487}'
+  recorded_at: Fri, 25 Aug 2023 23:55:20 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 22:37:06 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=27074
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3012'
+      X-Memc-Expires:
+      - '21026'
+      Etag:
+      - W/"377750b7c6a227ad0a0eb45d42a5b1e8"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 71e426c54a0240fb6bb38c242d378078.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL58-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - Yk2Ea5Eq3duR9-exETLV-MclDPkvef54Hw0LEWvEDFnmHWRLXta32A==
+      Age:
+      - '4695'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18487}'
+  recorded_at: Fri, 25 Aug 2023 23:55:21 GMT
+- request:
+    method: get
+    uri: https://image.tmdb.org/t/p/w92//3bhkrj58Vtu7enYsRolD1fZdja1.jpg?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - image/jpeg
+      Content-Length:
+      - '2538'
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 03 Aug 2023 07:19:49 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=31536000
+      Last-Modified:
+      - Fri, 28 Aug 2020 18:32:43 GMT
+      Imagery:
+      - degrade=81, sample=2x2, difference=1.071
+      Cache-Tag:
+      - 3bhkrj58Vtu7enYsRolD1fZdja1
+      Etag:
+      - 7d3bc17b2d77ffca0db0d463ccfcfbac
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 08829bb06bccf0ab66e6bd5eaa5fcbdc.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL58-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - QplwrqroXxjpIxp9sOwNirUB-iqZQZO-FSIl-s_6asJSDgI8NHeXsw==
+      Age:
+      - '1960532'
+      Vary:
+      - Origin
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+  recorded_at: Fri, 25 Aug 2023 23:55:21 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 22:37:06 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=27074
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3012'
+      X-Memc-Expires:
+      - '21026'
+      Etag:
+      - W/"377750b7c6a227ad0a0eb45d42a5b1e8"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 e529324611aee618447444dc1aa96308.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL58-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - mWcm1140Bd4XYsmeY62OLyjsmNzKSsEtirHHKGKBsejQviv65t83sg==
+      Age:
+      - '4784'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18487}'
+  recorded_at: Fri, 25 Aug 2023 23:56:50 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 22:37:06 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=27074
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3012'
+      X-Memc-Expires:
+      - '21026'
+      Etag:
+      - W/"377750b7c6a227ad0a0eb45d42a5b1e8"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 35ccb6cc125c2f90120be4104c394baa.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL58-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 7KB-wtkHVVqFOXkeRfovzg_Uj28iArR-f8jxsTmClgPeVqXxF0Hltw==
+      Age:
+      - '4784'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18487}'
+  recorded_at: Fri, 25 Aug 2023 23:56:50 GMT
+- request:
+    method: get
+    uri: https://image.tmdb.org/t/p/w92//3bhkrj58Vtu7enYsRolD1fZdja1.jpg?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - image/jpeg
+      Content-Length:
+      - '2538'
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 03 Aug 2023 07:19:49 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=31536000
+      Last-Modified:
+      - Fri, 28 Aug 2020 18:32:43 GMT
+      Imagery:
+      - degrade=81, sample=2x2, difference=1.071
+      Cache-Tag:
+      - 3bhkrj58Vtu7enYsRolD1fZdja1
+      Etag:
+      - 7d3bc17b2d77ffca0db0d463ccfcfbac
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 fdf00b190a061de7e2517d80e4d54e0e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL58-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - lGC4VTsUm7rf_4qmeAfU3QNAmNxN3-Fsu2GJCXNsi2TpjfpIU7w-NA==
+      Age:
+      - '1960621'
+      Vary:
+      - Origin
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+  recorded_at: Fri, 25 Aug 2023 23:56:50 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 22:37:06 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=27074
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3012'
+      X-Memc-Expires:
+      - '21026'
+      Etag:
+      - W/"377750b7c6a227ad0a0eb45d42a5b1e8"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 fea48d36741a5a8b0c278e8b50136aba.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL58-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - MATOZCWQfB6GUNag23U89nItlic0zMOwOSkzKe8tYccSo_EigYSmVQ==
+      Age:
+      - '4867'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18487}'
+  recorded_at: Fri, 25 Aug 2023 23:58:13 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 22:37:06 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=27074
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3012'
+      X-Memc-Expires:
+      - '21026'
+      Etag:
+      - W/"377750b7c6a227ad0a0eb45d42a5b1e8"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 6e842e6c47fda3436ed916882821b6da.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL58-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - cVrrZ05ijjKPuTiNP5nXkjpqrCy_-PbMnW_Hk2S7wIX0RICC_w0oFA==
+      Age:
+      - '4867'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18487}'
+  recorded_at: Fri, 25 Aug 2023 23:58:13 GMT
+- request:
+    method: get
+    uri: https://image.tmdb.org/t/p/w92//3bhkrj58Vtu7enYsRolD1fZdja1.jpg?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 25 Aug 2023 23:58:13 GMT
+      Content-Type:
+      - image/jpeg
+      Content-Length:
+      - '2538'
+      Connection:
+      - keep-alive
+      Server:
+      - BunnyCDN-IL1-1068
+      Cdn-Pullzone:
+      - '775336'
+      Cdn-Uid:
+      - 29af4e0e-bcbd-4fcb-8635-74ddc38a1ebf
+      Cdn-Requestcountrycode:
+      - US
+      Cache-Control:
+      - public, max-age=31919000
+      Etag:
+      - '"6272c6cf-9ea"'
+      Last-Modified:
+      - Wed, 04 May 2022 18:32:47 GMT
+      Cdn-Storageserver:
+      - NY-430
+      Cdn-Requestpullsuccess:
+      - 'True'
+      Cdn-Fileserver:
+      - '267'
+      Perma-Cache:
+      - HIT
+      Cdn-Proxyver:
+      - '1.04'
+      Cdn-Requestpullcode:
+      - '200'
+      Cdn-Cachedat:
+      - '08/15/2023 12:28:31'
+      Cdn-Edgestorageid:
+      - '1069'
+      Cdn-Status:
+      - '200'
+      Cdn-Requestid:
+      - 93c4d487ffdd6c9f20c268c54dbd7ca8
+      Cdn-Cache:
+      - HIT
+      Accept-Ranges:
+      - bytes
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        /9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAYGBgYGBgcICAcKCgkKCg4NDAwNDhUPEA8QDxUgFBgUFBgUIB0jHBocIx0zKCQkKDM7Mi8yO0hAQEhaVlp2dp8BBgYGBgYGBwgIBwoKCQoKDg0MDA0OFQ8QDxAPFSAUGBQUGBQgHSMcGhwjHTMoJCQoMzsyLzI7SEBASFpWWnZ2n//CABEIAIoAXAMBIgACEQEDEQH/xAA0AAEAAgMAAwEAAAAAAAAAAAAABQcBBggCAwQJAQEAAwEBAAAAAAAAAAAAAAAAAQIEAwX/2gAMAwEAAhADEAAAAOVADyPHNp2Zx0cvpKN7cAQAAl4j6a37Jsrlv6/L9jd+ReteS9uDA04wAH2fJlN3WnzhPYfV3Dn2yK+04fQOucBnAzgJbbrm6a61/NSNszTK6YLDxrwCAAlE3f2Lwx291p+euq7fBV6wniUoAPaWjDbjH5fT2uP0vXYiwZqvp7LvjK5vSo9Xmwo14G+6FJ2j1Tnwx0WuKvLwruqupjbdGp3ury582q9NPE8ns9YlvCM2KY6k0C25CHO1cdk0KV3rPpSwIkADLAywAAP/xAA2EAACAgEDAwIDBgQGAwAAAAABAgMEBQAGERIhMRNBByBxFDAyUWGBCCNSkRZAQkRikqGisf/aAAgBAQABPwD79VZ2CqOSfA1tb4dZfMTRSvDCldxwRKSSP14XWX+A0KUDNi8hK1kJyYpQvEn6LrIYu3jZpYrETRyxt0ujDhl+o+5wqK+QrgqWHWOw8625ZkgqwiGIjx+JSAD9TrH3ms8J60Dyr5RJFYj9gdfF/A0c5jprERgivY+CSac9HDunspb7mq9pJlNYuJf9JT8X7ca2Fhc3nYslSzNy4Kk9GZawaVjxOhUggfpzrC/B/IY/IpayOZiq1lPMdiInlvo3I6WGvieMQaj3LMpmaKk8cPWpPqSqOFfke4J5+5oTS1rkEsUpikRwVcHgqdWt97lx2Ux8dO3HVlNRYX5i9XgMesuezHW3M1aykyV7sdtmli6pZLURiWeT+tFKqAwHkDyNfGy3zFiq6P2jklV1H5qq/c9h9dYvJSU/styzasyVwAjNUkCTx9PYRsx7hePGstuZMzJWx2Eky382dOn7XZ9Vi57c9tb4nxdaLF4irc+3tW9WW5f8iSxNxykZPlEC6kryxcEjlT4Ydwfucas3qRvFVWyyyAmIgsGH5Mq9+NYDH7kTJTT4alDHanilhEXB/kpIvS5UzdlJHbnnVqvOkc8VheiWCToCDjhePI7aR3VDwSONFg3ka4+f+Hf7K6Z6NokMoFZwf7rr0YgDxGv9hr4nSibe24+j3vsn/RVTWSqUIKcDRNzKTw3B0V4+4/h+vGDdNqt7WKL/AN0YNoHW9LAt7lzcvP471hv7udTFfWb3A47jTt1MT8+LgpWZJIrLMgdeElHiNufLD3GvhnFe218Q8TFbiMfXI0Qbyjh145U6tTCCrNMx4VI2Yn6DnU23dwZW1asxYyZkaRnLsAicMefxMQNWMNkoIS7UnI5I6k4cDjzyVJ4+fCba27iMLHm9xpLcSdR6NOu5UIG8PM6/+F0THuS9Wo7c216Cox7IzzSydXvK7HgKNZO3T2Phq1SW0tvcDSI8cUABhrHn/wB21uq9umvj8W+azBae7y/2QljKieQX44XVaxZkrRhZJEjPLxqOVY9P4iOPY8dtQYs1UW8cnFaozemA4Uh4y/mOU+3Hsdbj2urNLPSCkqzcqPfg6ZWRirAgg8EH5IYZZ5FjijZ3bwqgkn9hrCblxuAqpXuQFk6FWTpXq5HHcL1ayu+ryTyw7Pqtj8YhDEQwgPIR7y6w268dh1s5WWu13PzuxjllA9Kt/wAgPdtDJm9dmvZOd5pZDz+p5/8Amqt6d3md5fSCxkrK6l/TCdgo4/Q62huyTHrI604pDHGVmjZh0Tr7crwe+rMFYrGIy0SWUM0J8osf4zGB+Q8DWcRFucoQR0juPk2JO9WXPTQKDcjxE7VvqGXr4/Xo51dyFq9IXmck62v/AIiydkbfxVxohlJFSSMv0I/SCeXOst8EcvjYgwzuKdiyIEZ3iJdvYFhrMbN3HgkWW1RZq5AInhIli/7JpL0h6Y27R9PRwPYE9z9dYy/jKkjxyQs6ByUmQlZP3HgjWL3rt+vSjFuhUnSHqMPrIHZG/L6Nr417Xwtaphc/iayVor0aiWJAFXl0Dq3yYeSymQgFeTolduhTzx3btxq3iZhFbsKgUV5OiePwY3LdPj8tUHhju1XmeVIlmQu0R4kCg9yn/Ljxrcuypc5irNnB5LNW7yxY6eSK9bi6XgtwNKAAoTl040lXf21s3DgXkiNmaMTRo9mIxfX1GYL5TV6vbt5ysRg5rd1LkjzpXhLidQoMoRQDyE1uLGDD5e1WSC3FCrn0RaTolKexYajQtyzAlFI6jrPb1zO4KVelalBrwdIjQDsoQcAfJHLJC4eNyrDwQeDq1nczerivZyNmWH+h5CVOsNTGRy2Pp9PUbNmOELzxyZGCgc6GdxOBt3qr57ArLFHWqPG9ublGowvW9oNb/wBsX81Lld2tfppSakrwiW40zTiTlgsPKIAPZU1n7O6q1XGZK1DWp1irwY2CH/bxfZ1l6k7sR1hgeSSTrPZTJ5YU5b96xblVOlXnlaVgpVW4BYngcknWC3bawmNyGP8AsFG5VuD+YlmIsQfAZWUqQRqxMs8rOsKRA8cInPA4+pJ+baM8Fbde3p55FjhiydR5Hc8KqrKCSdWLOyVhti1d2/K7JO85aWvIzLJLOy8H3buurOQ2tamp15crgzBBaRzEJKhhKIJAqDr5VBw2hlNoWhVq2LuGetG8BUO8DBBGIE7c+OByNfFa/RlxeIiqVcXA0t27JYSqYJXUxlUj6ng/zv8A/8QAJxEAAgIBAwMCBwAAAAAAAAAAAQIDEQAgIVEQEjEEEyIwMkFSYXH/2gAIAQIBAT8A6e/Fdd2lhasORixJGWuXxxnpXLof0a0EWMkgbtCAZBEYoguk0ABjsEZeTout8sMAQcMiE/UL0JIz91j+cYY2AO22e2wDcbZ6V3YENvXg9EAJo+DthQJ8NYx/EXhQOpBFXkEQiU2xr7DrZ62ar5H/xAAnEQACAgEDAwIHAAAAAAAAAAABAgMRAAQQIBITMUFRFCIwQmKhsf/aAAgBAwEBPwDb4WUKCRV4QQaPCNumRTV0clkaYJUdX7+RmsiEbr+S3wBog5FqIixkZhmqlEszMPHGzeQad5oZpAVAjFmz/OABJoYQVJBGCN1QGjweGOJUIYXVkVZxZIiwNiz+hncjLIvqQc1sUat1JQPqNiSBY8jO4z/N1G8QD7mrFnaNwbDV4OaiYzurdIHvvW9fQ//Z
+  recorded_at: Fri, 25 Aug 2023 23:58:13 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 22:37:06 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=27074
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3012'
+      X-Memc-Expires:
+      - '21026'
+      Etag:
+      - W/"377750b7c6a227ad0a0eb45d42a5b1e8"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 d5d585dce9ad5e702dfde5c38b8b4b9e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL58-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - g5AufiNQsBQWN6WF_-0Zdc5HwSmSKxJFWM06dnfRiLuANZDqTJGc2g==
+      Age:
+      - '4918'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18487}'
+  recorded_at: Fri, 25 Aug 2023 23:59:04 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 22:37:06 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=27074
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3012'
+      X-Memc-Expires:
+      - '21026'
+      Etag:
+      - W/"377750b7c6a227ad0a0eb45d42a5b1e8"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 cac404716323a3fe7bf53c1e15d39508.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL58-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - a4bonRtGMvjZ1PtzyHd-hlozJnGU-gRy5CoVH8Y_oQxTN_k7oXbxNw==
+      Age:
+      - '4918'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18487}'
+  recorded_at: Fri, 25 Aug 2023 23:59:04 GMT
+- request:
+    method: get
+    uri: https://image.tmdb.org/t/p/w92//3bhkrj58Vtu7enYsRolD1fZdja1.jpg?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 25 Aug 2023 23:59:04 GMT
+      Content-Type:
+      - image/jpeg
+      Content-Length:
+      - '2538'
+      Connection:
+      - keep-alive
+      Server:
+      - BunnyCDN-IL1-845
+      Cdn-Pullzone:
+      - '775336'
+      Cdn-Uid:
+      - 29af4e0e-bcbd-4fcb-8635-74ddc38a1ebf
+      Cdn-Requestcountrycode:
+      - US
+      Cache-Control:
+      - public, max-age=31919000
+      Etag:
+      - '"6272c6cf-9ea"'
+      Last-Modified:
+      - Wed, 04 May 2022 18:32:47 GMT
+      Cdn-Storageserver:
+      - NY-430
+      Cdn-Requestpullsuccess:
+      - 'True'
+      Cdn-Fileserver:
+      - '267'
+      Perma-Cache:
+      - HIT
+      Cdn-Proxyver:
+      - '1.04'
+      Cdn-Requestpullcode:
+      - '200'
+      Cdn-Cachedat:
+      - '08/15/2023 12:28:31'
+      Cdn-Edgestorageid:
+      - '1069'
+      Cdn-Status:
+      - '200'
+      Cdn-Requestid:
+      - b98aa3bf8fcdbef6b1cb633906e23318
+      Cdn-Cache:
+      - HIT
+      Accept-Ranges:
+      - bytes
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        /9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAYGBgYGBgcICAcKCgkKCg4NDAwNDhUPEA8QDxUgFBgUFBgUIB0jHBocIx0zKCQkKDM7Mi8yO0hAQEhaVlp2dp8BBgYGBgYGBwgIBwoKCQoKDg0MDA0OFQ8QDxAPFSAUGBQUGBQgHSMcGhwjHTMoJCQoMzsyLzI7SEBASFpWWnZ2n//CABEIAIoAXAMBIgACEQEDEQH/xAA0AAEAAgMAAwEAAAAAAAAAAAAABQcBBggCAwQJAQEAAwEBAAAAAAAAAAAAAAAAAQIEAwX/2gAMAwEAAhADEAAAAOVADyPHNp2Zx0cvpKN7cAQAAl4j6a37Jsrlv6/L9jd+ReteS9uDA04wAH2fJlN3WnzhPYfV3Dn2yK+04fQOucBnAzgJbbrm6a61/NSNszTK6YLDxrwCAAlE3f2Lwx291p+euq7fBV6wniUoAPaWjDbjH5fT2uP0vXYiwZqvp7LvjK5vSo9Xmwo14G+6FJ2j1Tnwx0WuKvLwruqupjbdGp3ury582q9NPE8ns9YlvCM2KY6k0C25CHO1cdk0KV3rPpSwIkADLAywAAP/xAA2EAACAgEDAwIDBgQGAwAAAAABAgMEBQAGERIhMRNBByBxFDAyUWGBCCNSkRZAQkRikqGisf/aAAgBAQABPwD79VZ2CqOSfA1tb4dZfMTRSvDCldxwRKSSP14XWX+A0KUDNi8hK1kJyYpQvEn6LrIYu3jZpYrETRyxt0ujDhl+o+5wqK+QrgqWHWOw8625ZkgqwiGIjx+JSAD9TrH3ms8J60Dyr5RJFYj9gdfF/A0c5jprERgivY+CSac9HDunspb7mq9pJlNYuJf9JT8X7ca2Fhc3nYslSzNy4Kk9GZawaVjxOhUggfpzrC/B/IY/IpayOZiq1lPMdiInlvo3I6WGvieMQaj3LMpmaKk8cPWpPqSqOFfke4J5+5oTS1rkEsUpikRwVcHgqdWt97lx2Ux8dO3HVlNRYX5i9XgMesuezHW3M1aykyV7sdtmli6pZLURiWeT+tFKqAwHkDyNfGy3zFiq6P2jklV1H5qq/c9h9dYvJSU/styzasyVwAjNUkCTx9PYRsx7hePGstuZMzJWx2Eky382dOn7XZ9Vi57c9tb4nxdaLF4irc+3tW9WW5f8iSxNxykZPlEC6kryxcEjlT4Ydwfucas3qRvFVWyyyAmIgsGH5Mq9+NYDH7kTJTT4alDHanilhEXB/kpIvS5UzdlJHbnnVqvOkc8VheiWCToCDjhePI7aR3VDwSONFg3ka4+f+Hf7K6Z6NokMoFZwf7rr0YgDxGv9hr4nSibe24+j3vsn/RVTWSqUIKcDRNzKTw3B0V4+4/h+vGDdNqt7WKL/AN0YNoHW9LAt7lzcvP471hv7udTFfWb3A47jTt1MT8+LgpWZJIrLMgdeElHiNufLD3GvhnFe218Q8TFbiMfXI0Qbyjh145U6tTCCrNMx4VI2Yn6DnU23dwZW1asxYyZkaRnLsAicMefxMQNWMNkoIS7UnI5I6k4cDjzyVJ4+fCba27iMLHm9xpLcSdR6NOu5UIG8PM6/+F0THuS9Wo7c216Cox7IzzSydXvK7HgKNZO3T2Phq1SW0tvcDSI8cUABhrHn/wB21uq9umvj8W+azBae7y/2QljKieQX44XVaxZkrRhZJEjPLxqOVY9P4iOPY8dtQYs1UW8cnFaozemA4Uh4y/mOU+3Hsdbj2urNLPSCkqzcqPfg6ZWRirAgg8EH5IYZZ5FjijZ3bwqgkn9hrCblxuAqpXuQFk6FWTpXq5HHcL1ayu+ryTyw7Pqtj8YhDEQwgPIR7y6w268dh1s5WWu13PzuxjllA9Kt/wAgPdtDJm9dmvZOd5pZDz+p5/8Amqt6d3md5fSCxkrK6l/TCdgo4/Q62huyTHrI604pDHGVmjZh0Tr7crwe+rMFYrGIy0SWUM0J8osf4zGB+Q8DWcRFucoQR0juPk2JO9WXPTQKDcjxE7VvqGXr4/Xo51dyFq9IXmck62v/AIiydkbfxVxohlJFSSMv0I/SCeXOst8EcvjYgwzuKdiyIEZ3iJdvYFhrMbN3HgkWW1RZq5AInhIli/7JpL0h6Y27R9PRwPYE9z9dYy/jKkjxyQs6ByUmQlZP3HgjWL3rt+vSjFuhUnSHqMPrIHZG/L6Nr417Xwtaphc/iayVor0aiWJAFXl0Dq3yYeSymQgFeTolduhTzx3btxq3iZhFbsKgUV5OiePwY3LdPj8tUHhju1XmeVIlmQu0R4kCg9yn/Ljxrcuypc5irNnB5LNW7yxY6eSK9bi6XgtwNKAAoTl040lXf21s3DgXkiNmaMTRo9mIxfX1GYL5TV6vbt5ysRg5rd1LkjzpXhLidQoMoRQDyE1uLGDD5e1WSC3FCrn0RaTolKexYajQtyzAlFI6jrPb1zO4KVelalBrwdIjQDsoQcAfJHLJC4eNyrDwQeDq1nczerivZyNmWH+h5CVOsNTGRy2Pp9PUbNmOELzxyZGCgc6GdxOBt3qr57ArLFHWqPG9ublGowvW9oNb/wBsX81Lld2tfppSakrwiW40zTiTlgsPKIAPZU1n7O6q1XGZK1DWp1irwY2CH/bxfZ1l6k7sR1hgeSSTrPZTJ5YU5b96xblVOlXnlaVgpVW4BYngcknWC3bawmNyGP8AsFG5VuD+YlmIsQfAZWUqQRqxMs8rOsKRA8cInPA4+pJ+baM8Fbde3p55FjhiydR5Hc8KqrKCSdWLOyVhti1d2/K7JO85aWvIzLJLOy8H3buurOQ2tamp15crgzBBaRzEJKhhKIJAqDr5VBw2hlNoWhVq2LuGetG8BUO8DBBGIE7c+OByNfFa/RlxeIiqVcXA0t27JYSqYJXUxlUj6ng/zv8A/8QAJxEAAgIBAwMCBwAAAAAAAAAAAQIDEQAgIVEQEjEEEyIwMkFSYXH/2gAIAQIBAT8A6e/Fdd2lhasORixJGWuXxxnpXLof0a0EWMkgbtCAZBEYoguk0ABjsEZeTout8sMAQcMiE/UL0JIz91j+cYY2AO22e2wDcbZ6V3YENvXg9EAJo+DthQJ8NYx/EXhQOpBFXkEQiU2xr7DrZ62ar5H/xAAnEQACAgEDAwIHAAAAAAAAAAABAgMRAAQQIBITMUFRFCIwQmKhsf/aAAgBAwEBPwDb4WUKCRV4QQaPCNumRTV0clkaYJUdX7+RmsiEbr+S3wBog5FqIixkZhmqlEszMPHGzeQad5oZpAVAjFmz/OABJoYQVJBGCN1QGjweGOJUIYXVkVZxZIiwNiz+hncjLIvqQc1sUat1JQPqNiSBY8jO4z/N1G8QD7mrFnaNwbDV4OaiYzurdIHvvW9fQ//Z
+  recorded_at: Fri, 25 Aug 2023 23:59:04 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 22:37:06 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=27074
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3012'
+      X-Memc-Expires:
+      - '21026'
+      Etag:
+      - W/"377750b7c6a227ad0a0eb45d42a5b1e8"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 78d82ac849fe1d87e48659ba126792fe.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL58-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - eK_6ScWAVs-saR1PALvOp4AkzEJEzCK8IL3O-oUDvn2DW5ny_9grNA==
+      Age:
+      - '5017'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18487}'
+  recorded_at: Sat, 26 Aug 2023 00:00:43 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Aug 2023 22:37:06 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=27074
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '3012'
+      X-Memc-Expires:
+      - '21026'
+      Etag:
+      - W/"377750b7c6a227ad0a0eb45d42a5b1e8"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 5ce4f5163642521ca9edecdd2cea8b40.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL58-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - QTeSNPzondumwdQb2_1hPdi6a1dFA_7PF0cDCrMHIXBEjBGJIa5Okg==
+      Age:
+      - '5017'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":123.773,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18487}'
+  recorded_at: Sat, 26 Aug 2023 00:00:43 GMT
+- request:
+    method: get
+    uri: https://image.tmdb.org/t/p/w92//3bhkrj58Vtu7enYsRolD1fZdja1.jpg?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 26 Aug 2023 00:00:44 GMT
+      Content-Type:
+      - image/jpeg
+      Content-Length:
+      - '2538'
+      Connection:
+      - keep-alive
+      Server:
+      - BunnyCDN-IL1-1070
+      Cdn-Pullzone:
+      - '775336'
+      Cdn-Uid:
+      - 29af4e0e-bcbd-4fcb-8635-74ddc38a1ebf
+      Cdn-Requestcountrycode:
+      - US
+      Cache-Control:
+      - public, max-age=31919000
+      Etag:
+      - '"6272c6cf-9ea"'
+      Last-Modified:
+      - Wed, 04 May 2022 18:32:47 GMT
+      Cdn-Storageserver:
+      - NY-430
+      Cdn-Requestpullsuccess:
+      - 'True'
+      Cdn-Fileserver:
+      - '267'
+      Perma-Cache:
+      - HIT
+      Cdn-Proxyver:
+      - '1.04'
+      Cdn-Requestpullcode:
+      - '200'
+      Cdn-Cachedat:
+      - '08/15/2023 12:28:31'
+      Cdn-Edgestorageid:
+      - '1069'
+      Cdn-Status:
+      - '200'
+      Cdn-Requestid:
+      - cb106374332abf2a15a9935e46c7dddc
+      Cdn-Cache:
+      - HIT
+      Accept-Ranges:
+      - bytes
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+  recorded_at: Sat, 26 Aug 2023 00:00:44 GMT
+recorded_with: VCR 6.2.0

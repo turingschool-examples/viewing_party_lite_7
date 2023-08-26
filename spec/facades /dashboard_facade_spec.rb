@@ -68,7 +68,7 @@ RSpec.describe DashboardFacade do
 
             @facade = DashboardFacade.new(params)
             
-            party = @user_1.viewing_parties.create!(movie_id: 238, date: "Monday")
+            party = @user_1.viewing_parties.create!(movie_id: 238, date: "Monday", duration: 125, start_time: 'Tuesday')
 
             expect(@facade.movie_image(party.movie_id)).to be_a(Image)
         end
@@ -78,8 +78,8 @@ RSpec.describe DashboardFacade do
 
             @facade = DashboardFacade.new(params)
             
-            party = @user_1.viewing_parties.create!(movie_id: 238, date: "Monday")
-            
+            party = @user_1.viewing_parties.create!(movie_id: 238, date: "Monday", duration: 125, start_time: 'Tuesday')
+
             expect(@facade.movie(party.movie_id).title).to eq("The Godfather")
         end
     end

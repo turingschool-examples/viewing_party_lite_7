@@ -124,7 +124,7 @@ describe MovieService do
 
                 expect(movie_details[:title]).to eq("The Godfather")
 
-                expect(movie_image).to eq("/kysDTCloxUPJ1BILI4f8gs74fcr.png")
+                expect(movie_image.to_s).to eq("https://image.tmdb.org/t/p/w92//3bhkrj58Vtu7enYsRolD1fZdja1.jpg?api_key=0ae25ad2a6ae8922b83d2c3e76825f0d")
             end
         end
 
