@@ -8,6 +8,7 @@ class ViewingPartiesController < ApplicationController
 
   def create
     user_id = params[:user_id]
+    movie_runtime = params[:runtime].to_i
     movie_title = params[:movie_title]
     user_ids = params[:viewing_party][:user_ids]
     invited_users = User.where(id: user_ids) 
@@ -20,14 +21,18 @@ class ViewingPartiesController < ApplicationController
       viewing_date: params[:viewing_party][:date],
       users: invited_users
     }
-      
-    viewing_party = ViewingParty.create!(viewing_party_params)
-      
-    UsersViewingParty.create!(user_id: user_id, viewing_party_id: viewing_party.id)
-    invited_users.each do |user|
-      UsersViewingParty.create!(user_id: user.id, viewing_party_id: viewing_party.id)
+     
+    if params[:viewing_party][:duration_minutes].to_i >= movie_runtime
+      viewing_party = ViewingParty.create!(viewing_party_params)
+        
+      UsersViewingParty.create!(user_id: user_id, viewing_party_id: viewing_party.id)
+      invited_users.each do |user|
+        UsersViewingParty.create!(user_id: user.id, viewing_party_id: viewing_party.id)
+      end
+      redirect_to user_path(user_id)
+    else
+      flash[:error] = "Duration cannot be less than runtime - #{movie_runtime} minutes"
+      redirect_back(fallback_location: root_path)
     end
-
-    redirect_to user_path(user_id)
   end
 end 
