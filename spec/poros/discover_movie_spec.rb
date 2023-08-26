@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe DiscoverMovie do
+RSpec.describe Movie do
   before do
     attrs = {
       id: 2,
@@ -14,13 +14,13 @@ RSpec.describe DiscoverMovie do
       review_authors: "trollsalot"
     }
     
-    @discover_movie = DiscoverMovie.new(attrs)
+    @discover_movie = Movie.new(attrs)
   end
   
   describe "initialize" do
     it "exists" do
       expect(@discover_movie.id).to eq(2)
-      expect(@discover_movie).to be_a(DiscoverMovie)
+      expect(@discover_movie).to be_a(Movie)
       expect(@discover_movie.title).to eq("Batman")
       expect(@discover_movie.vote_average).to eq(7)
       expect(@discover_movie.runtime).to eq(90)
