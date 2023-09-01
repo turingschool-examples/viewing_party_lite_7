@@ -11,10 +11,6 @@ Viewing Party is a pair-programmed entertainment project that enables users to e
 - **Database:** PostgreSQL
 - **Consuming API:** Faraday HTTP client library
 
-### Project Challenges
-- This was my first time consuming an API with so many endpoints, so writing tests for components that interact with external APIs was challenging due to potential changes in the API's response structure or availability. Mocking API responses effectively became crucial.
-- Creating the data model to accurately depict users, viewing parties, and their interconnections posed a challenge, particularly since we had to account for the future integration of movie objects and their roles within the API requests. 
-
 ### My Achievements
 API Consumption:
 - Developed facades, services, and POROs to abstract the process of consuming the IMDb API.
@@ -24,7 +20,6 @@ API Consumption:
 
 <br/>
 <br/>
-
 Code Organization and Refactoring:
 - Separated functionality into new methods in order to uphold the Single Responsiblity Principle within the Facade, Service, and POROs, improving the maintainability and readability.
 - Adhered to the RuboCop style guide for enhanced code quality.
@@ -36,6 +31,11 @@ User Authentication and Data Security:
 Team Collaboration:
 - Collaborated effectively with my teammate to prioritize goals and user stories.
 - Engaging in pair programming throughout the project allowed me to enhance my communication skills, refine my ability to conduct independent research, and improve my time management skills in order to meet the project deadline.
+
+
+### Project Challenges
+- This was my first time consuming an API with so many endpoints, so writing tests for components that interact with external APIs was challenging due to potential changes in the API's response structure or availability. Mocking API responses effectively became crucial.
+- Creating the data model to accurately depict users, viewing parties, and their interconnections posed a challenge, particularly since we had to account for the future integration of movie objects and their roles within the API requests. 
 
 ---
 ### Features
