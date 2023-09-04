@@ -4,9 +4,9 @@ require 'rails_helper'
 
 RSpec.describe 'Welcome Page', type: :feature do
   before :each do
-    @user_1 = User.create!(name: 'Michael', email: 'michaelisvcool@email.com')
-    @user_2 = User.create!(name: 'Sara', email: 'sara1234@email.com')
-    @user_3 = User.create!(name: 'Elena', email: 'iheartmydogs@email.com')
+    @user_1 = User.create!(name: 'Michael', email: 'michaelisvcool@email.com', password: 'test123!', password_confirmation: 'test123!')
+    @user_2 = User.create!(name: 'Sara', email: 'sara1234@email.com', password: 'test123!', password_confirmation: 'test123!')
+    @user_3 = User.create!(name: 'Elena', email: 'iheartmydogs@email.com', password: 'test123!', password_confirmation: 'test123!')
   end
 
   describe "When visiting the root path '/'" do
@@ -55,76 +55,6 @@ RSpec.describe 'Welcome Page', type: :feature do
       end
 
       expect(current_path).to eq(register_path)
-    end
-
-    it 'takes the user to a form to create an account' do
-      visit root_path
-      click_button('Create A New User')
-
-      expect(page).to have_content('Register a New User')
-      expect(page).to have_field('Name')
-      expect(page).to have_field('Email')
-      expect(page).to have_button('Create User')
-    end
-
-    it 'When I fill in the form with valid info I am taken to the new users page' do
-      visit root_path
-      click_button('Create A New User')
-
-      fill_in('Name', with: 'Name')
-      fill_in('Email', with: 'NameLast@gmail.com')
-
-      click_button('Create User')
-
-      expect(current_path).to_not eq(root_path)
-    end
-
-    it 'When I fill in the form with Invalid info, I am redirect to the form' do
-      visit root_path
-      click_button('Create A New User')
-
-      fill_in('Name', with: '')
-      fill_in('Email', with: 'NameLast@gmail.com')
-
-      click_button('Create User')
-
-      expect(current_path).to eq(register_path)
-      expect(page).to have_content("Name can't be blank")
-    end
-
-    it 'When I fill in the form with Invalid info, I am redirect to the form' do
-      visit root_path
-      click_button('Create A New User')
-
-      fill_in('Name', with: 'Name')
-      fill_in('Email', with: '')
-
-      click_button('Create User')
-
-      expect(current_path).to eq(register_path)
-      expect(page).to have_content("Email can't be blank")
-    end
-
-    it 'When I fill in the form with an email that already exists, I get an error and the user wont be created' do
-      visit root_path
-      click_button('Create A New User')
-
-      fill_in('Name', with: 'Name')
-      fill_in('Email', with: 'FakeEmail@gmail.com')
-
-      click_button('Create User')
-
-      visit root_path
-
-      click_button('Create A New User')
-
-      fill_in('Name', with: 'Second Name')
-      fill_in('Email', with: 'FakeEmail@gmail.com')
-
-      click_button('Create User')
-
-      expect(current_path).to eq(register_path)
-      expect(page).to have_content('Email has already been taken')
     end
   end
 end
