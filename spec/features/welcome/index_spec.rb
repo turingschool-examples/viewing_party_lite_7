@@ -49,12 +49,23 @@ RSpec.describe 'Welcome Page', type: :feature do
     it 'has a button to create a new user' do
       visit root_path
 
-      within('div#user-creation') do
-        expect(page).to have_button('Create A New User')
-        click_button('Create A New User')
+      within('div#user-buttons') do
+        expect(page).to have_button('Create an Account')
+        click_button('Create an Account')
       end
 
       expect(current_path).to eq(register_path)
+    end
+
+    it 'has a button for existing users to login' do
+      visit root_path
+
+      within('div#user-buttons') do
+        expect(page).to have_button('Sign In')
+        click_button('Sign In')
+      end
+
+      expect(current_path).to eq(login_path)
     end
   end
 end
