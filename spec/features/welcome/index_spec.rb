@@ -54,7 +54,7 @@ RSpec.describe 'Welcome Page', type: :feature do
         click_button('Create A New User')
       end
 
-      expect(current_path).to eq(new_register_path)
+      expect(current_path).to eq(register_path)
     end
 
     it 'takes the user to a form to create an account' do
@@ -88,7 +88,7 @@ RSpec.describe 'Welcome Page', type: :feature do
 
       click_button('Create User')
 
-      expect(current_path).to eq(new_register_path)
+      expect(current_path).to eq(register_path)
       expect(page).to have_content("Name can't be blank")
     end
 
@@ -101,7 +101,7 @@ RSpec.describe 'Welcome Page', type: :feature do
 
       click_button('Create User')
 
-      expect(current_path).to eq(new_register_path)
+      expect(current_path).to eq(register_path)
       expect(page).to have_content("Email can't be blank")
     end
 
@@ -123,7 +123,7 @@ RSpec.describe 'Welcome Page', type: :feature do
 
       click_button('Create User')
 
-      expect(current_path).to eq(new_register_path)
+      expect(current_path).to eq(register_path)
       expect(page).to have_content('Email has already been taken')
     end
   end

@@ -8,7 +8,8 @@ Rails.application.routes.draw do
 
   root to: 'welcome#index'
 
-  resources :register, only: %i[new create], controller: 'users'
+  get '/register', to: 'users#new'
+  resources :register, only: [:create], controller: 'users'
 
   resources :users, only: [:show] do
     resources :discover, only: [:index]

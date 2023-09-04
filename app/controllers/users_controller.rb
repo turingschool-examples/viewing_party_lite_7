@@ -15,7 +15,7 @@ class UsersController < ApplicationController
       redirect_to user_path(user)
     else 
       flash[:alert] = "#{error_message(user.errors)}"
-      redirect_to new_register_path
+      redirect_to register_path
     end
   end
 
