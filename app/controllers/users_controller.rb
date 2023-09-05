@@ -32,8 +32,11 @@ class UsersController < ApplicationController
     user = User.find_by(email: params[:email])
     if user.authenticate(params[:password])
       flash[:success] = "Welcome, #{user.name}!"
+      redirect_to dashboard_path(user)
+    else
+      flash[:error] = "Sorry! Your credentials are bad."
+      render :login_form
     end
-    redirect_to dashboard_path(user)
   end
 
   private
