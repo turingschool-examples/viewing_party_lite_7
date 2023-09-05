@@ -28,6 +28,14 @@ class UsersController < ApplicationController
 
   def login_form; end
 
+  def login
+    user = User.find_by(email: params[:email])
+    if user.authenticate(params[:password])
+      flash[:success] = "Welcome, #{user.name}!"
+    end
+    redirect_to dashboard_path(user)
+  end
+
   private
 
   def user_params
