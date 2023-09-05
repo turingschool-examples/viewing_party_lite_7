@@ -38,7 +38,7 @@ RSpec.describe 'User Registration' do
 
       user = User.last
       expect(current_path).to_not eq(dashboard_path(user.id))
-      expect(page).to have_content("Email already exists. Please try again.")
+      expect(page).to have_content("Email has already been taken")
       expect(page).to have_current_path(register_path)
     end
 
@@ -52,7 +52,7 @@ RSpec.describe 'User Registration' do
       click_button "Register"
       
       expect(current_path).to eq(register_path)
-      expect(page).to have_content("Password and password confirmation need to match.")
+      expect(page).to have_content("Password confirmation doesn't match Password")
     end
   end
 end

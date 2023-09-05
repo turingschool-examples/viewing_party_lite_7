@@ -16,13 +16,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to dashboard_path(@user)
     else
-      if @user.name.blank?
-        flash[:error] = "Name can't be blank"
-      elsif User.exists?(email: @user.email)
-        flash[:error] = "Email already exists. Please try again."
-      elsif @user.password != @user.password_confirmation
-        flash[:error] = "Password and password confirmation need to match."
-      end
+      flash[:error] = @user.errors.full_messages.to_sentence
       render :new
     end
   end
