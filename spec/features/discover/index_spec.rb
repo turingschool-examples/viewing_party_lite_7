@@ -4,9 +4,9 @@ require 'rails_helper'
 
 RSpec.describe "Discover Movies page '/users/:id/discover'", type: :feature do
   before(:each) do
-    @user_1 = User.create!(name: 'Jimmy', email: 'movie_buff333@gmail.com')
-    @user_2 = User.create!(name: 'Timmy', email: 'i_hate_movies@gmail.com')
-    @user_3 = User.create!(name: 'Tammy', email: 'gamer4134@gmail.com')
+    @user_1 = User.create!(name: 'Jimmy', email: 'movie_buff333@gmail.com', password: 'movies123', password_confirmation: 'movies123')
+    @user_2 = User.create!(name: 'Timmy', email: 'i_hate_movies@gmail.com', password: 'movies123', password_confirmation: 'movies123')
+    @user_3 = User.create!(name: 'Tammy', email: 'gamer4134@gmail.com', password: 'movies123', password_confirmation: 'movies123')
   end
 
   describe "When I visit a user's discover movies page" do
