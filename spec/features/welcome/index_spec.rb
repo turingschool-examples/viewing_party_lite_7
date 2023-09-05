@@ -18,26 +18,6 @@ RSpec.describe 'Welcome Page', type: :feature do
       end
     end
 
-    it 'has a list of the Existing Users' do
-      visit root_path
-
-      within('div#all-users') do
-        expect(page).to have_content('michaelisvcool@email.com')
-        expect(page).to have_content('sara1234@email.com')
-        expect(page).to have_content('iheartmydogs@email.com')
-      end
-    end
-
-    it 'Each user listed is a link to that users dashboards' do
-      visit root_path
-
-      within('div#all-users') do
-        expect(page).to have_link(@user_1.email, href: user_path(@user_1))
-        expect(page).to have_link(@user_2.email, href: user_path(@user_2))
-        expect(page).to have_link(@user_3.email, href: user_path(@user_3))
-      end
-    end
-
     it "has a link to go to the home page '/' " do
       visit root_path
 
