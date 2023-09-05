@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 
   def login_user
     begin
-      user = User.find_by(email: params[:email])
+      user = User.find_by_email(params[:email])
       raise "Invalid credentials. Please Try again." unless user && user.authenticate(params[:password])
       redirect_to user_path(user)
     rescue StandardError => e

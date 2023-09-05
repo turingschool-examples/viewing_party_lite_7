@@ -25,6 +25,14 @@
   margin-bottom: 40px;
 }
 
+#user-buttons  {
+  text-align: center;
+}
+
+#user-buttons  button {
+  margin: 15px 0;
+}
+
 .user-dash-top button, .discover-movies button {
  margin: 20px 0px;
 }
@@ -62,5 +70,18 @@
   flex-flow: row;
   border: 1px solid black;
   margin: 10px;
+}
+
+.login-register-form {
+  margin: auto;
+  width:fit-content;
+  border: 4px solid #AB92BF;;
+  padding: 10px 40px 20px 40px;
+  background-color: #F1F2EB;
+  border-radius: 20px;
+}
+
+.login-register-form label, .login-register-form input {
+  margin: 0 10px 20px 0;
 }
 
