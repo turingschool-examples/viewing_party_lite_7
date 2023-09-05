@@ -10,16 +10,6 @@ class UsersController < ApplicationController
     @parties = PartyUser.where(host: true)
   end
 
-  # def create
-  #   @user = User.new(user_params)
-  #   if @user.save
-  #     redirect_to dashboard_path(@user.id)
-  #   else
-  #     flash[:error] = 'Please fill in all fields.'
-  #     redirect_to register_path
-  #   end
-  # end
-
   def create
     @user = User.new(user_params)
     if @user.save
