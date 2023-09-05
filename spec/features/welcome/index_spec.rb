@@ -34,7 +34,11 @@ RSpec.describe 'Landing Page', type: :feature do
       end
     end
 
-    it "each name is a link to it's user dashboard" do
+    it "each name is a link to it's user dashboard if logged in" do
+      visit login_path
+      fill_in :email, with: @user_1.email
+      fill_in :password, with: @user_1.password
+      click_button 'Log In'
       visit root_path
       within '#existing_users' do
         click_link(@user_1.email)
