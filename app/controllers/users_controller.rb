@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to dashboard_path(@user)
     else
-      flash[:error] = @user.errors.full_messages.to_sentence
+      flash[:error] = @user.errors.full_messages.to_sentence  ##<< This covers all three sad paths in the new user spec
       render :new
     end
   end
