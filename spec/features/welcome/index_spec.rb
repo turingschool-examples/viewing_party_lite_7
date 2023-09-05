@@ -21,7 +21,7 @@ RSpec.describe 'Welcome Page', type: :feature do
     it "has a link to go to the home page '/' " do
       visit root_path
 
-      within('#nav-bar') do
+      within('.nav-bar') do
         expect(page).to have_link('Home', href: root_path)
       end
     end
@@ -29,9 +29,9 @@ RSpec.describe 'Welcome Page', type: :feature do
     it 'has a button to create a new user' do
       visit root_path
 
-      within('div#user-buttons') do
-        expect(page).to have_button('Create an Account')
-        click_button('Create an Account')
+      within('div#homepage-buttons') do
+        expect(page).to have_link('Create an Account')
+        click_link('Create an Account')
       end
 
       expect(current_path).to eq(register_path)
@@ -40,9 +40,9 @@ RSpec.describe 'Welcome Page', type: :feature do
     it 'has a button for existing users to login' do
       visit root_path
 
-      within('div#user-buttons') do
-        expect(page).to have_button('Sign In')
-        click_button('Sign In')
+      within('div#homepage-buttons') do
+        expect(page).to have_link('Sign In')
+        click_link('Sign In')
       end
 
       expect(current_path).to eq(login_path)

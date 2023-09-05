@@ -1,5 +1,5 @@
 body {
-  background-color: #dddddd;
+  background-color: #e7e6e6;
 }
 #title {
   text-align: center;
@@ -10,7 +10,7 @@ body {
   margin-left: 10px;
 }
 
-#nav-bar a {
+ .nav-bar a, #homepage-buttons a {
   padding: 3px 10px;
   background-color: #AB92BF;
   color: white;
@@ -18,7 +18,7 @@ body {
   text-decoration: none;
 }
 
-#nav-bar a:hover {
+.nav-bar a:hover, #homepage-buttons a:hover {
   background-color: #9a79b5;
   transition: background-color 0.2s ease-in-out;
 }
@@ -28,12 +28,16 @@ body {
   margin-bottom: 40px;
 }
 
-#user-buttons  {
+#homepage-buttons  {
   text-align: center;
 }
 
-#user-buttons  button {
-  margin: 15px 0;
+#homepage-buttons a {
+  margin-left: 15px;
+}
+
+#homepage-buttons  p {
+  margin: 30px 0;
 }
 
 .user-dash-top button, .discover-movies button {
