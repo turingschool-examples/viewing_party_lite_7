@@ -16,17 +16,17 @@ RSpec.describe 'User Registration' do
       expect(current_path).to eq(dashboard_path(user.id))
     end
 
-    xit "can't create a new user without a name" do
+    it "can't create a new user without a name" do
       visit register_path
-      fill_in :user_name, with: 'Tim'
-      fill_in :user_email, with: ''
+      fill_in :user_name, with: ''
+      fill_in :user_email, with: '@tim@tim.com'
       click_button 'Register'
 
       expect(current_path).to eq(register_path)
       expect(page).to have_content("Name can't be blank")
     end
 
-    xit "must have unique email address" do
+    it "must have unique email address" do
       user1 = User.create!(name: "Jim Bob", email: "Jbob@somewhere.com", password: 'password123', password_confirmation: 'password123')
       visit register_path
 
@@ -42,7 +42,7 @@ RSpec.describe 'User Registration' do
       expect(page).to have_current_path(register_path)
     end
 
-    xit "confirms that password and password confirmation match before creation" do
+    it "confirms that password and password confirmation match before creation" do
       visit register_path
       
       fill_in :user_name, with: "Phillip Philson"
