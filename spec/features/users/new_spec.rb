@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'User Registration' do
-  describe 'When I visit the user registration page' do
+  describe 'Happy Path' do
     it 'can create a new user' do
       visit register_path
       fill_in :user_name, with: 'Bob'
@@ -15,7 +15,9 @@ RSpec.describe 'User Registration' do
       user = User.last
       expect(current_path).to eq(dashboard_path(user.id))
     end
+  end
 
+  describe 'Sad Path' do
     it "can't create a new user without a name" do
       visit register_path
       fill_in :user_name, with: ''
