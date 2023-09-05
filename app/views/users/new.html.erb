@@ -1,16 +1,19 @@
-<div id="new-user-header">
+<div class="login-register-form">
   <h2>Register a New User</h2>
-</div>
 
-<div id="new-user-form">
   <%= form_with model: @user, url: register_index_path do |f| %>
-
     <%= f.label :name %>
     <%= f.text_field :name %>
-
+    <br/>
     <%= f.label :email %>
     <%= f.email_field :email %>
-
+    <br/>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <br/>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+    <br/>
     <%= f.submit %>
   <% end %>
 </div>

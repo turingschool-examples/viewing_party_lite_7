@@ -11,7 +11,7 @@
   </head>
 
   <body>
-    <nav id="nav-bar">
+    <nav class="nav-bar">
       <%= link_to "Home", root_path %>
     </nav>
 
@@ -20,8 +20,7 @@
     </div>
 
     <%= yield %>
-
-    <% if flash.any? %>
+    <% if flash.any? && !flash[:success_login] %>
       <% flash.each do |type, msg| %>
         <div>
           <%= msg %>

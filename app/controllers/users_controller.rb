@@ -11,17 +11,18 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
-      flash[:success] = "New User created successfully."
+      session[:user_id] = user.id
       redirect_to user_path(user)
+      flash[:success_login] = "New account created successfully."
     else 
-      flash[:alert] = "#{error_message(user.errors)}"
-      redirect_to new_register_path
+      flash[:error] = "#{error_message(user.errors)}"
+      redirect_to register_path
     end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:name, :email) 
+    params.require(:user).permit(:name, :email, :password, :password_confirmation) 
   end
 end
