@@ -11,10 +11,10 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
-      flash[:success] = "New User created successfully."
+      flash[:success_login] = "New account created successfully."
       redirect_to user_path(user)
     else 
-      flash[:alert] = "#{error_message(user.errors)}"
+      flash[:error] = "#{error_message(user.errors)}"
       redirect_to register_path
     end
   end
@@ -28,9 +28,10 @@ class UsersController < ApplicationController
       user = User.find_by_email(params[:email])
       raise "Invalid credentials. Please Try again." unless user && user.authenticate(params[:password])
       redirect_to user_path(user)
+      flash[:success_login] = "Welcome back, #{user.name}"
     rescue StandardError => e
       redirect_to login_path
-      flash[:alert] = e.message
+      flash[:error] = e.message
     end
   end
 
