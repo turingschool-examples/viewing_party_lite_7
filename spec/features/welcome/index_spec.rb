@@ -9,7 +9,7 @@ RSpec.describe 'Welcome Page', type: :feature do
     @user_3 = User.create!(name: 'Elena', email: 'iheartmydogs@email.com', password: 'test123!', password_confirmation: 'test123!')
   end
 
-  describe "When visiting the root path '/'" do
+  describe "When visiting the root path '/' as a visitor (not logged in)" do
     it 'has the title of the application' do
       visit root_path
 
@@ -46,6 +46,69 @@ RSpec.describe 'Welcome Page', type: :feature do
       end
 
       expect(current_path).to eq(login_path)
+    end
+
+    it 'does not show any existing users names' do
+      visit root_path
+
+      expect(page).to_not have_content(@user_1.name)
+      expect(page).to_not have_content(@user_2.name)
+      expect(page).to_not have_content(@user_3.name)
+    end
+  end
+
+  describe "when I visit '/' as a logged in user" do
+    it 'no longer shows the login or create account buttons' do
+      visit login_path
+      fill_in('Email', with: @user_1.email)
+      fill_in('Password', with: @user_1.password)
+      click_button('Sign In')
+
+      visit root_path
+
+      expect(page).to_not have_link('Sign In')
+      expect(page).to_not have_link('Create an Account')
+    end
+
+    it 'instead shows a button to logout' do
+      visit login_path
+      fill_in('Email', with: @user_1.email)
+      fill_in('Password', with: @user_1.password)
+      click_button('Sign In')
+
+      visit root_path
+
+      expect(page).to have_link('Log Out')
+    end
+
+    it 'When [Log Out] is clicked, it redirects to landing page' do
+      visit login_path
+      fill_in('Email', with: @user_1.email)
+      fill_in('Password', with: @user_1.password)
+      click_button('Sign In')
+
+      visit root_path
+      click_link('Log Out')
+
+      expect(current_path).to eq(root_path)
+      expect(page).to have_link('Sign In')
+      expect(page).to have_link('Create an Account')
+    end
+
+    it 'lists all users names' do
+      visit login_path
+      fill_in('Email', with: @user_1.email)
+      fill_in('Password', with: @user_1.password)
+      click_button('Sign In')
+
+      visit root_path
+
+      within("div#all-users") do
+        expect(page).to have_content("Existing Users")
+        expect(page).to have_content(@user_1.name)
+        expect(page).to have_content(@user_2.name)
+        expect(page).to have_content(@user_3.name)
+      end
     end
   end
 end

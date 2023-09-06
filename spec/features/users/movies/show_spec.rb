@@ -9,44 +9,28 @@ RSpec.describe 'Movie detail page', type: :feature do
 
       json_response_search = File.read('spec/fixtures/movie_search_info.json')
       stub_request(:get, 'https://api.themoviedb.org/3/search/movie?query=forrest+gump')
-        .with(
-          headers: {
-            'Authorization' => Rails.application.credentials.tmdb[:access_token]
-          }
-        )
+        .with(headers: {'Authorization' => Rails.application.credentials.tmdb[:access_token]})
         .to_return(status: 200, body: json_response_search)
       response_search = JSON.parse(json_response_search, symbolize_names: true)
       @movie_search = response_search[:results].first
 
       json_response_details = File.read('spec/fixtures/movie_details.json')
       stub_request(:get, "https://api.themoviedb.org/3/movie/#{@movie_search[:id]}")
-        .with(
-          headers: {
-            'Authorization' => Rails.application.credentials.tmdb[:access_token]
-          }
-        )
+        .with(headers: { 'Authorization' => Rails.application.credentials.tmdb[:access_token] })
         .to_return(status: 200, body: json_response_details)
       response_details = JSON.parse(json_response_details, symbolize_names: true)
       @movie_details = response_details
 
       json_response_reviews = File.read('spec/fixtures/movie_reviews.json')
       stub_request(:get, "https://api.themoviedb.org/3/movie/#{@movie_search[:id]}/reviews")
-        .with(
-          headers: {
-            'Authorization' => Rails.application.credentials.tmdb[:access_token]
-          }
-        )
+        .with( headers: { 'Authorization' => Rails.application.credentials.tmdb[:access_token] })
         .to_return(status: 200, body: json_response_reviews)
       response_reviews = JSON.parse(json_response_reviews, symbolize_names: true)
       @movie_reviews = response_reviews
 
       json_response_credits = File.read('spec/fixtures/movie_credits.json')
       stub_request(:get, "https://api.themoviedb.org/3/movie/#{@movie_search[:id]}/credits")
-        .with(
-          headers: {
-            'Authorization' => Rails.application.credentials.tmdb[:access_token]
-          }
-        )
+        .with(headers: { 'Authorization' => Rails.application.credentials.tmdb[:access_token] })
         .to_return(status: 200, body: json_response_credits)
       response_credits = JSON.parse(json_response_credits, symbolize_names: true)
       @movie_credits = response_credits
@@ -55,7 +39,15 @@ RSpec.describe 'Movie detail page', type: :feature do
     end
 
     it 'has a button to create a viewing party' do
-      expect(page).to have_button("Create Viewing Party for #{@movie_search[:title]}") # TODO: make viewing parties :')
+      expect(page).to have_button("Create Viewing Party for #{@movie_search[:title]}") 
+    end
+
+    it 'only allows direct to create a viewing party if logged in' do
+      click_button("Create Viewing Party for #{@movie_search[:title]}")
+
+      expect(current_path).to eq(user_movie_path(@user, @movie_search[:id]))
+      expect(page).to have_content("Please log in or register to create a viewing party")
+      expect(page).to have_link("log in or register", href: root_path, count: 1)
     end
 
     it 'has button to go to the discover page' do

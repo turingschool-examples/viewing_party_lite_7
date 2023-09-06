@@ -9,11 +9,19 @@ RSpec.describe 'New Viewing Party', type: :feature do
     @user3 = create(:user)
 
     @movie = Movie.new({id: 13, title: 'Forrest Gump'})
-  end
-  describe 'When visiting the new viewing party form', :vcr do
-    it 'has a form' do 
 
-      visit new_user_movie_viewing_party_path(@user, @movie.id)
+    visit login_path
+
+    fill_in('Email', with: @user.email)
+    fill_in('Password', with: @user.password)
+    click_button('Sign In')
+  end
+
+  describe 'When visting new viewing party form', :vcr do
+    context 'as a logged in user' do
+      it 'has a form' do 
+        visit new_user_movie_viewing_party_path(@user, @movie.id)
+      end
     end
   end
 end

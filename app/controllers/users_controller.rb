@@ -1,7 +1,13 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find(params[:id])
-    @facade = MoviePartyFacade.new
+    begin
+      @user = User.find(params[:id])
+      raise "Please log in or register to view this page" unless valid_session_and_user?
+      @facade = MoviePartyFacade.new
+    rescue StandardError => e
+      redirect_to root_path
+      flash[:error] = e.message
+    end
   end
 
   def new
@@ -11,7 +17,7 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
-      session[:user_id] = user.id
+      login(user) #see SessionHelper
       redirect_to user_path(user)
       flash[:success_login] = "New account created successfully."
     else 
@@ -24,5 +30,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation) 
+  end
+
+  def valid_session_and_user?
+    logged_in? && session[:user_id] == @user.id
   end
 end

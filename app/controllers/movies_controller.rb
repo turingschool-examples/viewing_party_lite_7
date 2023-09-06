@@ -8,6 +8,5 @@ class MoviesController < ApplicationController
     @user = User.find(params[:user_id])
     @movie_id = (params[:id])
     @facade = MoviesDetailsFacade.new(@movie_id)
-
   end
 end
