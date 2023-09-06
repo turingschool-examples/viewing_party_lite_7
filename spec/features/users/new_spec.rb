@@ -27,9 +27,11 @@ RSpec.describe 'User Registration Page', type: :feature do
       within('#registration-form') do
         fill_in('Name', with: 'Ethan')
         fill_in('Email', with: 'ethan@turing.edu')
+        fill_in('Password', with: 'password123')
+        fill_in('Confirm Password', with: 'password123')
         click_button('Create New User')
       end
-
+    
       user = User.last
 
       # Flash message
@@ -45,7 +47,7 @@ RSpec.describe 'User Registration Page', type: :feature do
         click_button('Create New User')
       end
 
-      expect(page).to have_content("Error: Name can't be blank, Email can't be blank")
+      expect(page).to have_content("Name can't be blank, Email can't be blank")
       expect(current_path).to eq(register_path)
 
       # Name is left blank
@@ -81,11 +83,13 @@ RSpec.describe 'User Registration Page', type: :feature do
     end
 
     it 'returns an error if an email is not unique' do
-      User.create(name: 'Original Ethan', email: 'ethan@turing.edu')
+      User.create(name: 'Original Ethan', email: 'ethan@turing.edu', password: 'password123', password_confirmation: 'password123')
 
       within('#registration-form') do
         fill_in('Name', with: 'Clone Ethan')
         fill_in('Email', with: 'ethan@turing.edu')
+        fill_in('Password', with: 'password123')
+        fill_in('Confirm Password', with: 'password123')
         click_button('Create New User')
       end
 
