@@ -3,7 +3,7 @@ class ViewingPartyController < ApplicationController
   def new
     begin 
       @user = User.find(params[:user_id])
-      raise "Please #{view_context.link_to ' log in or register', root_path} to view this page" unless logged_in?
+      raise "Please #{view_context.link_to ' log in or register', root_path} to create a viewing party" unless logged_in?
       @users = User.all
       @facade = MoviesDetailsFacade.new(params[:movie_id])
     rescue StandardError => e

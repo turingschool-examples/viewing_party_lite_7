@@ -46,7 +46,7 @@ RSpec.describe 'Movie detail page', type: :feature do
       click_button("Create Viewing Party for #{@movie_search[:title]}")
 
       expect(current_path).to eq(user_movie_path(@user, @movie_search[:id]))
-      expect(page).to have_content("Please log in or register to view this page")
+      expect(page).to have_content("Please log in or register to create a viewing party")
       expect(page).to have_link("log in or register", href: root_path, count: 1)
     end
 
