@@ -1,12 +1,13 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
+  before_action :require_user, only: :show
   def new
     @user = User.new
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
     @parties = PartyUser.where(host: true)
   end
 
@@ -35,9 +36,21 @@ class UsersController < ApplicationController
     end
   end
 
+  def logout
+    session.delete(:user_id)
+    redirect_to root_path
+  end
+
   private
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def require_user
+    unless current_user
+      flash[:alert] = "You must be logged in or registered to access your dashboard."
+      redirect_to root_path
+    end
   end
 end
