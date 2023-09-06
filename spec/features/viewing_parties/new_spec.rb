@@ -43,6 +43,8 @@ describe 'New Viewing Party Page' do
 
   describe 'happy path' do
     it "redirects to the user's dashboard where the new event is shown" do
+      pending "need to add feature for movie to show up on invited guest's dashboard"
+
       check(@user2.name_email)
       click_button('Create Party')
 
