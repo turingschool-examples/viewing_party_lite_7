@@ -153,7 +153,5 @@ RSpec.describe 'User Registration Page', type: :feature do
       expect(page).to have_content('Error: Email has already been taken')
       expect(current_path).to eq(register_path)
     end
-
-
   end
 end
