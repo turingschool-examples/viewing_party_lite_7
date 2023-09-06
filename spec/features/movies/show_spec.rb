@@ -73,7 +73,7 @@ RSpec.describe 'Movie Show Page' do
           
           expect(page).to have_button('Create Viewing Party for Jarhead')
           click_button('Create Viewing Party for Jarhead')
-          save_and_open_page
+
           expect(current_path).to eq(movie_path(@user_1.id, 25))
           expect(page).to have_content('You must be logged in or registered to create a viewing party')
         end
