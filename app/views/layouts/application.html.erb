@@ -19,14 +19,14 @@
       <h1>Viewing Party</h1>
     </div>
 
-    <%= yield %>
-    <% if flash.any? && !flash[:success_login] && !flash[:error_login_required] %>
+    <% if flash.any?  %>
       <% flash.each do |type, msg| %>
-        <div>
+        <div class="flash-message">
           <%= msg.html_safe %>
         </div>
       <% end %>
     <% end %>
-
+    
+    <%= yield %>
   </body>
 </html>
