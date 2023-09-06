@@ -10,12 +10,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(user_params)
-    if user.save
+    user = user_params
+    user[:email] = user[:email].downcase
+    new_user = User.new(user)
+    if new_user.save
       flash[:success] = 'User successfully created'
-      redirect_to user_path(user)
+      redirect_to user_path(new_user)
     else
-      flash[:error] = "Error: #{user.errors.full_messages.to_sentence}"
+      flash[:error] = "Error: #{new_user.errors.full_messages.to_sentence}"
       redirect_to register_path
     end
   end

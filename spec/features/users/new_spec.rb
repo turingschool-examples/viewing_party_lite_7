@@ -135,7 +135,7 @@ RSpec.describe 'User Registration Page', type: :feature do
         click_button('Create New User')
       end
 
-      expect(page).to have_content("Error: Email '#{not_email}' is not a valid email")
+      expect(page).to have_content("Error: Email '#{not_email.downcase}' is not a valid email")
       expect(current_path).to eq(register_path)
     end
 
