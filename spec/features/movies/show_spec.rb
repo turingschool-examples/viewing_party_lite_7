@@ -10,6 +10,11 @@ RSpec.describe 'Movie Show Page' do
   end
   describe 'When I visit a movie show page', :vcr do
     it 'I see a button to create a viewing party' do
+      visit login_path
+      fill_in :email, with: @user_1.email
+      fill_in :password, with: @user_1.password
+      click_button 'Log In'
+
       visit movie_path(@user_1.id, 25)
 
       expect(page).to have_button('Create Viewing Party for Jarhead')
@@ -42,7 +47,7 @@ RSpec.describe 'Movie Show Page' do
 
     it 'displays 10 cast members and their role', :vcr do
       visit movie_path(@user_1.id, 25)
-
+      
       within '#cast' do
         expect(page).to have_content('Jake Gyllenhaal as Anthony Swofford')
         expect(page).to have_content('Jamie Foxx as Staff Sgt. Sykes')
@@ -50,14 +55,28 @@ RSpec.describe 'Movie Show Page' do
         expect(page).to have_content('Chris Cooper as Lt. Col. Kazinski')
       end
     end
-
+    
     it 'displays the count of reviews and all reviews with author', :vcr do
       visit movie_path(@user_1.id, 569_094)
-
+      
       within '#reviews' do
         expect(page).to have_content('8 Reviews')
         expect(page).to have_content('garethmb')
         expect(page).to have_content('Life as a teenager is never easy')
+      end
+    end
+    
+    describe 'Sad Path' do
+      describe 'Cannot create a viewing party if not logged in' do
+        it 'redirects to movie show page and flashes an error message' do
+          visit movie_path(@user_1.id, 25)
+          
+          expect(page).to have_button('Create Viewing Party for Jarhead')
+          click_button('Create Viewing Party for Jarhead')
+          save_and_open_page
+          expect(current_path).to eq(movie_path(@user_1.id, 25))
+          expect(page).to have_content('You must be logged in or registered to create a viewing party')
+        end
       end
     end
   end
