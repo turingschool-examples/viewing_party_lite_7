@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   def show
     begin
       @user = User.find(params[:id])
-      raise "Please log in or register to view this page" unless logged_in?
+      raise "Please log in or register to view this page" unless valid_session_and_user?
       @facade = MoviePartyFacade.new
     rescue StandardError => e
       redirect_to root_path
@@ -30,5 +30,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation) 
+  end
+
+  def valid_session_and_user?
+    logged_in? && session[:user_id] == @user.id
   end
 end
