@@ -32,7 +32,7 @@ RSpec.describe User, type: :model do
       @user_3 = User.create!(name: 'Tim', email: 'tim@test.com', password: 'password123', password_confirmation: 'password123')
 
       @party_1 = Party.create!(duration: 1, date: Date.current, time: Time.current, movie_id: 5)
-      @party_2 = Party.create!(duration: 1, date: Date.current, time: Time.current, movie_id: 25)
+      @party_2 = Party.create!(duration: 1, date: Date.current, time: Time.current, movie_id: 5)
 
       PartyUser.create!(user_id: @user_1.id, party_id: @party_1.id, host: true)
       PartyUser.create!(user_id: @user_2.id, party_id: @party_1.id, host: false)

@@ -71,16 +71,19 @@ RSpec.describe "User Dashboard page '/users/:id'", type: :feature do
       click_button 'Log In'
       visit dashboard_path(@user_1.id)
 
-      expect(page).to have_link('Mambo Italiano')
-      expect(page).to have_content(@party_1.date.strftime('%A, %B %d, %Y'))
-      expect(page).to have_content(@party_1.time.strftime('%I:%M%p'))
-      expect(page).to have_content('Hosting')
+      within '#invited_parties' do
+        expect(page).to have_content("Parties I'm Going To")
+        expect(page).to have_link('Spider-Man: Across the Spider-Verse')
+        expect(page).to have_content(@party_2.date.strftime('%A, %B %d, %Y'))
+        expect(page).to have_content(@party_2.time.strftime('%I:%M%p'))
+      end
 
-      expect(page).to have_link('Spider-Man: Across the Spider-Verse')
-      expect(page).to have_content(@party_2.date.strftime('%A, %B %d, %Y'))
-      expect(page).to have_content(@party_2.time.strftime('%I:%M%p'))
-      expect(page).to have_content('Invited')
-
+      within '#hosted_parties' do
+        expect(page).to have_content("Parties I'm Hosting")
+        expect(page).to have_link('Mambo Italiano')
+        expect(page).to have_content(@party_1.date.strftime('%A, %B %d, %Y'))
+        expect(page).to have_content(@party_1.time.strftime('%I:%M%p'))
+      end
       click_link('Spider-Man: Across the Spider-Verse')
       expect(current_path).to eq(movie_path(@user_1.id, @movie_2.id))
     end

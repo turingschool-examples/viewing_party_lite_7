@@ -4,15 +4,34 @@
   <%= button_to "Discover Movies", discover_path(@user.id), method: :get %>
 </div>
 <br>
-<div>
-  <% @parties.each do |user_party| %>
-    <p><%= link_to "#{user_party.party.movie.title}", movie_path(@user.id, user_party.party.movie_id) %></p>
-    <p><%= user_party.party.date.strftime("%A, %B %d, %Y") %></p>
-    <p><%= user_party.party.time.strftime("%I:%M%p") %></p>
-    <% if user_party.host == true && user_party.user_id == @user.id %>
-      <p><%= "Hosting" %></p>
-    <% else %>
-      <p><%= "Invited" %></p>
+<div id='invited_parties'>
+  <h3>Parties I'm Going To</h3>
+  <% @invited_parties.each do |party| %>
+    <p><%= link_to "#{party.movie_title}", movie_path(@user, party.movie_id) %></p>
+    <p><%= (party.date).strftime("%A, %B %d, %Y") %></p>
+    <p><%= (party.time).strftime("%I:%M%p") %></p>
+    <% party.users.each do |user| %> 
+      <% if user.id != @user.id %>
+          <p><%= user.name %></p>
+        <% else %>
+          <p><b><%= user.name %></b></p>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+
+
+<div id='hosted_parties'>
+  <h3>Parties I'm Hosting</h3>
+  <% @hosted_parties.each do |party| %>
+    <p><%= link_to "#{party.movie_title}", movie_path(@user, party.movie_id) %></p>
+    <p><%= (party.date).strftime("%A, %B %d, %Y") %></p>
+    <p><%= (party.time).strftime("%I:%M%p") %></p>
+    <% party.users.each do |user| %> 
+      <% if user.id != @user.id %>
+          <p><%= user.name %></p>
+      <% end %>
     <% end %>
   <% end %>
 </div>

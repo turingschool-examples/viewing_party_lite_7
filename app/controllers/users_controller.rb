@@ -8,7 +8,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(session[:user_id])
-    @parties = PartyUser.where(host: true)
+    @hosted_parties = @user.hosted_parties
+    @invited_parties = @user.invited_parties
   end
 
   def create

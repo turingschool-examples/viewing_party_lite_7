@@ -9,7 +9,8 @@ class Party < ApplicationRecord
   validates :duration, numericality: { only_integer: true }
   validates :movie_id, presence: true
 
-  def movie
-    MovieFacade.get_movie(movie_id)
+  def movie_title
+   movie = MovieFacade.get_movie(self.movie_id)
+   movie.title
   end
 end
