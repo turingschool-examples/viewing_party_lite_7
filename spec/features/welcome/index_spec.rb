@@ -55,6 +55,14 @@ RSpec.describe 'Welcome Page', type: :feature do
       expect(page).to_not have_content(@user_2.name)
       expect(page).to_not have_content(@user_3.name)
     end
+
+    it 'does not show the user dashboard if not logged in' do
+      visit root_path
+      visit user_path(@user_1)
+
+      expect(current_path).to eq(root_path)
+      expect(page).to have_content("Please log in or register to view this page")
+    end
   end
 
   describe "when I visit '/' as a logged in user" do
@@ -103,9 +111,12 @@ RSpec.describe 'Welcome Page', type: :feature do
 
       visit root_path
 
-      expect(page).to have_content(@user_1.name)
-      expect(page).to have_content(@user_2.name)
-      expect(page).to have_content(@user_3.name)
+      within("div#all-users") do
+        expect(page).to have_content("Existing Users")
+        expect(page).to have_content(@user_1.name)
+        expect(page).to have_content(@user_2.name)
+        expect(page).to have_content(@user_3.name)
+      end
     end
   end
 end
