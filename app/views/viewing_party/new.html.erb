@@ -1,7 +1,7 @@
 <h1><%= @facade.movie_details.title  %></h1>
 
 <div id="new-viewing-party">
-  <%= form_with model: @viewing_party, url: user_movie_viewing_party_index_path(@user, @movie_id) do |f| %>
+  <%= form_with url: user_movie_viewing_party_index_path(@user, @facade.movie_id) do |f| %>
 
     <%= f.label :duration %>
     <%= f.number_field :duration, value: @facade.movie_details.runtime, min: @facade.movie_details.runtime  %> 

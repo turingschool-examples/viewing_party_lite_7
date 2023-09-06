@@ -1,11 +1,15 @@
 class ViewingPartyController < ApplicationController
 
   def new
-    @user = User.find(params[:user_id])
-    @users = User.all
-    @movie_id = (params[:movie_id])
-    @facade = MoviesDetailsFacade.new(@movie_id)
-    @viewing = ViewingParty.new
+    begin 
+      @user = User.find(params[:user_id])
+      raise "Please #{view_context.link_to ' log in or register', root_path} to view this page" unless logged_in?
+      @users = User.all
+      @facade = MoviesDetailsFacade.new(params[:movie_id])
+    rescue StandardError => e
+      redirect_to user_movie_path(@user, params[:movie_id])
+      flash[:error_login_required] = e.message
+    end
   end
   
   def create

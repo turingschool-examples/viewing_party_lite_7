@@ -20,10 +20,10 @@
     </div>
 
     <%= yield %>
-    <% if flash.any? && !flash[:success_login] %>
+    <% if flash.any? && !flash[:success_login] && !flash[:error_login_required] %>
       <% flash.each do |type, msg| %>
         <div>
-          <%= msg %>
+          <%= msg.html_safe %>
         </div>
       <% end %>
     <% end %>
