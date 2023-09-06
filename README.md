@@ -21,8 +21,9 @@ Code Organization and Refactoring:
 - Adhered to the RuboCop style guide for enhanced code quality.
 
 User Authentication and Data Security:
-- Implemented user registration with unique email validation.
-- Implemented user login/logout leveraging 
+- Leveraged bcrypt for user password encryption and authentication.
+- Implemented validation of user registration with unique email addresses.
+- Created a SessionHelper module to define custom methods that streamline the process of logging in/out and validating the current session.
 - Utilized Rails encryption to securely store and manage API access keys.
 
 Team Collaboration:
