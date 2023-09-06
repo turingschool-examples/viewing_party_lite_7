@@ -11,13 +11,16 @@
   </head>
 
   <body>
-    <% flash.each do |msg| %>
-      <div>
-        <%= msg[1] %>
-      </div>
+    <nav>
+      <%= link_to "Home", root_path %>
+    </nav>
+
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: name %>
     <% end %>
-    <%= link_to "Home", root_path %>
+    
     <h1 id="header">Viewing Party</h1>
+    
     <%= yield %>
   </body>
 </html>
