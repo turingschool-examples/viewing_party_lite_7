@@ -15,17 +15,14 @@ Viewing Party is a pair-programmed entertainment project that enables users to e
 API Consumption:
 - Developed facades, services, and POROs to abstract the process of consuming the IMDb API.
 - Connected successfully with 6 different API endpoints to retrieve various movie-related data.
-<img width="800" alt="Screenshot 2023-08-27 at 1 58 44 PM" src="https://github.com/westonio/viewing_party/assets/117330008/6a4c6254-cfe0-4263-b10c-066fcde3efd3">
-<img width="600" alt="Screenshot 2023-08-27 at 1 56 59 PM" src="https://github.com/westonio/viewing_party/assets/117330008/15212166-1aeb-4f8f-8ac0-2f36b9d8ca38">
 
-<br/>
-<br/>
 Code Organization and Refactoring:
 - Separated functionality into new methods in order to uphold the Single Responsiblity Principle within the Facade, Service, and POROs, improving the maintainability and readability.
 - Adhered to the RuboCop style guide for enhanced code quality.
 
 User Authentication and Data Security:
 - Implemented user registration with unique email validation.
+- Implemented user login/logout leveraging 
 - Utilized Rails encryption to securely store and manage API access keys.
 
 Team Collaboration:
@@ -35,7 +32,7 @@ Team Collaboration:
 
 ### Project Challenges
 - This was my first time consuming an API with so many endpoints, so writing tests for components that interact with external APIs was challenging due to potential changes in the API's response structure or availability. Mocking API responses effectively became crucial.
-- Creating the data model to accurately depict users, viewing parties, and their interconnections posed a challenge, particularly since we had to account for the future integration of movie objects and their roles within the API requests. 
+- Creating the data model to accurately depict users, viewing parties, and their interconnections posed a challenge, particularly since we had to account for the future integration of movie objects and their roles within the API requests.
 
 ---
 ### Features
@@ -61,11 +58,24 @@ Team Collaboration:
 > - The party details are displayed on the user's dashboard and on the dashboards of invited friends.
 > - Technical Achievements
 
+### Sneak Peek at some code:
+**User Authentication/Authorization**
+<img width="1500" alt="User Authentication/Authorizatio" src="https://github.com/westonio/viewing_party/assets/117330008/2b6a7ae5-f080-4f28-a582-e26623c7d506">
+
+<br/>
+<br/>
+
+**API Consumption through Facades, Services, and POROs**
+<img width="1500" alt="Screenshot 2023-08-27 at 1 58 44 PM" src="https://github.com/westonio/viewing_party/assets/117330008/6a4c6254-cfe0-4263-b10c-066fcde3efd3">
+<img width="1500" alt="Screenshot 2023-08-27 at 1 56 59 PM" src="https://github.com/westonio/viewing_party/assets/117330008/15212166-1aeb-4f8f-8ac0-2f36b9d8ca38">
+
+<br/>
+<br/>
+
 #### Thoughts on Refactoring and Improvements
 > To improve this project, I would like to:
 > - Refactor the ViewingParty #create controller action to slim it up.
 > - Create more robust testing for creating Viewing Parties
-> - Implement User Authentication via OAuth or bcrypt
 > - Implement the ability for users to add reviews and ratings for movies they watched, via the IMDb API.
 > - Enhancing the overall user experience through further UI/UX improvements.
 
