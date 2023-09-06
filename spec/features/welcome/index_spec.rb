@@ -25,25 +25,32 @@ RSpec.describe 'Landing Page', type: :feature do
       expect(current_path).to eq(register_path)
     end
 
-    it 'displays a list of existing users' do
+    it 'Does NOT display a list of existing users unless logged in' do
       visit root_path
-      within '#existing_users' do
-        expect(page).to have_content('movie_buff333@gmail.com')
-        expect(page).to have_content('i_hate_movies@gmail.com')
-        expect(page).to have_content('gamer4134@gmail.com')
-      end
+
+      expect(page).to_not have_content('Existing Users')
+      expect(page).to_not have_content(@user_1.email)
+      expect(page).to_not have_content(@user_2.email)
+      expect(page).to_not have_content(@user_3.email)
     end
 
-    it "each name is a link to it's user dashboard if logged in" do
+    it "DISPLAYS existing users on landing page when logged in" do
       visit login_path
       fill_in :email, with: @user_1.email
       fill_in :password, with: @user_1.password
       click_button 'Log In'
       visit root_path
+
       within '#existing_users' do
-        click_link(@user_1.email)
+        expect(page).to have_content('Existing Users')
+        expect(page).to have_content(@user_1.email)
+        expect(page).to have_content(@user_2.email)
+        expect(page).to have_content(@user_3.email)
+
+        expect(page).to_not have_link(@user_1.email)
+        expect(page).to_not have_link(@user_2.email)
+        expect(page).to_not have_link(@user_3.email)
       end
-      expect(current_path).to eq(dashboard_path(@user_1.id))
     end
 
     it 'has a home link on every page' do
@@ -54,6 +61,13 @@ RSpec.describe 'Landing Page', type: :feature do
       visit dashboard_path(@user_1.id)
       click_link('Home')
       expect(current_path).to eq(root_path)
+    end
+
+    it 'cannot visit dashboard without logging in' do
+      visit root_path
+      visit dashboard_path(@user_1.id)
+      expect(current_path).to eq(root_path)
+      expect(page).to have_content("You must be logged in or registered to access your dashboard")
     end
   end
 end

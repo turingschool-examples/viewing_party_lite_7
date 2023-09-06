@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
+  before_action :require_user, only: :show
   def new
     @user = User.new
   end
@@ -44,5 +45,12 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def require_user
+    unless current_user
+      flash[:alert] = "You must be logged in or registered to access your dashboard."
+      redirect_to root_path
+    end
   end
 end

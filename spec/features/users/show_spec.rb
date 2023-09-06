@@ -40,7 +40,10 @@ RSpec.describe "User Dashboard page '/users/:id'", type: :feature do
 
   describe "When I visit a user's dashboard page", :vcr do
     it "Displays the user's name at the top of the page" do
-      visit dashboard_path(@user_1.id)
+      visit login_path
+      fill_in :email, with: @user_1.email
+      fill_in :password, with: @user_1.password
+      click_button 'Log In'
 
       expect(page).to have_content("#{@user_1.name}'s Dashboard")
       expect(page).to_not have_content("#{@user_2.name}'s Dashboard")
@@ -48,7 +51,10 @@ RSpec.describe "User Dashboard page '/users/:id'", type: :feature do
     end
 
     it 'Has a button to discover movies', :vcr do
-      visit dashboard_path(@user_1.id)
+      visit login_path
+      fill_in :email, with: @user_1.email
+      fill_in :password, with: @user_1.password
+      click_button 'Log In'
 
       within '#discover_movies' do
         expect(page).to have_button('Discover Movies')
