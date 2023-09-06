@@ -23,7 +23,7 @@ Code Organization and Refactoring:
 User Authentication and Data Security:
 - Leveraged bcrypt for user password encryption and authentication.
 - Implemented validation of user registration with unique email addresses.
-- Created a SessionHelper module to define custom methods that streamline the process of logging in/out and validating the current session.
+- Streamlined the process of logging in/out and validating the current session through the use of custom SessionsHelper Module methods.
 - Utilized Rails encryption to securely store and manage API access keys.
 
 Team Collaboration:
