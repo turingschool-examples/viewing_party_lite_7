@@ -48,4 +48,43 @@ RSpec.describe 'Welcome Page', type: :feature do
       expect(current_path).to eq(login_path)
     end
   end
+
+  describe "when I visit '/' as a logged in user" do
+    it 'no longer shows the login or create account buttons' do
+      visit login_path
+      fill_in('Email', with: @user_1.email)
+      fill_in('Password', with: @user_1.password)
+      click_button('Sign In')
+
+      visit root_path
+
+      expect(page).to_not have_link('Sign In')
+      expect(page).to_not have_link('Create an Account')
+    end
+
+    it 'instead shows a button to logout' do
+      visit login_path
+      fill_in('Email', with: @user_1.email)
+      fill_in('Password', with: @user_1.password)
+      click_button('Sign In')
+
+      visit root_path
+
+      expect(page).to have_link('Log Out')
+    end
+
+    it 'When [Log Out] is clicked, it redirects to landing page' do
+      visit login_path
+      fill_in('Email', with: @user_1.email)
+      fill_in('Password', with: @user_1.password)
+      click_button('Sign In')
+
+      visit root_path
+      click_link('Log Out')
+
+      expect(current_path).to eq(root_path)
+      expect(page).to have_link('Sign In')
+      expect(page).to have_link('Create an Account')
+    end
+  end
 end
