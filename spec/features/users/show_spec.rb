@@ -64,7 +64,11 @@ RSpec.describe "User Dashboard page '/users/:id'", type: :feature do
       expect(current_path).to_not eq(discover_path(@user_2.id))
     end
 
-    xit 'Has a section that lists viewing parties', :vcr do
+    it 'Has a section that lists viewing parties', :vcr do
+      visit login_path
+      fill_in :email, with: @user_1.email
+      fill_in :password, with: @user_1.password
+      click_button 'Log In'
       visit dashboard_path(@user_1.id)
 
       expect(page).to have_link('Mambo Italiano')
@@ -78,7 +82,7 @@ RSpec.describe "User Dashboard page '/users/:id'", type: :feature do
       expect(page).to have_content('Invited')
 
       click_link('Spider-Man: Across the Spider-Verse')
-      expect(current_path).to eq(movie_path(@user_2.id, @movie_2.id))
+      expect(current_path).to eq(movie_path(@user_1.id, @movie_2.id))
     end
   end
 end
