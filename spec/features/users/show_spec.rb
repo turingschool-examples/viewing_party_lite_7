@@ -9,20 +9,12 @@ RSpec.describe "User Dashboard page '/users/:id'", type: :feature do
     @user_3 = User.create!(name: 'Tammy', email: 'gamer4134@gmail.com', password: 'movies123', password_confirmation: 'movies123')
     @user_4 = User.create!(name: 'Sammy', email: 'moives_are_okay_i_guess@gmail.com', password: 'movies123', password_confirmation: 'movies123')
 
-    @movie = Movie.new({
-                         id: 321,
-                         original_title: 'Mambo Italiano',
-                         vote_average: 5.8,
-                         runtime: 89,
+    @movie = Movie.new({id: 321, original_title: 'Mambo Italiano', vote_average: 5.8, runtime: 89,
                          genres: [{ id: 35, name: 'Comedy' }, { id: 10_749, name: 'Romance' }],
                          overview: 'When an Italian man comes out of the closet, it affects both his life and his crazy family.'
                        })
 
-    @movie_2 = Movie.new({
-                           id: 569_094,
-                           original_title: 'Jarhead',
-                           vote_average: 5.8,
-                           runtime: 89,
+    @movie_2 = Movie.new({id: 569_094, original_title: 'Jarhead', vote_average: 5.8, runtime: 89,
                            genres: [{ id: 35, name: 'Comedy' }, { id: 10_749, name: 'Romance' }],
                            overview: 'When an Italian man comes out of the closet, it affects both his life and his crazy family.'
                          })
