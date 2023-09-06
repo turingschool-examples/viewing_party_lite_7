@@ -1,7 +1,13 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find(params[:id])
-    @facade = MoviePartyFacade.new
+    begin
+      @user = User.find(params[:id])
+      raise "Please log in or register to view this page" unless logged_in?
+      @facade = MoviePartyFacade.new
+    rescue StandardError => e
+      redirect_to root_path
+      flash[:error] = e.message
+    end
   end
 
   def new
