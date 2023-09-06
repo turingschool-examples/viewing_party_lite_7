@@ -19,16 +19,18 @@ RSpec.describe 'User Dashboard', type: :feature do
 
     @uvp_3 = UserViewingParty.create!(user_id: @user.id, viewing_party_id: @viewing_party_2.id, host: true)
     @uvp_4 = UserViewingParty.create!(user_id: @user2.id, viewing_party_id: @viewing_party_2.id)
-
-    visit login_path
-
-    fill_in('Email', with: @user.email)
-    fill_in('Password', with: @user.password)
-    click_button('Sign In')
-    # Automatically redirected to user dashboard (Show page)
   end
 
-  describe 'When I visit (/users/:id)', :vcr do
+  describe 'When I visit (/users/:id) after logging in', :vcr do
+    before :each do
+      visit login_path
+
+      fill_in('Email', with: @user.email)
+      fill_in('Password', with: @user.password)
+      click_button('Sign In')
+      # Automatically redirected to user dashboard (Show page)
+    end
+
     it 'displays <usernames dashboard>' do
       expect(page).to have_content("#{@user.name}'s Dashboard", count: 1)
       expect(page).to_not have_content("#{@user2.name}'s Dashboard")
@@ -59,6 +61,16 @@ RSpec.describe 'User Dashboard', type: :feature do
     it 'shows a list of users invited to the viewing party' do
       expect(page).to have_content(@user.name)
       expect(page).to have_content(@user2.name)
+    end
+  end
+
+  describe 'When I visit (/users/:id) not logged in' do
+    it 'does not show the user dashboard and redirects to homepage' do
+      # not logged in
+      visit user_path(@user)
+
+      expect(current_path).to eq(root_path)
+      expect(page).to have_content("Please log in or register to view this page")
     end
   end
 end
