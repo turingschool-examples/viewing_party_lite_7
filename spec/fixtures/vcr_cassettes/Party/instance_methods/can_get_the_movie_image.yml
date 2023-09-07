@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/59?api_key=<MOVIE_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 07 Sep 2023 01:17:24 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=26164
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 0e3f95200a2091c585b04ba3f8ebaf96
+      X-Memc-Age:
+      - '17723'
+      X-Memc-Expires:
+      - '7809'
+      Etag:
+      - W/"c1c0e719ebba0a3352f78cc085e4eaf0"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 66651bffa749255769c1c4956851dc96.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - LAX50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - sbrC2Vt9ksLPBXdl-0z0BA0qnC1YzbjH_jnOw_y-533z-wTrAkKE9g==
+      Age:
+      - '48'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvNUVFZERUVjBJQnhKMko0akRVRHZsMDc2djdmLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjozMjAwMDAwMCwiZ2VucmVzIjpbeyJpZCI6MTgsIm5hbWUiOiJEcmFtYSJ9LHsiaWQiOjUzLCJuYW1lIjoiVGhyaWxsZXIifSx7ImlkIjo4MCwibmFtZSI6IkNyaW1lIn1dLCJob21lcGFnZSI6IiIsImlkIjo1OSwiaW1kYl9pZCI6InR0MDM5OTE0NiIsIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF90aXRsZSI6IkEgSGlzdG9yeSBvZiBWaW9sZW5jZSIsIm92ZXJ2aWV3IjoiQW4gYXZlcmFnZSBmYW1pbHkgaXMgdGhydXN0IGludG8gdGhlIHNwb3RsaWdodCBhZnRlciB0aGUgZmF0aGVyIGNvbW1pdHMgYSBzZWVtaW5nbHkgc2VsZi1kZWZlbnNlIG11cmRlciBhdCBoaXMgZGluZXIuIiwicG9wdWxhcml0eSI6MTYuNDYyLCJwb3N0ZXJfcGF0aCI6Ii9ycmM2R2lBS0hEclVqcDhPbWRWbmc5aFJXQm4uanBnIiwicHJvZHVjdGlvbl9jb21wYW5pZXMiOlt7ImlkIjoxMiwibG9nb19wYXRoIjoiL21ldmhuZVdTcWJqVTIyRDFNWE5kNEg5eDByMC5wbmciLCJuYW1lIjoiTmV3IExpbmUgQ2luZW1hIiwib3JpZ2luX2NvdW50cnkiOiJVUyJ9LHsiaWQiOjYzNjMsImxvZ29fcGF0aCI6bnVsbCwibmFtZSI6IkJlbmRlclNwaW5rIiwib3JpZ2luX2NvdW50cnkiOiIifV0sInByb2R1Y3Rpb25fY291bnRyaWVzIjpbeyJpc29fMzE2Nl8xIjoiQ0EiLCJuYW1lIjoiQ2FuYWRhIn0seyJpc29fMzE2Nl8xIjoiREUiLCJuYW1lIjoiR2VybWFueSJ9LHsiaXNvXzMxNjZfMSI6IlVTIiwibmFtZSI6IlVuaXRlZCBTdGF0ZXMgb2YgQW1lcmljYSJ9XSwicmVsZWFzZV9kYXRlIjoiMjAwNS0wOS0yMyIsInJldmVudWUiOjYwNzQwODI3LCJydW50aW1lIjo5Niwic3Bva2VuX2xhbmd1YWdlcyI6W3siZW5nbGlzaF9uYW1lIjoiRW5nbGlzaCIsImlzb182MzlfMSI6ImVuIiwibmFtZSI6IkVuZ2xpc2gifV0sInN0YXR1cyI6IlJlbGVhc2VkIiwidGFnbGluZSI6IlRvbSBTdGFsbCBoYWQgdGhlIHBlcmZlY3QgbGlmZSDigKYgdW50aWwgaGUgYmVjYW1lIGEgaGVyby4iLCJ0aXRsZSI6IkEgSGlzdG9yeSBvZiBWaW9sZW5jZSIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo3LjE2OCwidm90ZV9jb3VudCI6Mjg4OH0=
+  recorded_at: Thu, 07 Sep 2023 01:18:12 GMT
+recorded_with: VCR 6.2.0
