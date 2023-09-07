@@ -28,9 +28,8 @@
     <p><%= (party.date).strftime("%A, %B %d, %Y") %></p>
     <p><%= (party.time).strftime("%I:%M%p") %></p>
     <% party.users.each do |user| %> 
-      <% if user.id != @user.id %>
+      <% next if user == @user %> 
           <p><%= user.name %></p>
-      <% end %>
     <% end %>
   <% end %>
 </div>
