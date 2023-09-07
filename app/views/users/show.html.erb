@@ -7,7 +7,7 @@
 <div id='invited_parties'>
   <h3>Parties I'm Going To</h3>
   <% @invited_parties.each do |party| %>
-    <p><%= link_to "#{party.movie_title}", movie_path(@user, party.movie_id) %></p>
+    <%= image_tag "https://image.tmdb.org/t/p/w200#{party.get_image}", width: 200, height: 300 %>    <p><%= link_to "#{party.movie_title}", movie_path(@user, party.movie_id) %></p>
     <p><%= (party.date).strftime("%A, %B %d, %Y") %></p>
     <p><%= (party.time).strftime("%I:%M%p") %></p>
     <% party.users.each do |user| %> 
@@ -19,12 +19,11 @@
     <% end %>
   <% end %>
 </div>
-
-
-
+<br>
 <div id='hosted_parties'>
   <h3>Parties I'm Hosting</h3>
   <% @hosted_parties.each do |party| %>
+    <%= image_tag "https://image.tmdb.org/t/p/w200#{party.get_image}", width: 200, height: 300 %>
     <p><%= link_to "#{party.movie_title}", movie_path(@user, party.movie_id) %></p>
     <p><%= (party.date).strftime("%A, %B %d, %Y") %></p>
     <p><%= (party.time).strftime("%I:%M%p") %></p>

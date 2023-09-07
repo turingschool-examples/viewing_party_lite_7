@@ -13,4 +13,8 @@ class Party < ApplicationRecord
    movie = MovieFacade.get_movie(self.movie_id)
    movie.title
   end
+
+  def get_image
+    image = MovieService.find_by_id(self.movie_id)[:poster_path]
+  end
 end
