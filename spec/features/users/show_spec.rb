@@ -31,6 +31,7 @@ RSpec.feature "Welcome Index" do
     load_test_data
     
     visit user_path(@anne)
+    save_and_open_page
 
     expect(find("#party-#{@arthor.id}")).to have_content("Arthor")
     expect(find("#party-#{@arthor.id}")).to have_content(@arthor.date_formatter)
