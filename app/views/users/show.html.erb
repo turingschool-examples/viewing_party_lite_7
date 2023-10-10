@@ -1,5 +1,5 @@
 <h3><%= "#{@user.name}'s Dashboard" %></h3>
-<%= button_to "Discover Movies", user_discover(@user) %>
+<%= button_to "Discover Movies", user_discover_path(@user) %>
 
 <table>
   <tr>
@@ -10,13 +10,13 @@
     <th>Hosting</th>
   </tr>
 <% @user.viewing_parties.each do |party| %>
-<section id="party-<%= party.id %>">
+  <section id="party-<%= party.id %>">
   <tr>
-    <td><%= party.title %></td>
-    <td><%= party.day%></td>
-    <td><%= "#{party.duration} min" %></td>
-    <td><%= party.start_time %></td>
-    <td><%= if party.user_viewing_parties.host == true
+  <td><%= party.movie_title %></td>
+  <td><%= party.date_formatter %></td>
+  <td><%= "#{party.duration} min" %></td>
+  <td><%= party.time_formatter %></td>
+    <td><%= if party.user_viewing_parties.where(user_id: @user.id)[0].host == true
               "Hosting"
             else 
               "Invited"
