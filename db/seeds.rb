@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+@user = User.create(name: "Brad", email: "bradsmith@gmail.com")
+    @viewing_party = @user.viewing_parties.create(duration: 180, day: "December 2, 2023", view_time: "7:00 pm")
