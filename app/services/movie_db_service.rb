@@ -2,7 +2,7 @@ require "httparty"
 
 class MovieDbService
   include HTTParty
-  BASE_URL = 'https://www.themoviedb.org/'
+  BASE_URL = 'https://www.themoviedb.org/3'
   API_KEY = '<9076c0dc7c9df9e9b7fe792a574c94d4>'
 
   def initialize
