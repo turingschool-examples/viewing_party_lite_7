@@ -5,4 +5,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  root to: 'landing_page#index'
+
+  resources :users, only: %i[show new create]
 end
