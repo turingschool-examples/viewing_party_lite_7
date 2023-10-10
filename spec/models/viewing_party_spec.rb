@@ -5,7 +5,7 @@ RSpec.describe ViewingParty, type: :model do
     it {should have_many :user_viewing_parties}
     # for some reason this validation isn't working despite everything being set up correctly as far as I can tell
     # not even necessary just though having all relationships validated would be nice
-    # it {should have_many(:users).through(:user_viewing_parties)}
+    it {should have_many(:users).through(:user_viewing_parties)}
   end
 
   describe 'validations' do
