@@ -24,8 +24,6 @@ RSpec.describe "User Dashboard Page", type: :feature do
 
       click_button "Discover Movies"
 
-      save_and_open_page
-
       expect(current_path).to eq("/users/#{@user.id}/discover")
     end
   end
