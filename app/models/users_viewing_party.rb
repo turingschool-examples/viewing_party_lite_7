@@ -1,4 +1,8 @@
 class UsersViewingParty < ApplicationRecord
   belongs_to :user 
-  belongs_to :viewing_party  
+  belongs_to :viewing_party
+
+  def name
+    user.name
+  end
 end
