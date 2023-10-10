@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   get "/", to: "welcome#index"
   get "/register", to: "users#new"
 
-  resources :users, only: [:new, :show] do
-    get "/:id/discover", to: "users#discover"
+  resources :users, only: [:create, :show] do
+    get "/discover", to: "users#discover"
     resources :movies, only: [:index, :show] do
       resources :viewing_parties, only: :new
     end

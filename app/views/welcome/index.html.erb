@@ -1,0 +1,7 @@
+<%= button_to "Create a New User", register_path %>
+
+<h3> Existing User </h3>
+
+<% @users.each do |user| %>
+  <%= user.email %>
+<% end %>
