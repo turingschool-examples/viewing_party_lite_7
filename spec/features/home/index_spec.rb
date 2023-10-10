@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'home landing page', type: :view do
+RSpec.feature 'home landing page', type: :feature do
   it 'displays the landing page with links' do
     allan = User.create(name: 'Allan', email: 'allan@allan.com')
     
