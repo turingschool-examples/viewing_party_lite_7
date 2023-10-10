@@ -1,0 +1,12 @@
+<h2><%= @user.name %>'s Dashboard</h2>
+
+<%= form_with url: "users/#{@user.id}/discover", method: :get do |form| %>
+  <%= form.submit "Discover Movies" %>
+<% end %>
+
+<section id="viewing_parties">
+  <% @user.viewing_parties.each do |party| %>
+    <p><%= party.day %></p>
+    <p><%= party.view_time %></p>
+  <% end %>
+</section>
