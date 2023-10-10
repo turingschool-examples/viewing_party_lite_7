@@ -4,15 +4,16 @@
 
 <div class="viewing parties">
   <h2> Viewing Parties </h2>
-  <% if @user.parties.empty? %>
+  <% if @viewing_parties.empty? %>
     <p> No viewing parties scheduled. </p>
   <% else %>
     <ul>
-      <% @user.parties.each do |party| %>
+      <% @viewing_parties.each do |party| %>
         <li>
           <p>Movie: <%= party.movie_title %></p>
           <p>Date: <%= party.date %></p>
           <p>Time: <%= party.time %></p>
+          <%= link_to "Join", viewing_party_path(party) %>
         </li>
       <% end %>
     </ul>
