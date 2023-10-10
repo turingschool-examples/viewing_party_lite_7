@@ -5,17 +5,16 @@ RSpec.describe 'Landing Page' do
     load_test_data
   end
 
-  it 'When a user visits the root path they should be on the landing page ('/') which includes:' do
+  it 'When a user visits the root path they should be on the landing page which includes:' do
 
     visit "/"
 
-    expect(page).to_have("ViewingPartyLite7")
-    expect(page).to_have button("Create a New User")
+    expect(page).to have_content("ViewingPartyLite7")
+    expect(page).to have_button("Create a New User")
 
-    expect(page).to_have link("landing page")
-    expect(page).to_have link("Tom")
-    expect(page).to_have link("Jerry")
-    expect(page).to_have link("Bob")
-
+    expect(page).to have_link("landing page")
+    expect(page).to have_link("Tom")
+    expect(page).to have_link("Jerry")
+    expect(page).to have_link("Bob")
   end
 end
