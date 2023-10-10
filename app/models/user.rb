@@ -3,5 +3,5 @@ class User < ApplicationRecord
   has_many :viewing_parties, through: :user_viewing_parties
 
   validates :name, presence: true, format: { with: /\A[A-Za-z -']+\z/ }
-  validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: /^([A-Za-z0-9._-]+@[A-Za-z0-9._-]+\.[A-Za-z]{2,})$/ }
+  validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: /\A([A-Za-z0-9._-]+@[A-Za-z0-9._-]+\.[A-Za-z]{2,})\z/ }
 end
