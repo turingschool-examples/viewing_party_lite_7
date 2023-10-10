@@ -20,11 +20,12 @@ RSpec.describe "Register", type: :feature do
         expect(page).to have_content("Email (must be unique)")
         expect(page).to have_button("Register")
 
-        fill_in "Name", with: "#{user_1.name}"
-        fill_in "Email", with: "#{user_1.email}"
+        fill_in "Name", with: "George"
+        fill_in "email", with: "George@gmail.com"
         click_button "Register"
 
-        expect(curent_path).to eq("/users/#{user_1.id}")
+        user = User.find_by(name: "George", email: "George@gmail.com")
+        expect(current_path).to eq user_path(user.id)
       end
     end
   end
