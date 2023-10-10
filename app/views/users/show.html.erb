@@ -1,28 +1,30 @@
 <h3><%= "#{@user.name}'s Dashboard" %></h3>
-<%= button_to "Discover Movies", user_discover_path(@user) %>
+<%= button_to "Discover Movies", user_discover_path(@user), method: :get %>
 
 <table>
   <tr>
+    <th>Poster</th>
     <th>Movie Title</th>
     <th>Date</th>
     <th>Duration</th>
     <th>Start Time</th>
     <th>Hosting</th>
   </tr>
-<% @user.viewing_parties.each do |party| %>
-  <section id="party-<%= party.id %>">
-  <tr>
-  <td><%= party.movie_title %></td>
-  <td><%= party.date_formatter %></td>
-  <td><%= "#{party.duration} min" %></td>
-  <td><%= party.time_formatter %></td>
-    <td><%= if party.user_viewing_parties.where(user_id: @user.id)[0].host == true
-              "Hosting"
-            else 
-              "Invited"
-            end %></td>
-  </tr>
-</section>
+  <% @user.viewing_parties.each do |party| %>
+    <section id="party-<%= party.id %>">
+    <tr>
+    <td><%= "image" %></td>
+    <td><%= party.movie_title %></td>
+    <td><%= party.date_formatter %></td>
+    <td><%= "#{party.duration} min" %></td>
+    <td><%= party.time_formatter %></td>
+      <td><%= if party.user_viewing_parties.where(user_id: @user.id)[0].host == true
+                "Hosting"
+              else 
+                "Invited"
+              end %></td>
+    </tr>
+    </section>
   <% end %>
 </table>
 

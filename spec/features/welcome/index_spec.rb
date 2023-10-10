@@ -17,9 +17,9 @@ RSpec.feature "Welcome Index" do
 
     expect(page).to have_button("Create a New User")
 
-    # click_button "Create a New User"
+    click_button "Create a New User"
 
-    # expect(page).to have_current_path(register_path)
+    expect(page).to have_current_path(register_path)
   end
 
   it "show all users" do
