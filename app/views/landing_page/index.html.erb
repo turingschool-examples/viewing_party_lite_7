@@ -1,0 +1,15 @@
+<h1>Viewing Party Lite</h1>
+
+<%= button_to "New User", new_user_path, method: :get %>
+
+<div id="users">
+  <h2>Users</h2>
+  <ul>
+    <% @users.each do |user| %>
+      <li>
+        <p><%= link_to "#{user.name}", user_path(user) %></p>
+      </li>
+    <% end %>
+  </ul>
+  </div>
+  <p><%= link_to "Landing Page", root_path %></p>
