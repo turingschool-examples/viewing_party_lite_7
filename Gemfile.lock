@@ -113,13 +113,10 @@ GEM
     faraday-net_http (3.0.2)
     globalid (1.1.0)
       activesupport (>= 5.0)
-<<<<<<< HEAD
     httparty (0.21.0)
       mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
-=======
     hashdiff (1.0.1)
->>>>>>> ccb2b59b37bd8975d31dbc57c1ef6c937b73b04e
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.2.1)
@@ -247,12 +244,9 @@ GEM
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
     ruby-progressbar (1.13.0)
-<<<<<<< HEAD
     ruby2_keywords (0.0.5)
-=======
     shoulda-matchers (5.3.0)
       activesupport (>= 5.2.0)
->>>>>>> ccb2b59b37bd8975d31dbc57c1ef6c937b73b04e
     simplecov (0.22.0)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -277,12 +271,9 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.4.2)
-<<<<<<< HEAD
     warden (1.2.9)
       rack (>= 2.0.9)
-=======
     vcr (6.2.0)
->>>>>>> ccb2b59b37bd8975d31dbc57c1ef6c937b73b04e
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
