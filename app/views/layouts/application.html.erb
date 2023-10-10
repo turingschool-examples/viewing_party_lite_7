@@ -11,6 +11,16 @@
   </head>
 
   <body>
+  <table>
+    <tbody>
+        <td><%= link_to "Home", "/"  %></td>
+    </tbody>
+  </table>
+  <% flash.each do |type, msg| %>
+      <div class="alert-info">
+        <%= msg %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

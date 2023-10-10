@@ -6,5 +6,12 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-@user = User.create(name: "Brad", email: "bradsmith@gmail.com")
-    @viewing_party = @user.viewing_parties.create(duration: 180, day: "December 2, 2023", view_time: "7:00 pm")
+User.destroy_all
+
+noelle = User.create!(name: "Noelle", email: "Queen@aol.com")
+chris = User.create!(name: "Chris", email: "muttonchops@yahoo.com")
+
+viewing_party_1 = ViewingParty.create!(duration: 120, day: "2021-08-01", view_time: "2021-08-01 19:00:00 UTC")
+
+user_viewing_partie_1 = UserViewingParty.create!(user_id: noelle.id, viewing_party_id: viewing_party_1.id)
+user_id_2 = UserViewingParty.create!(user_id: chris.id, viewing_party_id: viewing_party_1.id)
