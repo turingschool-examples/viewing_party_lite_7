@@ -15,5 +15,3 @@ viewing_party_1 = ViewingParty.create!(duration: 120, day: "2021-08-01", view_ti
 
 user_viewing_partie_1 = UserViewingParty.create!(user_id: noelle.id, viewing_party_id: viewing_party_1.id)
 user_id_2 = UserViewingParty.create!(user_id: chris.id, viewing_party_id: viewing_party_1.id)
-
-
