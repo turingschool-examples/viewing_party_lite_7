@@ -1,0 +1,28 @@
+<h3><%= "#{@user.name}'s Dashboard" %></h3>
+<%= button_to "Discover Movies", user_discover(@user) %>
+
+<table>
+  <tr>
+    <th>Movie Title</th>
+    <th>Date</th>
+    <th>Duration</th>
+    <th>Start Time</th>
+    <th>Hosting</th>
+  </tr>
+<% @user.viewing_parties.each do |party| %>
+<section id="party-<%= party.id %>">
+  <tr>
+    <td><%= party.title %></td>
+    <td><%= party.day%></td>
+    <td><%= "#{party.duration} min" %></td>
+    <td><%= party.start_time %></td>
+    <td><%= if party.user_viewing_parties.host == true
+              "Hosting"
+            else 
+              "Invited"
+            end %></td>
+  </tr>
+</section>
+  <% end %>
+</table>
+
