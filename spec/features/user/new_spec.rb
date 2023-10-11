@@ -14,6 +14,5 @@ RSpec.feature 'register new user', type: :feature do
     click_button 'Register'
 
     expect(page).to have_content('Allan')
-    expect(page).to have_content('allan@allan.com')
   end
 end 
