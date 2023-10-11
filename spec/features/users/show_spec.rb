@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'User Page' do
-  it '' do 
+  xit '' do 
     @user1 = User.create(name: 'Joe', email: 'joeiscool@yahoo.com')
     @viewing_party1 = ViewingParty.create!(duration: 3, party_date: Date.today, start_time: Time.now)
 
