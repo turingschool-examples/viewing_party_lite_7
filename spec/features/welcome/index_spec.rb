@@ -24,7 +24,7 @@ RSpec.describe 'Welcome Page', type: :feature do
       end
     end
 
-    xit 'has a button to create a new user' do
+    it 'has a button to create a new user' do
       visit root_path
 
       within('div#homepage-buttons') do
@@ -40,9 +40,9 @@ RSpec.describe 'Welcome Page', type: :feature do
 
       within("div#all-users") do
         expect(page).to have_content("Existing Users")
-        expect(page).to have_content(@user_1.name)
-        expect(page).to have_content(@user_2.name)
-        expect(page).to have_content(@user_3.name)
+        expect(page).to have_content(@user_1.email)
+        expect(page).to have_content(@user_2.email)
+        expect(page).to have_content(@user_3.email)
       end
     end
   end
