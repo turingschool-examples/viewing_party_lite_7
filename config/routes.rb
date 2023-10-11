@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   root "welcome#index"
   get "/register/new", to: "users#new"
   post "/register", to: "users#create"
+
+  get "/users/:id/movies/:movie_id/viewing_party/new", to: "viewing_parties#new"
 end
