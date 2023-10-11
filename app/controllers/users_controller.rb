@@ -6,7 +6,6 @@ class UsersController < ApplicationController
 
   def new
     @user = User.create(item_params)
-    #params.permit(:name, :email)
   end
   
   def create

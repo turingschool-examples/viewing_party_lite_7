@@ -10,6 +10,7 @@ RSpec.describe 'User SHow Page' do
     visit user_path(@user1.id)
     
     expect(page).to have_content("Toms show page")
+    expect(page).to have_content(@user1.email)
 
   end
 end

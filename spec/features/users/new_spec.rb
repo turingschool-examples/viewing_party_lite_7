@@ -20,7 +20,7 @@ RSpec.describe 'User Registration Page' do
     fill_in "Email", with: "Jon@a_website.com"
 
     click_button "Register"
-    #expect(current_path).to eq("/")
+    
 
     expect(page).to have_content("Jons show page")
 
