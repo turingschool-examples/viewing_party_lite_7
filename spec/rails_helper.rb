@@ -63,17 +63,39 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 end
 
-# VCR.configure do |config|
-#   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
-#   config.hook_into :webmock
-#   config.filter_sensitive_data('<PROPUBLICA_API_KEY>') { Rails.application.credentials.propublica[:key] }
-#   config.default_cassette_options = { re_record_interval: 7.days }
-#   config.configure_rspec_metadata!
-# end
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+  config.hook_into :webmock
+  config.configure_rspec_metadata!
+  config.filter_sensitive_data('<API_KEY>') { Rails.application.credentials.the_movie_db[:key] }
+end
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
     with.test_framework :rspec
     with.library :rails
   end
+end
+
+RSpec.configure do |config|
+  config.include FactoryBot::Syntax::Methods
+end
+
+RSpec.configure do |config|
+  config.after(:suite) do
+    Faker::UniqueGenerator.clear
+  end
+end
+
+require 'webmock/rspec'
+WebMock.disable_net_connect!(allow_localhost: true)
+
+
+require 'vcr'
+
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+  config.hook_into :webmock
+  config.configure_rspec_metadata!
+  config.filter_sensitive_data('<API_KEY>') { Rails.application.credentials.the_movie_db[:key] }
 end
