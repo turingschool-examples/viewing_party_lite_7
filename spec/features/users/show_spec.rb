@@ -13,7 +13,10 @@ RSpec.describe "Users Show page", type: :feature do
     end
 
     it "has a button to discover movies" do
-      expect(page).to have_button("Discover Movies", href: "/users/#{@user_1.id}/discover")
+      expect(page).to have_button("Discover Movies")
+
+      click_button("Discover Movies")
+      expect(page).to have_current_path("/users/#{@user_1.id}/discover")
     end
 
     it "has a section for viewing parties" do
