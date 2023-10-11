@@ -1,4 +1,4 @@
-<%= link_to "Return to Discover Page", "/users/#{@user.id}/discover" %>
+<%= button_to "Return to Discover Page", "/users/#{@user.id}/discover", method: :get %>
 <h1><%= @header %></h1>
 <% @movies.each do |movie| %>
   <p><%= link_to "#{movie[:title]}", "/users/#{@user.id}/movies/#{movie[:id]}" %>
