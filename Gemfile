@@ -75,4 +75,5 @@ group :test do
   gem "shoulda-matchers"
   gem "webmock"
   gem "vcr"
+  gem "orderly"
 end
