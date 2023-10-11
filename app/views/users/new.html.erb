@@ -1,0 +1,13 @@
+<div class="register-form">
+  <h2>Register a New User</h2>
+
+  <%= form_with model: @user, url: register_index_path do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br/>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+    <br/>
+    <%= f.submit %>
+  <% end %>
+</div>
