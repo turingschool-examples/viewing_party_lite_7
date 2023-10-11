@@ -268,6 +268,12 @@
       "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/app/models/user.rb": {
         "lines": [
           1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
           null
         ]
       },
@@ -280,37 +286,59 @@
           null
         ]
       },
-      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/app/controllers/users_controller.rb": {
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/spec/models/user_viewing_party_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/app/models/user_viewing_party.rb": {
         "lines": [
           1,
           1,
+          1,
+          null
+        ]
+      },
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/spec/models/viewing_party_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
           2,
           null,
           null,
           1,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          0,
+          2,
+          2,
           null,
           null,
           null
         ]
       },
-      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/app/controllers/application_controller.rb": {
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/app/models/viewing_party.rb": {
         "lines": [
+          1,
+          1,
+          1,
           null,
-          null,
+          1,
           1,
           null
         ]
       }
     },
-    "timestamp": 1697039978
+    "timestamp": 1697042045
   }
 }
