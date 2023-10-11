@@ -22,7 +22,7 @@ RSpec.describe 'User Registration Page' do
     click_button "Register"
     
 
-    expect(page).to have_content("Jons show page")
+    expect(page).to have_content("Jon's Dashboard")
 
     visit "/"
 
