@@ -22,16 +22,15 @@ RSpec.feature "Welcome Index" do
     expect(page).to have_content("#{@anne.name}'s Dashboard")
     expect(page).to have_button("Discover Movies")
 
-    # click_button "Discover Movies"
-
-    # expect(page).to have_current_path(user_discover_path(@anne))
+    click_button "Discover Movies"
+    save_and_open_page
+    expect(page).to have_current_path(user_discover_path(@anne))
   end
 
   it "shows viewing parties" do 
     load_test_data
     
     visit user_path(@anne)
-    save_and_open_page
 
     expect(find("#party-#{@arthor.id}")).to have_content("Arthor")
     expect(find("#party-#{@arthor.id}")).to have_content(@arthor.date_formatter)
