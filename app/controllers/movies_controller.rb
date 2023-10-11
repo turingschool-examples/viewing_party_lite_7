@@ -21,6 +21,19 @@ class MoviesController < ApplicationController
   end
   
   def show
+    conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
+      faraday.params["api_key"] = "ac385d6c06bfaba2ca90eeb5b61150dd"
+    end
 
+    response = conn.get("3/movie/#{params[:movie_id]}")
+    @movie = JSON.parse(response.body, symbolize_names: true)
+
+    response = conn.get("3/movie/#{params[:movie_id]}/credits")
+    json = JSON.parse(response.body, symbolize_names: true)
+    @movie_cast = json[:cast][0..9]
+
+    response = conn.get("3/movie/#{params[:movie_id]}/reviews")
+    json = JSON.parse(response.body, symbolize_names: true)
+    @movie_reviews = json[:results]
   end
 end
