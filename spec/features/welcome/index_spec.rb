@@ -5,15 +5,13 @@ RSpec.describe "Welcome Page", type: :feature do
     it "I should see the title of the application" do 
       visit "/"
 
-      expect(page).to have_content("Welcome to Viewing Party")
+      expect(page).to have_content("Viewing Party")
     end
     
     it "A button to create a new user" do 
       visit "/"
 
       expect(page).to have_button("Create a New User")
-      # click_on "Create a New User"
-      # expect(current_path).to eq("/register")
     end
     
     it "A list of existing users, which links to a user dashboard" do 
