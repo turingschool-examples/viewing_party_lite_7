@@ -1,0 +1,8 @@
+<%= link_to 'landing page', "/" %>
+ViewingPartyLite7
+
+<%= button_to 'Create a New User', "/registration" %>
+
+<% @users.each do |user| %>
+  <%= link_to "#{user.name}", "/users/#{user.id}" %></br>
+<% end %>
