@@ -3,4 +3,20 @@ class Party < ApplicationRecord
 
   has_many :user_parties
   has_many :users, through: :user_parties
+
+  def host?(user)
+    host = UserParty.find_by_sql(
+    "select user_parties.host from user_parties
+    inner join parties on user_parties.party_id = parties.id
+    where parties.id = #{self.id}
+    and user_parties.user_id = #{user.id};"
+    ).first.host
+
+    return "Hosting" if host
+    return "Invited" if !host
+  end
+
+  def formated_time
+    self.party_date.strftime("%A, %B %-d, %Y, %I:%M %P")
+  end
 end

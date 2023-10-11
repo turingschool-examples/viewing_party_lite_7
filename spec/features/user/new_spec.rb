@@ -14,7 +14,7 @@ RSpec.describe 'Register Page', type: :feature do
       fill_in "Email:", with: "partytime@gmail.com"
       click_on "Register"
 
-      expect(page).to have_content("Wayne's Page")
+      expect(page).to have_content("Wayne's Dashboard")
 
       visit register_path
 
