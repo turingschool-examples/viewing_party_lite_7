@@ -1,6 +1,7 @@
 # app/controllers/movies_controller.rb
 class MoviesController < ApplicationController
   def index
+    require 'pry';binding.pry
     if params[:q] == "keyword"
       response = conn.get("/3/search/movie") do |req|
         req.params["with_keywords"] = params[:search]

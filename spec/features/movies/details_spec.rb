@@ -48,6 +48,14 @@ RSpec.feature "Movie Details" do
 
     expect(page).to have_current_path(new_user_movie_viewing_party_path(@anne, @arthur[:movie_id]))
   end
+
+  it 'shows the vote average for the movie', :vcr do
+    visit user_movie_path(@anne, @arthur[:movie_id])
+
+    within('#details') do
+      expect(page).to have_content('Vote: 5.6')
+    end
+  end
 end
 
 # rubocop:enable Metrics/BlockLength
