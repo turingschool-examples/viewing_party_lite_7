@@ -33,7 +33,11 @@ RSpec.describe "User Show Page/ Dashboard" do
     visit user_path(@u3)
 
     within("#discover") do 
-      expect(page).to have_button("")
+      expect(page).to have_button("Discover Movies")
+
+      click_button "Discover Movies"
+
+      expect(current_path).to eq user_discover_path(@u3)
     end
   end
 end
