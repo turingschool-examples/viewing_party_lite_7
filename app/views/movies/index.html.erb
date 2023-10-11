@@ -1,0 +1,7 @@
+<h1>Movie Results </h1>
+<% @results.each do |result| %>
+  <ul class="movie_result">
+  <li class="title"><%= result[:title] %></li>
+  <li class="vote_average"><%= result[:vote_average] %></li>
+</ul>
+<% end %>
