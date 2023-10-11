@@ -1,0 +1,10 @@
+<%= link_to "Return to Discover Page", "/users/#{@user.id}/discover" %>
+<h1><%= @header %></h1>
+<% @movies.each do |movie| %>
+  <p><%= link_to "#{movie[:title]}", "/users/#{@user.id}/movies/#{movie[:id]}" %>
+  Vote Average: <%= movie[:vote_average] %></p>
+<% end %>
+
+
+
+
