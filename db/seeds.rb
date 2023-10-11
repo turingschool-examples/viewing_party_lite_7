@@ -7,3 +7,6 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 @user_1 = User.create!(name: "Kiwi", email: "kiwibird@gmail.com")
+@user_2 = User.create!(name: 'Pam', email: 'pam@email.com')
+@user_3 = User.create!(name: 'Lana', email: 'lana@email.com')
+@user_4 = User.create!(name: 'Archer', email: 'archer@email.com')
