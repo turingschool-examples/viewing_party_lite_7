@@ -5,4 +5,12 @@ class ViewingParty < ApplicationRecord
   validates :movie_id, presence: true
   validates :duration, presence: true, numericality: { only_integer: true }
   validates :date_time, presence: true
+
+  def image
+    "image"
+  end
+
+  def movie_title
+    "movie title"
+  end
 end

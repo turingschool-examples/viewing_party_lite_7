@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # Controllers users
 class UsersController < ApplicationController
   def new; end
