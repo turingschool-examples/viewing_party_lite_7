@@ -1,27 +1,36 @@
-require "httparty"
+require "faraday"
+require "json"
 
 class MovieDbService
-  include HTTParty
-  BASE_URL = 'https://www.themoviedb.org/3'
-  API_KEY = '<9076c0dc7c9df9e9b7fe792a574c94d4>'
+  BASE_URL = 'https://api.themoviedb.org/3'
+  API_KEY = Rails.application.credentials.the_movie_db[:key]
 
-  def initialize
-    @options = { query: { api_key: API_KEY } }
+  def connection
+    Faraday.new(url: BASE_URL) do |faraday|
+      faraday.params['api_key'] = API_KEY
+      faraday.adapter Faraday.default_adapter
+    end
   end
 
   def movie_details(movie_id)
-    response = self.class.get("#{BASE_URL}/movie/#{movie_id}", @options)
-    response.parsed_response
+    response = connection.get("/movie/#{movie_id}")
+    parse_response(response)
   end
 
   def movie_cast(movie_id)
-    response = self.class.get("#{BASE_URL}/movie/#{movie_id}/credits", @options)
-    response.parsed_response["cast"].first(10)
+    response = connection.get("/movie/#{movie_id}/credits")
+    parse_response(response)["cast"].first(10)
   end
 
   def movie_reviews(movie_id)
-    response = self.class.get("#{BASE_URL}/movie/#{movie_id}/reviews", @options)
-    response.parsed_response
+    response = connection.get("/movie/#{movie_id}/reviews")
+    parse_response(response)
+  end
+
+  private
+
+  def parse_response(response)
+    JSON.parse(response.body, symbolize_names: true)
   end
 end
 
