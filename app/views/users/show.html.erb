@@ -1,2 +1,7 @@
-<h3><%= @user.name %>'s Page</h3>
+<h3><%= @user.name %>'s Dashboard</h3>
 
+<%= button_to "Discover Movies", "#{user_path(@user)}/discover", method: :get, data: {turbo: false} %>
+
+<section class="viewing_parties">
+  
+</section>
