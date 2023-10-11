@@ -3,5 +3,5 @@
 </div>
 <div id='buttons'>
   <%= button_to "Discover Movies", user_discover_path(params[:user_id]), method: :get %>
-  <%= button_to "Create Viewing Party for #{@movie[:title]}"%>
+  <%= button_to "Create Viewing Party for #{@movie[:title]}", new_user_movie_viewing_party_path(params[:user_id], params[:id]), method: :get %>
 </div>
