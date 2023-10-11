@@ -1,6 +1,15 @@
-<h1> <%= @user.name %> Dashboard </h1>
+<h1> <%= @user.name %>'s Dashboard </h1>
 
 <button> 
 <a>Discover Movies</a>
 </button> 
 
+<h1 style='border-bottom: 3px solid black'> Viewing Parties </h1>
+<% @viewing_parties.each do |viewing_party| %>
+  <section id="viewing_party-<%= viewing_party.id %>">
+    <h1> Viewing Party ID: <%= viewing_party.id %> </h1>
+    <h2> Duration: <%= viewing_party.duration %> </h2>
+    <h2> Party Date: <%= viewing_party.party_date %> </h2>
+    <h1 style='border-bottom: 3px solid black'> Start time: <%= viewing_party.start_time.strftime('%H:%M') %> </h1>
+  </section>
+<% end %>
