@@ -4,7 +4,8 @@
 
 <br>
 
-<%= form_with url: user_movies_path(@user), params: {q: "keyword"}, method: :get, data: {turbo: false} do |f| %>
+<%= form_with url: user_movies_path(@user), method: :get, data: {turbo: false} do |f| %>
+  <%= f.hidden_field :q, value: "keyword" %>
   <%= f.text_field :search %>
   <%= f.submit "Find Movies" %>
 <% end %>
