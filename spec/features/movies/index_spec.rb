@@ -14,7 +14,7 @@ RSpec.feature "Welcome Index" do
     expect(page).to have_current_path("/")
   end
 
-  describe "top rated movies" do
+  describe "top rated movies", :vcr do
     it "shows movies" do
       load_test_data
 

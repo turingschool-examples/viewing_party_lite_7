@@ -22,19 +22,4 @@ class MoviesController < ApplicationController
     response = conn.get("/movie/#{params[:id]}")
     @movie = JSON.parse(response.body, symbolize_names: true)
   end
-
-
-  private
-
-  def conn
-    Faraday.new(url: "https://api.themoviedb.org") do |faraday|
-      faraday.params["api_key"] = Rails.application.credentials.tmdb[:key]
-    end
-  end
-
-
-
-
-
-
 end
