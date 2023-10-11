@@ -36,9 +36,11 @@ RSpec.describe "Movie Results Page" do
 
       expect("The Godfather").to appear_before("Nuovo Cinema Paradiso")
 
-      click_link "Nuovo Cinema Paradiso"
+      VCR.use_cassette("nuovo_cinema_details") do
+        click_link "Nuovo Cinema Paradiso"
 
-      expect(current_path).to eq("/users/#{@user.id}/movies/11216")
+        expect(current_path).to eq("/users/#{@user.id}/movies/11216")
+      end
     end
   end
 
@@ -65,9 +67,13 @@ RSpec.describe "Movie Results Page" do
 
       expect("Barbie").to appear_before("Barbie in A Mermaid Tale")
 
-      click_link "Barbie in A Mermaid Tale"
+      VCR.use_cassette("barbie_details") do
+        within("#346698") do
+          click_link "Barbie"
+        end
 
-      expect(current_path).to eq("/users/#{@user.id}/movies/34134")
+        expect(current_path).to eq("/users/#{@user.id}/movies/346698")
+      end
     end
   end
 end
