@@ -11,6 +11,22 @@
   </head>
 
   <body>
+    <nav class="nav-bar">
+      <%= link_to "Home", root_path %>
+    </nav>
+
+    <div id="title">
+      <h1>Viewing Party</h1>
+    </div>
+
+    <% if flash.any?  %>
+      <% flash.each do |type, msg| %>
+        <div class="flash-message">
+          <%= msg.html_safe %>
+        </div>
+      <% end %>
+    <% end %>
+    
     <%= yield %>
   </body>
 </html>
