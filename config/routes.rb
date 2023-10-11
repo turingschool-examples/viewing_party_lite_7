@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   
   resources :users, only: [:show, :new, :create]
   
+  get '/register', to: 'users#create'
   # get '/dashboard', to: 'users#show', as: 'dashboard'
 
   # get '/register', to: 'users#new'

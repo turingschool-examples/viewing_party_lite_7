@@ -16,7 +16,7 @@ RSpec.describe 'New User page' do
     within('.user_creation_form') do
       fill_in "Name", with: "Joe"
       fill_in "Email", with: "joe@yahoo.com"
-      click_button("Submit")
+      click_button("Register")
     end
 
     visit(root_path)
@@ -28,7 +28,7 @@ RSpec.describe 'New User page' do
 
     within('.user_creation_form') do
       fill_in "Name", with: "Joe"
-      click_button("Submit")
+      click_button("Register")
     end
 
     expect(current_path).to eq('/users')
