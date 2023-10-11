@@ -21,6 +21,14 @@ RSpec.describe 'User SHow Page' do
     expect(page).to have_content(@party2.id)
     expect(page).to have_content(@party2.name)
     end
+  end
+
+  it 'When I go to a user dashbaord, and click "Discover Movies" button, I am redirected to a discover page /users/:id/discover' do
+
+    visit user_path(@user1.id)
+    
+    click_button "Discover Movies"
+    expect(current_path).to eq(user_discover_index_path(user_id: @user1.id))
 
   end
 end
