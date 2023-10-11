@@ -1,0 +1,10 @@
+<%= button_to "Discover Page", "/users/#{params[:id]}/discover", method: :get %><br>
+
+<% if @movies %>
+  <% @movies.each do |movie| %>
+    <section id=<%= movie[:id] %>>
+      <%= link_to "#{movie[:original_title]}", "/users/#{params[:id]}/movies/#{movie[:id]}" %>
+      <p>Vote Average: <%= movie[:vote_average] %></p>
+    </section>
+  <% end %>
+<% end %>
