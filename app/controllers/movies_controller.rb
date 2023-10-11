@@ -12,9 +12,12 @@ class MoviesController < ApplicationController
 
       json = JSON.parse(response.body, symbolize_names: true)
       @movies = json[:results][0..19]
+    else
+      response = conn.get("3/search/movie?query=#{params[:q]}")
+
+      json = JSON.parse(response.body, symbolize_names: true)
+      @movies = json[:results][0..19]
     end
-    
-    render "movies/search"
   end
   
   def show
