@@ -1,8 +1,6 @@
+# app/controllers/movies_controller.rb
 class MoviesController < ApplicationController
   def index
-    # conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
-    #   faraday.headers["Authorization"] = "bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMjY5ZThmM2QwNWJkYzkxOTI2YzI4YmJkZDAzZTdlZiIsInN1YiI6IjY1MjQzNGE5ZmQ2MzAwMDExYzc3ZTg0ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Ez5IGpT7FNcGDIq2tJITL6EROHwMkzhdyeWfvUfkd1Y"
-    # end
     if params[:q] == "keyword"
       response = conn.get("/3/search/movie") do |req|
         req.params["with_keywords"] = params[:search]
@@ -19,7 +17,8 @@ class MoviesController < ApplicationController
   end
 
   def show
-    response = conn.get("/movie/#{params[:id]}")
+    # require 'pry';binding.pry
+    response = conn.get("/3/movie/#{params[:id]}")
     @movie = JSON.parse(response.body, symbolize_names: true)
   end
 

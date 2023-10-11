@@ -13,7 +13,7 @@
   <% @user.viewing_parties.each do |party| %>
     <section id="party-<%= party.id %>">
     <tr>
-    <td><%= "image" %></td>
+    <td><%= party.image  %></td>
     <td><%= party.movie_title %></td>
     <td><%= party.date_formatter %></td>
     <td><%= "#{party.duration} min" %></td>
