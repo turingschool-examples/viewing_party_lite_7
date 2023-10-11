@@ -3,8 +3,14 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  root to: 'welcome#index'
+
+  get '/register', to: 'users#new'
+  resources :register, only: [:create], controller: 'users'
+
 
   resources :users, only: [:show] do
     resources :discover, only: [:index]
   end
+
 end
