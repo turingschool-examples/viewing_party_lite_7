@@ -30,14 +30,14 @@ RSpec.describe "Movie Results Page" do
       end
 
       within("#11216") do
-        expect(page).to have_link("Nuovo Cinema Paradiso")
+        expect(page).to have_link("Cinema Paradiso")
         expect(page).to have_content("Vote Average: 8.5")
       end
 
-      expect("The Godfather").to appear_before("Nuovo Cinema Paradiso")
+      expect("The Godfather").to appear_before("Cinema Paradiso")
 
       VCR.use_cassette("nuovo_cinema_details") do
-        click_link "Nuovo Cinema Paradiso"
+        click_link "Cinema Paradiso"
 
         expect(current_path).to eq("/users/#{@user.id}/movies/11216")
       end

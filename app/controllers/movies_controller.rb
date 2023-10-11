@@ -4,7 +4,7 @@ class MoviesController < ApplicationController
 
   def search
     conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
-      faraday.params["api_key"] = "ac385d6c06bfaba2ca90eeb5b61150dd"
+      faraday.params["api_key"] = Rails.application.credentials.tmdb[:key]
     end
 
     if params[:q] == "top20rated"
@@ -22,7 +22,7 @@ class MoviesController < ApplicationController
   
   def show
     conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
-      faraday.params["api_key"] = "ac385d6c06bfaba2ca90eeb5b61150dd"
+      faraday.params["api_key"] = Rails.application.credentials.tmdb[:key]
     end
 
     response = conn.get("3/movie/#{params[:movie_id]}")
