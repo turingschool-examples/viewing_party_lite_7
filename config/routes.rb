@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   root to: 'landing_page#index'
 
-  resources :users, only: %i[show new create]
+  resources :users, only: %i[show new create] do 
     resources :discover, only: [:index]
+  end
 end

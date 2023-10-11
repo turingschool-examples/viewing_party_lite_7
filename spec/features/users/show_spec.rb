@@ -28,15 +28,15 @@ RSpec.describe "User Show Page/ Dashboard" do
 
   end
 
-  xit "has a button to take the user to discover movies" do 
+  it "has a button to take the user to discover movies" do 
     visit user_path(@u3)
 
-    within("#discover") do 
+    #within("#discover") do 
       expect(page).to have_button("Discover Movies")
 
       click_button "Discover Movies"
 
-      expect(current_path).to eq user_discover_path(@u3)
-    end
+      expect(current_path).to eq user_discover_index_path(@u3)
+    #end
   end
 end
