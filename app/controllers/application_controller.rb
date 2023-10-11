@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
       faraday.params['api_key'] = Rails.application.credentials.tmdb[:key]
     end
   end
+
+  def json_parse(connection)
+    JSON.parse(connection.body, symbolize_names: true)
+  end
 end

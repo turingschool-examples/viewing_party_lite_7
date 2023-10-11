@@ -21,6 +21,22 @@
 <hr>
 <br>
 <div id='summary'>
-  <h5><strong> Summary </strong></h5>
+  <h4><strong> Summary </strong></h4>
   <%= @movie[:overview] %>
+</div>
+<br>
+<div id='cast'>
+  <h4><strong> Cast </strong></h4>
+  <table>
+    <tr>
+      <th> Character </th>
+      <th> Actor </th>
+    </tr>
+    <% @cast.each do |member| %>
+      <tr>
+        <td><%= member[:character] %></td>
+        <td><%= member[:name] %></td>
+      </tr>
+    <% end %>
+  </table>
 </div>

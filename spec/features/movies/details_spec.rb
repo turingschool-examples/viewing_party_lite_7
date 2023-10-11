@@ -89,6 +89,36 @@ RSpec.feature 'Movie Details' do
       expect('Summary').to appear_before("A drunken playboy stands to lose a wealthy inheritance when he falls for a woman that his family doesn't like.")
     end
   end
+
+  it 'shows the first 10 cast members for the movie', :vcr do
+    visit user_movie_path(@anne, @arthur[:movie_id])
+
+    within('#cast') do
+      expect(page).to have_content('Cast')
+      expect(page).to have_content('Character')
+      expect(page).to have_content('Actor')
+      expect('Character').to appear_before('Actor')
+      expect(page).to have_content('Arthur')
+      expect(page).to have_content('Russell Brand')
+      expect('Arthur').to appear_before('Russell Brand')
+      expect(page).to have_content('Helen Mirren')
+      expect('Russell Brand').to appear_before('Helen Mirren')
+      expect(page).to have_content('Greta Gerwig')
+      expect(page).to have_content('Jennifer Garner')
+      expect(page).to have_content('Geraldine James')
+      expect(page).to have_content('Luis Guzmán')
+      expect(page).to have_content('Nick Nolte')
+      expect(page).to have_content('Peter Van Wagner')
+      expect(page).to have_content('Christina Jacquelyn Calph')
+      expect(page).to have_content('Peter, Candy Store Manager')
+      expect(page).to have_content('John Hodgman')
+      expect('Arthur').to appear_before('Peter, Candy Store Manager')
+      expect('Russell Brand').to appear_before('John Hodgman')
+      expect('Russell Brand').to appear_before('Helen Mirren')
+      expect(page).not_to have_content('Officer Kaplan')
+      expect(page).not_to have_content('Murphy Guyer')
+    end
+  end
 end
 
 # rubocop:enable Metrics/BlockLength
