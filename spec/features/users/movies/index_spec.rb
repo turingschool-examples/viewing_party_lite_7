@@ -30,8 +30,8 @@ RSpec.describe "Movies Result Page", type: :feature do
             expect(page).to have_link("Cinema Paradiso")
             expect(page).to have_content("Vote Average: 8.5")
 
-            expect(page).to have_link("Return to Discover Page")
-            click_link "Return to Discover Page"
+            expect(page).to have_button("Return to Discover Page")
+            click_button "Return to Discover Page"
     
             expect(current_path).to eq("/users/#{@user_1.id}/discover")
           end
@@ -63,8 +63,8 @@ RSpec.describe "Movies Result Page", type: :feature do
           expect(page).to have_link("Brooklyn Girls Fight Club")
           expect(page).to have_content("Vote Average: 8.7")
 
-          expect(page).to have_link("Return to Discover Page")
-          click_link "Return to Discover Page"
+          expect(page).to have_button("Return to Discover Page")
+          click_button "Return to Discover Page"
   
           expect(current_path).to eq("/users/#{@user_1.id}/discover")
         end
