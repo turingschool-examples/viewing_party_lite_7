@@ -4,13 +4,12 @@
 
 require 'rails_helper'
 
-RSpec.feature "Movie Details" do
+RSpec.feature 'Movie Details' do
   before :each do
     load_test_data
   end
 
   it 'has a header', :vcr do
-    # require 'pry';binding.pry
     visit user_movie_path(@anne, @arthur[:movie_id])
 
     expect(page).to have_link("Home")
@@ -70,6 +69,24 @@ RSpec.feature "Movie Details" do
 
     within('#details') do
       expect(page).to have_content('Genre: Comedy, Romance')
+    end
+  end
+
+  it 'shows the genres for the movie', :vcr do
+    visit user_movie_path(@anne, @arthur[:movie_id])
+
+    within('#details') do
+      expect(page).to have_content('Genre: Comedy, Romance')
+    end
+  end
+
+  it 'shows the summary for the movie', :vcr do
+    visit user_movie_path(@anne, @arthur[:movie_id])
+
+    within('#summary') do
+      expect(page).to have_content('Summary')
+      expect(page).to have_content("A drunken playboy stands to lose a wealthy inheritance when he falls for a woman that his family doesn't like.")
+      expect('Summary').to appear_before("A drunken playboy stands to lose a wealthy inheritance when he falls for a woman that his family doesn't like.")
     end
   end
 end
