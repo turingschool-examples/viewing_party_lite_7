@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/49012?api_key=f7288e89c67ddeca054747d31c85225c
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.11
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 11 Oct 2023 18:38:25 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=27362
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - e9d6154ab25394f91816ede51583e653
+      X-Memc-Age:
+      - '22929'
+      X-Memc-Expires:
+      - '224'
+      Etag:
+      - W/"f40f625029a6e464ce4a3d7ada21ac94"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 e158a5cd644f102abc630a9f56b59d78.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 0-5HjzNtQVc7SzFdKH4vEQXXFbZjV6h93KDCOx5aMOUhTTMHGaWMzQ==
+      Age:
+      - '8295'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/p2h886S7r4znUYvp1ELOTq7jqUZ.jpg","belongs_to_collection":null,"budget":40000000,"genres":[{"id":35,"name":"Comedy"},{"id":10749,"name":"Romance"}],"homepage":"http://arthurthemovie.warnerbros.com/","id":49012,"imdb_id":"tt1334512","original_language":"en","original_title":"Arthur","overview":"A
+        drunken playboy stands to lose a wealthy inheritance when he falls for a woman
+        that his family doesn''t like.","popularity":20.178,"poster_path":"/foUTAJurvnbUoIUbnuUk5dyHx7M.jpg","production_companies":[{"id":174,"logo_path":"/IuAlhI9eVC9Z8UQWOIDdWRKSEJ.png","name":"Warner
+        Bros. Pictures","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2011-04-08","revenue":48147945,"runtime":110,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Meet
+        the world''s only loveable billionaire.","title":"Arthur","video":false,"vote_average":5.567,"vote_count":689}'
+  recorded_at: Wed, 11 Oct 2023 20:56:40 GMT
+recorded_with: VCR 6.2.0

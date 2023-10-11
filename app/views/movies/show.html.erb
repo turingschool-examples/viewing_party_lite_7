@@ -3,15 +3,17 @@
 </div>
 <div id='buttons'>
   <%= button_to "Discover Movies", user_discover_path(params[:user_id]), method: :get %>
+  <br>
   <%= button_to "Create Viewing Party for #{@movie[:title]}", new_user_movie_viewing_party_path(params[:user_id], params[:id]), method: :get %>
 </div>
+<br>
 <div id='details'>
   <table>
     <tr>
       <!-- figure out how to remove all the logic from the table below -->
       <td> Vote: <%= @movie[:vote_average].round(1) %> </td>
       <td> Runtime: <%= @movie[:runtime] %> minutes </td>
-      <td> Genre: <%= @movie[:genres].map{|genre| genre[:name]} %> </td>
+      <td> Genre: <%= @movie[:genres].map{|genre| genre[:name]}.join(', ') %> </td>
     </tr>
   </table>
 </div>
