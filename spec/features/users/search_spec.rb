@@ -6,13 +6,15 @@ RSpec.describe "Movie Results Page" do
   end
 
   it "I see a button to return to the discover page" do
-    visit "/users/#{@user.id}/discover"
-    click_button "Find Top Rated Movies"
+    VCR.use_cassette("top_20_rated_movies") do
+      visit "/users/#{@user.id}/discover"
+      click_button "Find Top Rated Movies"
 
-    expect(page).to have_button("Discover Page")
-    click_button "Discover Page"
+      expect(page).to have_button("Discover Page")
+      click_button "Discover Page"
 
-    expect(current_path).to eq("/users/#{@user.id}/discover")
+      expect(current_path).to eq("/users/#{@user.id}/discover")
+    end
   end
 
   it "I see the top 20 top rated movies when top movies button is pressed, their name as a link to their detail page and the vote average of the movie" do
@@ -32,9 +34,40 @@ RSpec.describe "Movie Results Page" do
         expect(page).to have_content("Vote Average: 8.5")
       end
 
+      expect("The Godfather").to appear_before("Nuovo Cinema Paradiso")
+
       click_link "Nuovo Cinema Paradiso"
 
       expect(current_path).to eq("/users/#{@user.id}/movies/11216")
+    end
+  end
+
+  it "I see a maximum of 20 results basd on the keyword I searched on the discover page" do
+    VCR.use_cassette("barbie_movie_search") do
+      visit "/users/#{@user.id}/discover"
+
+      fill_in "search", with: "barbie"
+      click_button "Find Movies"
+
+      expect(current_path).to eq("/users/#{@user.id}/movies")
+
+      expect(page).to have_content("Movie results for: barbie")
+
+      within("#346698") do
+        expect(page).to have_link("Barbie")
+        expect(page).to have_content("Vote Average: 7.255")
+      end
+
+      within("#34134") do
+        expect(page).to have_link("Barbie in A Mermaid Tale")
+        expect(page).to have_content("Vote Average: 7.222")
+      end
+
+      expect("Barbie").to appear_before("Barbie in A Mermaid Tale")
+
+      click_link "Barbie in A Mermaid Tale"
+
+      expect(current_path).to eq("/users/#{@user.id}/movies/34134")
     end
   end
 end
