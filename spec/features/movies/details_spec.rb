@@ -56,6 +56,22 @@ RSpec.feature "Movie Details" do
       expect(page).to have_content('Vote: 5.6')
     end
   end
+
+  it 'shows the runtime for the movie', :vcr do
+    visit user_movie_path(@anne, @arthur[:movie_id])
+
+    within('#details') do
+      expect(page).to have_content('Runtime: 110 minutes')
+    end
+  end
+
+  it 'shows the genres for the movie', :vcr do
+    visit user_movie_path(@anne, @arthur[:movie_id])
+
+    within('#details') do
+      expect(page).to have_content('Genre: Comedy, Romance')
+    end
+  end
 end
 
 # rubocop:enable Metrics/BlockLength

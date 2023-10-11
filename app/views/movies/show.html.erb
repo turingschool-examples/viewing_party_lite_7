@@ -10,7 +10,7 @@
     <tr>
       <!-- figure out how to remove all the logic from the table below -->
       <td> Vote: <%= @movie[:vote_average].round(1) %> </td>
-      <td> Runtime: <%= @movie[:runtime] %> </td>
+      <td> Runtime: <%= @movie[:runtime] %> minutes </td>
       <td> Genre: <%= @movie[:genres].map{|genre| genre[:name]} %> </td>
     </tr>
   </table>
