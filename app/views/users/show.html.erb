@@ -1,0 +1,21 @@
+<h1><%= @user.name %>'s Dashboard</h1>
+
+<%# <%= link_to "Discover Movies", discover_movies_path %> 
+
+<div class="viewing parties">
+  <h2> Viewing Parties </h2>
+  <% if @viewing_parties.empty? %>
+    <p> No viewing parties scheduled. </p>
+  <% else %>
+    <ul>
+      <% @viewing_parties.each do |party| %>
+        <li>
+          <p>Movie: <%= party.movie_title %></p>
+          <p>Date: <%= party.date %></p>
+          <p>Time: <%= party.time %></p>
+          <%= link_to "Join", viewing_party_path(party) %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
