@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  get "/register", to: "users#new"
   get "/", to: "welcome#index"
+  # resources :welcome, only: [:index]
+
+  get "/register", to: "users#new", as: :register
+  resources :users, only: [:create, :show] 
 end
