@@ -23,5 +23,6 @@ RSpec.describe "user show page", type: :feature do
       end
     end
   end
+  
 end
     
