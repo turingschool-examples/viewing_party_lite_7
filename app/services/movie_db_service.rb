@@ -21,6 +21,7 @@ class MovieDbService
 
   def movie_reviews(movie_id)
     response = self.class.get("#{BASE_URL}/movie/#{movie_id}/reviews", @options)
-    response.parsed_respons
+    response.parsed_response
   end
+end
 
