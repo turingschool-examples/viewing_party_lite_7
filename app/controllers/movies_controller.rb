@@ -3,7 +3,7 @@ class MoviesController < ApplicationController
   def index
     if params[:q] == "keyword"
       response = conn.get("/3/search/movie") do |req|
-        req.params["with_keywords"] = params[:search]
+        req.params["query"] = params[:search]
       end
       data = JSON.parse(response.body, symbolize_names: true)
       @movies = data[:results]
