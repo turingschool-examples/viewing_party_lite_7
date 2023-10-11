@@ -1,15 +1,34 @@
 require "rails_helper"
 
-RSpec.describe "the /users/:id/discover page", type: :feature do
-  describe "When a user visits the discover path" do
-    it "has a button to find top rated movies, a text field to enter keywords, a button to search by movie title based on keywords" do
-      visit "/register"
+RSpec.describe "the users_:id_movies page", type: :feature do
+  describe "When a user visits the movies page" do
+    before :each do
+      @user = User.create!(name: "John Smith", email: "jsmith@aol.com")
 
-      fill_in "Name", with: "John Smith"
-      fill_in "Email", with: "jsmith@aol.com"
-      click_button "Register"
+      visit user_discover_path(@user)
+    end
+    
+    it "has a button to return to the Discover Page", :vcr do
+      click_button "Discover Top Rated Movies"
 
-      expect(current_path).to eq("/users/#{User.all.last.id}")
+      expect(current_path).to eq("/users/#{@user.id}/movies")
+
+      expect(page).to have_button("Discover Page")
+
+      click_button "Discover Page"
+
+      expect(current_path).to eq("/users/#{@user.id}/discover")
+    end
+
+    it "displays the top rated movies when visited from the Discover Top Rated Movies button", :vcr do
+      click_button "Discover Top Rated Movies"
+
+      expect(current_path).to eq("/users/#{@user.id}/movies")
+
+      within("#movie-238") do
+        expect(page).to have_content("The Godfather")
+        expect(page).to have_content("Vote Average 8.7")
+      end
     end
   end
 end
