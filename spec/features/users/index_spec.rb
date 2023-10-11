@@ -13,18 +13,27 @@ RSpec.describe 'User index page' do
 
     it 'displays a button to create a new user' do
         visit(root_path)
-        expect(page).to have_link('Create New User', href: register_path)
+        expect(page).to have_link('Create New User', href: new_user_path)
     end
 
-    it 'displays a list of existing users' do
+    it 'create new user button takes user to create page for a new user' do 
+        visit(root_path)
+
+        click_link('Create New User')
+        expect(current_path).to eq(new_user_path)
+    end
+
+    it 'displays a list of existing users, that includes links to their show page' do
         @user1 = User.create(name: 'Joe', email: 'joeiscool@yahoo.com')
         @user2 = User.create(name: 'Bob', email: 'bobiscool@yahoo.com')
         @user3 = User.create(name: 'Karen', email: 'karenisalright@yahoo.com')
         visit(root_path)
-        save_and_open_page
 
-        expect(page).to have_content(@user1.name)
-        expect(page).to have_content(@user2.name)
-        expect(page).to have_content(@user3.name)
+        expect(page).to have_link(@user1.name)
+        expect(page).to have_link(@user2.name)
+        expect(page).to have_link(@user3.name)
+
+        click_link(@user1.name)
+        expect(current_path).to eq(user_path(@user1))
     end
 end
