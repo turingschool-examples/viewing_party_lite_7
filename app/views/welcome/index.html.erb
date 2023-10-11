@@ -1,0 +1,9 @@
+<%= link_to "Home", url: "/" %>
+<h1>Welcome to Viewing Party</h1>
+
+<%= button_to "Create a New User", "/register", method: :get, data: { turbo: false } %>
+
+<h3>Existing Users</h3>
+<% @users.each do |user| %>
+  <%= user.email %><br>
+<% end %>
