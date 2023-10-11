@@ -1,0 +1,9 @@
+
+<%=  button_to "Discover Movies", user_discover_path(params[:user_id]), method: :get %>
+
+<h3> <%= @header %> </h3>
+
+<% @movies.each do |movie| %>
+    <%= link_to movie[:title], "/users/#{params[:user_id]}/movies/#{movie[:id]}" %>
+    <%=  " - Vote Average: #{movie[:vote_average]}" %></br>
+  <% end %>
