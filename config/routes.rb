@@ -6,8 +6,12 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
   get "/users/:id/discover", to: "movies#index"
+  get "/users/:id/movies", to: "movies#search"
+  get "/users/:id/movies/:movie_id", to: "movies#show"
 
   root "welcome#index"
   get "/register/new", to: "users#new"
   post "/register", to: "users#create"
+
+  get "/users/:id/movies/:movie_id/viewing_party/new", to: "viewing_parties#new"
 end
