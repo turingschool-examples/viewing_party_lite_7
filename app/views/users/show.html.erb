@@ -1,4 +1,4 @@
-<h1><%= @user.name %>'s Dashboard</h1>
+<h2><%= @user.name %>'s Dashboard</h2>
 <br>
 <%= button_to "Discover Movies", user_discover_path(@user), method: :get, data: {turbo: false} %>
 <br>
@@ -6,16 +6,14 @@
 <br>
 <section id="viewing_parties">
   <% @user.viewing_parties.each do |party| %>
-    <p><%= party.movie_image %></p>
+    <p><%= image_tag "#{party.image_url}" %></p>
     <p><%= party.movie_title %></p>
-    <p><%= party.start_time %></p>
+    <p><%= party.start %></p>
     <p><%= party.host %></p>
     <ul>
     <p>Guests</p>
-    <% party.users_viewing_parties.each do |uvp| %>
-      <% if !uvp.hosting? %>
-        <li><%= uvp.name %></li>
-      <% end %>
+    <% party.guests.each do |guest| %>
+        <li><%= guest.name %></li>
     <% end %>
     </ul>
     <hr>

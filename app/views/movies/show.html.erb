@@ -1,0 +1,30 @@
+<h2><%= @movie.title %></h2>
+<br>
+<%= render partial: 'discover_page_link' %>
+<%= button_to "Create Viewing Party for #{@movie.title}", new_user_movie_viewing_party_path(@user, @movie.id), method: :get, data: {turbo: false} %>
+<br>
+<table>
+  <tr>
+      <td>Vote Average: <%= @movie.vote_average %></td>
+      <td>Runtime: <%= @movie.find_runtime %></td>
+      <td>Genres: <%= @movie.find_genres %></td>
+  </tr>
+</table>
+<br>
+<h3>Summary</h3>
+<article><%= @movie.summary %></article>
+<br>
+<h3>Cast</h3>
+<section id="cast">
+  <% @cast.each do |actor| %>
+    <p><%= actor[:name] %> as <%= actor[:character] %></p>
+  <% end %>
+</section>
+<h3>Reviews</h3>
+<section id="reviews">
+  <% @reviews.each do |review| %>
+    <h4><%= review[:author] %></h4>
+    <article><%= review[:content] %></article>
+    <hr>
+  <% end %>
+</section>
