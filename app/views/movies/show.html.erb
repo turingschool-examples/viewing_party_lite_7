@@ -1,18 +1,18 @@
-<h3><%= @movie[:original_title] %></h3>
+<h3><%= @movie.title %></h3>
 
 <%= button_to "Discover Page", "/users/#{params[:id]}/discover", method: :get %>
 
-<%= button_to "Create Viewing Party for #{@movie[:original_title]}", "/users/#{params[:id]}/movies/#{@movie[:id]}/viewing_party/new", method: :get %>
+<%= button_to "Create Viewing Party for #{@movie.title}", "/users/#{params[:id]}/movies/#{@movie.id}/viewing_party/new", method: :get %>
 
-<p>Vote: <%= @movie[:vote_average] %></p>
-<p>Runtime: <% if @movie[:runtime] > 60 %>
-             <%= "#{@movie[:runtime]/60}h #{@movie[:runtime]-60}min" %>
+<p>Vote: <%= @movie.vote_average %></p>
+<p>Runtime: <% if @movie.runtime > 60 %>
+            <%= "#{@movie.runtime/60}h #{@movie.runtime % 60}min" %>
             <% else %>
-              <%= "#{@movie[:runtime]}min" %>
+              <%= "#{@movie.runtime}min" %>
             <% end %>
 </p>
-<p>Genre: <% @movie[:genres].each do |genre| %>
-            <% if genre != @movie[:genres].last %>
+<p>Genre: <% @movie.genres.each do |genre| %>
+            <% if genre != @movie.genres.last %>
               <%= "#{genre[:name]}, " %>
             <% else %>
               <%= genre[:name] %>
@@ -22,23 +22,23 @@
 
 <section id="summary">
   <p>Summary</p>
-  <p><%= @movie[:overview] %></p>
+  <p><%= @movie.overview %></p>
 </section>
 
 <section id="cast">
   <p>Cast</p>
   <p>
-    <% @movie_cast.each do |member| %>
-      <p><%= member[:name] %> - <%= member[:character] %></p>
+    <% @cast_members.each do |member| %>
+      <p><%= member.name %> - <%= member.character %></p>
     <% end %>
   </p>
 </section>
 
-<p id="review-count"><%= @movie_reviews.count %> Reviews</p>
+<p id="review-count"><%= @reviews.count %> Reviews</p>
 <section id="reviews">
   <p>
-    <% @movie_reviews.each do |review| %>
-      <p><%= review[:author] %> - <%= review[:content] %></p>
+    <% @reviews.each do |review| %>
+      <p><%= review.author %> - <%= review.content %></p>
     <% end %>
   </p>
 </section>
