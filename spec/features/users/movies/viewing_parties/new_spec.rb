@@ -17,7 +17,7 @@ RSpec.describe "New Viewing Party Page", type: :feeature do
 
           expect(page).to have_content("The Godfather Viewing Party")
           expect(page).to have_content("Duration")
-          expect(page).to have_field("Duration", with: 175)
+          expect(page).to have_field("duration", with: 175)
           expect(page).to have_content("When:")
           expect(page).to have_content("Start time")
           expect(page).to have_unchecked_field("#{@user_2.name}")
@@ -25,9 +25,9 @@ RSpec.describe "New Viewing Party Page", type: :feeature do
           expect(page).to have_button("Create a Party")
 
 
-          fill_in "Duration", with: 180
-          fill_in "When:", with: 10/31/2023
-          fill_in "Start time", with: "07:00:00"
+          fill_in "duration", with: 180
+          fill_in "date", with: '2023-11-16'
+          fill_in "start_time", with: "07:00:00"
           check "#{@user_2.name}"
 
           expect(page).to have_checked_field("#{@user_2.name}")
@@ -45,14 +45,17 @@ RSpec.describe "New Viewing Party Page", type: :feeature do
           VCR.use_cassette("godfather_movie_details") do
             visit "/users/#{@user_1.id}/movies/238/viewing_parties/new"
 
-            fill_in "Duration", with: 180
-            fill_in "When:", with: 10/31/2023
-            fill_in "Start time", with: "07:00:00"
+            fill_in "duration", with: 180
+            fill_in "date", with: '2023-11-16'
+            fill_in "start_time", with: "07:00:00"
             check "#{@user_2.name}"
-
           end
-          click_button "Create a Party"
-          expect(current_path).to eq user_path("{@user_1.id}")
+
+          VCR.use_cassette("godfather_movie_details") do
+
+            click_button "Create a Party"
+            expect(current_path).to eq user_path(@user_1.id)
+          end
         end
       end
     end
@@ -62,19 +65,22 @@ RSpec.describe "New Viewing Party Page", type: :feeature do
     feature "when I click create a party" do
       feature "If duration entered is less than runtime " do
         scenario "I am rerouted to the form and I see a flash message with an error" do
+
           VCR.use_cassette("godfather_movie_details") do
             visit "/users/#{@user_1.id}/movies/238/viewing_parties/new"
 
-            fill_in "Duration", with: 50
-            fill_in "When:", with: "2023-11-16"
-            # page.find('#When:').set(Date.today)
-            # fill_in "When:", with: DateTime.current.strftime("%Y%M%D")
-            fill_in "Start time", with: "07:00:00"
+            fill_in "duration", with: 50
+            fill_in "date", with: '2023-11-23'
+            fill_in "start_time", with: "07:00:00"
             check "#{@user_2.name}"
 
           end
-          click_button "Create a Party"
-          expect(current_path).to eq("/users/#{@user_1.id}/movies/238/viewing_parties/new")
+          VCR.use_cassette("godfather_movie_details") do
+
+            click_button "Create a Party"
+            expect(current_path).to eq("/users/#{@user_1.id}/movies/238/viewing_parties/new")
+            expect(page).to have_content("Party duration cannot be less than movie runtime")
+          end
         end
       end
     end
