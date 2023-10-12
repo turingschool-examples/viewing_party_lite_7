@@ -19,10 +19,10 @@ RSpec.describe "the movies viewing party new page", type: :feature do
 
       expect(current_path).to eq("/users/#{@user.id}/movies/238/viewing_party/new")
 
-      expect(page).to have_selector("Duration")
-      expect(page).to have_selector("When")
-      expect(page).to have_selector("Start Time")
-      expect(page).to have_selector(@user2.name)
+      expect(page).to have_field("Duration")
+      expect(page).to have_field("When")
+      expect(page).to have_field("Start Time")
+      expect(page).to have_field("guests_#{@user2.id}")
       expect(page).to have_button("Create Party")
 
       within("#users") do
