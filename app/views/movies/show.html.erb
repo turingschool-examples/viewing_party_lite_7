@@ -43,4 +43,7 @@
 <br>
 <div id='reviews'>
   <h4><strong> <%= @reviews[:total_results] %> Reviews </strong></h4>
+  <% @reviews[:results].each do |review| %>
+    <%= "#{review[:content]} - #{review[:author]}, #{review[:author_details][:rating].to_i}/10" %>
+  <% end %>
 </div>
