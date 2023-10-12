@@ -10,4 +10,6 @@ Rails.application.routes.draw do
     resources :movies, only: [:index]
   end
   
+  get "/users/:user_id/movies/:movid_id/viewing-party/new", to: "viewing_parties#new"
+  post "/users/:user_id/movies/:movid_id/viewing-party/create", to: "viewing_parties#create"
 end

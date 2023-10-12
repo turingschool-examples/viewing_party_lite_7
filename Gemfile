@@ -56,6 +56,7 @@ group :development, :test do
   gem "shoulda-matchers"
   gem "faker"
   gem "rubocop"
+  gem "simplecov"
 end
 
 group :development do
@@ -74,7 +75,6 @@ group :test do
   gem "rspec-rails"
   gem "capybara"
   gem "launchy"
-  gem "simplecov"
   gem "webmock"
   gem "vcr"
 end
