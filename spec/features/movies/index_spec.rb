@@ -76,7 +76,6 @@ RSpec.feature "Welcome Index" do
       visit user_discover_path(@anne)
       
       click_button "Find Movies"
-      save_and_open_page
 
       expect(page).to have_content("Viewing Party")
     end
