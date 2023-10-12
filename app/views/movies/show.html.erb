@@ -1,7 +1,7 @@
 <h2><%= @movie.title %></h2>
 <br>
 <%= render partial: 'discover_page_link' %>
-<%= button_to "Create Viewing Party for #{@movie.title}", new_user_movie_viewing_party_path(@user, @movie), method: :get, data: {turbo: false} %>
+<%= button_to "Create Viewing Party for #{@movie.title}", new_user_movie_viewing_party_path(@user, @movie.id), method: :get, data: {turbo: false} %>
 <br>
 <table>
   <tr>

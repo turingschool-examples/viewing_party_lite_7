@@ -34,4 +34,13 @@ class MovieFacade
 
     @reviews = results[:results]
   end
+
+  def image
+    service = MovieService.new
+
+    results = service.end_point(@endpoint)
+  
+    @image = results[:images]
+  end
+
 end
