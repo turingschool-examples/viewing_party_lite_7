@@ -10,5 +10,8 @@ Rails.application.routes.draw do
   # resources :welcome, only: [:index]
 
   get "/register", to: "users#new", as: :register
-  resources :users, only: [:create, :show] 
+  resources :users, only: [:create, :show] do 
+    get "/discover" => "search#index"
+    get "/movies" => "search#show"
+  end
 end

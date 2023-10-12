@@ -7,6 +7,7 @@ RSpec.describe 'User Show Page', type: :feature do
     @party1 = Party.create!(movie: 1, movie_title: "Bar Wars", party_date: "2023-10-11T14:43")
     UserParty.create!(user_id: @sally.id, party_id: @party1.id, host: true)
   end
+
   describe "As a user when I visit /users/:id" do
     it "I see '<user name>'s Dashboard" do
       visit user_path(@sally)
@@ -28,6 +29,15 @@ RSpec.describe 'User Show Page', type: :feature do
         expect(page).to have_content(@party1.movie_title)
         expect(page).to have_content(@party1.formated_time)
         expect(page).to have_content("Hosting")
+      end
+    end
+
+    describe "When I click 'Discover Movies' button" do
+      it "I am redirected to discover page '/users/:id/discover'" do
+        visit user_path(@sally)
+
+        click_on "Discover Movies"
+        expect(current_path).to eq("#{user_path(@sally)}/discover")
       end
     end
   end
