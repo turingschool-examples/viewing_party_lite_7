@@ -127,6 +127,24 @@ RSpec.feature 'Movie Details' do
       expect(page).to have_content('7 Reviews')
     end
   end
+
+  it 'can show that there are no reviews', :vcr do
+    visit user_movie_path(@anne, @arthur[:movie_id])
+
+    within('#reviews') do
+      expect(page).to have_content('0 Reviews')
+    end
+  end
+
+  it 'shows reviews and their authors', :vcr do
+    visit user_movie_path(@anne, @batman[:movie_id])
+
+    within('#reviews') do
+      expect(page).to have_content("This movie is so bad I couldn't even finish it. - Albert, 4/10")
+      expect(page).to have_content("Yeah, it's good. - Jakeflix, 10/10")
+      expect('John Chard').to appear_before('Rob')
+    end
+  end
 end
 
 # rubocop:enable Metrics/BlockLength
