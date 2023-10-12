@@ -1,9 +1,0 @@
-[user]
-  email = dtimmons23@turing.edu
-  name = Dylan Timmons
-
-[commit]
-  template = ~/.gitmessage
-
-[core]
-  editor = vscode --wait
