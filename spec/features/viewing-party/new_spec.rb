@@ -9,7 +9,11 @@ RSpec.describe "Viewing Party New page", type: :feature do
       @user_4 = User.create!(name: "Hiccup", email: "hiccupbird@gmail.com")
       @movie_id = 926393
 
-      visit new_user_movie_viewing_party(@user_1.id, @movie_id)
+      json_response = File.read('spec/fixtures/movie_details.json')
+      stub_request(:get, "https://api.themoviedb.org/3/movie/#{@movie_id}?api_key=#{Rails.application.credentials.tmdb[:key]}").
+        to_return(status: 200, body: json_response)
+
+      visit new_user_movie_viewing_party_path(@user_1.id, @movie_id)
     end
 
     it "I should see the name of the movie title" do
@@ -27,6 +31,10 @@ RSpec.describe "Viewing Party New page", type: :feature do
 
     it "The duration should default the value of the movie runtime in minutes" do
       expect(page).to have_field("duration", with: 109)
+    end
+
+    it "Should create a new viewing party and redirect the user to their dashboard on submit" do
+
     end
 
     xit "Should throw an error if the duration is less than the runtime of the movie" do
