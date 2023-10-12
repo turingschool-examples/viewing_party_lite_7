@@ -59,6 +59,10 @@ RSpec.describe "Movie Details Page", type: :feature do
           click_link "The Godfather"
 
           expect(page).to have_button("Create a Viewing Party")
+        end
+
+        VCR.use_cassette("godfather_viewing_party") do
+
           click_button "Create a Viewing Party"
           expect(current_path).to eq("/users/#{@user_1.id}/movies/238/viewing_parties/new")
         end
