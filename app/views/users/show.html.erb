@@ -1,7 +1,7 @@
 <h1> <%= @user.name %>'s Dashboard </h1>
 
 <button> 
-<a>Discover Movies</a>
+<a><%= link_to 'Discover Movies', user_discover_index_path(@user) %></a>
 </button> 
 
 <h1 style='border-bottom: 3px solid black'> Viewing Parties </h1>
