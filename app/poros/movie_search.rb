@@ -13,6 +13,10 @@ class MovieSearch
     "https://image.tmdb.org/t/p/w92" << @movie[:poster_path]
   end
 
+  def runtime
+    @movie[:runtime]
+  end
+
   private
   def conn
     Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
