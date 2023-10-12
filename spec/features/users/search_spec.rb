@@ -57,12 +57,12 @@ RSpec.describe "Movie Results Page" do
 
       within("#346698") do
         expect(page).to have_link("Barbie")
-        expect(page).to have_content("Vote Average: 7.255")
+        expect(page).to have_content("Vote Average: 7.253")
       end
 
       within("#34134") do
         expect(page).to have_link("Barbie in A Mermaid Tale")
-        expect(page).to have_content("Vote Average: 7.222")
+        expect(page).to have_content("Vote Average: 7.22")
       end
 
       expect("Barbie").to appear_before("Barbie in A Mermaid Tale")
