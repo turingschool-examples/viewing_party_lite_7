@@ -15,6 +15,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_11_145331) do
   enable_extension "plpgsql"
 
   create_table "parties", force: :cascade do |t|
+    t.integer "movie_id"
     t.string "movie_title"
     t.integer "duration"
     t.date "date"
