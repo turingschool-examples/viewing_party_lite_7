@@ -2,7 +2,7 @@ class MovieService
   
   def end_point(url)
     response = conn.get(url) do |f|
-      f.params["api_key"] = "e385578ab01fe734e045aab1091acf8c"
+      f.params["api_key"] = Rails.application.credentials.themoviedb[:key]
     end
     JSON.parse(response.body, symbolize_names: true)
   end
