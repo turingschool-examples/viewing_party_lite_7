@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   
   resources :users, only: [:show, :new, :create] do
     resources :discover, only: [:index]
+    resources :movies, only: [:index, :show]
   end
   
   get '/register', to: 'users#create'

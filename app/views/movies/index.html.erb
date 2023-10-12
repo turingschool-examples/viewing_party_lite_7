@@ -1,0 +1,9 @@
+<h1> Movie Results </h1>
+<h1><%= @facade.movies.count %> Results </h1>
+<% @facade.movies.each do |movie| %>
+  <ul class="movie">
+  <li class="title">Movie Title: <%= movie.title %></li>
+  <li class="vote_average">Movie Vote Average: <%= movie.vote_average %></li>
+  <li class="title">Movie Overview: <%= movie.overview %></li>
+</ul>
+<% end %> 

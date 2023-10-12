@@ -1,2 +1,5 @@
 [commit]
   template = ~/.gitmessage
+
+[core]
+  editor = vscode --wait
