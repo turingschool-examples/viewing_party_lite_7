@@ -11,10 +11,11 @@
     <th>Hosting</th>
   </tr>
   <% @user.viewing_parties.each do |party| %>
+    <% temp_movie = Movie.new(party.movie_id) %>
     <section id="party-<%= party.id %>">
     <tr>
-    <td><%= party.image  %></td>
-    <td><%= party.movie_title %></td>
+    <td><img src=<%= temp_movie.image_url %> alt= <%= temp_movie.title %>></td>
+    <td><%= temp_movie.title %></td>
     <td><%= party.date_formatter %></td>
     <td><%= "#{party.duration} min" %></td>
     <td><%= party.time_formatter %></td>
