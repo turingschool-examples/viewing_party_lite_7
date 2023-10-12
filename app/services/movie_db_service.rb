@@ -6,14 +6,17 @@ class MovieDbService
   API_KEY = Rails.application.credentials.the_movie_db[:key]
 
   def connection
-    Faraday.new(url: BASE_URL) do |faraday|
-      faraday.params['api_key'] = API_KEY
-      faraday.adapter Faraday.default_adapter
+    # Faraday.new(url: BASE_URL) do |faraday|
+    #   faraday.params['the_movie_db_api_key'] = API_KEY
+    #   faraday.adapter Faraday.default_adapter
+    # end
+    Faraday.new(url: 'https://api.themoviedb.org/3') do |faraday|
+      faraday.headers["X-API-Key"] = Rails.application.credentials.the_movie_db[:key]
     end
   end
 
   def movie_details(movie_id)
-    response = connection.get("/movie/#{movie_id}")
+    response = connection.get("/3/movie/#{movie_id}")
     parse_response(response)
   end
 
