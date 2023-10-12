@@ -248,6 +248,7 @@
           null,
           1,
           1,
+          1,
           null,
           null
         ]
@@ -263,6 +264,44 @@
       "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/app/helpers/landing_page_helper.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/spec/features/landing_page/index_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
           null
         ]
       },
@@ -404,11 +443,10 @@
           null
         ]
       },
-      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/app/controllers/landing_page_controller.rb": {
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/app/controllers/discover_controller.rb": {
         "lines": [
           1,
           1,
-          2,
           null,
           null
         ]
@@ -418,6 +456,24 @@
           null,
           null,
           1,
+          null
+        ]
+      },
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/app/controllers/movies_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/app/controllers/landing_page_controller.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          null,
           null
         ]
       },
@@ -442,17 +498,8 @@
           null,
           null
         ]
-      },
-      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/app/controllers/discover_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
       }
     },
-    "timestamp": 1697073511
+    "timestamp": 1697147391
   }
 }
