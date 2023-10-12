@@ -1,10 +1,16 @@
-class Movie
-  attr_reader :movie, :image_url, :title
+class MovieSearch
+  attr_reader :movie
   def initialize(movie_id)
     response = conn.get("/3/movie/#{movie_id}")
     @movie = JSON.parse(response.body, symbolize_names: true)
-    @image_url = "https://image.tmdb.org/t/p/w92" << @movie[:poster_path]
-    @title = @movie[:title]
+  end
+
+  def title
+    @movie[:title]
+  end
+
+  def image_url
+    "https://image.tmdb.org/t/p/w92" << @movie[:poster_path]
   end
 
   private
