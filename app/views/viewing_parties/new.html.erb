@@ -16,18 +16,18 @@
   </tr>
   <tr>
     <th> Day </th>
-    <td><%= f.date_select :date, value: Date.today %></td>
+    <td><%= f.date_select :date, value: Date.today, order: [:month, :day, :year] %></td>
   </tr>
   <tr>
     <th> Start time </th>
-    <td><%= f.datetime_select :time, value: Time.now %></td>
+    <td><%= f.time_select :time, {:ampm => true}, value: Time.now %></td>
   </tr>
 </table>
   <h5> Invite Other Users </h5>
 
   <% @users.each do |user| %>
     <%= f.label :invites, "#{user.name} (#{user.email})" %>
-    <%= check_box_tag "users[]", user.id, checked: true %></br>
+    <%= check_box_tag "invites_id[]", user.id, checked: true %></br>
     <% end %>
   <%= f.submit "Create Party" %>
 <% end %>

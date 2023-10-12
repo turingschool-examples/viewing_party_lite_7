@@ -10,13 +10,14 @@ RSpec.feature "Viewing Party New" do
   xit "shows up" do
     load_test_data
 
-    visit "/users/#{@anne.id}/movies/49012/viewing_parties/new"
+    visit "/users/#{@cindy.id}/movies/15102/viewing_parties/new"
     save_and_open_page
   end
+  
   it "shows up" do
     load_test_data
 
-    visit "/users/#{@anne.id}/movies/49012/viewing_parties/new"
+    visit "/users/#{@cindy.id}/movies/15102/viewing_parties/new"
     
     click_button "Create Party"
     save_and_open_page
