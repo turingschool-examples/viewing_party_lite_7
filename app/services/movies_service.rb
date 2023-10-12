@@ -15,7 +15,7 @@ class MoviesService
     get_url("/3/search/movie?query=#{search}")
   end
 
-  # def top_rated
-  #   get_url("/3/movie/top_rated")
-  # end
+  def top_rated
+    get_url("/3/movie/top_rated")
+  end
 end
