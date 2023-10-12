@@ -5,7 +5,13 @@
 require "rails_helper"
 
 RSpec.feature "Welcome Index" do
-  it "has a header" do
+    #  before do
+    #   WebMock.allow_net_connect! 
+    #   WebMock.disable! 
+    #   VCR.eject_cassette 
+    #   VCR.turn_off!(:ignore_cassettes => true)
+    # end
+  it "has a header", :vcr do
     load_test_data
 
     visit user_path(@anne)
@@ -18,7 +24,7 @@ RSpec.feature "Welcome Index" do
     expect(page).to have_current_path("/")
   end
 
-  it "has a sub header" do
+  it "has a sub header", :vcr do
     load_test_data
 
     visit user_path(@anne)
@@ -31,7 +37,7 @@ RSpec.feature "Welcome Index" do
     expect(page).to have_current_path(user_discover_path(@anne))
   end
 
-  xit "shows viewing parties" do 
+  it "shows viewing parties", :vcr do 
     load_test_data
 
     visit user_path(@anne)
