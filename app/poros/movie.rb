@@ -5,8 +5,8 @@ class Movie
     @id = data[:id]
     @title = data[:original_title]
     @vote_average = data[:vote_average]
-    @runtime = data[:runtime]
-    @genres = data[:genres]
+    @runtime = data[:runtime] # will need to accounr for formatting
+    @genres = data[:genres] # will need to create format method, also account for sad path as some movies may not have explicit genres
     @overview = data[:overview]
   end
 end
