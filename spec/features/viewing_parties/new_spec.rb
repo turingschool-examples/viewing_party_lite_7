@@ -7,14 +7,25 @@ RSpec.feature "Viewing Party New" do
     VCR.eject_cassette 
     VCR.turn_off!(:ignore_cassettes => true)
   end
-  xit "shows up" do
+  xit "displays form" do
     load_test_data
 
     visit "/users/#{@cindy.id}/movies/15102/viewing_parties/new"
     save_and_open_page
   end
-  
-  it "shows up" do
+
+  it "creates viewing parties with attributes" do
+    load_test_data
+
+    visit "/users/#{@cindy.id}/movies/15102/viewing_parties/new"
+    
+    click_button "Create Party"
+    
+    expect(page).to have_content("Endgame")
+    
+  end
+
+  xit "creates viewing parties with others invited" do
     load_test_data
 
     visit "/users/#{@cindy.id}/movies/15102/viewing_parties/new"

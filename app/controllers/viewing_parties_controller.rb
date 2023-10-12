@@ -7,6 +7,7 @@ class ViewingPartiesController < ApplicationController
   end
 
   def create
+    #makes party
     party = ViewingParty.create!(date_time: param_datetime_formatter,
                                   movie_id: params[:movie_id],
                                   duration: params[:duration])

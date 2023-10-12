@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if user.save
       redirect_to user_path(user)
     else
-      redirect_to new_user_path
+      redirect_to register_path
       flash[:alert] = "Error: #{error_message(user.errors)}"
     end
   end
