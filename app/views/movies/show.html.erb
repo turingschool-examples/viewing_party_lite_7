@@ -2,4 +2,48 @@
   <h3> <%= @movie[:title] %> </h3>
 </div>
 <div id='buttons'>
-  
+  <%= button_to "Discover Movies", user_discover_path(params[:user_id]), method: :get %>
+  <br>
+  <%= button_to "Create Viewing Party for #{@movie[:title]}", new_user_movie_viewing_party_path(params[:user_id], params[:id]), method: :get %>
+</div>
+<br>
+<div id='details'>
+  <table>
+    <tr>
+      <!-- figure out how to remove all the logic from the table below -->
+      <td> Vote: <%= @movie[:vote_average].round(1) %> </td>
+      <td> Runtime: <%= @movie[:runtime] %> minutes </td>
+      <td> Genre: <%= @movie[:genres].map{|genre| genre[:name]}.join(', ') %> </td>
+    </tr>
+  </table>
+</div>
+<br>
+<hr>
+<br>
+<div id='summary'>
+  <h4><strong> Summary </strong></h4>
+  <%= @movie[:overview] %>
+</div>
+<br>
+<div id='cast'>
+  <h4><strong> Cast </strong></h4>
+  <table>
+    <tr>
+      <th> Character </th>
+      <th> Actor </th>
+    </tr>
+    <% @cast.each do |member| %>
+      <tr>
+        <td><%= member[:character] %></td>
+        <td><%= member[:name] %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+<br>
+<div id='reviews'>
+  <h4><strong> <%= @reviews[:total_results] %> Reviews </strong></h4>
+  <% @reviews[:results].each do |review| %>
+    <%= "#{review[:content]} - #{review[:author]}, #{review[:author_details][:rating].to_i}/10" %>
+  <% end %>
+</div>
