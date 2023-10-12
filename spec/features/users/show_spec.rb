@@ -14,12 +14,12 @@ RSpec.describe 'User SHow Page' do
 
     within ("##{@party1.id}") do
     expect(page).to have_content(@party1.id)
-    expect(page).to have_content(@party1.name)
+    expect(page).to have_content(@party1.movie_title)
     end
 
     within ("##{@party2.id}") do
     expect(page).to have_content(@party2.id)
-    expect(page).to have_content(@party2.name)
+    expect(page).to have_content(@party2.movie_title)
     end
   end
 
