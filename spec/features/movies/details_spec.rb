@@ -119,6 +119,14 @@ RSpec.feature 'Movie Details' do
       expect(page).not_to have_content('Murphy Guyer')
     end
   end
+
+  it 'shows total reviews for the movie', :vcr do
+    visit user_movie_path(@anne, @batman[:movie_id])
+
+    within('#reviews') do
+      expect(page).to have_content('7 Reviews')
+    end
+  end
 end
 
 # rubocop:enable Metrics/BlockLength
