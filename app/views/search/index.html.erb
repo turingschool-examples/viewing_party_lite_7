@@ -8,6 +8,5 @@
 <%= form_with url: "/users/#{@user.id}/movies", method: :get do |f| %>
   <%= f.label :search_movies, "Search for a movie by keywords" %>
   <%= f.text_field :search_movies %>
-  <%= f.hidden_field :q, value: "keyword" %>
   <%= f.submit "Find Movies" %>
 <% end %> <br><hr/>
