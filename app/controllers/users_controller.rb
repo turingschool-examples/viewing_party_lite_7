@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   def show
     @facade = UserFacade.new(params[:id])
@@ -12,7 +14,7 @@ class UsersController < ApplicationController
       redirect_to user_path(user)
       flash[:success] = 'New account created successfully.'
     else
-      flash[:error] = "Please fill out BOTH name and email"
+      flash[:error] = 'Please fill out BOTH name and email'
       redirect_to register_path
     end
   end

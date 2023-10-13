@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -8,12 +10,10 @@ Rails.application.routes.draw do
   get '/register', to: 'users#new'
   resources :register, only: [:create], controller: 'users'
 
-
   resources :users, only: [:show] do
     resources :discover, only: [:index]
-    resources :movies, only: [:index, :show] do
-      resources :viewing_party, only: [:new, :create], path: '/viewing-party'
+    resources :movies, only: %i[index show] do
+      resources :viewing_party, only: %i[new create], path: '/viewing-party'
     end
   end
-
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'User Registration Form' do
@@ -32,7 +34,7 @@ RSpec.describe 'User Registration Form' do
       click_button('Save')
 
       expect(current_path).to eq(register_path)
-      expect(page).to have_content("Please fill out BOTH name and email")
+      expect(page).to have_content('Please fill out BOTH name and email')
     end
 
     it 'If email is blank, I see an error' do
@@ -43,7 +45,7 @@ RSpec.describe 'User Registration Form' do
       click_button('Save')
 
       expect(current_path).to eq(register_path)
-      expect(page).to have_content("Please fill out BOTH name and email")
+      expect(page).to have_content('Please fill out BOTH name and email')
     end
   end
 end

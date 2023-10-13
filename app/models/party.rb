@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Party < ApplicationRecord
   has_many :party_users
   has_many :users, through: :party_users
@@ -8,15 +10,15 @@ class Party < ApplicationRecord
 
   def get_host_name
     Party.joins(:users)
-      .select("users.name")
-      .where("party_users.party_id = ? AND party_users.is_host = true", self.id)
-      .first.name
+         .select('users.name')
+         .where('party_users.party_id = ? AND party_users.is_host = true', id)
+         .first.name
   end
 
   def get_guest_names
     Party.joins(:users)
-      .select("users.name")
-      .where("party_users.party_id = ? AND party_users.is_host = false", self.id)
-      .pluck(:name)
+         .select('users.name')
+         .where('party_users.party_id = ? AND party_users.is_host = false', id)
+         .pluck(:name)
   end
 end

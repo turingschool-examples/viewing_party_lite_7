@@ -1,19 +1,20 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe MoviesDetails do
   before(:each) do
-    details = File.read("spec/fixtures/movie_details.json")
-    credits = File.read("spec/fixtures/movie_credits.json")
-    reviews = File.read("spec/fixtures/movie_reviews.json")
+    details = File.read('spec/fixtures/movie_details.json')
+    credits = File.read('spec/fixtures/movie_credits.json')
+    reviews = File.read('spec/fixtures/movie_reviews.json')
     details_parsed = JSON.parse(details, symbolize_names: true)
     credits_parsed = JSON.parse(credits, symbolize_names: true)
     reviews_parsed = JSON.parse(reviews, symbolize_names: true)
-  
+
     @md = MoviesDetails.new(details_parsed, credits_parsed, reviews_parsed)
   end
 
-  it "exists" do
-
+  it 'exists' do
     expect(@md.title).to be_a String
     expect(@md.vote_average).to be_a Float
     expect(@md.runtime).to be_an Integer
@@ -28,10 +29,10 @@ RSpec.describe MoviesDetails do
     expect(@md.reviews.first).to be_a Hash
   end
 
-  describe "#format_runtime" do
-    it "formats the runtime into hours and minutes" do
+  describe '#format_runtime' do
+    it 'formats the runtime into hours and minutes' do
       expect(@md.runtime).to eq(109)
-      expect(@md.format_runtime).to eq("1h 49m")
+      expect(@md.format_runtime).to eq('1h 49m')
     end
   end
 end

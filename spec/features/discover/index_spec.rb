@@ -1,14 +1,16 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "Discover Index page", type: :feature do
-  describe "top rated movies", :vcr do
+RSpec.describe 'Discover Index page', type: :feature do
+  describe 'top rated movies', :vcr do
     before(:each) do
-      @user_1 = User.create!(name: "Kiwi", email: "kiwibird@gmail.com")
+      @user_1 = User.create!(name: 'Kiwi', email: 'kiwibird@gmail.com')
 
       visit "/users/#{@user_1.id}/discover"
     end
 
-    it "the page exists" do
+    it 'the page exists' do
       expect(page).to have_current_path("/users/#{@user_1.id}/discover")
     end
 

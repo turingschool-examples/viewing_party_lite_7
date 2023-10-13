@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MoviesDetails
   attr_reader :title,
               :vote_average,
@@ -7,7 +9,7 @@ class MoviesDetails
               :cast,
               :total_reviews,
               :reviews
-                            
+
   def initialize(details, credits, reviews)
     @title = details[:title]
     @vote_average = details[:vote_average]

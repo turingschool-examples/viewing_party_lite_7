@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Welcome Page', type: :feature do
@@ -38,8 +40,8 @@ RSpec.describe 'Welcome Page', type: :feature do
     it 'lists all users names' do
       visit root_path
 
-      within("div#all-users") do
-        expect(page).to have_content("Existing Users")
+      within('div#all-users') do
+        expect(page).to have_content('Existing Users')
         expect(page).to have_content(@user_1.email)
         expect(page).to have_content(@user_2.email)
         expect(page).to have_content(@user_3.email)
