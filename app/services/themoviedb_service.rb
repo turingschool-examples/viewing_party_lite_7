@@ -11,12 +11,12 @@ class ThemoviedbService
   
   def movie_credits(movie_id)
     response = connection.get("/3/movie/#{movie_id}/credits?api_key=#{Rails.application.credentials.config.first.last[:api_key]}")
-    parsed = JSON.parse(response.body, symbolize_names: true)[:cast].first(10)
+    parsed = JSON.parse(response.body, symbolize_names: true)
   end
   
   def movie_reviews(movie_id)
     response = connection.get("/3/movie/#{movie_id}/reviews?api_key=#{Rails.application.credentials.config.first.last[:api_key]}")
-    parsed = JSON.parse(response.body, symbolize_names: true)[:results]
+    parsed = JSON.parse(response.body, symbolize_names: true)
   end
 
   def movie_titles(title)
