@@ -13,3 +13,36 @@
  *= require_tree .
  *= require_self
  */
+
+ #viewing_parties {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.movie_section {
+  width: 500px;
+  padding: 5px;
+  margin: 10px;
+  outline-style: solid;
+  outline-color: grey;
+  outline-width: thick;
+}
+
+.movie-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#average {
+  margin: 10px;
+}
+
+#summary {
+  width: 500px;
+}
+
+#reviews {
+  width: 700px;
+}
