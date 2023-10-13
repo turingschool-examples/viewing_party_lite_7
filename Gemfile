@@ -57,6 +57,7 @@ group :development, :test do
   gem "faker"
   gem "rubocop"
   gem "simplecov"
+  
 end
 
 group :development do

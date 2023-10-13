@@ -12,7 +12,7 @@ RSpec.describe 'Landing Page' do
     expect(page).to have_content("ViewingPartyLite7")
     expect(page).to have_button("Create a New User")
 
-    expect(page).to have_link("landing page")
+    expect(page).to have_link("Go to Landing Page")
     expect(page).to have_link("Tom")
     expect(page).to have_link("Jerry")
     expect(page).to have_link("Bob")
