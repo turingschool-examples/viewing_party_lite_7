@@ -6,13 +6,11 @@ RSpec.describe 'Movie Results' do
   end
   it 'When I go to a user dashbaord, and click "Discover Movies" button, I am redirected to a discover page /users/:id/discover' do
 
-    # visit "/users/#{@user1.id}/movies/268"
-
-    # click_button "Create a Viewing Party"
-    # expect(current_path).to eq(user_discover_index_path(user_id: @user1.id))
+    visit "/users/#{@user1.id}/movies/268"
+    click_button "Create a Viewing Party"
+    expect(current_path).to eq("/users/#{@user1.id}/movies/268/viewing-party/new")
 
     visit "/users/#{@user1.id}/movies/268"
-
     click_button "Discover Movies"
     expect(current_path).to eq(user_discover_index_path(user_id: @user1.id))
 
