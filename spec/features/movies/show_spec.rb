@@ -23,7 +23,6 @@ RSpec.describe "Movies Show page", type: :feature do
       expect(page).to have_content("Runtime: 1h 49m")
       expect(page).to have_content("Genre(s): Action Thriller Crime Drama")
       expect(page).to have_content("Summary: Robert McCall finds himself at home in Southern")
-      save_and_open_page
     end
 
     it "I see the first 10 cast members as well as their characters listed" do

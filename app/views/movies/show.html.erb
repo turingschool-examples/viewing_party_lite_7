@@ -20,7 +20,7 @@
   </p>
   <p>Summary: <%= @facade.details.summary %></p>
 </section>
-<br><br>
+<br>
 <section id="movie_cast">
   <h3>Cast and character:</h3>
   <ul>
@@ -29,12 +29,12 @@
     <% end %>
   </ul>
 </section>
-<br><br>
+<br>
 <section id="movie_reviews">
   <h3>Reviews (<%= @facade.details.total_reviews %> total):</h3>
   <% @facade.details.reviews.each do |review| %>
     <p>Review by: <%= review[:author] %></p>
-    <p><%= review[:content] %></p>
+    <p><%= review[:content].html_safe %></p>
     <br>
   <% end %>
 </section>
