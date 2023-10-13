@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
+# app/poros/movie_index.rb
 class MovieIndex
-  attr_reader :title, :vote_average, :id
+  attr_reader :title, :id
 
   def initialize(attributes)
     @title = attributes[:title]
@@ -10,5 +13,4 @@ class MovieIndex
   def vote_average
     @vote_average_raw.round(1) unless @vote_average_raw.nil?
   end
-
 end

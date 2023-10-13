@@ -1,54 +1,52 @@
-require "rails_helper"
+# frozen_string_literal: true
 
-RSpec.feature "Welcome Index" do
-  it "has a header", :vcr do
+# rubocop:disable Metrics/BlockLength
+
+require 'rails_helper'
+
+RSpec.feature 'Welcome Index' do
+  it 'has a header', :vcr do
     load_test_data
 
     visit user_discover_path(@anne)
 
-    click_button "Find Top Rated Movies"
+    click_button 'Find Top Rated Movies'
 
-    expect(page).to have_link("Home")
-    expect(page).to have_content("Viewing Party")
+    expect(page).to have_link('Home')
+    expect(page).to have_content('Viewing Party')
 
-    click_link "Home"
+    click_link 'Home'
 
-    expect(page).to have_current_path("/")
+    expect(page).to have_current_path('/')
   end
 
-  describe "top rated movies", :vcr do
-    it "shows movies" do
+  describe 'top rated movies', :vcr do
+    it 'shows movies' do
       load_test_data
 
       visit user_discover_path(@anne)
-      
-      click_button "Find Top Rated Movies"
 
-      expect(find("#movie-968051")).to have_link ("The Nun II")
-      expect(find("#movie-968051")).to have_content("Vote Average: 7")
+      click_button 'Find Top Rated Movies'
+
+      expect(find('#movie-968051')).to have_link ('The Nun II')
+      expect(find('#movie-968051')).to have_content('Vote Average: 7')
     end
 
-    it "shows has link to movie show page" do
+    it 'shows has link to movie show page' do
       load_test_data
 
       visit user_discover_path(@anne)
-      
-      click_button "Find Top Rated Movies"
 
-      click_link "The Nun II"
+      click_button 'Find Top Rated Movies'
+
+      click_link 'The Nun II'
 
       expect(page).to have_current_path("/users/#{@anne.id}/movies/968051")
     end
   end
 
-  describe "keyword search" do
-    # before do
-    #   WebMock.allow_net_connect! 
-    #   WebMock.disable! 
-    #   VCR.eject_cassette 
-    #   VCR.turn_off!(:ignore_cassettes => true)
-    # end
-    it "show a movie containing the keyword", :vcr do
+  describe 'keyword search' do
+    it 'show a movie containing the keyword', :vcr do
       load_test_data
 
       visit user_discover_path(@anne)
@@ -81,6 +79,5 @@ RSpec.feature "Welcome Index" do
     end
   end
 end
-      
 
-      
+# rubocop:enable Metrics/BlockLength

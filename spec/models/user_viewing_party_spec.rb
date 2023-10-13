@@ -6,7 +6,13 @@ RSpec.describe UserViewingParty, type: :model do
     it { should belong_to(:viewing_party) }
   end
 
-  xdescribe "validations" do
-    it { should validate_presence_of(:host) }
+  describe "validations" do
+    it "can is only valid if host is truthy/falsey" do
+      load_test_data
+
+      expect(UserViewingParty.create(host: true, user: @anne, viewing_party: @arthur )).to be_valid
+      expect(UserViewingParty.create(host: false, user: @anne, viewing_party: @arthur )).to be_valid
+      expect(UserViewingParty.create(host: nil, user: @anne, viewing_party: @arthur )).to be_invalid
+    end
   end
 end

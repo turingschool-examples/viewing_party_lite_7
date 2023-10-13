@@ -1,3 +1,4 @@
+# :nocov:
 def load_test_data
   @anne = User.create!(name: "Anne Anderson", email: "anne.anderson@aol.com")
   @blair = User.create!(name: "Blair Busch", email: "Blair@aol.com")
@@ -19,3 +20,4 @@ def load_test_data
   @host_3 = UserViewingParty.create!(host: true, user: @blair, viewing_party: @candyman)
     @visit_3_1 = UserViewingParty.create!(host: false, user: @anne, viewing_party: @candyman)
 end
+# :nocov:

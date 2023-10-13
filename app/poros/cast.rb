@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# app/poros/cast.rb
 class Cast
   attr_reader :character, :name
 
