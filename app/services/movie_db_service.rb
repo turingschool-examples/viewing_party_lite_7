@@ -15,12 +15,12 @@ class MovieDbService
   end
 
   def movie_cast(movie_id)
-    response = connection.get("/3/movie/#{movie_id}/credits")
-    parse_response(response)["cast"].first(10)
+    response = conn.get("/3/movie/#{movie_id}/credits")
+    parse_response(response)
   end
 
   def movie_reviews(movie_id)
-    response = connection.get("/3/movie/#{movie_id}/reviews")
+    response = conn.get("/3/movie/#{movie_id}/reviews")
     parse_response(response)
   end
 

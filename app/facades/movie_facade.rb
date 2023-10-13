@@ -1,22 +1,23 @@
 class MovieFacade
   attr_reader :movie_id
   
-  def initialize(movie_id)
-    @movie_id = movie_id
+  def initialize(movie)
+    @movie = movie
   end
   
-  def movie_details(movie_id)
-    movie_data = MovieDbService.new.movie_details(movie_id)
-    movie_data.map { |movie| Movie.new(movie) }
+  def self.movie_details(movie)
+    movie_data = MovieDbService.new.movie_details(movie)
+    movie_data = movie_data.slice(:id, :title, :vote_average, :runtime, :genres, :description, :poster_path)
+    Movie.new(movie_data)
   end
 
-  def movie_cast(movie_id)
-    cast_data = MovieDbService.new.movie_cast(movie_id)
-    cast_data.map { |cast_member| Cast.new(cast_member) }
+  def self.movie_cast(movie)
+    cast_data = MovieDbService.new.movie_cast(movie)
+    cast_data[:cast].map { |cast_member| Cast.new(cast_member) }
   end
 
-  def movie_reviews(movie_id)
-    review_data = MovieDbService.new.movie_reviews(movie_id)
+  def self.movie_reviews(movie)
+    review_data = MovieDbService.new.movie_reviews(movie)
     review_data[:results].map { |review| Review.new(review) }
   end
 end

@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find(params[:id])
+    @user = User.includes(viewing_parties: [:movie, :user]).find(params[:id])
     @viewing_parties = @user.viewing_parties
     @movie_details = @viewing_parties.map do |party|
-      MovieFacade.details(party.movie_id)
+      MovieFacade.movie_details(party.movie_id)
     end
   end
   

@@ -100,4 +100,5 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.filter_sensitive_data('<THE_MOVIE_DB_API_KEY>') { Rails.application.credentials.the_movie_db[:key] }
   config.configure_rspec_metadata!
+  config.default_cassette_options = { record: :new_episodes }
 end
