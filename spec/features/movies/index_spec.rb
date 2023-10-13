@@ -55,7 +55,7 @@ RSpec.feature "Welcome Index" do
       
       fill_in :search, with: "day dolphin"
       click_button "Find Movies"
-      
+
       expect(page).to have_content("Dolphin")
     end
 

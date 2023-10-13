@@ -7,13 +7,19 @@ class MoviesFacade
   def movie
     Movie.new(MovieService.new.movie(@movie_id))
   end
-
+  
   def cast
-    MovieService.new.cast(@movie_id)
+    data = MovieService.new.cast(@movie_id)
+    data.map do |cast_data|
+      Cast.new(cast_data)
+    end
   end
 
   def reviews
-    MovieService.new.reviews(@movie_id)
+    data = MovieService.new.reviews(@movie_id)
+    data[:results].map do |review_data|
+      Review.new(review_data, data[:total_results])
+    end
   end
 
   def movie_search(search)

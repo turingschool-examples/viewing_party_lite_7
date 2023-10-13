@@ -34,16 +34,22 @@
     </tr>
     <% @facade.cast.each do |member| %>
       <tr>
-        <td><%= member[:character] %></td>
-        <td><%= member[:name] %></td>
+        <td><%= member.character %></td>
+        <td><%= member.name %></td>
       </tr>
     <% end %>
   </table>
 </div>
 <br>
 <div id='reviews'>
-  <h4><strong> <%= @facade.reviews[:total_results] %> Reviews </strong></h4>
-  <% @facade.reviews[:results].each do |review| %>
-    <%= "#{review[:content]} - #{review[:author]}, #{review[:author_details][:rating].to_i}/10" %>
+  <% if @facade.reviews[1] %>
+    <h4><strong> <%= @facade.reviews[0].total_results %> Reviews </strong></h4>
+  <% elsif @facade.reviews[0] %>
+    <h4><strong> <%= @facade.reviews[0].total_results %> Reviews </strong></h4>
+  <% else %>
+    <h4><strong> 0 Reviews <strong><h4>
+  <% end %>
+  <% @facade.reviews.each do |review| %>
+    <%= "#{review.content} - #{review.author}, #{review.rating}/10" %>
   <% end %>
 </div>
