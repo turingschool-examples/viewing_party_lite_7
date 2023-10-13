@@ -4,43 +4,29 @@ class MovieFacade
   end
 
   def movies
-    service = MovieService.new
-
-    results = service.end_point(@endpoint)
-
     @movies = results[:results]
   end
 
   def movie
-    service = MovieService.new
-
-    results = service.end_point(@endpoint)
-
     @movie = Movie.new(results)
   end
 
   def cast
-    service = MovieService.new
-
-    results = service.end_point(@endpoint)
-
     @cast = results[:cast].first(10)
   end
 
   def reviews
-    service = MovieService.new
-
-    results = service.end_point(@endpoint)
-
     @reviews = results[:results]
   end
 
   def image
-    service = MovieService.new
-
-    results = service.end_point(@endpoint)
-  
     @image = results[:images]
+  end
+  
+  private
+
+  def results
+    MovieService.new.end_point(@endpoint)
   end
 
 end
