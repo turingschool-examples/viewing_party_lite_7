@@ -2,7 +2,7 @@
 
 <%= form_with url: user_movie_viewing_party_index_path(params[:user_id], params[:movie_id]), method: :post, data: {turbo: false} do |f| %>
   <%= f.label :duration, "Duration of Party (in minutes):" %>
-  <%= f.number_field :duration, value: @movie[:runtime] %>
+  <%= f.number_field :duration, in: @movie[:runtime]..200, value: @movie[:runtime] %>
   <br>
   <%= f.label :date, "Date:" %>
   <%= f.date_field :date %>

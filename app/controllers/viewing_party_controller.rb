@@ -1,6 +1,5 @@
 class ViewingPartyController < ApplicationController
   def new
-    # need to pass the JSON from TMDB so that I have the movie duration
     movie_id = params[:movie_id]
 
     conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|

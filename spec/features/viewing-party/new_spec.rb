@@ -42,8 +42,15 @@ RSpec.describe "Viewing Party New page", type: :feature do
       expect(Party.last.start_time.strftime("%H:%M:%S")).to eq("01:47:01")
     end
 
-    xit "Should throw an error if the duration is less than the runtime of the movie" do
+    it "Should create any associated invitations for a viewing party when the form is submitted" do
+      fill_in "date", with: "2023-10-10"
+      fill_in "start_time", with: "01:47:01"
+      check "invite-#{@user_2.id}"
+      click_button "Create Viewing Party"
 
+      expect(page).to have_current_path(user_path(@user_1.id))
+      expect(PartyUser.last.user_id).to eq(@user_2.id)
+      expect(PartyUser.last.is_host).to be false
     end
   end
 end
