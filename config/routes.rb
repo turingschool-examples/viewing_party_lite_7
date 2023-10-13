@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     resources :discover, only: [:index]
     resources :movies, only: [:index, :show]
   end
+
+  get "/users/:user_id/movies/:movie_id/viewing_party/new", to: "viewing_parties#new"
+
+  post "/users/:user_id/movies/:movie_id/viewing_party/new", to: "viewing_parties#create"
   
   get '/register', to: 'users#create'
   # get '/dashboard', to: 'users#show', as: 'dashboard'
