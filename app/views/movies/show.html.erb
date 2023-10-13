@@ -5,19 +5,9 @@
 <%= button_to "Create Viewing Party for #{@movie.title}", "/users/#{params[:id]}/movies/#{@movie.id}/viewing_party/new", method: :get %>
 
 <p>Vote: <%= @movie.vote_average %></p>
-<p>Runtime: <% if @movie.runtime > 60 %>
-            <%= "#{@movie.runtime/60}h #{@movie.runtime % 60}min" %>
-            <% else %>
-              <%= "#{@movie.runtime}min" %>
-            <% end %>
+<p>Runtime: <%= @movie.convert_time %>
 </p>
-<p>Genre: <% @movie.genres.each do |genre| %>
-            <% if genre != @movie.genres.last %>
-              <%= "#{genre[:name]}, " %>
-            <% else %>
-              <%= genre[:name] %>
-            <% end %>
-          <% end %>
+<p>Genre: <%= @movie.format_genres %>
 </p>
 
 <section id="summary">
