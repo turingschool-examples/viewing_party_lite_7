@@ -1,19 +1,20 @@
-<h1><%= @user.name %>'s Dashboard </h1>
-<h3> User email: <%= @user.email %> </h3>
+<h1><%= @facade.user.name %>'s Dashboard </h1>
+<h3> User email: <%= @facade.user.email %> </h3>
 
-<%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %>
+<%= button_to "Discover Movies", "/users/#{@facade.user.id}/discover", method: :get %>
 
 <section class="party_invitations">
   <h3>Viewing Party Invitations</h3>
-  <% @invited_viewing_parties.each do |party| %>
-    <%= link_to "", "/users/#{@user.id}/movies/#{party.movie_id}" %>
+  <% @facade.invited_viewing_parties.each do |party| %>
+    <img src="<%= @facade.poster_url(party.movie_id) %>"></br>
+    <%= link_to "#{@facade.invited_party_movie(party.movie_id).title}", "/users/#{@facade.user.id}/movies/#{party.movie_id}" %>
     <p>When: <%= party.date %></p>
     <p>Start Time: <%= party.start_time %></p>
     <p>Host: <%= User.user_host_name(party.host_user_id) %></p>
     <p>Invitees:
       <ul>
       <% party.invitees.each do |invitee| %>
-        <li><% if invitee.id == @user.id %>
+        <li><% if invitee.id == @facade.user.id %>
               <strong><%= invitee.name %></strong>
             <% else %>
               <%= invitee.name %>
@@ -27,8 +28,9 @@
 
 <section class="hosted_parties">
   <h3>Viewing Parties I'm Hosting</h3>
-  <% @hosted_viewing_parties.each do |party| %>
-    <%= link_to "", "/users/#{@user.id}/movies/#{party.movie_id}" %>
+  <% @facade.hosted_viewing_parties.each do |party| %>
+  <img src="<%= @facade.poster_url(party.movie_id) %>"></br>
+    <%= link_to "#{@facade.invited_party_movie(party.movie_id).title}", "/users/#{@facade.user.id}/movies/#{party.movie_id}" %>
     <p>When: <%= party.date %></p>
     <p>Start Time: <%= party.start_time %></p>
     <p>Host: I am hosting</p>
