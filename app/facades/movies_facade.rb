@@ -3,9 +3,9 @@ class MoviesFacade
   def initialize(movie_id = nil)
     @movie_id = movie_id.to_i
   end
-
+  
   def movie
-    MovieService.new.movie(@movie_id)
+    Movie.new(MovieService.new.movie(@movie_id))
   end
 
   def cast
