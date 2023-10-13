@@ -5,6 +5,7 @@
 <section class="viewing_parties">
   <% @parties.each do |party| %>
   <div style="border:solid; width:30%">
+    <%= image_tag("https://image.tmdb.org/t/p/w92/" + "#{party.poster_path}") %><br>
     Movie Title: <%= party.movie_title %><br>
     Party Time: <%= party.formated_time %><br>
     <%= party.host?(@user) %><br>

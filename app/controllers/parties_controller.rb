@@ -13,9 +13,9 @@ class PartiesController < ApplicationController
       invite_hash[params[invite]] << invite
       end
 
-      party = Party.create(movie: params[:id], movie_title: params[:title], party_date: params[:party_date])
+      party = Party.create(movie: params[:id], movie_title: params[:title], party_date: params[:party_date], poster_path: params[:image])
       UserParty.create(user_id: params[:user_id], party_id: party.id, host: true)
-  
+
       invite_hash["1"].each do |invitee|
         UserParty.create(user_id: invitee, party_id: party.id, host: false)
       end
