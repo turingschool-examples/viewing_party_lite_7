@@ -9,8 +9,7 @@
     <ul>
     <% @viewing_parties.each_with_index do |party, index| %>
       <div class="party">
-        <%= image_tag @movie_details[index].image %> 
-        <h2><%= link_to @movie_details[index].title, movie_path(party.movie_id) %></h2>
+        <h2><%= link_to @movie_details[index].title, user_movie_path(party.movie_id) %></h2>
         <p><%= @movie_details[index].description %></p>
         <p><%= party.is_host ? 'Hosting' : 'Invited' %></p>
         <p><%= party.date_time.strftime('%B %d, %Y %I:%M %p') %></p>
