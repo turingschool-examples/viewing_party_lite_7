@@ -60,7 +60,7 @@ RSpec.feature 'Movie Details' do
     visit user_movie_path(@anne, @arthur[:movie_id])
 
     within('#details') do
-      expect(page).to have_content('Runtime: 110 minutes')
+      expect(page).to have_content('Runtime: 1 hr 50 min')
     end
   end
 
@@ -68,15 +68,7 @@ RSpec.feature 'Movie Details' do
     visit user_movie_path(@anne, @arthur[:movie_id])
 
     within('#details') do
-      expect(page).to have_content('Genre: Comedy, Romance')
-    end
-  end
-
-  it 'shows the genres for the movie', :vcr do
-    visit user_movie_path(@anne, @arthur[:movie_id])
-
-    within('#details') do
-      expect(page).to have_content('Genre: Comedy, Romance')
+      expect(page).to have_content('Genre(s): Comedy, Romance')
     end
   end
 
@@ -85,8 +77,8 @@ RSpec.feature 'Movie Details' do
 
     within('#summary') do
       expect(page).to have_content('Summary')
-      expect(page).to have_content("A drunken playboy stands to lose a wealthy inheritance when he falls for a woman that his family doesn't like.")
-      expect('Summary').to appear_before("A drunken playboy stands to lose a wealthy inheritance when he falls for a woman that his family doesn't like.")
+      expect(page).to have_content('A drunken playboy stands to lose a wealthy inheritance')
+      expect('Summary').to appear_before('A drunken playboy stands to lose a wealthy inheritance')
     end
   end
 

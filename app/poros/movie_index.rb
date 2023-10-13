@@ -11,6 +11,7 @@ class MovieIndex
   end
 
   def vote_average
-    @vote_average_raw.round(1) unless @vote_average_raw.nil?
+    # @vote_average_raw.round(1) unless @vote_average_raw.nil?
+    @vote_average_raw&.round(1)
   end
 end

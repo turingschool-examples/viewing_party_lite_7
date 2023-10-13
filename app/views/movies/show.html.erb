@@ -12,8 +12,8 @@
     <tr>
       <!-- figure out how to remove all the logic from the table below -->
       <td> Vote: <%= @facade.movie.vote_average %> </td>
-      <td> Runtime: <%= @facade.movie.runtime %> minutes </td>
-      <td> Genre: <%= @facade.movie.genres %> </td>
+      <td> Runtime: <%= @facade.movie.runtime_formatted %> </td>
+      <td> Genre(s): <%= @facade.movie.genres %> </td>
     </tr>
   </table>
 </div>
@@ -50,6 +50,6 @@
     <h4><strong> 0 Reviews <strong><h4>
   <% end %>
   <% @facade.reviews.each do |review| %>
-    <%= "#{review.content} - #{review.author}, #{review.rating}/10" %>
+    <p><%= review.content %> <strong>- <%= "#{review.author}, #{review.rating}/10" %></strong></p>
   <% end %>
 </div>

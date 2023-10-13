@@ -21,10 +21,15 @@ class Movie
   end
 
   def genres
-    @unfiltered_genre.map{|genre| genre[:name]}.join(', ')
+    @unfiltered_genre.map { |genre| genre[:name] }.join(', ')
   end
 
   def vote_average
-    @vote_average_raw.round(1) unless @vote_average_raw.nil?
+    # @vote_average_raw.round(1) unless @vote_average_raw.nil?
+    @vote_average_raw&.round(1)
+  end
+
+  def runtime_formatted
+    "#{@runtime / 60} hr #{@runtime - ((@runtime / 60) * 60)} min"
   end
 end
