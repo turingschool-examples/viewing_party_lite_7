@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show] do
     resources :discover, only: [:index]
+    resources :movies, only: [:show] do
+      resources :viewing_party, only: [:new, :create], path: '/viewing-party'
+    end
   end
 
 end
