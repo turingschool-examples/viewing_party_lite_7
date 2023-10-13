@@ -1,7 +1,10 @@
-<p><%= button_to "Discover Top Rated Movies", user_movies_path(@user, top_rated: true), method: :get %></p>
+<p><%= form_with url: user_movies_path(@user), method: :get, data: { turbo: false } do %>
+  <%= hidden_field_tag :top_rated, true %>
+  <%= submit_tag "Discover Top Rated Movies" %>
+<% end %></p>
 
 <%= form_with url: user_movies_path(@user), method: :get do |form| %>
-  <%= form.label :query, "Search by Movie Title" %>
+  <%= form.label :query, "Search by Movie Title:" %>
   <%= form.text_field :query %>
   <%= form.submit "Search" %>
 <% end %>

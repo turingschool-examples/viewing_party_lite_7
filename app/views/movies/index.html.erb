@@ -1,6 +1,20 @@
-<% @movies_facade.movies.first(20).each do |movie| %>
-  <div>
-    <%= link_to movie.title, user_movie_path(@user, movie.id) %>
-    <p>Vote Average: <%= movie.vote_average %></p>
-  </div>
-<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @movies_facade.movies.each do |movie| %>
+      <tr>
+        <td><%= link_to movie.title, user_movie_path(@user, movie.id) %></td>
+        <td><%= movie.vote_average %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p><%= button_to "Back to Discover", discover_user_path(@user), method: :get %></p>
+
+
