@@ -3,6 +3,6 @@
 <%= button_to "Discover Top Rated Movies", user_movies_path(@user), method: :get, data: {turbo: false}, params: {top_rated: true} %>
 <br>
 <%= form_with url: user_movies_path(@user), method: :get, data: {turbo: false} do |form| %>
-  <%= form.text_field :search, class: 'search_field', value: "Search" %>
+  <%= form.text_field :search, class: 'search_field', placeholder: 'Search' %>
   <%= form.submit "Search by Movie Title" %>
 <% end %>

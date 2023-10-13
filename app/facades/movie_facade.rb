@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MovieFacade
   def initialize(endpoint)
     @endpoint = endpoint

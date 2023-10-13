@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 class MoviesController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     search_query = params[:search]
 
-    if search_query.present?
-      movies = MovieService.new.search_movies(search_query)
-    else
-      movies = MovieService.new.top_rated_movies
-    end
+    movies = if search_query.present?
+               MovieService.new.search_movies(search_query)
+             else
+               MovieService.new.top_rated_movies
+             end
 
     @movies = movies[:results]
   end
