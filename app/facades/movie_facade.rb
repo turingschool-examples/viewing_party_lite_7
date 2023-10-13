@@ -24,6 +24,22 @@ class MovieFacade
     end
   end
 
+  def top_20_movies
+    json = service.get_top_20_movies
+
+    movies = json[:results].map do |movie_data|
+      Movie.new(movie_data)
+    end.first(20)
+  end
+
+  def searched_movies(query)
+    json = service.get_searched_movies(query)
+
+    movies = json[:results].map do |movie_data|
+      Movie.new(movie_data)
+    end.first(20)
+  end
+
   def service
     MovieService.new
   end
