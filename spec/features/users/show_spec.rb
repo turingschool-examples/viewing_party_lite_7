@@ -12,7 +12,10 @@ RSpec.describe "Users Show page", type: :feature do
       PartyUser.create!(user_id: @user_1.id, party_id: @party_1.id, is_host: true)
       PartyUser.create!(user_id: @user_2.id, party_id: @party_1.id, is_host: false)
       PartyUser.create!(user_id: @user_1.id, party_id: @party_2.id, is_host: false)
+      PartyUser.create!(user_id: @user_2.id, party_id: @party_2.id, is_host: true)
       PartyUser.create!(user_id: @user_1.id, party_id: @party_3.id, is_host: false)
+      PartyUser.create!(user_id: @user_2.id, party_id: @party_3.id, is_host: true)
+
 
       visit "/users/#{@user_1.id}"
     end
@@ -45,13 +48,14 @@ RSpec.describe "Users Show page", type: :feature do
       end
 
       it "displays cards for each viewing party the user has been invited to" do
+        save_and_open_page
         within("#party-#{@party_2.id}") do
           page.has_css?("img[src*='themoviedb']")
           expect(page).to have_content("The Equalizer 3")
           expect(page).to have_content("09:23 AM")
           expect(page).to have_content("Guest List: #{@user_1.name}")
         end
-        
+
         within("#party-#{@party_3.id}") do
           page.has_css?("img[src*='themoviedb']")
           expect(page).to have_content("The Equalizer 3")
