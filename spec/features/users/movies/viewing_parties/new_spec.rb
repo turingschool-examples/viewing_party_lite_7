@@ -20,18 +20,18 @@ RSpec.describe "New Viewing Party Page", type: :feeature do
           expect(page).to have_field("duration", with: 175)
           expect(page).to have_content("When:")
           expect(page).to have_content("Start time")
-          expect(page).to have_unchecked_field("#{@user_2.name}")
-          expect(page).to have_unchecked_field("#{@user_3.name}")
+          expect(page).to have_unchecked_field("#{@user_2.id}")
+          expect(page).to have_unchecked_field("#{@user_3.id}")
           expect(page).to have_button("Create a Party")
 
 
           fill_in "duration", with: 180
           fill_in "date", with: '2023-11-16'
           fill_in "start_time", with: "07:00:00"
-          check "#{@user_2.name}"
+          check "#{@user_2.id}"
 
-          expect(page).to have_checked_field("#{@user_2.name}")
-          expect(page).to have_unchecked_field("#{@user_3.name}")
+          expect(page).to have_checked_field("#{@user_2.id}")
+          expect(page).to have_unchecked_field("#{@user_3.id}")
         end
       end
     end
