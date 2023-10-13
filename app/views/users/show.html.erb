@@ -3,6 +3,26 @@
 
 <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %>
 
-<section class="parties">
-<h3> Viewing Party List </h3>
+<section class="party_invitations">
+  <h3>Viewing Party Invitations</h3>
+  <% @invited_viewing_parties.each do |party| %>
+    <img src=<%= party.poster %>>
+    <%= link_to "", "/users/#{@user.id}/movies/#{party.movie_id}" %>
+    <p>When: <%= party.date %></p>
+    <p>Start Time: <%= party.start_time %></p>
+    <p>Host: <%= user_host_name(party.user_host_id) %></p>
+    <p>Invitees: </p>
+  <% end %>
+</section>
+
+<section class="hosted_parties">
+  <h3>Viewing Parties I'm Hosting</h3>
+  <% @hosted_viewing_parties.each do |party| %>
+    <img src=<%= party.poster %>>
+    <%= link_to "", "/users/#{@user.id}/movies/#{party.movie_id}" %>
+    <p>When: <%= party.date %></p>
+    <p>Start Time: <%= party.start_time %></p>
+    <p>Host: I am hosting</p>
+    <p>Invitees: </p>
+  <% end %>
 </section>
