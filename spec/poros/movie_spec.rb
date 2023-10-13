@@ -7,7 +7,7 @@ RSpec.describe Movie do
       id: "1",
       title: "Up",
       vote_average: "8",
-      genre_ids: "[1]",
+      genres: "[1]",
       overview: "Going up"
     }
 
@@ -17,7 +17,7 @@ RSpec.describe Movie do
     expect(movie.id).to eq("1")
     expect(movie.title).to eq("Up")
     expect(movie.vote_average).to eq("8")
-    expect(movie.genre_ids).to eq("[1]")
+    expect(movie.genres).to eq("[1]")
     expect(movie.overview).to eq("Going up")
   end
 end
