@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-equire 'rails_helper'
+require 'rails_helper'
 
 RSpec.describe ApplicationRecord, type: :model do
   describe '.date_formatter' do
