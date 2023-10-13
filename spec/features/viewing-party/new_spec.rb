@@ -33,8 +33,13 @@ RSpec.describe "Viewing Party New page", type: :feature do
       expect(page).to have_field("duration", with: 109)
     end
 
-    xit "Should create a new viewing party and redirect the user to their dashboard on submit" do
+    it "Should create a new viewing party and redirect the user to their dashboard on submit" do
+      fill_in "date", with: "2023-10-10"
+      fill_in "start_time", with: "01:47:01"
+      click_button "Create Viewing Party"
 
+      expect(page).to have_current_path(user_path(@user_1.id))
+      expect(Party.last.start_time.strftime("%H:%M:%S")).to eq("01:47:01")
     end
 
     xit "Should throw an error if the duration is less than the runtime of the movie" do
