@@ -43,9 +43,9 @@ RSpec.feature "User show" do
     visit user_path(@anne)
 
     expect(find("#party-#{@arthur.id}")).to have_content("Arthur")
-    expect(find("#party-#{@arthur.id}")).to have_content(@arthur.date_formatter)
+    expect(find("#party-#{@arthur.id}")).to have_content(@arthur.date_formatter(@arthur.date_time))
     expect(find("#party-#{@arthur.id}")).to have_content("140 min")
-    expect(find("#party-#{@arthur.id}")).to have_content(@arthur.date_formatter)
+    expect(find("#party-#{@arthur.id}")).to have_content(@arthur.date_formatter(@arthur.date_time))
     expect(find("#party-#{@arthur.id}")).to have_content("Hosting")
 
     expect(find("#party-#{@candyman.id}")).to have_content("Invited")

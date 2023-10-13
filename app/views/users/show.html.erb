@@ -12,13 +12,14 @@
   </tr>
   <% @user.viewing_parties.each do |party| %>
     <% temp_movie = MovieSearch.new(party.movie_id) %>
+    <div id="movie-<%= party.movie_id %>">
     <section id="party-<%= party.id %>">
       <tr>
       <td><img src=<%= temp_movie.image_url %> alt= <%= temp_movie.title %>></td>
       <td><%= temp_movie.title %></td>
-      <td><%= party.date_formatter %></td>
+      <td><%= party.date_formatter(party.date_time) %></td>
       <td><%= "#{party.duration} min" %></td>
-      <td><%= party.time_formatter %></td>
+      <td><%= party.time_formatter(party.date_time) %></td>
         <td><%= if party.user_viewing_parties.where(user_id: @user.id)[0].host == true
                   "Hosting"
                 else 
@@ -26,6 +27,7 @@
                 end %></td>
       </tr>
     </section>
+    </div>
   <% end %>
 </table>
 

@@ -7,17 +7,18 @@ class ViewingPartiesController < ApplicationController
   end
 
   def create
-    #makes party
-    party = ViewingParty.create!(date_time: param_datetime_formatter,
-                                  movie_id: params[:movie_id],
-                                  duration: params[:duration])
-    #makes host
-    UserViewingParty.create!(viewing_party: party, user_id: params[:user_id], host: true)
-    #makes invited
-    params[:invites_id].each do |invite_id|
-      UserViewingParty.create!(viewing_party: party, user_id: invite_id)
+    party = ViewingParty.create(date_time: param_datetime_formatter,
+                                movie_id: params[:movie_id],
+                                duration: params[:duration])
+    # party = ViewingParty.create(viewing_params)
+    if party.save
+      create_host_viewing_party(party)
+      create_invited_viewing_party(party)
+      redirect_to "/users/#{params[:user_id]}"
+    else
+      redirect_to "/users/#{:user_id}/movies/#{:movie_id}/viewing_parties/new"
+      flash[:alert] = "Error: #{error_message(party.errors)}"
     end
-    redirect_to "/users/#{params[:user_id]}"
   end
 
   private
@@ -36,5 +37,17 @@ class ViewingPartiesController < ApplicationController
             params["time(5i)"] << ":" <<
             "00" << " " <<
             "UTC"
+  end
+  
+  def create_host_viewing_party(party)
+    UserViewingParty.create!(viewing_party: party, user_id: params[:user_id], host: true)
+  end
+
+  def create_invited_viewing_party(party)
+    unless params[:invites_id].nil?
+      params[:invites_id].each do |invite_id|
+        UserViewingParty.create!(viewing_party: party, user_id: invite_id)
+      end 
+    end
   end
 end

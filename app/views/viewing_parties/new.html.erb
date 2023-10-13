@@ -26,8 +26,10 @@
   <h5> Invite Other Users </h5>
 
   <% @users.each do |user| %>
+    <section id="user-<%= user.id %>">
     <%= f.label :invites, "#{user.name} (#{user.email})" %>
-    <%= check_box_tag "invites_id[]", user.id, checked: true %></br>
+    <%= check_box_tag "invites_id[]", user.id %></br>
+    </section>
     <% end %>
   <%= f.submit "Create Party" %>
 <% end %>
