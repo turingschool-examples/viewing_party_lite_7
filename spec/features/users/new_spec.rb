@@ -10,7 +10,7 @@ RSpec.describe 'New User page' do
     end
   end
 
-  it 'when filled in correctly, user is created' do 
+  it 'when filled in correctly, user is created, redirects to user show page' do 
     visit(new_user_path)
 
     within('.user_creation_form') do
@@ -19,6 +19,7 @@ RSpec.describe 'New User page' do
       click_button("Register")
     end
 
+    expect(page).to have_current_path(user_path(User.last))
     visit(root_path)
     expect(page).to have_content("Joe")
   end

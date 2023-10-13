@@ -8,10 +8,13 @@ feature "user can search for movies" do
     fill_in :search, with: 'Up'
 
     click_button 'Search'
-    save_and_open_page
+    #save_and_open_page
 
     expect(page.status_code).to eq 200
     expect(page).to have_content("20 Results")
     expect(page).to have_content("Up")
   end
 end
+
+#json_response = File.read('spec/fixtures/movies.json')
+       #stub_request(:get, "https://api.themoviedb.org/3/discover/movie?.json").with(params: {'api_key' => Rails.application.credentials.tmdb[:key]}).to_return(status: 200, body: json_response)
