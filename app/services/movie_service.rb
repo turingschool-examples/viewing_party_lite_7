@@ -11,7 +11,7 @@ class MovieService
     get_url("/3/movie/#{movie}/reviews")
   end
 
-  def get_top_20_movies
+  def get_top_movies
     get_url("/3/movie/top_rated")
   end
 

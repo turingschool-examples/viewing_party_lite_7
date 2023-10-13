@@ -25,7 +25,7 @@ class MovieFacade
   end
 
   def top_20_movies
-    json = service.get_top_20_movies
+    json = service.get_top_movies
 
     movies = json[:results].map do |movie_data|
       Movie.new(movie_data)
