@@ -1,8 +1,8 @@
-<%= button_to "Return to Discover Page", "/users/#{@user.id}/discover", method: :get %>
-<h1><%= @header %></h1>
-<% @movies.each do |movie| %>
-  <p><%= link_to "#{movie[:title]}", "/users/#{@user.id}/movies/#{movie[:id]}" %>
-  Vote Average: <%= movie[:vote_average] %></p>
+<%= button_to "Return to Discover Page", "/users/#{@facade.user.id}/discover", method: :get %>
+<h1><%= @facade.header %></h1>
+<% @facade.discover_options.each do |movie| %>
+  <p><%= link_to "#{movie.title}", "/users/#{@facade.user.id}/movies/#{movie.id}" %>
+  Vote Average: <%= movie.vote_average %></p>
 <% end %>
 
 
