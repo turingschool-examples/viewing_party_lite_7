@@ -19,4 +19,19 @@ class MovieFacade
     
     @movies
   end
+
+  def self.search(search_string)
+    conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
+      faraday.params['api_key'] = Rails.application.credentials.api_key
+      faraday.params['query'] = search_string
+    end
+
+    response = conn.get("/3/search/movie")
+    json = JSON.parse(response.body, symbolize_names: true)
+    @movies = json[:results].map do |movie_data|
+      Movie.new(movie_data)
+    end
+    
+    @movies
+  end
 end
