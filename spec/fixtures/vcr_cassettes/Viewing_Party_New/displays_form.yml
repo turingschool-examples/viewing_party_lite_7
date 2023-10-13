@@ -24,12 +24,8 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Date:
-      - Fri, 13 Oct 2023 15:16:35 GMT
       Server:
       - openresty
-      Cache-Control:
-      - public, max-age=23967
       X-Memc:
       - HIT
       X-Memc-Key:
@@ -38,6 +34,10 @@ http_interactions:
       - '25528'
       X-Memc-Expires:
       - '958'
+      Date:
+      - Fri, 13 Oct 2023 23:10:39 GMT
+      Cache-Control:
+      - public, max-age=24737
       Etag:
       - W/"ff3598050ab5cdf1cc1045f0d7165e61"
       Vary:
@@ -46,15 +46,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 c1e0a7ac577ef4659f75bd73a73531f6.cloudfront.net (CloudFront)
+      - 1.1 9427b8c01c70c4a2deb16eed5a2ced9c.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN52-P3
+      - DEN52-C1
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 9I8imIrjPMLdZKPFwKlZysNp-3mBzB5wcMK-aR9PC3JOmqgE6t9kZg==
+      - JMBJUnd1nLhm4WhqALXrQwlQSnjNGg7mvZtvrIr7Rs108cf5sIlJpg==
       Age:
-      - '18858'
+      - '1508'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/8MrWcsw5HqwRLvvNJS7doDq6xh0.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"},{"id":878,"name":"Science
@@ -69,5 +69,5 @@ http_interactions:
         States of America"}],"release_date":"1973-12-19","revenue":0,"runtime":104,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Unwittingly,
         he trained a dolphin to kill the president of the United States.","title":"The
         Day of the Dolphin","video":false,"vote_average":5.9,"vote_count":42}'
-  recorded_at: Fri, 13 Oct 2023 20:30:53 GMT
+  recorded_at: Fri, 13 Oct 2023 23:35:47 GMT
 recorded_with: VCR 6.2.0
