@@ -1,6 +1,6 @@
 <h1><%= "#{@data[:title]} Movie Details"%></h1>
 
-<%= button_to 'Create a Viewing Party', user_discover_index_path(params[:user_id]), method: :get %>
+<%= button_to 'Create a Viewing Party', "/users/#{params[:user_id]}/movies/#{params[:id]}/viewing-party/new", method: :get %>
 <%= button_to 'Discover Movies', user_discover_index_path(params[:user_id]), method: :get %>
 
 <p>Movie Id: <%= "#{@data[:id]}"%></p>
