@@ -15,7 +15,8 @@ class Users::Movies::ViewingPartiesController < ApplicationController
         duration: (params[:duration]),
         date: (params[:date]),
         start_time: (params[:start_time]),
-        movie_id: (params[:movie_id])
+        movie_id: (params[:movie_id]),
+        host_user_id: (params[:user_id])
         )
       result = users.map do |user|
         if params["#{user.name}"] == "1"
