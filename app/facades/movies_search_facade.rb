@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MoviesSearchFacade
   attr_reader :query, :service
 
@@ -37,6 +39,6 @@ class MoviesSearchFacade
   private
 
   def movies_data
-    @_movies_data ||= movies
+    @movies_data ||= movies
   end
 end

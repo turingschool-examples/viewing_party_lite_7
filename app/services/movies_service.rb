@@ -1,5 +1,6 @@
-class MoviesService
+# frozen_string_literal: true
 
+class MoviesService
   def search(title)
     get_url("/3/search/movie?query=#{title}")
   end
@@ -11,7 +12,7 @@ class MoviesService
   def movie_images(id)
     get_url("/3/movie/#{id}/images")
   end
-  
+
   def movie_details(id)
     get_url("3/movie/#{id}")
   end
@@ -30,8 +31,8 @@ class MoviesService
   end
 
   def conn
-    Faraday.new(url: "https://api.themoviedb.org") do |faraday|
-      faraday.params["api_key"] = Rails.application.credentials.tmdb[:key]
+    Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
+      faraday.params['api_key'] = Rails.application.credentials.tmdb[:key]
     end
   end
 end

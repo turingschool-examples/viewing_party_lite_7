@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 class UserFacade
   attr_reader :user
+
   def initialize(user_id)
     @user = User.find(user_id)
   end
