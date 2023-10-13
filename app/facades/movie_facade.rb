@@ -4,29 +4,28 @@ class MovieFacade
   end
 
   def movies
-    @movies = results[:results]
+    results[:results]
   end
 
   def movie
-    @movie = Movie.new(results)
+    Movie.new(results)
   end
 
   def cast
-    @cast = results[:cast].first(10)
+    results[:cast].first(10)
   end
 
   def reviews
-    @reviews = results[:results]
+    results[:results]
   end
 
   def image
-    @image = results[:images]
+    results[:images]
   end
-  
+
   private
 
   def results
-    MovieService.new.end_point(@endpoint)
+    MovieService.new.get_url(@endpoint)
   end
-
 end
