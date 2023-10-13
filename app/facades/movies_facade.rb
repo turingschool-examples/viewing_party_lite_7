@@ -1,6 +1,6 @@
 class MoviesFacade
 
-  def initialize(movie_id)
+  def initialize(movie_id = nil)
     @movie_id = movie_id.to_i
   end
 
@@ -16,8 +16,8 @@ class MoviesFacade
     MovieService.new.reviews(@movie_id)
   end
 
-  def movie_search
-    MovieService.new.movie_search
+  def movie_search(search)
+    MovieService.new.movie_search(search)
   end
 
   def movie_discover

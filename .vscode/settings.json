@@ -7,7 +7,7 @@
     "documentLink": true,
     "documentSymbols": true,
     "foldingRanges": true,
-    "formatting": false,
+    "formatting": true,
     "hover": true,
     "inlayHint": true,
     "onTypeFormatting": true,
