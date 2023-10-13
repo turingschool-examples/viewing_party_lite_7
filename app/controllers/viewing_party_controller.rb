@@ -10,5 +10,10 @@ class ViewingPartyController < ApplicationController
     response = conn.get("/3/movie/#{movie_id}")
 
     @movie = JSON.parse(response.body, symbolize_names: true)
+    @users = User.all
+  end
+
+  def create
+    require 'pry';binding.pry
   end
 end

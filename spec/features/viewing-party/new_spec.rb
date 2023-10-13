@@ -33,7 +33,7 @@ RSpec.describe "Viewing Party New page", type: :feature do
       expect(page).to have_field("duration", with: 109)
     end
 
-    it "Should create a new viewing party and redirect the user to their dashboard on submit" do
+    xit "Should create a new viewing party and redirect the user to their dashboard on submit" do
 
     end
 
