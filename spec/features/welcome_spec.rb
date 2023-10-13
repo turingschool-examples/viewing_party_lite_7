@@ -31,9 +31,7 @@ RSpec.describe 'Welcome Page' do
       expect(page).to have_content(@user_1.email)
       expect(page).to have_content(@user_2.email)
       expect(page).to have_content(@user_3.email)
-      within("#user-#{@user_1.id}") do
-        click_link @user_1.email.to_s
-      end
+      click_link @user_1.email.to_s
     end
     expect(current_path).to eq(user_path(@user_1))
   end
