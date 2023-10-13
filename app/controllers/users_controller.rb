@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if !user.save
-      if params[:name] == nil || params[:email] == nil
+      if params.require(:user)[:name] == "" || params.require(:user)[:email] == ""
         flash.now[:alert] = "Missing Inputs"
         render :new
       else
