@@ -1,4 +1,9 @@
 class ThemoviedbService
+  def poster_image_base_url
+    response = connection.get("/3/configuration?api_key=#{Rails.application.credentials.config.first.last[:api_key]}")
+    parsed = JSON.parse(response.body, symbolize_names: true)[:images]
+  end
+
   def movie_details(movie_id)
     response = connection.get("/3/movie/#{movie_id}?api_key=#{Rails.application.credentials.config.first.last[:api_key]}")
     parsed = JSON.parse(response.body, symbolize_names: true)
