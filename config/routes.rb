@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   resources :users, only: [:create, :show] do 
     get "/discover" => "search#index"
     get "/movies" => "search#show"
+    get "/movies/:id" => "details#show"
   end
 end
