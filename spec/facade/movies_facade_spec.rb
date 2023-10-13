@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# rubocop:disable Metrics/BlockLength
+
 require 'rails_helper'
 
 RSpec.describe MoviesFacade do
@@ -77,3 +79,4 @@ RSpec.describe MoviesFacade do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength

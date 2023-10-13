@@ -1,24 +1,28 @@
+# frozen_string_literal: true
+
+# rubocop:disable Metrics/BlockLength
+
 require 'rails_helper'
 
 describe MovieService do
-  context "helper methods" do
-    context "conn" do
-      it "returns a faraday connection" do
+  context 'helper methods' do
+    context 'conn' do
+      it 'returns a faraday connection' do
         expect(MovieService.new.conn).to be_a Faraday::Connection
       end
     end
 
-    context "get_url" do
-      it "returns a faraday response", :vcr do
-       expect(MovieService.new.get_url("/3/search/movie")).to be_a Faraday::Response
+    context 'get_url' do
+      it 'returns a faraday response', :vcr do
+        expect(MovieService.new.get_url('/3/search/movie')).to be_a Faraday::Response
       end
     end
   end
 
-  context "class methods" do
-    context "#movie_search", :vcr do
-      it "returns movie data from keyword search" do
-        search = MovieService.new.movie_search("dog")
+  context 'class methods' do
+    context '#movie_search', :vcr do
+      it 'returns movie data from keyword search' do
+        search = MovieService.new.movie_search('dog')
         expect(search).to be_a Hash
         expect(search[:results]).to be_an Array
         movie_data = search[:results].first
@@ -33,9 +37,9 @@ describe MovieService do
         expect(movie_data[:vote_average]).to be_a(Float)
       end
     end
-    
-    context "#movie_discover", :vcr do
-      it "returns movie data from top 20 movies" do
+
+    context '#movie_discover', :vcr do
+      it 'returns movie data from top 20 movies' do
         search = MovieService.new.movie_discover
         expect(search).to be_a Hash
         expect(search[:results]).to be_an Array
@@ -52,9 +56,9 @@ describe MovieService do
       end
     end
 
-    context "#movie", :vcr do
-      it "returns movie data from movie id" do
-       movie= MovieService.new.movie(268)
+    context '#movie', :vcr do
+      it 'returns movie data from movie id' do
+        movie = MovieService.new.movie(268)
         expect(movie).to be_a Hash
 
         expect(movie).to have_key :title
@@ -77,9 +81,9 @@ describe MovieService do
       end
     end
 
-    context "#cast", :vcr do
-      it "returns cast data from movie id" do
-       movies = MovieService.new.cast(268)
+    context '#cast', :vcr do
+      it 'returns cast data from movie id' do
+        movies = MovieService.new.cast(268)
         expect(movies).to be_a Array
         movie = movies.first
 
@@ -91,11 +95,11 @@ describe MovieService do
       end
     end
 
-    context "#reviews", :vcr do
-      it "returns review data from movie id" do
-       movies = MovieService.new.reviews(268)
+    context '#reviews', :vcr do
+      it 'returns review data from movie id' do
+        movies = MovieService.new.reviews(268)
         expect(movies).to be_a Hash
-        
+
         expect(movies).to have_key :total_results
         expect(movies[:total_results]).to be_a(Integer)
 
@@ -114,3 +118,4 @@ describe MovieService do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength
