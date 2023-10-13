@@ -9,6 +9,21 @@ class MovieService < ApplicationService
   def get_url(url)
     conn.get(url)
   end
+  
+  def movie_search(search)
+    json_parse(
+      conn.get("/3/search/movie") do |req|
+        req.params["query"] = search
+      end
+    )
+
+    ## WHY DOESN'T THIS WORK
+    # json_parse(
+    #   get_url("/3/search/movie") do |req|
+    #     req.params["query"] = search
+    #   end
+    # )
+  end
 
   def movie(id)
     json_parse(get_url("/3/movie/#{id}"))
@@ -21,14 +36,7 @@ class MovieService < ApplicationService
   def reviews(id)
     json_parse(get_url("/3/movie/#{id}/reviews"))
   end
-
-  def movie_search
-    response = get_url("3/search/movie") do |req|
-      req.params["query"] = params[:search]
-    end
-
-    json_parse(response)
-  end
+  
 
   def movie_discover
     json_parse(get_url("/3/discover/movie?sort_by=popularity.desc"))
