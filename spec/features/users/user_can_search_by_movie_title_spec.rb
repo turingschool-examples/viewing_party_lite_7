@@ -8,7 +8,6 @@ feature "user can search for movies" do
     fill_in :search, with: 'Up'
 
     click_button 'Search'
-    #save_and_open_page
 
     expect(page.status_code).to eq 200
     expect(page).to have_content("20 Results")

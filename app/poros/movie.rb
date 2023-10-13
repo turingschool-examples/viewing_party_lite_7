@@ -1,14 +1,29 @@
 class Movie
-  attr_reader :title,
+  attr_reader :id,
+              :title,
               :vote_average,
-              :genre_ids,
-              :overview
+              :genres,
+              :overview,
+              :runtime
 
 
   def initialize(data)
+    @id = data[:id]
     @title = data[:title]
     @vote_average = data[:vote_average]
-    @genre_ids = data[:genre_ids]
+    @genres = data[:genres]
     @overview = data[:overview]
+    @runtime = data[:runtime]
   end
+
+  def genre_info
+    @genres.map do |genre|
+      genre[:name]
+    end.join(", ")
+  end
+
+  def format_runtime
+    "#{@runtime/ 60}hr #{@runtime % 60}min"
+  end
+
 end
