@@ -16,7 +16,10 @@ class MoviesFacade
   end
 
   def reviews
-    MovieService.new.reviews(@movie_id)
+    data = MovieService.new.reviews(@movie_id)
+    data[:results].map do |review_data|
+      Review.new(review_data, data[:total_results])
+    end
   end
 
   def movie_search(search)
