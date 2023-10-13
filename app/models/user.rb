@@ -6,4 +6,8 @@ class User < ApplicationRecord
     user = User.find(id)
     user.name
   end
+
+  def self.all_users_except_self(user)
+    User.excluding(user)
+  end
 end

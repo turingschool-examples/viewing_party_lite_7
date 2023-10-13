@@ -15,4 +15,16 @@ RSpec.describe User, type: :model do
       expect(query).to eq("Jamie")
     end
   end
+
+  describe "#all_users_except_self" do
+    it "can return a list of all users excluding user argument" do
+      user_1 = User.create!(name: "Jamie", email: "34@gmail.com")
+      user_2 = User.create!(name: "Katie", email: "34997@gmail.com")
+      user_3 = User.create!(name: "George", email: "george@gmail.com")
+
+      query = User.all_users_except_self(user_1)
+
+      expect(query).to eq([user_2, user_3])
+    end
+  end
 end
