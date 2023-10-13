@@ -8,37 +8,21 @@ RSpec.describe 'Discover Movies Page' do
     visit user_path(@u1)
   end
   it 'has a button to discover movies' do
-    stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key").
-      to_return(status: 200, body: File.read("spec/features/fixtures/movies_response.json"), headers: {})  
+    stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=d84e59db219943d545dafbf5f7631afa").
+      to_return(status: 200, body: File.read("spec/features/fixtures/movie_results.json"), headers: {})  
     visit user_discover_index_path(@u1)
 
     within('#top_movies') do
       expect(page).to have_button('Discover Top Rated Movies')
       click_button 'Discover Top Rated Movies'
       expect(current_path).to eq user_movies_path(@u1)
-  end 
+    end 
   end
 
   # it 'has a search field to search by movie title' do
   #   stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key").
-  #     with(
-  #       headers: {
-  #     'Accept'=>'*/*',
-  #     'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-  #     'User-Agent'=>'Faraday v2.7.11'
-  #       }).
-  #     to_return(status: 200, body: "", headers: {})
+  #     to_return(status: 200,body: File.read("spec/features/fixtures/movies_response.json"), headers: {})
   
-  #   registered request stubs:
-  
-  #   stub_request(:get, "https://api.themoviedb.org/3/discover/movie?api_key").
-  #     with(
-  #       headers: {
-  #     'Accept'=>'*/*',
-  #     'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-  #     'User-Agent'=>'Faraday v2.7.11'
-  #       })
-
   #   visit user_discover_index_path(@u1)
 
   #   within('#movie_search') do

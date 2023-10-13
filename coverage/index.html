@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-10-13T14:26:50-06:00">2023-10-13T14:26:50-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-10-13T15:09:16-06:00">2023-10-13T15:09:16-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -1177,7 +1177,7 @@
 
             
 
-            <code class="ruby">      faraday.params[&#39;api_key&#39;] = ENV[&#39;MOVIE_API_KEY&#39;]</code>
+            <code class="ruby">      faraday.params[&#39;api_key&#39;] = Rails.application.credentials.api_key</code>
           </li>
         </div>
       
@@ -5275,7 +5275,7 @@
 
             
 
-            <code class="ruby">    stub_request(:get, &quot;https://api.themoviedb.org/3/movie/top_rated?api_key&quot;).</code>
+            <code class="ruby">    stub_request(:get, &quot;https://api.themoviedb.org/3/movie/top_rated?api_key=d84e59db219943d545dafbf5f7631afa&quot;).</code>
           </li>
         </div>
       
@@ -5286,7 +5286,7 @@
 
             
 
-            <code class="ruby">      to_return(status: 200, body: File.read(&quot;spec/features/fixtures/movies_response.json&quot;), headers: {})</code>
+            <code class="ruby">      to_return(status: 200, body: File.read(&quot;spec/features/fixtures/movie_results.json&quot;), headers: {})</code>
           </li>
         </div>
       

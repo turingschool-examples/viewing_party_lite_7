@@ -8,7 +8,7 @@ class MovieFacade
 
   def self.top_rated_movies
     conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
-      faraday.params['api_key'] = ENV['MOVIE_API_KEY']
+      faraday.params['api_key'] = Rails.application.credentials.api_key
     end
 
     response = conn.get("/3/movie/top_rated")

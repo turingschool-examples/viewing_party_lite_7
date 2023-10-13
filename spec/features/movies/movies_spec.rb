@@ -11,8 +11,8 @@ RSpec.describe 'Movies Results Page', type: :feature do
   it 'displays top-rated movie results and a return button' do
     visit user_path(@u1)
         
-    stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key").
-      to_return(status: 200, body: File.read("spec/features/fixtures/movies_response.json"), headers: {})
+    stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=d84e59db219943d545dafbf5f7631afa").
+      to_return(status: 200, body: File.read("spec/features/fixtures/movie_results.json"), headers: {})
 
     click_button 'Discover Movies'
 
