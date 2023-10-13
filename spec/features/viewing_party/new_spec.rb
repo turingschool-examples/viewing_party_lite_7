@@ -29,6 +29,13 @@ RSpec.describe "the movies viewing party new page", type: :feature do
         expect(page).to have_content(@user2.name)
       end
 
+      fill_in "Duration", with: 190
+      fill_in "When", with: "12/10/2023"
+      fill_in "Start Time", with: "6:30 PM"
+      check("guests_#{@user2.id}")
+      click_button "Create Party"
+
+      expect(current_path).to eq("/users/#{@user.id}")
     end
   end
 end
