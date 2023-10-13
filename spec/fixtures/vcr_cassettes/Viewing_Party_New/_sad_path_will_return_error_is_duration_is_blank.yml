@@ -46,15 +46,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 21d788b44c2b3d335a275c07a54548b6.cloudfront.net (CloudFront)
+      - 1.1 b963086ba799e00936372ebe90b8f6b4.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - "-ReXxymL3a4mQlho8aY7wlnJ_IcKRDZFkyWnLYFuZgwRS7DbwbhlNg=="
+      - gXprOV5r7W41QDd25wam_WSf8vAmq1Fa1U73RZKBfgMAHwUUGVKpBg==
       Age:
-      - '2433'
+      - '6219'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/8MrWcsw5HqwRLvvNJS7doDq6xh0.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"},{"id":878,"name":"Science
@@ -69,10 +69,10 @@ http_interactions:
         States of America"}],"release_date":"1973-12-19","revenue":0,"runtime":104,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Unwittingly,
         he trained a dolphin to kill the president of the United States.","title":"The
         Day of the Dolphin","video":false,"vote_average":5.9,"vote_count":42}'
-  recorded_at: Fri, 13 Oct 2023 15:57:08 GMT
+  recorded_at: Fri, 13 Oct 2023 17:00:13 GMT
 - request:
     method: get
-    uri: https://api.themoviedb.org/3/movie/movie_id?api_key=f7288e89c67ddeca054747d31c85225c
+    uri: https://api.themoviedb.org/3/movie/0?api_key=f7288e89c67ddeca054747d31c85225c
     body:
       encoding: US-ASCII
       string: ''
@@ -95,19 +95,19 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 13 Oct 2023 15:16:36 GMT
+      - Fri, 13 Oct 2023 17:00:14 GMT
       Server:
       - openresty
       Cache-Control:
-      - public, max-age=27458
+      - public, max-age=24264
       X-Memc:
       - MISS
       X-Memc-Key:
-      - 9ea9204611ad55c7f8f79d569b01d235
+      - 0e0ea920af5920cd4be6a197189f1cf9
       X-Memc-Age:
       - '0'
       X-Memc-Expires:
-      - '27458'
+      - '24264'
       Vary:
       - Accept-Encoding
       - Origin
@@ -120,12 +120,10 @@ http_interactions:
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - fnpDdn-TeplgBH2kXd8BlvDd4kAFvB8zv1skdHpcP0weIX8zzNWA2w==
-      Age:
-      - '2432'
+      - _CBhO3xE46I_h4Djw9mJycLmppPqnSaKpZpMYvZC8r--9eWWiEjCBw==
     body:
       encoding: ASCII-8BIT
       string: '{"success":false,"status_code":34,"status_message":"The resource you
         requested could not be found."}'
-  recorded_at: Fri, 13 Oct 2023 15:57:08 GMT
+  recorded_at: Fri, 13 Oct 2023 17:00:14 GMT
 recorded_with: VCR 6.2.0
