@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -8,9 +10,9 @@
 
 User.destroy_all
 
-noelle = User.create!(name: 'Noelle', email: 'Queen@aol.com')
-chris = User.create!(name: 'Chris', email: 'muttonchops@yahoo.com')
-antoine = User.create!(name: 'Antoine', email: 'antoine@gmail.com')
+User.create!(name: 'Noelle', email: 'Queen@aol.com')
+User.create!(name: 'Chris', email: 'muttonchops@yahoo.com')
+User.create!(name: 'Antoine', email: 'antoine@gmail.com')
 
 # viewing_party_1 = ViewingParty.create!(duration: 120, day: "2021-08-01", view_time: "2021-08-01 19:00:00 UTC")
 

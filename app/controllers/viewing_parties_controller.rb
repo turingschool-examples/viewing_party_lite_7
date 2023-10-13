@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ViewingPartiesController < ApplicationController
   before_action :find_movie
   before_action :find_user, only: %i[new create]
@@ -17,7 +19,7 @@ class ViewingPartiesController < ApplicationController
       UserViewingParty.create(user: @user, viewing_party:, host: true)
 
       User.all.each do |user|
-        UserViewingParty.create(user:, viewing_party:, host: false) if params["#{user.name}"] == '1'
+        UserViewingParty.create(user:, viewing_party:, host: false) if params[user.name.to_s] == '1'
       end
 
       redirect_to "/users/#{params[:id]}"

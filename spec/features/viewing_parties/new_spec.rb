@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'New Viewing Party Page' do
@@ -25,15 +27,15 @@ RSpec.describe 'New Viewing Party Page' do
       expect(page).to have_field(:view_time)
 
       expect(page).to have_content('Invite Other Users')
-      expect(page).to have_unchecked_field("#{@user_2.name}")
-      expect(page).to have_unchecked_field("#{@user_3.name}")
-      expect(page).to_not have_unchecked_field("#{@user.name}")
+      expect(page).to have_unchecked_field(@user_2.name.to_s)
+      expect(page).to have_unchecked_field(@user_3.name.to_s)
+      expect(page).to_not have_unchecked_field(@user.name.to_s)
 
       expect(page).to have_button('Create Party')
 
       fill_in(:view_time, with: '12:00:00 UTC')
       fill_in(:day, with: '2023-12-15')
-      check "#{@user_2.name}", allow_label_click: true
+      check @user_2.name.to_s, allow_label_click: true
 
       click_button('Create Party')
 
@@ -49,16 +51,16 @@ RSpec.describe 'New Viewing Party Page' do
         expect(page).to have_field(:view_time)
 
         expect(page).to have_content('Invite Other Users')
-        expect(page).to have_unchecked_field("#{@user_2.name}")
-        expect(page).to have_unchecked_field("#{@user_3.name}")
-        expect(page).to_not have_unchecked_field("#{@user.name}")
+        expect(page).to have_unchecked_field(@user_2.name.to_s)
+        expect(page).to have_unchecked_field(@user_3.name.to_s)
+        expect(page).to_not have_unchecked_field(@user.name.to_s)
 
         expect(page).to have_button('Create Party')
 
         fill_in(:duration, with: '110')
         fill_in(:view_time, with: '12:00:00 UTC')
         fill_in(:day, with: '2023-12-15')
-        check "#{@user_2.name}", allow_label_click: true
+        check @user_2.name.to_s, allow_label_click: true
 
         click_button('Create Party')
 

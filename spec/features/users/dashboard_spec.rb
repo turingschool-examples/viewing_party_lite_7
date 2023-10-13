@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'User Dashboard Page', type: :feature do
@@ -12,8 +14,8 @@ RSpec.describe 'User Dashboard Page', type: :feature do
     fill_in(:duration, with: '150')
     fill_in(:view_time, with: '12:00:00 UTC')
     fill_in(:day, with: '2023-12-15')
-    check "#{@user_2.name}"
-    check "#{@user_4.name}"
+    check @user_2.name.to_s
+    check @user_4.name.to_s
 
     click_button('Create Party')
   end
