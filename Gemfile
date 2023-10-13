@@ -55,6 +55,7 @@ group :development, :test do
   gem 'pry'
   gem 'faraday'
   gem 'webmock'
+  gem 'vcr'
 end
 
 group :development do
@@ -76,5 +77,3 @@ group :test do
   gem 'simplecov'
   gem 'shoulda-matchers'
 end
-
-
