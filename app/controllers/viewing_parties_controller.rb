@@ -2,7 +2,7 @@
 
 class ViewingPartiesController < ApplicationController
   def new
-    @movie = MovieSearch.new(params[:movie_id])
+    @movie = MoviesFacade.new(params[:movie_id]).movie
     @users = User.where.not(id: params[:user_id])
   end
 

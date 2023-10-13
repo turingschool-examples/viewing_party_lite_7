@@ -11,7 +11,7 @@
     <th>Hosting</th>
   </tr>
   <% @user.viewing_parties.each do |party| %>
-    <% temp_movie = MovieSearch.new(party.movie_id) %>
+    <% temp_movie = MoviesFacade.new(party.movie_id).movie %>
     <div id="movie-<%= party.movie_id %>">
     <section id="party-<%= party.id %>">
       <tr>
