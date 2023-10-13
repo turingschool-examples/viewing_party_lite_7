@@ -10,7 +10,7 @@
   <p> Check users to attend: </p>
   <% @users.each do |user| %>
     <%= f.label "#{user.name}"%>
-    <%= f.check_box "#{user.name}"%><br><br>
+    <%= f.check_box "#{user.id}"%><br><br>
   <% end %>
   <%= f.submit "Create a Party" %>
 <% end%>

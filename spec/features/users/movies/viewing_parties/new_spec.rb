@@ -48,7 +48,7 @@ RSpec.describe "New Viewing Party Page", type: :feeature do
             fill_in "duration", with: 180
             fill_in "date", with: '2023-11-16'
             fill_in "start_time", with: "07:00:00"
-            check "#{@user_2.name}"
+            check "#{@user_2.id}"
           end
 
           VCR.use_cassette("godfather_movie_details") do
@@ -72,7 +72,7 @@ RSpec.describe "New Viewing Party Page", type: :feeature do
             fill_in "duration", with: 50
             fill_in "date", with: '2023-11-23'
             fill_in "start_time", with: "07:00:00"
-            check "#{@user_2.name}"
+            check "#{@user_2.id}"
 
           end
           VCR.use_cassette("godfather_movie_details") do

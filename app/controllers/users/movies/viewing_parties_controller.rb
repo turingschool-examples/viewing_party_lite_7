@@ -19,7 +19,7 @@ class Users::Movies::ViewingPartiesController < ApplicationController
         host_user_id: (params[:user_id])
         )
       result = users.map do |user|
-        if params["#{user.name}"] == "1"
+        if params["#{user.id}"] == "1"
           UserViewingParty.create!(user_id: user.id, viewing_party_id: party.id)
         end
       end
