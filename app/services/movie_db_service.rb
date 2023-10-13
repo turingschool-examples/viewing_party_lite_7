@@ -26,14 +26,14 @@ class MovieDbService
 
   def top_rated_movies
     response = conn.get("/3/movie/top_rated")
-    parse_response(response)
+    parse_response(response)[:results]
   end
 
   def search_movies_by_title(query)
     response = conn.get("/3/search/movie") do |req|
       req.params['query'] = query
     end
-    parse_response(response)
+    parse_response(response)[:results]
   end
 
   private
