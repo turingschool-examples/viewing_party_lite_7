@@ -6,7 +6,8 @@ class Movie
               :runtime,
               :genres,
               :cast,
-              :reviews
+              :reviews,
+              :image
 
   def initialize(data)
     @title = data["original_title"]
@@ -17,6 +18,7 @@ class Movie
     @genres = genre_finder(data)
     @cast = actor_details(data)
     @reviews = review_details(data)
+    @image = data["backdrop_path"]
   end
 
   private 
