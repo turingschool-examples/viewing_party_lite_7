@@ -1,0 +1,22 @@
+<%= render partial: 'discover_page_link' %>
+<br>
+<section id="movies">
+  <ol>
+    <table>
+      <% if @movies.empty? %>
+        <p>No movies by that name</p>
+        <p>Please try another name</p>
+      <% else %>
+        <% @movies.each do |movie| %>
+          <tr>
+            <section id="movie-<%= movie[:id] %>">
+              <td><li></li></td>
+              <td><%= link_to "#{movie[:original_title]}", user_movie_path(@user, movie[:id]) %></td>
+              <td>Vote Average <%= movie[:vote_average] %></td>
+            </section>
+          </tr>
+        <% end %>
+      <% end %>
+    </table>
+  </ol>
+</section>
