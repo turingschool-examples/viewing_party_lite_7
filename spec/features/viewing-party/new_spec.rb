@@ -21,12 +21,12 @@ RSpec.describe "Viewing Party New page", type: :feature do
     end
 
     it "I should see a form below the movie title with the duration, when, start time, and checkboxes for each existing system user" do
-      page.has_field? "duration"
-      page.has_field? "date"
-      page.has_field? "start_time"
-      page.has_unchecked_field? "invite-#{@user_2.id}"
-      page.has_unchecked_field? "invite-#{@user_3.id}"
-      page.has_unchecked_field? "invite-#{@user_4.id}"
+      expect(page.has_field? "duration").to be true
+      expect(page.has_field? "date").to be true
+      expect(page.has_field? "start_time").to be true
+      expect(page.has_unchecked_field? "invite-#{@user_2.id}").to be true
+      expect(page.has_unchecked_field? "invite-#{@user_3.id}").to be true
+      expect(page.has_unchecked_field? "invite-#{@user_4.id}").to be true
     end
 
     it "The duration should default the value of the movie runtime in minutes" do
@@ -51,6 +51,13 @@ RSpec.describe "Viewing Party New page", type: :feature do
       expect(page).to have_current_path(user_path(@user_1.id))
       expect(PartyUser.last.user_id).to eq(@user_2.id)
       expect(PartyUser.last.is_host).to be false
+    end
+
+    it "Should exclude the current user from the invitees list" do
+      expect(page).to have_css("#invite-#{@user_2.id}")
+      expect(page).to have_css("#invite-#{@user_3.id}")
+      expect(page).to have_css("#invite-#{@user_4.id}")
+      expect(page).to_not have_css("#invite-#{@user_1.id}")
     end
   end
 end

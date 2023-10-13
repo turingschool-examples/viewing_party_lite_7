@@ -11,10 +11,9 @@
   <%= f.time_field :start_time %>
   <br>
   <p>Invite others:</p>
-  <br>
   <% @users.each do |user| %>
     <%= f.check_box "invite-#{user.id}" %>
-    <%= f.label "invite-#{user.id}", "#{user.email}" %>
+    <%= f.label "invite-#{user.id}", "#{user.name} - #{user.email}" %>
     <br>
   <% end %>
   <br>
