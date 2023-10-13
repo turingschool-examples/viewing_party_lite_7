@@ -13,7 +13,7 @@
         Duration: <%= party.duration %> minutes<br>
         Date: <%= party.date.strftime("%b %d, %Y") %><br>
         Start Time: <%= party.start_time.strftime("%I:%M %p") %><br>
-        Host: *create query*<br>
+        Host: <%= party.get_host_name %><br>
         Guest List: *create query*<br>
       </p>
     </section>
