@@ -11,61 +11,79 @@ RSpec.describe "user show page", type: :feature do
     UserViewingParty.create!(user: @user_3, viewing_party: @viewing_party_1)
     UserViewingParty.create!(user: @user_2, viewing_party: @viewing_party_2)
     UserViewingParty.create!(user: @user_3, viewing_party: @viewing_party_2)
-    
-    visit "/users/#{@user_1.id}"
   end
 
   feature "As a user" do
     feature "When I access my user show page" do
       scenario "I see the user's name, a button to discover movies and a list of viewing parties I am invited to, as well as a list of viewing parties I am hosting" do
-        expect(page).to have_content("#{@user_1.name}'s Dashboard")
-        expect(page).to have_content("User email: #{@user_1.email}")
-        expect(page).to have_button("Discover Movies")
-        within (".party_invitations") do
-          expect(page).to have_content("Viewing Party Invitations")
+        VCR.use_cassette("user_dashboard_page") do
+          visit "/users/#{@user_1.id}"
         end
 
-        within (".hosted_parties") do
-          expect(page).to have_content("Viewing Parties I'm Hosting")
+        VCR.use_cassette("discover_movies") do
+
+          expect(page).to have_content("#{@user_1.name}'s Dashboard")
+          expect(page).to have_content("User email: #{@user_1.email}")
+          expect(page).to have_button("Discover Movies")
+          within (".party_invitations") do
+            expect(page).to have_content("Viewing Party Invitations")
+          end
+
+          within (".hosted_parties") do
+            expect(page).to have_content("Viewing Parties I'm Hosting")
+          end
         end
       end
 
       feature "and I look at my viewing party invitations" do
         scenario "I see the movie image, the movie title (which links to that movies show page), the date and time of the party, who is hosting the event, and the list of users invited (with my name in bold)" do
-          visit "/users/#{@user_1.id}"
+          VCR.use_cassette("user_dashboard_page") do
+            visit "/users/#{@user_1.id}"
+          end
+
+          VCR.use_cassette("poster_base_url") do
+            
+            within (".party_invitations") do
+              find("img[src='http://image.tmdb.org/t/p/w92/3bhkrj58Vtu7enYsRolD1fZdja1.jpg']")
+              expect(page).to have_link("The Godfather")
+            end
+          end
 
           within (".party_invitations") do
-            # expect(page).to have_xpath("//img[@src='https://image.tmdb.org/t/p/w92/qJ2tW6WMUDux911r6m7haRef0WH.jpg']")
-            # expect(page).to have_link("The Godfather")
-            expect(page).to have_content("When: #{@viewing_party_1.date}")
-            expect(page).to have_content("Start Time: #{@viewing_party_1.start_time}")
-            expect(page).to have_content("Host: #{@user_2.name}")
-            expect(page).to have_content("Invitees:")
-            expect(page).to have_content("#{@user_1.name}")
-            expect(page).to have_content("#{@user_3.name}")
-            expect(page).to have_css('strong', text: "#{@user_1.name}", visible: true)
-            # click_link("The Godfather")
+            VCR.use_cassette("invited_parties") do
+              expect(page).to have_content("When: #{@viewing_party_1.date}")
+              expect(page).to have_content("Start Time: #{@viewing_party_1.start_time}")
+              expect(page).to have_content("Host: #{@user_2.name}")
+              expect(page).to have_content("Invitees:")
+              expect(page).to have_content("#{@user_1.name}")
+              expect(page).to have_content("#{@user_3.name}")
+              expect(page).to have_css('strong', text: "#{@user_1.name}", visible: true)
+              click_link("The Godfather")
+            end
           end
-          # expect(current_path).to eq("/users/#{@user_1.id}/movies/238")
+          expect(current_path).to eq("/users/#{@user_1.id}/movies/238")
         end
       end
 
       feature "and I look at the viewing parties I'm hosting" do
         scenario "I see the movie image, the movie title (which links to that movies show page), the date and time of the party, that I am hosting the event, and the list of users invited" do
-          visit "/users/#{@user_1.id}"
-
-          within (".hosted_parties") do
-            # expect(page).to have_xpath("//img[@src='https://image.tmdb.org/t/p/w92/3bhkrj58Vtu7enYsRolD1fZdja1.jpg']")
-            # expect(page).to have_link("The Dark Knight")
-            expect(page).to have_content("When: #{@viewing_party_2.date}")
-            expect(page).to have_content("Start Time: #{@viewing_party_2.start_time}")
-            expect(page).to have_content("Host: I am hosting")
-            expect(page).to have_content("Invitees:")
-            expect(page).to have_content("#{@user_2.name}")
-            expect(page).to have_content("#{@user_3.name}")
-            # click_link("The Dark Knight")
+          VCR.use_cassette("user_dashboard_page") do
+            visit "/users/#{@user_1.id}"
           end
-          # expect(current_path).to eq("/users/#{@user_1.id}/movies/155")
+          VCR.use_cassette("hosted_parties") do
+            within (".hosted_parties") do
+              find("img[src='http://image.tmdb.org/t/p/w92/qJ2tW6WMUDux911r6m7haRef0WH.jpg']")
+              expect(page).to have_link("The Dark Knight")
+              expect(page).to have_content("When: #{@viewing_party_2.date}")
+              expect(page).to have_content("Start Time: #{@viewing_party_2.start_time}")
+              expect(page).to have_content("Host: I am hosting")
+              expect(page).to have_content("Invitees:")
+              expect(page).to have_content("#{@user_2.name}")
+              expect(page).to have_content("#{@user_3.name}")
+              click_link("The Dark Knight")
+            end
+            expect(current_path).to eq("/users/#{@user_1.id}/movies/155")
+          end
         end
       end
     end
