@@ -8,8 +8,8 @@
 <% end %>
 
 <% @movies.each do |movie| %>
-  <section id="movie-<%= movie[:id]%>">
-    <%= link_to movie[:title], "/users/#{params[:user_id]}/movies/#{movie[:id]}" %>
-    <%=  " - Vote Average: #{movie[:vote_average]}" %></br>
+  <section id="movie-<%= movie.id%>">
+    <%= link_to movie.title, "/users/#{params[:user_id]}/movies/#{movie.id}" %>
+    <%=  " - Vote Average: #{movie.vote_average}" %></br>
   </section>
 <% end %>
