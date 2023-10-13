@@ -20,7 +20,7 @@ RSpec.describe 'Welcome Page' do
       click_on 'Create a New User'
     end
 
-    expect(current_path).to eq(new_user_path)
+    expect(current_path).to eq(register_path)
   end
 
   it "lists all existing users" do

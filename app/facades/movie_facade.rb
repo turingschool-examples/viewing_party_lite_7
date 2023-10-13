@@ -7,7 +7,6 @@ class MovieFacade
     service = MovieService.new
 
     results = service.end_point(@endpoint)
-
     @movies = results[:results]
   end
 
