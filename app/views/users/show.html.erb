@@ -1,6 +1,5 @@
 <h1><%= @user.name %>'s Dashboard</h1>
 
-
 <div class="viewing parties">
   <h2> Viewing Parties </h2>
   <% if @viewing_parties.empty? %>
@@ -9,12 +8,31 @@
     <ul>
     <% @viewing_parties.each_with_index do |party, index| %>
       <div class="party">
+
+        <%= image_tag "#{'https://image.tmdb.org/t/p/w300'}#{@movie_details[index].poster_path}" %> 
         <h2><%= link_to @movie_details[index].title, user_movie_path(party.movie_id) %></h2>
         <p><%= @movie_details[index].description %></p>
-        <p><%= party.is_host ? 'Hosting' : 'Invited' %></p>
+        <p><%= party.is_host ? "Hosting" : "Invited by: #{party.user.name}" %></p>
         <p><%= party.date_time.strftime('%B %d, %Y %I:%M %p') %></p>
+
+        <% if party.is_host %>
+          <p> Invited Friends: </p>
+          <ul>
+            <% party.guests.each do |guest| %>
+              <li><%= guest.name %></li>
+            <% end %>
+          </ul>
+          <% else %>
+            <p> Hosted by:<strong> <%= party.user.name %></strong></p>
+            <p>Invited Users: </p>
+            <ul>
+              <% party.guests.each do |guest| %>
+                <li><%= guest.name %></li>
+              <% end %>
+            </ul>
+        <% end %>
       </div>
     <% end %>
-        </ul>
+    </ul>
   <% end %>
 </div>

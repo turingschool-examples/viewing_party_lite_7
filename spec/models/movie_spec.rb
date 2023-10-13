@@ -1,5 +1,8 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe Movie, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+RSpec.describe Movie, :type => :model do
+  describe "relationships" do
+    it { should have_many(:viewing_parties) }
+    it { should have_many(:users).through(:viewing_parties) }
+  end
 end
