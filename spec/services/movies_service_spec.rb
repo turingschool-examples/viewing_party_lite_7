@@ -37,15 +37,15 @@ RSpec.describe MoviesService do
   describe "#get_cast" do
     it "returns cast details about a movie" do
       json_response = File.read("spec/fixtures/movie_cast.json")
-      stub_request(:get, "https://api.themoviedb.org/3/movie/926393?api_key=#{Rails.application.credentials.tmdb[:key]}").
+      stub_request(:get, "https://api.themoviedb.org/3/movie/926393/credits?api_key=#{Rails.application.credentials.tmdb[:key]}").
          to_return(status: 200, body: json_response)
 
-      cast = MoviesService.new.get_cast(926393)
+      credits = MoviesService.new.get_cast(926393)
       
-      expect(details).to be_a Hash
-      expect(details[:cast]).to be_an Array
+      expect(credits).to be_a Hash
+      expect(credits[:cast]).to be_an Array
 
-      member = details[:cast].first
+      member = credits[:cast].first
 
       expect(member).to be_a Hash
       expect(member).to have_key :name
@@ -58,7 +58,7 @@ RSpec.describe MoviesService do
   describe "#get_reviews" do
     it "returns a movie's reviews" do
       json_response = File.read("spec/fixtures/movie_reviews.json")
-      stub_request(:get, "https://api.themoviedb.org/3/movie/926393?api_key=#{Rails.application.credentials.tmdb[:key]}").
+      stub_request(:get, "https://api.themoviedb.org/3/movie/926393/reviews?api_key=#{Rails.application.credentials.tmdb[:key]}").
          to_return(status: 200, body: json_response)
   
       reviews = MoviesService.new.get_reviews(926393)
