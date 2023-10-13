@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       redirect_to user_path(user)
       flash[:success] = 'New account created successfully.'
     else
-      flash[:error] = "#{error_message(user.errors)}"
+      flash[:error] = "Please fill out BOTH name and email"
       redirect_to register_path
     end
   end
