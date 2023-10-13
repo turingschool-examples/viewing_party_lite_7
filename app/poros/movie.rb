@@ -6,7 +6,7 @@ class Movie
   def initialize(attributes)
     @title = attributes[:title]
     @runtime = attributes[:runtime]
-    @vote_average = attributes[:vote_average].round(1)
+    @vote_average_raw = attributes[:vote_average]
     @summary = attributes[:overview]
 
     @unfiltered_genre = attributes[:genres]
@@ -19,6 +19,12 @@ class Movie
 
   def genres
     @unfiltered_genre.map{|genre| genre[:name]}.join(', ')
+  end
+
+  def vote_average
+    unless @vote_average_raw.nil?
+      @vote_average_raw.round(1)
+    end
   end
 
 end
