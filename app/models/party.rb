@@ -7,4 +7,11 @@ class Party < ApplicationRecord
   validates_presence_of :duration
   validates_presence_of :date
   validates_presence_of :start_time
+
+  def get_host_name
+    host = user_parties.find do |up|
+      up.is_host == true
+    end
+    User.find(host.user_id).name
+  end
 end
