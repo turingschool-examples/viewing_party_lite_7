@@ -5,10 +5,12 @@
   <tr>
     <th>Poster</th>
     <th>Movie Title</th>
-    <th>Date</th>
     <th>Duration</th>
+    <th>Date</th>
     <th>Start Time</th>
     <th>Hosting</th>
+    <th>Host</th>
+    <th>Attending</th>
   </tr>
   <% @user.viewing_parties.each do |party| %>
     <% temp_movie = MoviesFacade.new(party.movie_id).movie %>
@@ -16,15 +18,23 @@
     <section id="party-<%= party.id %>">
       <tr>
       <td><img src=<%= temp_movie.image_url %> alt= <%= temp_movie.title %>></td>
-      <td><%= temp_movie.title %></td>
-      <td><%= party.date_formatter(party.date_time) %></td>
+      <td><%= link_to temp_movie.title, "/users/#{@user.id}/movies/#{party.movie_id}" %></td>
       <td><%= "#{party.duration} min" %></td>
+      <td><%= party.date_formatter(party.date_time) %></td>
       <td><%= party.time_formatter(party.date_time) %></td>
-        <td><%= if party.user_viewing_parties.where(user_id: @user.id)[0].host == true
-                  "Hosting"
-                else 
-                  "Invited"
-                end %></td>
+      <td><%= if party.user_viewing_parties.where(user_id: @user.id)[0].host == true
+                "Hosting"
+              else 
+                "Invited"
+              end %></td>
+      <td><div id="host"><%= User.find(party.user_viewing_parties.where(host: true)[0].user_id.to_s).name %></div></td>
+      <td><div id="attending"><% party.users.each do |user| %>
+            <% if user.id == @user.id%>
+              <strong><%= user.name %></strong></br>
+            <%else%>
+              <%= user.name %></br>
+            <% end%>
+          <% end%></div></td>
       </tr>
     </section>
     </div>
