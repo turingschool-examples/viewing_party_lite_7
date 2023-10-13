@@ -10,4 +10,33 @@ RSpec.describe User, type: :model do
     it {should validate_presence_of :name}
     it {should validate_presence_of :email}
   end
+
+  describe "instance methods" do
+    before(:each) do
+      @user_1 = User.create!(name: "Kiwi", email: "kiwibird@gmail.com")
+      @user_2 = User.create!(name: "Chicken", email: "chickenbird@gmail.com")
+      @party_1 = Party.create!(movie_id: 926393, duration: 109, date: "2024-10-10", start_time: "07:23")
+      @party_2 = Party.create!(movie_id: 926393, duration: 109, date: "2024-10-11", start_time: "09:23")
+      @party_3 = Party.create!(movie_id: 926393, duration: 109, date: "2024-10-12", start_time: "13:09")
+      @party_4 = Party.create!(movie_id: 926393, duration: 109, date: "2024-10-13", start_time: "15:09")
+      PartyUser.create!(user_id: @user_1.id, party_id: @party_1.id, is_host: true)
+      PartyUser.create!(user_id: @user_2.id, party_id: @party_1.id, is_host: false)
+      PartyUser.create!(user_id: @user_1.id, party_id: @party_2.id, is_host: false)
+      PartyUser.create!(user_id: @user_2.id, party_id: @party_2.id, is_host: true)
+      PartyUser.create!(user_id: @user_1.id, party_id: @party_3.id, is_host: false)
+      PartyUser.create!(user_id: @user_2.id, party_id: @party_3.id, is_host: true)
+    end
+
+    describe "#hosted_parties" do
+      it "returns all parties where the user is a host" do
+        expect(@user_1.hosted_parties).to eq([@party_1])
+      end
+    end
+
+    describe "#invited_parties" do
+      it "returns all parties where the user is a guest" do
+        expect(@user_1.invited_parties).to eq([@party_2, @party_3])
+      end
+    end
+  end
 end
