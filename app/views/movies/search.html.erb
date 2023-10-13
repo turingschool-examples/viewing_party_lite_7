@@ -6,9 +6,9 @@
 
 <% if @movies %>
   <% @movies.each do |movie| %>
-    <section id=<%= movie[:id] %>>
-      <%= link_to "#{movie[:title]}", "/users/#{params[:id]}/movies/#{movie[:id]}" %>
-      <p>Vote Average: <%= movie[:vote_average] %></p>
+    <section id=<%= movie.id %>>
+      <%= link_to "#{movie.title}", "/users/#{params[:id]}/movies/#{movie.id}" %>
+      <p>Vote Average: <%= movie.vote_average %></p>
     </section>
   <% end %>
 <% end %>
