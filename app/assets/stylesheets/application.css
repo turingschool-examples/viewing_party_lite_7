@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+ #viewing_parties {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movie_section {
+  width: 500px;
+  padding: 5px;
+  margin: 10px;
+  outline-style: solid;
+  outline-color: grey;
+  outline-width: thick;
+}
