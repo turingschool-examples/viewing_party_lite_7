@@ -3,12 +3,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    # poster_base_url = ThemoviedbService.poster_image_base_url[:base_url]
-    # size = ThemoviedbService.poster_image_base_url[:logo_sizes][1]
-    # ThemoviedbService.movie_details
-    @hosted_viewing_parties = ViewingParty.where(host_user_id: @user.id)
-    @invited_viewing_parties = @user.viewing_parties
+    @facade = UsersFacade.new(params)
   end
 
   def create
