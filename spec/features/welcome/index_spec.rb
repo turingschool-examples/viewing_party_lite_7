@@ -1,30 +1,32 @@
-require "rails_helper"
+# frozen_string_literal: true
 
-RSpec.feature "Welcome Index" do
-  it "has a header" do
-    visit "/"
+require 'rails_helper'
 
-    expect(page).to have_link("Home")
-    expect(page).to have_content("Viewing Party")
+RSpec.feature 'Welcome Index' do
+  it 'has a header' do
+    visit '/'
 
-    click_link "Home"
+    expect(page).to have_link('Home')
+    expect(page).to have_content('Viewing Party')
 
-    expect(page).to have_current_path("/")
+    click_link 'Home'
+
+    expect(page).to have_current_path('/')
   end
 
-  it "has a button to new user" do
-    visit "/"
+  it 'has a button to new user' do
+    visit '/'
 
-    expect(page).to have_button("Create a New User")
+    expect(page).to have_button('Create a New User')
 
-    click_button "Create a New User"
-    
+    click_button 'Create a New User'
+
     expect(page).to have_current_path(register_path)
   end
 
-  it "show all users", :vcr do
+  it 'show all users', :vcr do
     load_test_data
-    visit "/"
+    visit '/'
 
     expect(page).to have_link(@anne.email)
     expect(page).to have_link(@blair.email)

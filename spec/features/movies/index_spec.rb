@@ -28,7 +28,7 @@ RSpec.feature 'Welcome Index' do
 
       click_button 'Find Top Rated Movies'
 
-      expect(find('#movie-968051')).to have_link ('The Nun II')
+      expect(find('#movie-968051')).to have_link('The Nun II')
       expect(find('#movie-968051')).to have_content('Vote Average: 7')
     end
 
@@ -50,32 +50,32 @@ RSpec.feature 'Welcome Index' do
       load_test_data
 
       visit user_discover_path(@anne)
-      
-      fill_in :search, with: "day dolphin"
-      click_button "Find Movies"
 
-      expect(page).to have_content("Dolphin")
+      fill_in :search, with: 'day dolphin'
+      click_button 'Find Movies'
+
+      expect(page).to have_content('Dolphin')
     end
 
-    it "shows movies containing the keyword", :vcr do
+    it 'shows movies containing the keyword', :vcr do
       load_test_data
 
       visit user_discover_path(@anne)
-      
-      fill_in :search, with: "dog"
-      click_button "Find Movies"
 
-      expect(page).to have_content("dog")
+      fill_in :search, with: 'dog'
+      click_button 'Find Movies'
+
+      expect(page).to have_content('dog')
     end
 
-    it "page still renders when nothing is entered into the search", :vcr do
+    it 'page still renders when nothing is entered into the search', :vcr do
       load_test_data
 
       visit user_discover_path(@anne)
-      
-      click_button "Find Movies"
 
-      expect(page).to have_content("Viewing Party")
+      click_button 'Find Movies'
+
+      expect(page).to have_content('Viewing Party')
     end
   end
 end
