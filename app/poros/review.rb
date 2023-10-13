@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# app/poros/review.rb
 class Review
   attr_reader :content, :author, :rating, :total_results
 

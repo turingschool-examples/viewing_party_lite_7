@@ -1,5 +1,6 @@
-# app/controllers/viewing_parties_controller.rb
+# frozen_string_literal: false
 
+# app/controllers/viewing_parties_controller.rb
 class ViewingPartiesController < ApplicationController
   def new
     @movie = MoviesFacade.new(params[:movie_id]).movie

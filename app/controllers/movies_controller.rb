@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 # app/controllers/movies_controller.rb
 class MoviesController < ApplicationController
   def index
-    if params[:q] == "keyword"
-      @movies = MoviesFacade.new.movie_search(params[:search])
-    else
-      @movies = MoviesFacade.new.movie_discover
-    end
+    @movies = if params[:q] == 'keyword'
+                MoviesFacade.new.movie_search(params[:search])
+              else
+                MoviesFacade.new.movie_discover
+              end
   end
 
   def show

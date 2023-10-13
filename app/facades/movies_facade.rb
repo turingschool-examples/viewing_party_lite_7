@@ -1,13 +1,15 @@
-class MoviesFacade
+# frozen_string_literal: true
 
+# app/facades/movies_facade.rb
+class MoviesFacade
   def initialize(movie_id = nil)
     @movie_id = movie_id.to_i
   end
-  
+
   def movie
     Movie.new(MovieService.new.movie(@movie_id))
   end
-  
+
   def cast
     data = MovieService.new.cast(@movie_id)
     data.map do |cast_data|
@@ -35,5 +37,4 @@ class MoviesFacade
       MovieIndex.new(movie_data)
     end
   end
-
 end

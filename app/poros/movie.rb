@@ -1,8 +1,11 @@
+# frozen_string_literal: false
+
+# app/poros/movie.rb
 class Movie
   attr_reader :title,
               :runtime,
-              :vote_average,
               :summary
+
   def initialize(attributes)
     @title = attributes[:title]
     @runtime = attributes[:runtime]
@@ -14,7 +17,7 @@ class Movie
   end
 
   def image_url
-    "https://image.tmdb.org/t/p/w92" << @poster_path
+    'https://image.tmdb.org/t/p/w92' << @poster_path
   end
 
   def genres
@@ -24,9 +27,4 @@ class Movie
   def vote_average
     @vote_average_raw.round(1) unless @vote_average_raw.nil?
   end
-
 end
-
-
-
-
