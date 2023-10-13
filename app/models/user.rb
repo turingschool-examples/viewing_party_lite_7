@@ -14,4 +14,8 @@ class User < ApplicationRecord
     Party.joins(:party_users)
       .where("party_users.user_id = ? AND party_users.is_host = false", self.id)
   end
+
+  def self.all_excluding_id(id)
+    User.where.not("id = ?", id)
+  end
 end

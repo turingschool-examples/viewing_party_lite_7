@@ -11,6 +11,20 @@ RSpec.describe User, type: :model do
     it {should validate_presence_of :email}
   end
 
+  describe "class methods" do
+    describe "#all_excluding_id" do
+      it "returns all users excluding the ID provided" do
+        @user_1 = User.create!(name: "Kiwi", email: "kiwibird@gmail.com")
+        @user_2 = User.create!(name: "Coco", email: "cocobird@gmail.com")
+        @user_3 = User.create!(name: "Chicken", email: "chickenbird@gmail.com")
+        @user_4 = User.create!(name: "Hiccup", email: "hiccupbird@gmail.com")
+
+        expect(User.all_excluding_id(@user_1.id)).to eq([@user_2, @user_3, @user_4])
+        expect(User.all_excluding_id(@user_3.id)).to eq([@user_1, @user_2, @user_4])
+      end
+    end
+  end
+
   describe "instance methods" do
     before(:each) do
       @user_1 = User.create!(name: "Kiwi", email: "kiwibird@gmail.com")
