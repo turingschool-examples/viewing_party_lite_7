@@ -1,5 +1,6 @@
 <center><h1>Create a viewing Party for: <%= @movie.title %></h1></center>
 
+<center>
 <%= form_with url: viewing_party_create_path(params[:id], @movie.id), method: :post, data: {turbo: false} do |f| %>
   <%= f.label :duration %>
   <%= f.number_field :duration, value: @movie.runtime %><br>
@@ -7,12 +8,11 @@
   <%= f.date_field :day, value: Date.today %><br>
   <%= f.label :view_time, value: Time.now  %>
   <%= f.time_field :view_time %>
-  <center><h2>Invite Other Users</h2></center>
-  <center>
+  <h2>Invite Other Users</h2>
   <% @users.each do |user| %>
     <%= f.label "#{user.name}" %>
     <%= f.check_box "#{user.name}" %>
-  <% end %>
-  </center>
-  <%= f.submit "Create Party" %>
+  <% end %><br>
+  <br><%= f.submit "Create Party" %>
 <% end %>
+</center>

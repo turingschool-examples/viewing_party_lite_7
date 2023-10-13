@@ -28,3 +28,21 @@
   outline-color: grey;
   outline-width: thick;
 }
+
+.movie-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#average {
+  margin: 10px;
+}
+
+#summary {
+  width: 500px;
+}
+
+#reviews {
+  width: 700px;
+}
