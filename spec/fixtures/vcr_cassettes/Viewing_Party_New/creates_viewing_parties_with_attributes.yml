@@ -25,36 +25,36 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 13 Oct 2023 03:24:20 GMT
+      - Fri, 13 Oct 2023 15:57:06 GMT
       Server:
       - openresty
       Cache-Control:
-      - public, max-age=25226
+      - public, max-age=22494
       X-Memc:
       - HIT
       X-Memc-Key:
       - 4b195b5bc531430b075228584131165f
       X-Memc-Age:
-      - '9670'
+      - '989'
       X-Memc-Expires:
-      - '16314'
+      - '24461'
       Etag:
-      - W/"45ab8083ddd2d8b96e3af5e356a60ca5"
+      - W/"ff3598050ab5cdf1cc1045f0d7165e61"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 23241b9c368643949e3bb1a1ba4e97c2.cloudfront.net (CloudFront)
+      - 1.1 1bc5cb35fce618729d22b7ee2088cdce.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN50-C2
+      - ORD51-C4
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - nmLNlhegdGi8tSUOKzwoplfZgip0d5dHjFaG-y-a2Tz0P7aF1rxioA==
+      - qBjRERC6k7Za6Uez4j5B8paVRPsFMlD_7GBnCQBhK8y0X_2s4wVA6A==
       Age:
-      - '7580'
+      - '1'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/8MrWcsw5HqwRLvvNJS7doDq6xh0.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"},{"id":878,"name":"Science
@@ -64,12 +64,12 @@ http_interactions:
         dolphins to speak and understand English, although they do have a limited
         vocabulary. When the dolphins are stolen, he discovers they''re to be used
         in an assassination attempt. Now he is in a race to discover who is the target,
-        and where the dolphins are, before the attempt is carried out.","popularity":2.988,"poster_path":"/vLztqesi2Dj5Ny74u33GufVzKR6.jpg","production_companies":[{"id":494,"logo_path":"/ioc65azmsAeL1XQN4dFnrpdJoMO.png","name":"AVCO
+        and where the dolphins are, before the attempt is carried out.","popularity":4.183,"poster_path":"/vLztqesi2Dj5Ny74u33GufVzKR6.jpg","production_companies":[{"id":494,"logo_path":"/ioc65azmsAeL1XQN4dFnrpdJoMO.png","name":"AVCO
         Embassy Pictures","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1973-12-19","revenue":0,"runtime":104,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Unwittingly,
         he trained a dolphin to kill the president of the United States.","title":"The
         Day of the Dolphin","video":false,"vote_average":5.9,"vote_count":42}'
-  recorded_at: Fri, 13 Oct 2023 05:30:40 GMT
+  recorded_at: Fri, 13 Oct 2023 15:57:07 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/49012?api_key=f7288e89c67ddeca054747d31c85225c
@@ -94,46 +94,46 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
+      Date:
+      - Fri, 13 Oct 2023 15:55:54 GMT
       Server:
       - openresty
+      Cache-Control:
+      - public, max-age=25939
       X-Memc:
       - HIT
       X-Memc-Key:
       - e9d6154ab25394f91816ede51583e653
       X-Memc-Age:
-      - '578'
+      - '5456'
       X-Memc-Expires:
-      - '23860'
-      Date:
-      - Thu, 12 Oct 2023 23:08:19 GMT
-      Cache-Control:
-      - public, max-age=28475
+      - '22891'
       Etag:
-      - W/"b5eccb722a04db8530e682ce26897f2e"
+      - W/"c2c05ab32180d8843f51b81f042cfd48"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 d29afc70fc2fdadee440493854714224.cloudfront.net (CloudFront)
+      - 1.1 4657350ff2715d2be9ad9783d238616a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN50-C2
+      - ORD51-C4
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - EHow0ttkSWUYJ_u1Merl8n5A7FAvOYj_tj-H011KVvSeseQLnr27Pw==
+      - AtjRcpem66WUz9Qwd45ySbBZKWBa7GXtWSZxKQZXVgBAjSB3I_CElw==
       Age:
-      - '22941'
+      - '73'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/p2h886S7r4znUYvp1ELOTq7jqUZ.jpg","belongs_to_collection":null,"budget":40000000,"genres":[{"id":35,"name":"Comedy"},{"id":10749,"name":"Romance"}],"homepage":"http://arthurthemovie.warnerbros.com/","id":49012,"imdb_id":"tt1334512","original_language":"en","original_title":"Arthur","overview":"A
         drunken playboy stands to lose a wealthy inheritance when he falls for a woman
-        that his family doesn''t like.","popularity":17.03,"poster_path":"/foUTAJurvnbUoIUbnuUk5dyHx7M.jpg","production_companies":[{"id":174,"logo_path":"/IuAlhI9eVC9Z8UQWOIDdWRKSEJ.png","name":"Warner
+        that his family doesn''t like.","popularity":14.808,"poster_path":"/foUTAJurvnbUoIUbnuUk5dyHx7M.jpg","production_companies":[{"id":174,"logo_path":"/IuAlhI9eVC9Z8UQWOIDdWRKSEJ.png","name":"Warner
         Bros. Pictures","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"2011-04-08","revenue":48147945,"runtime":110,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Meet
         the world''s only loveable billionaire.","title":"Arthur","video":false,"vote_average":5.567,"vote_count":689}'
-  recorded_at: Fri, 13 Oct 2023 05:30:40 GMT
+  recorded_at: Fri, 13 Oct 2023 15:57:07 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/42470?api_key=f7288e89c67ddeca054747d31c85225c
@@ -159,36 +159,36 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 13 Oct 2023 03:24:20 GMT
+      - Fri, 13 Oct 2023 15:16:35 GMT
       Server:
       - openresty
       Cache-Control:
-      - public, max-age=25226
+      - public, max-age=23967
       X-Memc:
       - HIT
       X-Memc-Key:
       - 4b195b5bc531430b075228584131165f
       X-Memc-Age:
-      - '9670'
+      - '25528'
       X-Memc-Expires:
-      - '16314'
+      - '958'
       Etag:
-      - W/"45ab8083ddd2d8b96e3af5e356a60ca5"
+      - W/"ff3598050ab5cdf1cc1045f0d7165e61"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 6c02603f677dd5669f8ab3b41062340e.cloudfront.net (CloudFront)
+      - 1.1 b963086ba799e00936372ebe90b8f6b4.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN50-C2
+      - DEN52-P3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - hCGpJfWr49zQWViRgIHWFEEvLhI-bb3SMbvmLgHwg_EG7UWnykZibg==
+      - PkjK6KPWMEjPZpiVgoyqlKqohFtznrrxx-xxOcPPjPpdVWTNnt2FJQ==
       Age:
-      - '7580'
+      - '2432'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/8MrWcsw5HqwRLvvNJS7doDq6xh0.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"},{"id":878,"name":"Science
@@ -198,10 +198,10 @@ http_interactions:
         dolphins to speak and understand English, although they do have a limited
         vocabulary. When the dolphins are stolen, he discovers they''re to be used
         in an assassination attempt. Now he is in a race to discover who is the target,
-        and where the dolphins are, before the attempt is carried out.","popularity":2.988,"poster_path":"/vLztqesi2Dj5Ny74u33GufVzKR6.jpg","production_companies":[{"id":494,"logo_path":"/ioc65azmsAeL1XQN4dFnrpdJoMO.png","name":"AVCO
+        and where the dolphins are, before the attempt is carried out.","popularity":4.183,"poster_path":"/vLztqesi2Dj5Ny74u33GufVzKR6.jpg","production_companies":[{"id":494,"logo_path":"/ioc65azmsAeL1XQN4dFnrpdJoMO.png","name":"AVCO
         Embassy Pictures","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1973-12-19","revenue":0,"runtime":104,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Unwittingly,
         he trained a dolphin to kill the president of the United States.","title":"The
         Day of the Dolphin","video":false,"vote_average":5.9,"vote_count":42}'
-  recorded_at: Fri, 13 Oct 2023 05:30:40 GMT
+  recorded_at: Fri, 13 Oct 2023 15:57:07 GMT
 recorded_with: VCR 6.2.0

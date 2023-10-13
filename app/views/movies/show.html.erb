@@ -34,8 +34,8 @@
     </tr>
     <% @facade.cast.each do |member| %>
       <tr>
-        <td><%= member[:character] %></td>
-        <td><%= member[:name] %></td>
+        <td><%= member.character %></td>
+        <td><%= member.name %></td>
       </tr>
     <% end %>
   </table>

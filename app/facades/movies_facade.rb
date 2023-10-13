@@ -7,9 +7,12 @@ class MoviesFacade
   def movie
     MovieService.new.movie(@movie_id)
   end
-
+  
   def cast
-    MovieService.new.cast(@movie_id)
+    data = MovieService.new.cast(@movie_id)
+    data.map do |cast_data|
+      Cast.new(cast_data)
+    end
   end
 
   def reviews
