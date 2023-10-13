@@ -12,16 +12,12 @@ RSpec.describe 'User SHow Page' do
     expect(page).to have_content("#{@user1.name}'s Dashboard")
     expect(page).to have_content(@user1.email)
 
-    # within ("##{@party1.id}") do
-    # expect(page).to have_content(@party1.id)
+    expect(page).to have_content("Hosted By: Jerry")
     # expect(page).to have_content(@party1.movie_title)
-    # end
-
-    # within ("##{@party2.id}") do
-    # expect(page).to have_content(@party2.id)
+    
+    expect(page).to have_content("Hosted By: Tom")
     # expect(page).to have_content(@party2.movie_title)
-    # end
-    save_and_open_page
+    # save_and_open_page
   end
 
   it 'When I go to a user dashbaord, and click "Discover Movies" button, I am redirected to a discover page /users/:id/discover' do
