@@ -8,7 +8,7 @@ RSpec.describe 'Discover Movies Page' do
     visit user_path(@u1)
   end
   it 'has a button to discover movies' do
-    stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=d84e59db219943d545dafbf5f7631afa").
+    stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{Rails.application.credentials.api_key}").
       to_return(status: 200, body: File.read("spec/features/fixtures/movie_results.json"), headers: {})  
     visit user_discover_index_path(@u1)
 
@@ -20,7 +20,7 @@ RSpec.describe 'Discover Movies Page' do
   end
 
   it 'has a search field to search by movie title' do
-    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=d84e59db219943d545dafbf5f7631afa&query=Barbie").
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{Rails.application.credentials.api_key}&query=Barbie").
       to_return(status: 200,body: File.read("spec/features/fixtures/search_movie_results.json"), headers: {})
   
     visit user_discover_index_path(@u1)
