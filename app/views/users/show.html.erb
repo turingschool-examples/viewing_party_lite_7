@@ -11,7 +11,7 @@
     <section id="party-<%= party.id %>">
       <img src="<%= @facade.movie_poster_link(party.movie_id) %>">
       <p>
-        Movie Title: <%= @facade.get_movie_title(party.movie_id) %><br>
+        Movie Title: <%= link_to @facade.get_movie_title(party.movie_id), user_movie_path(@facade.user.id, party.movie_id) %><br>
         Duration: <%= party.duration %> minutes<br>
         Date: <%= party.date.strftime("%b %d, %Y") %><br>
         Start Time: <%= party.start_time.strftime("%I:%M %p") %><br>
@@ -32,7 +32,7 @@
     <section id="party-<%= party.id %>">
       <img src="<%= @facade.movie_poster_link(party.movie_id) %>">
       <p>
-        Movie Title: <%= @facade.get_movie_title(party.movie_id) %><br>
+        Movie Title: <%= link_to @facade.get_movie_title(party.movie_id), user_movie_path(@facade.user.id, party.movie_id) %><br>
         Duration: <%= party.duration %> minutes<br>
         Date: <%= party.date.strftime("%b %d, %Y") %><br>
         Start Time: <%= party.start_time.strftime("%I:%M %p") %><br>

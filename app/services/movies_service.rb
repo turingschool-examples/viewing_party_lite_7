@@ -8,6 +8,14 @@ class MoviesService
     get_url('/3/movie/top_rated')
   end
 
+  def movie_images(id)
+    get_url("/3/movie/#{id}/images")
+  end
+  
+  def movie_details(id)
+    get_url("3/movie/#{id}")
+  end
+
   def get_url(url)
     response = conn.get(url)
     JSON.parse(response.body, symbolize_names: true)
