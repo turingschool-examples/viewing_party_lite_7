@@ -11,17 +11,12 @@ class MoviesController < ApplicationController
     else
       response = conn.get("/3/discover/movie?sort_by=popularity.desc")
       data = json_parse(response)
-      @movies = data[:results][1..20]
+      @movies = data[:results][0..19]
       @header = "Top 20 Movies"
     end
   end
 
   def show
-    details = conn.get("/3/movie/#{params[:id]}")
-    credits = conn.get("/3/movie/#{params[:id]}/credits")
-    reviews = conn.get("/3/movie/#{params[:id]}/reviews")
-    @movie = json_parse(details)
-    @cast = json_parse(credits)[:cast][0..9]
-    @reviews = json_parse(reviews)
+    @facade = MoviesFacade.new(params[:id])
   end
 end

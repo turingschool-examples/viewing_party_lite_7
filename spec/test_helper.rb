@@ -11,7 +11,7 @@ def load_test_data
 
   @host_1 = UserViewingParty.create!(host: true, user: @anne, viewing_party: @arthur )
     @visit_1_1 = UserViewingParty.create!(host: false, user: @blair, viewing_party: @arthur)
-    @visit_1_2 = UserViewingParty.create!(host: false, user: @blair, viewing_party: @arthur)
+    @visit_1_2 = UserViewingParty.create!(host: false, user: @cindy, viewing_party: @arthur)
     
   @host_2 = UserViewingParty.create!(host: true, user: @anne, viewing_party: @batman)
     @visit_2_1 = UserViewingParty.create!(host: false, user: @blair, viewing_party: @batman)
