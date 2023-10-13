@@ -1,4 +1,4 @@
-<h1><%= @facade.details.title %></h1>
+<h1><%= @facade.movie_details.title %></h1>
 
 <button>
     <%= link_to 'Discover Movies', user_discover_index_path(params[:user_id]) %>
@@ -10,29 +10,29 @@
 
 <section id="movie_details">
   <h3>Details:</h3>
-  <p>Average Vote: <%= @facade.details.vote_average %></p>
-  <p>Runtime: <%= @facade.details.format_runtime %></p>
+  <p>Average Vote: <%= @facade.movie_details.vote_average %></p>
+  <p>Runtime: <%= @facade.movie_details.format_runtime %></p>
   <p>
     Genre(s): 
-    <% @facade.details.genres.each do |genre| %>
+    <% @facade.movie_details.genres.each do |genre| %>
       <%= genre[:name] %> 
     <% end %>
   </p>
-  <p>Summary: <%= @facade.details.summary %></p>
+  <p>Summary: <%= @facade.movie_details.summary %></p>
 </section>
 <br>
 <section id="movie_cast">
   <h3>Cast and character:</h3>
   <ul>
-    <% @facade.details.cast.each do |cast| %>
+    <% @facade.movie_details.cast.each do |cast| %>
       <li><%= cast[:name] %> - <%= cast[:character] %></li>
     <% end %>
   </ul>
 </section>
 <br>
 <section id="movie_reviews">
-  <h3>Reviews (<%= @facade.details.total_reviews %> total):</h3>
-  <% @facade.details.reviews.each do |review| %>
+  <h3>Reviews (<%= @facade.movie_details.total_reviews %> total):</h3>
+  <% @facade.movie_details.reviews.each do |review| %>
     <p>Review by: <%= review[:author] %></p>
     <p><%= review[:content].html_safe %></p>
     <br>

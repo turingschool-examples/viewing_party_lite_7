@@ -1,4 +1,6 @@
 class MoviesDetailsFacade
+  attr_reader :movie_details
+  
   def initialize(movie_id)
     @movie_id = movie_id
     @movie_details = details
