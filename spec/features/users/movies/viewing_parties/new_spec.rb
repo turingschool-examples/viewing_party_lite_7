@@ -12,8 +12,8 @@ RSpec.describe "New Viewing Party Page", type: :feeature do
       scenario "I see duration of party, when, start time, a list of users and a button to create a party" do
 
         VCR.use_cassette("godfather_movie_details") do
-        visit "/users/#{@user_1.id}/movies/238/viewing_parties/new"
-        
+          
+          visit "/users/#{@user_1.id}/movies/238/viewing_parties/new"
 
           expect(page).to have_content("The Godfather Viewing Party")
           expect(page).to have_content("Duration")
@@ -51,7 +51,7 @@ RSpec.describe "New Viewing Party Page", type: :feeature do
             check "#{@user_2.id}"
           end
 
-          VCR.use_cassette("godfather_movie_details") do
+          VCR.use_cassette("user_dashboard_page") do
 
             click_button "Create a Party"
             expect(current_path).to eq user_path(@user_1.id)
