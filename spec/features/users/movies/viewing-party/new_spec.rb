@@ -14,12 +14,20 @@ RSpec.describe 'New Viewing Party Page' do
     expect(page).to have_button('Create Party')
     expect(page).to have_content('Batman')
 
+    expect(@user2.user_parties.count).to eq(3)
+    expect(@user3.user_parties.count).to eq(2)
+
     fill_in :duration, with: 180
     fill_in :start_time, with: '10:00'
     fill_in :date, with: '2023/08/01'
+    check "#{@user2.name} (#{@user2.email})"
+    check "#{@user3.name} (#{@user3.email})"
     click_button 'Create Party'
 
     expect(current_path).to eq(user_path(@user1.id))
     expect(page).to have_content('Batman')
+
+    expect(@user2.user_parties.count).to eq(4)
+    expect(@user3.user_parties.count).to eq(3)
   end
 end
