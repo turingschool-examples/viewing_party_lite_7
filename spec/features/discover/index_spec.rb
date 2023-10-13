@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Discover Index page", type: :feature do
-  describe "When I visit the discover index page" do
+  describe "top rated movies", :vcr do
     before(:each) do
       @user_1 = User.create!(name: "Kiwi", email: "kiwibird@gmail.com")
 
@@ -21,6 +21,34 @@ RSpec.describe "Discover Index page", type: :feature do
         expect(page).to have_field(:search)
         expect(page).to have_button('Search')
       end
+    end
+
+    it 'top rated movie results' do
+      click_link 'Find Top Rated Movies'
+
+      expect(page).to have_link('The Godfather')
+      expect(page).to have_content('Vote Average')
+    end
+
+    it 'when the user clicks on Find Movies, they should be taken to the movies results page' do
+      fill_in :search, with: 'Harry Potter'
+      click_on 'Search'
+      expect(page).to have_content("Harry Potter and the Philosopher's Stone")
+    end
+
+    it 'also has a button to return to the Discover Page' do
+      click_link 'Find Top Rated Movies'
+      expect(page).to have_button('Discover Page')
+
+      click_on 'Discover Page'
+      expect(page).to have_current_path(user_discover_index_path(@user_1))
+
+      fill_in :search, with: 'Harry Potter'
+      click_on 'Search'
+      expect(page).to have_button('Discover Page')
+
+      click_on 'Discover Page'
+      expect(page).to have_current_path(user_discover_index_path(@user_1))
     end
   end
 end
