@@ -1,20 +1,22 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-describe MoviesFacade do
-  context "initialize" do
-    it "exists with an argument" do
+RSpec.describe MoviesFacade do
+  context 'initialize' do
+    it 'exists with an argument' do
       expect(MoviesFacade.new(268)).to be_an Object
     end
 
-    it "exists without an argument" do
+    it 'exists without an argument' do
       expect(MoviesFacade.new).to be_an Object
     end
   end
 
-  context "class methods" do
-    context "#movie_search" do
-      it "returns movie objects from keyword search", :vcr do
-        search = MoviesFacade.new.movie_search("dog")
+  context 'class methods' do
+    context '#movie_search' do
+      it 'returns movie objects from keyword search', :vcr do
+        search = MoviesFacade.new.movie_search('dog')
         expect(search).to be_a Object
         movie = search.first
 
@@ -24,8 +26,8 @@ describe MoviesFacade do
       end
     end
 
-    context "#movie_discover" do
-      it "returns movie objects from top twenty movies", :vcr do
+    context '#movie_discover' do
+      it 'returns movie objects from top twenty movies', :vcr do
         search = MoviesFacade.new.movie_discover
         expect(search).to be_a Object
         movie = search.first
@@ -36,8 +38,8 @@ describe MoviesFacade do
       end
     end
 
-    context "#movie" do
-      it "returns movie object from movie id", :vcr do
+    context '#movie' do
+      it 'returns movie object from movie id', :vcr do
         movie = MoviesFacade.new(268).movie
         expect(movie).to be_a Object
 
@@ -50,20 +52,19 @@ describe MoviesFacade do
       end
     end
 
-    context "#cast" do
-      it "returns cast object from movie id", :vcr do
+    context '#cast' do
+      it 'returns cast object from movie id', :vcr do
         casts = MoviesFacade.new(268).cast
         expect(casts).to be_a Object
         cast = casts.first
-
 
         expect(cast.character).to be_a String
         expect(cast.name).to be_a String
       end
     end
 
-    context "#reviews" do
-      it "returns review object from movie id", :vcr do
+    context '#reviews' do
+      it 'returns review object from movie id', :vcr do
         reviews = MoviesFacade.new(268).reviews
         expect(reviews).to be_a Object
         review = reviews.first
