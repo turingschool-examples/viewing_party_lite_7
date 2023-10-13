@@ -5,15 +5,15 @@ class MovieFacade
 
   def cast_members
     json = service.get_cast_members(@movie)
-  
+
     movie_cast = json[:cast].map do |cast_data|
       CastMember.new(cast_data)
     end.first(10)
-  end 
+  end
 
   def movie
     json = service.get_movie(@movie)
-    
+
     movie = Movie.new(json)
   end
 

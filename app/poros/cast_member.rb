@@ -1,5 +1,6 @@
 class CastMember
   attr_reader :name, :character
+
   def initialize(data)
     @name = data[:name]
     @character = data[:character]

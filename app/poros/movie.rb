@@ -12,20 +12,20 @@ class Movie
 
     def convert_time
       if @runtime > 60
-        "#{@runtime/60}h #{@runtime % 60}min"
+        "#{@runtime / 60}h #{@runtime % 60}min"
       else
         "#{@runtime}min"
       end
     end
 
     def format_genres
-      formatted = "" 
+      formatted = ''
       @genres.map do |genre|
-        if genre != @genres.last
-          formatted += "#{genre[:name]}, "
-        else
-          formatted += genre[:name]
-        end
+        formatted += if genre != @genres.last
+                       "#{genre[:name]}, "
+                     else
+                       genre[:name]
+                     end
       end
       formatted
     end

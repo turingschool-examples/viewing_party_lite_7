@@ -4,7 +4,7 @@ class MovieService
   end
 
   def get_cast_members(movie)
-    get_url("/3/movie/#{movie}/credits")  
+    get_url("/3/movie/#{movie}/credits")
   end
 
   def get_reviews(movie)
@@ -12,7 +12,7 @@ class MovieService
   end
 
   def get_top_movies
-    get_url("/3/movie/top_rated")
+    get_url('/3/movie/top_rated')
   end
 
   def get_searched_movies(query)
@@ -25,8 +25,8 @@ class MovieService
   end
 
   def conn
-    conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
-      faraday.params["api_key"] = Rails.application.credentials.tmdb[:key]
+    conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
+      faraday.params['api_key'] = Rails.application.credentials.tmdb[:key]
     end
   end
 end
