@@ -18,9 +18,18 @@ RSpec.describe 'Movie Results' do
     click_button "Discover Movies"
     expect(current_path).to eq(user_discover_index_path(user_id: @user1.id))
 
-    # stub_request(:get, "https://api.themoviedb.org/3/movie/popular?api_key=2c14ab06be3bfe4ca5fecd0f9b2c73fc").
-    # to_return(status: 200, body: "Your mock response data here")
+    # json_response = File.read('spec/fixtures/batman_movies.json')
 
+    # stub_request(:get, "https://api.themoviedb.org/3/movie/268?api_key=2c14ab06be3bfe4ca5fecd0f9b2c73fc")
+    # .with(
+    #   headers: {
+    #     'Accept' => '*/*',
+    #     'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+    #     'User-Agent' => 'Faraday v2.7.11'
+    #   }
+    # )
+    # .to_return(status: 200, body: json_response, headers: {})
+        
 
     visit "/users/#{@user1.id}/movies/268"
 
@@ -45,6 +54,17 @@ RSpec.describe 'Movie Results' do
     expect(page).to have_content("Tracey Walter")
 
     expect(page).to have_content("Review Count: 7")
+
+    expect(page).to have_content("Name: John Chard")  
+    expect(page).to have_content("Rating: 8.0")   
+    expect(page).to have_content("ID: 579b3420c3a3686e13000085")   
+    expect(page).to have_content("URL: https://www.themoviedb.org/review/579b3420c3a3686e13000085")   
+
+    expect(page).to have_content("Name: Albert")  
+    expect(page).to have_content("Rating: 4.0")   
+    expect(page).to have_content("ID: 599b09dfc3a3681dde000414")   
+    expect(page).to have_content("URL: https://www.themoviedb.org/review/599b09dfc3a3681dde000414")  
+    
     
   end
 end
