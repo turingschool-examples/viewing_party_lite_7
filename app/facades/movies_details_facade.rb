@@ -5,9 +5,9 @@ class MoviesDetailsFacade
 
   def details
     service = MoviesService.new
-    details_response = service.movie_details(@movie_id)
-    cast_response = service.get_cast(@movie_id)
-    reviews_response = service.get_reviews(@movie_id)
-    @details = MovieDetails.new(details_response, cast_response, reviews_response)
+    details = service.movie_details(@movie_id)
+    credits = service.get_credits(@movie_id)
+    reviews = service.get_reviews(@movie_id)
+    @movie_details = MovieDetails.new(details, credits, reviews)
   end
 end

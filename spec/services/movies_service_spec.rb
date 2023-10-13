@@ -34,13 +34,13 @@ RSpec.describe MoviesService do
     end
   end
 
-  describe "#get_cast" do
-    it "returns cast details about a movie" do
-      json_response = File.read("spec/fixtures/movie_cast.json")
+  describe "#get_credits" do
+    it "returns credits of a movie" do
+      json_response = File.read("spec/fixtures/movie_credits.json")
       stub_request(:get, "https://api.themoviedb.org/3/movie/926393/credits?api_key=#{Rails.application.credentials.tmdb[:key]}").
          to_return(status: 200, body: json_response)
 
-      credits = MoviesService.new.get_cast(926393)
+      credits = MoviesService.new.get_credits(926393)
       
       expect(credits).to be_a Hash
       expect(credits[:cast]).to be_an Array
