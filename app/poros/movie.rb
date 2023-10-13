@@ -6,8 +6,8 @@ class Movie
     @backdrop_path = data[:backdrop_path]
     @title = data[:title]
     @vote_average = data[:vote_average]
-    @runtime = data[:runtime] # will need to accounr for formatting
-    @genres = data[:genres] # will need to create format method, also account for sad path as some movies may not have explicit genres
+    @runtime = data[:runtime]
+    @genres = data[:genres]
     @overview = data[:overview]
 
     def convert_time
