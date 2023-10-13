@@ -19,7 +19,7 @@ RSpec.describe 'Movie Results' do
     expect(current_path).to eq(user_discover_index_path(user_id: @user1.id))
 
     visit "/users/#{@user1.id}/movies/268"
-    save_and_open_page
+    # save_and_open_page
 
     expect(page).to have_content("Movie Id: 268")
     expect(page).to have_content("Vote Average: 7.2")

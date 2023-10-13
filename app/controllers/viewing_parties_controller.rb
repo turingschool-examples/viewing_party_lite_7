@@ -1,19 +1,17 @@
 class ViewingPartiesController < ApplicationController
   def new
+    facade = MovieFacade.new
     @user = User.find(params[:user_id])
     @users = User.where("id != #{params[:user_id]}")
-    conn = Faraday.new(url: "https://api.themoviedb.org/3/movie/#{params[:movid_id]}")
-      response = conn.get("?api_key=#{Rails.application.credentials.tmdb[:key]}")
-    @movie = JSON.parse(response.body, symbolize_names: true)
+    @movie = facade.movie_details(params[:movid_id])
     @party = @user.parties.new
   end
 
   def create
+    facade = MovieFacade.new
     @user = User.find(params[:user_id])
     @users = User.where("id != #{params[:user_id]}")
-    conn = Faraday.new(url: "https://api.themoviedb.org/3/movie/#{params[:movid_id]}")
-      response = conn.get("?api_key=#{Rails.application.credentials.tmdb[:key]}")
-    @movie = JSON.parse(response.body, symbolize_names: true)
+    @movie = facade.movie_details(params[:movid_id])
     @party = @user.parties.new(movie_id: @movie[:id], movie_title: @movie[:title], duration: params[:duration], date: params[:date], start_time: params[:start_time])
     if @party.save
       @user.user_parties.create!(user_id: @user.id, party_id: @party.id, is_host: true)
