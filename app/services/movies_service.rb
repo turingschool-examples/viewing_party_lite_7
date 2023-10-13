@@ -7,7 +7,7 @@ class MoviesService
 
   def conn
     Faraday.new(
-      url: "https://api.themoviedb.org/3", params: {api_key: Rails.application.credentials.movie_db[:key]})
+      url: "https://api.themoviedb.org/3/", params: {api_key: Rails.application.credentials.movie_db[:key]})
   end
 
   def top_20
@@ -16,5 +16,17 @@ class MoviesService
 
   def movie_search(keyword)
     get_url("search/movie?query=#{keyword}")
+  end
+
+  def find(id)
+    get_url("movie/#{id}")
+  end
+
+  def cast(id)
+    get_url("movie/#{id}/credits")
+  end
+
+  def reviews(id)
+    get_url("movie/#{id}/reviews")
   end
 end
