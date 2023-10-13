@@ -10,7 +10,7 @@ RSpec.describe User, type: :model do
     it "can return the name of a user given their id" do
       user_1 = User.create!(name: "Jamie", email: "34@gmail.com")
 
-      query = user_host_name(user_1.id)
+      query = User.user_host_name(user_1.id)
 
       expect(query).to eq("Jamie")
     end
