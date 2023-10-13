@@ -29,7 +29,7 @@
   </section>
 
   <section id="invited">
-  <center><h3>Parties I am invitied to</h3></center>
+  <center><h3>Parties I am invited to</h3></center>
   <% @user.parties_i_am_invited_to.each do |party| %>
     <center id="<%= party.id %>" class="movie_section">
       <p><%= image_tag("https://image.tmdb.org/t/p/w500#{party.find_movie.backdrop_path}") %></p>
