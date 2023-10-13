@@ -1,8 +1,4 @@
 class MovieService
-  def initialize
-    WebMock.allow_net_connect!
-  end
-
   def conn
     Faraday.new(url: "https://api.themoviedb.org") do |faraday|
       faraday.params["api_key"] = Rails.application.credentials.tmdb[:key]
@@ -14,7 +10,11 @@ class MovieService
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  def movie_poster(id)
+  def movie_images(id)
     get_url("/3/movie/#{id}/images")
+  end
+  
+  def movie_details(id)
+    get_url("3/movie/#{id}")
   end
 end
