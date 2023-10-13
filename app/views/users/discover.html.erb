@@ -1,0 +1,7 @@
+<p><%= button_to "Discover Top Rated Movies", user_movies_path(@user, top_rated: true), method: :get %></p>
+
+<%= form_with url: user_movies_path(@user), method: :get do |form| %>
+  <%= form.label :query, "Search by Movie Title" %>
+  <%= form.text_field :query %>
+  <%= form.submit "Search" %>
+<% end %>

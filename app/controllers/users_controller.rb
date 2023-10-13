@@ -20,6 +20,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def discover
+    @user = User.find(params[:id])
+    @movies_facade = MoviesFacade.new(params[:query], params[:top_rated])
+  end
+
   private
 
   def user_params
