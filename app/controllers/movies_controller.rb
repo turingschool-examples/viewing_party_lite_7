@@ -1,26 +1,26 @@
 class MoviesController < ApplicationController
   def index
     @user = User.find(params[:user_id])
+    search_query = params[:search]
 
-    if params[:search] != nil
-      movies = MovieFacade.new("3/search/movie?query=#{params[:search]}&include_adult=false&language=en-US&page=1")
-
-      @movies = movies.movies
+    if search_query.present?
+      movies = MovieService.new.search_movies(search_query)
     else
-      movies = MovieFacade.new("3/movie/top_rated?language=en-US&page=1")
-
-      @movies = movies.movies
+      movies = MovieService.new.top_rated_movies
     end
+
+    @movies = movies[:results]
   end
 
   def show
     @user = User.find(params[:user_id])
-    movie = MovieFacade.new("3/movie/#{params[:id]}?language=en-US")
-    cast = MovieFacade.new("3/movie/#{params[:id]}/credits?language=en-US")
-    reviews = MovieFacade.new("3/movie/#{params[:id]}/reviews?language=en-US")
+    movie_id = params[:id]
+    movie = MovieService.new.movie_details(movie_id)
+    cast = MovieService.new.cast(movie_id)
+    reviews = MovieService.new.movie_reviews(movie_id)
 
-    @movie = movie.movie
-    @cast = cast.cast
-    @reviews = reviews.reviews
+    @movie = Movie.new(movie)
+    @cast = cast[:cast].first(10)
+    @reviews = reviews[:results]
   end
 end
