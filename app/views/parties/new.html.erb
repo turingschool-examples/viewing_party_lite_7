@@ -1,0 +1,24 @@
+<%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %>
+<div style="border:solid; width:25%">
+  <section class="party_form">
+    <h3>Viewing Party Details</h3>
+    <h4>Movie Title: <%= @movie.title %></h4>
+    <%= form_with url: "/users/#{@user.id}/movies/#{@movie.id}/create", method: :post, data:{turbo: false} do |f| %>
+      <%= f.label :duration, "Duration of Party" %>
+      <%= f.text_field :duration, value: @movie.runtime %><br>
+      <%= f.label :party_date, "Party Date" %>
+      <%= f.datetime_field("party_date") %><br>
+      <%= f.hidden_field :title, value: @movie.title %>
+      <%= f.hidden_field :image, value: @movie.image %>
+      <h3>Invite Other Users</h3>
+      <% User.all.each do |user| %>
+        <% if user.id != @user.id %>
+          <p><%= f.label user.id, "#{user.name}(#{user.email})" %>
+          <%= f.hidden_field :invites, value: @invitees << user.id %>
+          <%= f.check_box user.id %></p>
+        <% end %>
+      <% end %>
+      <%= f.submit "Create Party" %>
+    <% end %>
+</section>
+</div>
