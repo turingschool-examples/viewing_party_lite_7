@@ -4,7 +4,8 @@ class MovieService
     response = conn.get(url) do |f|
       f.params["api_key"] = Rails.application.credentials.themoviedb[:key]
     end
-    JSON.parse(response.body, symbolize_names: true)
+    a = JSON.parse(response.body, symbolize_names: true)
+    # require 'pry'; binding.pry
   end
 
   def conn

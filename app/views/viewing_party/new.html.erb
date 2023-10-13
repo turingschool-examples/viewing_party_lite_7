@@ -7,9 +7,11 @@
   <%= form.date_field :when %><br><br>
   <%= form.label :start_time, "Start Time:" %>
   <%= form.time_field :start_time %><br><br>
+  <section id="users">
   <% @users.each do |guest| %>
     <%= form.check_box :guests, {multiple: true}, guest.id, nil %>
-    <%= form.label :guests, "#{guest.name} #{guest.id} (#{guest.email})" %>
+    <%= form.label :guests, "#{guest.name} (#{guest.email})" %>
   <% end %><br><br>
+  </section>
   <%= form.submit "Create Party" %>
 <% end %>

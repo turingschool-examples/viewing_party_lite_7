@@ -29,7 +29,7 @@ RSpec.describe "the users movies details page", type: :feature do
       expect(page).to have_content("The Godfather")
       expect(page).to have_content("Vote Average: 8.708")
       expect(page).to have_content("Runtime: 2h 55mins")
-      expect(page).to have_content("Genre: Drama, Crime")
+      expect(page).to have_content("Genres: Drama, Crime")
       expect(page).to have_content("Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge.")
       
       within("#cast") do
