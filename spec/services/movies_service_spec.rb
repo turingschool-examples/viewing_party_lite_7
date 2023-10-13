@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-RSpec.describe MovieService do
+RSpec.describe MoviesService do
   describe "#movie_images" do
     it "returns movie image information" do
       json_response = File.read("spec/fixtures/movie_images.json")
       stub_request(:get, "https://api.themoviedb.org/3/movie/926393/images?api_key=#{Rails.application.credentials.tmdb[:key]}").
          to_return(status: 200, body: json_response)
 
-      images = MovieService.new.movie_images(926393)
+      images = MoviesService.new.movie_images(926393)
       expect(images).to be_a Hash
       expect(images[:posters]).to be_an Array
 
@@ -27,7 +27,7 @@ RSpec.describe MovieService do
       stub_request(:get, "https://api.themoviedb.org/3/movie/926393?api_key=#{Rails.application.credentials.tmdb[:key]}").
          to_return(status: 200, body: json_response)
 
-      details = MovieService.new.movie_details(926393)
+      details = MoviesService.new.movie_details(926393)
       
       expect(details).to be_a Hash
       expect(details[:title]).to be_a String
