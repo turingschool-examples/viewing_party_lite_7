@@ -2,9 +2,9 @@
 class MoviesController < ApplicationController
   def index
     if params[:q] == "keyword"
-      @movies = MoviesFacade.new.movie_search(params[:search])[:results]
+      @movies = MoviesFacade.new.movie_search(params[:search])
     else
-      @movies = MoviesFacade.new.movie_discover[:results][0..19]
+      @movies = MoviesFacade.new.movie_discover
     end
   end
 

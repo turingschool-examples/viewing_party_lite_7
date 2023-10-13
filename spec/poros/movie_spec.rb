@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe Movie do
   it "exists" do
     attrs = {
-      title: "Adams Family",
+      title: "Addams Family",
       runtime: 123,
       vote_average: 8.709,
       overview: "Wholesome story about a family",
@@ -14,7 +14,7 @@ RSpec.describe Movie do
     movie = Movie.new(attrs)
 
     expect(movie).to be_a Movie
-    expect(movie.title).to eq("Adams Family")
+    expect(movie.title).to eq("Addams Family")
     expect(movie.runtime).to eq(123)
     expect(movie.vote_average).to eq(8.7)
     expect(movie.summary).to eq("Wholesome story about a family")

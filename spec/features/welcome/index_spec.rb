@@ -22,7 +22,7 @@ RSpec.feature "Welcome Index" do
     expect(page).to have_current_path(register_path)
   end
 
-  it "show all users" do
+  it "show all users", :vcr do
     load_test_data
     visit "/"
 

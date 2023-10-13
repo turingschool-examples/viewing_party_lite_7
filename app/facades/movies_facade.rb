@@ -23,11 +23,17 @@ class MoviesFacade
   end
 
   def movie_search(search)
-    MovieService.new.movie_search(search)
+    data = MovieService.new.movie_search(search)
+    data[:results].map do |movie_data|
+      MovieIndex.new(movie_data)
+    end
   end
 
   def movie_discover
-    MovieService.new.movie_discover
+    data = MovieService.new.movie_discover[:results][0..19]
+    data.map do |movie_data|
+      MovieIndex.new(movie_data)
+    end
   end
 
 end
