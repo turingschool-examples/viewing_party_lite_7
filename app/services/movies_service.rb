@@ -15,7 +15,19 @@ class MoviesService
     get_url("/3/search/movie?query=#{search}")
   end
 
-  # def top_rated
-  #   get_url("/3/movie/top_rated")
-  # end
+  def top_rated
+    get_url("/3/movie/top_rated")
+  end
+
+  def details(id)
+    get_url("/3/movie/#{id}")
+  end
+
+  def credits(id)
+    get_url("/3/movie/#{id}/credits")
+  end
+
+  def reviews(id)
+    get_url("/3/movie/#{id}/reviews")
+  end
 end
