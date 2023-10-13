@@ -305,6 +305,50 @@
           null
         ]
       },
+      "/Users/jorjafleming/mod3/viewing_party_lite_7/spec/features/movies/movies_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/jorjafleming/mod3/viewing_party_lite_7/spec/features/users/show_spec.rb": {
         "lines": [
           1,
@@ -463,6 +507,25 @@
         "lines": [
           1,
           1,
+          3,
+          null,
+          null
+        ]
+      },
+      "/Users/jorjafleming/mod3/viewing_party_lite_7/app/controllers/search_controller.rb": {
+        "lines": [
+          1,
+          1,
+          3,
+          3,
+          null,
+          3,
+          null,
+          3,
+          null,
+          0,
+          0,
+          null,
           null,
           null,
           null
@@ -498,8 +561,26 @@
           null,
           null
         ]
+      },
+      "/Users/jorjafleming/mod3/viewing_party_lite_7/app/poros/movie.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1697153413
+    "timestamp": 1697158920
   }
 }

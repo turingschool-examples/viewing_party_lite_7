@@ -1,1 +1,20 @@
-<h1>Welcome to the Movies Page</h1>
+<h1>Movie Results</h1>
+
+<table id="movie-results">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Vote Average</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @movies.each do |movie| %>
+      <tr>
+        <td><%= link_to movie.title, movie_details_path(movie) %></td>
+        <td><%= movie.vote_average %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Return to Discover Page', discover_movies_path(user_id: @user.id) %>

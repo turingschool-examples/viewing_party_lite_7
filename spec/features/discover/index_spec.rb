@@ -7,6 +7,14 @@ RSpec.describe 'Discover Movies Page' do
     @u3 = User.create!(name: 'Rachel', email: 'rachel@rachel.com')
   end
   it 'has a button to discover movies' do
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie.json?api_key").
+      with(
+        headers: {
+      'Accept'=>'*/*',
+      'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+      'User-Agent'=>'Faraday v2.7.11'
+        }).
+      to_return(status: 200, body: "", headers: {})
     visit user_discover_index_path(@u1)
 
     within('#top_movies') do
@@ -17,6 +25,14 @@ RSpec.describe 'Discover Movies Page' do
   end
 
   it 'has a search field to search by movie title' do
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie.json?api_key").
+      with(
+        headers: {
+      'Accept'=>'*/*',
+      'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+      'User-Agent'=>'Faraday v2.7.11'
+        }).
+      to_return(status: 200, body: "", headers: {})
     visit user_discover_index_path(@u1)
 
     within('#movie_search') do
