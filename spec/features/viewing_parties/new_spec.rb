@@ -16,29 +16,27 @@ RSpec.describe "New Viewing Party Page" do
       end
     end
 
-    it "I should see a form with a duration of party, a field to select a date, a field to select a time, checkboxes next to each exisiting user in the system, and a button to create the party that redirects back to the user dashboard" do
-      VCR.use_cassette("barbie_details") do
-        visit "/users/#{@user.id}/movies/346698/viewing_party/new"
+    it "I should see a form with a duration of party, a field to select a date, a field to select a time, checkboxes next to each exisiting user in the system, and a button to create the party that redirects back to the user dashboard", :vcr do
+      visit "/users/#{@user.id}/movies/346698/viewing_party/new"
 
-        expect(page).to have_field(:duration, with: "114")
-        expect(page).to have_field(:day, with: Date.today)
-        expect(page).to have_field(:view_time)
+      expect(page).to have_field(:duration, with: "114")
+      expect(page).to have_field(:day, with: Date.today)
+      expect(page).to have_field(:view_time)
 
-        expect(page).to have_content("Invite Other Users")
-        expect(page).to have_unchecked_field("#{@user_2.name}")
-        expect(page).to have_unchecked_field("#{@user_3.name}")
-        expect(page).to_not have_unchecked_field("#{@user.name}")
-        
-        expect(page).to have_button("Create Party")
+      expect(page).to have_content("Invite Other Users")
+      expect(page).to have_unchecked_field("#{@user_2.name}")
+      expect(page).to have_unchecked_field("#{@user_3.name}")
+      expect(page).to_not have_unchecked_field("#{@user.name}")
+      
+      expect(page).to have_button("Create Party")
 
-        fill_in(:view_time, with: "12:00:00 UTC")
-        fill_in(:day, with: "2023-12-15")
-        check "#{@user_2.name}", allow_label_click: true
-        
-        click_button("Create Party")
+      fill_in(:view_time, with: "12:00:00 UTC")
+      fill_in(:day, with: "2023-12-15")
+      check "#{@user_2.name}", allow_label_click: true
+      
+      click_button("Create Party")
 
-        expect(current_path).to eq("/users/#{@user.id}")
-      end
+      expect(current_path).to eq("/users/#{@user.id}")
     end
 
     it "should not allow you to make a party if the duration is less than the runtime of the movie" do
