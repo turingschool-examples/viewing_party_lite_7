@@ -24,9 +24,9 @@ RSpec.describe "Viewing Party New page", type: :feature do
       page.has_field? "duration"
       page.has_field? "date"
       page.has_field? "start_time"
-      page.has_unchecked_field? @user_2.id
-      page.has_unchecked_field? @user_3.id
-      page.has_unchecked_field? @user_4.id
+      page.has_unchecked_field? "invite-#{@user_2.id}"
+      page.has_unchecked_field? "invite-#{@user_3.id}"
+      page.has_unchecked_field? "invite-#{@user_4.id}"
     end
 
     it "The duration should default the value of the movie runtime in minutes" do
