@@ -4,6 +4,7 @@ class ViewingParty < ApplicationRecord
   validates :duration, presence: true
   validates :day, presence: true
   validates :view_time, presence: true
+  validates :movie_id, presence: true 
 
   def find_movie
     MovieFacade.new(movie_id).movie
@@ -17,5 +18,12 @@ class ViewingParty < ApplicationRecord
     else
       User.find(host_id).name
     end
+  end
+
+  def party_guests
+    users.joins(:user_viewing_parties)
+        .select('users.*, user_viewing_parties.host')
+        .where('user_viewing_parties.host = ?', false)
+        .distinct
   end
 end
