@@ -16,7 +16,7 @@ RSpec.describe "user show page", type: :feature do
   feature "As a user" do
     feature "When I access my user show page" do
       scenario "I see the user's name, a button to discover movies and a list of viewing parties I am invited to, as well as a list of viewing parties I am hosting" do
-        VCR.use_cassette("user_dashboard_page") do
+        VCR.use_cassette("user_dashboard_page_1") do
           visit "/users/#{@user_1.id}"
         end
 
@@ -37,7 +37,7 @@ RSpec.describe "user show page", type: :feature do
 
       feature "and I look at my viewing party invitations" do
         scenario "I see the movie image, the movie title (which links to that movies show page), the date and time of the party, who is hosting the event, and the list of users invited (with my name in bold)" do
-          VCR.use_cassette("user_dashboard_page") do
+          VCR.use_cassette("user_dashboard_page_2") do
             visit "/users/#{@user_1.id}"
           end
 
@@ -67,7 +67,7 @@ RSpec.describe "user show page", type: :feature do
 
       feature "and I look at the viewing parties I'm hosting" do
         scenario "I see the movie image, the movie title (which links to that movies show page), the date and time of the party, that I am hosting the event, and the list of users invited" do
-          VCR.use_cassette("user_dashboard_page") do
+          VCR.use_cassette("user_dashboard_page_3") do
             visit "/users/#{@user_1.id}"
           end
           VCR.use_cassette("hosted_parties") do
