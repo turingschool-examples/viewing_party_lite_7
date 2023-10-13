@@ -12,12 +12,12 @@ RSpec.feature 'Movie Details' do
   it 'has a header', :vcr do
     visit user_movie_path(@anne, @arthur[:movie_id])
 
-    expect(page).to have_link("Home")
-    expect(page).to have_content("Viewing Party")
+    expect(page).to have_link('Home')
+    expect(page).to have_content('Viewing Party')
 
-    click_link "Home"
+    click_link 'Home'
 
-    expect(page).to have_current_path("/")
+    expect(page).to have_current_path('/')
   end
 
   it 'has a sub header', :vcr do
