@@ -12,8 +12,8 @@ RSpec.describe "User Dashboard Page", type: :feature do
     fill_in(:duration, with: "150")
     fill_in(:view_time, with: "12:00:00 UTC")
     fill_in(:day, with: "2023-12-15")
-    check "#{@user_2.name}", allow_label_click: true
-    check "#{@user_4.name}", allow_label_click: true
+    check "#{@user_2.name}"
+    check "#{@user_4.name}"
       
     click_button("Create Party")
   end
@@ -24,8 +24,9 @@ RSpec.describe "User Dashboard Page", type: :feature do
 
       expect(page).to have_button("Discover Movies")
 
-      within("#viewing_parties") do
+      within("#hosted") do
         within("##{@user.viewing_parties.first.id}") do
+          expect(page).to have_css("img[src*='https://image.tmdb.org/t/p/w500/ctMserH8g2SeOAnCw5gFjdQF8mo.jpg']")
           expect(page).to have_link("Barbie")
           expect(page).to have_content("Day: 2023-12-15")
           expect(page).to have_content("Time: 12:00")
@@ -34,7 +35,7 @@ RSpec.describe "User Dashboard Page", type: :feature do
           within("#guests") do
             expect(page).to have_content("Noelle")
             expect(page).to have_content("Eliza")
-            expect(page).to have_content("Brad")
+            expect(page).to_not have_content("Brad")
           end
         end
       end
@@ -50,7 +51,7 @@ RSpec.describe "User Dashboard Page", type: :feature do
 
       expect(page).to have_button("Discover Movies")
 
-      within("#viewing_parties") do
+      within("#invited") do
         within("##{@user.viewing_parties.first.id}") do
           expect(page).to have_link("Barbie")
           expect(page).to have_content("Day: 2023-12-15")
@@ -58,9 +59,9 @@ RSpec.describe "User Dashboard Page", type: :feature do
           expect(page).to have_content("Host: Brad")
           expect(page).to have_content("Guests:")
           within("#guests") do
-            expect(page).to have_content("Noelle")
+            expect(page).to have_css("b", text: "Noelle")
             expect(page).to have_content("Eliza")
-            expect(page).to have_content("Brad")
+            expect(page).to_not have_content("Brad")
           end
         end
       end
