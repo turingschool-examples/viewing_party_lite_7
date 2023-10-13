@@ -29,9 +29,8 @@ RSpec.describe "Users Show page", type: :feature do
 
     context "displaying viewing parties" do
       it "displays cards for each viewing party the user has created" do
-        #test for image
-        save_and_open_page
         within("#party-#{@party_1.id}") do
+          page.has_css?("img[src*='themoviedb']")
           expect(page).to have_content("The Equalizer 3")
           expect(page).to have_content("Oct 10, 2024")
           expect(page).to have_content("07:23 AM")

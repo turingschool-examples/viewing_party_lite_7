@@ -20,6 +20,15 @@ RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
+  details_response = File.read("spec/fixtures/movie_details.json")
+  images_response = File.read("spec/fixtures/movie_images.json")
+  config.before(:each) do
+    stub_request(:get, "https://api.themoviedb.org/3/movie/926393/images?api_key=#{Rails.application.credentials.tmdb[:key]}").
+      to_return(status: 200, body: images_response)
+    stub_request(:get, "https://api.themoviedb.org/3/movie/926393?api_key=#{Rails.application.credentials.tmdb[:key]}").
+      to_return(status: 200, body: details_response)
+  end
+
   config.expect_with :rspec do |expectations|
     # This option will default to `true` in RSpec 4. It makes the `description`
     # and `failure_message` of custom matchers include text for helper methods
