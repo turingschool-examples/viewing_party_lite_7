@@ -22,5 +22,25 @@ RSpec.describe "Users Show page", type: :feature do
     it "has a section for viewing parties" do
       expect(page).to have_css("#parties")
     end
+
+    context "displaying viewing parties" do
+      before(:each) do
+        @user_2 = User.create!(name: "Chicken", email: "chickenbird@gmail.com")
+        @party_1 = Party.create!(movie_id: 926393, duration: 109, date: "2024-10-10", start_time: "07:23")
+        PartyUser.create!(user_id: @user_1.id, party_id: @party_1.id, is_host: true)
+        PartyUser.create!(user_id: @user_2.id, party_id: @party_1.id, is_host: false)
+      end
+
+      it "displays cards for each viewing party the user has created" do
+        #test for image
+        within("#party-#{@party_1.id}") do
+          expect(page).to have_content("The Equalizer 3")
+          expect(page).to have_content("Oct 10 2024") #unsure what format this will be
+          expect(page).to have_content("07:23 AM")
+          expect(page).to have_content("Host: #{@user_1.name}")
+          expect(page).to have_content("Guest List: #{@user_2.name}")
+        end
+      end
+    end
   end
 end
