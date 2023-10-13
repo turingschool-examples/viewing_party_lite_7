@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,38 +12,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_09_224414) do
+ActiveRecord::Schema[7.0].define(version: 20_231_009_224_414) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'users', force: :cascade do |t|
+    t.string 'name'
+    t.string 'email'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "users_viewing_parties", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "viewing_party_id", null: false
-    t.boolean "hosting?", default: false, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_users_viewing_parties_on_user_id"
-    t.index ["viewing_party_id"], name: "index_users_viewing_parties_on_viewing_party_id"
+  create_table 'users_viewing_parties', force: :cascade do |t|
+    t.bigint 'user_id', null: false
+    t.bigint 'viewing_party_id', null: false
+    t.boolean 'hosting?', default: false, null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['user_id'], name: 'index_users_viewing_parties_on_user_id'
+    t.index ['viewing_party_id'], name: 'index_users_viewing_parties_on_viewing_party_id'
   end
 
-  create_table "viewing_parties", force: :cascade do |t|
-    t.integer "movie_id"
-    t.string "movie_title"
-    t.string "movie_image"
-    t.integer "duration"
-    t.date "date"
-    t.time "start_time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'viewing_parties', force: :cascade do |t|
+    t.integer 'movie_id'
+    t.string 'movie_title'
+    t.string 'movie_image'
+    t.integer 'duration'
+    t.date 'date'
+    t.time 'start_time'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  add_foreign_key "users_viewing_parties", "users"
-  add_foreign_key "users_viewing_parties", "viewing_parties"
+  add_foreign_key 'users_viewing_parties', 'users'
+  add_foreign_key 'users_viewing_parties', 'viewing_parties'
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ViewingPartyController < ApplicationController
   def new
     @host = User.find(params[:user_id])
@@ -8,14 +10,14 @@ class ViewingPartyController < ApplicationController
   def create
     movie = Movie.movie
     party = ViewingParty.create!(
-                          movie_id: movie.id,
-                          movie_title: movie.title,
-                          movie_image: movie.img,
-                          duration: params[:duration],
-                          date: params[:when],
-                          start_time: params[:start_time]
-                        )
-    
+      movie_id: movie.id,
+      movie_title: movie.title,
+      movie_image: movie.img,
+      duration: params[:duration],
+      date: params[:when],
+      start_time: params[:start_time]
+    )
+
     host = User.find(params[:user_id])
     users = params[:guests].map do |guest|
       User.find(guest)

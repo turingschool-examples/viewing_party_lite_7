@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Movie
   @@movie = nil
   attr_reader :id,
@@ -20,7 +22,7 @@ class Movie
   end
 
   def find_genres
-    @genres.map {|each| each[:name]}.join(", ")
+    @genres.map { |each| each[:name] }.join(', ')
   end
 
   def find_runtime
