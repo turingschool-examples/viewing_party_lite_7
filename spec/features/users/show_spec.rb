@@ -5,12 +5,6 @@
 require 'rails_helper'
 
 RSpec.feature 'User show' do
-  #  before do
-  #   WebMock.allow_net_connect!
-  #   WebMock.disable!
-  #   VCR.eject_cassette
-  #   VCR.turn_off!(:ignore_cassettes => true)
-  # end
   it 'has a index header', :vcr do
     load_test_data
 

@@ -63,16 +63,28 @@ RSpec.feature 'Viewing Party New' do
     expect(page).to_not have_content('The Day of the Dolphin')
   end
 
-  it '(sad path) will return error is duration is blank', :vcr do
+  it '(sad path) will return error if date is invalid', :vcr do
     load_test_data
 
     visit "/users/#{@cindy.id}/movies/42470/viewing_parties/new"
 
-    fill_in :duration, with: nil
+    select '2018', from: '_date_1i'
 
     click_button 'Create Party'
 
-    expect(page).to have_content("Error: Duration can't be blank")
+    expect(page).to have_content('Error: Date time must be greater than')
+  end
+
+  it '(sad path) will return error if duration is blank', :vcr do
+    load_test_data
+
+    visit "/users/#{@cindy.id}/movies/42470/viewing_parties/new"
+
+    fill_in :duration, with: 20
+
+    click_button 'Create Party'
+
+    expect(page).to have_content('Error: Duration must not be less than movie runtime')
   end
 end
 

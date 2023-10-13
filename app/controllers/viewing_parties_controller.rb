@@ -8,11 +8,14 @@ class ViewingPartiesController < ApplicationController
   end
 
   def create
+    @movie = MoviesFacade.new(params[:movie_id]).movie
     party = ViewingParty.create(date_time: param_datetime_formatter,
                                 movie_id: params[:movie_id],
                                 duration: params[:duration])
-    # party = ViewingParty.create(viewing_params)
-    if party.save
+    if params[:duration].to_i < @movie.runtime
+      redirect_to "/users/#{:user_id}/movies/#{:movie_id}/viewing_parties/new"
+      flash[:alert] = 'Error: Duration must not be less than movie runtime'
+    elsif party.save
       create_host_viewing_party(party)
       create_invited_viewing_party(party)
       redirect_to "/users/#{params[:user_id]}"

@@ -25,8 +25,8 @@ class MoviesFacade
   end
 
   def movie_search(search)
-    data = MovieService.new.movie_search(search)
-    data[:results].map do |movie_data|
+    data = MovieService.new.movie_search(search)[:results][0..19]
+    data.map do |movie_data|
       MovieIndex.new(movie_data)
     end
   end

@@ -46,15 +46,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 402032e48d13c4b7217c7a59235bf8cc.cloudfront.net (CloudFront)
+      - 1.1 ea02982ea8ec84214c2e0d4d803fb0f4.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-C1
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - BFZpQKKbJjn2DGaXICd93iLBEcNq7C4alMZYVcBvEri3Jt7EYRrEdQ==
+      - CVEGnrh9hY_e3O-YDMTuTMifnWEq4nbBss1yyFpsQdj_3I1tA_XGIA==
       Age:
-      - '1508'
+      - '1509'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/8MrWcsw5HqwRLvvNJS7doDq6xh0.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"},{"id":878,"name":"Science
@@ -69,7 +69,7 @@ http_interactions:
         States of America"}],"release_date":"1973-12-19","revenue":0,"runtime":104,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Unwittingly,
         he trained a dolphin to kill the president of the United States.","title":"The
         Day of the Dolphin","video":false,"vote_average":5.9,"vote_count":42}'
-  recorded_at: Fri, 13 Oct 2023 23:35:47 GMT
+  recorded_at: Fri, 13 Oct 2023 23:35:48 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/42470?api_key=f7288e89c67ddeca054747d31c85225c
@@ -116,15 +116,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 e466a87164c3f9591e3c8ac45a4b2074.cloudfront.net (CloudFront)
+      - 1.1 5539e869b7b6ea60eddee5f69c9a0d9c.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-C1
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 0vI8POF-n_BfF0UgtOHe5o6kKbXkM0-_TUzXcUSzwZIYeahDGIC0NA==
+      - qhgIVdg-m5Oko-5KiJXx5xWxsSJNPcDeKtkpJkFSML14VxJkgcH_Aw==
       Age:
-      - '1508'
+      - '1509'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/8MrWcsw5HqwRLvvNJS7doDq6xh0.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"},{"id":878,"name":"Science
@@ -139,10 +139,10 @@ http_interactions:
         States of America"}],"release_date":"1973-12-19","revenue":0,"runtime":104,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Unwittingly,
         he trained a dolphin to kill the president of the United States.","title":"The
         Day of the Dolphin","video":false,"vote_average":5.9,"vote_count":42}'
-  recorded_at: Fri, 13 Oct 2023 23:35:47 GMT
+  recorded_at: Fri, 13 Oct 2023 23:35:48 GMT
 - request:
     method: get
-    uri: https://api.themoviedb.org/3/movie/49012?api_key=f7288e89c67ddeca054747d31c85225c
+    uri: https://api.themoviedb.org/3/movie/0?api_key=f7288e89c67ddeca054747d31c85225c
     body:
       encoding: US-ASCII
       string: ''
@@ -155,8 +155,8 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 200
-      message: OK
+      code: 404
+      message: Not Found
     headers:
       Content-Type:
       - application/json;charset=utf-8
@@ -164,114 +164,38 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
+      Date:
+      - Fri, 13 Oct 2023 23:12:15 GMT
       Server:
       - openresty
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - e9d6154ab25394f91816ede51583e653
-      X-Memc-Age:
-      - '3087'
-      X-Memc-Expires:
-      - '25260'
-      Date:
-      - Fri, 13 Oct 2023 23:01:19 GMT
       Cache-Control:
-      - public, max-age=27468
-      Etag:
-      - W/"c2c05ab32180d8843f51b81f042cfd48"
+      - public, max-age=25751
+      X-Memc:
+      - MISS
+      X-Memc-Key:
+      - 0e0ea920af5920cd4be6a197189f1cf9
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '25751'
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
-      - Hit from cloudfront
+      - Error from cloudfront
       Via:
-      - 1.1 15e4f26e891877d8d585dc5a26acc46e.cloudfront.net (CloudFront)
+      - 1.1 f9a3ca802cab4ac43bafc4dd8667ef98.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-C1
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - AbMwei1awAJ29SC_v69e6aOgXB7fJznv3e9z3hJ6VgV8vfAz0GtFAA==
+      - HioHu1kXVXt0sUGi1Epv-jr6LmmMfuyTMtunH7SIE_JHdM0R7n-Tgw==
       Age:
-      - '2068'
+      - '1413'
     body:
       encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/p2h886S7r4znUYvp1ELOTq7jqUZ.jpg","belongs_to_collection":null,"budget":40000000,"genres":[{"id":35,"name":"Comedy"},{"id":10749,"name":"Romance"}],"homepage":"http://arthurthemovie.warnerbros.com/","id":49012,"imdb_id":"tt1334512","original_language":"en","original_title":"Arthur","overview":"A
-        drunken playboy stands to lose a wealthy inheritance when he falls for a woman
-        that his family doesn''t like.","popularity":14.808,"poster_path":"/foUTAJurvnbUoIUbnuUk5dyHx7M.jpg","production_companies":[{"id":174,"logo_path":"/IuAlhI9eVC9Z8UQWOIDdWRKSEJ.png","name":"Warner
-        Bros. Pictures","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"2011-04-08","revenue":48147945,"runtime":110,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Meet
-        the world''s only loveable billionaire.","title":"Arthur","video":false,"vote_average":5.567,"vote_count":689}'
-  recorded_at: Fri, 13 Oct 2023 23:35:47 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/42470?api_key=f7288e89c67ddeca054747d31c85225c
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.11
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Server:
-      - openresty
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 4b195b5bc531430b075228584131165f
-      X-Memc-Age:
-      - '25528'
-      X-Memc-Expires:
-      - '958'
-      Date:
-      - Fri, 13 Oct 2023 23:10:39 GMT
-      Cache-Control:
-      - public, max-age=24737
-      Etag:
-      - W/"ff3598050ab5cdf1cc1045f0d7165e61"
-      Vary:
-      - Accept-Encoding
-      - Origin
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 95ab38d462185df6df78ba1102868640.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - DEN52-C1
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - qmDKxmxuCpgoxWGceRs9KjTn4vYihjguNrpZ2QjU7JRYOfhR1oEwDg==
-      Age:
-      - '1508'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/8MrWcsw5HqwRLvvNJS7doDq6xh0.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"},{"id":878,"name":"Science
-        Fiction"},{"id":53,"name":"Thriller"},{"id":12,"name":"Adventure"}],"homepage":"","id":42470,"imdb_id":"tt0069946","original_language":"en","original_title":"The
-        Day of the Dolphin","overview":"Dr. Jake Terrell, who has been training a
-        pair of dolphins for many years, has had a breakthrough. He has taught his
-        dolphins to speak and understand English, although they do have a limited
-        vocabulary. When the dolphins are stolen, he discovers they''re to be used
-        in an assassination attempt. Now he is in a race to discover who is the target,
-        and where the dolphins are, before the attempt is carried out.","popularity":4.183,"poster_path":"/vLztqesi2Dj5Ny74u33GufVzKR6.jpg","production_companies":[{"id":494,"logo_path":"/ioc65azmsAeL1XQN4dFnrpdJoMO.png","name":"AVCO
-        Embassy Pictures","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"1973-12-19","revenue":0,"runtime":104,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Unwittingly,
-        he trained a dolphin to kill the president of the United States.","title":"The
-        Day of the Dolphin","video":false,"vote_average":5.9,"vote_count":42}'
-  recorded_at: Fri, 13 Oct 2023 23:35:47 GMT
+      string: '{"success":false,"status_code":34,"status_message":"The resource you
+        requested could not be found."}'
+  recorded_at: Fri, 13 Oct 2023 23:35:48 GMT
 recorded_with: VCR 6.2.0
