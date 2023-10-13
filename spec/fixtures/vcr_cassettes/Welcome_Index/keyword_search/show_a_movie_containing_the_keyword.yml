@@ -46,15 +46,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 270fdef5b99b63ae592608f44e3043b6.cloudfront.net (CloudFront)
+      - 1.1 66fbb9efab6146079af1497f336edf9e.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - dFOqEGIwOCwqrxQgcyxvgUoIbt9deAMBZE5hy5XxUAk08KtC9ZuLjw==
+      - OBsaitba9r4Ey2nOmZCVpHpOhYFjHu0QbqXASGJY8V2TpNJOVl0K7Q==
       Age:
-      - '4404'
+      - '18859'
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/8MrWcsw5HqwRLvvNJS7doDq6xh0.jpg","genre_ids":[18,878,53,12],"id":42470,"original_language":"en","original_title":"The
@@ -65,5 +65,5 @@ http_interactions:
         in an assassination attempt. Now he is in a race to discover who is the target,
         and where the dolphins are, before the attempt is carried out.","popularity":4.183,"poster_path":"/vLztqesi2Dj5Ny74u33GufVzKR6.jpg","release_date":"1973-12-19","title":"The
         Day of the Dolphin","video":false,"vote_average":5.9,"vote_count":42}],"total_pages":1,"total_results":1}'
-  recorded_at: Fri, 13 Oct 2023 16:29:57 GMT
+  recorded_at: Fri, 13 Oct 2023 20:30:52 GMT
 recorded_with: VCR 6.2.0
