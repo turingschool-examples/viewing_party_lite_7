@@ -26,7 +26,7 @@ RSpec.describe 'User Registration Page' do
 
     visit "/"
 
-    expect(page).to have_link("landing page")
+    expect(page).to have_link("Go to Landing Page")
     expect(page).to have_link("Tom")
     expect(page).to have_link("Jerry")
     expect(page).to have_link("Jon")
