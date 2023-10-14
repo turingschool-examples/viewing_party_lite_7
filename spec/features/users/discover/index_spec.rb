@@ -23,10 +23,7 @@ RSpec.describe "User Discover", type: :feature do
         visit "/users/#{@user_1.id}/discover"
   
         expect(page).to have_button("Discover Top Rated Movies")
-  
-        # click_button "Discover Top Rated Movies"
-  
-        # expect(current_path).to eq("/users/#{@user_1.id}/movies")
+
       end
   
       scenario "I see a text field to enter keyword(s) to search by movie title, and a button to search by movie title" do
@@ -40,9 +37,6 @@ RSpec.describe "User Discover", type: :feature do
 
         fill_in :title, with: "Fight Club"
         
-        # click_on "Search by Movie Title"
-
-        # expect(current_path).to eq("/users/#{@user_1.id}/movies")
       end
     end
   end
