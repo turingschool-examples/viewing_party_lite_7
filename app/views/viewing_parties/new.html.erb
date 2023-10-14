@@ -1,0 +1,20 @@
+<h1><%= @movie.title %></h1>
+
+<%= form_with model: @party, url: [@user, @movie, :viewing_party], local: true do |f| %>
+  <%= f.label :duration %>
+  <%= f.number_field :duration, min: @movie.runtime, value: @movie.runtime %>
+
+  <%= f.label :when %>
+  <%= f.date_field :when %>
+
+  <%= f.label :start_time %>
+  <%= f.time_field :start_time %>
+
+  <%= f.label :invitees %>
+  <%= @users.each do |user| %>
+    <%= f.check_box :user_ids, { multiple: true }, user.id, nil %>
+    <%= user.name %>
+  <% end %>
+
+  <%= f.submit 'Create Party' %>
+<% end %>
