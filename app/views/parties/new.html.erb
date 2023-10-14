@@ -10,15 +10,19 @@
       <%= f.datetime_field("party_date") %><br>
       <%= f.hidden_field :title, value: @movie.title %>
       <%= f.hidden_field :image, value: @movie.image %>
+      <%= f.hidden_field :movie_duration, value: @movie.runtime %>
+
       <h3>Invite Other Users</h3>
-      <% User.all.each do |user| %>
-        <% if user.id != @user.id %>
-          <p><%= f.label user.id, "#{user.name}(#{user.email})" %>
-          <%= f.hidden_field :invites, value: @invitees << user.id %>
-          <%= f.check_box user.id %></p>
+      <%= f.fields_for :invitees do |invitee| %>
+        <% User.all.each do |user| %>
+          <% if user.id != @user.id %>
+            <p><%= invitee.label user.id, "#{user.name}(#{user.email})" %>
+            <%= invitee.check_box user.id %></p>
+          <% end %>
         <% end %>
       <% end %>
+
       <%= f.submit "Create Party" %>
     <% end %>
-</section>
+  </section>
 </div>

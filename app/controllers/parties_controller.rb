@@ -2,27 +2,33 @@ class PartiesController < ApplicationController
   def new
     @user = User.find(params[:user_id])
     @movie = SearchFacade.new.find_movie(params[:id])
-    @invitees = []
   end
 
   def create
-    if params[:invites]
-      invite_array = params[:invites].split
-      invite_hash = {"1" => [], "0" => []}
-      invite_array.each do |invite|
-      invite_hash[params[invite]] << invite
+    if params[:duration] >= params[:movie_duration]
+      if params[:invitees]
+        create_parties
+        redirect_to "/users/#{params[:user_id]}"
+      else
+        flash[:alert] = "Please invite people"
+        redirect_to "/users/#{params[:user_id]}/movies/#{params[:id]}/new"
       end
-
-      party = Party.create(movie: params[:id], movie_title: params[:title], party_date: params[:party_date], poster_path: params[:image])
-      UserParty.create(user_id: params[:user_id], party_id: party.id, host: true)
-
-      invite_hash["1"].each do |invitee|
-        UserParty.create(user_id: invitee, party_id: party.id, host: false)
-      end
-      redirect_to "/users/#{params[:user_id]}"
     else
-      flash[:alert] = "Please invite people"
+      flash[:alert] = "You Fool of a Took, you won't have time for the full movie"
       redirect_to "/users/#{params[:user_id]}/movies/#{params[:id]}/new"
     end
   end
+
+  private
+
+  def create_parties
+    party = Party.create(movie: params[:id], movie_title: params[:title], party_date: params[:party_date], poster_path: params[:image])
+    UserParty.create!(user_id: params[:user_id], party_id: party.id, host: true)
+    params[:invitees].each do |key, value|
+      if value == "1"
+        UserParty.create!(user_id: key.to_i, party_id: party.id, host: false)
+      end
+    end
+  end
+
 end
