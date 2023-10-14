@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :users, only: %i[show new create] do 
     resources :discover, only: [:index]
     resources :movies, only: [:index, :show] do 
-      resources :viewing_parties, only: [:new, :create]
+      resources :viewing_parties
     end
   end
 end
