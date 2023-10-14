@@ -24,40 +24,38 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Date:
-      - Fri, 13 Oct 2023 15:41:09 GMT
       Server:
       - openresty
-      Cache-Control:
-      - public, max-age=28238
       X-Memc:
       - HIT
       X-Memc-Key:
       - a37de7cd9865441ee9076501bdc653e3
       X-Memc-Age:
-      - '5207'
+      - '12551'
       X-Memc-Expires:
-      - '20168'
+      - '12824'
+      Date:
+      - Sat, 14 Oct 2023 02:51:21 GMT
+      Cache-Control:
+      - public, max-age=24921
       Etag:
       - W/"ee079d43df1a0367948eacbe5248301e"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
-      - Hit from cloudfront
+      - RefreshHit from cloudfront
       Via:
-      - 1.1 a0b647da77edd97cca88fb4c4b1a9d08.cloudfront.net (CloudFront)
+      - 1.1 a0cae2fdb5ad25982d8870c08f7b43da.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN52-P3
+      - DFW57-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - yRrMZQtNpI4krZa-yWM6sbbbsb11oN1yCB-uV8F8nANvYhmhxVk8WA==
-      Age:
-      - '3830'
+      - QUNm-3XF8Bu1x39G7QABqBBL_5i7zlXM4LFb7Xe-3O_RMgNvZYChuA==
     body:
       encoding: ASCII-8BIT
       string: !binary |-
         eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvcWRJTUhkNHNFZkpTY2tmVkpmS1F2aXNMMDJhLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0Ijo1NTAwMDAwMCwiZ2VucmVzIjpbeyJpZCI6MzUsIm5hbWUiOiJDb21lZHkifSx7ImlkIjoxOCwibmFtZSI6IkRyYW1hIn0seyJpZCI6MTA3NDksIm5hbWUiOiJSb21hbmNlIn1dLCJob21lcGFnZSI6Imh0dHBzOi8vd3d3LnBhcmFtb3VudG1vdmllcy5jb20vbW92aWVzL2ZvcnJlc3QtZ3VtcCIsImlkIjoxMywiaW1kYl9pZCI6InR0MDEwOTgzMCIsIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF90aXRsZSI6IkZvcnJlc3QgR3VtcCIsIm92ZXJ2aWV3IjoiQSBtYW4gd2l0aCBhIGxvdyBJUSBoYXMgYWNjb21wbGlzaGVkIGdyZWF0IHRoaW5ncyBpbiBoaXMgbGlmZSBhbmQgYmVlbiBwcmVzZW50IGR1cmluZyBzaWduaWZpY2FudCBoaXN0b3JpYyBldmVudHPigJRpbiBlYWNoIGNhc2UsIGZhciBleGNlZWRpbmcgd2hhdCBhbnlvbmUgaW1hZ2luZWQgaGUgY291bGQgZG8uIEJ1dCBkZXNwaXRlIGFsbCBoZSBoYXMgYWNoaWV2ZWQsIGhpcyBvbmUgdHJ1ZSBsb3ZlIGVsdWRlcyBoaW0uIiwicG9wdWxhcml0eSI6NjcuNjUsInBvc3Rlcl9wYXRoIjoiL2FydzJ2Y0J2ZVdPVlpyNnB4ZDlYVGQxVGRRYS5qcGciLCJwcm9kdWN0aW9uX2NvbXBhbmllcyI6W3siaWQiOjQsImxvZ29fcGF0aCI6Ii9nejY2RWZOb1lQcUhUWUk0cTlVRU40Q2JIUmMucG5nIiwibmFtZSI6IlBhcmFtb3VudCIsIm9yaWdpbl9jb3VudHJ5IjoiVVMifSx7ImlkIjoyMTkyMCwibG9nb19wYXRoIjpudWxsLCJuYW1lIjoiVGhlIFN0ZXZlIFRpc2NoIENvbXBhbnkiLCJvcmlnaW5fY291bnRyeSI6IiJ9LHsiaWQiOjQxMiwibG9nb19wYXRoIjpudWxsLCJuYW1lIjoiV2VuZHkgRmluZXJtYW4gUHJvZHVjdGlvbnMiLCJvcmlnaW5fY291bnRyeSI6IiJ9XSwicHJvZHVjdGlvbl9jb3VudHJpZXMiOlt7Imlzb18zMTY2XzEiOiJVUyIsIm5hbWUiOiJVbml0ZWQgU3RhdGVzIG9mIEFtZXJpY2EifV0sInJlbGVhc2VfZGF0ZSI6IjE5OTQtMDYtMjMiLCJyZXZlbnVlIjo2NzczODc3MTYsInJ1bnRpbWUiOjE0Miwic3Bva2VuX2xhbmd1YWdlcyI6W3siZW5nbGlzaF9uYW1lIjoiRW5nbGlzaCIsImlzb182MzlfMSI6ImVuIiwibmFtZSI6IkVuZ2xpc2gifV0sInN0YXR1cyI6IlJlbGVhc2VkIiwidGFnbGluZSI6IlRoZSB3b3JsZCB3aWxsIG5ldmVyIGJlIHRoZSBzYW1lIG9uY2UgeW91J3ZlIHNlZW4gaXQgdGhyb3VnaCB0aGUgZXllcyBvZiBGb3JyZXN0IEd1bXAuIiwidGl0bGUiOiJGb3JyZXN0IEd1bXAiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6OC40NzYsInZvdGVfY291bnQiOjI1NDc4fQ==
-  recorded_at: Fri, 13 Oct 2023 16:44:59 GMT
+  recorded_at: Sat, 14 Oct 2023 02:51:21 GMT
 recorded_with: VCR 6.2.0

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Discover Movies Page' do
+RSpec.describe 'Dashboard: Discover Movies Page' do
   describe 'When I visit the user discover page' do
     before :each do
       @user1 = User.create(name: 'Joe', email: 'joeiscool@yahoo.com')

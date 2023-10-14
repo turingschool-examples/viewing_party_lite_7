@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :new, :create] do
     resources :discover, only: [:index]
     resources :movies, only: [:index, :show] do
-      resources :viewing_party, only: [:create, :new]
+      resources :viewing_parties, only: [:create, :new, :show]
     end
   end
 

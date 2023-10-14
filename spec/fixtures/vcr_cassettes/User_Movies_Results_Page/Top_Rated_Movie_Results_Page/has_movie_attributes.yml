@@ -31,32 +31,34 @@ http_interactions:
       X-Memc-Key:
       - 0ad04c4a8f86817194f97d0815bf2d05
       X-Memc-Age:
-      - '9953'
+      - '774'
       X-Memc-Expires:
-      - '12932'
+      - '27250'
       Date:
-      - Fri, 13 Oct 2023 16:45:00 GMT
+      - Fri, 13 Oct 2023 22:39:35 GMT
       Cache-Control:
-      - public, max-age=23527
+      - public, max-age=25020
       Etag:
       - W/"0e23279b004381f72a34159d5c7dfd1f"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
-      - RefreshHit from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 db94b8e3e5f45aab1e90db086a8debc0.cloudfront.net (CloudFront)
+      - 1.1 b3ac5a5f02a4bb1f5399df05f90245d4.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN52-P3
+      - DFW57-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 2U4-x0xj_XaxxRTigo9hq-3U7urBvm24bXoO-nC77c11knlDEBqtZA==
+      - kcTYLVO8tv_Soqv9Xddp30lYRR0tMO4KfcCfr1bxUcTTfJVKiLljoA==
+      Age:
+      - '15109'
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[],"total_pages":1,"total_results":0}'
-  recorded_at: Fri, 13 Oct 2023 16:45:00 GMT
+  recorded_at: Sat, 14 Oct 2023 02:51:24 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/search/movie?api_key=<API_KEY>&query=
@@ -88,13 +90,13 @@ http_interactions:
       X-Memc-Key:
       - 0ad04c4a8f86817194f97d0815bf2d05
       X-Memc-Age:
-      - '9953'
+      - '774'
       X-Memc-Expires:
-      - '12932'
+      - '27250'
       Date:
-      - Fri, 13 Oct 2023 16:45:00 GMT
+      - Fri, 13 Oct 2023 22:39:35 GMT
       Cache-Control:
-      - public, max-age=23527
+      - public, max-age=25020
       Etag:
       - W/"0e23279b004381f72a34159d5c7dfd1f"
       Vary:
@@ -103,15 +105,17 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 4a3448a83573e51d340356257951f57a.cloudfront.net (CloudFront)
+      - 1.1 3d0244d93468697e8191825e8571d06c.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN52-P3
+      - DFW57-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - nvG66tDG2n2961LlkSp4iXlVpdS7QzudqAWhPSsZu-vDs06zk5OrMQ==
+      - fkp-djVEG1mNzsA1cnFfd3zFOVoRIaOUyKo6Y_asJzOXtNwixFpVig==
+      Age:
+      - '15109'
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[],"total_pages":1,"total_results":0}'
-  recorded_at: Fri, 13 Oct 2023 16:45:00 GMT
+  recorded_at: Sat, 14 Oct 2023 02:51:24 GMT
 recorded_with: VCR 6.2.0

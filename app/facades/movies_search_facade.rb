@@ -1,6 +1,9 @@
 class MoviesSearchFacade
+  attr_reader :query, :service
+
   def initialize(query)
     @query = query
+    @service = MoviesService.new
   end
 
   def movies

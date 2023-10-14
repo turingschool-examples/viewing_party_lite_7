@@ -24,41 +24,39 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Date:
-      - Fri, 13 Oct 2023 15:45:37 GMT
       Server:
       - openresty
-      Cache-Control:
-      - public, max-age=28434
       X-Memc:
       - HIT
       X-Memc-Key:
       - f41a60d90b45a95c73662d0acf547b35
       X-Memc-Age:
-      - '4086'
+      - '9391'
       X-Memc-Expires:
-      - '21732'
+      - '16427'
+      Date:
+      - Sat, 14 Oct 2023 02:51:22 GMT
+      Cache-Control:
+      - public, max-age=24337
       Etag:
       - W/"e3f8919dabf40646d9a158668cc21114"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
-      - Hit from cloudfront
+      - RefreshHit from cloudfront
       Via:
-      - 1.1 270fdef5b99b63ae592608f44e3043b6.cloudfront.net (CloudFront)
+      - 1.1 bf3afc8f6efd6d2679e218a7870bc652.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN52-P3
+      - DFW57-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - OxxjF9QBz6bpbvw1nA1r-31EdopLAtwxq5PNAn8NKA-8dGYHpIzKaw==
-      Age:
-      - '3562'
+      - 11Q_G6vup-4VANPyE1S7Gf-jHeYlPOQ_BcEGqzbXzYTbVPijwsIFxA==
     body:
       encoding: ASCII-8BIT
       string: '{"id":13,"page":1,"results":[{"author":"llgolden","author_details":{"name":"","username":"llgolden","avatar_path":null,"rating":10.0},"content":"Best
         movie ever.","created_at":"2023-07-07T20:58:10.912Z","id":"64a87c626a3448014d30cce4","updated_at":"2023-07-14T15:11:55.389Z","url":"https://www.themoviedb.org/review/64a87c626a3448014d30cce4"},{"author":"bluedevil667","author_details":{"name":"","username":"bluedevil667","avatar_path":null,"rating":10.0},"content":"This
         is the best movie ever!","created_at":"2023-07-07T20:59:05.017Z","id":"64a87c989c97bd01390b8ba9","updated_at":"2023-07-14T15:11:56.607Z","url":"https://www.themoviedb.org/review/64a87c989c97bd01390b8ba9"}],"total_pages":1,"total_results":2}'
-  recorded_at: Fri, 13 Oct 2023 16:44:59 GMT
+  recorded_at: Sat, 14 Oct 2023 02:51:22 GMT
 recorded_with: VCR 6.2.0
