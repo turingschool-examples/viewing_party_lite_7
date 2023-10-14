@@ -7,9 +7,9 @@
   <h3>Viewing Party Invitations</h3>
   <% @facade.invited_viewing_parties.each do |party| %>
     <img src="<%= @facade.poster_url(party.movie_id) %>"></br>
-    <%= link_to "#{@facade.invited_party_movie(party.movie_id).title}", "/users/#{@facade.user.id}/movies/#{party.movie_id}" %>
-    <p>When: <%= party.date %></p>
-    <p>Start Time: <%= party.start_time %></p>
+    <%= link_to "#{@facade.party_movie(party.movie_id).title}", "/users/#{@facade.user.id}/movies/#{party.movie_id}" %>
+    <p>When: <%= party.date.strftime("%-m/%-d/%y") %></p>
+    <p>Start Time: <%= party.start_time.strftime("%I:%M:%S") %></p>
     <p>Host: <%= User.user_host_name(party.host_user_id) %></p>
     <p>Invitees:
       <ul>
@@ -30,9 +30,9 @@
   <h3>Viewing Parties I'm Hosting</h3>
   <% @facade.hosted_viewing_parties.each do |party| %>
   <img src="<%= @facade.poster_url(party.movie_id) %>"></br>
-    <%= link_to "#{@facade.invited_party_movie(party.movie_id).title}", "/users/#{@facade.user.id}/movies/#{party.movie_id}" %>
-    <p>When: <%= party.date %></p>
-    <p>Start Time: <%= party.start_time %></p>
+    <%= link_to "#{@facade.party_movie(party.movie_id).title}", "/users/#{@facade.user.id}/movies/#{party.movie_id}" %>
+    <p>When: <%= party.date.strftime("%-m/%-d/%y") %></p>
+    <p>Start Time: <%= party.start_time.strftime("%I:%M:%S") %></p>
     <p>Host: I am hosting</p>
     <p>Invitees: 
       <ul>

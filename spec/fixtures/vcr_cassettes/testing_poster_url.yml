@@ -1,0 +1,173 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/configuration?api_key=<THEMOVIEDB_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.11
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 13 Oct 2023 20:55:28 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=43200
+      Etag:
+      - W/"8ee6fd095d2be6e301251d766501a916"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 ca38026a6de2ccb3904aed4709dff3d0.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SFO53-C1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - PdvX6IX29P1VROCa-yhEHgCgA2pjeDBoY-0dDI81J_t5xRPg142_wg==
+      Age:
+      - '15478'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"images":{"base_url":"http://image.tmdb.org/t/p/","secure_base_url":"https://image.tmdb.org/t/p/","backdrop_sizes":["w300","w780","w1280","original"],"logo_sizes":["w45","w92","w154","w185","w300","w500","original"],"poster_sizes":["w92","w154","w185","w342","w500","w780","original"],"profile_sizes":["w45","w185","h632","original"],"still_sizes":["w92","w185","w300","original"]},"change_keys":["adult","air_date","also_known_as","alternative_titles","biography","birthday","budget","cast","certifications","character_names","created_by","crew","deathday","episode","episode_number","episode_run_time","freebase_id","freebase_mid","general","genres","guest_stars","homepage","images","imdb_id","languages","name","network","origin_country","original_name","original_title","overview","parts","place_of_birth","plot_keywords","production_code","production_companies","production_countries","releases","revenue","runtime","season","season_number","season_regular","spoken_languages","status","tagline","title","translations","tvdb_id","tvrage_id","type","video","videos"]}'
+  recorded_at: Sat, 14 Oct 2023 01:13:25 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/configuration?api_key=<THEMOVIEDB_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.11
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 13 Oct 2023 20:55:28 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=43200
+      Etag:
+      - W/"8ee6fd095d2be6e301251d766501a916"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 a3b511649bade26170091701ae26b616.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SFO53-C1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 3BsWLUjCMqEzGgSec-mChaHqJjNx09sH2_oG3dcUz43x9pEyDZ6zLg==
+      Age:
+      - '15478'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"images":{"base_url":"http://image.tmdb.org/t/p/","secure_base_url":"https://image.tmdb.org/t/p/","backdrop_sizes":["w300","w780","w1280","original"],"logo_sizes":["w45","w92","w154","w185","w300","w500","original"],"poster_sizes":["w92","w154","w185","w342","w500","w780","original"],"profile_sizes":["w45","w185","h632","original"],"still_sizes":["w92","w185","w300","original"]},"change_keys":["adult","air_date","also_known_as","alternative_titles","biography","birthday","budget","cast","certifications","character_names","created_by","crew","deathday","episode","episode_number","episode_run_time","freebase_id","freebase_mid","general","genres","guest_stars","homepage","images","imdb_id","languages","name","network","origin_country","original_name","original_title","overview","parts","place_of_birth","plot_keywords","production_code","production_companies","production_countries","releases","revenue","runtime","season","season_number","season_regular","spoken_languages","status","tagline","title","translations","tvdb_id","tvrage_id","type","video","videos"]}'
+  recorded_at: Sat, 14 Oct 2023 01:13:26 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=<THEMOVIEDB_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.11
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 13 Oct 2023 20:19:49 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=24553
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '6417'
+      X-Memc-Expires:
+      - '18928'
+      Etag:
+      - W/"889b14697f9f1982dac83f25abf8d7e5"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 bd414f5f75d6893558dff609c5ff1fe6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SFO53-C1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - ZiWd95bs0kJOUSL_Wv1xzr7UuZnGGhPX0Eo9Mu0Jbb4Sz-CJ5Tt4tQ==
+      Age:
+      - '17616'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":111.685,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.709,"vote_count":18744}'
+  recorded_at: Sat, 14 Oct 2023 01:13:26 GMT
+recorded_with: VCR 6.2.0
