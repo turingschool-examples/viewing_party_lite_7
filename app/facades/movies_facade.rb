@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MoviesFacade
   attr_reader :movie_id,
               :movie_title,
@@ -13,10 +15,10 @@ class MoviesFacade
 
   def discover_options
     if @top_movies
-      top_movie_info = ThemoviedbService.new.top_movies.map do |movie|
+      ThemoviedbService.new.top_movies.map do |movie|
         MovieDetails.new(movie)
       end
-    elsif @movie_title != nil
+    elsif !@movie_title.nil?
       searched_movies = ThemoviedbService.new.movie_titles(@movie_title)
       searched_movies.map do |movie|
         MovieDetails.new(movie)
@@ -26,9 +28,9 @@ class MoviesFacade
 
   def header
     if @top_movies
-      "Top Movies"
-    elsif @movie_title != nil
-      "Search Results"
+      'Top Movies'
+    elsif !@movie_title.nil?
+      'Search Results'
     end
   end
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MovieDetails
   attr_reader :id,
               :title,
@@ -7,7 +9,7 @@ class MovieDetails
               :summary,
               :genres,
               :poster_path
-              
+
   def initialize(movie_info)
     @id = movie_info[:id]
     @title = movie_info[:title]

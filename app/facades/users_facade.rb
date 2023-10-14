@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersFacade
   attr_reader :id,
               :user
