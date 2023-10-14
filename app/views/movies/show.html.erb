@@ -1,10 +1,17 @@
 <h1>Movie Title: <%= @movie.title %></h1>
 <p>Vote Average: <%= @movie.vote_average %></p>
 <p>Runtime: <%= (@movie.runtime) %></p>
-<p>Genre(s): <%= @movie.genres.join(', ') %></p>
+<p>Genre(s): <%= @movie.genres %></p>
 <p>Summary description: <%= @movie.summary %></p>
 <!-- Add cast members and reviews here -->
-<%# <p>Cast: <%= display_cast_members(@movie.cast) %></p> %>
+<h1>Cast: %></h1>
+<ul>
+  <%  @cast.each do |actor| %>
+    <li>
+      <p>Actor Name: <%= actor.name %></p>
+      <p>Charater Name: <%= actor.character %></p>
+    </li> 
+<% end %>
 <%# <p>Total Reviews: <%= @movie.reviews.count %></p> %>
 
 <!-- Create a Viewing Party button -->

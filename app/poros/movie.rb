@@ -6,11 +6,21 @@ class Movie
     @title = movie_data[:original_title]
     @vote_average = movie_data[:vote_average]
     @runtime = movie_data[:runtime] 
-    @genres = movie_data[:genres]   
+    @genres = parse_genres(movie_data[:genres])   
     @summary = movie_data[:overview]
     @id = movie_data[:id]
     @cast = []
     @reviews = []
+  end
+
+  def parse_genres(genres)
+    if genres.nil?
+      'N/A'
+    elsif genres.first.is_a?(Hash)
+      genres.map { |genre| genre[:name] }.join(', ')
+    else
+      genres.join(', ')
+    end
   end
 
   def self.all
@@ -34,7 +44,7 @@ class Movie
   def add_review(review)
     @reviews << review
   end
-  
+
   def formatted_runtime
     return 'N/A' if @runtime.nil?
 
