@@ -67,4 +67,16 @@ class MovieFacade
       CastMember.new(cast_member)
     end
   end
+
+  def self.find_reviews(id)
+    conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
+      faraday.params['api_key'] = Rails.application.credentials.api_key
+      faraday.params['movie_id'] = id
+    end
+    response = conn.get("/3/movie/#{id}/reviews")
+    json = JSON.parse(response.body, symbolize_names: true)
+    json[:results].map do |review|
+      Review.new(review)
+    end
+  end
 end  

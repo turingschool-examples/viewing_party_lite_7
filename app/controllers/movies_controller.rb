@@ -9,9 +9,10 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @user = User.find_by_id(session[:user_id])
+    @user = User.find(session[:user_id])
     id = params[:id]
     @movie = MovieFacade.find_by_id(params[:id])
-    @cast = MovieFacade.find_cast(params[:id])
+    @cast = MovieFacade.find_cast(params[:id]).first(10)
+    @reviews = MovieFacade.find_reviews(params[:id])
   end
 end
