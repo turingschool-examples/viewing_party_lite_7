@@ -1,6 +1,7 @@
+<h1> Create Viewing Party </h1>
 <h1><%= @movie.title %></h1>
 
-<%= form_with model: @party, url: create_viewing_party_path(@user, @movie), method: :post, data: { turbo: false } do |f| %>
+<%= form_with url: create_viewing_party_path(@user, @movie), method: :post, data: { turbo: false } do |f| %>
   <%= f.label :duration %>
   <%= f.number_field :duration, min: @movie.runtime, value: @movie.runtime %>
 
@@ -10,11 +11,12 @@
   <%= f.label :start_time %>
   <%= f.time_field :start_time %>
 
-  <%= f.label :invitees %>
-  <%= @users.each do |user| %>
-    <%= f.check_box :user_ids, { multiple: true }, user.id, nil %>
-    <%= user.name %>
+  <h3> Invite Friends </h3>
+  <%= fields_for :invitees do |g| %>
+    <% @users.each do |user| %>
+      <%= g.check_box user.id %>
+      <%= g.label user.id, "#{user.name} (#{user.email})" %>
+    <% end %>
+      <%= f.submit "Create Viewing Party" %>
   <% end %>
-
-  <%= f.submit 'Create Party' %>
 <% end %>
