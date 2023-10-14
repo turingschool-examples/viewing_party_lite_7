@@ -13,7 +13,7 @@ class MovieFacade
 
   def self.movie_cast(movie)
     cast_data = MovieDbService.new.movie_cast(movie)
-    cast_data[:cast].map { |cast_member| Cast.new(cast_member) }
+    cast_data[:cast].first(10).map { |cast_member| Cast.new(cast_member) }
   end
 
   def self.movie_reviews(movie)
