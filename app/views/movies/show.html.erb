@@ -1,0 +1,14 @@
+<h1>Movie Title: <%= @movie.title %></h1>
+<p>Vote Average: <%= @movie.vote_average %></p>
+<p>Runtime: <%= (@movie.runtime) %></p>
+<p>Genre(s): <%= @movie.genres.join(', ') %></p>
+<p>Summary description: <%= @movie.summary %></p>
+<!-- Add cast members and reviews here -->
+<%# <p>Cast: <%= display_cast_members(@movie.cast) %></p> %>
+<%# <p>Total Reviews: <%= @movie.reviews.count %></p> %>
+
+<!-- Create a Viewing Party button -->
+<%# <%= link_to "Create a Viewing Party", new_user_movie_viewing_party_path(@user, @movie), class: "btn btn-primary" %> %>
+
+<!-- Return to Discover Page button -->
+<%# <%= link_to "Return to Discover Page", user_discover_index_path(@user), class: "btn btn-secondary" %> %>
