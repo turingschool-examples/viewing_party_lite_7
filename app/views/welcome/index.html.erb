@@ -1,0 +1,9 @@
+<div id="homepage-buttons">
+    <p><%= link_to "Create an Account", register_path %></p>
+    <div id="all-users">
+      <h3>Existing Users</h3>
+      <% @users.each do |user| %>
+        <p><%= link_to user.email, user_path(user) %></p>
+      <% end %>
+    </div>
+</div> 

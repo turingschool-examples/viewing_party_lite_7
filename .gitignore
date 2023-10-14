@@ -27,5 +27,8 @@
 
 /public/assets
 
+# Ignore simplecov generated files
+/coverage
+
 # Ignore master key for decrypting credentials and more.
 /config/master.key

@@ -1,0 +1,177 @@
+{
+  "http_interactions": [
+    {
+      "request": {
+        "method": "get",
+        "uri": "https://api.themoviedb.org/3/movie/926393/credits?api_key=DONT_SHARE_MY_TMDB_KEY",
+        "body": {
+          "encoding": "US-ASCII",
+          "string": ""
+        },
+        "headers": {
+          "User-Agent": [
+            "Faraday v2.7.11"
+          ],
+          "Accept-Encoding": [
+            "gzip;q=1.0,deflate;q=0.6,identity;q=0.3"
+          ],
+          "Accept": [
+            "*/*"
+          ]
+        }
+      },
+      "response": {
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "headers": {
+          "Content-Type": [
+            "application/json;charset=utf-8"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Date": [
+            "Sat, 14 Oct 2023 00:04:06 GMT"
+          ],
+          "Server": [
+            "openresty"
+          ],
+          "Cache-Control": [
+            "public, max-age=27134"
+          ],
+          "X-Memc": [
+            "HIT"
+          ],
+          "X-Memc-Key": [
+            "6323796468069f03c2d4a822e947f429"
+          ],
+          "X-Memc-Age": [
+            "12768"
+          ],
+          "X-Memc-Expires": [
+            "13499"
+          ],
+          "Etag": [
+            "W/\"4ec5b3ca0126f12be1568e59570c4b8c\""
+          ],
+          "Vary": [
+            "Accept-Encoding",
+            "Origin"
+          ],
+          "X-Cache": [
+            "Miss from cloudfront"
+          ],
+          "Via": [
+            "1.1 a5bffe3d9fb1379dc2d31313b684f3b6.cloudfront.net (CloudFront)"
+          ],
+          "X-Amz-Cf-Pop": [
+            "DEN52-C1"
+          ],
+          "Alt-Svc": [
+            "h3=\":443\"; ma=86400"
+          ],
+          "X-Amz-Cf-Id": [
+            "YO4MB54mDJ6b976Yu39gZincVVrO6dspvnvDPzCrlphhlFp10pwRCw=="
+          ]
+        },
+        "body": {
+          "encoding": "ASCII-8BIT",
+          "string": "{\"id\":926393,\"cast\":[{\"adult\":false,\"gender\":2,\"id\":5292,\"known_for_department\":\"Acting\",\"name\":\"Denzel Washington\",\"original_name\":\"Denzel Washington\",\"popularity\":57.865,\"profile_path\":\"/jj2Gcobpopokal0YstuCQW0ldJ4.jpg\",\"cast_id\":1,\"character\":\"Robert McCall\",\"credit_id\":\"61df4d6bc525c400423c2a30\",\"order\":0},{\"adult\":false,\"gender\":1,\"id\":501,\"known_for_department\":\"Acting\",\"name\":\"Dakota Fanning\",\"original_name\":\"Dakota Fanning\",\"popularity\":87.623,\"profile_path\":\"/fXxfYh0NoTiyedRwZPNqBMdz3Eh.jpg\",\"cast_id\":3,\"character\":\"Emma Collins\",\"credit_id\":\"62aa2bcacba36f00a8305f2e\",\"order\":1},{\"adult\":false,\"gender\":2,\"id\":1147420,\"known_for_department\":\"Acting\",\"name\":\"Eugenio Mastrandrea\",\"original_name\":\"Eugenio Mastrandrea\",\"popularity\":13.195,\"profile_path\":\"/tFvgQP7j3F0ATXxzLS2yOaeU05Q.jpg\",\"cast_id\":12,\"character\":\"Gio Bonucci\",\"credit_id\":\"637e598e2222f6008eee87fb\",\"order\":2},{\"adult\":false,\"gender\":2,\"id\":62562,\"known_for_department\":\"Acting\",\"name\":\"David Denman\",\"original_name\":\"David Denman\",\"popularity\":22.039,\"profile_path\":\"/4I06ZD8SQ6pU1QYShiUXb711fJW.jpg\",\"cast_id\":9,\"character\":\"Frank Conroy\",\"credit_id\":\"63478aca51c01f0081059452\",\"order\":3},{\"adult\":false,\"gender\":1,\"id\":1636737,\"known_for_department\":\"Acting\",\"name\":\"Gaia Scodellaro\",\"original_name\":\"Gaia Scodellaro\",\"popularity\":20.463,\"profile_path\":\"/7ZmZOKdY5fexw23VSbXA5j9Dax3.jpg\",\"cast_id\":10,\"character\":\"Aminah\",\"credit_id\":\"6349ad3a4142910098823518\",\"order\":4},{\"adult\":false,\"gender\":2,\"id\":41527,\"known_for_department\":\"Acting\",\"name\":\"Remo Girone\",\"original_name\":\"Remo Girone\",\"popularity\":17.865,\"profile_path\":\"/gRS90yn20ZMlq4pvVQjtUM5DLqN.jpg\",\"cast_id\":13,\"character\":\"Enzo Arisio\",\"credit_id\":\"637e59942222f600c1c81ddb\",\"order\":5},{\"adult\":false,\"gender\":0,\"id\":1917499,\"known_for_department\":\"Acting\",\"name\":\"Andrea Scarduzio\",\"original_name\":\"Andrea Scarduzio\",\"popularity\":14.106,\"profile_path\":\"/f19xKzDwURgKeUoThlSSvIgBx6P.jpg\",\"cast_id\":16,\"character\":\"Vincent Quaranta\",\"credit_id\":\"637e59bdfa4046007f7e7866\",\"order\":6},{\"adult\":false,\"gender\":2,\"id\":3462470,\"known_for_department\":\"Acting\",\"name\":\"Andrea Dodero\",\"original_name\":\"Andrea Dodero\",\"popularity\":8.502,\"profile_path\":\"/yqcYijFrb5lLD606Y6LFvyRV2kr.jpg\",\"cast_id\":17,\"character\":\"Marco Quaranta\",\"credit_id\":\"637e59ce85b10500977b224b\",\"order\":7},{\"adult\":false,\"gender\":2,\"id\":1469908,\"known_for_department\":\"Acting\",\"name\":\"Daniele Perrone\",\"original_name\":\"Daniele Perrone\",\"popularity\":2.49,\"profile_path\":\"/uIEMiZf19EivJceMGoUQzY9mIPy.jpg\",\"cast_id\":15,\"character\":\"Angelo\",\"credit_id\":\"637e59b085b10500977b2240\",\"order\":8},{\"adult\":false,\"gender\":1,\"id\":1159576,\"known_for_department\":\"Acting\",\"name\":\"Sonia Ammar\",\"original_name\":\"Sonia Ammar\",\"popularity\":6.932,\"profile_path\":\"/berQQTh2roTqiwYfIUvGAbQlVU.jpg\",\"cast_id\":14,\"character\":\"Chiara Bonucci\",\"credit_id\":\"637e599d229ae2007f854f9c\",\"order\":9},{\"adult\":false,\"gender\":0,\"id\":4252464,\"known_for_department\":\"Acting\",\"name\":\"Manuela Tasciotti\",\"original_name\":\"Manuela Tasciotti\",\"popularity\":1.312,\"profile_path\":\"/hF66B3tqc8uelDVKRQ8xl5U1LLH.jpg\",\"cast_id\":39,\"character\":\"Carmela\",\"credit_id\":\"64f5808f12197e00e1b4d315\",\"order\":10},{\"adult\":false,\"gender\":0,\"id\":4252462,\"known_for_department\":\"Acting\",\"name\":\"Zakaria Hamza\",\"original_name\":\"Zakaria Hamza\",\"popularity\":1.856,\"profile_path\":\"/eL4srGQm9OziZdXOKXgtSTVRKXL.jpg\",\"cast_id\":38,\"character\":\"Khalid\",\"credit_id\":\"64f5806b12197e00e1b4d2f1\",\"order\":11},{\"adult\":false,\"gender\":0,\"id\":4099517,\"known_for_department\":\"Acting\",\"name\":\"Dea Lanzaro\",\"original_name\":\"Dea Lanzaro\",\"popularity\":1.025,\"profile_path\":\"/69GsUe0x2hIg0jedHDgRROfalnb.jpg\",\"cast_id\":40,\"character\":\"Gabriella Bonucci\",\"credit_id\":\"64f580c3e0ca7f00cbe668aa\",\"order\":12},{\"adult\":false,\"gender\":0,\"id\":225705,\"known_for_department\":\"Acting\",\"name\":\"Adolfo Margiotta\",\"original_name\":\"Adolfo Margiotta\",\"popularity\":2.437,\"profile_path\":\"/y5FiYFuFogq0oHr1PPGklAyNjIr.jpg\",\"cast_id\":44,\"character\":\"Chief Barella\",\"credit_id\":\"64f582eb77d23b00aec0dfc7\",\"order\":13},{\"adult\":false,\"gender\":2,\"id\":81510,\"known_for_department\":\"Acting\",\"name\":\"Niccolò Senni\",\"original_name\":\"Niccolò Senni\",\"popularity\":7.593,\"profile_path\":\"/uaMIXYdpbnQtgda5BSWxxpJLKhI.jpg\",\"cast_id\":45,\"character\":\"Stefano\",\"credit_id\":\"64f583083d43e0389035f1d8\",\"order\":14},{\"adult\":false,\"gender\":2,\"id\":27401,\"known_for_department\":\"Acting\",\"name\":\"Bruno Bilotta\",\"original_name\":\"Bruno Bilotta\",\"popularity\":13.436,\"profile_path\":\"/1dsqLi8bboTD0UcR1T67dh4MvsJ.jpg\",\"cast_id\":46,\"character\":\"Lorenzo Vitale\",\"credit_id\":\"64f58336f29d6600c66a806c\",\"order\":15},{\"adult\":false,\"gender\":0,\"id\":4252467,\"known_for_department\":\"Acting\",\"name\":\"Alessandro Press\",\"original_name\":\"Alessandro Press\",\"popularity\":1.336,\"profile_path\":null,\"cast_id\":41,\"character\":\"Viking\",\"credit_id\":\"64f581f2e0ca7f00ec88b7e6\",\"order\":16},{\"adult\":false,\"gender\":0,\"id\":4252470,\"known_for_department\":\"Acting\",\"name\":\"Niccolò Fava\",\"original_name\":\"Niccolò Fava\",\"popularity\":1.116,\"profile_path\":null,\"cast_id\":42,\"character\":\"Marco's Thug\",\"credit_id\":\"64f58288e0ca7f012eb4672f\",\"order\":17},{\"adult\":false,\"gender\":0,\"id\":4252471,\"known_for_department\":\"Acting\",\"name\":\"Alessandro Xavier De Silva\",\"original_name\":\"Alessandro Xavier De Silva\",\"popularity\":0.6,\"profile_path\":null,\"cast_id\":43,\"character\":\"Marco's Thug\",\"credit_id\":\"64f582bbf29d6600e343fcb3\",\"order\":18},{\"adult\":false,\"gender\":0,\"id\":4252472,\"known_for_department\":\"Acting\",\"name\":\"Adriano Sabrie\",\"original_name\":\"Adriano Sabrie\",\"popularity\":2.112,\"profile_path\":null,\"cast_id\":47,\"character\":\"Vitale's Grandson\",\"credit_id\":\"64f5836d77d23b01503aa514\",\"order\":19},{\"adult\":false,\"gender\":0,\"id\":2120899,\"known_for_department\":\"Acting\",\"name\":\"Valerio Da Silva\",\"original_name\":\"Valerio Da Silva\",\"popularity\":1.27,\"profile_path\":\"/hNNXgYSiHfGAckQPsdz7sGBLhPx.jpg\",\"cast_id\":48,\"character\":\"Sicilian Investigator\",\"credit_id\":\"64f583975f2b8d011b4ee227\",\"order\":20},{\"adult\":false,\"gender\":2,\"id\":931936,\"known_for_department\":\"Acting\",\"name\":\"Gian Piero Rotoli\",\"original_name\":\"Gian Piero Rotoli\",\"popularity\":1.458,\"profile_path\":null,\"cast_id\":49,\"character\":\"Barella's Lieutenant\",\"credit_id\":\"650ff69ca9117f00e1923667\",\"order\":21},{\"adult\":false,\"gender\":0,\"id\":2182230,\"known_for_department\":\"Acting\",\"name\":\"Isabella Delle Monache\",\"original_name\":\"Isabella Delle Monache\",\"popularity\":1.094,\"profile_path\":null,\"cast_id\":50,\"character\":\"Trattoria Server\",\"credit_id\":\"650ff6aae8d0b4010ce38046\",\"order\":22},{\"adult\":false,\"gender\":2,\"id\":72777,\"known_for_department\":\"Acting\",\"name\":\"Salvatore Ruocco\",\"original_name\":\"Salvatore Ruocco\",\"popularity\":2.249,\"profile_path\":\"/yYwUkA3BxAuCu7M84YNay9NLa4h.jpg\",\"cast_id\":51,\"character\":\"Vincent's Man\",\"credit_id\":\"650ff6b63a4a1200ff4ecdaf\",\"order\":23},{\"adult\":false,\"gender\":0,\"id\":3119953,\"known_for_department\":\"Acting\",\"name\":\"Daniele Ornatelli\",\"original_name\":\"Daniele Ornatelli\",\"popularity\":1.22,\"profile_path\":null,\"cast_id\":52,\"character\":\"News Reporter\",\"credit_id\":\"650ff6caa3e4ba00c4958f2e\",\"order\":24},{\"adult\":false,\"gender\":2,\"id\":1140126,\"known_for_department\":\"Acting\",\"name\":\"Luigi Catani\",\"original_name\":\"Luigi Catani\",\"popularity\":0.692,\"profile_path\":\"/7K1mGbIH9lgb1CX4DZgq3HU5gYX.jpg\",\"cast_id\":53,\"character\":\"Teen Thug\",\"credit_id\":\"650ff6d8a9117f011b206a72\",\"order\":25},{\"adult\":false,\"gender\":0,\"id\":3289457,\"known_for_department\":\"Acting\",\"name\":\"Giovanni Trombetta\",\"original_name\":\"Giovanni Trombetta\",\"popularity\":1.388,\"profile_path\":\"/obDwUjTwGAzNGPgakmIj2t7H01m.jpg\",\"cast_id\":54,\"character\":\"Hard Man at Winery\",\"credit_id\":\"650ff6ea09c24c00ffb051e4\",\"order\":26},{\"adult\":false,\"gender\":0,\"id\":2277909,\"known_for_department\":\"Crew\",\"name\":\"Gianluigi Scilla\",\"original_name\":\"Gianluigi Scilla\",\"popularity\":3.385,\"profile_path\":null,\"cast_id\":55,\"character\":\"Hard Man at Winery\",\"credit_id\":\"650ff6fc3a4a1200c5aa154f\",\"order\":27},{\"adult\":false,\"gender\":2,\"id\":1610480,\"known_for_department\":\"Crew\",\"name\":\"Danilo Capuzi\",\"original_name\":\"Danilo Capuzi\",\"popularity\":1.819,\"profile_path\":\"/pZOzOFDwiwOlSbPjfIAH87FxFkt.jpg\",\"cast_id\":56,\"character\":\"Hard Man at Winery\",\"credit_id\":\"650ff70709c24c013963bed6\",\"order\":28},{\"adult\":false,\"gender\":2,\"id\":2219983,\"known_for_department\":\"Acting\",\"name\":\"Giovanni Scotti\",\"original_name\":\"Giovanni Scotti\",\"popularity\":1.586,\"profile_path\":\"/a6MVIV0OXTwXcPZoRd6v8jT5wfl.jpg\",\"cast_id\":19,\"character\":\"Barista\",\"credit_id\":\"63c9ae0c68afd6008ef5b13d\",\"order\":29},{\"adult\":false,\"gender\":1,\"id\":1511147,\"known_for_department\":\"Acting\",\"name\":\"Marta Zoffoli\",\"original_name\":\"Marta Zoffoli\",\"popularity\":9.22,\"profile_path\":\"/58XqzFll2pUIES9JViw4o0K1Xt2.jpg\",\"cast_id\":57,\"character\":\"Teacher\",\"credit_id\":\"650ff72109c24c00e2eac008\",\"order\":30},{\"adult\":false,\"gender\":0,\"id\":237804,\"known_for_department\":\"Acting\",\"name\":\"Marco Giuliani\",\"original_name\":\"Marco Giuliani\",\"popularity\":2.566,\"profile_path\":\"/2TtM2uaFRFIi1u2kLJd18Mza0yA.jpg\",\"cast_id\":58,\"character\":\"Evicted Husband\",\"credit_id\":\"650ff73c09c24c013963beff\",\"order\":31},{\"adult\":false,\"gender\":0,\"id\":2410284,\"known_for_department\":\"Acting\",\"name\":\"Simona Distefano\",\"original_name\":\"Simona Distefano\",\"popularity\":1.694,\"profile_path\":\"/nzzjFyt4HE8Vjf4BVffm7W9UVAW.jpg\",\"cast_id\":59,\"character\":\"Evicted Wife\",\"credit_id\":\"650ff76ca9117f00e19236cc\",\"order\":32},{\"adult\":false,\"gender\":0,\"id\":1871485,\"known_for_department\":\"Acting\",\"name\":\"Mauro Cremonini\",\"original_name\":\"Mauro Cremonini\",\"popularity\":6.199,\"profile_path\":\"/eH4ZucUAx61sODelu2MOf9NPHYm.jpg\",\"cast_id\":60,\"character\":\"Man in Wheelchair\",\"credit_id\":\"650ff77ae1faed013a0aeb95\",\"order\":33},{\"adult\":false,\"gender\":0,\"id\":1918080,\"known_for_department\":\"Acting\",\"name\":\"Arcangelo Iannace\",\"original_name\":\"Arcangelo Iannace\",\"popularity\":0.716,\"profile_path\":null,\"cast_id\":61,\"character\":\"Seasoned Carabiniere\",\"credit_id\":\"650ff79b09c24c011cd6c64c\",\"order\":34},{\"adult\":false,\"gender\":0,\"id\":2929325,\"known_for_department\":\"Acting\",\"name\":\"Beatrice Aiello\",\"original_name\":\"Beatrice Aiello\",\"popularity\":0.716,\"profile_path\":\"/k6sCqvQozKPCzLzVJVrE8cW0fbR.jpg\",\"cast_id\":62,\"character\":\"News Reporter #2\",\"credit_id\":\"650ff7ba26dac100eb1a10ba\",\"order\":35},{\"adult\":false,\"gender\":2,\"id\":223699,\"known_for_department\":\"Acting\",\"name\":\"Agostino Chiummariello\",\"original_name\":\"Agostino Chiummariello\",\"popularity\":2.983,\"profile_path\":\"/dGtSzzKXhu8ppQ2oW8tCYMqvMwE.jpg\",\"cast_id\":63,\"character\":\"Bride's Father\",\"credit_id\":\"650ff7c709c24c00ffb0525f\",\"order\":36},{\"adult\":false,\"gender\":0,\"id\":3840607,\"known_for_department\":\"Acting\",\"name\":\"Mariarosaria Mingione\",\"original_name\":\"Mariarosaria Mingione\",\"popularity\":1.478,\"profile_path\":null,\"cast_id\":64,\"character\":\"Bride\",\"credit_id\":\"650ff7d0f29d6600ad6607be\",\"order\":37},{\"adult\":false,\"gender\":0,\"id\":4287958,\"known_for_department\":\"Acting\",\"name\":\"Marco Cicalese\",\"original_name\":\"Marco Cicalese\",\"popularity\":1.22,\"profile_path\":null,\"cast_id\":65,\"character\":\"Groom\",\"credit_id\":\"650ff7e5e8d0b400ca86277c\",\"order\":38},{\"adult\":false,\"gender\":0,\"id\":3007691,\"known_for_department\":\"Acting\",\"name\":\"Diego Riace\",\"original_name\":\"Diego Riace\",\"popularity\":1.3,\"profile_path\":\"/sKDDIk9T2AGfHMuhBKhOokdakjd.jpg\",\"cast_id\":66,\"character\":\"Monster\",\"credit_id\":\"650ff7eee1faed013a0aebd2\",\"order\":39},{\"adult\":false,\"gender\":0,\"id\":25091,\"known_for_department\":\"Acting\",\"name\":\"Lucia Zotti\",\"original_name\":\"Lucia Zotti\",\"popularity\":3.177,\"profile_path\":\"/s9MePq28rfNfIF56nsSKOYkSNvO.jpg\",\"cast_id\":67,\"character\":\"Old Woman on Stairs\",\"credit_id\":\"650ff7f8f29d66011cfd49ae\",\"order\":40},{\"adult\":false,\"gender\":0,\"id\":3903890,\"known_for_department\":\"Crew\",\"name\":\"Cristiano Pittarello\",\"original_name\":\"Cristiano Pittarello\",\"popularity\":1.22,\"profile_path\":null,\"cast_id\":68,\"character\":\"Vincent's Guard\",\"credit_id\":\"650ff81ba3e4ba011bb76da0\",\"order\":41},{\"adult\":false,\"gender\":1,\"id\":6832,\"known_for_department\":\"Acting\",\"name\":\"Melissa Leo\",\"original_name\":\"Melissa Leo\",\"popularity\":20.329,\"profile_path\":\"/ueAIX0MH68xCei3N8vFLS0EUEjY.jpg\",\"cast_id\":35,\"character\":\"Susan Plummer\",\"credit_id\":\"64f10a28ebb99d00e3e7c316\",\"order\":42}],\"crew\":[{\"adult\":false,\"gender\":2,\"id\":29,\"known_for_department\":\"Production\",\"name\":\"Steve Tisch\",\"original_name\":\"Steve Tisch\",\"popularity\":3.491,\"profile_path\":\"/1qXa4o8gSQqxXSRp0X0lvRM018O.jpg\",\"credit_id\":\"62aa95423d4d96341ee819f3\",\"department\":\"Production\",\"job\":\"Producer\"},{\"adult\":false,\"gender\":1,\"id\":8220,\"known_for_department\":\"Art\",\"name\":\"Naomi Shohan\",\"original_name\":\"Naomi Shohan\",\"popularity\":6.092,\"profile_path\":\"/xnAfpEQhv2FitBb1giZYcvUImrV.jpg\",\"credit_id\":\"64a0d6418c0a4800c76425f1\",\"department\":\"Art\",\"job\":\"Production Design\"},{\"adult\":false,\"gender\":2,\"id\":149,\"known_for_department\":\"Camera\",\"name\":\"Robert Richardson\",\"original_name\":\"Robert Richardson\",\"popularity\":5.434,\"profile_path\":\"/lmJy31oZtN5l2VAGpkrt3xEXsxL.jpg\",\"credit_id\":\"63b46622c56d2d00f310a9ce\",\"department\":\"Camera\",\"job\":\"Director of Photography\"},{\"adult\":false,\"gender\":2,\"id\":3184,\"known_for_department\":\"Production\",\"name\":\"Clayton Townsend\",\"original_name\":\"Clayton Townsend\",\"popularity\":1.538,\"profile_path\":\"/xN3iGckpelbvAXdCIkaOEIWcmCZ.jpg\",\"credit_id\":\"64a0d5f9d5191f01393e24a8\",\"department\":\"Production\",\"job\":\"Producer\"},{\"adult\":false,\"gender\":2,\"id\":3987,\"known_for_department\":\"Editing\",\"name\":\"Conrad Buff IV\",\"original_name\":\"Conrad Buff IV\",\"popularity\":3.056,\"profile_path\":null,\"credit_id\":\"64a0d6464a52f800c994a6ed\",\"department\":\"Editing\",\"job\":\"Editor\"},{\"adult\":false,\"gender\":2,\"id\":5292,\"known_for_department\":\"Acting\",\"name\":\"Denzel Washington\",\"original_name\":\"Denzel Washington\",\"popularity\":57.865,\"profile_path\":\"/jj2Gcobpopokal0YstuCQW0ldJ4.jpg\",\"credit_id\":\"62aa9531907f2614f615175f\",\"department\":\"Production\",\"job\":\"Producer\"},{\"adult\":false,\"gender\":2,\"id\":8748,\"known_for_department\":\"Production\",\"name\":\"Enzo Sisti\",\"original_name\":\"Enzo Sisti\",\"popularity\":5.136,\"profile_path\":null,\"credit_id\":\"64a0d5db8c0a48010176b1a9\",\"department\":\"Production\",\"job\":\"Executive Producer\"},{\"adult\":false,\"gender\":2,\"id\":15911,\"known_for_department\":\"Crew\",\"name\":\"Franco Maria Salamon\",\"original_name\":\"Franco Maria Salamon\",\"popularity\":2.566,\"profile_path\":null,\"credit_id\":\"64a0d6c94a52f800e82dc23f\",\"department\":\"Crew\",\"job\":\"Stunt Coordinator\"},{\"adult\":false,\"gender\":2,\"id\":16787,\"known_for_department\":\"Production\",\"name\":\"Tarak Ben Ammar\",\"original_name\":\"Tarak Ben Ammar\",\"popularity\":2.167,\"profile_path\":\"/zEhGCxlrFtZRr9XqibR3ncPEUmF.jpg\",\"credit_id\":\"64a0d5e2d5191f01393e2496\",\"department\":\"Production\",\"job\":\"Executive Producer\"},{\"adult\":false,\"gender\":2,\"id\":20907,\"known_for_department\":\"Directing\",\"name\":\"Antoine Fuqua\",\"original_name\":\"Antoine Fuqua\",\"popularity\":15.777,\"profile_path\":\"/9zh0MmYIw1BP8V7y9N9K5Rjew4C.jpg\",\"credit_id\":\"61df4da0e24b93008d4bf05a\",\"department\":\"Directing\",\"job\":\"Director\"},{\"adult\":false,\"gender\":2,\"id\":20907,\"known_for_department\":\"Directing\",\"name\":\"Antoine Fuqua\",\"original_name\":\"Antoine Fuqua\",\"popularity\":15.777,\"profile_path\":\"/9zh0MmYIw1BP8V7y9N9K5Rjew4C.jpg\",\"credit_id\":\"6349ad73e22d280089c3834b\",\"department\":\"Production\",\"job\":\"Producer\"},{\"adult\":false,\"gender\":2,\"id\":22814,\"known_for_department\":\"Writing\",\"name\":\"Richard Wenk\",\"original_name\":\"Richard Wenk\",\"popularity\":5.846,\"profile_path\":\"/tUH6K1QHmZKpZC2UGn7q1z20C4P.jpg\",\"credit_id\":\"62aa950e151c5c009b2767d1\",\"department\":\"Writing\",\"job\":\"Writer\"},{\"adult\":false,\"gender\":2,\"id\":43922,\"known_for_department\":\"Writing\",\"name\":\"Michael Sloan\",\"original_name\":\"Michael Sloan\",\"popularity\":20.364,\"profile_path\":\"/kQz3R9EF52DbNiHreq8wza1HTVn.jpg\",\"credit_id\":\"64a0d60e8c0a48010176b1d5\",\"department\":\"Production\",\"job\":\"Producer\"},{\"adult\":false,\"gender\":2,\"id\":43922,\"known_for_department\":\"Writing\",\"name\":\"Michael Sloan\",\"original_name\":\"Michael Sloan\",\"popularity\":20.364,\"profile_path\":\"/kQz3R9EF52DbNiHreq8wza1HTVn.jpg\",\"credit_id\":\"64f57d973d43e0388febc5ea\",\"department\":\"Writing\",\"job\":\"Characters\"},{\"adult\":false,\"gender\":2,\"id\":51612,\"known_for_department\":\"Production\",\"name\":\"Todd Black\",\"original_name\":\"Todd Black\",\"popularity\":5.916,\"profile_path\":null,\"credit_id\":\"62aa951a5541fa2f2a2f19fd\",\"department\":\"Production\",\"job\":\"Producer\"},{\"adult\":false,\"gender\":2,\"id\":51613,\"known_for_department\":\"Production\",\"name\":\"Jason Blumenthal\",\"original_name\":\"Jason Blumenthal\",\"popularity\":3.09,\"profile_path\":null,\"credit_id\":\"62aa953c5541fa2f2c5b3a99\",\"department\":\"Production\",\"job\":\"Producer\"},{\"adult\":false,\"gender\":0,\"id\":1325197,\"known_for_department\":\"Costume \\u0026 Make-Up\",\"name\":\"Giovanni Casalnuovo\",\"original_name\":\"Giovanni Casalnuovo\",\"popularity\":0.84,\"profile_path\":null,\"credit_id\":\"64a0d65a8c0a4800e478b2bc\",\"department\":\"Costume \\u0026 Make-Up\",\"job\":\"Costume Design\"},{\"adult\":false,\"gender\":0,\"id\":1398017,\"known_for_department\":\"Production\",\"name\":\"Tony Eldridge\",\"original_name\":\"Tony Eldridge\",\"popularity\":2.023,\"profile_path\":null,\"credit_id\":\"64a0d6320cb33500ab9769e2\",\"department\":\"Production\",\"job\":\"Producer\"},{\"adult\":false,\"gender\":0,\"id\":1398018,\"known_for_department\":\"Production\",\"name\":\"Alex Siskin\",\"original_name\":\"Alex Siskin\",\"popularity\":1.62,\"profile_path\":null,\"credit_id\":\"64a0d6134a52f800e82dc170\",\"department\":\"Production\",\"job\":\"Producer\"},{\"adult\":false,\"gender\":2,\"id\":1402031,\"known_for_department\":\"Visual Effects\",\"name\":\"Robert Legato\",\"original_name\":\"Robert Legato\",\"popularity\":1.96,\"profile_path\":null,\"credit_id\":\"64a0d682c390c500caffe8f1\",\"department\":\"Directing\",\"job\":\"Second Unit Director\"},{\"adult\":false,\"gender\":0,\"id\":1480519,\"known_for_department\":\"Writing\",\"name\":\"Richard Lindheim\",\"original_name\":\"Richard Lindheim\",\"popularity\":4.527,\"profile_path\":null,\"credit_id\":\"64f57dba77d23b010d6dc48d\",\"department\":\"Writing\",\"job\":\"Characters\"},{\"adult\":false,\"gender\":2,\"id\":1645047,\"known_for_department\":\"Crew\",\"name\":\"Yang Liang\",\"original_name\":\"Yang Liang\",\"popularity\":9.126,\"profile_path\":\"/z6UgXBqpbrrwikfJkeFoSvFUzqu.jpg\",\"credit_id\":\"64a0d6a7d5191f00e263ef7c\",\"department\":\"Directing\",\"job\":\"Second Unit Director\"},{\"adult\":false,\"gender\":1,\"id\":2161377,\"known_for_department\":\"Crew\",\"name\":\"Maria Gnecchi\",\"original_name\":\"Maria Gnecchi\",\"popularity\":4.293,\"profile_path\":\"/nZP9jZpnz3SadRxhl9Rw0u1FB0S.jpg\",\"credit_id\":\"65180be6a199a6011b22a8fb\",\"department\":\"Crew\",\"job\":\"Stunts\"},{\"adult\":false,\"gender\":0,\"id\":2201425,\"known_for_department\":\"Costume \\u0026 Make-Up\",\"name\":\"Domingo Santoro\",\"original_name\":\"Domingo Santoro\",\"popularity\":1.093,\"profile_path\":null,\"credit_id\":\"64a0d6674a52f8012694b96c\",\"department\":\"Costume \\u0026 Make-Up\",\"job\":\"Hair Designer\"},{\"adult\":false,\"gender\":0,\"id\":2611310,\"known_for_department\":\"Directing\",\"name\":\"Stewart Hamilton\",\"original_name\":\"Stewart Hamilton\",\"popularity\":2.891,\"profile_path\":null,\"credit_id\":\"64a0d691c390c500eb35065a\",\"department\":\"Directing\",\"job\":\"First Assistant Director\"},{\"adult\":false,\"gender\":0,\"id\":3331961,\"known_for_department\":\"Costume \\u0026 Make-Up\",\"name\":\"Federico Meniconi\",\"original_name\":\"Federico Meniconi\",\"popularity\":1.478,\"profile_path\":null,\"credit_id\":\"64a0d66d81da3900ad2bd615\",\"department\":\"Costume \\u0026 Make-Up\",\"job\":\"Key Makeup Artist\"}]}"
+        }
+      },
+      "recorded_at": "Sat, 14 Oct 2023 00:04:06 GMT"
+    },
+    {
+      "request": {
+        "method": "get",
+        "uri": "https://api.themoviedb.org/3/movie/926393/reviews?api_key=DONT_SHARE_MY_TMDB_KEY",
+        "body": {
+          "encoding": "US-ASCII",
+          "string": ""
+        },
+        "headers": {
+          "User-Agent": [
+            "Faraday v2.7.11"
+          ],
+          "Accept-Encoding": [
+            "gzip;q=1.0,deflate;q=0.6,identity;q=0.3"
+          ],
+          "Accept": [
+            "*/*"
+          ]
+        }
+      },
+      "response": {
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "headers": {
+          "Content-Type": [
+            "application/json;charset=utf-8"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Date": [
+            "Sat, 14 Oct 2023 00:04:07 GMT"
+          ],
+          "Server": [
+            "openresty"
+          ],
+          "Cache-Control": [
+            "public, max-age=26680"
+          ],
+          "X-Memc": [
+            "HIT"
+          ],
+          "X-Memc-Key": [
+            "9b658e3b4ae8d999b9921da85c3c3595"
+          ],
+          "X-Memc-Age": [
+            "7295"
+          ],
+          "X-Memc-Expires": [
+            "19219"
+          ],
+          "Etag": [
+            "W/\"843caec4f7406baefa8816cb62804ce2\""
+          ],
+          "Vary": [
+            "Accept-Encoding",
+            "Origin"
+          ],
+          "X-Cache": [
+            "Miss from cloudfront"
+          ],
+          "Via": [
+            "1.1 a5bffe3d9fb1379dc2d31313b684f3b6.cloudfront.net (CloudFront)"
+          ],
+          "X-Amz-Cf-Pop": [
+            "DEN52-C1"
+          ],
+          "Alt-Svc": [
+            "h3=\":443\"; ma=86400"
+          ],
+          "X-Amz-Cf-Id": [
+            "_-s29RW-D_TnW-A5CdoudiDjpWiiOL49dMlWN9SYbwb0MFYV1GTjdw=="
+          ]
+        },
+        "body": {
+          "encoding": "ASCII-8BIT",
+          "string": "{\"id\":926393,\"page\":1,\"results\":[{\"author\":\"CinemaSerf\",\"author_details\":{\"name\":\"CinemaSerf\",\"username\":\"Geronimo1967\",\"avatar_path\":\"/1kks3YnVkpyQxzw36CObFPvhL5f.jpg\",\"rating\":6.0},\"content\":\"Anyone remember the little tune that went with the Edward Woodward television series? Well you won't hear it here in this rather procedural vehicle for Denzel Washington. His usually meticulous planning is compromised by a young lad with a rifle. This leaves \\\"McCall\\\" needing the care of a doctor \\\"Enzo\\\" (Remo Girone) in a small Sicilian town that is about to become the centre of the venal ambitions of \\\"Vincent\\\" (Andrea Scarduzio) and his henchman younger brother \\\"Marco\\\" (Andrea Dodero) who uses his team of thugs to extort from the local businesses. It's only a matter of time before heads clash and, well - you can guess the rest of this actually rather brutally predictable drama. Dakota Fanning appears now and again in a rather unnecessary sub-plot involving the CIA and some Syrian narcotics smugglers that is really undercooked - but for the most part this is really just Denzel being, well, Denzel on his quest to save his new-found friends from the grip of the unscrupulous Camorra. It's overlong for what it is, and I found Washington's performance to be rather sluggish throughout before a denouement that came across as rather simplistically rushed. It's fine, but forgettable.\",\"created_at\":\"2023-08-31T09:25:28.079Z\",\"id\":\"64f05c8877d23b010d6b9d83\",\"updated_at\":\"2023-08-31T09:25:28.205Z\",\"url\":\"https://www.themoviedb.org/review/64f05c8877d23b010d6b9d83\"},{\"author\":\"MovieGuys\",\"author_details\":{\"name\":\"\",\"username\":\"MovieGuys\",\"avatar_path\":null,\"rating\":4.0},\"content\":\"The new Equalizer film franchise is devoid of the moderation, charm and gentlemanly grace of the original television series, with Edward Woodward.\\r\\n\\r\\ninstead, its mired in gratuitous, humiliating, dehumanising violence, with a key character who feels more like the Terminator, than an assassin with a conscience. In short its ugly stuff. I managed about 15 minutes of this, before calling it a day. I will say too, for me, this kind of unnecessarily violent nonsense, is part of whats wrong with the world today. \\r\\n\\r\\nIn summary, brutally violent, ugly and inaccessible. I'll pass.\",\"created_at\":\"2023-10-05T02:56:07.891Z\",\"id\":\"651e25c78c22c0010364e4f2\",\"updated_at\":\"2023-10-05T21:12:09.705Z\",\"url\":\"https://www.themoviedb.org/review/651e25c78c22c0010364e4f2\"}],\"total_pages\":1,\"total_results\":2}"
+        }
+      },
+      "recorded_at": "Sat, 14 Oct 2023 00:04:07 GMT"
+    }
+  ],
+  "recorded_with": "VCR 6.2.0"
+}
