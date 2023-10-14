@@ -51,8 +51,8 @@ RSpec.describe "user show page", type: :feature do
 
           within (".party_invitations") do
             VCR.use_cassette("invited_parties") do
-              expect(page).to have_content("When: #{@viewing_party_1.date}")
-              expect(page).to have_content("Start Time: #{@viewing_party_1.start_time}")
+              expect(page).to have_content("When: #{@viewing_party_1.date.strftime("%-m/%-d/%y")}")
+              expect(page).to have_content("Start Time: #{@viewing_party_1.start_time.strftime("%I:%M:%S")}")
               expect(page).to have_content("Host: #{@user_2.name}")
               expect(page).to have_content("Invitees:")
               expect(page).to have_content("#{@user_1.name}")
@@ -74,8 +74,8 @@ RSpec.describe "user show page", type: :feature do
             within (".hosted_parties") do
               find("img[src='http://image.tmdb.org/t/p/w92/qJ2tW6WMUDux911r6m7haRef0WH.jpg']")
               expect(page).to have_link("The Dark Knight")
-              expect(page).to have_content("When: #{@viewing_party_2.date}")
-              expect(page).to have_content("Start Time: #{@viewing_party_2.start_time}")
+              expect(page).to have_content("When: #{@viewing_party_2.date.strftime("%-m/%-d/%y")}")
+              expect(page).to have_content("Start Time: #{@viewing_party_2.start_time.strftime("%I:%M:%S")}")
               expect(page).to have_content("Host: I am hosting")
               expect(page).to have_content("Invitees:")
               expect(page).to have_content("#{@user_2.name}")
