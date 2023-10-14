@@ -2,16 +2,7 @@
 
 class ViewingPartyController < ApplicationController
   def new
-    movie_id = params[:movie_id]
-
-    conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
-      faraday.params['api_key'] = Rails.application.credentials.tmdb[:key]
-    end
-
-    response = conn.get("/3/movie/#{movie_id}")
-
-    @movie = JSON.parse(response.body, symbolize_names: true)
-    @users = User.all_excluding_id(params[:user_id])
+    @facade = ViewingPartyFacade.new(params[:movie_id], params[:user_id])
   end
 
   def create
