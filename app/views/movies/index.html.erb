@@ -1,0 +1,7 @@
+<h1>Movie Results </h1>
+<% @results.each do |result| %>
+  <ul class="movie_result">
+  <li><%= link_to "#{result.title}", "/users/#{params[:user_id]}/movies/#{result.id}" %></li>
+  <li><%= result.vote_average %></li>
+</ul>
+<% end %>

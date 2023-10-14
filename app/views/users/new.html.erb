@@ -1,0 +1,11 @@
+<h1>Create a New User</h1>
+
+<%= form_with url: users_path, method: :post, data: { turbo: false } do |form| %>
+  <%= form.label :name %>
+        <%= form.text_field :name %>
+        <%= form.label :description %>
+        <%= form.text_field :description %>
+        <%= form.label :email %>
+        <%= form.text_field :email %>
+        <%= form.submit value: "Register"%>
+<% end %>

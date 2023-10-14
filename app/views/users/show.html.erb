@@ -1,0 +1,53 @@
+<h1><%= "#{@user.name}'s Dashboard"%></h1>
+<p>Email: <%= "#{@user.email}" %></p>
+<%= button_to 'Discover Movies', user_discover_index_path(@user.id), method: :get %>
+<p>Parties: <%= "#{@user.parties.uniq.count}" %></p>
+
+<p> Attending Parties </p>
+<% @user.parties.uniq.each do |party| %>
+  <% if party.get_host_name != @user.name %>
+      <% @movies.each do |movie| %>
+        <% if party.movie_id == movie[:id] %>
+          <li><strong>Movie Image: </strong><%= image_tag "https://image.tmdb.org/t/p/w92#{movie[:poster_path]}" %></li>
+          <li><strong>Movie Title: </strong><%= "#{movie[:title]}" %></li>
+          <li><strong>Date and Time: </strong><%= "Starts on #{party.date} at #{party.start_time}" %></li>
+          <% party.user_parties.each do |us| %>
+            <% if us.is_host == true %>
+              <li><strong>Hosted By: </strong><%= "#{us.get_user_name}" %></li>
+            <% end %>
+          <% end %>
+          <li><strong>Other users attending: </strong></li>
+          <% party.user_parties.uniq.each do |other_user| %>
+            <% if party.get_host_name != other_user.get_user_name %>
+              <%= "#{other_user.get_user_name}" %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+<% end %>
+
+<p> Hosting Parties </p>
+<% @user.parties.uniq.each do |party| %>
+  <% if party.get_host_name == @user.name %>
+      <% @movies.each do |movie| %>
+        <% if party.movie_id == movie[:id] %>
+          <li><strong>Movie Image: </strong><%= image_tag "https://image.tmdb.org/t/p/w92#{movie[:poster_path]}" %></li>
+          <li><strong>Movie Title: </strong><%= "#{movie[:title]}" %></li>
+          <li><strong>Date and Time: </strong><%= "Starts on #{party.date} at #{party.start_time}" %></li>
+          <% party.user_parties.each do |us| %>
+            <% if us.is_host == true %>
+              <li><strong>Hosted By: </strong><%= "#{us.get_user_name}" %></li>
+            <% end %>
+          <% end %>
+          <li><strong>Other users attending: </strong></li>
+          <% party.user_parties.uniq.each do |other_user| %>
+            <% if @user.name != other_user.get_user_name %>
+            <%= "#{other_user.get_user_name}" %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+<% end %>
+

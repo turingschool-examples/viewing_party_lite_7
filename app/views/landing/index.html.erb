@@ -1,0 +1,7 @@
+ViewingPartyLite7
+
+<%= button_to 'Create a New User', new_user_path, method: :get %>
+
+<% @users.each do |user| %>
+  <%= link_to "#{user.name}", "/users/#{user.id}" %></br>
+<% end %>

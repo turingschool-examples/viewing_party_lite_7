@@ -1,0 +1,40 @@
+<h1><%= "#{@data[:title]} Movie Details"%></h1>
+
+<%= button_to 'Create a Viewing Party', "/users/#{params[:user_id]}/movies/#{params[:id]}/viewing-party/new", method: :get %>
+<%= button_to 'Discover Movies', user_discover_index_path(params[:user_id]), method: :get %>
+
+<p>Movie Id: <%= "#{@data[:id]}"%></p>
+<p>Vote Average: <%= "#{@data[:vote_average]}"%></p>
+<p>Runtime: <%= Movie.runtime_in_min(@data) %></p>
+<p>Genre(s): </p>
+<ul>
+<% @data[:genres].each do |genre| %>
+<li><%= genre[:name] %></li>
+<% end %>
+</ul>
+
+<p>Overview: <%= "#{@data[:overview]}"%></p>
+
+<p>List the first 10 cast members:</p>
+<ul>
+  <% @data2[:cast].each_with_index do |member, index| %>
+    <% break if index >= 10 %>
+    <li><%= member[:name] %></li>
+  <% end %>
+</ul>
+
+<p>Review Count: <%= "#{@data3[:results].count}"%></p>
+
+<p>Review's author and information:</p>
+<ul>
+  <% @data3[:results].each do |reviewer| %>
+    <li>Name: <%= reviewer[:author] %></li>
+    <li>Rating: <%= reviewer[:author_details][:rating] %></li>
+    <li>ID: <%= reviewer[:id] %></li>
+    <li>URL: <%= reviewer[:url] %></li>
+    <br>
+  <% end %>
+</ul>
+
+
+
