@@ -5,8 +5,8 @@ class PartiesController < ApplicationController
   end
 
   def create
-    if params[:duration] >= params[:movie_duration]
-      if params[:invitees]
+    if params[:duration].to_i >= params[:movie_duration].to_i && params[:party_date] != ""
+      if !params[:invitees].values.all?("0")
         create_parties
         redirect_to "/users/#{params[:user_id]}"
       else
@@ -14,7 +14,7 @@ class PartiesController < ApplicationController
         redirect_to "/users/#{params[:user_id]}/movies/#{params[:id]}/new"
       end
     else
-      flash[:alert] = "You Fool of a Took, you won't have time for the full movie"
+      flash[:alert] = "You Fool of a Took, you won't have time for the full movie, or maybe you didn't choose a day?"
       redirect_to "/users/#{params[:user_id]}/movies/#{params[:id]}/new"
     end
   end
@@ -30,5 +30,4 @@ class PartiesController < ApplicationController
       end
     end
   end
-
 end

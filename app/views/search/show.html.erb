@@ -1,14 +1,23 @@
 <%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %>
+<hr>
 
 <% if @searched %>
-  <h3>Movie Results For: <%= @searched %></h3>
-<% end %>
+  <h2>Movie Results For: <%= @searched %></h2>
+<% else %>
+  <h2>Top 20 Rated Movies:</h2>
+<% end %> 
 
 <% @movies.each do |movie| %>
   <p>
-    <div class="">
-      <%= link_to movie.title, "/users/#{@user.id}/movies/#{movie.id}" %>
-      Vote Average: <%= movie.vote_average %>
+    <div class="main_text">
+      <div class="float-container">
+        <div class="float-child">
+            <%= link_to movie.title, "/users/#{@user.id}/movies/#{movie.id}" %>
+        </div>
+        <div class="float-child">
+            Vote Average: <%= movie.vote_average %>
+        </div>
+      </div>
     </div>
   </p>
 <% end %>
