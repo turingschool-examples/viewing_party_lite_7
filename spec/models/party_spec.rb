@@ -31,5 +31,11 @@ RSpec.describe Party, type: :model do
         expect(@party1.host?(@alex)).to eq("Invited")
       end
     end
+
+    describe "attendees" do
+      it "returns the name of users attending a specific party who are not the host" do
+        expect(@party1.attendees).to be_an Array
+      end
+    end
   end
 end
