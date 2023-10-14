@@ -10,6 +10,8 @@ RSpec.feature 'user movies index page', type: :feature do
 
     expect(current_path).to eq(user_movies_path(weston))
     expect(page).to have_content('The Godfather')
+    expect(page).to have_content(8.7)
+    expect(page).to have_selector('table tbody tr', count: 20)
   end
   
   it 'displays 20 movies of the search query', :vcr do
@@ -23,5 +25,6 @@ RSpec.feature 'user movies index page', type: :feature do
 
     expect(current_path).to eq(user_movies_path(weston))
     expect(page).to have_content('The Matrix')
+    expect(page).to have_selector('table tbody tr', count: 20)
   end
 end
