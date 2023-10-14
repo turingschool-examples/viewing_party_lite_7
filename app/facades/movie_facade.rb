@@ -34,4 +34,23 @@ class MovieFacade
     
     @movies
   end
+
+  def self.find_by_id(id)
+    conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
+      faraday.params['api_key'] = Rails.application.credentials.api_key
+      faraday.params['movie_id'] = id
+    end
+  
+    response = conn.get("/3/movie/#{id}")
+    json = JSON.parse(response.body, symbolize_names: true)
+    Movie.new(json)
+    # if json[:results].present?
+    #   @movies = json[:results].map do |movie_data|
+    #     Movie.new(movie_data)
+    #   end
+    # else
+    #   @movies = []
+    # end
+    # require 'pry'; binding.pry
+  end
 end
