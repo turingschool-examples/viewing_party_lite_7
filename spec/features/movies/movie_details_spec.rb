@@ -7,7 +7,6 @@ RSpec.describe 'Movie Details Page', type: :feature do
   end
 
   it 'displays movie details by id and buttons' do
-  
     stub_request(:get, "https://api.themoviedb.org/3/movie/5142?api_key=#{Rails.application.credentials.api_key}&movie_id=5142").
     to_return(status: 200, body: File.read("spec/features/fixtures/movie_details.json"), headers: {})
 
@@ -43,6 +42,8 @@ RSpec.describe 'Movie Details Page', type: :feature do
     expect(page).to have_content('Actor Name: Anup Jagdale')
     expect(page).to have_content('Charater Name: Bob Jagdale')
     expect(page.all('li').count).to be <= 10
+    # expect(page).to have_link('Create a Viewing Party')
+    expect(page).to have_link('Return to Discover Page')
   end
   
   it "can display the total number of reviews, and each reviews author and information" do
@@ -65,8 +66,3 @@ RSpec.describe 'Movie Details Page', type: :feature do
     expect(page.all('li').count).to be <= 1000
   end
 end
-  
-
-    # Assertions for buttons
-    # expect(page).to have_link('Create a Viewing Party', href: new_user_movie_viewing_party_path(user_id: @u1, id: @movie1.id)) # Use 'id' instead of 'movie_id'
-    # expect(page).to have_link('Return to Discover Page', href: user_discover_index_path(user_id: @u1))
