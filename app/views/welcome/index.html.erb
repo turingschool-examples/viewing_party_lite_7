@@ -1,0 +1,6 @@
+<%= button_to "Create a New User", register_path, method: :get, data: { turbo: false } %>
+
+<h3>Existing Users:</h3>
+<% @users.each do |user| %>
+  <li><%= user.email %></li>
+<% end %>

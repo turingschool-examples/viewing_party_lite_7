@@ -1,0 +1,19 @@
+<h3><%= @user.name %>'s Dashboard</h3>
+
+<%= button_to "Discover Movies", "#{user_path(@user)}/discover", method: :get, data: {turbo: false} %>
+<hr/>
+<section class="viewing_parties">
+  <% @parties.each do |party| %>
+  <div style="border:solid; width:342px">
+    <%= image_tag("https://image.tmdb.org/t/p/w342/" + "#{party.poster_path}") %><br>
+    Movie Title: <%= party.movie_title %><br>
+    Party Time: <%= party.formated_time %><br>
+    Your Status: <%= party.host?(@user) %><br>
+    Other Guests: <% party.attendees.each do |attendee| %>
+      <div class=<%= "#{attendee.name}" %>>
+        <li><%= attendee.name %></li>
+      </div>
+    <% end %>
+  </div><br>
+  <% end %>
+</section>
