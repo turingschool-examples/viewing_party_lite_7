@@ -10,7 +10,7 @@
     Party Time: <%= party.formated_time %><br>
     Your Status: <%= party.host?(@user) %><br>
     Other Guests: <% party.attendees.each do |attendee| %>
-      <div id=<%= "#{attendee.name}" %>>
+      <div class=<%= "#{attendee.name}" %>>
         <li><%= attendee.name %></li>
       </div>
     <% end %>
