@@ -6,6 +6,8 @@ class UsersController < ApplicationController
     def show
         @user = User.find(params[:id])
         @viewing_parties = @user.invited_viewing_parties
+        @movie_id = (params[:movie_id])
+        @facade = MoviesDetailsFacade.new(@movie_id)
     end
 
     def new 
