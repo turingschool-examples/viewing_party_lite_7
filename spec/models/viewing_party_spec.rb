@@ -22,7 +22,3 @@ RSpec.describe ViewingParty, type: :model do
     end
   end
 end
-
-# <img src=<%= party.poster %>>
-
-# <img src=<%= party.poster %>>
