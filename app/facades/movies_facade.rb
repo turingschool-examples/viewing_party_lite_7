@@ -9,13 +9,13 @@ class MoviesFacade
                     movie_db_service.top_rated_movies
                   elsif @query.present?
                     movie_db_service.search_movies_by_title(@query)
-                  else
-                    redirect_to discover_user_path(@user)
                   end
     
     movies_hash.map do |data|
       Movie.new(data.slice(:id, :title, :vote_average))
     end
+
+    
   end
   
   private

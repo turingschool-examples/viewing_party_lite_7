@@ -11,7 +11,12 @@
   </head>
 
   <body>
+    <% if flash[:alert] %>
+      <p class="alert"><%= flash[:alert] %></p>
+    <% end %>
+
   <%= link_to "Home", root_path %>
+  
     <%= yield %>
   </body>
 </html>

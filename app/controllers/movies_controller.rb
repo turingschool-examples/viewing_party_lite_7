@@ -1,13 +1,17 @@
 class MoviesController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-
+    
     if params[:query].present?
       @movies_facade = MoviesFacade.new(params[:query])
     elsif params[:top_rated]
-      @movies_facade = MoviesFacade.new(params[:query] = nil, params[:top_rated] = true)
+      @movies_facade = MoviesFacade.new(nil, true)
     else
-      redirect_to discover_user_path(@user)
+      redirect_to discover_user_path(@user) and return
+    end
+    
+    if @movies_facade.movies.empty?
+      redirect_to discover_user_path(@user), alert: "No movies found."
     end
   end
 
