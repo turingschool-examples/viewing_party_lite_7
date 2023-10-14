@@ -25,6 +25,10 @@ class ViewingPartiesController < ApplicationController
     end
   end
 
+  def find_movie
+    @movie = facade.find_movie(params[:movie_id])
+  end
+
   private
 
   def viewing_params

@@ -38,4 +38,15 @@ class MoviesDetailsFacade
 
         count = total.count
     end
+
+    def movie_image
+        json = @service.fetch_movie_details(@movie_id)
+        image = json.dig('images', 'poster_path')
+
+        if image.present?
+            "https://image.tmdb.org/t/p/w500#{image}"
+        else
+            nil
+        end
+    end
 end

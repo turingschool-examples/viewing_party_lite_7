@@ -13,4 +13,13 @@ class ViewingParty < ApplicationRecord
     users.where(party_guests: { host: false })
   end
 
+  def movie_image
+    movie = @movie ||= MoviesDetailsFacade.new(movie_id)
+    if movie.present? && movie.image.present?
+      "https://image.tmdb.org/t/p/w500#{movie.image}"
+    else
+      nil
+    end
+  end
+
 end

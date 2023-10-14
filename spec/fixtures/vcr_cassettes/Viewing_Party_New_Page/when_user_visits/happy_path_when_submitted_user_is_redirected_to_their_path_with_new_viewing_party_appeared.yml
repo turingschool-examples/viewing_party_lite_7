@@ -25,34 +25,36 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Sat, 14 Oct 2023 14:59:26 GMT
+      - Sat, 14 Oct 2023 18:43:37 GMT
       Server:
       - openresty
       Cache-Control:
-      - public, max-age=24582
+      - public, max-age=22952
       X-Memc:
       - HIT
       X-Memc-Key:
       - 86a19bcac53cd02291bef63cf5445bc3
       X-Memc-Age:
-      - '8379'
+      - '21682'
       X-Memc-Expires:
-      - '19207'
+      - '5904'
       Etag:
       - W/"4756aeecde05b8239cf340f035b5ac9e"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 19e95167d2e89e2d5f81b4389ef954f8.cloudfront.net (CloudFront)
+      - 1.1 270fdef5b99b63ae592608f44e3043b6.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DFW57-P3
+      - DEN52-P3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - gyLa8QbEm6c5ms0mssHZCMsrDSglseLVGHCAjAQRqRi-pXuJqSzNxA==
+      - zzUlP9JhSZNAdgPGMG8ijAU4bLhsExrVNGi5_FQiUCHPzrtGBF2J-A==
+      Age:
+      - '339'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/hZkgoQYus5vegHoetLkCJzb17zJ.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
@@ -69,7 +71,7 @@ http_interactions:
         Century Fox","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
         Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.438,"vote_count":27312}'
-  recorded_at: Sat, 14 Oct 2023 14:59:25 GMT
+  recorded_at: Sat, 14 Oct 2023 18:49:16 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/550?api_key=<API_KEY>
@@ -95,19 +97,19 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Sat, 14 Oct 2023 14:59:26 GMT
+      - Sat, 14 Oct 2023 18:43:37 GMT
       Server:
       - openresty
       Cache-Control:
-      - public, max-age=24582
+      - public, max-age=22952
       X-Memc:
       - HIT
       X-Memc-Key:
       - 86a19bcac53cd02291bef63cf5445bc3
       X-Memc-Age:
-      - '8379'
+      - '21682'
       X-Memc-Expires:
-      - '19207'
+      - '5904'
       Etag:
       - W/"4756aeecde05b8239cf340f035b5ac9e"
       Vary:
@@ -116,13 +118,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 bd92dde9dc794495341116aade09f120.cloudfront.net (CloudFront)
+      - 1.1 9367844cfa8aaebd6a8f032ea2e7d4ec.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DFW57-P3
+      - DEN52-P3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - "-bm79IucCwknoo2Xh7XA4G7SUA48ux4qXnoblEBZuYEPdwSQjsDbtw=="
+      - WQGhfY17m0vvMglnrKAUGglA_9VQCaJPHAd01DoxGnGn4eU9QvH47Q==
+      Age:
+      - '339'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/hZkgoQYus5vegHoetLkCJzb17zJ.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
@@ -139,7 +143,7 @@ http_interactions:
         Century Fox","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
         Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.438,"vote_count":27312}'
-  recorded_at: Sat, 14 Oct 2023 14:59:26 GMT
+  recorded_at: Sat, 14 Oct 2023 18:49:16 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/550?api_key=<API_KEY>
@@ -165,19 +169,19 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Sat, 14 Oct 2023 14:59:26 GMT
+      - Sat, 14 Oct 2023 18:43:37 GMT
       Server:
       - openresty
       Cache-Control:
-      - public, max-age=24582
+      - public, max-age=22952
       X-Memc:
       - HIT
       X-Memc-Key:
       - 86a19bcac53cd02291bef63cf5445bc3
       X-Memc-Age:
-      - '8379'
+      - '21682'
       X-Memc-Expires:
-      - '19207'
+      - '5904'
       Etag:
       - W/"4756aeecde05b8239cf340f035b5ac9e"
       Vary:
@@ -186,13 +190,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 3575e731904c4f829246fcdb683af1e0.cloudfront.net (CloudFront)
+      - 1.1 3f8295ce0024dc68ca43a1b1a38c5bd6.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DFW57-P3
+      - DEN52-P3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - FtCfOrAHkhqW6e6F55hFk-S98n3XvR6v-6sCg4Vw2hMFXJ-27UyZSw==
+      - 5KaxGmieZrxvH1Wgig0RpURKFS7rHptnHsNVdoNEdXdPZ8AOH8J3Yg==
+      Age:
+      - '339'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/hZkgoQYus5vegHoetLkCJzb17zJ.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
@@ -209,5 +215,5 @@ http_interactions:
         Century Fox","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
         Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.438,"vote_count":27312}'
-  recorded_at: Sat, 14 Oct 2023 14:59:26 GMT
+  recorded_at: Sat, 14 Oct 2023 18:49:16 GMT
 recorded_with: VCR 6.2.0
