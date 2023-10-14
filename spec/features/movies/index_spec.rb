@@ -1,30 +1,59 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.feature 'user movies index page', type: :feature do
-  it 'displays 20 of the most populat movies', :vcr do
-    weston = User.create(name: 'Weston', email: 'will@weston.com')
-    
-    visit discover_user_path(weston)
+RSpec.feature 'User Movies Index Page', type: :feature do
+  let(:weston) { User.create(name: 'Weston', email: 'will@weston.com') }
 
-    click_button 'Discover Top Rated Movies'
+  before { visit discover_user_path(weston) }
 
-    expect(current_path).to eq(user_movies_path(weston))
-    expect(page).to have_content('The Godfather')
-    expect(page).to have_content(8.7)
-    expect(page).to have_selector('table tbody tr', count: 20)
+  describe 'Happy Path' do
+    context 'when viewing top-rated movies' do
+      before do
+        click_button 'Discover Top Rated Movies'
+      end
+
+      it 'displays 20 of the most popular movies', :vcr do
+        expect(current_path).to eq(user_movies_path(weston))
+        expect(page).to have_content('The Godfather')
+        expect(page).to have_content(8.7)
+        expect(page).to have_selector('table tbody tr', count: 20)
+      end
+    end
+
+    context 'when searching for a movie' do
+      before do
+        fill_in :query, with: 'The Matrix'
+        click_button 'Search'
+      end
+
+      it 'displays 20 movies of the search query', :vcr do
+        expect(current_path).to eq(user_movies_path(weston))
+        expect(page).to have_content('The Matrix')
+        expect(page).to have_selector('table tbody tr', count: 20)
+      end
+    end
   end
-  
-  it 'displays 20 movies of the search query', :vcr do
-    weston = User.create(name: 'Weston', email: 'will@weston.com')
 
-    visit discover_user_path(weston)
+  describe 'Sad Path' do
+    context 'when no search query is provided' do
+      before { click_button 'Search' }
 
-    fill_in :query, with: 'The Matrix'
+      it 'redirects to the discovery path', :vcr do
+        expect(current_path).to eq(discover_user_path(weston))
+      end
+    end
 
-    click_button 'Search'
+    context 'when no movies are found' do
+      before do
+        fill_in :query, with: 'asdlfkjasdlfkjasdlfkj'
+        click_button 'Search'
+      end
 
-    expect(current_path).to eq(user_movies_path(weston))
-    expect(page).to have_content('The Matrix')
-    expect(page).to have_selector('table tbody tr', count: 20)
+      it 'displays a no movies found message and redirects', :vcr do
+        expect(current_path).to eq(discover_user_path(weston))
+        expect(page).to have_content('No movies found.')
+      end
+    end
   end
 end

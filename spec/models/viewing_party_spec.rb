@@ -1,13 +1,15 @@
-require "rails_helper"
+# frozen_string_literal: true
 
-RSpec.describe ViewingParty, :type => :model do
-  describe "relationships" do
+require 'rails_helper'
+
+RSpec.describe ViewingParty, type: :model do
+  describe 'relationships' do
     it { should belong_to(:user) }
     it { should belong_to(:movie) }
   end
 
-  describe "guests method" do
-    it "returns all guests/users invited to a viewing party" do
+  describe 'guests method' do
+    it 'returns all guests/users invited to a viewing party' do
       host = User.create!(name: 'Host', email: 'host@example.com')
       guest1 = User.create!(name: 'Guest 1', email: 'guest1@example.com')
       guest2 = User.create!(name: 'Guest 2', email: 'guest2@example.com')

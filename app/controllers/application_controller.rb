@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   def invited_friends(party)
     User.joins(:invited_parties)

@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.feature 'home landing page', type: :feature do
   it 'displays the landing page with links' do
-    allan = User.create(name: 'Allan', email: 'allan@allan.com')
-    
+    User.create(name: 'Allan', email: 'allan@allan.com')
+
     visit root_path
 
     expect(page).to have_content('Viewing Party Lite')

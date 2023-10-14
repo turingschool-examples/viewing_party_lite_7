@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 class Movie
   attr_reader :id, :title, :vote_average, :runtime, :genres, :description, :poster_path, :reviews
+
   def initialize(data)
     @id = data[:id]
     @title = data[:title]
@@ -11,6 +14,3 @@ class Movie
     @reviews = data[:reviews]
   end
 end
-
-
-

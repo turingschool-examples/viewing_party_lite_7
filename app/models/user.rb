@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   has_many :hosted_parties, -> { where(is_host: true) }, class_name: 'ViewingParty', foreign_key: 'user_id'
   has_many :invited_parties, -> { where(is_host: false) }, class_name: 'ViewingParty', foreign_key: 'user_id'

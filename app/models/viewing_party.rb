@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ViewingParty < ApplicationRecord
   belongs_to :user
   belongs_to :movie
@@ -5,7 +7,7 @@ class ViewingParty < ApplicationRecord
 
   def guests
     User.joins(:viewing_parties)
-        .where(viewing_parties: { movie_id: self.movie_id, is_host: false })
-        .where.not(viewing_parties: { user_id: self.user_id })
+        .where(viewing_parties: { movie_id:, is_host: false })
+        .where.not(viewing_parties: { user_id: })
   end
 end
