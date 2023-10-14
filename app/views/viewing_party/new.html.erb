@@ -1,8 +1,8 @@
-<h1>Create a Viewing Party for "<%= @movie[:original_title] %>"</h1>
+<h1>Create a Viewing Party for "<%= @facade.movie.title %>"</h1>
 
 <%= form_with url: user_movie_viewing_party_index_path(params[:user_id], params[:movie_id]), method: :post, data: {turbo: false} do |f| %>
   <%= f.label :duration, "Duration of Party (in minutes):" %>
-  <%= f.number_field :duration, in: @movie[:runtime]..200, value: @movie[:runtime] %>
+  <%= f.number_field :duration, in: @facade.movie.runtime..200, value: @facade.movie.runtime %>
   <br>
   <%= f.label :date, "Date:" %>
   <%= f.date_field :date %>
@@ -11,7 +11,7 @@
   <%= f.time_field :start_time %>
   <br>
   <p>Invite others:</p>
-  <% @users.each do |user| %>
+  <% @facade.guests.each do |user| %>
     <%= f.check_box "invite-#{user.id}" %>
     <%= f.label "invite-#{user.id}", "#{user.name} - #{user.email}" %>
     <br>
