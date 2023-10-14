@@ -8,3 +8,4 @@
 
 weston = User.create(name: "Weston", email: "IMaG@thehood.com")
 allan = User.create(name: "Allan", email: "allan@allan.com")
+chen = User.create(name: "Chen", email: "turing@email.com")

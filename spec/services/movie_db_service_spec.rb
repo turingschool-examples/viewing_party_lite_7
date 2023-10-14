@@ -46,4 +46,16 @@ RSpec.describe MovieDbService do
       expect(result[:results].second[:author_details][:rating]).to eq(3.0)
     end
   end
+
+  describe "parse_response" do
+    it "returns an empty hash when JSON parsing fails" do
+      bad_response = instance_double("Faraday::Response", body: "invalid json")
+      
+      allow_any_instance_of(Faraday::Connection).to receive(:get).and_return(bad_response)
+
+      expect(service.movie_details(100)).to eq({})
+      expect(service.movie_cast(100)).to eq({})
+      expect(service.movie_reviews(100)).to eq({})
+    end
+  end
 end

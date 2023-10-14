@@ -1,6 +1,14 @@
 require "rails_helper"
 
 RSpec.describe MovieFacade do
+  describe 'initialize' do
+    it 'exists' do
+      facade = MovieFacade.new(100)
+
+      expect(facade).to be_a MovieFacade
+    end
+  end
+  
   describe ".movie_cast" do
     it "returns an array of Cast objects", :vcr do
       cast_members = MovieFacade.movie_cast(100)

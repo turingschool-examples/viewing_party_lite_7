@@ -13,12 +13,10 @@ RSpec.feature 'User movie show page', type: :feature do
 
     click_link 'The Matrix'
 
-    save_and_open_page
     expect(current_path).to eq(user_movie_path(user, 603))
     expect(page).to have_content('The Matrix')
     expect(page).to have_content('Rating: 8.207') 
     expect(page).to have_content('Runtime: 136min')
-    # expect(page).to have_content('Genre: Action')
     expect(page).to have_content('Summary')
     expect(page).to have_content('Keanu Reeves as Thomas A. Anderson / Neo')
     expect(page).to have_content('Carrie-Anne Moss as Trinity')

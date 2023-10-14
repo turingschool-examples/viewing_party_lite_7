@@ -43,6 +43,6 @@ class MovieDbService
   rescue JSON::ParserError
     {}
   end
-  
+
 end
 
