@@ -9,9 +9,9 @@ class Movie
   def initialize(attributes)
     @title = attributes[:title]
     @runtime = attributes[:runtime]
-    @vote_average_raw = attributes[:vote_average]
     @summary = attributes[:overview]
-
+    
+    @vote_average_raw = attributes[:vote_average]
     @unfiltered_genre = attributes[:genres]
     @poster_path = attributes[:poster_path]
   end

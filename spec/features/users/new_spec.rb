@@ -51,7 +51,7 @@ RSpec.feature 'User New(register)' do
     expect(page).to have_content('Error: Email is invalid')
   end
 
-  it '(sad path)it will not create a user with an invalid email' do
+  it '(sad path)it will not create a user without email' do
     visit register_path
 
     fill_in :name, with: 'Doug'
@@ -62,7 +62,7 @@ RSpec.feature 'User New(register)' do
     expect(page).to have_content("Error: Email can't be blank")
   end
 
-  it '(sad path)it will not create a user with an invalid email' do
+  it '(sad path)it will not create a user without name' do
     visit register_path
 
     fill_in :email, with: 'Doug@yahoo.com'
