@@ -2,7 +2,6 @@ class MovieFacade
   def top_movies
     service = MovieService.new
     data = service.top_movies[:results]
-    # require 'pry';binding.pry
     limit = data[0..20]
     @results = limit.map do |movie_data|
       MoviePoro.new(movie_data)
@@ -12,7 +11,6 @@ class MovieFacade
   def search_movies(title)
     service = MovieService.new
     data = service.search_movies(title)[:results]
-    # require 'pry';binding.pry
     limit = data[0..20]
     @results = limit.map do |movie_data|
       MoviePoro.new(movie_data)

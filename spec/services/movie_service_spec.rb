@@ -8,7 +8,6 @@ describe MovieService do
         expect(search).to be_a Hash
         expect(search[:results]).to be_an Array
         movie_data = search[:results].first
-        # require 'pry';binding.pry
         expect(movie_data).to have_key :id
         expect(movie_data[:id]).to be_a(Integer)
 
@@ -23,7 +22,6 @@ describe MovieService do
         expect(search).to be_a Hash
         expect(search[:results]).to be_an Array
         movie_data = search[:results].first
-        # require 'pry';binding.pry
         expect(movie_data).to have_key :id
         expect(movie_data[:id]).to be_a(Integer)
 
@@ -36,7 +34,6 @@ describe MovieService do
       it "returns movie details" do
         movie_data = MovieService.new.movie_details(268)
         expect(movie_data).to be_a Hash
-        # require 'pry';binding.pry
         expect(movie_data).to have_key :id
         expect(movie_data[:id]).to be_a(Integer)
         expect(movie_data).to have_key :poster_path
@@ -48,7 +45,6 @@ describe MovieService do
       it "returns movie cast" do
         movie_data = MovieService.new.movie_cast(268)
         expect(movie_data).to be_a Hash
-        # require 'pry';binding.pry
         expect(movie_data[:cast].first).to have_key :id
         expect(movie_data[:cast].first[:id]).to be_a(Integer)
       end
@@ -58,7 +54,6 @@ describe MovieService do
       it "returns movie reviews" do
         movie_data = MovieService.new.movie_reviews(268)
         expect(movie_data).to be_a Hash
-        # require 'pry';binding.pry
         expect(movie_data[:results].first).to have_key :id
         expect(movie_data[:results].first[:id]).to be_a(String)
       end
