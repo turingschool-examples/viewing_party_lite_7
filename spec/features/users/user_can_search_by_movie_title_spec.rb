@@ -14,3 +14,6 @@ feature "user can search for movies" do
     expect(page).to have_content("Up")
   end
 end
+
+#json_response = File.read('spec/fixtures/movies.json')
+       #stub_request(:get, "https://api.themoviedb.org/3/discover/movie?.json").with(params: {'api_key' => Rails.application.credentials.tmdb[:key]}).to_return(status: 200, body: json_response)
