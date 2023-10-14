@@ -25,7 +25,7 @@ RSpec.describe "New Viewing Party Page" do
 
       within(".new_party") do 
         expect(page).to have_field('Duration', with: "95 minutes")
-        expect(page).to have_field :when
+        expect(page).to have_field :start_time
         expect(page).to have_unchecked_field('Camila T')
         expect(page).to have_unchecked_field('Rachel V')
         expect(page).to have_unchecked_field('Bret M')
