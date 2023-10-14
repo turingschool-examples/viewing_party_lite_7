@@ -1,0 +1,15 @@
+<% flash.each do |key, message| %>
+  <div class='flash <%= key%>'>
+   <%= message %>
+  </div>
+<% end %>
+
+<section class='user_creation_form'>
+<%= form_with url: users_path(@user), data: { turbo: false } do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :email %>
+  <%= form.text_field :email %>
+  <%= form.submit "Register" %>
+<% end %>
+</section>

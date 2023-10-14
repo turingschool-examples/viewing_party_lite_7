@@ -1,0 +1,12 @@
+<h1> Movie Results </h1>
+<%= button_to "Discover Page", user_discover_index_path(@user), method: :get %>
+<h1><%= @facade.movies.count %> Results </h1>
+<div id="movie-details">
+<% @facade.movies.each do |movie| %>
+  <ul>
+    <li> Title: <%= link_to movie.title, user_movie_path(@user, movie.id), method: :get %></li>
+    <li> Movie Vote Average: <%= movie.vote_average %></li>
+    <li> Movie Overview: <%= movie.overview %></li>
+  </ul>
+<% end %> 
+</div>

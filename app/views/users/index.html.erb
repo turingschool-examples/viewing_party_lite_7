@@ -1,0 +1,16 @@
+<div style="text-align: center;">
+<h1>Viewing Party Lite</h1>
+<button>
+<a href=<%= '/register' %>>Create New User</a>
+</button>
+</div>
+
+<h2 style="text-align: center;">
+  Existing Users:</h2>
+<h3 style="text-align: center;">
+<% @users.each do |user| %>
+  <%= link_to user.name, user_path(user) %>
+<% end %>
+</h3>
+
+

@@ -1,0 +1,23 @@
+<% flash.each do |key, message| %>
+  <div class='flash <%= key%>'>
+   <%= message %>
+  </div>
+<% end %>
+
+<h1> <%= @facade.movie_details.title %> </h1>
+
+<section class='party_creation_form'>
+<%= form_with url: user_movie_viewing_parties_path(@user, @movie_id), data: { turbo: false } do |form| %>
+  <%= form.label :duration %>
+  <%= form.text_field :duration, value: @facade.movie_details.runtime, min: @facade.movie_details.runtime%>
+  <%= form.label :party_date %>
+  <%= form.date_field :party_date %>
+  <%= form.label :start_time %>
+  <%= form.time_field :start_time %>
+  <% @users.each do |user| %>
+    <%= form.label user.name %>
+    <%= form.check_box user.id %>
+  <% end %>
+  <%= form.submit "Create" %>
+<% end %>
+</section>
