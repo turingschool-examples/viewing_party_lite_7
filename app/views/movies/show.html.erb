@@ -12,7 +12,18 @@
       <p>Charater Name: <%= actor.character %></p>
     </li> 
 <% end %>
-<%# <p>Total Reviews: <%= @movie.reviews.count %></p> %>
+</ul>
+<h1>Reviews: </h1>
+<ul>
+  <% @reviews.each do |review| %>
+    <li>
+      <p>Total Reviews: <%= @movie.reviews.count %></p>
+      <p>Author: <%= review.author %></p>
+      <p>Author Username: <%= review.username %></p>
+      <p>Content: <%= review.content %></p>
+    </li>
+  <% end %>
+</ul>
 
 <!-- Create a Viewing Party button -->
 <%# <%= link_to "Create a Viewing Party", new_user_movie_viewing_party_path(@user, @movie), class: "btn btn-primary" %> %>

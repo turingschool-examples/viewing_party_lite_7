@@ -13,5 +13,6 @@ class MoviesController < ApplicationController
     id = params[:id]
     @movie = MovieFacade.find_by_id(params[:id])
     @cast = MovieFacade.find_cast(params[:id])
+    @reviews = MovieFacade.find_reviews(params[:id])
   end
 end
