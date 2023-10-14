@@ -53,8 +53,8 @@ RSpec.describe 'Movie Results' do
 
       expect(page.status_code).to eq 200
 
-      expect(page).to have_link("Batman Ninja")
-      expect(page).to have_content(5.953)
+      expect(page).to have_link("Batman Begins")
+      expect(page).to have_content(7.2)
 
       # save_and_open_page
       
