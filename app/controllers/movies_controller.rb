@@ -12,6 +12,7 @@ class MoviesController < ApplicationController
   end
 
   def show
+    movie_service = MovieDbService.new
     @movie = MovieFacade.movie_details(params[:id])
     @cast = MovieFacade.movie_cast(params[:id])
     @reviews = MovieFacade.movie_reviews(params[:id])
