@@ -12,5 +12,6 @@ class MoviesController < ApplicationController
     @user = User.find_by_id(session[:user_id])
     id = params[:id]
     @movie = MovieFacade.find_by_id(params[:id])
+    @cast = MovieFacade.find_cast(params[:id])
   end
 end
