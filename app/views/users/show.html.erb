@@ -7,9 +7,24 @@
 <h1 style='border-bottom: 3px solid black'> Viewing Parties </h1>
 <% @viewing_parties.each do |viewing_party| %>
   <section id="viewing_party-<%= viewing_party.id %>">
-    <h1> Viewing Party ID: <%= viewing_party.id %> </h1>
+    <h1> Movie ID: <%= link_to viewing_party.movie_id, user_movie_path(@user, viewing_party.movie_id)%> </h1>
     <h2> Duration: <%= viewing_party.duration %> </h2>
     <h2> Party Date: <%= viewing_party.party_date %> </h2>
-    <h1 style='border-bottom: 3px solid black'> Start time: <%= viewing_party.start_time.strftime('%H:%M') %> </h1>
+    <h2> Start time: <%= viewing_party.start_time.strftime('%H:%M') %></h2>
+
+    <h3>Hosted By:</h3>
+      <% if viewing_party.host_name.present? %>
+       <%= viewing_party.host_name %>
+      <% else %>
+       <%= @user.name %>
+      <% end %>
+    
+    <h3>Invited Guests:</h3>
+    <% viewing_party.invited_guests.each do |guest| %>
+    <p><%= guest.name %></p>
+    <% end %>
+
+
+    <h1 style='border-bottom: 3px solid black'> </h1>
   </section>
 <% end %>

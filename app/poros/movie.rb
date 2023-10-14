@@ -4,7 +4,8 @@ class Movie
               :vote_average,
               :genres,
               :overview,
-              :runtime
+              :runtime,
+              :image
 
 
   def initialize(data)
@@ -14,6 +15,7 @@ class Movie
     @genres = data[:genres]
     @overview = data[:overview]
     @runtime = data[:runtime]
+    @image = data[:backdrop_path]
   end
 
   def genre_info

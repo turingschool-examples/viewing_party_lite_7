@@ -16,7 +16,8 @@ RSpec.describe 'User Dashboard Page' do
     expect(page).to have_button("Discover Movies")
     expect(page).to have_content("Viewing Parties")
 
-    within("#viewing_party-#{@viewing_party1.id}") do 
+    within("#viewing_party-#{@viewing_party1.id}") do
+      expect(page).to have_link("550")
       expect(page).to have_content(@viewing_party1.duration)
       expect(page).to have_content(@viewing_party1.party_date)
       expect(page).to have_content(@viewing_party1.start_time.strftime('%H:%M'))

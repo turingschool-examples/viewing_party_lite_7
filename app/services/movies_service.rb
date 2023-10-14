@@ -30,4 +30,8 @@ class MoviesService
   def reviews(id)
     get_url("/3/movie/#{id}/reviews")
   end
+
+  def poster_path(id)
+    get_url("/3/movie/#{id}/poster_path")
+  end
 end

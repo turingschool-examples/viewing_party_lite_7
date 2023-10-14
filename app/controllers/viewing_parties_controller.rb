@@ -13,14 +13,20 @@ class ViewingPartiesController < ApplicationController
     viewing_party = ViewingParty.new(viewing_params)
     @users = User.all
     if viewing_party.save
-      @users.each do |user|
-        PartyGuest.create!(user_id: user.id, viewing_party_id: viewing_party.id, host: false)
+      PartyGuest.create(user_id: @user.id, viewing_party_id: viewing_party.id, host: true)
+      User.where.not(id: @user.id).each do |user|
+        PartyGuest.create(user_id: user.id, viewing_party_id: viewing_party.id, host: false)
       end
+  
       redirect_to user_path(@user)
     else 
       flash[:alert] = "Please fill in all fields."
       redirect_to new_user_movie_viewing_party_path(@user, @movie_id)
     end
+  end
+
+  def find_movie
+    @movie = facade.find_movie(params[:movie_id])
   end
 
   private
