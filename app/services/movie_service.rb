@@ -27,6 +27,10 @@ class MovieService < ApplicationService
     # )
   end
 
+  def movie_discover
+    json_parse(get_url('/3/discover/movie?sort_by=popularity.desc'))
+  end
+
   def movie(id)
     json_parse(get_url("/3/movie/#{id}"))
   end
@@ -37,9 +41,5 @@ class MovieService < ApplicationService
 
   def reviews(id)
     json_parse(get_url("/3/movie/#{id}/reviews"))
-  end
-
-  def movie_discover
-    json_parse(get_url('/3/discover/movie?sort_by=popularity.desc'))
   end
 end
