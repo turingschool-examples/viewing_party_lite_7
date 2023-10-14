@@ -4,11 +4,16 @@
 <hr/>
 <section class="viewing_parties">
   <% @parties.each do |party| %>
-  <div style="border:solid; width:30%">
-    <%= image_tag("https://image.tmdb.org/t/p/w92/" + "#{party.poster_path}") %><br>
+  <div style="border:solid; width:342px">
+    <%= image_tag("https://image.tmdb.org/t/p/w342/" + "#{party.poster_path}") %><br>
     Movie Title: <%= party.movie_title %><br>
     Party Time: <%= party.formated_time %><br>
-    <%= party.host?(@user) %><br>
+    Your Status: <%= party.host?(@user) %><br>
+    Other Guests: <% party.attendees.each do |attendee| %>
+      <div id=<%= "#{attendee.name}" %>>
+        <li><%= attendee.name %></li>
+      </div>
+    <% end %>
   </div><br>
   <% end %>
 </section>
