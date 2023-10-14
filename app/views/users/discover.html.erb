@@ -3,8 +3,10 @@
   <%= submit_tag "Discover Top Rated Movies" %>
 <% end %></p>
 
+<div class="movie_search">
 <%= form_with url: user_movies_path(@user), method: :get do |form| %>
   <%= form.label :query, "Search by Movie Title:" %>
   <%= form.text_field :query %>
   <%= form.submit "Search" %>
 <% end %>
+</div>
