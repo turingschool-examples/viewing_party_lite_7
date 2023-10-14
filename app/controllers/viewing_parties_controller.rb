@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ViewingPartiesController < ApplicationController
   def new
     @user = User.find(params[:user_id])
@@ -9,7 +11,7 @@ class ViewingPartiesController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @party = ViewingParty.new(party_params)
-    
+
     if @party.save
       redirect_to user_path, notice: 'Party created successfully!'
     else

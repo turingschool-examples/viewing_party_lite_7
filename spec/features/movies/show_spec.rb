@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.feature 'User movie show page', type: :feature do
@@ -6,16 +8,14 @@ RSpec.feature 'User movie show page', type: :feature do
 
     visit discover_user_path(user)
 
-
-      fill_in 'query', with: 'The Matrix'
-      click_button 'Search'
-
+    fill_in 'query', with: 'The Matrix'
+    click_button 'Search'
 
     click_link 'The Matrix'
 
     expect(current_path).to eq(user_movie_path(user, 603))
     expect(page).to have_content('The Matrix')
-    expect(page).to have_content('Rating: 8.207') 
+    expect(page).to have_content('Rating: 8.207')
     expect(page).to have_content('Runtime: 136min')
     expect(page).to have_content('Summary')
     expect(page).to have_content('Keanu Reeves as Thomas A. Anderson / Neo')

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   get '/', to: 'home#index', as: 'root'
   get '/register', to: 'users#new', as: 'new_user'
@@ -6,6 +8,6 @@ Rails.application.routes.draw do
 
   resources :users do
     get 'discover', on: :member
-    resources :movies, only: [:index, :show]
+    resources :movies, only: %i[index show]
   end
 end

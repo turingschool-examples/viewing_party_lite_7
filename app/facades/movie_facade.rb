@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class MovieFacade
   attr_reader :movie_id
-  
+
   def initialize(movie)
     @movie = movie
   end
-  
+
   def self.movie_details(movie)
     movie_data = MovieDbService.new.movie_details(movie)
     movie_data = movie_data.slice(:id, :title, :vote_average, :runtime, :genres, :description, :poster_path)
