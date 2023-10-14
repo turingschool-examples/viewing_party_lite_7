@@ -1,12 +1,12 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/jorjafleming/mod3/viewing_party_lite_7/spec/spec_helper.rb": {
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/spec/spec_helper.rb": {
         "lines": [
           1
         ]
       },
-      "/Users/jorjafleming/mod3/viewing_party_lite_7/config/environment.rb": {
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/config/environment.rb": {
         "lines": [
           null,
           null,
@@ -17,7 +17,7 @@
           1
         ]
       },
-      "/Users/jorjafleming/mod3/viewing_party_lite_7/config/application.rb": {
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/config/application.rb": {
         "lines": [
           null,
           null,
@@ -60,7 +60,7 @@
           null
         ]
       },
-      "/Users/jorjafleming/mod3/viewing_party_lite_7/config/boot.rb": {
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/config/boot.rb": {
         "lines": [
           null,
           null,
@@ -70,7 +70,7 @@
           1
         ]
       },
-      "/Users/jorjafleming/mod3/viewing_party_lite_7/config/environments/test.rb": {
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/config/environments/test.rb": {
         "lines": [
           null,
           null,
@@ -136,7 +136,7 @@
           null
         ]
       },
-      "/Users/jorjafleming/mod3/viewing_party_lite_7/config/initializers/assets.rb": {
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -154,7 +154,7 @@
           null
         ]
       },
-      "/Users/jorjafleming/mod3/viewing_party_lite_7/config/initializers/content_security_policy.rb": {
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/config/initializers/content_security_policy.rb": {
         "lines": [
           null,
           null,
@@ -165,41 +165,6 @@
           null,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/jorjafleming/mod3/viewing_party_lite_7/config/initializers/filter_parameter_logging.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/jorjafleming/mod3/viewing_party_lite_7/config/initializers/inflections.rb": {
-        "lines": [
           null,
           null,
           null,
@@ -219,7 +184,42 @@
           null
         ]
       },
-      "/Users/jorjafleming/mod3/viewing_party_lite_7/config/initializers/permissions_policy.rb": {
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/config/initializers/filter_parameter_logging.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/config/initializers/inflections.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/config/initializers/permissions_policy.rb": {
         "lines": [
           null,
           null,
@@ -235,7 +235,7 @@
           null
         ]
       },
-      "/Users/jorjafleming/mod3/viewing_party_lite_7/config/routes.rb": {
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/config/routes.rb": {
         "lines": [
           null,
           null,
@@ -249,11 +249,13 @@
           1,
           1,
           1,
+          1,
+          null,
           null,
           null
         ]
       },
-      "/Users/jorjafleming/mod3/viewing_party_lite_7/app/helpers/application_helper.rb": {
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -261,7 +263,7 @@
           null
         ]
       },
-      "/Users/jorjafleming/mod3/viewing_party_lite_7/app/helpers/landing_page_helper.rb": {
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/app/helpers/landing_page_helper.rb": {
         "lines": [
           1,
           null
@@ -666,7 +668,7 @@
           null
         ]
       },
-      "/Users/jorjafleming/mod3/viewing_party_lite_7/spec/features/users/show_spec.rb": {
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/spec/features/users/show_spec.rb": {
         "lines": [
           1,
           null,
@@ -709,7 +711,46 @@
           null
         ]
       },
-      "/Users/jorjafleming/mod3/viewing_party_lite_7/spec/models/user_spec.rb": {
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/spec/features/viewing_parties/new_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/spec/models/user_spec.rb": {
         "lines": [
           1,
           null,
@@ -727,7 +768,7 @@
           null
         ]
       },
-      "/Users/jorjafleming/mod3/viewing_party_lite_7/app/models/user.rb": {
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -739,7 +780,7 @@
           null
         ]
       },
-      "/Users/jorjafleming/mod3/viewing_party_lite_7/app/models/application_record.rb": {
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/app/models/application_record.rb": {
         "lines": [
           null,
           null,
@@ -748,7 +789,7 @@
           null
         ]
       },
-      "/Users/jorjafleming/mod3/viewing_party_lite_7/spec/models/user_viewing_party_spec.rb": {
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/spec/models/user_viewing_party_spec.rb": {
         "lines": [
           1,
           null,
@@ -760,7 +801,7 @@
           null
         ]
       },
-      "/Users/jorjafleming/mod3/viewing_party_lite_7/app/models/user_viewing_party.rb": {
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/app/models/user_viewing_party.rb": {
         "lines": [
           1,
           1,
@@ -768,7 +809,7 @@
           null
         ]
       },
-      "/Users/jorjafleming/mod3/viewing_party_lite_7/spec/models/viewing_party_spec.rb": {
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/spec/models/viewing_party_spec.rb": {
         "lines": [
           1,
           null,
@@ -788,7 +829,7 @@
           null
         ]
       },
-      "/Users/jorjafleming/mod3/viewing_party_lite_7/app/models/viewing_party.rb": {
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/app/models/viewing_party.rb": {
         "lines": [
           1,
           1,
@@ -953,11 +994,26 @@
           1,
           null,
           null,
+          1,
+          140,
+          123,
+          17,
+          48,
+          null,
+          1,
+          null,
+          null,
           null,
           1,
           null,
           null,
           1,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
           0,
           null,
           null,
@@ -1057,6 +1113,18 @@
         "lines": [
           1,
           1,
+          1,
+          null,
+          1,
+          83,
+          83,
+          83,
+          83,
+          83,
+          83,
+          83,
+          83,
+          null,
           null,
           1,
           11,
@@ -1101,11 +1169,27 @@
           null
         ]
       },
-      "/Users/jorjafleming/mod3/viewing_party_lite_7/app/controllers/landing_page_controller.rb": {
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/app/controllers/landing_page_controller.rb": {
         "lines": [
           1,
           1,
           2,
+          null,
+          null
+        ]
+      },
+      "/Users/noellehemphill/turing_work/3mod/projects/viewing_party_lite_7/app/controllers/viewing_parties_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
           null,
           null
         ]

@@ -1,0 +1,19 @@
+<h1><%= "Movie Title: #{@movie.title}" %></h1>
+
+<section class="new_party">
+
+  <% form_with url: "/users/#{@user}/movies/#{@movie}/viewing_parties", method: :post, data:{turbo: false} do |f| %>
+    <%= f.label :duration %>
+    <%= f.number_field :duration, :value => @movie.runtime%>
+
+    <%= f.label :start_time %>
+    <%= f.datetime_field :start_time %>
+
+    <% @users.each do |user| %>
+      <%= check_box_tag(:user) %>
+      <%= label_tag(:user, "Invite #{user}") %>
+    <% end %>
+
+    <%= f.submit "Submit" %>
+  <% end %>
+</section>
