@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+ .main-text {
+  flex: 2;
+  padding: 20px;
+  text-align: left;
+}
+
+.float-container {
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.float-child {
+  width: 250px;
+  float: left;
+  padding: 20px;
+}  
+
+.float-child:first-child {
+  margin-right: 20px;
+}
