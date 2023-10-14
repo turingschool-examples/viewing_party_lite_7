@@ -21,6 +21,6 @@ class UsersFacade
   end
 
   def poster_url(id)
-    ThemoviedbService.new.poster_image_base_url[:base_url] + ThemoviedbService.new.poster_image_base_url[:logo_sizes][1] + invited_party_movie(id).poster_path
+    ThemoviedbService.new.poster_image_base_url[:base_url] + ThemoviedbService.new.poster_image_base_url[:logo_sizes][1] + party_movie(id).poster_path
   end
 end
