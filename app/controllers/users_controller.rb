@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
-  def new
-  end
+  def new; end
 
   def show
     @facade = UsersFacade.new(params)
@@ -11,9 +12,9 @@ class UsersController < ApplicationController
     user.save
     if user.save
       redirect_to user_path(user.id)
-    else 
-      redirect_to "/users/new"
-      flash[:error] = "User not created: Required information missing."
+    else
+      redirect_to '/users/new'
+      flash[:error] = 'User not created: Required information missing.'
     end
   end
 

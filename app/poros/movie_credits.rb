@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MovieCredits
   attr_reader :cast
 

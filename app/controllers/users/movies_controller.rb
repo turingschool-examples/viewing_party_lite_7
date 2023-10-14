@@ -1,9 +1,13 @@
-class Users::MoviesController < ApplicationController
-  def index
-    @facade = MoviesFacade.new(params)
-  end
+# frozen_string_literal: true
 
-  def show
-    @facade = MoviesFacade.new(params)
+module Users
+  class MoviesController < ApplicationController
+    def index
+      @facade = MoviesFacade.new(params)
+    end
+
+    def show
+      @facade = MoviesFacade.new(params)
+    end
   end
 end

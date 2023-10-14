@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ViewingPartiesFacade
   attr_reader :movie_id,
               :user,
@@ -32,13 +34,11 @@ class ViewingPartiesFacade
       date: @date,
       start_time: @start_time,
       movie_id: @movie_id,
-      host_user_id: (@user.id)
+      host_user_id: @user.id
     )
 
     User.all.map do |user|
-      if @params["#{user.id}"] == "1"
-        UserViewingParty.create!(user_id: user.id, viewing_party_id: party.id)
-      end
+      UserViewingParty.create!(user_id: user.id, viewing_party_id: party.id) if @params[user.id.to_s] == '1'
     end
   end
 end
