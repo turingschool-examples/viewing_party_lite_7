@@ -1,6 +1,6 @@
 class MoviesFacade
-  attr_reader :id,
-              :title,
+  attr_reader :movie_id,
+              :movie_title,
               :top_movies,
               :user
 
