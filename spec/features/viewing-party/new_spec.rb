@@ -61,5 +61,13 @@ RSpec.describe 'Viewing Party New page', type: :feature do
       expect(page).to have_css("#invite-#{@user_4.id}")
       expect(page).to_not have_css("#invite-#{@user_1.id}")
     end
+
+    it "Should throw an error if the form is not filled out completely" do
+      fill_in 'date', with: '2023-10-10'
+      click_button 'Create Viewing Party'
+
+      expect(page).to have_current_path(new_user_movie_viewing_party_path(@user_1.id, @movie_id))
+      expect(page).to have_content("Please fill out the entire form!")
+    end
   end
 end
