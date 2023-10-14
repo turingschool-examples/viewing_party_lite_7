@@ -18,7 +18,6 @@ RSpec.describe 'Viewing Party New Page' do
       expect(page).to have_field("Duration")
       expect(page).to have_field("Party date")
       expect(page).to have_field("Start time")
-      #save_and_open_page
     end
 
     it 'happy path; when submitted, user is redirected to their path with new viewing party appeared', :vcr do 
@@ -27,7 +26,6 @@ RSpec.describe 'Viewing Party New Page' do
       fill_in "Duration", with: 200
       fill_in "Party date", with: "2023-10-13"
       fill_in "Start time", with: "08:00"
-      #save_and_open_page
       check(@user1.id)
       check(@user2.id)
       check(@user3.id)

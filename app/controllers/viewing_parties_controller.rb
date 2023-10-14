@@ -17,7 +17,6 @@ class ViewingPartiesController < ApplicationController
       User.where.not(id: @user.id).each do |user|
         PartyGuest.create(user_id: user.id, viewing_party_id: viewing_party.id, host: false)
       end
-  
       redirect_to user_path(@user)
     else 
       flash[:alert] = "Please fill in all fields."
