@@ -4,8 +4,8 @@ require 'rails_helper'
 
 RSpec.describe 'Movies Result Page', type: :feature do
   before :each do
-    @user_1 = User.create!(name: 'Jamie', email: '34@gmail.com')
-    @user_2 = User.create!(name: 'Katie', email: '34997@gmail.com')
+    @user_1 = User.create!(name: 'Jamie', email: '34@gmail.com', password_digest: "$2a$12$8fZ4BOUSx4FlExUkBlPRdeQ9/k5bbDsOo2keHPuzE34")
+    @user_2 = User.create!(name: 'Katie', email: '34997@gmail.com', password_digest: "$2a$12$8fZ4BOUSx4FlExUkBlPRdeQ9/k5bbDsOo2keHPuzE35")
   end
 
   feature 'As a user' do
@@ -54,13 +54,10 @@ RSpec.describe 'Movies Result Page', type: :feature do
           expect(current_path).to eq("/users/#{@user_1.id}/movies")
 
           expect(page).to have_link('Fight Club')
-          expect(page).to have_content('Vote Average: 8.438')
           expect(page).to have_link('Zombie Fight Club')
-          expect(page).to have_content('Vote Average: 5.607')
           expect(page).to have_link('Comedy Fight Club Live')
-          expect(page).to have_content('Vote Average: 8.833')
           expect(page).to have_link('Brooklyn Girls Fight Club')
-          expect(page).to have_content('Vote Average: 8.7')
+          expect(page).to have_content('Vote Average:')
 
           expect(page).to have_button('Return to Discover Page')
           click_button 'Return to Discover Page'

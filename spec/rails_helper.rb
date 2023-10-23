@@ -1,3 +1,4 @@
+# :nocov:
 # frozen_string_literal: true
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
@@ -75,5 +76,6 @@ VCR.configure do |config|
   config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
   config.hook_into :webmock
   config.filter_sensitive_data('<THEMOVIEDB_API_KEY>') { Rails.application.credentials.config.first.last[:api_key] }
-  config.default_cassette_options = { re_record_interval: 1.days }
+  config.default_cassette_options = { re_record_interval: 1.weeks }
 end
+# :nocov:
