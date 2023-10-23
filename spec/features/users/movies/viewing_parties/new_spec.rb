@@ -4,9 +4,9 @@ require 'rails_helper'
 
 RSpec.describe 'New Viewing Party Page', type: :feeature do
   before :each do
-    @user_1 = User.create!(name: 'Jamie', email: '34@gmail.com')
-    @user_2 = User.create!(name: 'Katie', email: '34997@gmail.com')
-    @user_3 = User.create!(name: 'George', email: 'george@gmail.com')
+    @user_1 = User.create!(name: 'Jamie', email: '34@gmail.com', password_digest: "$2a$12$8fZ4BOUSx4FlExUkBlPRdeQ9/k5bbDsOo2keHPuzE34")
+    @user_2 = User.create!(name: 'Katie', email: '34997@gmail.com', password_digest: "$2a$12$8fZ4BOUSx4FlExUkBlPRdeQ9/k5bbDsOo2keHPuzE35")
+    @user_3 = User.create!(name: 'George', email: 'george@gmail.com', password_digest: "$2a$12$8fZ4BOUSx4FlExUkBlPRdeQ9/k5bbDsOo2keHPuzE36")
   end
 
   feature 'As a user' do

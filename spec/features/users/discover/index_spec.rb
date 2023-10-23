@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'User Discover', type: :feature do
   before :each do
-    @user_1 = User.create!(name: 'Jamie', email: '34@gmail.com')
+    @user_1 = User.create!(name: 'Jamie', email: '34@gmail.com', password_digest: "$2a$12$8fZ4BOUSx4FlExUkBlPRdeQ9/k5bbDsOo2keHPuzE34")
   end
 
   feature 'As a user' do
