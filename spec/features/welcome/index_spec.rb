@@ -17,5 +17,13 @@ RSpec.describe 'Welcome Page' do
       expect(page).to have_content(@noelle.name)
       expect(page).to have_content(@chris.name)
     end
+
+    it "I see a link to log in " do
+      visit root_path
+
+      expect(page).to have_link('Log In')
+      click_link 'Log In'
+      expect(current_path).to eq(login_form_path)
+    end
   end
 end
