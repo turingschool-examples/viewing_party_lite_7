@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/register', to: 'users#new'
   get '/login', to: 'users#login_form'
   post '/login', to: 'users#login'
+  get 'log_out', to: 'users#log_out'
   # resources :register, only: [], controller: "users#new"
   resources :users, only: %i[show create] do
     resources :movies, only: %i[index show], controller: 'users/movies' do
