@@ -42,7 +42,7 @@ RSpec.feature 'User New(register)' do
     click_button 'Create New User'
 
     expect(page).to have_current_path(register_path)
-    binding.pry
+
     expect(page).to have_content("Error: Password confirmation doesn't match Password")
   end
 
