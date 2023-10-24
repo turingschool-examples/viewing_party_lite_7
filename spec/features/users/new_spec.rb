@@ -19,6 +19,8 @@ RSpec.describe 'New User Page' do
 
       fill_in(:name, with: 'Bob')
       fill_in(:email, with: 'bob@bob.com')
+      fill_in(:password, with: 'password')
+      fill_in(:password_confirmation, with: 'password')
       click_button('Register')
 
       expect(current_path).to eq(root_path)
@@ -32,6 +34,8 @@ RSpec.describe 'New User Page' do
 
       fill_in(:name, with: 'Bob')
       fill_in(:email, with: 'bob@bob.com')
+      fill_in(:password, with: 'password')
+      fill_in(:password_confirmation, with: 'password')
       click_button('Register')
 
       expect(current_path).to eq(root_path)
