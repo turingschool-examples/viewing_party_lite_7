@@ -1,0 +1,6 @@
+<br><center><%= button_to "Create New User", "/register/new", method: :get%>
+
+<% @users.each do |user| %>
+  <p><%= link_to user.name, "/users/#{user.id}" %></p>
+<%end %>
+</ul>

@@ -1,0 +1,18 @@
+<br><center><%= button_to "Discover Page", "/users/#{params[:id]}/discover", method: :get %><br></center>
+
+<center>
+<% if params[:q] != "top20rated" %>
+  <h3>Movie results for: <%= params[:q] %></h3>
+<% end %>
+</center>
+
+<center>
+<% if @movies %>
+  <% @movies.each do |movie| %>
+    <section id=<%= movie.id %> class="movie-list">
+      <%= link_to "#{movie.title}", "/users/#{params[:id]}/movies/#{movie.id}" %>
+      <p id="average">Vote Average: <%= movie.vote_average %></p>
+    </section>
+  <% end %>
+<% end %>
+</center>

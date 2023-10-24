@@ -1,0 +1,54 @@
+<center><h2><%= @user.name %>'s Dashboard</h2></center>
+
+<center><%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %></center>
+<br>
+
+<section id="viewing_parties">
+  <section id="hosted">
+  <center><h3>Parties I am Hosting</h3></center>
+  <% @user.parties_i_am_hosting.each do |party| %>
+    <center id="<%= party.id %>" class="movie_section">
+      <p><%= image_tag("https://image.tmdb.org/t/p/w500#{party.find_movie.backdrop_path}") %></p>
+      <p><b><%= link_to party.find_movie.title, "/users/#{@user.id}/movies/#{party.find_movie.id}" %></b></p>
+      <p><b>Day:</b> <%= party.day %></p>
+      <p><b>Time:</b> <%= party.view_time %></p>
+      <p><b>Host:</b> <%= party.find_host(@user)%></p>
+      <p><b>Guests:</b></p>
+      <section id="guests">
+      <% party.party_guests.each do |user| %>
+        <% if user.name == @user.name %>
+          <p>-<b><%= user.name %></b>-</p>
+        <% else %>
+          <p>-<%= user.name %>-</p>
+        <% end %>
+      <% end %>
+      </section>
+    </center>
+    <br>
+  <% end %>
+  </section>
+
+  <section id="invited">
+  <center><h3>Parties I am invited to</h3></center>
+  <% @user.parties_i_am_invited_to.each do |party| %>
+    <center id="<%= party.id %>" class="movie_section">
+      <p><%= image_tag("https://image.tmdb.org/t/p/w500#{party.find_movie.backdrop_path}") %></p>
+      <p><b><%= link_to party.find_movie.title, "/users/#{@user.id}/movies/#{party.find_movie.id}" %></b></p>
+      <p><b>Day:</b> <%= party.day %></p>
+      <p><b>Time:</b> <%= party.view_time %></p>
+      <p><b>Host:</b> <%= party.find_host(@user)%></p>
+      <p><b>Guests:</b></p>
+      <section id="guests">
+      <% party.party_guests.each do |user| %>
+        <% if user.name == @user.name %>
+          <p>-<b><%= user.name %></b>-</p>
+        <% else %>
+          <p>-<%= user.name %>-</p>
+        <% end %>
+      <% end %>
+      </section>
+    </center>
+    <br>
+  <% end %>
+  </section>
+</section>

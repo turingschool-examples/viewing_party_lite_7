@@ -10,7 +10,20 @@
     <%= javascript_importmap_tags %>
   </head>
 
+  <center><h1>Viewing Party</h1></center>
   <body>
+  <center>
+  <table>
+    <tbody>
+        <td><%= link_to "Home", "/"  %></td>
+    </tbody>
+  </table>
+  </center>
+  <% flash.each do |type, msg| %>
+      <div class="alert-info">
+        <%= msg %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
