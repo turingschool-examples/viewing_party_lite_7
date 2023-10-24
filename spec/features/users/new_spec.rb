@@ -19,12 +19,10 @@ RSpec.describe 'New User Page' do
 
       fill_in(:name, with: 'Bob')
       fill_in(:email, with: 'bob@bob.com')
-      fill_in(:password, with: 'password')
-      fill_in(:password_confirmation, with: 'password')
       click_button('Register')
 
       expect(current_path).to eq(root_path)
-      expect(page).to have_content('bob')
+      expect(page).to have_content('Bob')
 
       expect(User.all.count).to eq(1)
     end
@@ -34,12 +32,10 @@ RSpec.describe 'New User Page' do
 
       fill_in(:name, with: 'Bob')
       fill_in(:email, with: 'bob@bob.com')
-      fill_in(:password, with: 'password')
-      fill_in(:password_confirmation, with: 'password')
       click_button('Register')
 
       expect(current_path).to eq(root_path)
-      expect(page).to have_content('bob')
+      expect(page).to have_content('Bob')
 
       click_button('Create New User')
       expect(current_path).to eq('/register/new')
@@ -49,7 +45,7 @@ RSpec.describe 'New User Page' do
       click_button('Register')
 
       expect(current_path).to eq('/register/new')
-      expect(page).to have_content('Email has already been taken')
+      expect(page).to have_content('User email already in use, please enter another email')
     end
   end
 end

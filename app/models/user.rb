@@ -4,10 +4,7 @@ class User < ApplicationRecord
   has_many :user_viewing_parties
   has_many :viewing_parties, through: :user_viewing_parties
   validates :email, presence: true, uniqueness: true
-
   validates :name, presence: true
-  validates_presence_of :password
-  has_secure_password
 
   def parties_i_am_hosting
     viewing_parties.joins(:user_viewing_parties)
