@@ -4,8 +4,8 @@ require 'rails_helper'
 
 RSpec.describe 'Welcome Page' do
   before :each do
-    @noelle = User.create!(name: 'Noelle', email: 'Queen@aol.com')
-    @chris = User.create!(name: 'Chris', email: 'muttonchops@yahoo.com')
+    @noelle = User.create!(name: 'Noelle', email: 'Queen@aol.com', password: 'password')
+    @chris = User.create!(name: 'Chris', email: 'muttonchops@yahoo.com', password: 'password')
   end
 
   describe "When I visit '/'" do

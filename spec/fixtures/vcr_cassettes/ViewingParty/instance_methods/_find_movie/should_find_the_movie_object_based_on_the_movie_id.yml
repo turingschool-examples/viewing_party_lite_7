@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/346698?api_key=tmdb_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.11
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 24 Oct 2023 00:14:15 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=27325
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - c9fd2cdd147f588c1a0c0df5e57457c1
+      X-Memc-Age:
+      - '2967'
+      X-Memc-Expires:
+      - '18695'
+      Etag:
+      - W/"39d79e55eec454e1e238dacd5e46928f"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 fa20ae3068db1bd7f33b9b9f40a36436.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SLC50-C1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - vuBTzJtPQA7sQTvrO0ieWAoJPoPVBAKJ8-hj3JBELspQhcPXZ2Ehrg==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/ctMserH8g2SeOAnCw5gFjdQF8mo.jpg","belongs_to_collection":null,"budget":145000000,"genres":[{"id":35,"name":"Comedy"},{"id":12,"name":"Adventure"},{"id":14,"name":"Fantasy"}],"homepage":"https://www.barbie-themovie.com","id":346698,"imdb_id":"tt1517268","original_language":"en","original_title":"Barbie","overview":"Barbie
+        and Ken are having the time of their lives in the colorful and seemingly perfect
+        world of Barbie Land. However, when they get a chance to go to the real world,
+        they soon discover the joys and perils of living among humans.","popularity":799.046,"poster_path":"/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg","production_companies":[{"id":82968,"logo_path":"/gRROMOG5bpF6TIDMbfaa5gnFFzl.png","name":"LuckyChap
+        Entertainment","origin_country":"US"},{"id":437,"logo_path":"/nu20mtwbEIhUNnQ5NXVhHsNknZj.png","name":"Heyday
+        Films","origin_country":"GB"},{"id":181486,"logo_path":null,"name":"NB/GG
+        Pictures","origin_country":"US"},{"id":6220,"logo_path":"/cAj69EL1zSXmZH6STbMGZrunyMD.png","name":"Mattel","origin_country":"US"}],"production_countries":[{"iso_3166_1":"GB","name":"United
+        Kingdom"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"2023-07-19","revenue":1440074393,"runtime":114,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"She''s
+        everything. He''s just Ken.","title":"Barbie","video":false,"vote_average":7.229,"vote_count":5551}'
+  recorded_at: Tue, 24 Oct 2023 00:14:15 GMT
+recorded_with: VCR 6.2.0

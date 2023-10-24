@@ -6,7 +6,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   validates :name, presence: true
-  validates_presence_of :password_digest
+  validates_presence_of :password
   has_secure_password
 
   def parties_i_am_hosting
