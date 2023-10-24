@@ -17,7 +17,4 @@ Rails.application.routes.draw do
 
   get '/users/:id/movies/:movie_id/viewing_party/new', to: 'viewing_parties#new'
   post '/users/:id/movies/:movie_id/viewing_party', to: 'viewing_parties#create', as: :viewing_party_create
-
-  get '/login', to: "users#login_form", as: :login_form
-  post '/login', to: "users#login"
 end

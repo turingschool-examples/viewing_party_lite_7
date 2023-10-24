@@ -8,37 +8,18 @@ class UsersController < ApplicationController
   def new; end
 
   def create
-    user = user_params
-    user[:email] = user[:email].downcase
-    user[:name] = user[:name].downcase
-    new_user = User.new(user)
-    if new_user.save
+    user = User.new(user_params)
+    if user.save
       redirect_to root_path
-    elsif !new_user.save
-      flash[:error] = new_user.errors.full_messages.to_sentence
+    elsif !user.save
+      flash[:error] = 'User email already in use, please enter another email'
       redirect_to '/register/new'
-    end
-  end
-
-  def login_form
-
-  end
-
-  def login
-    user = User.find_by(email: params[:email])&.authenticate(params[:password])
-    if user
-      flash[:success] = "Welcome, #{user.name}!"
-      session[:user_id] = user[:id]
-      redirect_to user_path(user)
-    else
-      flash[:error] = "Credentials are incorrect"
-      redirect_to login_path
     end
   end
 
   private
 
   def user_params
-    params.permit(:name, :email, :password, :password_confirmation )
+    params.permit(:name, :email)
   end
 end
