@@ -5,9 +5,9 @@
 
 # :nocov:
 def load_test_data
-  @anne = User.create!(name: 'Anne Anderson', email: 'anne.anderson@aol.com')
-  @blair = User.create!(name: 'Blair Busch', email: 'Blair@aol.com')
-  @cindy = User.create!(name: 'Cindy Conners', email: 'CC@aol.com')
+  @anne = User.create!(name: 'Anne Anderson', email: 'anne.anderson@aol.com', password: "dogs")
+  @blair = User.create!(name: 'Blair Busch', email: 'Blair@aol.com', password: "dogs")
+  @cindy = User.create!(name: 'Cindy Conners', email: 'CC@aol.com', password: "dogs")
 
   @arthur = ViewingParty.create!(movie_id: 49012, duration: 140, date_time: 10.days.from_now)
   @batman = ViewingParty.create!(movie_id: 268, duration: 240, date_time: 11.days.from_now)
