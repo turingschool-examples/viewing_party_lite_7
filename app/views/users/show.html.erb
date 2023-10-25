@@ -1,0 +1,45 @@
+<h1><%= @facade.user.name %>'s Dashboard </h1>
+<h3> User email: <%= @facade.user.email %> </h3>
+
+<%= button_to "Discover Movies", "/users/#{@facade.user.id}/discover", method: :get %>
+
+<section class="party_invitations">
+  <h3>Viewing Party Invitations</h3>
+  <% @facade.invited_viewing_parties.each do |party| %>
+    <img src="<%= @facade.poster_url(party.movie_id) %>"></br>
+    <%= link_to "#{@facade.party_movie(party.movie_id).title}", "/users/#{@facade.user.id}/movies/#{party.movie_id}" %>
+    <p>When: <%= party.date.strftime("%-m/%-d/%y") %></p>
+    <p>Start Time: <%= party.start_time.strftime("%I:%M:%S") %></p>
+    <p>Host: <%= User.user_host_name(party.host_user_id) %></p>
+    <p>Invitees:
+      <ul>
+      <% party.invitees.each do |invitee| %>
+        <li><% if invitee.id == @facade.user.id %>
+              <strong><%= invitee.name %></strong>
+            <% else %>
+              <%= invitee.name %>
+            <% end %>
+        </li>
+      <% end %>
+      </ul>
+    </p>
+  <% end %>
+</section>
+
+<section class="hosted_parties">
+  <h3>Viewing Parties I'm Hosting</h3>
+  <% @facade.hosted_viewing_parties.each do |party| %>
+  <img src="<%= @facade.poster_url(party.movie_id) %>"></br>
+    <%= link_to "#{@facade.party_movie(party.movie_id).title}", "/users/#{@facade.user.id}/movies/#{party.movie_id}" %>
+    <p>When: <%= party.date.strftime("%-m/%-d/%y") %></p>
+    <p>Start Time: <%= party.start_time.strftime("%I:%M:%S") %></p>
+    <p>Host: I am hosting</p>
+    <p>Invitees: 
+      <ul>
+        <% party.invitees.each do |invitee| %>
+          <li><%= invitee.name %></li>
+        <% end %>
+      </ul>
+    </p>
+  <% end %>
+</section>

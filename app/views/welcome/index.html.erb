@@ -1,0 +1,12 @@
+<h1>Viewing Party</h1>
+
+<% if current_user %>
+  <%= link_to "Log out", "/log_out" %><br><br>
+  <p>User Emails:</p>
+  <% @users.each do |user| %>
+    <%= user.email %><br>
+  <% end %>
+<% else %>
+  <%= link_to "Login", "/login" %><br><br>
+  <%= button_to "Create a New User", "/register", method: :get %><br>
+<% end %>
