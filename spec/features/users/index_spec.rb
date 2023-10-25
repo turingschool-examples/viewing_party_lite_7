@@ -99,4 +99,46 @@ RSpec.describe 'Register and Log In', type: :feature do
       end
     end
   end
+
+  feature "As a logged in user" do
+    feature "When I visit the landing page" do
+      scenario "I no longer see a link to Log In or Create an Account, but I do see a link to Log Out." do
+        click_button 'Create a New User'
+
+        fill_in 'Name', with: 'George'
+        fill_in 'email', with: 'George@gmail.com'
+        fill_in 'password', with: '123password'
+        fill_in 'password_confirmation', with: '123password'
+        click_button 'Register'
+
+        visit "/"
+        
+        expect(page).to have_link("Log out")
+        expect(page).to_not have_link("Login")
+        expect(page).to_not have_button("Create a New User")
+      end
+
+      feature "When I click the link to Log Out" do
+        scenario "I'm taken to the landing page and I can see that the Log Out link has changed back to a Log In link" do
+          click_button 'Create a New User'
+
+          fill_in 'Name', with: 'George'
+          fill_in 'email', with: 'George@gmail.com'
+          fill_in 'password', with: '123password'
+          fill_in 'password_confirmation', with: '123password'
+          click_button 'Register'
+
+          visit "/"
+
+          click_on "Log out"
+
+          expect(current_path).to eq("/")
+
+          expect(page).to have_link("Login")
+          expect(page).to have_button("Create a New User")
+          expect(page).to_not have_link("Log out")
+        end
+      end
+    end
+  end
 end

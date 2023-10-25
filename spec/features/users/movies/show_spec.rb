@@ -70,4 +70,19 @@ RSpec.describe 'Movie Details Page', type: :feature do
       end
     end
   end
+
+  feature "As a visitor" do
+    feature "If I go to a movies show page and click the button to create a viewing party" do
+      scenario "I'm redirected to the movies show page, and a message appears to let me know I must be logged in or registered to create a movie party" do
+        VCR.use_cassette('godfather_movie_details_2') do
+          visit "/users/#{@user_1.id}/movies/238"
+
+          click_on 'Create a Viewing Party'
+
+          expect(current_path).to eq("/users/#{@user_1.id}/movies/238")
+          expect(page).to have_content("You must be logged in or registered to create a movie party")
+        end
+      end
+    end
+  end
 end
