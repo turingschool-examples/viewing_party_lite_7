@@ -2,6 +2,8 @@
 
 # Controllers users
 class UsersController < ApplicationController
+  # before_action :require_user
+
   def new; end
 
   def create
@@ -19,6 +21,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    require_user
     @user = User.find(params[:id])
   end
 
@@ -41,9 +44,21 @@ class UsersController < ApplicationController
   def login_form
   end
 
+  def logout
+    reset_session
+    # session.delete(current_user.id)
+    # @_current_user = nil
+    flash[:notice] = "You have successfully logged out."
+    redirect_to '/'
+  end
+
   private
 
   def user_params
     params.permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def require_user
+    render file: "public/404.html" unless current_user
   end
 end

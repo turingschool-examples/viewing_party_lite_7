@@ -8,6 +8,7 @@ class ViewingPartiesController < ApplicationController
   end
 
   def create
+    # require_user
     @movie = MoviesFacade.new(params[:movie_id]).movie
     party = ViewingParty.create(date_time: param_datetime_formatter,
                                 movie_id: params[:movie_id],
@@ -53,5 +54,9 @@ class ViewingPartiesController < ApplicationController
             params["time(5i)"] << ":" <<
             "00" << " " <<
             "UTC"
+  end
+
+  def require_user
+    render file: "public/404.html" unless current_user
   end
 end
