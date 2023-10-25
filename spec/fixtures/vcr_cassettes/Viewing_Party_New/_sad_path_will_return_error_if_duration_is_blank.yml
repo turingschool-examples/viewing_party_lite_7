@@ -1,0 +1,201 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/42470?api_key=f7288e89c67ddeca054747d31c85225c
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.11
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 4b195b5bc531430b075228584131165f
+      X-Memc-Age:
+      - '25528'
+      X-Memc-Expires:
+      - '958'
+      Date:
+      - Fri, 13 Oct 2023 23:10:39 GMT
+      Cache-Control:
+      - public, max-age=24737
+      Etag:
+      - W/"ff3598050ab5cdf1cc1045f0d7165e61"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 350e87fe323bf8d725a381e15f465f40.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-C1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - w6C4NWcoE38M5XuBMlMFrUKlt8-PxrK4SS4ETIxigqoSdcs2bSwvGg==
+      Age:
+      - '1509'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/8MrWcsw5HqwRLvvNJS7doDq6xh0.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"},{"id":878,"name":"Science
+        Fiction"},{"id":53,"name":"Thriller"},{"id":12,"name":"Adventure"}],"homepage":"","id":42470,"imdb_id":"tt0069946","original_language":"en","original_title":"The
+        Day of the Dolphin","overview":"Dr. Jake Terrell, who has been training a
+        pair of dolphins for many years, has had a breakthrough. He has taught his
+        dolphins to speak and understand English, although they do have a limited
+        vocabulary. When the dolphins are stolen, he discovers they''re to be used
+        in an assassination attempt. Now he is in a race to discover who is the target,
+        and where the dolphins are, before the attempt is carried out.","popularity":4.183,"poster_path":"/vLztqesi2Dj5Ny74u33GufVzKR6.jpg","production_companies":[{"id":494,"logo_path":"/ioc65azmsAeL1XQN4dFnrpdJoMO.png","name":"AVCO
+        Embassy Pictures","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1973-12-19","revenue":0,"runtime":104,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Unwittingly,
+        he trained a dolphin to kill the president of the United States.","title":"The
+        Day of the Dolphin","video":false,"vote_average":5.9,"vote_count":42}'
+  recorded_at: Fri, 13 Oct 2023 23:35:48 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/42470?api_key=f7288e89c67ddeca054747d31c85225c
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.11
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 4b195b5bc531430b075228584131165f
+      X-Memc-Age:
+      - '25528'
+      X-Memc-Expires:
+      - '958'
+      Date:
+      - Fri, 13 Oct 2023 23:10:39 GMT
+      Cache-Control:
+      - public, max-age=24737
+      Etag:
+      - W/"ff3598050ab5cdf1cc1045f0d7165e61"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 39c272e966ab7a6f8a68d2222276a954.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-C1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - bda9zZw6WdeQV0K-ZBaUYEsV7PRNDqcY2wYZfLy_JDZvaqY-57hMnw==
+      Age:
+      - '1509'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/8MrWcsw5HqwRLvvNJS7doDq6xh0.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"},{"id":878,"name":"Science
+        Fiction"},{"id":53,"name":"Thriller"},{"id":12,"name":"Adventure"}],"homepage":"","id":42470,"imdb_id":"tt0069946","original_language":"en","original_title":"The
+        Day of the Dolphin","overview":"Dr. Jake Terrell, who has been training a
+        pair of dolphins for many years, has had a breakthrough. He has taught his
+        dolphins to speak and understand English, although they do have a limited
+        vocabulary. When the dolphins are stolen, he discovers they''re to be used
+        in an assassination attempt. Now he is in a race to discover who is the target,
+        and where the dolphins are, before the attempt is carried out.","popularity":4.183,"poster_path":"/vLztqesi2Dj5Ny74u33GufVzKR6.jpg","production_companies":[{"id":494,"logo_path":"/ioc65azmsAeL1XQN4dFnrpdJoMO.png","name":"AVCO
+        Embassy Pictures","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1973-12-19","revenue":0,"runtime":104,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Unwittingly,
+        he trained a dolphin to kill the president of the United States.","title":"The
+        Day of the Dolphin","video":false,"vote_average":5.9,"vote_count":42}'
+  recorded_at: Fri, 13 Oct 2023 23:35:48 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/0?api_key=f7288e89c67ddeca054747d31c85225c
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.11
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 13 Oct 2023 23:12:15 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=25751
+      X-Memc:
+      - MISS
+      X-Memc-Key:
+      - 0e0ea920af5920cd4be6a197189f1cf9
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '25751'
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 f5cdd38f09a779678a15f788f0f3cbe2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-C1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - FWUeyu1ZJL6kudsYF9oOUsff9ZrzjMw0kDHzB3j-L60XDWxNAET1Ig==
+      Age:
+      - '1414'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"success":false,"status_code":34,"status_message":"The resource you
+        requested could not be found."}'
+  recorded_at: Fri, 13 Oct 2023 23:35:48 GMT
+recorded_with: VCR 6.2.0

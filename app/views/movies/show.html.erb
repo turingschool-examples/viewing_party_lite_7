@@ -1,0 +1,55 @@
+<div id='sub_header'>
+  <h3> <%= @facade.movie.title %> </h3>
+</div>
+<div id='buttons'>
+  <%= button_to "Discover Movies", user_discover_path(params[:user_id]), method: :get %>
+  <br>
+  <%= button_to "Create Viewing Party for #{@facade.movie.title}", new_user_movie_viewing_party_path(params[:user_id], params[:id]), method: :get %>
+</div>
+<br>
+<div id='details'>
+  <table>
+    <tr>
+      <!-- figure out how to remove all the logic from the table below -->
+      <td> Vote: <%= @facade.movie.vote_average %> </td>
+      <td> Runtime: <%= @facade.movie.runtime_formatted %> </td>
+      <td> Genre(s): <%= @facade.movie.genres %> </td>
+    </tr>
+  </table>
+</div>
+<br>
+<hr>
+<br>
+<div id='summary'>
+  <h4><strong> Summary </strong></h4>
+  <%= @facade.movie.summary %>
+</div>
+<br>
+<div id='cast'>
+  <h4><strong> Cast </strong></h4>
+  <table>
+    <tr>
+      <th> Character </th>
+      <th> Actor </th>
+    </tr>
+    <% @facade.cast.each do |member| %>
+      <tr>
+        <td><%= member.character %></td>
+        <td><%= member.name %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+<br>
+<div id='reviews'>
+  <% if @facade.reviews[1] %>
+    <h4><strong> <%= @facade.reviews[0].total_results %> Reviews </strong></h4>
+  <% elsif @facade.reviews[0] %>
+    <h4><strong> <%= @facade.reviews[0].total_results %> Reviews </strong></h4>
+  <% else %>
+    <h4><strong> 0 Reviews <strong><h4>
+  <% end %>
+  <% @facade.reviews.each do |review| %>
+    <p><%= review.content %> <strong>- <%= "#{review.author}, #{review.rating}/10" %></strong></p>
+  <% end %>
+</div>

@@ -1,0 +1,37 @@
+
+<h3><%= "Create a Movie Party for #{@movie.title}" %></h3>
+
+<%= form_with url: "/viewing_parties", method: :post, data: { turbo: false } do |f| %>
+  <%= f.hidden_field :user_id, value: params[:user_id] %>
+  <%= f.hidden_field :movie_id, value: params[:movie_id] %>
+<h4> Viewing Party Details </h4>
+<table>
+  <tr>
+    <th>Movie Title</th>
+    <td><%= @movie.title %></th>
+  </tr>
+  <tr>
+    <th> Duration of Party </th>
+    <td><%= f.number_field :duration, value: @movie.runtime %></td>
+  </tr>
+  <tr>
+    <th> Day </th>
+    <td><%= f.date_select :date, value: Date.today, order: [:month, :day, :year] %></td>
+  </tr>
+  <tr>
+    <th> Start time </th>
+    <td><%= f.time_select :time, {:ampm => true}, value: Time.now %></td>
+  </tr>
+</table>
+  <h5> Invite Other Users </h5>
+
+  <% @users.each do |user| %>
+    <section id="user-<%= user.id %>">
+    <%= f.label :invites, "#{user.name} (#{user.email})" %>
+    <%= check_box_tag "invites_id[]", user.id %></br>
+    </section>
+    <% end %>
+  <%= f.submit "Create Party" %>
+<% end %>
+
+

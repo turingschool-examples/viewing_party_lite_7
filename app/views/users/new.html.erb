@@ -1,0 +1,15 @@
+<h3> Register a New User </h3>
+
+<%= form_with url: "/users", method: :post, data: { turbo: false } do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %></br>
+  <%= f.label :email %>
+  <%= f.text_field :email %></br>
+  <%= f.label :password %>
+  <%= f.password_field :password %></br>
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %></br>
+
+  <%= f.submit "Create New User" %>
+  <% end %>

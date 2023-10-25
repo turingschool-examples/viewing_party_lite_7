@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=f7288e89c67ddeca054747d31c85225c&query=day%20dolphin
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.11
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 13 Oct 2023 15:16:33 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=25580
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Key:
+      - b68a3b49b3e729c730bd1cd601e2d306
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '25580'
+      Etag:
+      - W/"fc6d96ad90e474d75f759f65a8a075ef"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 66fbb9efab6146079af1497f336edf9e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P3
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - OBsaitba9r4Ey2nOmZCVpHpOhYFjHu0QbqXASGJY8V2TpNJOVl0K7Q==
+      Age:
+      - '18859'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/8MrWcsw5HqwRLvvNJS7doDq6xh0.jpg","genre_ids":[18,878,53,12],"id":42470,"original_language":"en","original_title":"The
+        Day of the Dolphin","overview":"Dr. Jake Terrell, who has been training a
+        pair of dolphins for many years, has had a breakthrough. He has taught his
+        dolphins to speak and understand English, although they do have a limited
+        vocabulary. When the dolphins are stolen, he discovers they''re to be used
+        in an assassination attempt. Now he is in a race to discover who is the target,
+        and where the dolphins are, before the attempt is carried out.","popularity":4.183,"poster_path":"/vLztqesi2Dj5Ny74u33GufVzKR6.jpg","release_date":"1973-12-19","title":"The
+        Day of the Dolphin","video":false,"vote_average":5.9,"vote_count":42}],"total_pages":1,"total_results":1}'
+  recorded_at: Fri, 13 Oct 2023 20:30:52 GMT
+recorded_with: VCR 6.2.0
