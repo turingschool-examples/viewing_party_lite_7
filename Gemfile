@@ -70,4 +70,8 @@ group :test do
   gem "capybara"
   gem "launchy"
   gem "simplecov"
+  gem "orderly"
+  gem "shoulda-matchers"
 end
+
+gem "faraday"
