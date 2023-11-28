@@ -16,5 +16,13 @@ RSpec.describe "Welcome Index" do
     expect(page).to have_link("Slick Ric")
     expect(page).to have_link("Bob")
 
+    click_link "Bob"
+    expect(current_path).to eq(user_path(@user3.id))
+
+    visit user_path(@user3.id)
+
+    expect(page).to have_link("Home")
+    click_link "Home"
+    expect(current_path).to eq(root_path)
   end
 end

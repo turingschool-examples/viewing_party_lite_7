@@ -7,11 +7,12 @@ RSpec.describe 'User Registration Page' do
 
   it 'When a user visits the register path they should see a form to register.' do
 
-    visit "/"
+    visit root_path
     expect(page).to have_link("Capitainlearyo")
     expect(page).to have_link("Slick Ric")
     expect(page).to have_link("Bob")
 
+    expect(page).to have_button("Create a New User")
     click_button "Create a New User"
     expect(current_path).to eq(new_user_path)
     
@@ -22,7 +23,7 @@ RSpec.describe 'User Registration Page' do
     
     expect(page).to have_content("Jon's Dashboard")
 
-    visit "/"
+    visit root_path
 
     expect(page).to have_link("Capitainlearyo")
     expect(page).to have_link("Slick Ric")
