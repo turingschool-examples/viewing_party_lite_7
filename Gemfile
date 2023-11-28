@@ -68,6 +68,7 @@ end
 
 group :test do
   gem "capybara"
+  gem "shoulda-matchers"
   gem "launchy"
   gem "simplecov"
   gem "factory_bot_rails"
