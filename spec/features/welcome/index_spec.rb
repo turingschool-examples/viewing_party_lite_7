@@ -6,7 +6,7 @@ RSpec.describe 'landing page, welcome index', type: :feature do
       @user_1 = User.create!(name: 'Sam', email: 'sam_t@email.com')
       @user_2 = User.create!(name: 'Tommy', email: 'tommy123@email.com')
 
-      visit '/'
+      visit landing_path
     end
 
     it 'They see title of application' do

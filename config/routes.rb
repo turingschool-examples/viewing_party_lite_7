@@ -3,4 +3,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  get '/', to: 'welcome#index', as: 'landing'
+  
+  get '/register', to: 'users#new', as: 'register'
+  resources :users, only: [:create]
 end
