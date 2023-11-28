@@ -19,6 +19,7 @@ RSpec.describe 'landing page, welcome index', type: :feature do
 
     it 'They see list of existing Users, which links to users dashboard, each dashboard has link back to landing page' do
       expect(page).to have_content('Existing Users')
+      save_and_open_page
       expect(page).to have_link('sam_t@email.com')
       expect(page).to have_link('tommy123@email.com')
     end
