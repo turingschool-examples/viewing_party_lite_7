@@ -1,0 +1,6 @@
+
+<% @users.each do |user| %>
+  <%= user.email %><br>
+<% end %>
+
+<%= button_to "Create a New User", "/new", method: :get %>

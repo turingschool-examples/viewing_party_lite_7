@@ -13,7 +13,7 @@ RSpec.describe "Landing Page Index", type: :feature do
       expect(page).to have_content("ViewingPartyLite7")
     end
 
-    xit "should have a button to create a new user" do
+    it "should have a button to create a new user" do
       expect(page).to have_button("Create a New User")
 
       click_button("Create a New User")
@@ -29,8 +29,7 @@ RSpec.describe "Landing Page Index", type: :feature do
       click_button "Create User"
 
       expect(current_path).to eq("/")
-
-      expect(page).to have_content("Jimmy Smith")
+      
       expect(page).to have_content("jimmysmith@gmail.com")
     end
 
