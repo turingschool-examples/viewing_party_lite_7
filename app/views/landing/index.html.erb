@@ -1,0 +1,10 @@
+ <h3> Viewing Party Lite </h3>
+
+<p><%= button_to "Create New User", "/users/new", method: :get %></p><br>
+
+<h3> Existing Users </h3>
+
+<% @users.each do |user| %>
+  <%= user.email %><br>
+<% end %>
+
