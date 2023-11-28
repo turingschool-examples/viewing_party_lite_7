@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get "/", to: "users#index"
   get "/new", to: "users#new"
   post "/", to: "users#create"
+  get "/users/:id", to: "users#show"
 end

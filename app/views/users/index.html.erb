@@ -1,6 +1,9 @@
+  <h2>Existing Users</h2>
 
-<% @users.each do |user| %>
-  <%= user.email %><br>
-<% end %>
+  <% @users.each do |user| %>
+<section id="existing_user-<%= user.id %>">
+    <%= link_to "#{user.email}", "/users/#{user.id}"  %><br>
+  <% end %>
+</section>
 
 <%= button_to "Create a New User", "/new", method: :get %>

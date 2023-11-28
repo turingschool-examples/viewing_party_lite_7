@@ -33,16 +33,16 @@ RSpec.describe "Landing Page Index", type: :feature do
       expect(page).to have_content("jimmysmith@gmail.com")
     end
 
-    xit "should have a list of exisiting users which links to the users dashboard" do
-      expect(page).to have_content("Exisiting Users")
-      within("#existing_user") do
+    it "should have a list of existing users which links to the users dashboard" do
+      expect(page).to have_content("Existing Users")
+      within "#existing_user-#{@user1.id}" do
+        
         expect(page).to have_link(@user1.email)
-        expect(page).to have_link(@user2.email)
-
+        
         click_link(@user1.email)
       end
 
-      expect(current_path).to eq("/#{@user1.id}")
+      expect(current_path).to eq("/users/#{@user1.id}")
 
       expect(page).to have_content("Scott DeVoss")
       expect(page).to have_content("scottd@gmail.com")
@@ -55,11 +55,11 @@ RSpec.describe "Landing Page Index", type: :feature do
       expect(current_path).to eq("/")
     end
 
-    xit "should have a link to go back to the landing page (expected on every page)" do
+    it "should have a link to go back to the landing page (expected on every page)" do
       expect(page).to have_link("Home")
 
       click_link(@user1.email)
-      expect(current_path).to eq("/#{@user1.id}")
+      expect(current_path).to eq("/users/#{@user1.id}")
 
       expect(page).to have_link("Home")
 
