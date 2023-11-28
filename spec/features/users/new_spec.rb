@@ -11,24 +11,26 @@ RSpec.describe "Root" do
     fill_in "Name", with: "Name"
     fill_in "email", with: "email@email.com"
   
-    click_button "Register"
+    click_button "Create New User"
 
-    expect(current_path).to eq("/")
+    expect(current_path).to eq("/users/#{User.all.last.id}")
   end
 
   it "rejects repeat emails" do
     visit "/register"
-
+    expect(page).to_not have_content("This email is already registered")
+    
     fill_in "Name", with: "Name"
     fill_in "email", with: "email@email.com"
-  
-    click_button "Register"
+    
+    click_button "Create New User"
+    expect(page).to_not have_content("This email is already registered")
     visit "/register"
 
     fill_in "Name", with: "Name"
     fill_in "email", with: "email@email.com"
   
-    click_button "Register"
+    click_button "Create New User"
     expect(current_path).to eq("/register")
     expect(page).to have_content("This email is already registered")
   end
