@@ -30,7 +30,7 @@ def test_data
   @userparty1 = UserParty.create(user_id: @user1.id, party_id: @party1.id)
   @userparty2 = UserParty.create(user_id: @user2.id, party_id: @party1.id)
 
-  @partymovie1 = PartyMovie.create(movie_id: @movie.id, party_id: @party1.id)
+  @partymovie1 = PartyMovie.create(movie_id: @movie1.id, party_id: @party1.id)
 
 end
 RSpec.configure do |config|
