@@ -1,0 +1,10 @@
+<%= link_to "Home", "/" %>
+
+<h1>Viewing Party</h1>
+
+<%= button_to "Create a New User", "/register" %>
+
+<h2>Existing Users</h2>
+<% @users.each do |user| %>
+  <p><%= link_to "#{user.email}", "/users/#{user.id}" %></p>
+<% end %>
