@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "Register Page" do
   before :each do
-    visit new_user_path
+    visit register_path
   end
 
   it 'when visiting /register the user will find a form to register' do
