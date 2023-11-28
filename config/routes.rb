@@ -5,11 +5,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "landing#index"
 
-<<<<<<< HEAD
-  resources :users, only: [:index, :show]
-=======
   resources :users, only: [:index, :create, :new, :show]
   get '/register', to: 'users#new', as: 'register'
   post '/register', to: 'users#create'
->>>>>>> 425d9a2e482057226fa99321c6813cc982248c48
 end
