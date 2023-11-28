@@ -10,26 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_28_050911) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_28_002839) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "movies", force: :cascade do |t|
-    t.string "title"
-    t.float "vote_average"
-    t.integer "runtime"
-    t.string "genre"
-    t.string "description"
-    t.string "cast_members"
-    t.string "review_count"
-    t.string "review_info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "user_viewing_parties", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "viewing_party_id", null: false
+    t.boolean "host", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_user_viewing_parties_on_user_id"
@@ -45,16 +33,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_28_050911) do
 
   create_table "viewing_parties", force: :cascade do |t|
     t.datetime "start_time"
+    t.string "movie_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "movie_id", null: false
-    t.bigint "user_id", null: false
-    t.index ["movie_id"], name: "index_viewing_parties_on_movie_id"
-    t.index ["user_id"], name: "index_viewing_parties_on_user_id"
   end
 
   add_foreign_key "user_viewing_parties", "users"
   add_foreign_key "user_viewing_parties", "viewing_parties"
-  add_foreign_key "viewing_parties", "movies"
-  add_foreign_key "viewing_parties", "users"
 end
