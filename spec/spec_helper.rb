@@ -13,6 +13,26 @@
 # it.
 #
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+
+def test_data
+  @user1 = User.create(name: "CandyLand", email: "Bungie123@gmail.com")
+  @user2 = User.create(name: "Macbeth", email: "Blurp@gmail.com")
+  @user3 = User.create(name: "Jerry", email: "Moogoo@gmail.com")
+
+  @party1 = Party.create(duration: 200, name: "The Lion Bling Watch Party", date: "1/22/2024", start_time: 1800)
+  @party2 = Party.create(duration: 100, name: "Leroy Jenkins Watch Party", date: "10/2/1999", start_time: 1400)
+  @party3 = Party.create(duration: 250, name: "Why Your Mom Moved Out Watch Party", date: "7/15/2008", start_time: 1900)
+
+  @movie1 = Movie.create(title: "The Lion Bling", runtime: 150)
+  @movie2 = Movie.create(title: "Leroy Jenkins", runtime: 90)
+  @movie3 = Movie.create(title: "Why Your Mom Moved Out", runtime: 220)
+
+  @userparty1 = UserParty.create(user_id: @user1.id, party_id: @party1.id)
+  @userparty2 = UserParty.create(user_id: @user2.id, party_id: @party1.id)
+
+  @partymovie1 = PartyMovie.create(movie_id: @movie.id, party_id: @party1.id)
+
+end
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
