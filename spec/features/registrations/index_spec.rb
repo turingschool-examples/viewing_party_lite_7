@@ -19,8 +19,9 @@ RSpec.describe 'Registration Index Page', type: :feature do
 
     it "Email should be unique" do
       visit "/register"
-      fill_in(:name, with: "Dinkleberg")
-      fill_in(:name, with: "timmyturner1@gmail.com")
+      fill_in("Name", with: "Dinkleberg")
+      fill_in("Email", with: "timmyturner1@gmail.com")
+      click_button "Register"
       expect(current_path).to eq("/register")
       expect(page).to have_content("Email taken. Please enter a different email.")
     end
@@ -28,8 +29,8 @@ RSpec.describe 'Registration Index Page', type: :feature do
     it "Once the user registers they should be taken to a dashboard page '/users/:id', 
       where :id is the id for the user that was just created." do
       visit "/register"
-      fill_in(:name, with: "Dinkleberg")
-      fill_in(:name, with: "Dinkleberg123@gmail.com")
+      fill_in("Name", with: "Dinkleberg")
+      fill_in("Email", with: "Dinkleberg123@gmail.com")
       click_button "Register"
       expect(current_path).to eq('/users/:id')
       expect(page).to have_content("Dinkleberg")
