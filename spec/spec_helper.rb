@@ -4,6 +4,11 @@
 # this file to always be loaded, without a need to explicitly require it in any
 # files.
 #
+
+def test_data
+  @user1 = User.create!(name: "Shawn", email: "shawn@website.com")
+  @user2 = User.create!(name: "Anthea", email: "anthea@website.com")
+end
 # Given that it is always loaded, you are encouraged to keep this file as
 # light-weight as possible. Requiring heavyweight dependencies from this file
 # will add to the boot time of your test suite on EVERY test run, even for an
