@@ -1,0 +1,9 @@
+<h1>Register New User</h1>
+<br>
+<%= form_with model: User.new, data: {turbo: false} do |form| %>
+  <%= form.label :name %><br>
+  <%= form.text_field :name %><br>
+  <%= form.label :email %><br>
+  <%= form.text_field :email %><br>
+  <%= form.submit "Register" %>
+<% end %>
