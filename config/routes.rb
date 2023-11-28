@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
   resources :users do
-    get '/discover', to: 'discover#index'
+    get '/discover', to: 'users/discover#index'
   end
   get '/register', to: 'registration#new', as: 'register'
   post '/register', to: 'registration#create'
