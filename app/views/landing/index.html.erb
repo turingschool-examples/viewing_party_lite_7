@@ -1,0 +1,8 @@
+<%= button_to "Create New User" %>
+
+<h3><%= link_to "All Users", users_path %>
+<% @users.each do |user| %>
+  <section id="user-<%= user.id %>">
+    <%= user.name %>
+  </section>
+<% end %>

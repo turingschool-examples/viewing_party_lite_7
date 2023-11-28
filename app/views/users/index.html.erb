@@ -1,0 +1,7 @@
+<h3>All Users</h3>
+
+<% @users.each do |user| %>
+  <section id="user-<%= user.id %>">
+    <%= user.name %>
+  </section>
+<% end %>
