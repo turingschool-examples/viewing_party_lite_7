@@ -54,6 +54,8 @@ group :development, :test do
   gem "rspec-rails"
   gem "shoulda-matchers"
   gem "orderly"
+  gem "rubocop-rails"
+  gem "standardrb"
 end
 
 group :development do
@@ -65,7 +67,6 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-  gem "rubocop-rails"
 end
 
 group :test do
@@ -75,4 +76,6 @@ group :test do
   gem "simplecov"
   gem "factory_bot_rails"
   gem "faker"
+  gem "webmock"
+  gem "vcr"
 end

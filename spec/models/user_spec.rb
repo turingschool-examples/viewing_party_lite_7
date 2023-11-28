@@ -19,9 +19,9 @@ RSpec.describe User, type: :model do
     # Do nothing
   end
 
-  context 'when condition' do
-    it 'succeeds' do
-      pending 'Not implemented'
+  context "when condition" do
+    it "succeeds" do
+      pending "Not implemented"
     end
   end
 end
