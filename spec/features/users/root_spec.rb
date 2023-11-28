@@ -2,8 +2,7 @@ require "rails_helper"
 
 describe "landing page" do
   before :each do
-    @user1 = User.create!(name: "Shawn", email: "shawn@website.com")
-    @user2 = User.create!(name: "Anthea", email: "anthea@website.com")
+    test_data
     visit root_path
   end
 
