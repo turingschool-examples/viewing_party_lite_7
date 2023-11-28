@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root "landing#index"
 
   resources :users, only: [:index, :create, :new, :show] do
-    resources :parties, only: :index, as: 'discover'
+    resources :parties, only: :index, path: 'discover'
   end
 
   get '/register', to: 'users#new', as: 'register'
