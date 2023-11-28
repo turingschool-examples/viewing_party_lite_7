@@ -1,0 +1,21 @@
+<h1> Registration Form </h1>
+
+<% if flash[:alert] %>
+  <div class="alert alert-danger" style="color: red;">
+    <%= flash[:alert] %>
+  </div>
+<% end %><br/><br/>
+
+<%= form_with(model: @user, url: register_path, method: :post) do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div><br/>
+  <div>
+    <%= f.submit "Register" %>
+  </div>
+<% end %>
