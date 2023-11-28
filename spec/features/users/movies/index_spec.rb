@@ -25,8 +25,8 @@ RSpec.describe 'Movie Results' do
 
       expect(page.status_code).to eq 200
 
-      expect(page).to have_link("The Equalizer 3")
-      expect(page).to have_content(7.3)
+      expect(page).to have_link("Trolls Band Together")
+      expect(page).to have_content(7.215)
     end
 
     it 'Get searched movies' do
