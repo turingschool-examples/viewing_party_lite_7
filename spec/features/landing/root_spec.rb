@@ -14,7 +14,7 @@ RSpec.describe "Root" do
     it "has button to create a new user" do
       visit "/"
       click_button("Create New User")
-      expect(current_path).to eq("/users/new")
+      expect(current_path).to eq("/register")
     end
 
     it "has list of existing users which links to user dashboard" do
