@@ -30,4 +30,39 @@ RSpec.describe 'User Registration Page' do
     expect(page).to have_link("Bob")
     expect(page).to have_link("Jon")
   end
+
+  describe '#sad_path' do
+    it 'NAME - missing user attribute' do
+      visit new_user_path
+
+      fill_in "Name", with: ""
+      fill_in "Email", with: "example@example.com"
+      click_button "Register"
+
+      expect(page).to have_content("Name or Email cannot be blank")
+      expect(current_path).to eq(new_user_path)
+    end
+
+    it 'EMAIL - missing user attribute' do
+      visit new_user_path
+
+      fill_in "Name", with: "Sherlock"
+      fill_in "Email", with: ""
+      click_button "Register"
+
+      expect(page).to have_content("Name or Email cannot be blank")
+      expect(current_path).to eq(new_user_path)
+    end
+
+    it 'NAME & EMAIL - missing user attribute' do
+      visit new_user_path
+
+      fill_in "Name", with: ""
+      fill_in "Email", with: ""
+      click_button "Register"
+
+      expect(page).to have_content("Name or Email cannot be blank")
+      expect(current_path).to eq(new_user_path)
+    end
+  end
 end

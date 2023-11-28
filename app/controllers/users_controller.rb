@@ -13,8 +13,8 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to user_path(@user.id)
     else
-      flash.now[:alert] = "Name or Email cannot be blank"
-      render :new
+      flash[:alert] = "Name or Email cannot be blank"
+      redirect_back(fallback_location: new_user_path)
     end
   end
 
