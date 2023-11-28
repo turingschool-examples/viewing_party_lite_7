@@ -8,6 +8,6 @@ describe 'Dashboard: Discover Movies' do
 
   it "when visiting a user dashboard and clicking the Discover Movies Button, it redirects to the specific user's discover page" do
     click_button "Discover Movies"
-    expect(current_path).to eq(user_parties_path(@user1))
+    expect(current_path).to eq(user_discover_index_path(@user1))
   end
 end
