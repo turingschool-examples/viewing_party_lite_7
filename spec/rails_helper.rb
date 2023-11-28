@@ -82,6 +82,6 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.filter_sensitive_data("<TMDB_API_KEY") { Rails.application.credentials.tmdb[:key] }
   config.filter_sensitive_data("<TMDB_READ_KEY") { Rails.application.credentials.tmdb[:read] }
-  config.default_cassette_options = { re_record_interval: 7.days }
+  config.default_cassette_options = {re_record_interval: 7.days}
   config.configure_rspec_metadata!
 end

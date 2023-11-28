@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if user.save
       redirect_to user_path(user), notice: "User created successfully"
     else
-      flash.now[:alert] = user.errors.full_messages.join(', ')
+      flash.now[:alert] = user.errors.full_messages.join(", ")
       render :new, status: :unprocessable_entity
     end
   end

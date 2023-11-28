@@ -12,7 +12,7 @@ RSpec.describe "Landing Page", type: :feature do
 
       expect(page).to have_content "Viewing Party Lite"
     end
-    
+
     it "has a button to create a new user" do
       visit root_path
 
@@ -20,7 +20,6 @@ RSpec.describe "Landing Page", type: :feature do
     end
 
     it "shows existing users with links to their dashboards" do
-
     end
   end
 end

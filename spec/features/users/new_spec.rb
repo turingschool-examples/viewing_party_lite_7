@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "Register Page", type: :feature do 
+RSpec.describe "Register Page", type: :feature do
   # US 2
   describe "when a user visits the '/register' path they should see a form to register" do
     describe "Successful Path to Register" do
