@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   root "application#index"
+
+  resources :users, only: [:show]
 end
