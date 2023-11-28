@@ -51,6 +51,12 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "pry"
+  gem "rspec-rails"
+  gem "capybara"
+  gem "launchy"
+  gem "shoulda-matchers"
+  gem "simplecov"
+  gem "orderly"
 end
 
 group :development do
@@ -66,12 +72,12 @@ group :development do
 end
 
 group :test do
-  gem "rspec-rails"
-  gem "capybara"
-  gem "launchy"
-  gem "simplecov"
-  gem "orderly"
-  gem "shoulda-matchers"
+  # gem "rspec-rails"
+  # gem "capybara"
+  # gem "launchy"
+  # gem "simplecov"
+  # gem "orderly"
+  # gem "shoulda-matchers"
 end
 
 gem "faraday"
