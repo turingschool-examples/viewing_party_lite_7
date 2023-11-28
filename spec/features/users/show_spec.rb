@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe 'user dashboard page' do
+RSpec.describe 'user dashboard page', type: :feature do
   before :each do
     @user1 = User.create!(name: 'Joe', email: 'joe@gmail.com')
   end
 
-  it "displays <user's name>'s Dashboard at the top of the page" do
+  it "displays '<user's name>'s Dashboard' at the top of the page" do
     visit user_path(@user1)
     expect(page).to have_content("#{@user1.name}'s Dashboard")
   end
