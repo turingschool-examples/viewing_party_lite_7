@@ -22,7 +22,6 @@ RSpec.describe 'Registration Index Page', type: :feature do
       fill_in("Name", with: "Dinkleberg")
       fill_in("Email", with: "timmyturner1@gmail.com")
       click_button "Register"
-      save_and_open_page
       expect(current_path).to eq("/register")
       expect(page).to have_content("**Email taken. Please enter a different email.**")
     end
