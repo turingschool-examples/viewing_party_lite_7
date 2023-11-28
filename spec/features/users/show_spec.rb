@@ -21,5 +21,22 @@ RSpec.describe 'User Show Page', type: :feature do
 
       expect(current_path).to eq(user_discover_index_path(@user))
     end
+
+    it 'displays a section which contains a list of viewing parties' do
+      party_1 = create(:party)
+      party_2 = create(:party)
+      party_3 = create(:party)
+
+      UserParty.create(user: @user, party: party_1, host: true)
+      UserParty.create(user: @user, party: party_2, host: true)
+      UserParty.create(user: @user, party: party_3, host: true)
+
+      visit user_path(@user.id)
+
+      expect(page).to have_content(party_1.movie_id)
+      expect(page).to have_content(party_2.movie_id)
+      expect(page).to have_content(party_3.movie_id)
+    end
   end
 end
+

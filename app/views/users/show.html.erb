@@ -1,3 +1,15 @@
 <h1><%= "#{@user.name}'s Dashboard" %></h1><br>
 
-<%= button_to "Discover Movies", user_discover_index_path(@user), method: :get, data: { turbo: false } %>
+<%= button_to "Discover Movies", user_discover_index_path(@user), method: :get, data: { turbo: false } %><br>
+
+<section class = "viewing_parties">
+  <% @parties.each do |party| %>
+  <div style="border:solid; width:342px">
+    <ul>
+      <li>
+        <%= "#{party.movie_id}" %>
+      </li>
+    </ul>
+  </div>
+  <% end %>
+</section>
