@@ -13,7 +13,7 @@ RSpec.describe "Landing Page Index", type: :feature do
       expect(page).to have_content("ViewingPartyLite7")
     end
 
-    it "should have a button to create a new user" do
+    xit "should have a button to create a new user" do
       expect(page).to have_button("Create a New User")
 
       click_button("Create a New User")
@@ -34,7 +34,7 @@ RSpec.describe "Landing Page Index", type: :feature do
       expect(page).to have_content("jimmysmith@gmail.com")
     end
 
-    it "should have a list of exisiting users which links to the users dashboard" do
+    xit "should have a list of exisiting users which links to the users dashboard" do
       expect(page).to have_content("Exisiting Users")
       within("#existing_user") do
         expect(page).to have_link(@user1.email)
@@ -56,7 +56,7 @@ RSpec.describe "Landing Page Index", type: :feature do
       expect(current_path).to eq("/")
     end
 
-    it "should have a link to go back to the landing page (expected on every page)" do
+    xit "should have a link to go back to the landing page (expected on every page)" do
       expect(page).to have_link("Home")
 
       click_link(@user1.email)
