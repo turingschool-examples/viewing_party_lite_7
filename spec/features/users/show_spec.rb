@@ -7,7 +7,7 @@ RSpec.describe 'User Show Page', type: :feature do
 
       visit user_path(@user)
 
-      expect(page).to have_content("#{@user.name}"'s Dashboard')
+      expect(page).to have_content("#{@user.name}'s Dashboard")
     end
   end
 end
