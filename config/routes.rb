@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "landing#index"
 
-  resources :users, only: [:index, :create, :new, :show]
+  resources :users, only: [:index, :create, :new, :show] do
+    resources :user_parties, only: :index, path: 'discover', as: 'discover'
+  end
+
   get '/register', to: 'users#new', as: 'register'
   post '/register', to: 'users#create'
 end
