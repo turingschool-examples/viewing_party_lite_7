@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 
   get "/", to: "landing#index"
 
-  resources :users, only: [:new]
+  get "/register", to: "users#new"
 end
