@@ -2,8 +2,7 @@ require 'rails_helper'
 
 describe 'User Dashboard Page' do
   before :each do
-    @user1 = User.create!(name: 'Shawn', email: 'shawn@website.com')
-    @user2 = User.create!(name: 'Anthea', email: 'anthea@website.com')
+    test_data
     visit user_path(@user1)
   end
 
@@ -18,5 +17,8 @@ describe 'User Dashboard Page' do
 
   it 'has a section that lists viewing parties' do
     expect(page).to have_content('Viewing Parties')
+    expect(page).to have_content('Eraserhead')
+    expect(page).to have_content('E.T.')
+    expect(page).to_not have_content('Eternal Sunshine of the Spotless Mind')
   end
 end
