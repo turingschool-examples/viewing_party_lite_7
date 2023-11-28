@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   root "application#index"
+  get '/register', to: 'users#new'
 end
