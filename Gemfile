@@ -70,4 +70,7 @@ group :test do
   gem "capybara"
   gem "launchy"
   gem "simplecov"
+  gem "faker"
+  gem 'factory_bot_rails'
+  gem "shoulda-matchers"
 end
