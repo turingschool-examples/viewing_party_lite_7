@@ -12,9 +12,9 @@ RSpec.describe "Welcome Index" do
     expect(page).to have_link("Home")
     expect(page).to have_button("Create a New User")
 
-    expect(page).to have_content("Capitainlearyo")
-    expect(page).to have_content("Slick Ric")
-    expect(page).to have_content("Bob")
+    expect(page).to have_link("Capitainlearyo")
+    expect(page).to have_link("Slick Ric")
+    expect(page).to have_link("Bob")
 
   end
 end
