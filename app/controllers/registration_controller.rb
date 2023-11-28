@@ -10,8 +10,8 @@ class RegistrationController < ApplicationController
     if @user.save 
       redirect_to user_path(@user)
     else
-      flash.now[:alert] = "Email taken. Please enter a different email."
-      render :new 
+      flash[:alert] = "**Email taken. Please enter a different email.**"
+      redirect_to register_path
     end
   end
 

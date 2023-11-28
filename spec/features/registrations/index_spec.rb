@@ -22,8 +22,9 @@ RSpec.describe 'Registration Index Page', type: :feature do
       fill_in("Name", with: "Dinkleberg")
       fill_in("Email", with: "timmyturner1@gmail.com")
       click_button "Register"
+      save_and_open_page
       expect(current_path).to eq("/register")
-      expect(page).to have_content("Email taken. Please enter a different email.")
+      expect(page).to have_content("**Email taken. Please enter a different email.**")
     end
 
     it "Once the user registers they should be taken to a dashboard page '/users/:id', 
@@ -32,9 +33,10 @@ RSpec.describe 'Registration Index Page', type: :feature do
       fill_in("Name", with: "Dinkleberg")
       fill_in("Email", with: "Dinkleberg123@gmail.com")
       click_button "Register"
-      expect(current_path).to eq('/users/:id')
-      expect(page).to have_content("Dinkleberg")
-      expect(page).to have_content("Dinkleberg123@gmail.com")
+      new_user = User.find_by(name: "Dinkleberg")
+      expect(current_path).to eq(user_path(new_user))
+      expect(page).to have_content("Name: Dinkleberg")
+      expect(page).to have_content("Email: Dinkleberg123@gmail.com")
     end
   end
 end
