@@ -20,7 +20,6 @@ RSpec.describe "Landing Page", type: :feature do
     end
 
     it "shows existing users with links to their dashboards" do
-
     end
   end
 end
