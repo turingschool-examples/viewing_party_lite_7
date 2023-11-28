@@ -6,8 +6,8 @@ class CreateMovies < ActiveRecord::Migration[7.0]
       t.string :genre
       t.float :vote
       t.string :summary
-      t.string :cast  #, array: true
-      t.string :reviews  #, array: true
+      t.string :cast  # , array: true
+      t.string :reviews  # , array: true
 
       t.timestamps
     end
