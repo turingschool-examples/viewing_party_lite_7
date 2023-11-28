@@ -3,7 +3,7 @@
 <%= button_to "Discover Movies", user_discover_index_path(@user), method: :get, data: { turbo: false } %><br>
 
 <section class = "viewing_parties">
-  <% @parties.each do |party| %>
+  <% @user.parties.each do |party| %>
   <div style="border:solid; width:342px">
     <ul>
       <li>
