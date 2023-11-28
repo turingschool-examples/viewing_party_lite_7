@@ -1,10 +1,7 @@
-<%= link_to "Home", "/" %>
-<h1>Viewing Party</h1>
-
 <div class="register-form">
   <h2>Register a New User</h2>
 
-  <%= form_with form_with url: "/users", method: :post, local: true, turbo: false do |f| %>
+  <%= form_with url: "/users", method: :post, local: true, turbo: false do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
     <br/>
