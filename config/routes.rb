@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "landing#index"
 
-  resources :users, only: [:index]
+  resources :users, only: [:index, :create, :new, :show]
 end
