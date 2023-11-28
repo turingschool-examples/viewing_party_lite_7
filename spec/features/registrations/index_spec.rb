@@ -14,7 +14,7 @@ RSpec.describe 'Registration Index Page', type: :feature do
       expect(page).to have_content("Registration Form")
       expect(page).to have_content("Name")
       expect(page).to have_content("Email")
-      expect(page).to have_content("Register")
+      expect(page).to have_button("Register")
     end
 
     it "Email should be unique" do
