@@ -9,7 +9,7 @@ end
   it 'shows the name of the user next to dashboard' do
     visit "users/#{@user1.id}"
 
-    expect(page).to have_content("#{@user1.name} Dashboard")  
+    expect(page).to have_content("#{@user1.name}'s Dashboard")  
   end
   it 'has a discover movies button' do
     visit "users/#{@user1.id}"
