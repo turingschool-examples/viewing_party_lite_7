@@ -15,7 +15,7 @@ RSpec.describe 'User Show Page', type: :feature do
     it 'displays a button to discover movies which redirects the user to the users discover page' do
       visit user_path(@user.id)
 
-      expect(page). to have_button("Discover Movies")
+      expect(page).to have_button("Discover Movies")
 
       click_on("Discover Movies")
 
