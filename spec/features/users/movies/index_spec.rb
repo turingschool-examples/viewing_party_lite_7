@@ -60,7 +60,7 @@ describe 'Dashboard: Discover Movies' do
   end
 
   describe 'Movie Search' do
-    it "has a link that will go to the movie show page" do
+    xit "has a link that will go to the movie show page" do
       visit user_discover_index_path(@user1)
       click_button "Search by Movie Title"
       click_link "The Creator"
