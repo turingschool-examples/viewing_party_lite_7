@@ -1,4 +1,4 @@
-class MoviesService
+class MoviesSearch
   # should probably refactor conn and get into helper methods
   def top_movies
     conn = Faraday.new(url: 'https://api.themoviedb.org/3/') do |faraday|
