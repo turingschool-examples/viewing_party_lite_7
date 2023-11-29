@@ -40,6 +40,7 @@ RSpec.describe 'User Registration Page' do
       click_button "Register"
 
       expect(page).to have_content("Name or Email cannot be blank")
+      expect(page).to_not have_content('Email is already taken. Please choose a different one.')
       expect(current_path).to eq(new_user_path)
     end
 
@@ -51,6 +52,7 @@ RSpec.describe 'User Registration Page' do
       click_button "Register"
 
       expect(page).to have_content("Name or Email cannot be blank")
+      expect(page).to_not have_content('Email is already taken. Please choose a different one.')
       expect(current_path).to eq(new_user_path)
     end
 
@@ -62,6 +64,19 @@ RSpec.describe 'User Registration Page' do
       click_button "Register"
 
       expect(page).to have_content("Name or Email cannot be blank")
+      expect(page).to_not have_content('Email is already taken. Please choose a different one.')
+      expect(current_path).to eq(new_user_path)
+    end
+
+    it "Cannot have a duplicate email" do
+      visit new_user_path
+
+      fill_in "Name", with: "Sherlock"
+      fill_in "Email", with: "example1@yahoo.com"
+      click_button "Register"
+
+      expect(page).to have_content('Email is already taken. Please choose a different one.')
+      expect(page).to_not have_content("Name or Email cannot be blank")
       expect(current_path).to eq(new_user_path)
     end
   end
