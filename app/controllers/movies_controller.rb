@@ -9,7 +9,7 @@ class MoviesController < ApplicationController
     @movies = if params[:q] == "top_rated"
                 MovieFacade.top_rated
               else
-                # facade.searched_movies(params[:q])
+                MovieFacade.searched_movies(params[:q])
               end
   end
 end

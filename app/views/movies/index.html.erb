@@ -2,3 +2,7 @@
 
 <%= button_to "Top Rated Movies", "/users/#{params[:id]}/movies", params: { q: "top_rated" }, method: :get %>
 
+<%= form_with url: "/users/#{params[:id]}/movies", method: :get, data: { turbo: false } do |f| %>
+  <%= f.text_field :q, placeholder: "search" %>
+  <%= f.submit "Find Movies" %>
+<% end %>
