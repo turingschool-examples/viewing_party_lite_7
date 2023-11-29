@@ -1,0 +1,12 @@
+<%= render partial: "shared/nav" %>
+<br>
+<%= render partial: "shared/button_pri", locals: {
+  label: "Discover Page",
+  path: discover_user_path(@user),
+  method: :get,
+  params: nil
+} %>
+<br>
+<% @movies.each do | movie | %>
+
+<% end %>
