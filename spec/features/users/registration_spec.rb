@@ -24,7 +24,6 @@ RSpec.describe 'User Registration Page' do
     fill_in :email, with: 'xanders_fake_email@gmail.com'
     click_button('Register')
     expect(current_path).to eq('/register')
-    save_and_open_page
     expect(page).to have_content('Error: Email already in use!')
   end
 end
