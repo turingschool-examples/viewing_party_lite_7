@@ -1,1 +1,6 @@
 <p><%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %></p><br>
+
+<%@movies.each do |movie|%>
+<%= movie[0]%>
+<%= "Vote Average: #{movie[1]}"%><br>
+<%end%>

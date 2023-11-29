@@ -15,7 +15,21 @@ class Movie < ApplicationRecord
     data[:results].each do |movie|
       movies[movie[:title]] = movie[:vote_average].round(1)
     end
-    require 'pry'; binding.pry
+    movies
+  end
+
+  def self.search(search_params)
+    conn = Faraday.new(url: "https://api.themoviedb.org/3/search/movie?query=#{search_params}&include_adult=false&language=en-US&page=2") do |faraday|
+      faraday.headers["Authorization"] = Rails.application.credentials.tmdb[:key]
+    end
+    
+    response = conn.get
+    data = JSON.parse(response.body, symbolize_names: true)
+    movies = Hash.new
+    data[:results].each do |movie|
+      movies[movie[:title]] = movie[:vote_average].round(1)
+    end
+    movies
   end
 
 end
