@@ -25,6 +25,6 @@ RSpec.describe 'User Dashboard Page' do
     expect(page).to have_button("Discover Movies")
     click_button("Discover Movies")
 
-    expect(current_path).to eq(user_discover_index_path(@user3))
+    expect(current_path).to eq("/users/#{@user3.id}/discover")
   end
 end

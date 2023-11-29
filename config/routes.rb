@@ -11,4 +11,6 @@ Rails.application.routes.draw do
     # resources :discover, only: [:index, :search]
   end
   get "/users/:id/discover", to: "movies#index"
+  get "/users/:id/movies", to: "movies#search"
+  
 end
