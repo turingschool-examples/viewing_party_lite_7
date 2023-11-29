@@ -3,7 +3,7 @@
 # The generated `.rspec` file contains `--require spec_helper` which will cause
 # this file to always be loaded, without a need to explicitly require it in any
 # files.
-#
+require 'webmock/rspec'
 
 def test_data
   @user1 = User.create!(name: "Shawn", email: "shawn@website.com")
