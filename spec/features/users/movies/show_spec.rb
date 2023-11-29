@@ -37,7 +37,7 @@ RSpec.describe 'Movie Results' do
          to_return(status: 200, body: reviews_response, headers: {})
 
     visit "/users/#{@user1.id}/movies/268"
-    click_link "Go to Landing Page"
+    click_link "Go back to Landing Page"
     expect(current_path).to eq("/")
 
     visit "/users/#{@user1.id}/movies/268"
@@ -71,13 +71,10 @@ RSpec.describe 'Movie Results' do
     expect(page).to have_content("Tracey Walter")
 
     expect(page).to have_content("Name: John Chard")  
-    expect(page).to have_content("Rating: 8.0")   
-    expect(page).to have_content("ID: 579b3420c3a3686e13000085")   
-    expect(page).to have_content("URL: https://www.themoviedb.org/review/579b3420c3a3686e13000085")   
+    expect(page).to have_content("Rating: 8.0")    
+    expect(page).to have_content("Review: There will never be a greater batman or movie ever. The original is still the only good batman movie out there. They keep trying but they had it right the 1st time, and they messed it up now.")   
 
     expect(page).to have_content("Name: Albert")  
-    expect(page).to have_content("Rating: 4.0")   
-    expect(page).to have_content("ID: 599b09dfc3a3681dde000414")   
-    expect(page).to have_content("URL: https://www.themoviedb.org/review/599b09dfc3a3681dde000414")  
+    expect(page).to have_content("Rating: 4.0")     
   end
 end
