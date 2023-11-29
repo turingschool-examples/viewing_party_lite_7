@@ -17,4 +17,12 @@ RSpec.describe 'user discover results page', type: :feature do
     click_button('Discover Top Rated Movies')
     expect(page).to have_content('Average Rating', count: 20)
   end
+
+  it 'has a button to return to discover page' do
+    visit user_discover_path(@user1)
+    click_button('Discover Top Rated Movies')
+    expect(page).to have_button('Back to Discover Page')
+    click_button('Back to Discover Page')
+    expect(current_path).to eq(user_discover_path(@user1))
+  end
 end

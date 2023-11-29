@@ -1,19 +1,16 @@
-
-<%# button to return to discover %>
-<%= link_to "Back to Welcome Page", root_path %><br/>
+<%= link_to 'Back to Welcome Page', root_path %><br>
+<%= button_to 'Back to Discover Page', user_discover_path(@user), method: :get, data: { turbo: false }, local: true %><br>
 
 <section>
   <% if @top_rated.present? %>
     <% @top_rated.take(20).each do |movie| %>
       <%= link_to movie.title, user_movies_path(@user, movie) %>
       <p>Average Rating: <%= movie.vote_avg %><p>
-      <br>
     <% end %>
   <% elsif @search_result.present? %>
     <% @search_result.take(20).each do |movie| %>
       <%= link_to movie.title, user_movies_path(@user, movie) %>
       <p>Average Rating: <%= movie.vote_avg %><p>
-      <br>
     <% end %>
   <% end %>
 <section>
