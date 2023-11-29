@@ -12,6 +12,15 @@ RSpec.describe 'user dashboard page', type: :feature do
       expect(page).to have_content("Parties I'm Hosting")
       expect(page).to have_content("Parties I'm Invited To")
     end
-    save_and_open_page
+  end
+
+  it 'has a button to the Discover Movies page' do
+    user = User.create(name: 'Kam', email: 'kameronk013@gmail.com')
+
+    visit "/users/#{user.id}"
+
+    expect(page).to have_button('Discover Movies')
+    click_button('Discover Movies')
+    expect(current_path).to eq(user_discover_path(user.id))
   end
 end

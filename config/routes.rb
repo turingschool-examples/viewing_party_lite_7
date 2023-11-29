@@ -5,5 +5,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :users, only: [:show]
+  get "users/:id", to: "users#show"
+  get '/users/:id/discover', to: 'users/discovers#index', as: :user_discover
 end
