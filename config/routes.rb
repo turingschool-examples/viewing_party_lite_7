@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :users, only: [:new, :create, :show] do
-    resources :discover, only: [:index]
+    get "/users/:id/discover", to: "movies#index"
+    # resources :discover, only: [:index, :search]
   end
   
 end
