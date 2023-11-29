@@ -5,7 +5,7 @@ RSpec.describe 'user can filter top 20 rated movies', type: :feature do
     @user = create(:user)
   end
 
-  xit 'Allows user to see top 20 rated movies' do
+  it 'Allows user to see top 20 rated movies', :vcr do
     visit user_discover_index_path(@user)
 
     click_button 'Top Rated Movies'

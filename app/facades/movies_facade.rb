@@ -13,4 +13,14 @@ class MoviesFacade
       Movie.new(data)
     end
   end
+
+  def top_rated
+    service = MoviesService.new
+ 
+    data = service.top_rated_20
+
+    results = data[:results].map do |data|
+      Movie.new(data)
+    end
+  end
 end

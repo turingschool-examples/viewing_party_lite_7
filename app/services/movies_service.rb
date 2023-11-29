@@ -12,4 +12,8 @@ class MoviesService < ApplicationService
   def movie_search(keyword)
     json_parse(get_url("search/movie?query=#{keyword}"))
   end
+
+  def top_rated_20
+    json_parse(get_url("movie/top_rated"))
+  end
 end
