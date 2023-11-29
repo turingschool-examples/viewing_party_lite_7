@@ -63,7 +63,7 @@ describe 'Dashboard: Discover Movies' do
     click_link "The Creator"
 
     creator_movie = Movie.all.find{|m| m.title == "The Creator"}
-    expect(current_path).to eq(user_movie_path(@user1, creator_movie))
+    expect(current_path).to eq(user_movie_path(@user1, creator_movie.id))
   end
 
   # Still need to test for searches
