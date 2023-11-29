@@ -4,3 +4,15 @@
 <p><%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %></p><br>
 
 <%= button_to "Create Viewing Party for #{@movie[:title]}" %>
+
+<p>Vote Average: <%= @movie[:vote_average]%></p>
+<p>Runtime: <%= @movie[:runtime]%></p>
+<p>Genre: <%= @movie[:genre]%></p>
+<p>Summary: <%= @movie[:summary]%></p>
+<p>Cast: <% @movie[:cast].each do |cast| %></p>
+<p><%= "#{cast[0]} as #{cast[1]}" %></p>
+<% end %>
+<%= "#{@movie[:review_count]} Reviews" %> <br> <br>
+<% @movie[:reviews].each do |review| %>
+  <%= "#{review[0]}: #{review[1]}" %> <br> <br>
+<% end %>

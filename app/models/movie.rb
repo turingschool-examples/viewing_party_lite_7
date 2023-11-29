@@ -40,8 +40,52 @@ class Movie < ApplicationRecord
     response = conn.get
     data = JSON.parse(response.body, symbolize_names: true)
     details = Hash.new
-    details[:title] = data[:title]
+      details[:title] = data[:title]
+      details[:runtime] = Movie.hrmin(data[:runtime])
+      details[:vote_average] = data[:vote_average]
+      details[:genre] = data[:genres].map { |genre| genre[:name] }.join(', ')
+      details[:summary] = data[:overview]
+    
+    conn = Faraday.new(url: "https://api.themoviedb.org/3/movie/#{movie_id}/credits") do |faraday|
+      faraday.headers["Authorization"] = Rails.application.credentials.tmdb[:key]
+    end
+      
+    response = conn.get
+    data = JSON.parse(response.body, symbolize_names: true)
+
+    details[:cast] = Movie.cast(data[:cast])
+    
+    conn = Faraday.new(url: "https://api.themoviedb.org/3/movie/#{movie_id}/reviews") do |faraday|
+      faraday.headers["Authorization"] = Rails.application.credentials.tmdb[:key]
+    end
+    response = conn.get
+    data = JSON.parse(response.body, symbolize_names: true)
+      
+      details[:reviews] = Movie.reviews(data[:results])
+      details[:review_count] = data[:total_results]
     details
+  end
+
+  def self.hrmin(param)
+    hr = param / 60
+    min = param % 60
+    "#{hr}hr #{min}min"
+  end
+
+  def self.cast(arg)
+    count = 0
+    cast = Hash.new
+    until count == 10
+      cast[arg[count][:name]] = arg[count][:character]
+      count += 1
+    end
+    cast
+  end
+
+  def self.reviews(reviews)
+    reviews.map do |review|
+      [review[:author], review[:content]]
+    end
   end
 
 end
