@@ -6,7 +6,7 @@ class Users::Discover::ResultsController < ApplicationController
     movies_search = MoviesSearch.new
     if params[:top_rated].present?
       @top_rated = movies_search.top_movies
-    elsif params[:search].present?
+    elsif params[:title].present?
       @search_result = movies_search.search_movies(params[:title])
     end
   end

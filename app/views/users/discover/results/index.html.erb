@@ -1,15 +1,16 @@
-<%# limit search results to 20 items %>
+
 <%# button to return to discover %>
+<%= link_to "Back to Welcome Page", root_path %><br/>
 
 <section>
   <% if @top_rated.present? %>
-    <% @top_rated.each do |movie| %>
+    <% @top_rated.take(20).each do |movie| %>
       <%= link_to movie.title, user_movies_path(@user, movie) %>
       <p>Average Rating: <%= movie.vote_avg %><p>
       <br>
     <% end %>
   <% elsif @search_result.present? %>
-    <% @search_result.each do |movie| %>
+    <% @search_result.take(20).each do |movie| %>
       <%= link_to movie.title, user_movies_path(@user, movie) %>
       <p>Average Rating: <%= movie.vote_avg %><p>
       <br>

@@ -1,3 +1,5 @@
+<%= link_to "Back to Welcome Page", root_path %><br/>
+
 <section><%= button_to 'Discover Top Rated Movies', user_movies_path(@user), method: :get, params: { top_rated: true }, data: { turbo: false }, local: true %><section>
 
 <section id='search'>
