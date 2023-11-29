@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       redirect_to user_path(new_user)
     else
       flash[:alert] = "Error: #{error_message(new_user.errors)}"
-      render 'new'
+      redirect_to register_user_path
     end
   end
 
