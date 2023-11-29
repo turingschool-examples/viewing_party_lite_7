@@ -1,7 +1,7 @@
 require "rails_helper"
 require_relative "../../app/services/tmdb_service"
 
-describe TMDBService do
+RSpec.describe TMDBService do
   context "class methods" do
     context "#top_rated" do
       it "returns top movies", :vcr do

@@ -1,16 +1,23 @@
 class Movie
-  attr_reader :title,
-              :duration,
-              :average_vote,
-              :genre,
-              :cast,
-              :reviews,
-              :summary
+  attr_reader :id,
+    :title,
+    :vote_average,
+    :overview,
+    :runtime,
+    :genres,
+    :cast,
+    :reviews
 
   def initialize(attributes)
-    @name = attributes[:name]
-    @role = attributes[:role]
-    @party = attributes[:party]
-    @district = attributes[:district]
+    @id = attributes[:id]
+    @title = attributes[:title]
+    @vote_average = attributes[:vote_average]
+    @overview = attributes[:overview]
+    @poster_path = attributes[:poster_path]
+  end
+
+  def set_genres_and_duration(data)
+    @genres = data[:genres].map { |genre| genre[:name] }
+    @runtime = data[:runtime]
   end
 end
