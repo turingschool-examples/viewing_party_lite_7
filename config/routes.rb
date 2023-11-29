@@ -10,4 +10,6 @@ Rails.application.routes.draw do
     resources :discover, only: [:index]
     resources :movies, only: [:index, :show]
   end
+
+  get "/users/:user_id/movies/:movid_id/viewing-party/new", to: "viewing_parties#new"
 end
