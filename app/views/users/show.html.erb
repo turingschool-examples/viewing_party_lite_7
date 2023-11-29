@@ -5,4 +5,7 @@
 
 <div id="user_parties">
   <h3>These are your Viewing Parties</h3>
+  <% @user.parties.uniq.each do |party| %>
+    <%= party.name %> <br>
+  <% end %>
 </div>
