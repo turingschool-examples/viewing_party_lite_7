@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   end
 
   def discover
-    
+    @user = User.find(params[:id])
+
   end
 
   def show
