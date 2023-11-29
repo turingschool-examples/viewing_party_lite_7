@@ -1,8 +1,15 @@
 <%= render partial: "shared/nav" %>
-
+<br>
 <h2 class="container"><%= @user.name %>'s Dashboard</h2>
 <br>
-<div class="container">
-  <%= button_to "Discover Movies", discover_user_path(@user), method: :get, class: "button" %>
-</div>
 <h4>Email: <%= @user.email %></h4>
+<br>
+<div class="container">
+  <%= button_to "Discover Movies", discover_user_path(@user), method: :get, data: {turbo: false}, class: "button" %>
+</div>
+<br>
+<hr>
+<br>
+<section id="viewing_parties">
+  
+</section>
