@@ -23,16 +23,38 @@ describe 'Discover Movies Page' do
   end
 
   it "user can see the form to search by title and a 'Search by Movie Title' button" do
-    expect(page).to have_field(:search_by_title)
+    expect(page).to have_field(:query)
     expect(page).to have_button("Search by Movie Title")
   end
 
   it "when the user clicks the 'Top Rated Movies' button it takes the user to the movies results page" do
+    popular_movies_fixture = File.read("spec/fixtures/popular_movies.json")
+
+    stub_request(:get, "https://api.themoviedb.org/3/movie/popular?api_key=67af88004fc9a5fe47497bb47e0dc073").
+         with(
+           headers: {
+          'Accept'=>'*/*',
+          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'User-Agent'=>'Faraday v2.7.12'
+           }).
+         to_return(status: 200, body: popular_movies_fixture, headers: {})
+
     click_button "Top Rated Movies"
     expect(current_path).to eq(user_results_path(@user1))
   end
 
   it "when the user clicks the 'Search by Movie Title' button it takes the user to the movies results page" do
+    popular_movies_fixture = File.read("spec/fixtures/popular_movies.json")
+
+    stub_request(:get, "https://api.themoviedb.org/3/movie/popular?api_key=67af88004fc9a5fe47497bb47e0dc073").
+    with(
+      headers: {
+     'Accept'=>'*/*',
+     'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+     'User-Agent'=>'Faraday v2.7.12'
+      }).
+    to_return(status: 200, body: popular_movies_fixture, headers: {})
+
     click_button "Search by Movie Title"
     expect(current_path).to eq(user_results_path(@user1))
   end
