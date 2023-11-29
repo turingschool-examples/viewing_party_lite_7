@@ -73,6 +73,8 @@ group :test do
   gem "launchy"
   gem "simplecov"
   gem "faker"
-  gem 'factory_bot_rails'
+  gem "factory_bot_rails"
   gem "shoulda-matchers"
+  gem "webmock"
+  gem "vcr"
 end
