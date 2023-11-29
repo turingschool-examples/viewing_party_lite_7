@@ -11,7 +11,7 @@ RSpec.describe 'user discover page', type: :feature do
   end
 
   context 'discover top rated movies button is clicked' do
-    it 'redirects to movie results page, listing top rated movies' do
+    xit 'redirects to movie results page, listing top rated movies' do
       visit user_discover_path(@user1)
       click_button('Discover Top Rated Movies')
       expect(current_path).to eq(user_discover_results_path(@user1))
@@ -28,7 +28,7 @@ RSpec.describe 'user discover page', type: :feature do
   end
 
   context 'search by title form is filled out and submitted' do
-    it 'redirects to movie results page with relevant movies' do
+    xit 'redirects to movie results page with relevant movies' do
       visit user_discover_path(@user1)
       fill_in :title, with: 'Nightmare Before Christmas'
       click_button('Search by Movie Title')

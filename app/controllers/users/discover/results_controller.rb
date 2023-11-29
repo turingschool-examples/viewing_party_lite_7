@@ -1,7 +1,7 @@
 class Users::Discover::ResultsController < ApplicationController
   def index
     conn = Faraday.new(url: 'https://api.themoviedb.org/3/') do |faraday|
-      faraday.params['api_key'] = Rails.application.credentials.tmdb[:key]
+      faraday.headers[:Authorization] = "Bearer #{Rails.application.credentials.tmdb[:key]}"
     end
     if params[:top_rated].present?
       response = conn.get('movie/top_rated')
