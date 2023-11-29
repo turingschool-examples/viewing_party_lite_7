@@ -1,10 +1,12 @@
-<section><%= button_to 'Discover Top Rated Movies', user_discover_results_path(@user), method: :get, data: { turbo: false }, local: true %><section>
+<%= link_to "Back to Welcome Page", root_path %><br/>
+
+<section><%= button_to 'Discover Top Rated Movies', user_movies_path(@user), method: :get, params: { top_rated: true }, data: { turbo: false }, local: true %><section>
 
 <section id='search'>
-  <%= form_with url: user_discover_results_path(@user), method: :get, data: { turbo: false }, local: true do |form| %>
+  <%= form_with url: user_movies_path(@user), method: :get, data: { turbo: false }, local: true do |form| %>
     <%= form.label :title %>
     <%= form.text_field :title %>
-
+    <%# <%= form.hidden_field :search, :value => params[:search] %>
     <%= form.submit 'Search by Movie Title' %>
   <% end %>
 <section>
