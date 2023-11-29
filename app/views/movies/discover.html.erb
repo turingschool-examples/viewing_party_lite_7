@@ -1,0 +1,12 @@
+<%= render partial: "shared/nav" %>
+<br>
+<div class="container">
+  <h2>Discover Movies</h2>
+</div>
+<br>
+<%= render partial: "shared/button_pri", locals: {
+  label: "Find Top Rated Movies",
+  path: user_movies_path(@user),
+  method: :get,
+  params: {q: "top 20rated"}
+} %>
