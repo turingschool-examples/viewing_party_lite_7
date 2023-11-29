@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "Root" do
+RSpec.describe "New" do
   before :each do
     test_data 
   end
