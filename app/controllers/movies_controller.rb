@@ -7,6 +7,10 @@ class MoviesController < ApplicationController
     end
   end
 
+  def show
+    @facade = MovieDetailsFacade.new(params[:id]).details
+  end
+
   private
 
   def top_20
@@ -19,7 +23,4 @@ class MoviesController < ApplicationController
     @movies = json[:results]
   end
 
-  def show
-    @facade = MovieDetailsFacade.new(params[:id])
-  end
 end
