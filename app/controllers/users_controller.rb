@@ -6,10 +6,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new({ name: params[:name], email: params[:email] })
-    @user.save
-
-    redirect_to '/'
+    @user = User.new({name: params[:name], email: params[:email]})
+    
+    if @user.save
+      redirect_to "/users/#{@user.id}"
+    else 
+      flash.notice = "Please Fill in All Fields/Email is already taken"
+      redirect_to "/register"
+    end 
   end
 
   def show
