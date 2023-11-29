@@ -425,6 +425,16 @@
           null
         ]
       },
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/spec/poros/movie_spec.rb": {
+        "lines": [
+
+        ]
+      },
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/spec/services/movie_search_spec.rb": {
+        "lines": [
+
+        ]
+      },
       "/Users/kzolman/3mod/projects/viewing_party_lite_7/app/controllers/registration_controller.rb": {
         "lines": [
           1,
@@ -530,10 +540,6 @@
           1,
           4,
           4,
-          null,
-          4,
-          4,
-          4,
           80,
           null,
           null,
@@ -547,6 +553,29 @@
           1,
           1,
           2,
+          null,
+          null,
+          null,
+          1,
+          4,
+          4,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          4,
+          4,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           null
@@ -564,6 +593,6 @@
         ]
       }
     },
-    "timestamp": 1701298687
+    "timestamp": 1701301171
   }
 }
