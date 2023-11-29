@@ -11,23 +11,22 @@ describe 'Dashboard: Discover Movies' do
     expect(current_path).to eq(user_discover_index_path(@user1))
   end
 end
-
+ 
 describe 'Discover Movies Page' do
   before :each do
     test_data
     
     popular_movies_fixture = File.read("spec/fixtures/popular_movies.json")
-    stub_request(:get, "https://api.themoviedb.org/3/movie/popular").
-         with(
-           headers: {
-          'Accept'=>'*/*',
-          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-          'User-Agent'=>'Faraday v2.7.12',
-          'X-Api-Key'=>ENV["API_KEY"]
-           }).
-         to_return(status: 200, body: popular_movies_fixture, headers: {})
+    stub_request(:get, "https://api.themoviedb.org/3/movie/popular?api_key=#{ENV["API_KEY"]}").
+    with(
+      headers: {
+            'Accept'=>'*/*',
+            'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+            'User-Agent'=>'Faraday v2.7.12'
+      }).
+    to_return(status: 200, body: popular_movies_fixture, headers: {})
 
-        visit user_discover_index_path(@user1)
+    visit user_discover_index_path(@user1)
   end
 
   it "when visiting the discover path, user can see a button to 'Discover Top Rated Movies'" do

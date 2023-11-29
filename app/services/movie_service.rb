@@ -3,8 +3,7 @@ class MovieService
     conn = Faraday.new("https://api.themoviedb.org/3/")
 
     response = conn.get("movie/popular") do |faraday|
-      faraday.headers["X-API-Key"] = ENV["API_KEY"]
-      # I couldn't get it to accept the credentials and don't want to send up my API key. This is NOT working
+      faraday.params["api_key"] = ENV["API_KEY"]
     end
 
     movie_data = JSON.parse(response.body, symbolize_names: :true)
@@ -18,8 +17,7 @@ class MovieService
     conn = Faraday.new("https://api.themoviedb.org/3/")
 
     response = conn.get("search/movie") do |faraday|
-      faraday.headers["X-API-Key"] = ENV["API_KEY"]
-      # I couldn't get it to accept the credentials and don't want to send up my API key. This is NOT working
+      faraday.params["api_key"] = ENV["API_KEY"]
       faraday.params["query"] = search_params
     end
 
