@@ -1,10 +1,12 @@
 <%= render partial: "shared/nav" %>
 <br>
-<h2><%= @user.name %>'s Dashboard</h2>
+<h2 class="container"><%= @user.name %>'s Dashboard</h2>
 <br>
 <h4>Email: <%= @user.email %></h4>
 <br>
-<%= button_to "Discover Movies", user_discover_path(@user), method: :get, data: {turbo: false} %>
+<div class="container">
+  <%= button_to "Discover Movies", discover_user_path(@user), method: :get, data: {turbo: false}, class: "button" %>
+</div>
 <section id="viewing_parties">
   
 </section>
