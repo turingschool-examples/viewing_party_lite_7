@@ -8,3 +8,10 @@
 <p>Runtime: <%= @movie.runtime_in_hours_and_minutes %></p>
 <p>Genres: <%= @movie.genres_as_list.to_sentence %></p>
 <p>Summary: <%= @movie.summary %></p>
+
+<h3>Cast</h3>
+<ul>
+  <% @cast.each do |actor| %>
+    <li><%= actor.name %>: <%= actor.character %></li>
+  <% end %>
+</ul>

@@ -16,55 +16,57 @@ describe 'Dashboard: Discover Movies' do
 
   end
 
-  it 'has the title as a link to movie details page' do
+  describe 'Top-Rated Movies' do
+    it 'has the title as a link to movie details page' do
 
-    visit user_path(@user1)
-    click_button "Discover Movies"
-    click_button "Discover Top Rated Movies"
-    expect(page).to have_content("Vote Average:")
-    expect(page).to have_link("The Super Mario Bros. Movie")
+      visit user_path(@user1)
+      click_button "Discover Movies"
+      click_button "Discover Top Rated Movies"
+      expect(page).to have_content("Vote Average:")
+      expect(page).to have_link("The Super Mario Bros. Movie")
+    end
+
+    it "has the vote average of the movie" do
+
+      visit user_path(@user1)
+      click_button "Discover Movies"
+      click_button "Discover Top Rated Movies"
+
+      expect(page).to have_content("Vote Average: 7.747")
+    end
+
+    it "has 20 results" do
+
+      visit user_path(@user1)
+      click_button "Discover Movies"
+      click_button "Discover Top Rated Movies"
+      expect(current_path).to eq(user_results_path(@user1))
+
+      expect(page).to have_content("20 Results")
+
+    end
+
+    it "has a button to return to the discover page" do
+
+      visit user_path(@user1)
+      click_button "Discover Movies"
+      click_button "Discover Top Rated Movies"
+      expect(page).to have_button("Return to Discover Page")
+
+      click_button("Return to Discover Page")
+
+      expect(current_path).to eq(user_discover_index_path(@user1))
+    end
   end
 
-  it "has the vote average of the movie" do
+  describe 'Movie Search' do
+    it "has a link that will go to the movie show page" do
+      visit user_discover_index_path(@user1)
+      click_button "Search by Movie Title"
+      click_link "The Creator"
 
-    visit user_path(@user1)
-    click_button "Discover Movies"
-    click_button "Discover Top Rated Movies"
-
-    expect(page).to have_content("Vote Average: 7.747")
+      creator_movie = Movie.all.find{|m| m.id == "The Creator"}
+      expect(current_path).to eq(user_movie_path(@user1, creator_movie.id))
+    end
   end
-
-  it "has 20 results" do
-
-    visit user_path(@user1)
-    click_button "Discover Movies"
-    click_button "Discover Top Rated Movies"
-    expect(current_path).to eq(user_results_path(@user1))
-
-    expect(page).to have_content("20 Results")
-
-  end
-
-  it "has a button to return to the discover page" do
-
-    visit user_path(@user1)
-    click_button "Discover Movies"
-    click_button "Discover Top Rated Movies"
-    expect(page).to have_button("Return to Discover Page")
-
-    click_button("Return to Discover Page")
-
-    expect(current_path).to eq(user_discover_index_path(@user1))
-  end
-
-  it "has a link that will go to the movie show page" do
-    visit user_discover_index_path(@user1)
-    click_button "Search by Movie Title"
-    click_link "The Creator"
-
-    creator_movie = Movie.all.find{|m| m.title == "The Creator"}
-    expect(current_path).to eq(user_movie_path(@user1, creator_movie.id))
-  end
-
-  # Still need to test for searches
 end
