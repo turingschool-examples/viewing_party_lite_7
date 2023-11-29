@@ -19,6 +19,17 @@ RSpec.describe 'new user', type: :feature do
       expect(page).to have_field('Email')
       expect(page).to have_selector(:link_or_button, 'Create New User')    
     end
+
+    it 'They fill in form with information, email (unique), submit, redirects to user show page' do
+      fill_in 'Name', with: "Sam"
+      fill_in 'Email', with: "sam@email.com"
+      click_button 'Create New User'
+
+      new_user = User.last
+
+      expect(current_path).to eq(user_path(new_user))
+    end
+
   end
 
 end
