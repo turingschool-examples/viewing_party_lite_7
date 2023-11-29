@@ -26,8 +26,6 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Date:
-      - Wed, 29 Nov 2023 21:51:21 GMT
       Server:
       - openresty
       X-Memc:
@@ -38,21 +36,23 @@ http_interactions:
       - '224'
       X-Memc-Expires:
       - '27724'
+      Date:
+      - Wed, 29 Nov 2023 22:32:20 GMT
       Etag:
       - W/"132ac8d3c9677fdf8763d18a3520bab4"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
-      - Miss from cloudfront
+      - RefreshHit from cloudfront
       Via:
-      - 1.1 c11dc3a4786e038ddffb5e925a892302.cloudfront.net (CloudFront)
+      - 1.1 9367844cfa8aaebd6a8f032ea2e7d4ec.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - DqmjfGgAQk0nzYQh5QwwWDyadG5gUf70tsiAlBRdIKy1G-it97z8zw==
+      - BNNR7VAtq6-WbV86tdTJUgPngyaBKbQPrTUvhAbdkZBGWYd8J1VVdg==
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/sRvXNDItGlWCqtO3j6wks52FmbD.jpg","belongs_to_collection":{"id":2150,"name":"Shrek
@@ -66,5 +66,53 @@ http_interactions:
         Animation","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"2001-05-18","revenue":487853320,"runtime":90,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"The
         greatest fairy tale never told.","title":"Shrek","video":false,"vote_average":7.732,"vote_count":15979}'
-  recorded_at: Wed, 29 Nov 2023 21:51:20 GMT
+  recorded_at: Wed, 29 Nov 2023 22:32:20 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/reviews
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - "<TMDB_API_KEY>"
+      User-Agent:
+      - Faraday v2.7.11
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - text/html
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 29 Nov 2023 22:32:20 GMT
+      Server:
+      - openresty
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 730d0b7e5f5de3b777d629325ecdb89c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P3
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - qjM_4w-xv4C62vZq5N0Zwd20_01-RYZkGlH5LJld3v7kF1xLUyoDLA==
+    body:
+      encoding: ASCII-8BIT
+      string: "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404
+        Not Found</h1></center>\r\n<hr><center>openresty</center>\r\n</body>\r\n</html>\r\n"
+  recorded_at: Wed, 29 Nov 2023 22:32:21 GMT
 recorded_with: VCR 6.2.0

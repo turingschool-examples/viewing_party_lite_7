@@ -40,8 +40,40 @@ class Movie < ApplicationRecord
     response = conn.get
     data = JSON.parse(response.body, symbolize_names: true)
     details = Hash.new
-    details[:title] = data[:title]
+      details[:title] = data[:title]
+      details[:runtime] = Movie.hrmin(data[:runtime])
+      details[:vote_average] = data[:vote_average]
+      details[:genre] = data[:genres].map { |genre| genre[:name] }.join(', ')
+      details[:summary] = data[:overview]
+    
+    response = conn.get("/reviews")
+    data = JSON.parse(response.body, symbolize_names: true)
+
+    details[:cast] = Movie.cast(data[:cast])
+    
+    response = conn.get("/credits")
+    data = JSON.parse(response.body, symbolize_names: true)
+      
+      details[:reviews] = data[:reviews]
+      details[:review_count] = data[:review_count]
     details
+  end
+
+  def self.hrmin(param)
+    hr = param / 60
+    min = param % 60
+    "#{hr}hr #{min}min"
+  end
+
+  def self.cast(arg)
+    count = 0
+    cast = Hash.new
+    until count == 10
+      cast[arg[count][:name]] = arg[count][:character]
+      count += 1
+    end
+    cast
+    require 'pry'; binding.pry
   end
 
 end

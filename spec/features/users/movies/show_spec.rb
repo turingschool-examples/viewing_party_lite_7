@@ -29,10 +29,11 @@ RSpec.describe "Movies Show" do
 
     visit "/users/#{@user1.id}/movies/808"
     
-    # expect(page).to have_content("Shrek")
-    # expect(page).to have_content("The Swan Princess: Far Longer Than Forever")
-    # expect(page).to have_content("A Winter Princess")
-    # expect(page).to have_content("One Piece: The Desert Princess and the Pirates: Adventure in Alabasta")
+    expect(page).to have_content("Shrek")
+    expect(page).to have_content("Vote Average: 7.7")
+    expect(page).to have_content("Runtime: 1hr 30min")
+    expect(page).to have_content("Genre: Animation, Comedy, Fantasy, Adventure, Family")
+    expect(page).to have_content("Summary: It ain't easy bein' green -- especially if you're a likable (albeit smelly) ogre named Shrek. On a mission to retrieve a gorgeous princess from the clutches of a fire-breathing dragon, Shrek teams up with an unlikely compatriot -- a wisecracking donkey.")
     
 
   end
