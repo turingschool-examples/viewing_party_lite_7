@@ -14,6 +14,8 @@ RSpec.describe 'User Dashboard Page' do
 
     within("div#user_parties") do
       expect(page).to have_content("These are your Viewing Parties")
+      expect(page).to have_content("party1")
+      expect(page).to have_content("party2")
     end
   end
 
