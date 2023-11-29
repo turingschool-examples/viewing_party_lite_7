@@ -1,4 +1,4 @@
-RSpec.describe 'Discover Movies Page' do
+RSpec.describe 'Discover Movies Show Page Page' do
   before(:each) do
     load_test_data
   end
