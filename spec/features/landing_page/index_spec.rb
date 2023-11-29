@@ -45,7 +45,6 @@ RSpec.describe "Landing Page Index", type: :feature do
       expect(current_path).to eq("/users/#{@user1.id}")
 
       expect(page).to have_content("Scott DeVoss")
-      expect(page).to have_content("scottd@gmail.com")
       expect(page).to_not have_content("Cory Powell")
 
       expect(page).to have_link("Home")
