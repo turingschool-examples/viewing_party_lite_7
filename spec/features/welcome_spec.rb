@@ -10,7 +10,10 @@ RSpec.describe "Welcome Page" do
     expect(page).to have_content("Viewing Party")
     expect(page).to have_button("Create a New User")
     expect(page).to have_content("Existing Users")
+    
     expect(page).to have_link("Home")
+    click_link("Home")
+    expect(current_path).to eq(root_path)
 
     within "#users" do 
       expect(page).to have_link("not_xanders_email@turing.edu")
