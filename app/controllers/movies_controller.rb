@@ -10,6 +10,7 @@ class MoviesController < ApplicationController
   end
 
   def show
+    binding.pry
     @user = User.find(params[:user_id])
     @movie = MovieService.find_movie(params[:id])
     # this still isn't working; we'll need to use the movie poro id to render the show page

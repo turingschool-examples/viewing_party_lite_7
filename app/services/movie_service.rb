@@ -3,7 +3,7 @@ class MovieService
     conn = Faraday.new("https://api.themoviedb.org/3/")
 
     response = conn.get("movie/popular") do |faraday|
-      faraday.params["api_key"] = Rails.application.credentials.themoviedb[:key]
+      faraday.headers["X-API-Key"] = ENV["API_KEY"]
       # I couldn't get it to accept the credentials and don't want to send up my API key. This is NOT working
     end
 

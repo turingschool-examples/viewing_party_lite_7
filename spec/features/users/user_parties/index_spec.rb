@@ -15,7 +15,19 @@ end
 describe 'Discover Movies Page' do
   before :each do
     test_data
-    visit user_discover_index_path(@user1)
+    
+    popular_movies_fixture = File.read("spec/fixtures/popular_movies.json")
+    stub_request(:get, "https://api.themoviedb.org/3/movie/popular").
+         with(
+           headers: {
+          'Accept'=>'*/*',
+          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'User-Agent'=>'Faraday v2.7.12',
+          'X-Api-Key'=>ENV["API_KEY"]
+           }).
+         to_return(status: 200, body: popular_movies_fixture, headers: {})
+
+        visit user_discover_index_path(@user1)
   end
 
   it "when visiting the discover path, user can see a button to 'Discover Top Rated Movies'" do
@@ -28,33 +40,11 @@ describe 'Discover Movies Page' do
   end
 
   it "when the user clicks the 'Top Rated Movies' button it takes the user to the movies results page" do
-    popular_movies_fixture = File.read("spec/fixtures/popular_movies.json")
-
-    stub_request(:get, "https://api.themoviedb.org/3/movie/popular?api_key=67af88004fc9a5fe47497bb47e0dc073").
-         with(
-           headers: {
-          'Accept'=>'*/*',
-          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-          'User-Agent'=>'Faraday v2.7.12'
-           }).
-         to_return(status: 200, body: popular_movies_fixture, headers: {})
-
     click_button "Top Rated Movies"
     expect(current_path).to eq(user_results_path(@user1))
   end
 
   it "when the user clicks the 'Search by Movie Title' button it takes the user to the movies results page" do
-    popular_movies_fixture = File.read("spec/fixtures/popular_movies.json")
-
-    stub_request(:get, "https://api.themoviedb.org/3/movie/popular?api_key=67af88004fc9a5fe47497bb47e0dc073").
-    with(
-      headers: {
-     'Accept'=>'*/*',
-     'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-     'User-Agent'=>'Faraday v2.7.12'
-      }).
-    to_return(status: 200, body: popular_movies_fixture, headers: {})
-
     click_button "Search by Movie Title"
     expect(current_path).to eq(user_results_path(@user1))
   end
