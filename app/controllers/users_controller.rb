@@ -11,6 +11,9 @@ class UsersController < ApplicationController
     if new_user.save
       flash[:notice] = 'Successfully Added New User'
       redirect_to user_path(new_user)
+    else
+      flash[:alert] = "Error: #{error_message(new_user.errors)}"
+      render 'new'
     end
   end
 

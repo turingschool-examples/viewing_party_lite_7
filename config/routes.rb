@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   get '/', to: 'welcome#index', as: 'landing'
   
   get '/register', to: 'users#new', as: 'register_user'
-  resources :users, only: [:show, :create] do
+  post '/register', to: 'users#create'
+
+  resources :users, only: [:show] do
     resources :discover, only: [:index]
   end
 end
