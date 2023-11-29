@@ -1,13 +1,12 @@
 class RegistrationController < ApplicationController
-
-  def new 
+  def new
     @user = User.new
   end
 
-  def create 
+  def create
     @user = User.new(user_params)
 
-    if @user.save 
+    if @user.save
       redirect_to user_path(@user)
     else
       flash[:alert] = "**Email taken. Please enter a different email.**"
@@ -15,7 +14,7 @@ class RegistrationController < ApplicationController
     end
   end
 
-  private 
+  private
 
   def user_params
     params.require(:user).permit(:name, :email)
