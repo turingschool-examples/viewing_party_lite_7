@@ -1,4 +1,4 @@
-<h1>Create a New User</h1>
+<h1>Register a New User</h1>
 
 <%= form_with url: "/", method: :post do |form| %>
   <%= form.label :name %>
@@ -6,5 +6,5 @@
   <%= form.label :email %>
   <%= form.text_field :email %>
 
-  <%= form.submit "Create User" %>
+  <%= form.submit "Create New User" %>
 <% end %>

@@ -18,7 +18,7 @@ RSpec.describe "Landing Page Index", type: :feature do
 
       click_button("Create a New User")
 
-      expect(current_path).to eq("/new")
+      expect(current_path).to eq("/register")
 
       expect(page).to have_field(:name)
       expect(page).to have_field(:email)
@@ -26,7 +26,7 @@ RSpec.describe "Landing Page Index", type: :feature do
       fill_in(:name, with: "Jimmy Smith")
       fill_in(:email, with: "jimmysmith@gmail.com")
 
-      click_button "Create User"
+      click_button "Create New User"
 
       expect(current_path).to eq("/")
       
