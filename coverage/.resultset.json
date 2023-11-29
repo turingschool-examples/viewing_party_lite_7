@@ -7,23 +7,6 @@
           null
         ]
       },
-      "/Users/blakesergesketter/m3/projects/viewing_party_lite_7/app/models/user.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/blakesergesketter/m3/projects/viewing_party_lite_7/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
       "/Users/blakesergesketter/m3/projects/viewing_party_lite_7/app/controllers/users_controller.rb": {
         "lines": [
           1,
@@ -56,6 +39,23 @@
       },
       "/Users/blakesergesketter/m3/projects/viewing_party_lite_7/app/controllers/application_controller.rb": {
         "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/blakesergesketter/m3/projects/viewing_party_lite_7/app/models/user.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/blakesergesketter/m3/projects/viewing_party_lite_7/app/models/application_record.rb": {
+        "lines": [
+          1,
           1,
           null
         ]
@@ -113,6 +113,6 @@
         }
       }
     },
-    "timestamp": 1701280824
+    "timestamp": 1701286308
   }
 }
