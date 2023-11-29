@@ -46,16 +46,23 @@ class Movie < ApplicationRecord
       details[:genre] = data[:genres].map { |genre| genre[:name] }.join(', ')
       details[:summary] = data[:overview]
     
-    response = conn.get("/reviews")
+    conn = Faraday.new(url: "https://api.themoviedb.org/3/movie/#{movie_id}/credits") do |faraday|
+      faraday.headers["Authorization"] = Rails.application.credentials.tmdb[:key]
+    end
+      
+    response = conn.get
     data = JSON.parse(response.body, symbolize_names: true)
 
     details[:cast] = Movie.cast(data[:cast])
     
-    response = conn.get("/credits")
+    conn = Faraday.new(url: "https://api.themoviedb.org/3/movie/#{movie_id}/reviews") do |faraday|
+      faraday.headers["Authorization"] = Rails.application.credentials.tmdb[:key]
+    end
+    response = conn.get
     data = JSON.parse(response.body, symbolize_names: true)
       
-      details[:reviews] = data[:reviews]
-      details[:review_count] = data[:review_count]
+      details[:reviews] = Movie.reviews(data[:results])
+      details[:review_count] = data[:total_results]
     details
   end
 
@@ -73,7 +80,12 @@ class Movie < ApplicationRecord
       count += 1
     end
     cast
-    require 'pry'; binding.pry
+  end
+
+  def self.reviews(reviews)
+    reviews.map do |review|
+      [review[:author], review[:content]]
+    end
   end
 
 end
