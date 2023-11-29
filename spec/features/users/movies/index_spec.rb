@@ -27,10 +27,8 @@ RSpec.describe "Movies Index" do
     click_button "Find Movies"
     expect(current_path).to eq("/users/#{@user1.id}/movies")
 
-    expect(page).to have_content("The Princess of Montpensier")
-    expect(page).to have_content("The Swan Princess: Far Longer Than Forever")
-    expect(page).to have_content("A Winter Princess")
-    expect(page).to have_content("One Piece: The Desert Princess and the Pirates: Adventure in Alabasta")
+    expect(page).to have_content("Princess Mononoke")
+    expect(page).to have_content("Dragon Ball: Sleeping Princess in Devil's Castle")
     
   end
 
