@@ -1,0 +1,38 @@
+<h1><%= "#{@movie_details[:title]} Movie Details"%></h1>
+
+<%= button_to 'Create a Viewing Party', "/users/#{params[:user_id]}/movies/#{params[:id]}/viewing-party/new", method: :get %>
+<%= button_to 'Discover Movies', user_discover_index_path(params[:user_id]), method: :get %>
+
+<p>Movie Id: <%= "#{@movie_details[:id]}"%></p>
+<p>Vote Average: <%= "#{@movie_details[:vote_average]}"%></p>
+<p>Runtime: <%= Utility.runtime_in_min(@movie_details) %></p>
+<p>Genre(s): </p>
+<ul>
+<% @movie_details[:genres].each do |genre| %>
+<li><%= genre[:name] %></li>
+<% end %>
+</ul>
+
+<p>Overview: <%= "#{@movie_details[:overview]}"%></p>
+
+<p>List the first 10 cast members:</p>
+<ul>
+  <% @movie_cast[:cast].each_with_index do |member, index| %>
+    <% break if index >= 10 %>
+    <li><%= member[:name] %></li>
+  <% end %>
+</ul>
+
+<p>Review Count: <%= "#{@movie_review[:results].count}"%></p>
+
+<p>Review's author and information:</p>
+<ul>
+  <% @movie_review[:results].each do |reviewer| %>
+    <li>Name: <%= reviewer[:author] %></li>
+    <li>Rating: <%= reviewer[:author_details][:rating] %></li>
+    <li>Review: <%= reviewer[:content] %></li>
+    <br>
+  <% end %>
+</ul>
+
+

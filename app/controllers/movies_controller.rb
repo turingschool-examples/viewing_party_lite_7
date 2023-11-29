@@ -11,8 +11,8 @@ class MoviesController < ApplicationController
 
   def show
     facade = MovieFacade.new
-    @data = facade.movie_details(params[:id])
-    @data2 = facade.movie_cast(params[:id])
-    @data3 = facade.movie_reviews(params[:id])
-    end
+    @movie_details = facade.movie_details(params[:id])
+    @movie_cast = facade.movie_cast(params[:id])
+    @movie_review = facade.movie_reviews(params[:id])
+  end
 end 
