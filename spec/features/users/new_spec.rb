@@ -7,11 +7,12 @@ RSpec.describe 'User Registration Page' do
 
   it 'When a user visits the register path they should see a form to register.' do
 
-    visit "/"
+    visit root_path
     expect(page).to have_link("Capitainlearyo")
     expect(page).to have_link("Slick Ric")
     expect(page).to have_link("Bob")
 
+    expect(page).to have_button("Create a New User")
     click_button "Create a New User"
     expect(current_path).to eq(new_user_path)
     
@@ -22,11 +23,61 @@ RSpec.describe 'User Registration Page' do
     
     expect(page).to have_content("Jon's Dashboard")
 
-    visit "/"
+    visit root_path
 
     expect(page).to have_link("Capitainlearyo")
     expect(page).to have_link("Slick Ric")
     expect(page).to have_link("Bob")
     expect(page).to have_link("Jon")
+  end
+
+  describe '#sad_path' do
+    it 'NAME - missing user attribute' do
+      visit new_user_path
+
+      fill_in "Name", with: ""
+      fill_in "Email", with: "example@example.com"
+      click_button "Register"
+
+      expect(page).to have_content("Name or Email cannot be blank")
+      expect(page).to_not have_content('Email is already taken. Please choose a different one.')
+      expect(current_path).to eq(new_user_path)
+    end
+
+    it 'EMAIL - missing user attribute' do
+      visit new_user_path
+
+      fill_in "Name", with: "Sherlock"
+      fill_in "Email", with: ""
+      click_button "Register"
+
+      expect(page).to have_content("Name or Email cannot be blank")
+      expect(page).to_not have_content('Email is already taken. Please choose a different one.')
+      expect(current_path).to eq(new_user_path)
+    end
+
+    it 'NAME & EMAIL - missing user attribute' do
+      visit new_user_path
+
+      fill_in "Name", with: ""
+      fill_in "Email", with: ""
+      click_button "Register"
+
+      expect(page).to have_content("Name or Email cannot be blank")
+      expect(page).to_not have_content('Email is already taken. Please choose a different one.')
+      expect(current_path).to eq(new_user_path)
+    end
+
+    it "Cannot have a duplicate email" do
+      visit new_user_path
+
+      fill_in "Name", with: "Sherlock"
+      fill_in "Email", with: "example1@yahoo.com"
+      click_button "Register"
+
+      expect(page).to have_content('Email is already taken. Please choose a different one.')
+      expect(page).to_not have_content("Name or Email cannot be blank")
+      expect(current_path).to eq(new_user_path)
+    end
   end
 end

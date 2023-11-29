@@ -9,8 +9,24 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.create(user_params)
-    redirect_to user_path(@user.id)
+    @user = User.new(user_params)
+  
+    if @user.name.blank? || @user.email.blank?
+      flash[:alert] = 'Name or Email cannot be blank'
+      redirect_back(fallback_location: new_user_path)
+    else
+      begin
+        @user.save!
+        redirect_to user_path(@user.id)
+      rescue ActiveRecord::RecordNotUnique => e
+        if e.message.include?('email')
+          flash[:alert] = 'Email is already taken. Please choose a different one.'
+        else
+          flash[:alert] = 'An error occurred while creating the user.'
+        end
+        redirect_back(fallback_location: new_user_path)
+      end
+    end
   end
 
   private
