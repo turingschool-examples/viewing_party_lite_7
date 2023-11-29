@@ -49,4 +49,17 @@ class MovieService
       MovieActor.new(actor_hash)
     end
   end
+
+  def self.get_movie_reviews(id)
+    conn = Faraday.new("https://api.themoviedb.org/3/")
+
+    response = conn.get("movie/#{id}/reviews") do |faraday|
+      faraday.params["api_key"] = "67af88004fc9a5fe47497bb47e0dc073"
+    end
+
+    review_data = JSON.parse(response.body, symbolize_names: :true)   
+    review_data[:results].map do |review_hash|
+      MovieReview.new(review_hash)
+    end
+  end
 end
