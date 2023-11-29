@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -5,9 +7,9 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   # root "users#index"
-  get "/", to: "users#index"
-  get "/users/:id", to: "users#show"
-  get "/users/:id/discover", to: "movies#index"
-  get "/new", to: "users#new"
-  post "/", to: "users#create"
+  get '/', to: 'users#index'
+  get '/users/:id', to: 'users#show'
+  get '/users/:id/discover', to: 'movies#index'
+  get '/new', to: 'users#new'
+  post '/', to: 'users#create'
 end
