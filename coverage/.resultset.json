@@ -226,6 +226,7 @@
           1,
           1,
           1,
+          1,
           null,
           1,
           1,
@@ -257,13 +258,6 @@
           1,
           1,
           0,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          0,
           0,
           null,
           null,
@@ -271,6 +265,18 @@
           1,
           1,
           1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
           null,
           null,
           null
@@ -433,6 +439,22 @@
         "lines": [
           1,
           1,
+          5,
+          null,
+          null
+        ]
+      },
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/app/controllers/users/discover/results_controller.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          2,
+          null,
+          2,
+          null,
+          2,
+          null,
           null
         ]
       },
@@ -448,6 +470,6 @@
         ]
       }
     },
-    "timestamp": 1701221284
+    "timestamp": 1701222466
   }
 }
