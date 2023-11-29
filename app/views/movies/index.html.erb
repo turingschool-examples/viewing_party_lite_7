@@ -1,0 +1,7 @@
+<h1>Movie Results</h1>
+<% @movies_facade.each do |movie| %>
+
+  <ul class="movie">
+    <li class="title"><%= link_to movie.title, url: user_movies_path(@user) %></li>
+  </ul>
+<% end %>
