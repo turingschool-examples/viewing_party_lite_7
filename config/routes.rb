@@ -10,8 +10,9 @@ Rails.application.routes.draw do
     resources :discover, controller: 'users/discover', only: :index
     resources :movies, controller: 'users/discover/results', only: [:index, :show]
   end
-  
+
   # resources :register, controller: 'registration', only: [:new, :create], path: 'register'
   get '/register', to: 'registration#new', as: 'register'
   post '/register', to: 'registration#create'
+  # match 'register', to: 'registration', via: [:get, :post]
 end

@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-11-29T15:46:13-07:00">2023-11-29T15:46:13-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-11-29T15:58:07-07:00">2023-11-29T15:58:07-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -271,7 +271,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#9bb71d2b0c01958933e984428912760dfbd4038e" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">17</td>
+            <td class="cell--number">18</td>
             <td class="cell--number">7</td>
             <td class="cell--number">7</td>
             <td class="cell--number">0</td>
@@ -3752,13 +3752,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="8">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="8">
+            
             
 
             
 
-            <code class="ruby">  resources :users do</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -3769,7 +3769,7 @@
 
             
 
-            <code class="ruby">    resources :discover, controller: &#39;users/discover&#39;, only: :index</code>
+            <code class="ruby">  resources :users do</code>
           </li>
         </div>
       
@@ -3780,18 +3780,18 @@
 
             
 
-            <code class="ruby">    resources :movies, controller: &#39;users/discover/results&#39;, only: [:index, :show]</code>
+            <code class="ruby">    resources :discover, controller: &#39;users/discover&#39;, only: :index</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="11">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="11">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">    # get &#39;/movies&#39;, to: &#39;users/discover/results#index&#39;</code>
+            
+
+            <code class="ruby">    resources :movies, controller: &#39;users/discover/results&#39;, only: [:index, :show]</code>
           </li>
         </div>
       
@@ -3802,7 +3802,7 @@
 
             
 
-            <code class="ruby">    # get &#39;/movies/:movie_id&#39;, to: &#39;users/discover/results#show&#39;</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -3813,7 +3813,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -3852,6 +3852,17 @@
       
         <div>
           <li class="never" data-hits="" data-linenumber="17">
+            
+            
+
+            
+
+            <code class="ruby">  # match &#39;register&#39;, to: &#39;registration&#39;, via: [:get, :post]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="18">
             
             
 
