@@ -12,8 +12,4 @@ class Movie
   def self.all
     @@movies_all
   end
-
-  # def self.movie_search(search_by_title)
-  #   where('title like ?', "%#{search}%")
-  # end
 end
