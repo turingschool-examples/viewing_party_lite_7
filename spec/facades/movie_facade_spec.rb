@@ -9,6 +9,5 @@ RSpec.describe 'Movie Facade' do
 
   it 'Sad Path bad input should call the facade and retrieve search results' do
     
-end
-
+  end
 end

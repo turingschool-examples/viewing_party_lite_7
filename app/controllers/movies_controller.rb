@@ -5,7 +5,6 @@ class MoviesController < ApplicationController
   end
 
   def search
-    # require 'pry'; binding.pry
     @movies = if params[:q] == "top_rated"
                 MovieFacade.top_rated
               else
