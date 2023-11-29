@@ -20,6 +20,22 @@ RSpec.describe "Landing Page", type: :feature do
     end
 
     it "shows existing users with links to their dashboards" do
+      user = create :user
+
+      visit root_path
+
+      click_on user.email
+
+      expect(current_path).to eq user_path(user)
     end
+
+    it "shows home button on persistent nav bar" do
+      user = create :user
+
+      visit user_path(user)
+
+      expect(page).to have_link "Home"
+    end
+
   end
 end
