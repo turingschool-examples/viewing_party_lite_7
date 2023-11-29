@@ -3,7 +3,6 @@ class MoviesController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     if params[:query].present?
-      # shortened to search by until I can get movie_search working
       @movies = MovieService.search_movies(params[:query])
     else
       @movies = MovieService.get_movies.first(20)
@@ -12,7 +11,6 @@ class MoviesController < ApplicationController
 
   def show
     @user = User.find(params[:user_id])
-    @movie = Movie.all.find{|m| m.id == params[:id].to_i}
-    # this still isn't working; we'll need to use the movie poro id to render the show page
+    @movie = MovieService.get_detailed_movie(params[:id])
   end
 end
