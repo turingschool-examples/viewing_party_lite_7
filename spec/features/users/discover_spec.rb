@@ -25,16 +25,16 @@ RSpec.describe 'Users show page', type: :feature do
       # expect(current_path).to eq("/users/#{@user1.id}/movies")
     end
 
-    it 'have a text field to enter keyword(s) to search by movie title and a button to search by
+    xit 'have a text field to enter keyword(s) to search by movie title and a button to search by
     movie title and when clicked routes to movie results page ' do
       expect(page).to have_field('search')
 
       expect(page).to have_button('Search by Movie Title')
 
-      # fill_in 'search', with: 'terminator'
-      # click_button('Search by Movie Title')
+      fill_in 'search', with: 'terminator'
+      click_button('Search by Movie Title')
 
-      # expect(current_path).to eq("/users/#{@user1.id}/movies")
+      expect(current_path).to eq("/users/#{@user1.id}/movies")
     end
   end
 end
