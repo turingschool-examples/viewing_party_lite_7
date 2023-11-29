@@ -1,6 +1,6 @@
-<%= link_to "Viewing Party Landing Page", root_path %>
+<%= render partial: "shared/nav" %>
 
-<%= button_to "New User", 'users/new' %>
+<p><%= button_to "New User", 'users/new' %></p>
 
 <h3>User Index</h3>
 <%@users.each do |user|%>
