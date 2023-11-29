@@ -15,7 +15,7 @@ end
 describe 'Discover Movies Page' do
   before :each do
     test_data
-    visit user_path(@user1)
+    visit user_discover_index_path(@user1)
   end
 
   it "when visiting the discover path, user can see a button to 'Discover Top Rated Movies'" do
@@ -28,10 +28,12 @@ describe 'Discover Movies Page' do
   end
 
   it "when the user clicks the 'Top Rated Movies' button it takes the user to the movies results page" do
+    click_button "Top Rated Movies"
     expect(current_path).to eq(user_results_path(@user1))
   end
 
   it "when the user clicks the 'Search by Movie Title' button it takes the user to the movies results page" do
+    click_button "Search by Movie Title"
     expect(current_path).to eq(user_results_path(@user1))
   end
 end
