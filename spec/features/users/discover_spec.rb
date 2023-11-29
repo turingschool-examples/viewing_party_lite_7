@@ -21,8 +21,8 @@ RSpec.describe 'Users show page', type: :feature do
     it 'should show a button to Discover Top Rated Movies that when clicked routes to 
     movie results page' do
       expect(page).to have_button('Find Top Rated Movies')
-      # click_button('Find Top Rated Movies')
-      # expect(current_path).to eq("/users/#{@user1.id}/movies")
+      click_button('Find Top Rated Movies')
+      expect(current_path).to eq("/users/#{@user1.id}/movies")
     end
 
     xit 'have a text field to enter keyword(s) to search by movie title and a button to search by
