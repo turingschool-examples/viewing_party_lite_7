@@ -9,6 +9,9 @@ class Movie
     @summary = details[:overview]
     # not included in current query
     @cast = details[:]
-    # 2 review attributes needed
+    # not included in current query
+    @review_count = details[:]
+    # not included in current query
+    @review_info = details[:]
   end
 end
