@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-11-29T14:45:13-07:00">2023-11-29T14:45:13-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-11-29T15:43:15-07:00">2023-11-29T15:43:15-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -271,7 +271,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#9bb71d2b0c01958933e984428912760dfbd4038e" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">15</td>
+            <td class="cell--number">17</td>
             <td class="cell--number">8</td>
             <td class="cell--number">8</td>
             <td class="cell--number">0</td>
@@ -3769,18 +3769,18 @@
 
             
 
-            <code class="ruby">    get &#39;/discover&#39;, to: &#39;users/discover#index&#39;</code>
+            <code class="ruby">    resources :discover, controller: &#39;users/discover&#39;, only: :index</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="10">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="10">
+            
             
 
             
 
-            <code class="ruby">    get &#39;/movies&#39;, to: &#39;users/discover/results#index&#39;</code>
+            <code class="ruby">    # get &#39;/discover&#39;, to: &#39;users/discover#index&#39;</code>
           </li>
         </div>
       
@@ -3791,12 +3791,23 @@
 
             
 
+            <code class="ruby">    get &#39;/movies&#39;, to: &#39;users/discover/results#index&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="12">
+            <span class="hits">1</span>
+            
+
+            
+
             <code class="ruby">    get &#39;/movies/:movie_id&#39;, to: &#39;users/discover/results#show&#39;</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="12">
+          <li class="never" data-hits="" data-linenumber="13">
             
             
 
@@ -3807,7 +3818,18 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="13">
+          <li class="never" data-hits="" data-linenumber="14">
+            
+            
+
+            
+
+            <code class="ruby">  # resources :register, controller: &#39;registration&#39;, only: [:new, :create], path: &#39;register&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="15">
             <span class="hits">1</span>
             
 
@@ -3818,7 +3840,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="14">
+          <li class="covered" data-hits="1" data-linenumber="16">
             <span class="hits">1</span>
             
 
@@ -3829,7 +3851,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="15">
+          <li class="never" data-hits="" data-linenumber="17">
             
             
 
@@ -4533,7 +4555,7 @@
 
             
 
-            <code class="ruby">    visit user_discover_path(@user1)</code>
+            <code class="ruby">    visit user_discover_index_path(@user1)</code>
           </li>
         </div>
       
@@ -4599,7 +4621,7 @@
 
             
 
-            <code class="ruby">      visit user_discover_path(@user1)</code>
+            <code class="ruby">      visit user_discover_index_path(@user1)</code>
           </li>
         </div>
       
@@ -4687,7 +4709,7 @@
 
             
 
-            <code class="ruby">    visit user_discover_path(@user1)</code>
+            <code class="ruby">    visit user_discover_index_path(@user1)</code>
           </li>
         </div>
       
@@ -4786,7 +4808,7 @@
 
             
 
-            <code class="ruby">      visit user_discover_path(@user1)</code>
+            <code class="ruby">      visit user_discover_index_path(@user1)</code>
           </li>
         </div>
       
@@ -4993,7 +5015,7 @@
 
             
 
-            <code class="ruby">    visit user_discover_path(@user1)</code>
+            <code class="ruby">    visit user_discover_index_path(@user1)</code>
           </li>
         </div>
       
@@ -5081,7 +5103,7 @@
 
             
 
-            <code class="ruby">    visit user_discover_path(@user1)</code>
+            <code class="ruby">    visit user_discover_index_path(@user1)</code>
           </li>
         </div>
       
@@ -5147,7 +5169,7 @@
 
             
 
-            <code class="ruby">    visit user_discover_path(@user1)</code>
+            <code class="ruby">    visit user_discover_index_path(@user1)</code>
           </li>
         </div>
       
@@ -5191,7 +5213,7 @@
 
             
 
-            <code class="ruby">    expect(current_path).to eq(user_discover_path(@user1))</code>
+            <code class="ruby">    expect(current_path).to eq(user_discover_index_path(@user1))</code>
           </li>
         </div>
       
@@ -5475,7 +5497,7 @@
 
             
 
-            <code class="ruby">    expect(current_path).to eq(user_discover_path(@user1))</code>
+            <code class="ruby">    expect(current_path).to eq(user_discover_index_path(@user1))</code>
           </li>
         </div>
       
