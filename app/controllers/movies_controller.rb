@@ -1,18 +1,21 @@
 class MoviesController < ApplicationController
-  def search
-    conn = Faraday.new("https://api.themoviedb.org") do |faraday|
-      faraday.params["api_key"] = Rails.application.credentials.tmdb[:key]
-    end
-    response = conn.get("/3/movie/top_rated?page=1")
+  # def top_movies
+  #   conn = Faraday.new("https://api.themoviedb.org") do |faraday|
+  #     faraday.params["api_key"] = Rails.application.credentials.tmdb[:key]
+  #   end
+  #   response = conn.get("/3/movie/top_rated?page=1")
 
-    data = JSON.parse(response.body)
-    # require 'pry';binding.pry
+  #   data = JSON.parse(response.body)
+  #   # require 'pry';binding.pry
+  # end
 
-
-    # members = data[:results][0][:members]
-
-    # found_members = members.find_all {|m| m[:last_name] == params[:search]}
-    # @member = found_members.first
-    # render "welcome/index"
-  end
+  # def search
+  #   movie = params[:search]
+  #   conn = Faraday.new("https://api.themoviedb.org") do |faraday|
+  #     faraday.params["api_key"] = Rails.application.credentials.tmdb[:key]
+  #   end
+  #   response = conn.get("/3/search/movie?query=#{movie}&include_adult=false&language=en-US&page=1")
+  #   data = JSON.parse(response.body)
+  #   # require 'pry';binding.pry
+  # end
 end
