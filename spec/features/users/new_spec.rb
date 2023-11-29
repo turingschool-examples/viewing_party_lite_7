@@ -21,12 +21,13 @@ RSpec.describe 'new user', type: :feature do
     end
 
     it 'They fill in form with information, email (unique), submit, redirects to user show page' do
-      fill_in 'Name', with: "Sam"
-      fill_in 'Email', with: "sam@email.com"
+      fill_in 'Name', with: "Sammy"
+      fill_in 'Email', with: "sammy@email.com"
       click_button 'Create New User'
 
       new_user = User.last
-
+save_and_open_page
+      expect(page).to have_content('Successfully Added New User')
       expect(current_path).to eq(user_path(new_user))
     end
 
