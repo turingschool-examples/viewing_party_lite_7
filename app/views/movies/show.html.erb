@@ -5,3 +5,6 @@
 <%= button_to "Create Viewing Party for #{@movie.title}", new_user_movie_viewing_party_path(@user, @movie.id), method: :get %>
 
 <p>Vote: <%= @movie.vote_average %></p>
+<p>Runtime: <%= @movie.runtime_in_hours_and_minutes %></p>
+<p>Genres: <%= @movie.genres_as_list.to_sentence %></p>
+<p>Summary: <%= @movie.summary %></p>
