@@ -1,0 +1,11 @@
+<%= link_to 'Home', '/', method: :get %>
+<h1> Viewing Party </h1>
+<h6> Register a New User </h6>
+
+<%=form_with url: '/register', method: :post, data: { turbo: false } do |form| %>
+  <%= form.label :name, "Name:" %>
+  <%= form.text_field :name %><br>
+  <%= form.label :email, "Email" %>
+  <%= form.text_field :email %><br>
+  <%= form.submit "Register" %>
+<% end %>
