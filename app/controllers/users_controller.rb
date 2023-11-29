@@ -34,3 +34,8 @@ class UsersController < ApplicationController
     params.permit(:name, :email)
   end 
 end
+
+
+# API KEY: c5d87ff6f6c9e5b4d80f024fe25ecdf9
+
+# API READ ACCESS TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNWQ4N2ZmNmY2YzllNWI0ZDgwZjAyNGZlMjVlY2RmOSIsInN1YiI6IjY1NjZhNGFhODlkOTdmMDExYjRkMmUyNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.bgiaABe54pbW2dihOMztOGXugQ1N4WzWsBfxXCHuo04
