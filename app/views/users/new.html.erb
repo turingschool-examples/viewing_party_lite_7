@@ -1,6 +1,6 @@
 <h1>Register a New User</h1>
 
-<%= form_with url: "/", method: :post do |form| %>
+<%= form_with url: "/users/#{@user.last.id}", method: :post do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name %>
   <%= form.label :email %>

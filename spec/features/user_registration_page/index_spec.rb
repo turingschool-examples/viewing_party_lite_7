@@ -12,15 +12,15 @@ RSpec.describe "User Registration Page Index", type: :feature do
     it "should show a form to register" do
       expect(page).to have_field(:name)
       expect(page).to have_field(:email)
-      save_and_open_page
+      
       expect(page).to have_button("Create New User")
     end
 
-    xit "fills in the form and is taken to the dashboard page 'users/:id' where it is the id of the user that was just created" do
+    it "fills in the form and is taken to the dashboard page 'users/:id' where it is the id of the user that was just created" do
       fill_in(:name, with: "Peyton Manning")
       fill_in(:email, with: "peyton18@yahoo.com")
 
-      click_button "Register"
+      click_button "Create New User"
 
       expect(current_path).to eq("/users/#{User.last.id}")
     end
