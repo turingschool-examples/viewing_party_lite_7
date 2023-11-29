@@ -21,8 +21,6 @@ class UsersController < ApplicationController
       rescue ActiveRecord::RecordNotUnique => e
         if e.message.include?('email')
           flash[:alert] = 'Email is already taken. Please choose a different one.'
-        else
-          flash[:alert] = 'An error occurred while creating the user.'
         end
         redirect_back(fallback_location: new_user_path)
       end
