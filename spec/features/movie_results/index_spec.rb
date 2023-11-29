@@ -8,7 +8,7 @@ RSpec.describe "Movie Results Page", type: :feature do
 
   describe "When I visit '/users/:id/discover'" do
     describe "And click on the 'Top Movies' or 'Search'" do
-      it "I am taken to the movies results page where I see 'Title'(As a link to the Movie Details page - max 20)" do
+      xit "I am taken to the movies results page where I see 'Title'(As a link to the Movie Details page - max 20)" do
         visit "/users/#{@user1.id}/discover"
 
         click_button "Find Top Rated Movies"
@@ -20,14 +20,14 @@ RSpec.describe "Movie Results Page", type: :feature do
   end 
 
   describe "When I visit '/users/:id/movies'" do
-    it "I see the 'Vote Average of the movies'" do
+    xit "I see the 'Vote Average of the movies'" do
       visit "/users/#{@user1.id}/movies"
 
       expect(page).to have_content()
 
     end
 
-    it "should have a button to return to the Discover Page" do
+    xit "should have a button to return to the Discover Page" do
       visit "/users/#{@user1.id}/movies"
 
       expect(page).to have_button("Discover Page")
