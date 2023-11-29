@@ -11,7 +11,7 @@ class MoviesController < ApplicationController
 
   def show
     @user = User.find(params[:user_id])
-    @movie = Movie.all.find(params[:id])
+    @movie = Movie.all.find{|m| m.id == params[:id].to_i}
     # this still isn't working; we'll need to use the movie poro id to render the show page
   end
 end

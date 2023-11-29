@@ -20,6 +20,7 @@ describe 'Movie Details Page' do
     click_link "The Creator"
 
     @creator_movie = Movie.all.find{|m| m.title == "The Creator"}
+    save_and_open_page
   end
 
   describe 'buttons' do
