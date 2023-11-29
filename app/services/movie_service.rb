@@ -3,7 +3,7 @@ class MovieService
     conn = Faraday.new("https://api.themoviedb.org/3/")
 
     response = conn.get("movie/popular") do |faraday|
-      faraday.params["api_key"] = "67af88004fc9a5fe47497bb47e0dc073"
+      faraday.params["api_key"] = ENV["API_KEY"]
     end
 
     movie_data = JSON.parse(response.body, symbolize_names: :true)  
@@ -16,7 +16,7 @@ class MovieService
     conn = Faraday.new("https://api.themoviedb.org/3/")
 
     response = conn.get("search/movie") do |faraday|
-      faraday.params["api_key"] = "67af88004fc9a5fe47497bb47e0dc073"
+      faraday.params["api_key"] = ENV["API_KEY"]
       faraday.params["query"] = search_params
     end
 
@@ -30,7 +30,7 @@ class MovieService
     conn = Faraday.new("https://api.themoviedb.org/3/")
 
     response = conn.get("movie/#{id}") do |faraday|
-      faraday.params["api_key"] = "67af88004fc9a5fe47497bb47e0dc073"
+      faraday.params["api_key"] = ENV["API_KEY"]
     end
 
     movie_data = JSON.parse(response.body, symbolize_names: :true)   
@@ -41,7 +41,7 @@ class MovieService
     conn = Faraday.new("https://api.themoviedb.org/3/")
 
     response = conn.get("movie/#{id}/credits") do |faraday|
-      faraday.params["api_key"] = "67af88004fc9a5fe47497bb47e0dc073"
+      faraday.params["api_key"] = ENV["API_KEY"]
     end
 
     cast_data = JSON.parse(response.body, symbolize_names: :true)   
@@ -54,7 +54,7 @@ class MovieService
     conn = Faraday.new("https://api.themoviedb.org/3/")
 
     response = conn.get("movie/#{id}/reviews") do |faraday|
-      faraday.params["api_key"] = "67af88004fc9a5fe47497bb47e0dc073"
+      faraday.params["api_key"] = ENV["API_KEY"]
     end
 
     review_data = JSON.parse(response.body, symbolize_names: :true)   
