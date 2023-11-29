@@ -25,11 +25,11 @@ describe 'Movie Details Page' do
 
   describe 'buttons' do
     it 'has a button to create a new viewing party' do
-      expect(page).to have_button("Create a Viewing Party")
+      expect(page).to have_button("Create a Viewing Party for the Creator")
     end
 
     it 'has a button to return to the Discover Page' do
-      expect(page).to have_button("Return to Discover Page")
+      expect(page).to have_button("Discover Page")
     end
   end
 
