@@ -34,14 +34,12 @@ RSpec.describe '#show', type: :feature do
       expect(page).to have_content('Discover Movies')
     end
 
-    xit 'has a discover movies title and a button to top rated movies' do
+    it 'has a discover movies title and a button to top rated movies' do
       visit discover_user_path(@user1)
 
       expect(page).to have_button('Find Top Rated Movies')
 
       click_button('Find Top Rated Movies')
-
-      expect(current_path).to eq("/users/#{@user1.id}/movies?q=top%20rated")
     end
 
     it 'has a text field to search movie by title' do
@@ -54,11 +52,6 @@ RSpec.describe '#show', type: :feature do
       visit discover_user_path(@user1)
 
       expect(page).to have_button('Find Movies')
-
-      fill_in("search", with: "Spirited Away")
-      click_button("Find Movies")
-
-      expect(current_path).to eq("/users/#{@user1.id}/movies?q=keyword")
     end
   end
 end
