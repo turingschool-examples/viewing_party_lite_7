@@ -1,8 +1,1 @@
-<h2>Discover Movies</h2>
-
-<p><%= button_to "Find Top Rated Movies", "/users/#{@user.id}/movies", method: :get, params: { top_movies: true } %></p><br>
-
-<%= form_with url: "/users/#{@user.id}/movies", method: :get, local: true do |f| %>  
-    <%=  f.text_field :movie_title%>
-    <%= f.submit "Find Movies" %>
-  <% end %>
+<p><%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %></p><br>
