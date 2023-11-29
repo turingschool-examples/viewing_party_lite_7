@@ -14,7 +14,7 @@ RSpec.describe 'user discover page', type: :feature do
     it 'redirects to movie results page, listing top rated movies' do
       visit user_discover_path(@user1)
       click_button('Discover Top Rated Movies')
-      expect(current_path).to eq(user_discover_results_path(@user1))
+      expect(current_path).to eq(user_movies_path(@user1))
       expect(page).to have_content('The Godfather')
     end
   end
@@ -32,7 +32,7 @@ RSpec.describe 'user discover page', type: :feature do
       visit user_discover_path(@user1)
       fill_in :title, with: 'Nightmare Before Christmas'
       click_button('Search by Movie Title')
-      expect(current_path).to eq(user_discover_results_path(@user1))
+      expect(current_path).to eq(user_movies_path(@user1))
       expect(page).to have_content('Nightmare Before Christmas')
     end
   end

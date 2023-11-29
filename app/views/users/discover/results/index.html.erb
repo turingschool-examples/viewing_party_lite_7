@@ -1,3 +1,18 @@
-<%# title (as link) from either endpoint (need to strategize link to movie show/details page) %>
-<%# vote avg from top_rated (probably also in search endpoint) endpoint %>
 <%# limit search results to 20 items %>
+<%# button to return to discover %>
+
+<section>
+  <% if @top_rated.present? %>
+    <% @top_rated.each do |movie| %>
+      <%= link_to movie.title, user_movies_path(@user, movie) %>
+      <p>Average Rating: <%= movie.vote_avg %><p>
+      <br>
+    <% end %>
+  <% elsif @search_result.present? %>
+    <% @search_result.each do |movie| %>
+      <%= link_to movie.title, user_movies_path(@user, movie) %>
+      <p>Average Rating: <%= movie.vote_avg %><p>
+      <br>
+    <% end %>
+  <% end %>
+<section>
