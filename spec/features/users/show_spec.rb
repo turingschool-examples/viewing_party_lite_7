@@ -30,6 +30,6 @@ RSpec.describe 'user dashboard page', type: :feature do
 
     expect(page).to have_button('Discover Movies')
     click_button('Discover Movies')
-    expect(current_path).to eq(user_discover_path(user.id))
+    expect(current_path).to eq(user_discover_index_path(user.id))
   end
 end
