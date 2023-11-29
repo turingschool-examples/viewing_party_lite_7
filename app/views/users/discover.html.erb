@@ -1,6 +1,8 @@
-<%= button_to "Top Movies", user_movies_path(@user.id), method: :get %>
+<h2>Discover Movies</h2>
 
-<%= form_tag(user_movies_path(@user.id), method: "get") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search..." %>
-  <%= submit_tag "Search" %>
+<%= button_to "Find Top Rated Movies", "/users/#{@user.id}/movies?q=top%20rated", method: :get %>
+
+<%= form_tag(user_movies_path(@user.id), method: :get) do %>
+  <%= text_field_tag(:search, params[:search], placeholder: 'search') %>
+  <%= submit_tag("Find Movies") %>
 <% end %>
