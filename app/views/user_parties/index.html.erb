@@ -1,6 +1,6 @@
 <h1><%= @user.name %>'s Movie Results</h1>
 
-<%= button_to "Discover Top Rated Movies", user_results_path(@user), method: :get%><br>
+<%= button_to "Discover Top Rated Movies", user_results_path(@user), method: :get %><br>
 
 <%= form_with url: user_results_path(@user), method: :get, local: :true do |f| %>
 <%= f.text_field :query %>

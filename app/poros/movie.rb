@@ -4,6 +4,7 @@ class Movie
   def initialize(movie_data)
     @title = movie_data[:original_title]
     @vote_average = movie_data[:vote_average]
+    @id = movie_data[:id]
   end
 
   # def self.movie_search(search_by_title)
