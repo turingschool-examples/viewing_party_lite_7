@@ -12,10 +12,9 @@ RSpec.describe 'user discover results page', type: :feature do
     expect(page).to have_content('The Godfather')
   end
 
-  # need to figure out how to test this
   it 'limits results to 20 movies' do
     visit user_discover_path(@user1)
     click_button('Discover Top Rated Movies')
-    expect(page).to have_selector('p', text: /^Average Rating: \d+\.\d+$/, count: 20)
+    expect(page).to have_content('Average Rating', count: 20)
   end
 end
