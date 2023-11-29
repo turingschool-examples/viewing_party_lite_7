@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :create, :new, :show] do
     resources :user_parties, only: :index, path: 'discover', as: 'discover'
     resources :movies, only: :index, as: 'results'
+    resources :movies, only: :show
+
   end
 
   get '/register', to: 'users#new', as: 'register'
