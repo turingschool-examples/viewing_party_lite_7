@@ -1,5 +1,7 @@
 class Movie
-  attr_reader :id, :title, :vote_average, :overview, :popularity, :vote_average
+  attr_reader :backdrop_path, :genre_ids, :id, :overview,
+              :popularity, :poster_path, :release_date, :title,
+              :vote_average, :vote_count, :runtime
 
   def initialize(data)
     @backdrop_path = data[:backdrop_path]
