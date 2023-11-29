@@ -36,6 +36,5 @@ RSpec.describe "Landing Page", type: :feature do
 
       expect(page).to have_link "Home"
     end
-
   end
 end
