@@ -1,6 +1,6 @@
 <%= @user.name %>'s Dashboard
 
-<%= button_to 'Discover Movies' %>
+<%= button_to 'Discover Movies', discover_user_path(@user.id), method: :get %>
 
 <section id="list viewing parties">
   Viewing Parties
