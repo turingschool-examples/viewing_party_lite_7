@@ -15,7 +15,7 @@ RSpec.describe "Show" do
     expect(page).to_not have_content("Why Your Mom Moved Out Watch Party")
     
     click_button "Discover Movies"
-    # expect(current_path).to eq("/users/#{user1.id}/discover")
+    expect(current_path).to eq("/users/#{@user1.id}/discover")
     
     visit "/users/#{@user2.id}"
 
