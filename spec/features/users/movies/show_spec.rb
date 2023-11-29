@@ -37,7 +37,7 @@ RSpec.describe 'Movie Results' do
          to_return(status: 200, body: reviews_response, headers: {})
 
     visit "/users/#{@user1.id}/movies/268"
-    click_link "Go to Landing Page"
+    click_link "Go back to Landing Page"
     expect(current_path).to eq("/")
 
     visit "/users/#{@user1.id}/movies/268"
