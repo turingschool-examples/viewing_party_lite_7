@@ -15,7 +15,7 @@ class Movie < ApplicationRecord
     data[:results].each do |movie|
       movies[movie[:title]] = movie[:vote_average].round(1)
     end
-    require 'pry'; binding.pry
+    movies
   end
 
 end

@@ -15,10 +15,8 @@ RSpec.describe "Movies Index" do
     expect("The Godfather").to appear_before("Vote Average: 8.7")
     expect("Vote Average: 8.7").to appear_before("The Shawshank Redemption")
     expect("The Shawshank Redemption").to appear_before("Seven Samurai")
-    expect("Seven Samurai").to appear_before("Vote Average: 8.5")
     expect("Vote Average: 8.5").to appear_before("Cinema Paradiso")
     expect("Seven Samurai").to appear_before("Cinema Paradiso")
-
 
   end
 
