@@ -90,3 +90,7 @@ body {
     align-items: center;
     height: 100%;
 }
+
+.submit-button-container {
+    padding-top: 20px;
+}
