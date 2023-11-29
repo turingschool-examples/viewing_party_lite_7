@@ -10,6 +10,7 @@ RSpec.describe 'user discover results page', type: :feature do
     click_button('Discover Top Rated Movies')
     expect(current_path).to eq(user_movies_path(@user1))
     expect(page).to have_content('The Godfather')
+    expect(page).to have_content('8.708')
   end
 
   it 'limits results to 20 movies' do
