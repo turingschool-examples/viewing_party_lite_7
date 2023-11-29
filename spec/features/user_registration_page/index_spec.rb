@@ -21,25 +21,34 @@ RSpec.describe "User Registration Page Index", type: :feature do
       fill_in(:email, with: "peyton18@yahoo.com")
 
       click_button "Create New User"
-
       expect(current_path).to eq("/users/#{User.last.id}")
     end
 
-    xit "requires you to fill in every field" do
+    it "requires you to fill in every field" do
       fill_in(:name, with: "Peyton Manning")
 
-      click_button "Register"
+      click_button "Create New User"
 
-      expect(page).to have_content("Please Fill in All Fields")
+      expect(page).to have_content("Please Fill in All Fields/Email is already taken")
 
       expect(current_path).to eq("/register")
     end
 
-    xit "requires you to have a unique email address" do 
-      fill_in(:name, with: "Peyton Manning")
-      fill_in(:email, with: "scottd@gmail.com")
+    it "requires you to have a unique email address" do 
 
-      expect(page).to have_content("Email is already taken")
+      fill_in(:name, with: "Peyton Manning")
+      fill_in(:email, with: "peyton18@yahoo.com")
+
+      click_button "Create New User"
+
+      visit "/register"
+
+      fill_in(:name, with: "John Elway")
+      fill_in(:email, with: "peyton18@yahoo.com")
+
+      click_button "Create New User"
+      
+      expect(page).to have_content("Please Fill in All Fields/Email is already taken")
 
       expect(current_path).to eq("/register")
     end

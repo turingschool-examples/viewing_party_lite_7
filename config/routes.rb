@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   get "/users/:id/discover", to: "discover#index"
   get "/register", to: "users#new"
   # get "/new", to: "users#new"
-  post "/", to: "users#create"
+  post "/users/:id", to: "users#create"
+  post "/register", to: "users#create"
 end
