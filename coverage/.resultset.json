@@ -447,17 +447,50 @@
       "/Users/kzolman/3mod/projects/viewing_party_lite_7/app/controllers/users/discover/results_controller.rb": {
         "lines": [
           1,
-          1,
-          2,
-          2,
           null,
+          1,
+          1,
           null,
           2,
           1,
           1,
+          null,
+          1,
+          1,
+          1,
+          20,
+          null,
           1,
           0,
           0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/poros/movie.rb": {
+        "lines": [
+          1,
+          1,
+          20,
+          20,
+          null,
+          null,
+          null,
+          null,
+          20,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           null
@@ -475,6 +508,6 @@
         ]
       }
     },
-    "timestamp": 1701283873
+    "timestamp": 1701284799
   }
 }
