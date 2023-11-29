@@ -9,7 +9,7 @@ RSpec.describe 'landing page', type: :feature do
     click_link('Viewing Party Landing Page')
     expect(current_path).to eq(root_path)
   end
-  
+
   it 'contains the name of the application' do
     visit '/'
 
@@ -34,6 +34,6 @@ RSpec.describe 'landing page', type: :feature do
     expect(page).to have_content(user_2.name)
     expect(page).to have_link(user_1.name)
     click_link(user_1.name)
-    expect(current_path).to eq(user_path(user_1.id))
+    expect(current_path).to eq("/users/#{user_1.id}")
   end
 end

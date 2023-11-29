@@ -1,3 +1,8 @@
 <%= link_to "Viewing Party Landing Page", root_path %>
 
 <%= button_to "New User", 'users/new' %>
+
+<h3>User Index</h3>
+<%@users.each do |user|%>
+  <%= link_to "#{user.name}", "users/#{user.id}"%>
+<%end%>
