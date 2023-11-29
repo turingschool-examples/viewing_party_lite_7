@@ -29,28 +29,45 @@ RSpec.describe '#show', type: :feature do
   describe 'when I visit /users/:user_id/discover' do
     it 'has a home link and discover movies title' do
       visit discover_user_path(@user1)
-
       expect(page).to have_link('Home')
       expect(page).to have_content('Discover Movies')
     end
 
     it 'has a discover movies title and a button to top rated movies' do
+      json_response = File.read("spec/fixtures/top_rated.json")
+      parsed = JSON.parse(json_response, symbolize_names: true)
+      movies = parsed[:results]
+      stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{Rails.application.credentials.tmdb[:key]}").
+      with(
+        headers: {
+       'Accept'=>'*/*',
+       'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+       'User-Agent'=>'Faraday v2.7.12'
+        }).
+        
+      to_return(status: 200, body: json_response, headers: {})
+      
       visit discover_user_path(@user1)
-
+      
       expect(page).to have_button('Find Top Rated Movies')
-
+      
       click_button('Find Top Rated Movies')
+      
+      expect(current_path).to eq(user_movies_path(@user1))
+      
+      movies.each do |movie|
+        expect(movie[:title]).to be_a(String)
+        expect(page).to have_content(movie[:title])
+      end
     end
 
     it 'has a text field to search movie by title' do
       visit discover_user_path(@user1)
-
       expect(page).to have_field('search')
     end
 
     it 'has a button to find movie' do
       visit discover_user_path(@user1)
-
       expect(page).to have_button('Find Movies')
     end
   end
