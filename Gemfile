@@ -57,6 +57,8 @@ group :development, :test do
   gem "shoulda-matchers"
   gem "simplecov"
   gem "orderly"
+  gem "webmock"
+  gem "vcr"
 end
 
 group :development do
@@ -81,3 +83,4 @@ group :test do
 end
 
 gem "faraday"
+gem "figaro"

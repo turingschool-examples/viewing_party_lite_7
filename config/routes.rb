@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   
   get "/users/:user_id", to: "users#show"
 
-  get "/users/:user_id/discover", to: "users/movies#index"
+  get "/users/:user_id/discover", to: "users/movies#discover"
   get "/users/:user_id/movies", to: "users/movies#index"
 end
