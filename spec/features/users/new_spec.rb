@@ -77,7 +77,5 @@ RSpec.describe 'new user', type: :feature do
       expect(current_path).to eq(register_user_path)
       expect(page).to have_content('Error: Email is invalid')
     end
-
   end
-
 end
