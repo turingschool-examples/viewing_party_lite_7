@@ -10,7 +10,7 @@ RSpec.describe "Movies Show" do
 
     fill_in :movie_title, with: "Shrek"
     click_button "Find Movies"
-    click_link "Shrek"
+    click_link("Shrek", match: :first)
     expect(current_path).to eq("/users/#{@user1.id}/movies/808")
     
     expect(page).to have_button("Create Viewing Party for Shrek")
