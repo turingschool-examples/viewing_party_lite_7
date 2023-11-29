@@ -5,12 +5,12 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   root 'welcome#index'
+
   resources :users do
     resources :discover, controller: 'users/discover', only: :index
-    # get '/discover', to: 'users/discover#index'
-    get '/movies', to: 'users/discover/results#index'
-    get '/movies/:movie_id', to: 'users/discover/results#show'
+    resources :movies, controller: 'users/discover/results', only: [:index, :show]
   end
+  
   # resources :register, controller: 'registration', only: [:new, :create], path: 'register'
   get '/register', to: 'registration#new', as: 'register'
   post '/register', to: 'registration#create'

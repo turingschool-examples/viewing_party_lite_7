@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-11-29T15:43:15-07:00">2023-11-29T15:43:15-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-11-29T15:46:13-07:00">2023-11-29T15:46:13-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -30,7 +30,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.91
+         2.92
        </span>
     </span> hits/line
     )
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>205</b> relevant lines,
-    <span class="green"><b>204</b> lines covered</span> and
+    <b>204</b> relevant lines,
+    <span class="green"><b>203</b> lines covered</span> and
     <span class="red"><b>1</b> lines missed. </span>
     (<span class="green">
   99.51%
@@ -272,8 +272,8 @@
             <td class="strong t-file__name"><a href="#9bb71d2b0c01958933e984428912760dfbd4038e" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">17</td>
-            <td class="cell--number">8</td>
-            <td class="cell--number">8</td>
+            <td class="cell--number">7</td>
+            <td class="cell--number">7</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -3662,8 +3662,8 @@
     
 
     <div class="t-line-summary">
-      <b>8</b> relevant lines.
-      <span class="green"><b>8</b> lines covered</span> and
+      <b>7</b> relevant lines.
+      <span class="green"><b>7</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -3774,35 +3774,35 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="10">
-            
-            
-
-            
-
-            <code class="ruby">    # get &#39;/discover&#39;, to: &#39;users/discover#index&#39;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="11">
+          <li class="covered" data-hits="1" data-linenumber="10">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    get &#39;/movies&#39;, to: &#39;users/discover/results#index&#39;</code>
+            <code class="ruby">    resources :movies, controller: &#39;users/discover/results&#39;, only: [:index, :show]</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="12">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="11">
+            
             
 
             
 
-            <code class="ruby">    get &#39;/movies/:movie_id&#39;, to: &#39;users/discover/results#show&#39;</code>
+            <code class="ruby">    # get &#39;/movies&#39;, to: &#39;users/discover/results#index&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="12">
+            
+            
+
+            
+
+            <code class="ruby">    # get &#39;/movies/:movie_id&#39;, to: &#39;users/discover/results#show&#39;</code>
           </li>
         </div>
       
