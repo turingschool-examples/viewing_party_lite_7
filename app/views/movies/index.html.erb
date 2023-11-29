@@ -1,8 +1,10 @@
+ <ul>
  <% @movies.each do |movie| %>
-  <p>Title: <%= link_to "#{movie.title}", user_movie_path(@user, movie) %></p>
-  <p>Vote Average: <%= movie.vote_average %></p>
+  <u><%= link_to "#{movie.title}", user_movie_path(@user, movie.id) %></u><br>
+  Vote Average: <%= movie.vote_average %><br><br>
 <% end %>
+</ul>
 
-<p><%= @movies.length %> Results</p>
+<h3><%= @movies.length %> Results</h3>
 
 <%= button_to "Return to Discover Page", user_discover_index_path(@user), method: :get%>
