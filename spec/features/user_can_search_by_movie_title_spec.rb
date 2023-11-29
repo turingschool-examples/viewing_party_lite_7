@@ -12,6 +12,7 @@ RSpec.describe 'user can search for movie by movie title', type: :feature do
     click_button 'Search'
 
     expect(page.status_code).to eq(200)
+
     expect(current_path).to eq(user_movies_path(@user))
     expect(page).to have_content('Star Wars')
   end
