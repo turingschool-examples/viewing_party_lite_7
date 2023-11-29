@@ -1,27 +1,12 @@
 require './poros/movie'
-
+require './services/movies_search'
 class Users::Discover::ResultsController < ApplicationController
   def index
-    # should use service to implement these (research implementation)
+    movies_search = MoviesSearch.new
     if params[:top_rated].present?
-      conn = Faraday.new(url: 'https://api.themoviedb.org/3/') do |faraday|
-        faraday.headers[:Authorization] = "Bearer #{Rails.application.credentials.tmdb[:key]}"
-      end
-      response = conn.get('movie/top_rated')
-      parsed = JSON.parse(response.body, symbolize_names: true)
-      @top_rated = parsed[:results].map do |movie|
-        Movie.new(movie)
-      end
+      @top_rated = movies_search.top_movies
     elsif params[:search].present?
-      conn = Faraday.new(url: 'https://api.themoviedb.org/3/') do |faraday|
-        faraday.headers[:Authorization] = "Bearer #{Rails.application.credentials.tmdb[:key]}"
-        faraday.params[:query] = keyword
-      end
-      response = conn.get('search/movie')
-      parsed = JSON.parse(response.body, symbolize_names: true)
-      @search_result = parsed[:results].map do |movie|
-        Movie.new(movie)
-      end
+      @search_result = movies_search.search_movies(params[:title])
     end
   end
 end
