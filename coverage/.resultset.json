@@ -427,7 +427,53 @@
       },
       "/Users/kzolman/3mod/projects/viewing_party_lite_7/spec/poros/movie_spec.rb": {
         "lines": [
-
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/poros/movie.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          83,
+          83,
+          null,
+          null,
+          null,
+          null,
+          83,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
         ]
       },
       "/Users/kzolman/3mod/projects/viewing_party_lite_7/spec/services/movie_search_spec.rb": {
@@ -508,31 +554,6 @@
           null
         ]
       },
-      "/Users/kzolman/3mod/projects/viewing_party_lite_7/poros/movie.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          82,
-          82,
-          null,
-          null,
-          null,
-          null,
-          82,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
       "/Users/kzolman/3mod/projects/viewing_party_lite_7/services/movies_search.rb": {
         "lines": [
           1,
@@ -593,6 +614,6 @@
         ]
       }
     },
-    "timestamp": 1701301171
+    "timestamp": 1701302061
   }
 }
