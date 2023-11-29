@@ -28,22 +28,6 @@ class UsersController < ApplicationController
       end
     end
   end
-  
-  
-  # def create
-  #   @user = User.new(user_params)
-  #   require 'pry'; binding.pry
-  #   if @user.save
-  #     redirect_to user_path(@user.id)
-  #   else
-  #     if @user.errors[:email]
-  #       flash[:alert] = "Email has already been taken. Please choose a different email."
-  #     else
-  #       flash[:alert] = "Name or Email cannot be blank"
-  #     end
-  #     redirect_back(fallback_location: new_user_path)
-  #   end
-  # end
 
   private
   def user_params
