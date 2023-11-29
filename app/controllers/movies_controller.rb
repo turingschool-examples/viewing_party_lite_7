@@ -13,5 +13,6 @@ class MoviesController < ApplicationController
     @user = User.find(params[:user_id])
     @movie = MovieService.get_detailed_movie(params[:id])
     @cast = MovieService.get_movie_cast(params[:id]).first(10)
+    @reviews = MovieService.get_movie_reviews(params[:id])
   end
 end
