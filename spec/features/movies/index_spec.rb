@@ -30,7 +30,10 @@ RSpec.describe 'discover movies' do
     end
 
 
-  it 'shows what you search for' do
-
+  it 'has a button to return to discover' do
+    visit user_movies_path(@user2)
+    expect(page).to have_button('Discover Page')
+    click_button 'Discover Page'
+    expect(current_path).to eq(discover_user_path(@user2))
   end
 end
