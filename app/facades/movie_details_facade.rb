@@ -10,6 +10,7 @@ class MovieDetailsFacade
     service = MovieService.new
     details = service.movie_details(@movie_id)
     credits = service.get_credits(@movie_id)
-    MovieDetails.new(details, credits)
+    reviews = service.get_reviews(@movie_id)
+    MovieDetails.new(details, credits, reviews)
   end
 end
