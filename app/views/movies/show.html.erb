@@ -7,5 +7,13 @@
 <ul class ="movie-details">
   <li><%= @movie_facade.title %></li>
   <li>Average Rating: <%= @movie_facade.vote_average %></li>
-  <li>Runtime: <%= @movie_facade.vote_average %></li>
+  <li>Runtime: <%= @movie_facade.convert_runtime %></li>
+  <li>Genre(s): <%= @movie_facade.all_genres %></li>
+  <li>Summary: <%= @movie_facade.summary %></li>
 </ul>
+
+<ul class="cast">
+  <% @movie_facade.all_cast.each do |cast_details| %>
+    <li><%= cast_details %></li>
+  <% end %>
+</ul><br>

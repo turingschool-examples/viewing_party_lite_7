@@ -21,10 +21,11 @@ RSpec.describe 'Movie Details Page', type: :feature do
     it "displays details about the movie", :vcr do
       expect(page).to have_content("The Godfather")
       expect(page).to have_content("Average Rating: 8.7")
-      expect(page).to have_content("Runtime: 3:02")
+      expect(page).to have_content("Runtime: 2:55")
       expect(page).to have_content("Genre(s): Drama, Crime")
       expect(page).to have_content("Summary: Spanning the years 1945 to 1955")
-      # expect(page).to have_content("Cast Members: ")
+      save_and_open_page
+      expect(page).to have_content("Don Vito Corleone Played by: Marlon Brando")
       # expect(page).to have_content("Total Reviews: ")
       # expect(page).to have_content("Review Author: ")
       # expect(page).to have_content("Review Details: ")
