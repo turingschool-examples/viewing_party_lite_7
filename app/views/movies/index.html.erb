@@ -1,7 +1,9 @@
 
 <% if params[:top_movies].present? || params[:search].present? %>
   <% @movies.each do |movie| %>
-    <li>Movie: <%= movie[:title] %>     Vote Average - <%= movie[:vote_average] %></li>
+    <section class="movie">
+    Movie: <%= movie[:title] %>     Vote Average - <%= movie[:vote_average] %>
+    </section>
   <% end %>
 <% end %>
 

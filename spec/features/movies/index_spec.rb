@@ -38,4 +38,27 @@ RSpec.describe 'discover movies' do
     click_button 'Discover Page'
     expect(current_path).to eq(discover_user_path(@user2))
   end
+
+  it 'returns objects that are searched for' do
+    json_response = File.read('spec/fixtures/star_wars.json')
+    # parsed = JSON.parse(json_response, symbolize_names: true)
+    # movies = parsed[:results]
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{Rails.application.credentials.tmdb[:key]}&query=Star%20Wars")
+      .with(
+        headers: {
+          'Accept' => '*/*',
+          'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'User-Agent' => 'Faraday v2.7.12'
+        }
+      )
+      .to_return(status: 200, body: json_response, headers: {})
+    visit discover_user_path(@user1.id)
+    expect(find_field('search').value).to eq(nil)
+    fill_in('search', with: 'Star Wars')
+    click_button 'Find Movies'
+    expect(current_path).to eq(user_movies_path(@user1.id))
+    expect(page).to have_content('Star Wars')
+    expect(page).to have_content('Star Wars Holiday Special')
+    expect(page).to have_css('section.movie', count: 20)
+  end
 end
