@@ -17,5 +17,4 @@ describe MovieService do
 
     expect(search[:results].count).to eq(20)
   end
-  
 end
