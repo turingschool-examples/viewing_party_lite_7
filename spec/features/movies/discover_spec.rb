@@ -25,12 +25,18 @@ RSpec.describe "Discover Movies", type: :feature do
   # Details When the user clicks on the Top Rated Movies OR the search button,
   # they should be taken to the movies results page (more details of this on the Movies Results Page issue.
   describe "button to discover top rated movies" do
-    it "shows the TOP 20 highest rated movies from api" do
+    it "shows the Top 20 highest rated movies from api", :vcr do
       visit discover_user_path(@user)
 
       click_button "Find Top Rated Movies"
 
-      expect(page).to have_current_path user_movies_path(@user)
+      expect(page).to have_current_path user_movies_path(@user) + "?q=top+rated"
+
+      movies = MovieFacade.top_rated  # should be available because of controller object-instantiation
+
+      movies.each do |movie|
+        expect(page).to have_content movie.title
+      end
     end
   end
 

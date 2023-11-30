@@ -7,6 +7,15 @@
   params: nil
 } %>
 <br>
+<hr>
 <% @movies.each do | movie | %>
+  <div style="display: flex; justify-content: center; width: 33%; margin: 0 auto;">
+    <div style="flex: 2; text-align: left">
+      <%= link_to "#{movie.title}", user_movie_path(@user, movie), method: :get %>
+    </div>
+    <div style="flex: 1; text-align: right">
+      Rating: <%= movie.vote_average.round(1) %>
+    </div>
+  </div>
 
 <% end %>

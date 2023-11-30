@@ -44,4 +44,8 @@ class MovieFacade
     cast_reviews = TMDBService.get_cast_and_reviews_for_movie(movie.id)
     movie.set_cast_and_reviews(cast_reviews)
   end
+
+  def self.top_rated
+    @@top_rated
+  end
 end
