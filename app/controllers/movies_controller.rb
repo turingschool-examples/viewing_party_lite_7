@@ -11,6 +11,10 @@ class MoviesController < ApplicationController
     end
   end
 
+  def show
+    @facade = MovieDetailsFacade.new(params[:id])
+  end
+
   private
 
   def top20
@@ -34,4 +38,5 @@ class MoviesController < ApplicationController
     json = JSON.parse(response.body, symbolize_names: true)
     @movies = json[:results].take(20)
   end
+
 end
