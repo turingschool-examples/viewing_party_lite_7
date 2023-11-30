@@ -3,17 +3,7 @@ require 'rails_helper'
 describe 'Dashboard: Discover Movies' do
   before :each do
     test_data
-
-    popular_movies_fixture = File.read("spec/fixtures/popular_movies.json")
-    stub_request(:get, "https://api.themoviedb.org/3/movie/popular?api_key=#{ENV["API_KEY"]}").
-    with(
-      headers: {
-            'Accept'=>'*/*',
-            'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-            'User-Agent'=>'Faraday v2.7.12'
-      }).
-    to_return(status: 200, body: popular_movies_fixture, headers: {})
-
+    oppenheimer_test_data
   end
 
   describe 'Top-Rated Movies' do
@@ -59,14 +49,14 @@ describe 'Dashboard: Discover Movies' do
     end
   end
 
-  describe 'Movie Search' do
-    xit "has a link that will go to the movie show page" do
+  describe 'Going to the Movie Show Page' do
+    it "has a link that will go to the movie show page" do
       visit user_discover_index_path(@user1)
       click_button "Search by Movie Title"
-      click_link "The Creator"
+      click_link "Oppenheimer"
 
-      creator_movie = Movie.all.find{|m| m.id == "The Creator"}
-      expect(current_path).to eq(user_movie_path(@user1, creator_movie.id))
+      oppenheimer = MovieService.get_detailed_movie(872585)
+      expect(current_path).to eq(user_movie_path(@user1, oppenheimer.id))
     end
   end
 end
