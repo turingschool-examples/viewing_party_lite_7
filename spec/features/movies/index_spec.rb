@@ -37,11 +37,6 @@ RSpec.describe "Movies Index Page" do
     click_button("Find Movies")
 
     expect(current_path).to eq("/users/#{@user2.id}/movies")
-
-
-    # SAD PATH NEEDED #  What if you click 'Find Movies' without entering search params??    
-  
-
   end
 
   describe '#Sad Path' do

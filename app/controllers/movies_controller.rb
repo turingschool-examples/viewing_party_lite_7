@@ -8,7 +8,6 @@ class MoviesController < ApplicationController
               else
                 if params[:q].blank?
                   flash[:alert] = "Please enter a Movie title"
-                  # render :index
                   redirect_back(fallback_location: "/users/#{params[:id]}/discover")
                 else
                   MovieFacade.searched_movies(params[:q])
