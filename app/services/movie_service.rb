@@ -18,15 +18,8 @@ class MovieService
     get_url("search/movie?query=#{search_params}")
   end
 
-  def self.get_detailed_movie(id)
-    conn = Faraday.new("https://api.themoviedb.org/3/")
-
-    response = conn.get("movie/#{id}") do |faraday|
-      faraday.params["api_key"] = ENV["API_KEY"]
-    end
-
-    movie_data = JSON.parse(response.body, symbolize_names: :true)   
-    DetailedMovie.new(movie_data)
+  def detailed_movie(movie_id)
+    get_url("movie/#{movie_id}")   
   end
 
   def self.get_movie_cast(id)
