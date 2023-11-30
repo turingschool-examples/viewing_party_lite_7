@@ -1,4 +1,4 @@
-class MoviesDetails
+class MovieDetails
   attr_reader :title,
               :vote_average,
               :runtime,
@@ -8,13 +8,13 @@ class MoviesDetails
               :total_reviews,
               :reviews
 
-  def initialize(details)
+  def initialize(details, credits)
     @title = details[:title]
     @vote_average = details[:vote_average]
     @runtime = details[:runtime]
     @genres = details[:genres]
     @summary = details[:overview]
-
+    @cast = credits[:cast].take(10)
   end
 
   def format_runtime

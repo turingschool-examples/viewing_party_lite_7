@@ -15,4 +15,8 @@ class MovieService
   def movie_details(id)
     get_url("/3/movie/#{id}")
   end
+  
+  def get_credits(id)
+    get_url("3/movie/#{id}/credits")
+  end
 end
