@@ -8,7 +8,9 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :discover, controller: 'users/discover', only: :index
-    resources :movies, controller: 'users/discover/results', only: [:index, :show]
+    resources :movies, controller: 'users/discover/results', only: [:index, :show] do
+      resources :parties, controller: 'users/discover/results/parties', only: [:new, :create]
+    end
   end
 
   # resources :register, controller: 'registration', only: [:new, :create], path: 'register'

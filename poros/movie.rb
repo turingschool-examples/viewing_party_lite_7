@@ -16,17 +16,13 @@ class Movie
     @movie_id = details[:id]
     @vote_avg = details[:vote_average]
     @title = details[:original_title]
-    # not included in current query
     @runtime = details[:runtime]
     # this needs to be parsed into a string (currently array of ids)
     @genre = details[:genres]
     @summary = details[:overview]
-    # not included in current query
     @cast_names = details[:name]
     @cast_roles = details[:character]
-    # not included in current query
     @review_count = details[:total_results] 
-    # not included in current query
     @review_author = details[:author] 
     @review_details = details[:content]
   end
