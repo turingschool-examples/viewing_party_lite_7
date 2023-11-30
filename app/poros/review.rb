@@ -6,4 +6,8 @@ class Review
     @content = review[:content]
     @rating = review[:author_details][:rating]
   end
+
+  def format_genre
+
+  end
 end

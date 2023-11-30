@@ -14,4 +14,18 @@ class Movie
     @genres = attributes[:genres]
     @summary = attributes[:overview]
   end
+
+  def convert_time
+    hours = @runtime / 60
+    minutes = @runtime % 60
+
+    "#{hours}h #{minutes}min"
+  end
+
+  def format_genre
+    format = @genres.map do |genre|
+      genre[:name]
+    end
+    format.join(", ")
+  end
 end

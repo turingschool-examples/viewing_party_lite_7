@@ -4,8 +4,8 @@
 <%= button_to "Discover Page", "/users/#{params[:id]}/discover", method: :get %>
 
 <h3><%= "Average: #{@movie.average}" %></h3>
-<h3><%= "Runtime: #{@movie.runtime}" %></h3>
-<h3><%= "Genre(s): #{@movie.genres}" %></h3>
+<h3><%= "Runtime: #{@movie.convert_time}" %></h3>
+<h3><%= "Genre(s): #{@movie.format_genre}" %></h3>
 <h3><%= "Summary: #{@movie.summary}" %></h3>
 
 <h2>Cast and Crew:</h2>
