@@ -17,7 +17,7 @@ RSpec.describe "New Party" do
     expect(page).to have_content("Movie Title")
     expect(page).to have_content("Shrek")
     expect(page).to have_content("Duration of Party")
-    expect(page).to have_content("90")
+    expect(find_field(:duration).value).to eq("90")
     expect(page).to have_content("Day")
     expect(page).to have_content("Start Time")
     expect(page).to have_content("Invite Other Users")
@@ -25,17 +25,23 @@ RSpec.describe "New Party" do
     expect(page).to have_content("#{@user2.name} (#{@user2.email})")
     expect(page).to have_content("#{@user3.name} (#{@user3.email})")
     
-    fill_in "Duration of Party", with: 100
-    fill_in "Day", with: "1/1/2024"
-    fill_in "Time", with: "7:00"
+    fill_in :duration, with: 100
     
-    page.check "#{@user3.name}"
+    select "2024", from: "_day_1i"
+    select "February", from: "_day_2i"
+    select "1", from: "_day_3i"  
+    
+    select "19", from: "_time_4i"
+    select "00", from: "_time_5i"
+    
+    expect(find_field("_day_1i").value).to eq("2024")
+    page.check "#{@user3.id}"
     
     click_button "Create Party"
     
     expect(current_path).to eq("/users/#{@user1.id}")
     expect(page).to have_content("Shrek")
-    expect(page).to have_content("January 1, 2024")
+    expect(page).to have_content("February 1, 2024")
     expect(page).to have_content("7:00 pm")
     expect(page).to have_content("Hosting")
 

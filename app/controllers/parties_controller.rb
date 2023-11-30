@@ -9,11 +9,26 @@ class PartiesController < ApplicationController
     if Movie.where("tmdb_id = ?", params[:movie_id]).count > 0
       @movie = Movie.where("tmdb_id = ?", params[:movie_id]).first
     else
-      Movie.create_from_api(params[:movie_id])
+      @movie = Movie.create_from_api(params[:movie_id])
     end
     @user = User.find(params[:user_id])
     new_party = Party.new(parties_params)
     if new_party.save
+      UserParty.create!({
+        user_id: @user.id,
+        party_id: new_party.id,
+        creator: true
+      })
+      params.each do |param|
+        if param[0].to_i != 0 && param[1].to_i == 1
+          UserParty.create!({
+            user_id: param[0].to_i,
+            party_id: new_party.id,
+            creator: false
+          })
+        end
+      end
+
       redirect_to "/users/#{@user.id}"
     else
       flash[:notice] = "Party already created"
@@ -23,6 +38,10 @@ class PartiesController < ApplicationController
 
   private
   def parties_params
+    params[:date] = "#{params["day(2i)"]} #{params["day(3i)"]}, #{params["day(1i)"]}"
+    params[:start_time] = "#{params["time(4i)"]}:#{params["time(5i)"]}"
+    params[:name] = @movie.title
+    params[:movie_id] = @movie.id
     params.permit(:start_time, :name, :duration, :date, :movie_id)
   end
 
