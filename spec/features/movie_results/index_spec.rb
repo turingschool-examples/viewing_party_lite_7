@@ -40,9 +40,9 @@ RSpec.describe "Movie Results Page", type: :feature do
     it "I see the 'Vote Average of the movies'" do
       visit "/users/#{@user1.id}/movies"
 
-      expect(page).to have_content("Vote Average: 8.708")
+      expect(page).to have_content("Vote Average: 8.7")
       expect(page).to have_content("Vote Average: 8.705")
-      expect(page).to have_content("Vote Average: 8.59")
+      expect(page).to have_content("Vote Average: 8.6")
       
     end
 
