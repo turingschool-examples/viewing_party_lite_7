@@ -64,7 +64,7 @@ RSpec.describe 'Movie Details Page', type: :feature do
     end
   end
 
-endrequire 'rails_helper'
+end
 
 RSpec.describe  do
   before(:each) do
