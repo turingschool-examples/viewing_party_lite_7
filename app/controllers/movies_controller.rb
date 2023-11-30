@@ -29,14 +29,17 @@ class MoviesController < ApplicationController
   end
 
   def search
-    conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
-      faraday.params['api_key'] = Rails.application.credentials.tmdb[:key]
-    end
+
+    
+    # conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
+    #   faraday.params['api_key'] = Rails.application.credentials.tmdb[:key]
+    # end
     search_term = params[:search]
 
-    response = conn.get("/3/search/movie?query=#{search_term}")
-    json = JSON.parse(response.body, symbolize_names: true)
+    # response = conn.get("/3/search/movie?query=#{search_term}")
+    # json = JSON.parse(response.body, symbolize_names: true)
     @movies = json[:results].take(20)
+      MovieSearch.new(search_term)
   end
 
 end
