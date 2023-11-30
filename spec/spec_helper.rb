@@ -59,7 +59,7 @@ def oppenheimer_test_data
         }).
       to_return(status: 200, body: oppenheimer_reviews_fixture, headers: {})
 
-      @oppenheimer = MovieService.get_detailed_movie(872585)
+      @oppenheimer = DetailedMovieFacade.new(872585)
 end
 # Given that it is always loaded, you are encouraged to keep this file as
 # light-weight as possible. Requiring heavyweight dependencies from this file
