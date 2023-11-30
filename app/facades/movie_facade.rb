@@ -18,9 +18,22 @@ class MovieFacade
   end
 
   def movie
-    service = MovieService.new
+    
     data = service.get_movie(@search)
 
     Movie.new(data)
+  end
+
+  def cast_members
+    data = service.get_cast_member(@search)
+
+    data[:cast].map do |cast_data|
+      
+      CastMember.new(cast_data)
+    end.first(10)
+  end
+
+  def service
+    MovieService.new
   end
 end

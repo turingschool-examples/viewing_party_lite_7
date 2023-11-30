@@ -33,13 +33,14 @@ RSpec.describe "Movie Results Page", type: :feature do
       expect(page).to have_content("Summary:")
     end
 
-    xit "lists the first 10 cast members,  " do 
+    it "lists the first 10 cast members,  " do 
       visit "/users/#{@user1.id}/movies/155"
 
       expect(page).to have_content("Cast and Crew:")
+      expect(page).to have_content("Christian Bale")
     end
 
-    xit "total review count (and each review's author and info)" do 
+    it "total review count (and each review's author and info)" do 
       visit "/users/#{@user1.id}/movies/155"
 
       expect(page).to have_content("Total Reviews: ")

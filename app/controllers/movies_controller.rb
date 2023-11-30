@@ -7,6 +7,7 @@ class MoviesController < ApplicationController
   def show
     movie_id = params[:id]
     @movie = facade.movie
+    @cast_members = facade.cast_members
   end
 
   private

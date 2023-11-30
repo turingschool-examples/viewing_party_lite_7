@@ -7,3 +7,10 @@
 <h3><%= "Runtime: #{@movie.runtime}" %></h3>
 <h3><%= "Genre(s): #{@movie.genres}" %></h3>
 <h3><%= "Summary: #{@movie.summary}" %></h3>
+
+<h2>Cast and Crew:</h2>
+<% @cast_members.each do |member| %>
+<h3><%= "#{member.name}, #{member.character}" %></h3>
+<% end %>
+
+
