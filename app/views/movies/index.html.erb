@@ -1,6 +1,6 @@
 <%= render partial: "shared/nav" %>
 <br>
-
+<h2 class="container"><%= "Showing movies for #{@search_term}" if @search_term %></h2>
 <br>
 <%= render partial: "shared/button_pri", locals: {
   label: "Discover Page",

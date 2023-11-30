@@ -41,13 +41,13 @@ RSpec.describe "Discover Movies", type: :feature do
   end
 
   describe "a search field for movie title" do
-    it "returns the top matches based on title query" do
+    it "returns the top matches based on title query", :vcr do
       visit discover_user_path(@user)
 
       fill_in :q, with: "Star Wars"
       click_button "Find Movies"
 
-      expect(path).to include "Star%20Wars"
+      expect(page).to have_content "Star Wars"
     end
   end
 

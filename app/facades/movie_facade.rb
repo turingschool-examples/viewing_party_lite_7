@@ -24,6 +24,7 @@ class MovieFacade
     results = []
 
     data.each do |d|
+      # require "pry"; binding.pry
       movie = @@movie_cache.find { |movie| movie.id == d[:id] }  # find it if it's there
 
       if movie.nil?  # if it's not, create the new object

@@ -5,9 +5,12 @@ class MoviesController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-
-    if params[:q] == "top rated"
-      @movies = MovieFacade.get_top_rated  # need to return Top 20 from API call, suggest cached instance here
+    # require "pry"; binding.pry
+    @movies = if params[:q] == "top rated"
+      MovieFacade.get_top_rated  # need to return Top 20 from API call, suggest cached instance here
+    else
+      @search_term = params[:q]
+      MovieFacade.movie_search(params[:q])
     end
 
 
