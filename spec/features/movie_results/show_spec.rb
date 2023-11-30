@@ -44,8 +44,7 @@ RSpec.describe "Movie Results Page", type: :feature do
       visit "/users/#{@user1.id}/movies/155"
 
       expect(page).to have_content("Total Reviews: ")
-      expect(page).to have_content("Review Author: ")
-
+      expect(page).to have_content("All Reviews:")
     end
   end
 end

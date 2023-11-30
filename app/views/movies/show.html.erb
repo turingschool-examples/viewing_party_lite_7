@@ -13,4 +13,13 @@
 <h3><%= "#{member.name}, #{member.character}" %></h3>
 <% end %>
 
+<h3>Total Reviews: <%= @review_count %></h3>
+<h3>All Reviews:</h3>
+
+<% @reviews.each do |review| %>
+  <p><%= "Author: #{review.author}" %></p>
+  <li><%= "Review: #{review.content}" %></li>
+  <li><%= "Rating: #{review.rating}" %></li>
+<% end %>
+
 

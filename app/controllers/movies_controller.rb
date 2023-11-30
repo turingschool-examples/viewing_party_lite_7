@@ -8,6 +8,8 @@ class MoviesController < ApplicationController
     movie_id = params[:id]
     @movie = facade.movie
     @cast_members = facade.cast_members
+    @reviews = facade.reviews
+    @review_count = @reviews.count
   end
 
   private

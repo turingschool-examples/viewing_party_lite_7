@@ -33,6 +33,14 @@ class MovieFacade
     end.first(10)
   end
 
+  def reviews
+    data = service.get_reviews(@search)
+
+    data[:results].map do |review|
+      Review.new(review, data[:total_results])
+    end
+  end
+
   def service
     MovieService.new
   end
