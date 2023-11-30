@@ -16,6 +16,11 @@ describe 'Movie Details Page' do
     it 'has a button to return to the Discover Page' do
       expect(page).to have_button("Discover Page")
     end
+
+    it "'Create Viewing Party' button should take the user to the new viewing party page" do
+      click_button "Create Viewing Party for Oppenheimer"
+      expect(current_path).to eq(new_user_movie_viewing_party_path(@user1, 872585))
+    end
   end
 
   describe 'details' do
@@ -43,9 +48,15 @@ describe 'Movie Details Page' do
     end
   end
 
-  it "has reviews" do
+  it "has reviews that returns the author and information" do
     expect(page).to have_content("Reviews")
     expect(page).to have_content("Manuel São Bento")
     expect(page).to have_content("Oppenheimer is a true masterclass in how to build extreme",)
   end
+
+  it "lists how many reviews are for this movie" do
+    reviews = MovieService.get_movie_reviews(872585)
+    expect(page).to have_content("#{reviews.count} Reviews")
+  end
+
 end

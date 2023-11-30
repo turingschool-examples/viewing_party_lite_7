@@ -3,4 +3,7 @@ class UserPartiesController < ApplicationController
     @user = User.find(params[:user_id])
     @parties = @user.user_parties
   end
+
+  def new
+  end
 end
