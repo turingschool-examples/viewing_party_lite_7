@@ -22,7 +22,7 @@ RSpec.describe "Movie Results Page", type: :feature do
       expect(current_path).to eq("/users/#{@user1.id}/discover")
     end
 
-    xit "shows information about the movie: title, vote average, runtime, genre(s), 
+    it "shows information about the movie: title, vote average, runtime, genre(s), 
     summary" do
       visit "/users/#{@user1.id}/movies/155"
 

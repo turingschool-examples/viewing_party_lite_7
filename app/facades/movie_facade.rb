@@ -20,5 +20,7 @@ class MovieFacade
   def movie
     service = MovieService.new
     data = service.get_movie(@search)
+
+    Movie.new(data)
   end
 end
