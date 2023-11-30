@@ -1,10 +1,8 @@
-<%= link_to "Back to Welcome Page", root_path %><br/>
-
 <h1> <%= @user.name %>'s Dashboard </h1>
 
 <p><b>Name: </b><%= @user.name %></p>
 <p><b>Email:</b> <%= @user.email %></p>
 
-<p><%= button_to "Discover Movies", user_discover_path(@user), method: :get, data: { turbo: false }, local: true %><p>
+<p><%= button_to "Discover Movies", user_discover_index_path(@user), method: :get, data: { turbo: false }, local: true %><p>
   
 <p>Viewing Parties:<p>

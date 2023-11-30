@@ -224,13 +224,16 @@
           null,
           null,
           1,
-          1,
+          null,
           1,
           1,
           1,
           null,
+          null,
+          null,
           1,
           1,
+          null,
           null
         ]
       },
@@ -466,7 +469,149 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/app/controllers/registration_controller.rb": {
+=======
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/spec/poros/movie_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/poros/movie.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          127,
+          127,
+          null,
+          null,
+          null,
+          null,
+          127,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/spec/services/movie_search_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          4,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/services/movies_search.rb": {
+        "lines": [
+          1,
+          1,
+          6,
+          6,
+          120,
+          null,
+          null,
+          null,
+          1,
+          3,
+          3,
+          3,
+          null,
+          3,
+          3,
+          3,
+          6,
+          null,
+          null,
+          null,
+          1,
+          10,
+          10,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          9,
+          9,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/app/controllers/registration_controller.rb": {
+>>>>>>> 58252ed925d6c41b8e425148fa291c1a8ea730d3
         "lines": [
           1,
           1,
@@ -548,6 +693,7 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/poros/movie.rb": {
         "lines": [
           1,
@@ -669,6 +815,9 @@
         ]
       },
       "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/app/controllers/welcome_controller.rb": {
+=======
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/app/controllers/welcome_controller.rb": {
+>>>>>>> 58252ed925d6c41b8e425148fa291c1a8ea730d3
         "lines": [
           1,
           null,
@@ -680,6 +829,10 @@
         ]
       }
     },
+<<<<<<< HEAD
     "timestamp": 1701324373
+=======
+    "timestamp": 1701304455
+>>>>>>> 58252ed925d6c41b8e425148fa291c1a8ea730d3
   }
 }

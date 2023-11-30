@@ -18,7 +18,7 @@ RSpec.describe 'user dashboard page', type: :feature do
   it "discover movies button links to that user's discover page" do
     visit user_path(@user1)
     click_button 'Discover Movies'
-    expect(current_path).to eq(user_discover_path(@user1))
+    expect(current_path).to eq(user_discover_index_path(@user1))
   end
 
   # This test needs to be updated when viewing parties are implemented

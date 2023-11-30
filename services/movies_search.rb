@@ -1,11 +1,6 @@
 class MoviesSearch
-  # should probably refactor conn and get into helper methods
   def top_movies
-    conn = Faraday.new(url: 'https://api.themoviedb.org/3/') do |faraday|
-      faraday.headers[:Authorization] = "Bearer #{Rails.application.credentials.tmdb[:key]}"
-    end
-    response = conn.get('movie/top_rated')
-    parsed = JSON.parse(response.body, symbolize_names: true)
+    parsed = get_url('movie/top_rated')
     parsed[:results].map do |movie|
       Movie.new(movie)
     end
@@ -18,11 +13,12 @@ class MoviesSearch
     end
     response = conn.get('search/movie')
     parsed = JSON.parse(response.body, symbolize_names: true)
-    @search_result = parsed[:results].map do |movie|
+    parsed[:results].map do |movie|
       Movie.new(movie)
     end
   end
 
+<<<<<<< HEAD
   def genre_runtime(movie_id)
     conn = Faraday.new(url: 'https://api.themoviedb.org/3/') do |faraday|
       faraday.headers[:Authorization] = "Bearer #{Rails.application.credentials.tmdb[:key]}"
@@ -65,4 +61,29 @@ class MoviesSearch
     review_count_data = JSON.parse(response.body, symbolize_names: true)
     @review_count_data = Movie.new(review_count_data)
   end
+=======
+  def conn
+    conn = Faraday.new(url: 'https://api.themoviedb.org/3/') do |faraday|
+      faraday.headers[:Authorization] = "Bearer #{Rails.application.credentials.tmdb[:key]}"
+    end
+  end
+
+  # def search_conn(keyword)
+  #   Faraday.new(url: 'https://api.themoviedb.org/3/') do |faraday|
+  #     faraday.headers[:Authorization] = "Bearer #{Rails.application.credentials.tmdb[:key]}"
+  #     faraday.params[:query] = keyword
+  #   end
+  # end
+
+  def get_url(url)
+    response = conn.get(url)
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
+  # Need to figure out how to use search_conn here (no keyword)
+  # def get_search_url(url)
+  #   response = search_conn.get(url)
+  #   JSON.parse(response.body, symbolize_names: true)
+  # end
+>>>>>>> 58252ed925d6c41b8e425148fa291c1a8ea730d3
 end
