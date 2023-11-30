@@ -1,6 +1,6 @@
 
 <% if params[:top_movies].present? %>
   <% @movies.each do |movie| %>
-    <li><%= movie[:title] %></li>
+    <li><%= movie[:title] %> Vote Average<%= movie[:vote_average] %></li>
   <% end %>
 <% end %>
