@@ -19,8 +19,7 @@ describe "the User Registration Page" do
     
     x = User.find_by(name: "Thomas Smith")
 
-    require 'pry'; binding.pry
-    expect(current_path).to eq(user_path(x.id))
+    expect(current_path).to eq(user_dashboard_path(x.id))
     expect(page).to have_content("Thomas Smith's Dashboard")
     expect(page).to have_content("Parties I'm Hosting")
     expect(page).to have_content("Parties I'm Invited To")
