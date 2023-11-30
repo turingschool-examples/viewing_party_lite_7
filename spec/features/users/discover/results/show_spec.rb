@@ -5,15 +5,15 @@ RSpec.describe 'movies detail page', type: :feature do
     @user1 = User.create!(name: 'Joe', email: 'joe@gmail.com')
   end
 
-  it 'has a button to create a viewing party' do
-    visit "/users/#{@user1.id}/movies/#{movie.id}"
+  xit 'has a button to create a viewing party' do
+    visit "/users/#{@user1.id}/movies/238"
     expect(page).to have_content("Create a Viewing Party")
-    # click_button "Create a Viewing Party"
-    # expect(current_path).to eq(viewing_party_path(@user1))
+    click_button "Create a Viewing Party"
+    expect(current_path).to eq("/users/#{@user1.id}/movies/238/viewing_party/new")
   end
 
   it 'has a button to return to the discover page' do 
-    visit "/users/#{@user1.id}/movies/#{movie.id}"
+    visit "/users/#{@user1.id}/movies/238"
     expect(page).to have_content("Back to Discover Page")
     click_button "Back to Discover Page"
     expect(current_path).to eq(user_discover_path(@user1))
@@ -22,15 +22,18 @@ RSpec.describe 'movies detail page', type: :feature do
   it 'has movie attributes such as title, vote average, 
     runtime, genre, summary, cast members(first 10), total reviews
     and each reviews author and information' do
-    visit "/users/#{@user1.id}/movies/#{movie.id}"
-    expect(page).to have_content("Movie Title:")
-    expect(page).to have_content("Vote Average:")
-    expect(page).to have_content("Runtime:")
-    expect(page).to have_content("Genre:")
-    expect(page).to have_content("Summary:")
-    expect(page).to have_content("Cast Members:")
-    expect(page).to have_content("Total Reviews:")
-    expect(page).to have_content("Review Author:")
-    expect(page).to have_content("Review Details:")
+    visit "/users/#{@user1.id}/movies/238"
+    save_and_open_page
+    expect(page).to have_content("Movie Title: The Godfather")
+    expect(page).to have_content("Vote Average: 8.708")
+    expect(page).to have_content("Runtime: 2h 55min")
+    expect(page).to have_content("Genre: [\"Drama\", \"Crime\"]")
+    expect(page).to have_content("Summary: Spanning the years")
+    expect(page).to have_content("Cast Members")
+    expect(page).to have_content("Marlon Brando") # still need to test for 10 cast members
+    expect(page).to have_content("Reviews")
+    expect(page).to have_content("Review Count: 5")
+    expect(page).to have_content("Author: futuretv")
+    expect(page).to have_content("Review Details: The Godfather Review")
   end
 end

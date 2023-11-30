@@ -1,0 +1,26 @@
+<%= button_to 'Back to Discover Page', user_discover_path(@user), method: :get, data: { turbo: false }, local: true %><br/>
+<%# <%= button_to 'Create a Viewing Party', viewing_party_path(@user), method: :get, data: { turbo: false }, local: true %>
+
+<h1><b>Movie Title: </b><%= @movie.title %></h1>
+<p><b>Vote Average: </b><%= @movie.vote_avg %></p>
+<p><b>Runtime:</b> <%= @movie.runtime_hrs_and_mins %></p>
+<p><b>Genre:</b> <%= @movie.genre_name %></p> 
+<p><b>Summary: </b><%= @movie.summary %></p>
+
+<h3><u>Cast Members </u></h3>
+<p><% @cast_members.first(10).each do |cast| %>
+  <li><b><%= cast.cast_names %></b> stars as <b><%= cast.cast_roles %></b></li>
+<% end %> </p>
+
+
+<h3><u>Reviews </u></h3>
+<p>Review Count: <%= @reviews_count.review_count %></p>
+<p><% @reviews.each do |review| %>
+  <b>Author: </b><%= review.review_author %><br/>
+  <b>Review Details: </b><%= review.review_details %><br/><br/>
+<% end %> </p>
+
+
+
+
+

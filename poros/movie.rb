@@ -1,22 +1,44 @@
 class Movie
   attr_reader :vote_avg,
               :title,
-              :summary
+              :summary,
+              :movie_id,
+              :genre,
+              :runtime,
+              :cast_names,
+              :cast_roles,
+              :review_author,
+              :review_details,
+              :review_count
+
 
   def initialize(details)
     @movie_id = details[:id]
     @vote_avg = details[:vote_average]
     @title = details[:original_title]
     # not included in current query
-    # @runtime = details[:]
+    @runtime = details[:runtime]
     # this needs to be parsed into a string (currently array of ids)
-    # @genre = details[:genre_ids]
+    @genre = details[:genres]
     @summary = details[:overview]
     # not included in current query
-    # @cast = details[:]
+    @cast_names = details[:name]
+    @cast_roles = details[:character]
     # not included in current query
-    # @review_count = details[:]
+    @review_count = details[:total_results] 
     # not included in current query
-    # @review_info = details[:]
+    @review_author = details[:author] 
+    @review_details = details[:content]
   end
+
+  def genre_name 
+    @genre.map do |genre|
+      genre[:name]
+    end
+  end
+
+  def runtime_hrs_and_mins
+    "#{@runtime/60}h #{@runtime % 60}min"
+  end
+
 end
