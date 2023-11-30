@@ -1,0 +1,8 @@
+<%= render partial: "shared/nav" %>
+
+<p><%= button_to "New User", 'users/new' %></p>
+
+<h3>User Index</h3>
+<%@users.each do |user|%>
+  <%= link_to "#{user.name}", "users/#{user.id}"%>
+<%end%>

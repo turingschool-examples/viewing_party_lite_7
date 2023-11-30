@@ -1,6 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe 'user dashboard page', type: :feature do
+  # this test applies to all pages
+  it 'has a link to the landing page' do
+    visit '/'
+
+    expect(page).to have_link('Viewing Party Landing Page')
+    click_link('Viewing Party Landing Page')
+    expect(current_path).to eq(root_path)
+  end
+
   it 'lists the users name' do
     user = User.create(name: 'Kam', email: 'kameronk013@gmail.com')
 
