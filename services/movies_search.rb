@@ -1,5 +1,4 @@
 class MoviesSearch
-  # should probably refactor conn and get into helper methods
   def top_movies
     parsed = get_url('movie/top_rated')
     parsed[:results].map do |movie|
@@ -37,6 +36,7 @@ class MoviesSearch
     JSON.parse(response.body, symbolize_names: true)
   end
 
+  # Need to figure out how to use search_conn here (no keyword)
   # def get_search_url(url)
   #   response = search_conn.get(url)
   #   JSON.parse(response.body, symbolize_names: true)
