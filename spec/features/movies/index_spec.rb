@@ -5,12 +5,42 @@ RSpec.describe "Movies Index Page" do
     load_test_data
   end
 
-  it 'Links, button, and search' do
+  it "Top Rated Movies button", :vcr do
     visit "/users/#{@user2.id}/discover"
 
     expect(page).to have_link("Home")
 
-    expect(page).to have_button("Top Rated Movies")
     expect(page).to have_button("Find Movies")
+    expect(page).to have_button("Top Rated Movies")
+
+    click_button("Top Rated Movies")
+    expect(current_path).to eq("/users/#{@user2.id}/movies")
+
+    expect(page).to have_content("Results")
+    expect(page).to have_link("Return to Discover Page")
+    expect(page).to have_link("Home")
+
+    click_link("Return to Discover Page")
+    expect(current_path).to eq("/users/#{@user2.id}/discover")
+  end
+
+  it "Search movies by title", :vcr do
+    visit "/users/#{@user2.id}/discover"
+
+    expect(page).to have_link("Home")
+
+    expect(page).to have_button("Find Movies")
+    expect(page).to have_button("Top Rated Movies")
+
+    fill_in :q, with: "Django"
+
+    click_button("Find Movies")
+
+    expect(current_path).to eq("/users/#{@user2.id}/movies")
+
+
+    # SAD PATH NEEDED #  What if you click 'Find Movies' without entering search params??    
+  
+
   end
 end
