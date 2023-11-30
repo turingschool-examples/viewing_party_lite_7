@@ -17,7 +17,7 @@ class MoviesService < ApplicationService
     json_parse(get_url("movie/top_rated"))
   end
 
-  def find_by(id)
+  def find_by(movie_id)
     json_parse(get_url("movie/#{movie_id}"))
   end
 end

@@ -23,4 +23,12 @@ class MoviesFacade
       Movie.new(data)
     end
   end
+
+  def find_movie(movie_id)
+    service = MoviesService.new
+    
+    data = service.find_by(movie_id)
+
+    Movie.new(data)
+  end
 end
