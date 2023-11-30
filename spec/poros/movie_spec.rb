@@ -1,20 +1,42 @@
 require "rails_helper"
+require_relative "../../app/poros/movie
+"
 
-RSpec.describe Member do
-  it "exists" do
-    attrs = {
-      name: "Leslie Knope",
-      district: "1",
-      role: "Representative",
-      party: "Pizza"
+RSpec.describe Movie do
+  before(:each) do
+    @attrs = {
+      title: Faker::Movie.title,
+      id: "1",
+      vote_average: Faker::Number.between(from: 0.1, to: 10.0),
+      overview: Faker::Lorem.paragraph,
+      poster_path: "/alkdsjfh23r4t.svg"
     }
 
-    member = Member.new(attrs)
+    @movie = Movie.new(@attrs)
+  end
 
-    expect(member).to be_a Member
-    expect(member.name).to eq("Leslie Knope")
-    expect(member.role).to eq("Representative")
-    expect(member.party).to eq("Pizza")
-    expect(member.district).to eq("1")
+  it "exists" do
+    expect(@movie.id).to eq @attrs[:id]
+    expect(@movie).to be_a Movie
+    expect(@movie.title).to eq(@attrs[:title])
+    expect(@movie.vote_average).to eq(@attrs[:vote_average])
+    expect(@movie.overview).to eq(@attrs[:overview])
+    expect(@movie.poster_path).to eq(@attrs[:poster_path])
+  end
+
+  describe "#set_genres_and_runtime" do
+    it "adds genre and duration details" do
+      attr = {
+        genres: [
+          {name: "Crime"},
+          {name: "Drama"}
+        ],
+        runtime: 175
+      }
+
+      @movie.set_genres_and_runtime(attr)
+      expect(@movie.runtime).to eq 175
+      expect(@movie.genres).to eq %w[Crime Drama]
+    end
   end
 end

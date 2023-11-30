@@ -1,14 +1,15 @@
 require "rails_helper"
+require_relative "../../app/facades/movie_factory"
 
-RSpec.describe "Movie Factory" do
+RSpec.describe "Movie Facade" do
   describe "class methods" do
     before(:each) do
       @movies = []
     end
 
-    describe "::make_movie" do
-      it "makes a movie poro based on the data available at the initial landing", :vcr do
-        movies = MovieFactory.get_top_rated
+    describe "::get_top_rated" do
+      it "makes a movie poros for given api call", :vcr do
+        movies = MovieFacade.get_top_rated
 
         expect(movies).to be_an Array
         expect(movies.first).to be_a Movie
@@ -18,9 +19,9 @@ RSpec.describe "Movie Factory" do
 
     describe "::add_details" do
       it "takes a movie poro and adds details from additional api call", :vcr do
-        movie = MovieFactory.get_top_rated.first
+        movie = MovieFacade.get_top_rated.first
 
-        MovieFactory.add_details(movie)
+        MovieFacade.add_details(movie)
 
         expect(movie.runtime).not_to be_nil
         expect(movie.genres).to eq %w[Drama Crime]

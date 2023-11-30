@@ -6,7 +6,8 @@ class Movie
     :runtime,
     :genres,
     :cast,
-    :reviews
+    :reviews,
+    :poster_path
 
   def initialize(attributes)
     @id = attributes[:id]
@@ -16,7 +17,7 @@ class Movie
     @poster_path = attributes[:poster_path]
   end
 
-  def set_genres_and_duration(data)
+  def set_genres_and_runtime(data)
     @genres = data[:genres].map { |genre| genre[:name] }
     @runtime = data[:runtime]
   end
