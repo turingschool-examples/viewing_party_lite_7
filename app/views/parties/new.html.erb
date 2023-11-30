@@ -1,18 +1,26 @@
 <h3><%= "Create a Movie Party for #{@movie[:title]}" %></h3>
 
+<p><%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %></p><br>
+
+<div>
+
+<h5>Viewing Party Details</h5>
+
 <%= "Movie Title: #{@movie[:title]}"%>
 
-<%= form_with url: "/", method: :get, local: true do |f| %>
-  <%= f.label "Duration of Party:" %>
-  <%= f.text_field duration: "#{@movie[:runtime]}" %>
+<%= form_with url: "/users/#{@user.id}/movies/#{@movie[:id]}/viewing-party", method: :post, local: true do |f| %>
+  <%= "Duration of Party:" %>
+  <%= f.text_field :duration, value: "#{@movie[:runtime]}" %>
   <%= f.label "Day:" %>
-  <%= f.date_select :time_test %>
-  <%= f.label "Start Time:" %>
+  <%= f.date_select :day %>
+  <%=  "Start Time:" %>
   <%= f.time_select :time%>
   <p>Invite Other Users</p>
   <% User.all.each do |user|%>
-    <%= f.check_box "#{user.email}" %>
+    <%= f.check_box "#{user.id}" %>
     <%= "#{user.name} (#{user.email})"%>
   <% end %>
   <%= f.submit "Create Party" %>
 <% end %>
+
+</div>

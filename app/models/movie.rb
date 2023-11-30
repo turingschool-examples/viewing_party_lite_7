@@ -31,35 +31,30 @@ class Movie < ApplicationRecord
     movies
   end
 
-  def self.details(movie_id)
-    conn = Faraday.new(url: "https://api.themoviedb.org/3/movie/#{movie_id}") do |faraday|
+  def self.details_api_call(url)
+    conn = Faraday.new(url: url) do |faraday|
       faraday.headers["Authorization"] = Rails.application.credentials.tmdb[:key]
     end
     
     response = conn.get
     data = JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.details(movie_id)
+    data = Movie.details_api_call("https://api.themoviedb.org/3/movie/#{movie_id}")
     details = Hash.new
       details[:id] = data[:id]
       details[:title] = data[:title]
-      details[:runtime] = Movie.hrmin(data[:runtime])
+      details[:runtime] = data[:runtime]
       details[:vote_average] = data[:vote_average]
       details[:genre] = data[:genres].map { |genre| genre[:name] }.join(', ')
       details[:summary] = data[:overview]
-    
-    conn = Faraday.new(url: "https://api.themoviedb.org/3/movie/#{movie_id}/credits") do |faraday|
-      faraday.headers["Authorization"] = Rails.application.credentials.tmdb[:key]
-    end
-      
-    response = conn.get
-    data = JSON.parse(response.body, symbolize_names: true)
+
+    data = Movie.details_api_call("https://api.themoviedb.org/3/movie/#{movie_id}/credits")
 
     details[:cast] = Movie.cast(data[:cast])
     
-    conn = Faraday.new(url: "https://api.themoviedb.org/3/movie/#{movie_id}/reviews") do |faraday|
-      faraday.headers["Authorization"] = Rails.application.credentials.tmdb[:key]
-    end
-    response = conn.get
-    data = JSON.parse(response.body, symbolize_names: true)
+    data = Movie.details_api_call("https://api.themoviedb.org/3/movie/#{movie_id}/reviews")
       
       details[:reviews] = Movie.reviews(data[:results])
       details[:review_count] = data[:total_results]
@@ -86,6 +81,15 @@ class Movie < ApplicationRecord
     reviews.map do |review|
       [review[:author], review[:content]]
     end
+  end
+
+  def self.create_from_api(movie_id)
+    data = data = Movie.details_api_call("https://api.themoviedb.org/3/movie/#{movie_id}")
+    Movie.create!({
+      title: data[:title],
+      tmdb_id: data[:id],
+      runtime: data[:runtime]
+    })
   end
 
 end
