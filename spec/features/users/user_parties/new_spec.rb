@@ -28,10 +28,10 @@ describe 'New Viewing Party Page' do
     end
     
     xit "option to invite other users is displayed if there are other users" do
-      user2 = User.create!(name: "Anthea", email: "anthea@website.com")
+      User.create!(name: "Anthea", email: "anthea@website.com")
       expect(page).to have_content("Invite Other Users")
       expect(page).to have_checkbox("Anthea (anthea@website.com)")
-      user2 = User.create!(name: "Xero", email: "xero@spooky.wow")
+      User.create!(name: "Xero", email: "xero@spooky.wow")
       expect(page).to have_checkbox("Xero (xero@spooky.wow)")
     end
     
