@@ -24,6 +24,18 @@ RSpec.describe "Discover Movies", type: :feature do
   # A Button to Search by Movie Title
   # Details When the user clicks on the Top Rated Movies OR the search button,
   # they should be taken to the movies index page (more details of this on the Movies Results Page issue.
+
+  # When I visit the discover movies page,
+  # and click on either the Top Movies button or the Search button,
+  # I should be taken to the movies results page (users/:user_id/movies) where I see:
+  #
+  # Title (As a Link to the Movie Details page)
+  # Vote Average of the movie
+  # Details: There should only be a maximum of 20 results.
+  # The above details should be listed for each movie.
+  # 
+  # I should also see a button to return to the Discover Page.
+
   describe "button to discover top rated movies" do
     it "shows the Top 20 highest rated movies from api", :vcr do
       visit discover_user_path(@user)
