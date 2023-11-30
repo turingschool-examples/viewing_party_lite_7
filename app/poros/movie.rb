@@ -1,5 +1,5 @@
 class Movie
-  attr_reader :backdrop_path, :genre_ids, :id, :overview,
+  attr_reader :backdrop_path, :genres, :id, :overview,
               :popularity, :poster_path, :release_date, :title,
               :vote_average, :vote_count, :runtime
 
