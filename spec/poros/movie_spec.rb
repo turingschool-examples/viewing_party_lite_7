@@ -1,7 +1,7 @@
 require "rails_helper"
 require_relative "../../app/poros/movie"
 
-RSpec.describe Movie do
+RSpec.describe Poro::Movie do
   before(:each) do
     @attrs = {
       title: Faker::Movie.title,
@@ -11,12 +11,12 @@ RSpec.describe Movie do
       poster_path: "/alkdsjfh23r4t.svg"
     }
 
-    @movie = Movie.new(@attrs)
+    @movie = Poro::Movie.new(@attrs)
   end
 
   it "exists" do
     expect(@movie.id).to eq @attrs[:id]
-    expect(@movie).to be_a Movie
+    expect(@movie).to be_a Poro::Movie
     expect(@movie.title).to eq(@attrs[:title])
     expect(@movie.vote_average).to eq(@attrs[:vote_average])
     expect(@movie.overview).to eq(@attrs[:overview])

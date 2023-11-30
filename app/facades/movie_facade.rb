@@ -7,12 +7,11 @@ class MovieFacade
 
   def self.get_top_rated
     return @@top_rated unless @@top_rated.length == 0
-
+    # require "pry"; binding.pry
     data = TMDBService.top_rated
 
     data.each do |d|
-      movie = Movie.new(d)
-      @@movie_cache.append(movie)
+      movie = Poro::Movie.new(d)
       @@top_rated.append(movie)
     end
 
@@ -28,7 +27,7 @@ class MovieFacade
       movie = @@movie_cache.find { |movie| movie.id == d[:id] }  # find it if it's there
 
       if movie.nil?  # if it's not, create the new object
-        movie = Movie.new(d)
+        movie = Poro::Movie.new(d)
         @@movie_cache.append(movie)
       end
 

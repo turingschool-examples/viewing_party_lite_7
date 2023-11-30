@@ -23,7 +23,7 @@ RSpec.describe "Discover Movies", type: :feature do
   # A text field to enter keyword(s) to search by movie title
   # A Button to Search by Movie Title
   # Details When the user clicks on the Top Rated Movies OR the search button,
-  # they should be taken to the movies results page (more details of this on the Movies Results Page issue.
+  # they should be taken to the movies index page (more details of this on the Movies Results Page issue.
   describe "button to discover top rated movies" do
     it "shows the Top 20 highest rated movies from api", :vcr do
       visit discover_user_path(@user)
@@ -41,10 +41,10 @@ RSpec.describe "Discover Movies", type: :feature do
   end
 
   describe "a search field for movie title" do
-    it "returns the top 20 matches based on title query" do
+    it "returns the top matches based on title query" do
       visit discover_user_path(@user)
 
-      fill_in :search, with: "Star Wars"
+      fill_in :q, with: "Star Wars"
       click_button "Find Movies"
 
       expect(path).to include "Star%20Wars"

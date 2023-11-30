@@ -12,7 +12,7 @@ RSpec.describe "Movie Facade" do
         movies = MovieFacade.get_top_rated
 
         expect(movies).to be_an Array
-        expect(movies.first).to be_a Movie
+        expect(movies.first).to be_a Poro::Movie
         expect(movies.first.title).to eq "The Godfather"
       end
     end
@@ -22,7 +22,7 @@ RSpec.describe "Movie Facade" do
         movies = MovieFacade.movie_search("fastball")
 
         expect(movies).to be_an Array
-        expect(movies.first).to be_a Movie
+        expect(movies.first).to be_a Poro::Movie
         expect(movies.first.title.downcase).to include "fastball"
       end
     end

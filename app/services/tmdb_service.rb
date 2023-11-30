@@ -1,10 +1,10 @@
 class TMDBService
   def self.top_rated
-    json_from_url("movie/top_rated")[:results]  # api call only returns first 20 results
+    json_from_url("movie/top_rated")[:results]  # api call only returns first 20 index
   end
 
   def self.search_movies(title)
-    json_from_url("search/movie?query=#{title}")[:results]  # api call only returns first 20 results
+    json_from_url("search/movie?query=#{title}")[:results]  # api call only returns first 20 index
   end
 
   # consider running this additional api call in separate thread, kicked off by ::top_rated or ::search_movies

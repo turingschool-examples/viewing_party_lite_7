@@ -47,7 +47,7 @@ RSpec.describe TMDBService do
     end
 
     describe "::search_movies" do
-      it "builds a query parameter for a given string and returns results", :vcr do
+      it "builds a query parameter for a given string and returns index", :vcr do
         search = TMDBService.search_movies("Fastball")
         expect(search).to be_an Array
         expect(search.map { |movie| movie[:title].downcase }).to include "fastball"

@@ -27,7 +27,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Wed, 29 Nov 2023 23:01:06 GMT
+      - Thu, 30 Nov 2023 18:35:25 GMT
       Server:
       - openresty
       Cache-Control:
@@ -38,16 +38,16 @@ http_interactions:
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 ea9117ea813694fc6f724c5d6906cc7a.cloudfront.net (CloudFront)
+      - 1.1 f4c242df489ca5fcd4ee1c90882e0cea.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - PHX50-P1
+      - PHX50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - HU1fGv3n0VQ_yOPnJ6veAQaUMWCXAF1FkoXH-WyiRcy0JCeS2h9gHw==
+      - mdHPM42YhYS_ldwgBzw4anPDaCDf0ZC_0egBCOlFp-4XbziRF31tQg==
     body:
       encoding: ASCII-8BIT
       string: '{"status_code":34,"status_message":"The resource you requested could
         not be found.","success":false}'
-  recorded_at: Wed, 29 Nov 2023 23:01:06 GMT
+  recorded_at: Thu, 30 Nov 2023 18:35:25 GMT
 recorded_with: VCR 6.2.0
