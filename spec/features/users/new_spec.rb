@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'User Registration', type: :feature do
@@ -23,11 +25,11 @@ RSpec.describe 'User Registration', type: :feature do
       expect(page).to have_content('Welcome, River!')
       expect(page).to have_content("River's Dashboard")
     end
-    
+
     it 'shows an error if the name is blank' do
       visit register_path
       fill_in('Email', with: 'username@email.net')
-      
+
       click_button 'Create New User'
 
       expect(current_path).to eq(register_path)
