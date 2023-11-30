@@ -1,0 +1,12 @@
+<%= render :partial => "shared/nav" %>
+<br>
+<h2 class="container"><%= "Create Movie Party for #{@movie.title}" %></h2>
+<br>
+<%= render partial: "shared/button_pri", locals: {
+  label: "Discover Page",
+  path: discover_user_path(@user),
+  method: :get,
+  params: nil
+} %>
+<br>
+form here
