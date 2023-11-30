@@ -15,7 +15,10 @@ RSpec.describe "Movie Results Page", type: :feature do
 
         expect(current_path).to eq "/users/#{@user1.id}/movies"
 
-        
+        visit "/users/#{@user1.id}/discover"
+        fill_in 'search', with: 'terminator'
+        click_button "Search by Movie Title"
+        expect(current_path).to eq("/users/#{@user1.id}/movies")
       end
       
     end
