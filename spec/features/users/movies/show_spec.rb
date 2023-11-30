@@ -16,6 +16,11 @@ describe 'Movie Details Page' do
     it 'has a button to return to the Discover Page' do
       expect(page).to have_button("Discover Page")
     end
+
+    it "'Create Viewing Party' button should take the user to the new viewing party page" do
+      click_button "Create Viewing Party for Oppenheimer"
+      expect(current_path).to eq(new_user_movie_viewing_party_path(@user1, 872585))
+    end
   end
 
   describe 'details' do
