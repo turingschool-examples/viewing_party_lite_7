@@ -16,10 +16,12 @@ RSpec.describe 'Movie Results page, movies index', type: :feature do
       expect(movie_vote_averages.count).to be <= 20
 
       expect(current_path).to eq(user_movies_path(@user))
-      expect(page).to have_link('The Godfather')
-      expect(page).to have_content('Vote Average: 8.7')
+      within "#movie-238" do
+        expect(page).to have_link('The Godfather')
+        expect(page).to have_content('Vote Average: 8.7')
+        click_link 'The Godfather'
+      end
 
-      click_link 'The Godfather'
       expect(current_path).to eq("/users/#{@user.id}/movies/238") # ID is hard coded, need to think of better way to grab 
     end
 
@@ -35,10 +37,12 @@ RSpec.describe 'Movie Results page, movies index', type: :feature do
       expect(movie_vote_averages.count).to be <= 20
 
       expect(current_path).to eq(user_movies_path(@user))
-      expect(page).to have_link('Star Wars')
-      expect(page).to have_content('Vote Average: 8.2')
+      within "#movie-11" do # ID is hard coded, need to think of better way to grab 
+        expect(page).to have_link('Star Wars')
+        expect(page).to have_content('Vote Average: 8.2')
+        click_link 'Star Wars'
+      end
 
-      click_link 'Star Wars'
       expect(current_path).to eq("/users/#{@user.id}/movies/11") # ID is hard coded, need to think of better way to grab 
     end
   end
