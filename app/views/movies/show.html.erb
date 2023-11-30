@@ -2,6 +2,10 @@
 
 <%= button_to "Discover Page", user_discover_index_path(@user), method: :get, data: { turbo: false } %>
 
+<%= button_to "Create A Party", new_user_movie_party_path(@user, @movie_facade.id), method: :get, data: { turbo: false} %>
+
 <ul class ="movie-details">
   <li><%= @movie_facade.title %></li>
+  <li>Average Rating: <%= @movie_facade.vote_average %></li>
+  <li>Runtime: <%= @movie_facade.vote_average %></li>
 </ul>

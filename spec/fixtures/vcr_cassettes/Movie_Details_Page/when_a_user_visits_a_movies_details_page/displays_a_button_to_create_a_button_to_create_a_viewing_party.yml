@@ -35,7 +35,7 @@ http_interactions:
       X-Memc-Expires:
       - '16621'
       Date:
-      - Thu, 30 Nov 2023 15:53:51 GMT
+      - Thu, 30 Nov 2023 15:53:50 GMT
       Etag:
       - W/"61e5646927e860b1d4b0842211ccc941"
       Vary:
@@ -44,13 +44,13 @@ http_interactions:
       X-Cache:
       - RefreshHit from cloudfront
       Via:
-      - 1.1 5dcf09eaf65257abe85ddc5988a25c4e.cloudfront.net (CloudFront)
+      - 1.1 56a79b3a2ac1e2942686c2337f96fb72.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - MEzcARR7iWaNG7MJ0mvRUSq4HFGrnjAHaLunJXN7k3tjkf5aF_nydg==
+      - rU_pN4v0svqQMg0v4ZPUJOVhQwDzTGc5hBs2YOs1Hn3kPH475qEErQ==
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The

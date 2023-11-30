@@ -8,8 +8,10 @@ RSpec.describe 'Movie Details Page', type: :feature do
       visit "users/#{@user.id}/movies/238"
     end
 
-    xit "displays a button to create a button to create a viewing party", :vcr do
+    it "displays a button to create a button to create a viewing party", :vcr do
       expect(page).to have_button("Create A Party")
+      
+
     end
 
     it "displays a button to return to the discover page", :vcr do
@@ -19,7 +21,7 @@ RSpec.describe 'Movie Details Page', type: :feature do
     it "displays details about the movie", :vcr do
       expect(page).to have_content("The Godfather")
       expect(page).to have_content("Average Rating: 8.7")
-      expect(page).to have_content("Runtime: 175 min")
+      expect(page).to have_content("Runtime: 3:02")
       expect(page).to have_content("Genre(s): Drama, Crime")
       expect(page).to have_content("Summary: Spanning the years 1945 to 1955")
       # expect(page).to have_content("Cast Members: ")

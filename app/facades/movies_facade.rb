@@ -28,7 +28,7 @@ class MoviesFacade
     service = MoviesService.new
     
     data = service.find_by(movie_id)
-
-    movie = Movie.new(data[:results])
+    
+    movie = Movie.new(data)
   end
 end
