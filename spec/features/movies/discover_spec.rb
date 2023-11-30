@@ -64,10 +64,15 @@ RSpec.describe "Discover Movies", type: :feature do
   end
 
   describe "redirect to movie show page when clicked" do
-    it "visits the movie show page when movie link clicked" do
-      movie = create :movie
+    it "visits the movie show page when movie link clicked", :vcr do
+      visit discover_user_path(@user)
 
-      visit user_movie_path(@user, movie)
+      fill_in :q, with: "Star Wars"
+      click_button "Find Movies"
+
+      click_link "Star Wars"
+
+      expect(page).to have_content "Star Wars"
     end
   end
 end

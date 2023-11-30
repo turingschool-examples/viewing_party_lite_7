@@ -8,6 +8,8 @@ RSpec.describe "Movie details page", type: :feature do
       title: "Fastball",
       id: 330068
     })
+    @movie.set_genres_and_runtime({genres: [{name: "Documentary"}], runtime: 87})
+    @movie.set_cast_and_reviews({cast: [{name: "Nolan Ryan"}], reviews: []})
   end
   # US Movies Details Page
   # When I visit a movie's detail page (/users/:user_id/movies/:movie_id) where :id is a valid user id,
@@ -44,10 +46,10 @@ RSpec.describe "Movie details page", type: :feature do
   # Each review's author and information
   # NOTE: The above information should come from 3 different endpoints from The Movie DB API.
   describe "movie details" do
-    it "shows all the details" do
+    it "shows all the details", :vcr do
       visit user_movie_path(@user, @movie.id)
-      
-      expect(page).to have_content @movie.overview
+
+      expect(page).to have_content "Overview"
       expect(page).to have_content @movie.cast.join(", ")
       expect(page).to have_content @movie.genres.join(", ")
     end

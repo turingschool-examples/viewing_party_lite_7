@@ -25,6 +25,7 @@ module Poro
       @cast = data[:cast]
       @reviews = data[:reviews]
     end
+
     def cast
       @cast.map { |actor| actor[:name] }
     end
