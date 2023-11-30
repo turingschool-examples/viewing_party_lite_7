@@ -44,13 +44,13 @@ http_interactions:
       X-Cache:
       - RefreshHit from cloudfront
       Via:
-      - 1.1 05fe6f95b77eb54d0691950915c27264.cloudfront.net (CloudFront)
+      - 1.1 96725c0e4ced177a38df871e7cc48a4a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - dgK14ljxXhEjgxTXuE_JWGF5DFvpsFxY3dFNJKkJGZX8rQVhhYH_LA==
+      - yaB_oESlNr1NKjNvTjYV5XA5YEnXUuosziVygWPePp7fXeqpa_zzQw==
     body:
       encoding: ASCII-8BIT
       string: !binary |-
