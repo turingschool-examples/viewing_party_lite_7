@@ -8,7 +8,7 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @facade = MovieDetailsFacade.new(params[:id]).details
+    @facade = MovieDetailsFacade.new(params[:id])
   end
 
   private
