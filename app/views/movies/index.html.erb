@@ -2,6 +2,9 @@
 <% @movies_facade.each do |movie| %>
 
   <ul class="movie">
-    <li class="title"><%= link_to movie.title, url: user_movies_path(@user) %></li>
+    <li class="title">
+      <%= link_to movie.title, user_movie_path(@user, movie.id) %>
+      <span class="voteAverage">Vote Average: <%= movie.vote_average %></span>
+    </li>
   </ul>
 <% end %>
