@@ -43,9 +43,15 @@ describe 'Movie Details Page' do
     end
   end
 
-  it "has reviews" do
+  it "has reviews that returns the author and information" do
     expect(page).to have_content("Reviews")
     expect(page).to have_content("Manuel São Bento")
     expect(page).to have_content("Oppenheimer is a true masterclass in how to build extreme",)
   end
+
+  it "lists how many reviews are for this movie" do
+    reviews = MovieService.get_movie_reviews(872585)
+    expect(page).to have_content("#{reviews.count} Reviews")
+  end
+
 end
