@@ -1,43 +1,35 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/blakesergesketter/m3/projects/viewing_party_lite_7/app/helpers/application_helper.rb": {
+      "/Users/xander/turing/3mod/projects/viewing_party_lite_7/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/blakesergesketter/m3/projects/viewing_party_lite_7/app/models/user.rb": {
+      "/Users/xander/turing/3mod/projects/viewing_party_lite_7/app/services/movie_service.rb": {
         "lines": [
           1,
           1,
-          1,
-          null
-        ]
-      },
-      "/Users/blakesergesketter/m3/projects/viewing_party_lite_7/app/models/application_record.rb": {
-        "lines": [
+          0,
+          null,
+          null,
           1,
           1,
-          null
-        ]
-      },
-      "/Users/blakesergesketter/m3/projects/viewing_party_lite_7/app/controllers/welcome_controller.rb": {
-        "lines": [
           1,
           1,
-          2,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
           null,
           null
         ]
       },
-      "/Users/blakesergesketter/m3/projects/viewing_party_lite_7/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/blakesergesketter/m3/projects/viewing_party_lite_7/app/channels/application_cable/channel.rb": {
+      "/Users/xander/turing/3mod/projects/viewing_party_lite_7/app/channels/application_cable/channel.rb": {
         "lines": [
           0,
           0,
@@ -47,7 +39,7 @@
         "branches": {
         }
       },
-      "/Users/blakesergesketter/m3/projects/viewing_party_lite_7/app/channels/application_cable/connection.rb": {
+      "/Users/xander/turing/3mod/projects/viewing_party_lite_7/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
           0,
@@ -57,7 +49,103 @@
         "branches": {
         }
       },
-      "/Users/blakesergesketter/m3/projects/viewing_party_lite_7/app/controllers/users_controller.rb": {
+      "/Users/xander/turing/3mod/projects/viewing_party_lite_7/app/controllers/application_controller.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/xander/turing/3mod/projects/viewing_party_lite_7/app/controllers/movies_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/xander/turing/3mod/projects/viewing_party_lite_7/app/controllers/users_controller.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/xander/turing/3mod/projects/viewing_party_lite_7/app/controllers/welcome_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/xander/turing/3mod/projects/viewing_party_lite_7/app/facades/discover_facade.rb": {
+        "lines": [
+          0,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/xander/turing/3mod/projects/viewing_party_lite_7/app/jobs/application_job.rb": {
+        "lines": [
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/xander/turing/3mod/projects/viewing_party_lite_7/app/mailers/application_mailer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/xander/turing/3mod/projects/viewing_party_lite_7/app/models/application_record.rb": {
         "lines": [
           0,
           0,
@@ -66,21 +154,25 @@
         "branches": {
         }
       },
-      "/Users/blakesergesketter/m3/projects/viewing_party_lite_7/app/jobs/application_job.rb": {
+      "/Users/xander/turing/3mod/projects/viewing_party_lite_7/app/models/user.rb": {
         "lines": [
+          null,
+          null,
           0,
-          null,
-          null,
-          null,
-          null,
-          null,
+          0,
+          0,
           0
         ],
         "branches": {
         }
       },
-      "/Users/blakesergesketter/m3/projects/viewing_party_lite_7/app/mailers/application_mailer.rb": {
+      "/Users/xander/turing/3mod/projects/viewing_party_lite_7/app/poros/preview.rb": {
         "lines": [
+          0,
+          0,
+          0,
+          null,
+          0,
           0,
           0,
           0,
@@ -90,6 +182,6 @@
         }
       }
     },
-    "timestamp": 1701277792
+    "timestamp": 1701384757
   }
 }

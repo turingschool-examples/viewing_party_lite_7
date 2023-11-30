@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_cast=true&with_genres=true&with_people=true&with_runtime=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      'Api-Key:':
+      - 1a004c3b0a02193e9ad397163efd73c5
+      User-Agent:
+      - Faraday v2.7.12
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 30 Nov 2023 22:37:37 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=300
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 35ccb6cc125c2f90120be4104c394baa.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL58-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - hkKNaEsDcvlT4NUQXtpLOIfqoE58UY4FIgP1u5wgpN5JEWX43SmBMg==
+      Vary:
+      - Origin
+    body:
+      encoding: UTF-8
+      string: '{"status_code":7,"status_message":"Invalid API key: You must be granted
+        a valid key.","success":false}
+
+        '
+  recorded_at: Thu, 30 Nov 2023 22:37:37 GMT
+recorded_with: VCR 6.2.0
