@@ -27,8 +27,6 @@ RSpec.describe 'Movie Results page, movies index', type: :feature do
       fill_in :query, with: 'Star Wars'
       click_button 'Search'
   
-
-  
       expect(page).to have_content('Star Wars')
       movie_titles = all('li.title')
       movie_vote_averages = all('li.voteAverage')
