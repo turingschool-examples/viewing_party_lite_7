@@ -41,8 +41,22 @@ class MovieFacade
   def self.add_details(movie)
     details = TMDBService.get_movie(movie.id)
     movie.set_genres_and_runtime(details)
+
     cast_reviews = TMDBService.get_cast_and_reviews_for_movie(movie.id)
     movie.set_cast_and_reviews(cast_reviews)
+
+    movie
+  end
+
+  def self.movie(id)
+    movie = @@movie_cache.find { |movie| movie.id == id }  # find it if it's there
+
+    if movie.nil?
+      movie = Poro::Movie.new(TMDBService.get_movie(id))
+      @@movie_cache.append(movie)
+    end
+
+    movie
   end
 
   def self.top_rated

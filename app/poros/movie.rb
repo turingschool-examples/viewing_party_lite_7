@@ -6,8 +6,6 @@ module Poro
       :overview,
       :runtime,
       :genres,
-      :cast,
-      :reviews,
       :poster_path
 
     def initialize(attributes)
@@ -26,6 +24,14 @@ module Poro
     def set_cast_and_reviews(data)
       @cast = data[:cast]
       @reviews = data[:reviews]
+    end
+
+    def cast
+      @cast.map { |actor| actor[:name] }
+    end
+
+    def reviews
+      @reviews.map { |review| "#{review[:author]} | #{review[:content]}" }
     end
   end
 end

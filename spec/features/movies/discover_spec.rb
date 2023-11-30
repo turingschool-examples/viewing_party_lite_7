@@ -33,7 +33,7 @@ RSpec.describe "Discover Movies", type: :feature do
   # Vote Average of the movie
   # Details: There should only be a maximum of 20 results.
   # The above details should be listed for each movie.
-  # 
+  #
   # I should also see a button to return to the Discover Page.
 
   describe "button to discover top rated movies" do
@@ -64,10 +64,15 @@ RSpec.describe "Discover Movies", type: :feature do
   end
 
   describe "redirect to movie show page when clicked" do
-    it "visits the movie show page when movie link clicked" do
-      movie = create :movie
+    it "visits the movie show page when movie link clicked", :vcr do
+      visit discover_user_path(@user)
 
-      visit user_movie_path(@user, movie)
+      fill_in :q, with: "Star Wars"
+      click_button "Find Movies"
+
+      click_link "Star Wars"
+
+      expect(page).to have_content "Star Wars"
     end
   end
 end

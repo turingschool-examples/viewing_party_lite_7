@@ -13,12 +13,13 @@ class MoviesController < ApplicationController
       MovieFacade.movie_search(params[:q])
     end
 
-
     # good time to run async operations to add details for movies returned here so if a user clicks on
     # a movie, the data is hopefully preloaded into memory (api call already complete)
   end
 
   def show
-    @movie = ""
+    m = MovieFacade.movie(params[:id])
+    @movie = MovieFacade.add_details(m)
+    @user = User.find(params[:user_id])
   end
 end

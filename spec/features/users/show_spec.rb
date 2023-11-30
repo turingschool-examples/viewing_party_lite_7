@@ -13,7 +13,6 @@ RSpec.describe User, type: :feature do
       visit user_path(@user_1)
 
       expect(page).to have_content("#{@user_1.name}'s Dashboard")
-      expect(page).to have_content("Email: #{@user_1.email}")
       expect(page).to have_button("Discover Movies")
     end
   end

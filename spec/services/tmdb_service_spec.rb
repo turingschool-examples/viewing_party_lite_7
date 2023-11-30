@@ -43,7 +43,6 @@ RSpec.describe TMDBService do
         expect(movie_data).to have_key :poster_path
         expect(movie_data[:poster_path]).to be_a(String)
       end
-
     end
 
     describe "::search_movies" do

@@ -1,0 +1,40 @@
+<%= render :partial => "shared/nav" %>
+<br>
+<h2 class="container"><%= @movie.title %></h2>
+<br>
+<%= render partial: "shared/button_pri", locals: {
+  label: "Discover Page",
+  path: discover_user_path(@user),
+  method: :get,
+  params: nil
+} %>
+<br>
+<%= render :partial => "shared/button_pri", locals: {
+  label: "Create Viewing Party for #{@movie.title}",
+  path: "/users/#{@user.id}/movies/#{@movie.id}/viewing_parties/new",
+  method: :get,
+  params: nil
+} %>
+<br>
+<div style="display: flex; justify-content: space-around;">
+  <div style="flex: 1; margin: auto;">
+    <%= "Rating: #{@movie.vote_average}" %>
+  </div>
+  <div style="flex: 1; margin: auto;">
+    <%= "Runtime: #{@movie.runtime}min" %>
+  </div>
+  <div style="flex: 1; margin: auto;">
+    <%= "Genre: #{@movie.genres.join(", ")}" %>
+  </div>
+</div>
+<hr>
+<br>
+<h3>Overview</h3>
+<p><%= @movie.overview %></p>
+<h3>Cast</h3>
+<p><%= @movie.cast.join(", ") %></p>
+<h3><%= @movie.reviews.count %> Reviews</h3>
+<% @movie.reviews.each do |review| %>
+<%# require "pry"; binding.pry %>
+  <p><%= review %></p>
+<% end %>

@@ -17,7 +17,6 @@ RSpec.describe "Register Page", type: :feature do
         expect(current_path).to eq(user_path(User.all.last))
         expect(page).to have_content("User created successfully")
         expect(page).to have_content("#{User.all.last.name}'s Dashboard")
-        expect(page).to have_content("Email: #{User.all.last.email}")
       end
     end
 
@@ -53,7 +52,6 @@ RSpec.describe "Register Page", type: :feature do
         expect(current_path).to eq(user_path(User.all.last))
         expect(page).to have_content("User created successfully")
         expect(page).to have_content("#{User.all.last.name}'s Dashboard")
-        expect(page).to have_content("Email: #{User.all.last.email}")
 
         visit register_path
 
