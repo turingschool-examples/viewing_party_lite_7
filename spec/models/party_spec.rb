@@ -8,8 +8,7 @@ RSpec.describe Party, type: :model do
   describe "relationships" do
     it { should have_many(:user_parties) }
     it { should have_many(:users).through(:user_parties) }
-    it { should have_many(:party_movies) }
-    it { should have_many(:movies).through(:party_movies) }
+    it { should belong_to(:movie) }
   end
 
   describe "validations" do
