@@ -7,6 +7,27 @@ RSpec.describe 'New Viewing Party Page' do
 
   it 'When I visit the new viewing party page it contains movie title, duration of party, when date, start time, checkboxes next to each user' do
     specific_movie_response = File.read('spec/fixtures/specific_movie.json')
+    starwars_response = File.read('spec/fixtures/starwars_collection.json')
+    lotr_response = File.read('spec/fixtures/lotr_collection.json')
+
+    stub_request(:get, "https://api.themoviedb.org/3/movie/11?api_key=#{Rails.application.credentials.tmdb[:key]}").
+         with(
+           headers: {
+          'Accept'=>'*/*',
+          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'User-Agent'=>'Faraday v2.7.12'
+           }).
+         to_return(status: 200, body: starwars_response, headers: {})
+
+    stub_request(:get, "https://api.themoviedb.org/3/movie/120?api_key=#{Rails.application.credentials.tmdb[:key]}").
+         with(
+           headers: {
+          'Accept'=>'*/*',
+          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'User-Agent'=>'Faraday v2.7.12'
+           }).
+         to_return(status: 200, body: lotr_response, headers: {})
+         
     stub_request(:get, "https://api.themoviedb.org/3/movie/268?api_key=#{Rails.application.credentials.tmdb[:key]}").
          with(
            headers: {

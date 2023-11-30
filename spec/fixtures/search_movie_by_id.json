@@ -1,0 +1,43 @@
+{
+  "page": 1,
+  "results": [
+      {
+          "adult": false,
+          "backdrop_path": "/fC8kp9O1U2pGZlR9fKgxXriA7pU.jpg",
+          "genre_ids": [
+              28
+          ],
+          "id": 888826,
+          "original_language": "en",
+          "original_title": "UFC 268: Usman vs. Covington 2",
+          "overview": "UFC 268: Usman vs. Covington 2 was a mixed martial arts event produced by the Ultimate Fighting Championship that took place on November 6, 2021, at Madison Square Garden in New York City, New York, United States. A UFC Welterweight Championship rematch between the current champion Kamaru Usman (also The Ultimate Fighter: American Top Team vs. Blackzilians welterweight winner) and former interim champion Colby Covington headlined the event.",
+          "popularity": 1.737,
+          "poster_path": "/r5qCPAZCMYmvGyJJm9csGuCM9Nq.jpg",
+          "release_date": "2021-11-06",
+          "title": "UFC 268: Usman vs. Covington 2",
+          "video": true,
+          "vote_average": 2.0,
+          "vote_count": 1
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/6kdApOG1hK8YFPfjBpGCM3BiRZr.jpg",
+          "genre_ids": [
+              28
+          ],
+          "id": 883257,
+          "original_language": "en",
+          "original_title": "Bellator 268: Nemkov vs. Anglickas",
+          "overview": "Vadim Nemkov vs. Julius Anglickas (Light Heavyweight)  Ryan Bader vs. Corey Andersion (Light Heavyweight)  Benson Henderson vs. Brent Primus (Lightweight)  Henry Corrales vs. Vladyslav Parubchenko (Featherweight)",
+          "popularity": 2.031,
+          "poster_path": "/hcANB303dwg7GIiXBqcouxcXASX.jpg",
+          "release_date": "2021-10-16",
+          "title": "Bellator 268: Nemkov vs. Anglickas",
+          "video": true,
+          "vote_average": 0.0,
+          "vote_count": 0
+      }
+  ],
+  "total_pages": 1,
+  "total_results": 2
+}

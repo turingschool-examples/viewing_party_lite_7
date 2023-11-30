@@ -4,6 +4,27 @@ RSpec.describe 'Discover Movies Show Page' do
   end
 
   it 'redirects to discover page when "Discover Movies" button is clicked' do
+    starwars_response = File.read('spec/fixtures/starwars_collection.json')
+    lotr_response = File.read('spec/fixtures/lotr_collection.json')
+
+    stub_request(:get, "https://api.themoviedb.org/3/movie/11?api_key=#{Rails.application.credentials.tmdb[:key]}").
+         with(
+           headers: {
+          'Accept'=>'*/*',
+          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'User-Agent'=>'Faraday v2.7.12'
+           }).
+         to_return(status: 200, body: starwars_response, headers: {})
+
+    stub_request(:get, "https://api.themoviedb.org/3/movie/120?api_key=#{Rails.application.credentials.tmdb[:key]}").
+         with(
+           headers: {
+          'Accept'=>'*/*',
+          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'User-Agent'=>'Faraday v2.7.12'
+           }).
+         to_return(status: 200, body: lotr_response, headers: {})
+         
     visit user_path(@user1)
     click_button 'Discover Movies'
 

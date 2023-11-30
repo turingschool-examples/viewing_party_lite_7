@@ -12,8 +12,14 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
+  def show 
+    facade = MovieFacade.new
     @user = User.find(params[:id])
+    @movies = []
+    @user.parties.uniq.each do |party|
+      @movies << facade.movie_details(party.movie_id)
+      @movies
+    end
   end
 
   private
