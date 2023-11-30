@@ -71,7 +71,6 @@ class MovieService
     end
 
     review_data = JSON.parse(response.body, symbolize_names: :true)   
-    binding.pry
     review_data[:results].map do |review_hash|
       MovieReview.new(review_hash)
     end
