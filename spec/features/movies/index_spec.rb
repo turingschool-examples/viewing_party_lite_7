@@ -43,4 +43,20 @@ RSpec.describe "Movies Index Page" do
   
 
   end
+
+  describe '#Sad Path' do
+    it 'empty search params when searching for a movie' do
+      visit "/users/#{@user2.id}/discover"
+
+      expect(page).to have_button("Find Movies")
+
+      fill_in :q, with: ""
+      click_button("Find Movies")
+
+      expect(page).to have_content("Please enter a Movie title")
+
+      expect(current_path).to_not eq("/users/#{@user2.id}/movies")
+      expect(current_path).to eq("/users/#{@user2.id}/discover")
+    end
+  end
 end
