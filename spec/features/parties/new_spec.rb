@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "New Party" do
   before :each do
-    test_data 
+    test_data
   end
 
   it "can create a new party with all attributes", :vcr do
@@ -40,6 +40,7 @@ RSpec.describe "New Party" do
     click_button "Create Party"
     
     expect(current_path).to eq("/users/#{@user1.id}")
+    save_and_open_page
     expect(page).to have_content("Shrek")
     expect(page).to have_content("February 1, 2024")
     expect(page).to have_content("7:00 pm")

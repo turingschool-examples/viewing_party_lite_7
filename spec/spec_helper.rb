@@ -28,10 +28,11 @@ def test_data
   @party2 = Party.create(duration: 100, name: "Leroy Jenkins Watch Party", date: "10/2/1999", start_time: 1400, movie_id: @movie2.id)
   @party3 = Party.create(duration: 250, name: "Why Your Mom Moved Out Watch Party", date: "7/15/2008", start_time: 1900, movie_id: @movie3.id)
 
-  @userparty1 = UserParty.create(user_id: @user1.id, party_id: @party1.id)
-  @userparty2 = UserParty.create(user_id: @user2.id, party_id: @party1.id)
+  @userparty1 = UserParty.create(user_id: @user1.id, party_id: @party1.id, creator: true)
+  @userparty2 = UserParty.create(user_id: @user2.id, party_id: @party1.id, creator: false)
 
 end
+
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest

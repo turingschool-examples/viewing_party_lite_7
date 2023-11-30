@@ -7,4 +7,13 @@ class Party < ApplicationRecord
   validates :date, presence: true
   validates :start_time, presence: true
 
+  def host(user_id)
+    party = UserParty.where("party_id = #{self.id} and user_id = #{user_id}").first
+    if party.creator
+      "Hosting"
+    else
+      "Invited"
+    end
+  end
+
 end
