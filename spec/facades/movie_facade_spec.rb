@@ -1,5 +1,5 @@
 require "rails_helper"
-require_relative "../../app/facades/movie_factory"
+require_relative "../../app/facades/movie_facade"
 
 RSpec.describe "Movie Facade" do
   describe "class methods" do

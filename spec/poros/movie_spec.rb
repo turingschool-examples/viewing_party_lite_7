@@ -1,6 +1,5 @@
 require "rails_helper"
-require_relative "../../app/poros/movie
-"
+require_relative "../../app/poros/movie"
 
 RSpec.describe Movie do
   before(:each) do
@@ -37,6 +36,23 @@ RSpec.describe Movie do
       @movie.set_genres_and_runtime(attr)
       expect(@movie.runtime).to eq 175
       expect(@movie.genres).to eq %w[Crime Drama]
+    end
+  end
+
+  describe "#set_cast_and_reviews" do
+    it "sets cast and reviews" do
+      attr = {
+        cast: [
+          {name: "Marlin Brando"}
+        ],
+        reviews: [
+          {name: "TP", review: "Good movie"}
+        ]
+      }
+
+      @movie.set_cast_and_reviews(attr)
+      expect(@movie.cast).to be_an Array
+      expect(@movie.reviews).to be_an Array
     end
   end
 end

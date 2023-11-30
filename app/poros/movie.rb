@@ -21,4 +21,9 @@ class Movie
     @genres = data[:genres].map { |genre| genre[:name] }
     @runtime = data[:runtime]
   end
+
+  def set_cast_and_reviews(data)
+    @cast = data[:cast]
+    @reviews = data[:reviews]
+  end
 end
