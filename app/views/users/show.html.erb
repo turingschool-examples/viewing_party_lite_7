@@ -2,7 +2,54 @@
 
 <%= button_to 'Discover Movies', user_discover_index_path(@user), method: :get, class: 'btn btn-primary' %>
 
-<section class="viewing-parties">
-  <h2>Viewing Parties</h2>
+<section class="attending-parties">
+  <h2>Attending Parties</h2>
+  <% @user.parties.uniq.each do |party| %>
+    <% if party.get_host_name != @user.name %>
+        <% @movies.each do |movie| %>
+          <% if party.movie_id == movie[:id] %>
+            <li><strong>Movie Image: </strong><%= image_tag "https://image.tmdb.org/t/p/w92#{movie[:poster_path]}" %></li>
+            <li><strong>Movie Title: </strong><%= "#{movie[:title]}" %></li>
+            <li><strong>Date and Time: </strong><%= "Starts on #{party.date} at #{party.start_time}" %></li>
+            <% party.user_parties.each do |us| %>
+              <% if us.is_host == true %>
+                <li><strong>Hosted By: </strong><%= "#{us.get_user_name}" %></li>
+              <% end %>
+            <% end %>
+            <li><strong>Other users attending: </strong>
+            <% party.user_parties.uniq.each do |other_user| %>
+              <% if party.get_host_name != other_user.get_user_name %>
+                <%= "#{other_user.get_user_name}" %>
+              <% end %>
+            <% end %></li>
+          <% end %>
+        <% end %>
+      <% end %>
+  <% end %>
+</section>
 
+<section class="hosting-parties">
+  <h2>Hosting Parties</h2>
+  <% @user.parties.uniq.each do |party| %>
+    <% if party.get_host_name == @user.name %>
+        <% @movies.each do |movie| %>
+          <% if party.movie_id == movie[:id] %>
+            <li><strong>Movie Image: </strong><%= image_tag "https://image.tmdb.org/t/p/w92#{movie[:poster_path]}" %></li>
+            <li><strong>Movie Title: </strong><%= "#{movie[:title]}" %></li>
+            <li><strong>Date and Time: </strong><%= "Starts on #{party.date} at #{party.start_time}" %></li>
+            <% party.user_parties.each do |us| %>
+              <% if us.is_host == true %>
+                <li><strong>Hosted By: </strong><%= "#{us.get_user_name}" %></li>
+              <% end %>
+            <% end %>
+            <li><strong>Other users attending: </strong>
+            <% party.user_parties.uniq.each do |other_user| %>
+              <% if @user.name != other_user.get_user_name %>
+              <%= "#{other_user.get_user_name}" %>
+              <% end %>
+            <% end %></li>
+          <% end %>
+        <% end %>
+      <% end %>
+  <% end %>
 </section>
