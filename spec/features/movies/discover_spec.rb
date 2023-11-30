@@ -33,7 +33,7 @@ RSpec.describe "Discover Movies", type: :feature do
   # Vote Average of the movie
   # Details: There should only be a maximum of 20 results.
   # The above details should be listed for each movie.
-  # 
+  #
   # I should also see a button to return to the Discover Page.
 
   describe "button to discover top rated movies" do
