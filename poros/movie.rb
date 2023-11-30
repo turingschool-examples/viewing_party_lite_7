@@ -4,6 +4,7 @@ class Movie
               :summary
 
   def initialize(details)
+    @movie_id = details[:id]
     @vote_avg = details[:vote_average]
     @title = details[:original_title]
     # not included in current query

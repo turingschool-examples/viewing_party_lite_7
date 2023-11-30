@@ -22,4 +22,15 @@ class MoviesSearch
       Movie.new(movie)
     end
   end
+
+  def search_movie(movie_id)
+    conn = Faraday.new(url: 'https://api.themoviedb.org/3/') do |faraday|
+      faraday.headers[:Authorization] = "Bearer #{Rails.application.credentials.tmdb[:key]}"
+    end
+    response = conn.get("movie/#{movie_id}")
+    parsed = JSON.parse(response.body, symbolize_names: true)
+    @search_result = parsed[:results].map do |movie|
+      Movie.new(movie)
+    end
+  end
 end

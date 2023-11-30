@@ -10,4 +10,10 @@ class Users::Discover::ResultsController < ApplicationController
       @search_result = movies_search.search_movies(params[:title])
     end
   end
+
+  def show 
+    @user = User.find(params[:user_id])
+    movie_search = MovieSearch.new 
+    @movie = movie_search.search_movie(movie_id)
+  end
 end
