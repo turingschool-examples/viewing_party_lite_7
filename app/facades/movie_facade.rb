@@ -4,6 +4,7 @@ require_relative "../poros/movie"
 class MovieFacade
   @@top_rated = []
   @@movie_cache = []
+
   def self.get_top_rated
     return @@top_rated unless @@top_rated.length == 0
 
@@ -18,8 +19,29 @@ class MovieFacade
     @@top_rated
   end
 
+  def self.movie_search(query)
+    data = TMDBService.search_movies(query)
+
+    results = []
+
+    data.each do |d|
+      movie = @@movie_cache.find { |movie| movie.id == d[:id] }  # find it if it's there
+
+      if movie.nil?  # if it's not, create the new object
+        movie = Movie.new(d)
+        @@movie_cache.append(movie)
+      end
+
+      results.append(movie)
+    end
+
+    results
+  end
+
   def self.add_details(movie)
     details = TMDBService.get_movie(movie.id)
     movie.set_genres_and_runtime(details)
+    cast_reviews = TMDBService.get_cast_and_reviews_for_movie(movie.id)
+    movie.set_cast_and_reviews(cast_reviews)
   end
 end
