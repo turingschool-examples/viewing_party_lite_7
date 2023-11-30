@@ -39,6 +39,7 @@ class Movie < ApplicationRecord
     response = conn.get
     data = JSON.parse(response.body, symbolize_names: true)
     details = Hash.new
+      details[:id] = data[:id]
       details[:title] = data[:title]
       details[:runtime] = Movie.hrmin(data[:runtime])
       details[:vote_average] = data[:vote_average]
