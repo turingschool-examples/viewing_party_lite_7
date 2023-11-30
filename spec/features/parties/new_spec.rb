@@ -5,7 +5,7 @@ RSpec.describe "New Party" do
     test_data 
   end
 
-  it "can create a new party with all attributes" do
+  it "can create a new party with all attributes", :vcr do
     visit "/users/#{@user1.id}/movies/808"
 
     click_button "Create Viewing Party for Shrek"
