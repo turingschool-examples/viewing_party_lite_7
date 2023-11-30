@@ -55,8 +55,7 @@ describe 'Dashboard: Discover Movies' do
       click_button "Search by Movie Title"
       click_link "Oppenheimer"
 
-      oppenheimer = MovieService.get_detailed_movie(872585)
-      expect(current_path).to eq(user_movie_path(@user1, oppenheimer.id))
+      expect(current_path).to eq(user_movie_path(@user1, @oppenheimer.id))
     end
   end
 end

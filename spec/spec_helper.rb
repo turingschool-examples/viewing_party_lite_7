@@ -13,6 +13,10 @@ def test_data
   @party3 = @user2.parties.create!(movie_title: "Eternal Sunshine of the Spotless Mind", duration: 180, when: "02-20-23", start_time: "09:00")
 end
 
+def new_spec_test_data
+  @user1 = User.create!(name: "Shawn", email: "shawn@website.com")
+end
+
 def oppenheimer_test_data
   popular_movies_fixture = File.read("spec/fixtures/popular_movies.json")
       oppenheimer_fixture = File.read("spec/fixtures/oppenheimer_movie_details.json")
@@ -54,6 +58,8 @@ def oppenheimer_test_data
               'User-Agent'=>'Faraday v2.7.12'
         }).
       to_return(status: 200, body: oppenheimer_reviews_fixture, headers: {})
+
+      @oppenheimer = MovieService.get_detailed_movie(872585)
 end
 # Given that it is always loaded, you are encouraged to keep this file as
 # light-weight as possible. Requiring heavyweight dependencies from this file
