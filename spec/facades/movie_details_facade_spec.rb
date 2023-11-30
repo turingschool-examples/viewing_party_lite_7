@@ -9,12 +9,12 @@ RSpec.describe MovieDetailsFacade do
     
     it 'exists' do
       expect(@facade).to be_an_instance_of(MovieDetailsFacade)
-      expect(@facade.movie_details).to be_an_instance_of(MovieDetails)
+      expect(@facade.full_details).to be_an_instance_of(MovieDetails)
     end
 
     describe "#details" do
       it "returns a newly created MoviesDetails poro" do
-        expect(@facade.details).to be_an_instance_of(MovieDetails)
+        expect(@facade.full_details).to be_an_instance_of(MovieDetails)
       end
     end
   end
