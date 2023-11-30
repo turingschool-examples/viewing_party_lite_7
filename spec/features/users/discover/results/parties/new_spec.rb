@@ -28,7 +28,7 @@ RSpec.describe 'new user movie party page', type: :feature do
     visit new_user_movie_party_path(@user1, @movie1)
     expect(page).to have_field(:duration, with: @movie1.runtime)
     expect(page).to have_field(:start_time)
-    # expect(page).to have_field(:) checkboxes
+    expect(page).to have_unchecked_field '#current_user'
     expect(page).to have_button('Create Party')
   end
 
@@ -36,8 +36,8 @@ RSpec.describe 'new user movie party page', type: :feature do
     it 'form submission creates a new party and redirects back to discover page' do
       visit new_user_movie_party_path(@user1, @movie1)
       fill_in :duration, with: 120
-      fill_in :start_time, with '12:00'
-      # checkboxes
+      fill_in :start_time, with: '12:00'
+      check :current_user
       click_button 'Create Party'
       expect(current_path).to eq(user_path(@user1))
       expect(page).to have_content('Duration: 120mins')
@@ -48,8 +48,8 @@ RSpec.describe 'new user movie party page', type: :feature do
     it 'form submission pushes a flash error and redirects back (blank field)' do
       visit new_user_movie_party_path(@user1, @movie1)
       fill_in :duration, with: 120
-      fill_in :start_time, with ''
-      # checkboxes
+      fill_in :start_time, with: ''
+      check :current_user
       click_button 'Create Party'
       expect(current_path).to eq(new_user_movie_party_path(@user1, @movie1))
       expect(page).to have_content('start time must not be left blank')
@@ -58,8 +58,8 @@ RSpec.describe 'new user movie party page', type: :feature do
     it 'form submission pushes a flash error and redirects back (invalid duration)' do
       visit new_user_movie_party_path(@user1, @movie1)
       fill_in :duration, with: 90
-      fill_in :start_time, with '12:00'
-      # checkboxes
+      fill_in :start_time, with: '12:00'
+      check :current_user
       click_button 'Create Party'
       expect(current_path).to eq(new_user_movie_party_path(@user1, @movie1))
       expect(page).to have_content('invalid duration')
