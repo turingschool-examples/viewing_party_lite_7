@@ -3,9 +3,10 @@ class MoviesController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     if params[:query].present?
-      @movies = MovieService.search_movies(params[:query])
+      @facade = MovieSearchFacade.new(params[:query])
     else
-      @movies = MovieService.get_movies.first(20)
+      @facade =PopularMoviesFacade.new
+      # get_movies.first(20)
     end
   end
 
