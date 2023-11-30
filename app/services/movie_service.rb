@@ -1,4 +1,6 @@
 class MovieService
+
+
   def self.get_movies
     conn = Faraday.new("https://api.themoviedb.org/3/")
 
