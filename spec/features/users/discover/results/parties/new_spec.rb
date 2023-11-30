@@ -28,6 +28,7 @@ RSpec.describe 'new user movie party page', type: :feature do
     visit new_user_movie_party_path(@user1, @movie1)
     expect(page).to have_field(:duration, with: @movie1.runtime)
     expect(page).to have_field(:start_time)
+    expect(page).to have_field(:date)
     expect(page).to have_unchecked_field '#current_user'
     expect(page).to have_button('Create Party')
   end

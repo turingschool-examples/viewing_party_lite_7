@@ -1,6 +1,7 @@
 require './services/movies_search'
 class Users::Discover::Results::PartiesController < ApplicationController
   def new
+    @user = User.find(params[:user_id])
     movies_search = MoviesSearch.new
     @movie = movies_search.genre_runtime(params[:movie_id])
   end
@@ -11,7 +12,7 @@ class Users::Discover::Results::PartiesController < ApplicationController
     user_party = UserParty.new({
       user_id: @user.id,
       party_id: party.id,
-      host: 
+      host: params[:host]
     })
     movies_search = MoviesSearch.new
     @movie = movies_search.genre_runtime(params[:movie_id])

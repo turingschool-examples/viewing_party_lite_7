@@ -17,7 +17,6 @@ class Movie
     @vote_avg = details[:vote_average]
     @title = details[:original_title]
     @runtime = details[:runtime]
-    # this needs to be parsed into a string (currently array of ids)
     @genre = details[:genres]
     @summary = details[:overview]
     @cast_names = details[:name]
