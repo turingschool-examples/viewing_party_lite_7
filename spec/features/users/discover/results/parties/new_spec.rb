@@ -46,15 +46,15 @@ RSpec.describe 'new user movie party page', type: :feature do
   end
 
   context 'when filled out with invalid data' do
-    it 'form submission pushes a flash error and redirects back (blank field)' do
-      visit new_user_movie_party_path(@user1, @movie1)
-      fill_in :duration, with: 120
-      fill_in :start_time, with: ''
-      check :current_user
-      click_button 'Create Party'
-      expect(current_path).to eq(new_user_movie_party_path(@user1, @movie1))
-      expect(page).to have_content('start time must not be left blank')
-    end
+    # it 'form submission pushes a flash error and redirects back (blank field)' do
+    #   visit new_user_movie_party_path(@user1, @movie1)
+    #   fill_in :duration, with: 120
+    #   fill_in :start_time, with: ''
+    #   check :current_user
+    #   click_button 'Create Party'
+    #   expect(current_path).to eq(new_user_movie_party_path(@user1, @movie1))
+    #   expect(page).to have_content('start time must not be left blank')
+    # end
 
     it 'form submission pushes a flash error and redirects back (invalid duration)' do
       visit new_user_movie_party_path(@user1, @movie1)

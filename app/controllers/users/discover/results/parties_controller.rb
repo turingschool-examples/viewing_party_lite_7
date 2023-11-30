@@ -1,31 +1,34 @@
 require './services/movies_search'
 class Users::Discover::Results::PartiesController < ApplicationController
   def new
+    @all_users = User.all
     @user = User.find(params[:user_id])
     movies_search = MoviesSearch.new
     @movie = movies_search.genre_runtime(params[:movie_id])
   end
 
+  # refactor, this is too fat
   def create
     party = Party.new(party_params)
     @user = User.find(params[:user_id])
-    user_party = UserParty.new({
-      user_id: @user.id,
-      party_id: party.id,
-      host: params[:host]
-    })
     movies_search = MoviesSearch.new
     @movie = movies_search.genre_runtime(params[:movie_id])
-
-    if party.save
-      redirect_to user_path(user)
-    elsif # movie.runtime > params[:]
-      flash[:alert] = ''
+    
+    if movie.runtime > party.duration
+      flash[:alert] = 'invalid duration'
       redirect_to new_user_movie_party_path(@user, @movie)
-    elsif #entry is not valid
-      flash[:alert] = ''
-      redirect_to new_user_movie_party_path(@user, @movie)
+    else
+      party.save
+      user_party = UserParty.create!(user: @user, party: party, host: true)
     end
+
+    User.all.each do |user|
+      if user != @user
+        UserParty.create!(user: user, party: party, host: false)
+      end
+    end
+
+    redirect_to user_path(user)
   end
 
   private
