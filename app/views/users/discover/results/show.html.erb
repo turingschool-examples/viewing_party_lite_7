@@ -1,5 +1,5 @@
-<%= button_to 'Back to Discover Page', user_discover_path(@user), method: :get, data: { turbo: false }, local: true %><br/>
-<%# <%= button_to 'Create a Viewing Party', viewing_party_path(@user), method: :get, data: { turbo: false }, local: true %>
+<%= button_to 'Back to Discover Page', user_discover_index_path(@user), method: :get, data: { turbo: false }, local: true %><br/>
+<%= button_to 'Create a Viewing Party', viewing_party_path(@user), method: :get, data: { turbo: false }, local: true %>
 
 <h1><b>Movie Title: </b><%= @movie.title %></h1>
 <p><b>Vote Average: </b><%= @movie.vote_avg %></p>

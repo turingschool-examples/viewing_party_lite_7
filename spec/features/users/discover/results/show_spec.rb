@@ -16,16 +16,15 @@ RSpec.describe 'movies detail page', type: :feature do
     visit "/users/#{@user1.id}/movies/238"
     expect(page).to have_content("Back to Discover Page")
     click_button "Back to Discover Page"
-    expect(current_path).to eq(user_discover_path(@user1))
+    expect(current_path).to eq(user_discover_index_path(@user1))
   end
 
   it 'has movie attributes such as title, vote average, 
     runtime, genre, summary, cast members(first 10), total reviews
     and each reviews author and information' do
     visit "/users/#{@user1.id}/movies/238"
-    save_and_open_page
     expect(page).to have_content("Movie Title: The Godfather")
-    expect(page).to have_content("Vote Average: 8.708")
+    expect(page).to have_content("Vote Average: ") # change testing because numbers will change
     expect(page).to have_content("Runtime: 2h 55min")
     expect(page).to have_content("Genre: [\"Drama\", \"Crime\"]")
     expect(page).to have_content("Summary: Spanning the years")

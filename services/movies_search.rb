@@ -18,7 +18,6 @@ class MoviesSearch
     end
   end
 
-<<<<<<< HEAD
   def genre_runtime(movie_id)
     conn = Faraday.new(url: 'https://api.themoviedb.org/3/') do |faraday|
       faraday.headers[:Authorization] = "Bearer #{Rails.application.credentials.tmdb[:key]}"
@@ -61,7 +60,6 @@ class MoviesSearch
     review_count_data = JSON.parse(response.body, symbolize_names: true)
     @review_count_data = Movie.new(review_count_data)
   end
-=======
   def conn
     conn = Faraday.new(url: 'https://api.themoviedb.org/3/') do |faraday|
       faraday.headers[:Authorization] = "Bearer #{Rails.application.credentials.tmdb[:key]}"
@@ -85,5 +83,4 @@ class MoviesSearch
   #   response = search_conn.get(url)
   #   JSON.parse(response.body, symbolize_names: true)
   # end
->>>>>>> 58252ed925d6c41b8e425148fa291c1a8ea730d3
 end
