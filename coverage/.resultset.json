@@ -346,7 +346,7 @@
           1,
           1,
           1,
-          1,
+          null,
           null,
           null,
           1,
@@ -443,16 +443,6 @@
           null,
           1,
           1,
-          2,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
           1,
           1,
           0,
@@ -588,7 +578,7 @@
           null
         ]
       },
-      "/Users/kzolman/3mod/projects/viewing_party_lite_7/spec/models/user_party_spec.rb": {
+      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/spec/poros/movie_spec.rb": {
         "lines": [
           1,
           null,
@@ -652,14 +642,13 @@
           null
         ]
       },
-      "/Users/kzolman/3mod/projects/viewing_party_lite_7/spec/poros/movie_spec.rb": {
+      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/poros/movie.rb": {
         "lines": [
           1,
           null,
           1,
           1,
           null,
-          1,
           null,
           null,
           null,
@@ -670,15 +659,42 @@
           1,
           null,
           null,
+          null,
+          null,
           1,
+          259,
+          259,
+          259,
+          null,
+          259,
+          null,
+          259,
+          259,
+          null,
+          259,
+          259,
+          null,
+          259,
+          null,
+          259,
+          259,
+          null,
+          null,
           1,
+          2,
+          4,
+          null,
+          null,
+          null,
           1,
-          1,
+          2,
+          null,
+          null,
           null,
           null
         ]
       },
-      "/Users/kzolman/3mod/projects/viewing_party_lite_7/spec/services/movie_search_spec.rb": {
+      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/spec/services/movie_search_spec.rb": {
         "lines": [
           1,
           null,
@@ -717,7 +733,7 @@
           null
         ]
       },
-      "/Users/kzolman/3mod/projects/viewing_party_lite_7/services/movies_search.rb": {
+      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/services/movies_search.rb": {
         "lines": [
           1,
           1,
@@ -740,12 +756,13 @@
           null,
           null,
           1,
-          7,
-          7,
+          2,
+          2,
           null,
-          7,
           2,
           2,
+          2,
+          null,
           null,
           null,
           1,
@@ -755,31 +772,30 @@
           2,
           2,
           2,
-          0,
+          118,
           null,
           null,
           null,
           1,
-          0,
-          0,
+          2,
+          2,
           null,
-          0,
-          0,
-          0,
-          0,
+          2,
+          2,
+          2,
+          10,
           null,
           null,
           null,
           null,
           null,
           1,
-          0,
-          0,
+          2,
+          2,
           null,
-          0,
-          0,
-          0,
-          null,
+          2,
+          2,
+          2,
           null,
           1,
           10,
@@ -807,7 +823,7 @@
           null
         ]
       },
-      "/Users/kzolman/3mod/projects/viewing_party_lite_7/app/controllers/registration_controller.rb": {
+      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/app/controllers/registration_controller.rb": {
         "lines": [
           1,
           1,
@@ -889,48 +905,7 @@
           null
         ]
       },
-      "/Users/kzolman/3mod/projects/viewing_party_lite_7/app/controllers/users/discover/results/parties_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          5,
-          5,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          0,
-          null,
-          null
-        ]
-      },
-      "/Users/kzolman/3mod/projects/viewing_party_lite_7/app/controllers/welcome_controller.rb": {
+      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/app/controllers/welcome_controller.rb": {
         "lines": [
           1,
           null,
@@ -942,6 +917,6 @@
         ]
       }
     },
-    "timestamp": 1701375418
+    "timestamp": 1701376475
   }
 }

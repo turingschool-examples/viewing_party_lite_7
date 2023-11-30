@@ -59,7 +59,6 @@ class MoviesSearch
     review_count_data = JSON.parse(response.body, symbolize_names: true)
     @review_count_data = Movie.new(review_count_data)
   end
-
   def conn
     conn = Faraday.new(url: 'https://api.themoviedb.org/3/') do |faraday|
       faraday.headers[:Authorization] = "Bearer #{Rails.application.credentials.tmdb[:key]}"
