@@ -262,18 +262,18 @@
           null,
           null,
           1,
-          5,
-          5,
-          5,
-          5,
+          0,
+          0,
+          0,
+          0,
           null,
-          5,
-          5,
-          5,
-          5,
-          5,
-          5,
-          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           null,
           null,
           1,
@@ -289,10 +289,12 @@
           null
         ]
       },
-      "/Users/kzolman/3mod/projects/viewing_party_lite_7/app/models/user.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/app/models/party.rb": {
         "lines": [
           1,
           1,
+          1,
+          null,
           1,
           null
         ]
@@ -304,20 +306,71 @@
           null
         ]
       },
-      "/Users/kzolman/3mod/projects/viewing_party_lite_7/app/controllers/users/discover/results/parties_controller.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/spec/models/user_party_spec.rb": {
         "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
           1,
           null,
           null
         ]
       },
-      "/Users/kzolman/3mod/projects/viewing_party_lite_7/app/controllers/application_controller.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/app/models/user_party.rb": {
         "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/spec/models/user_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          null,
+          null,
+          1,
+          5,
+          5,
+          5,
+          null,
+          null
+        ]
+      },
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
           1,
           null
         ]
       }
     },
-    "timestamp": 1701359320
+    "timestamp": 1701361889
   }
 }
