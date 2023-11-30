@@ -518,7 +518,6 @@
       "/Users/kzolman/3mod/projects/viewing_party_lite_7/services/movies_search.rb": {
         "lines": [
           1,
-          null,
           1,
           6,
           6,
@@ -554,6 +553,7 @@
           1,
           9,
           9,
+          null,
           null,
           null,
           null,
@@ -648,6 +648,6 @@
         ]
       }
     },
-    "timestamp": 1701304016
+    "timestamp": 1701304455
   }
 }

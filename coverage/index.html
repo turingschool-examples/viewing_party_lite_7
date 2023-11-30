@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-11-29T17:26:56-07:00">2023-11-29T17:26:56-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-11-29T17:34:15-07:00">2023-11-29T17:34:15-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -4199,18 +4199,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="2">
-            
-            
-
-            
-
-            <code class="ruby">  # should probably refactor conn and get into helper methods</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="3">
+          <li class="covered" data-hits="1" data-linenumber="2">
             <span class="hits">1</span>
             
 
@@ -4221,7 +4210,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="4">
+          <li class="covered" data-hits="6" data-linenumber="3">
             <span class="hits">6</span>
             
 
@@ -4232,7 +4221,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="5">
+          <li class="covered" data-hits="6" data-linenumber="4">
             <span class="hits">6</span>
             
 
@@ -4243,7 +4232,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="120" data-linenumber="6">
+          <li class="covered" data-hits="120" data-linenumber="5">
             <span class="hits">120</span>
             
 
@@ -4254,13 +4243,24 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="7">
+          <li class="never" data-hits="" data-linenumber="6">
             
             
 
             
 
             <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="7">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -4271,23 +4271,12 @@
 
             
 
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="9">
-            
-            
-
-            
-
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="10">
+          <li class="covered" data-hits="1" data-linenumber="9">
             <span class="hits">1</span>
             
 
@@ -4298,13 +4287,24 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="11">
+          <li class="covered" data-hits="3" data-linenumber="10">
             <span class="hits">3</span>
             
 
             
 
             <code class="ruby">    conn = Faraday.new(url: &#39;https://api.themoviedb.org/3/&#39;) do |faraday|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="11">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">      faraday.headers[:Authorization] = &quot;Bearer #{Rails.application.credentials.tmdb[:key]}&quot;</code>
           </li>
         </div>
       
@@ -4315,23 +4315,12 @@
 
             
 
-            <code class="ruby">      faraday.headers[:Authorization] = &quot;Bearer #{Rails.application.credentials.tmdb[:key]}&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="3" data-linenumber="13">
-            <span class="hits">3</span>
-            
-
-            
-
             <code class="ruby">      faraday.params[:query] = keyword</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="14">
+          <li class="never" data-hits="" data-linenumber="13">
             
             
 
@@ -4342,7 +4331,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="15">
+          <li class="covered" data-hits="3" data-linenumber="14">
             <span class="hits">3</span>
             
 
@@ -4353,7 +4342,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="16">
+          <li class="covered" data-hits="3" data-linenumber="15">
             <span class="hits">3</span>
             
 
@@ -4364,7 +4353,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="17">
+          <li class="covered" data-hits="3" data-linenumber="16">
             <span class="hits">3</span>
             
 
@@ -4375,7 +4364,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="18">
+          <li class="covered" data-hits="6" data-linenumber="17">
             <span class="hits">6</span>
             
 
@@ -4386,13 +4375,24 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="19">
+          <li class="never" data-hits="" data-linenumber="18">
             
             
 
             
 
             <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="19">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -4403,23 +4403,12 @@
 
             
 
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="21">
-            
-            
-
-            
-
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="22">
+          <li class="covered" data-hits="1" data-linenumber="21">
             <span class="hits">1</span>
             
 
@@ -4430,7 +4419,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="10" data-linenumber="23">
+          <li class="covered" data-hits="10" data-linenumber="22">
             <span class="hits">10</span>
             
 
@@ -4441,7 +4430,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="10" data-linenumber="24">
+          <li class="covered" data-hits="10" data-linenumber="23">
             <span class="hits">10</span>
             
 
@@ -4452,7 +4441,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="25">
+          <li class="never" data-hits="" data-linenumber="24">
             
             
 
@@ -4463,13 +4452,24 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="26">
+          <li class="never" data-hits="" data-linenumber="25">
             
             
 
             
 
             <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="26">
+            
+            
+
+            
+
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -4480,7 +4480,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  # def search_conn(keyword)</code>
           </li>
         </div>
       
@@ -4491,7 +4491,7 @@
 
             
 
-            <code class="ruby">  # def search_conn(keyword)</code>
+            <code class="ruby">  #   Faraday.new(url: &#39;https://api.themoviedb.org/3/&#39;) do |faraday|</code>
           </li>
         </div>
       
@@ -4502,7 +4502,7 @@
 
             
 
-            <code class="ruby">  #   Faraday.new(url: &#39;https://api.themoviedb.org/3/&#39;) do |faraday|</code>
+            <code class="ruby">  #     faraday.headers[:Authorization] = &quot;Bearer #{Rails.application.credentials.tmdb[:key]}&quot;</code>
           </li>
         </div>
       
@@ -4513,7 +4513,7 @@
 
             
 
-            <code class="ruby">  #     faraday.headers[:Authorization] = &quot;Bearer #{Rails.application.credentials.tmdb[:key]}&quot;</code>
+            <code class="ruby">  #     faraday.params[:query] = keyword</code>
           </li>
         </div>
       
@@ -4524,7 +4524,7 @@
 
             
 
-            <code class="ruby">  #     faraday.params[:query] = keyword</code>
+            <code class="ruby">  #   end</code>
           </li>
         </div>
       
@@ -4535,7 +4535,7 @@
 
             
 
-            <code class="ruby">  #   end</code>
+            <code class="ruby">  # end</code>
           </li>
         </div>
       
@@ -4546,23 +4546,12 @@
 
             
 
-            <code class="ruby">  # end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="34">
-            
-            
-
-            
-
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="35">
+          <li class="covered" data-hits="1" data-linenumber="34">
             <span class="hits">1</span>
             
 
@@ -4573,7 +4562,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="9" data-linenumber="36">
+          <li class="covered" data-hits="9" data-linenumber="35">
             <span class="hits">9</span>
             
 
@@ -4584,7 +4573,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="9" data-linenumber="37">
+          <li class="covered" data-hits="9" data-linenumber="36">
             <span class="hits">9</span>
             
 
@@ -4595,7 +4584,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="38">
+          <li class="never" data-hits="" data-linenumber="37">
             
             
 
@@ -4606,13 +4595,24 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="39">
+          <li class="never" data-hits="" data-linenumber="38">
             
             
 
             
 
             <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="39">
+            
+            
+
+            
+
+            <code class="ruby">  # Need to figure out how to use search_conn here (no keyword)</code>
           </li>
         </div>
       
