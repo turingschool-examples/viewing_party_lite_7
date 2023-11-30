@@ -25,7 +25,6 @@ class MoviesSearch
     response = conn.get("movie/#{movie_id}")
     movie_data = JSON.parse(response.body, symbolize_names: true)
     @movie_data = Movie.new(movie_data)
-    
   end
 
   def movie_cast(movie_id)

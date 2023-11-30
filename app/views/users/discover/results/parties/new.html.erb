@@ -1,0 +1,18 @@
+<h3><%= @movie.title %></h3>
+
+<section>
+  <%= form_with url: user_movie_parties_path(@user, @movie), method: :post, data: {turbo: false}, local: true do |form| %>
+    <%= form.label :duration %>
+    <%= form.number_field :duration, value: @movie.runtime %>
+
+    <%= form.label :start_time %>
+    <%= form.text_field :start_time %>
+
+    <%# this will need to have boxes for each active user %>
+    <%= form.check_box :current_user %>
+
+    
+
+    <%= form.submit 'Create Party' %>
+  <% end %>
+</section>

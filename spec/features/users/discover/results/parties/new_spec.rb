@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'new user movie party page', type: :feature do
   before :each do
     movie_details = {
-      id: 7,
+      id: 238,
       vote_average: 8.200,
       original_title: "Howl's Moving Castle",
       runtime: 119,
