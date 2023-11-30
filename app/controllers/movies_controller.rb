@@ -5,7 +5,7 @@ class MoviesController < ApplicationController
     @user = User.find(params[:user_id])
 
     if params[:top_movies] == 'top rated'
-      top_20
+      top20
     elsif !params[:search].nil?
       search
     end
@@ -13,7 +13,7 @@ class MoviesController < ApplicationController
 
   private
 
-  def top_20
+  def top20
     conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
       faraday.params['api_key'] = Rails.application.credentials.tmdb[:key]
     end
