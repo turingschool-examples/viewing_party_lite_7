@@ -1,6 +1,5 @@
 class Party < ApplicationRecord
-  has_many :party_movies
-  has_many :movies, through: :party_movies
+  belongs_to :movie
   has_many :user_parties
   has_many :users, through: :user_parties
   validates :duration, presence: true
