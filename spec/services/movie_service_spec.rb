@@ -14,6 +14,8 @@ describe MovieService do
 
     expect(movie_data).to have_key :poster_path
     expect(movie_data[:poster_path]).to be_a(String)
+
+    expect(search[:results].count).to eq(20)
   end
   
 end
