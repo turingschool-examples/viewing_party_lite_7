@@ -1,2 +1,20 @@
 <%= render partial: "shared/nav" %>
-<%= button_to "Discover", user_discover_path(@user.id), method: :get, data: { turbo: false }, local: true %>
+<%= button_to "Discover", user_discover_path(@user.id), params: { value: "top-rated" }, method: :get, data: { turbo: false }, local: true %>
+
+<% if params[:q] == "top-rated" %>
+  <% @movies.take(20).each do |movie| %>
+  <ol>
+    <%= movie.title %>
+    <%= movie.vote_average %>
+  </ol>
+  <% end %>
+<% end %>
+
+<% if params[:search].present? %>
+  <% @movies.take(20).each do |movie| %>
+  <ol>
+    <%= movie.title %>
+    <%= movie.vote_average %>
+  </ol>
+  <% end %>
+<% end %>

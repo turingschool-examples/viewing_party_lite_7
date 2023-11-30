@@ -2,13 +2,7 @@
 
 <%= button_to "Find Top Rated Movies", top_rated_movies_path(@user.id), method: :get, params: { q: "top-rated"}, data: { turbo: false }, local: true %>
 
-<%# if params[:action] = "top_rated" %>
-  <%# @facade.movies.each do |movie| %>
-    <%#= movie.name %>
-  <%# end %>
-<%# end %>
-
-<%= form_with url:"/users/#{@user.id}/discover", method: :get, local: :true do |f| %>
+<%= form_with url:"/users/#{@user.id}/movies", method: :get, local: :true do |f| %>
     <%= f.label "Search for a movie:" %>
     <%= f.text_field :search %>
     <%= f.submit "Find Movies" %>
