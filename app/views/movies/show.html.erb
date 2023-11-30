@@ -24,3 +24,10 @@
       <p><%= cast[:name] %> - <%= cast[:character] %></p>
     <% end %>
 </section>
+<section id="reviews">
+  <p><b><%= @facade.movie_details.total_reviews %> Reviews:</b></p>
+    <% @facade.movie_details.reviews.each do |review| %>
+      <p>Review by: <%= review[:author] %></p>
+      <p>"<%= review[:content] %>"</p>
+    <% end %>
+</section>
