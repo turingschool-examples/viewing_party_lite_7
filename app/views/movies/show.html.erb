@@ -17,3 +17,12 @@
     <li><%= cast_details %></li>
   <% end %>
 </ul><br>
+
+<h5>Total Reviews: <%= @movie_facade.reviews.count %></h5>
+
+<ul class="reviews">
+  <% @movie_facade.reviews.each do |review| %>
+    <li><%= "Author: #{review[:author]}" %></li>
+    <li><%= "Content: #{review[:content]}" %></li>
+  <% end %>
+</ul><br>

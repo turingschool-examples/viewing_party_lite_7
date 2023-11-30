@@ -1,5 +1,5 @@
 class Movie
-  attr_reader :title, :vote_average, :id, :summary, :cast
+  attr_reader :title, :vote_average, :id, :summary, :reviews
 
   def initialize(data)
     @title = data[:original_title]
@@ -9,6 +9,7 @@ class Movie
     @genres = data[:genres]
     @summary = data[:overview]
     @cast = actor_details(data)
+    @reviews = review_details(data) 
   end
 
   def convert_runtime
@@ -37,6 +38,16 @@ class Movie
   def all_cast
     cast = @cast.map do |c|
       "#{c[:character]} Played by: #{c[:actor]}"
+    end
+  end
+
+  def review_details(data)
+    if data[:results]
+      reviews = data[:results].map do |review|
+        { author: review[:author], content: review[:content] }
+      end
+    else
+      return nil
     end
   end
 end

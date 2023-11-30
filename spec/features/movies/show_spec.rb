@@ -10,8 +10,6 @@ RSpec.describe 'Movie Details Page', type: :feature do
 
     it "displays a button to create a button to create a viewing party", :vcr do
       expect(page).to have_button("Create A Party")
-      
-
     end
 
     it "displays a button to return to the discover page", :vcr do
@@ -24,11 +22,10 @@ RSpec.describe 'Movie Details Page', type: :feature do
       expect(page).to have_content("Runtime: 2:55")
       expect(page).to have_content("Genre(s): Drama, Crime")
       expect(page).to have_content("Summary: Spanning the years 1945 to 1955")
-      save_and_open_page
       expect(page).to have_content("Don Vito Corleone Played by: Marlon Brando")
-      # expect(page).to have_content("Total Reviews: ")
-      # expect(page).to have_content("Review Author: ")
-      # expect(page).to have_content("Review Details: ")
+      expect(page).to have_content("Total Reviews: 5")
+      expect(page).to have_content("Author: futuretv")
+      expect(page).to have_content("Content: Great Movie **Ever**")
     end
   end
 end

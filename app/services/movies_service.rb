@@ -17,11 +17,15 @@ class MoviesService < ApplicationService
     json_parse(get_url("/3/movie/top_rated"))
   end
 
-  def find_by(movie_id)
+  def movie(movie_id)
     json_parse(get_url("/3/movie/#{movie_id}"))
   end
 
   def cast(movie_id)
     json_parse(get_url("/3/movie/#{movie_id}/credits"))
+  end
+
+  def reviews(movie_id)
+    json_parse(get_url("/3/movie/#{movie_id}/reviews"))
   end
 end
