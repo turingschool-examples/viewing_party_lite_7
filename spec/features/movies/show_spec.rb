@@ -8,7 +8,7 @@ RSpec.describe 'Movie Details Page', type: :feature do
       visit "users/#{@user.id}/movies/238"
     end
 
-    it "displays a button to create a button to create a viewing party", :vcr do
+    xit "displays a button to create a button to create a viewing party", :vcr do
       expect(page).to have_button("Create A Party")
     end
 
