@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/scottdevoss/turing/3mod/projects/viewing_party_lite_7/config/environment.rb": {
+      "/Users/corypowell/turing/3mod/projects/viewing_party_lite_7/config/environment.rb": {
         "lines": [
           null,
           1,
@@ -10,7 +10,7 @@
           1
         ]
       },
-      "/Users/scottdevoss/turing/3mod/projects/viewing_party_lite_7/config/application.rb": {
+      "/Users/corypowell/turing/3mod/projects/viewing_party_lite_7/config/application.rb": {
         "lines": [
           null,
           null,
@@ -53,7 +53,7 @@
           null
         ]
       },
-      "/Users/scottdevoss/turing/3mod/projects/viewing_party_lite_7/config/boot.rb": {
+      "/Users/corypowell/turing/3mod/projects/viewing_party_lite_7/config/boot.rb": {
         "lines": [
           1,
           null,
@@ -61,7 +61,7 @@
           1
         ]
       },
-      "/Users/scottdevoss/turing/3mod/projects/viewing_party_lite_7/config/environments/test.rb": {
+      "/Users/corypowell/turing/3mod/projects/viewing_party_lite_7/config/environments/test.rb": {
         "lines": [
           1,
           null,
@@ -125,7 +125,7 @@
           null
         ]
       },
-      "/Users/scottdevoss/turing/3mod/projects/viewing_party_lite_7/config/initializers/assets.rb": {
+      "/Users/corypowell/turing/3mod/projects/viewing_party_lite_7/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -141,7 +141,7 @@
           null
         ]
       },
-      "/Users/scottdevoss/turing/3mod/projects/viewing_party_lite_7/config/initializers/content_security_policy.rb": {
+      "/Users/corypowell/turing/3mod/projects/viewing_party_lite_7/config/initializers/content_security_policy.rb": {
         "lines": [
           null,
           null,
@@ -152,38 +152,6 @@
           null,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/scottdevoss/turing/3mod/projects/viewing_party_lite_7/config/initializers/filter_parameter_logging.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/scottdevoss/turing/3mod/projects/viewing_party_lite_7/config/initializers/inflections.rb": {
-        "lines": [
           null,
           null,
           null,
@@ -202,7 +170,39 @@
           null
         ]
       },
-      "/Users/scottdevoss/turing/3mod/projects/viewing_party_lite_7/config/initializers/permissions_policy.rb": {
+      "/Users/corypowell/turing/3mod/projects/viewing_party_lite_7/config/initializers/filter_parameter_logging.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/corypowell/turing/3mod/projects/viewing_party_lite_7/config/initializers/inflections.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/corypowell/turing/3mod/projects/viewing_party_lite_7/config/initializers/permissions_policy.rb": {
         "lines": [
           null,
           null,
@@ -217,7 +217,7 @@
           null
         ]
       },
-      "/Users/scottdevoss/turing/3mod/projects/viewing_party_lite_7/config/routes.rb": {
+      "/Users/corypowell/turing/3mod/projects/viewing_party_lite_7/config/routes.rb": {
         "lines": [
           null,
           null,
@@ -234,19 +234,21 @@
           null,
           1,
           1,
+          1,
+          1,
           null,
           1,
           1,
           null
         ]
       },
-      "/Users/scottdevoss/turing/3mod/projects/viewing_party_lite_7/app/helpers/application_helper.rb": {
+      "/Users/corypowell/turing/3mod/projects/viewing_party_lite_7/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/scottdevoss/turing/3mod/projects/viewing_party_lite_7/spec/features/movie_results/index_spec.rb": {
+      "/Users/corypowell/turing/3mod/projects/viewing_party_lite_7/spec/features/movie_results/index_spec.rb": {
         "lines": [
           1,
           null,
@@ -309,7 +311,61 @@
           null
         ]
       },
-      "/Users/scottdevoss/turing/3mod/projects/viewing_party_lite_7/spec/features/user_registration_page/index_spec.rb": {
+      "/Users/corypowell/turing/3mod/projects/viewing_party_lite_7/spec/features/movie_results/show_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/corypowell/turing/3mod/projects/viewing_party_lite_7/spec/features/user_registration_page/index_spec.rb": {
         "lines": [
           null,
           null,
@@ -371,7 +427,7 @@
           null
         ]
       },
-      "/Users/scottdevoss/turing/3mod/projects/viewing_party_lite_7/spec/features/users/discover_spec.rb": {
+      "/Users/corypowell/turing/3mod/projects/viewing_party_lite_7/spec/features/users/discover_spec.rb": {
         "lines": [
           null,
           null,
@@ -404,7 +460,7 @@
           null
         ]
       },
-      "/Users/scottdevoss/turing/3mod/projects/viewing_party_lite_7/spec/features/users/show_spec.rb": {
+      "/Users/corypowell/turing/3mod/projects/viewing_party_lite_7/spec/features/users/show_spec.rb": {
         "lines": [
           null,
           null,
@@ -447,7 +503,7 @@
           null
         ]
       },
-      "/Users/scottdevoss/turing/3mod/projects/viewing_party_lite_7/spec/models/user_spec.rb": {
+      "/Users/corypowell/turing/3mod/projects/viewing_party_lite_7/spec/models/user_spec.rb": {
         "lines": [
           1,
           null,
@@ -460,7 +516,7 @@
           null
         ]
       },
-      "/Users/scottdevoss/turing/3mod/projects/viewing_party_lite_7/app/models/user.rb": {
+      "/Users/corypowell/turing/3mod/projects/viewing_party_lite_7/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -471,14 +527,14 @@
           null
         ]
       },
-      "/Users/scottdevoss/turing/3mod/projects/viewing_party_lite_7/app/models/application_record.rb": {
+      "/Users/corypowell/turing/3mod/projects/viewing_party_lite_7/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/scottdevoss/turing/3mod/projects/viewing_party_lite_7/app/controllers/users_controller.rb": {
+      "/Users/corypowell/turing/3mod/projects/viewing_party_lite_7/app/controllers/users_controller.rb": {
         "lines": [
           null,
           null,
@@ -504,13 +560,13 @@
           null
         ]
       },
-      "/Users/scottdevoss/turing/3mod/projects/viewing_party_lite_7/app/controllers/application_controller.rb": {
+      "/Users/corypowell/turing/3mod/projects/viewing_party_lite_7/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/scottdevoss/turing/3mod/projects/viewing_party_lite_7/app/controllers/discover_controller.rb": {
+      "/Users/corypowell/turing/3mod/projects/viewing_party_lite_7/app/controllers/discover_controller.rb": {
         "lines": [
           null,
           null,
@@ -519,32 +575,114 @@
           null
         ]
       },
-      "/Users/scottdevoss/turing/3mod/projects/viewing_party_lite_7/app/controllers/movies_controller.rb": {
+      "/Users/corypowell/turing/3mod/projects/viewing_party_lite_7/app/controllers/movies_controller.rb": {
         "lines": [
           1,
           null,
           1,
           7,
           null,
-          7,
-          7,
           null,
-          null,
-          7,
-          5,
-          null,
-          5,
-          5,
-          null,
-          2,
+          1,
           2,
           2,
           null,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/corypowell/turing/3mod/projects/viewing_party_lite_7/app/facades/movie_facade.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          9,
+          null,
+          null,
+          1,
+          7,
+          7,
+          2,
+          null,
+          5,
+          null,
+          null,
+          7,
+          140,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/corypowell/turing/3mod/projects/viewing_party_lite_7/app/services/movie_service.rb": {
+        "lines": [
+          1,
+          1,
+          5,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          null,
+          2,
+          null,
+          null,
+          1,
+          9,
+          9,
+          null,
+          null,
+          1,
+          9,
+          9,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/corypowell/turing/3mod/projects/viewing_party_lite_7/app/poros/movie.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          140,
+          140,
+          140,
+          140,
+          140,
+          140,
+          null,
+          null
+        ]
+      },
+      "/Users/corypowell/turing/3mod/projects/viewing_party_lite_7/app/controllers/viewing_party_controller.rb": {
+        "lines": [
+          1,
+          1,
           null,
           null
         ]
       }
     },
-    "timestamp": 1701304510
+    "timestamp": 1701316691
   }
 }
