@@ -18,7 +18,7 @@
           "title": "The Godfather",
           "video": false,
           "vote_average": 8.708,
-          "vote_count": 19034
+          "vote_count": 19033
       },
       {
           "adult": false,
@@ -37,7 +37,7 @@
           "title": "The Shawshank Redemption",
           "video": false,
           "vote_average": 8.705,
-          "vote_count": 25021
+          "vote_count": 25020
       },
       {
           "adult": false,
@@ -133,7 +133,7 @@
           "release_date": "2001-07-20",
           "title": "Spirited Away",
           "video": false,
-          "vote_average": 8.5,
+          "vote_average": 8.54,
           "vote_count": 15157
       },
       {
@@ -195,7 +195,7 @@
           "title": "The Green Mile",
           "video": false,
           "vote_average": 8.509,
-          "vote_count": 16180
+          "vote_count": 16178
       },
       {
           "adult": false,
@@ -254,7 +254,7 @@
           "title": "Forrest Gump",
           "video": false,
           "vote_average": 8.476,
-          "vote_count": 25725
+          "vote_count": 25724
       },
       {
           "adult": false,
@@ -311,7 +311,7 @@
           "title": "GoodFellas",
           "video": false,
           "vote_average": 8.466,
-          "vote_count": 11926
+          "vote_count": 11925
       },
       {
           "adult": false,

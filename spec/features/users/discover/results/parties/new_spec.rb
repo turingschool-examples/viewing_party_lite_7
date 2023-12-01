@@ -21,11 +21,31 @@ RSpec.describe 'new user movie party page', type: :feature do
   end
 
   it 'lists the current movie title' do
+    json_response = File.read('spec/fixtures/genre_runtime_data.json')
+    stub_request(:get, "https://api.themoviedb.org/3/movie/238").
+         with(
+           headers: {
+          'Accept'=>'*/*',
+          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'Authorization'=>'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMWY5Y2FlYmQ2ZmNlYjUzMDAyNWQ0OGYyMzFmODUzYyIsInN1YiI6IjY1NjUyMjJlNWNlYTE4MDBjNTQ4N2MxZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.0RdSJKPQp2j6olRbyyMsEBtsH6iKAZKMcPWseHnO_nI',
+          'User-Agent'=>'Faraday v2.7.12'
+           }).
+         to_return(status: 200, body: json_response, headers: {})
     visit "/users/#{@user1.id}/movies/#{@movie1.movie_id}/parties/new"
     expect(page).to have_content(@movie1.title)
   end
 
   it 'has a form to create a new party, duration defaulting to movie runtime' do
+    json_response = File.read('spec/fixtures/genre_runtime_data.json')
+    stub_request(:get, "https://api.themoviedb.org/3/movie/238").
+         with(
+           headers: {
+          'Accept'=>'*/*',
+          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'Authorization'=>'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMWY5Y2FlYmQ2ZmNlYjUzMDAyNWQ0OGYyMzFmODUzYyIsInN1YiI6IjY1NjUyMjJlNWNlYTE4MDBjNTQ4N2MxZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.0RdSJKPQp2j6olRbyyMsEBtsH6iKAZKMcPWseHnO_nI',
+          'User-Agent'=>'Faraday v2.7.12'
+           }).
+         to_return(status: 200, body: json_response, headers: {})
     visit "/users/#{@user1.id}/movies/#{@movie1.movie_id}/parties/new"
     expect(page).to have_field(:duration, with: @movie1.runtime)
     expect(page).to have_field(:start_time)
@@ -36,6 +56,16 @@ RSpec.describe 'new user movie party page', type: :feature do
 
   context 'when filled out with valid data' do
     it 'form submission creates a new party and redirects back to discover page' do
+      json_response = File.read('spec/fixtures/genre_runtime_data.json')
+      stub_request(:get, "https://api.themoviedb.org/3/movie/238").
+         with(
+           headers: {
+          'Accept'=>'*/*',
+          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'Authorization'=>'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMWY5Y2FlYmQ2ZmNlYjUzMDAyNWQ0OGYyMzFmODUzYyIsInN1YiI6IjY1NjUyMjJlNWNlYTE4MDBjNTQ4N2MxZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.0RdSJKPQp2j6olRbyyMsEBtsH6iKAZKMcPWseHnO_nI',
+          'User-Agent'=>'Faraday v2.7.12'
+           }).
+         to_return(status: 200, body: json_response, headers: {})
       visit "/users/#{@user1.id}/movies/#{@movie1.movie_id}/parties/new"
       fill_in :duration, with: 180
       fill_in :date, with: Date.today
@@ -59,6 +89,16 @@ RSpec.describe 'new user movie party page', type: :feature do
     # end
 
     it 'form submission pushes a flash error and redirects back (invalid duration)' do
+      json_response = File.read('spec/fixtures/genre_runtime_data.json')
+      stub_request(:get, "https://api.themoviedb.org/3/movie/238").
+         with(
+           headers: {
+          'Accept'=>'*/*',
+          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'Authorization'=>'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMWY5Y2FlYmQ2ZmNlYjUzMDAyNWQ0OGYyMzFmODUzYyIsInN1YiI6IjY1NjUyMjJlNWNlYTE4MDBjNTQ4N2MxZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.0RdSJKPQp2j6olRbyyMsEBtsH6iKAZKMcPWseHnO_nI',
+          'User-Agent'=>'Faraday v2.7.12'
+           }).
+         to_return(status: 200, body: json_response, headers: {})
       visit "/users/#{@user1.id}/movies/#{@movie1.movie_id}/parties/new"
       fill_in :duration, with: 90
       fill_in :start_time, with: '12:00'

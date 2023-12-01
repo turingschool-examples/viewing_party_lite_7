@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe 'movies detail page', type: :feature do
   before :each do
     @user1 = User.create!(name: 'Joe', email: 'joe@gmail.com')
-    json_response = File.read('spec/fixtures/user_discover_results_show.json')
-    json_response1 = File.read('spec/fixtures/user_discover_results_show_credits.json')
-    json_response2 = File.read('spec/fixtures/user_discover_results_show_reviews.json')
+    json_response = File.read('spec/fixtures/genre_runtime_data.json')
+    json_response1 = File.read('spec/fixtures/movie_cast_data.json')
+    json_response2 = File.read('spec/fixtures/movie_review_data.json')
 
     stub_request(:get, "https://api.themoviedb.org/3/movie/238").
           with(
