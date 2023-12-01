@@ -4,12 +4,12 @@
   <% if @top_rated.present? %>
     <% @top_rated.take(20).each do |movie| %>
       <%= link_to movie.title, user_movies_path(@user, movie) %>
-      <p>Average Rating: <%= movie.vote_avg %><p>
+      <p>Average Rating: <%= movie.vote_avg %></p>
     <% end %>
   <% elsif @search_result.present? %>
     <% @search_result.take(20).each do |movie| %>
       <%= link_to movie.title, user_movies_path(@user, movie) %>
-      <p>Average Rating: <%= movie.vote_avg %><p>
+      <p>Average Rating: <%= movie.vote_avg %></p>
     <% end %>
   <% end %>
-<section>
+</section>

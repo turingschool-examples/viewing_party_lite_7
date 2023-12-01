@@ -5,11 +5,11 @@ RSpec.describe 'movies detail page', type: :feature do
     @user1 = User.create!(name: 'Joe', email: 'joe@gmail.com')
   end
 
-  xit 'has a button to create a viewing party' do
+  it 'has a button to create a viewing party' do
     visit "/users/#{@user1.id}/movies/238"
     expect(page).to have_content("Create a Viewing Party")
     click_button "Create a Viewing Party"
-    expect(current_path).to eq("/users/#{@user1.id}/movies/238/viewing_party/new")
+    expect(current_path).to eq("/users/#{@user1.id}/movies/238/parties/new")
   end
 
   it 'has a button to return to the discover page' do 

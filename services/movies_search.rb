@@ -24,8 +24,7 @@ class MoviesSearch
     end
     response = conn.get("movie/#{movie_id}")
     movie_data = JSON.parse(response.body, symbolize_names: true)
-    @movie_data = Movie.new(movie_data)
-    
+    @movie = Movie.new(movie_data)
   end
 
   def movie_cast(movie_id)
@@ -78,7 +77,7 @@ class MoviesSearch
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  # Need to figure out how to use search_conn here (no keyword)
+  # Need to figure out how to use search_conn here (no keyword) could maybe just pass the keyword and do the url in the method
   # def get_search_url(url)
   #   response = search_conn.get(url)
   #   JSON.parse(response.body, symbolize_names: true)
