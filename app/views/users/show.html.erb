@@ -1,15 +1,23 @@
+<%= render partial: 'layouts/box' %>
+
 <h1><%= @user.name %>'s Dashboard</h1>
 
 <%= button_to "Discover Movies", user_discover_index_path(@user), method: :get%>
 
 <h3>Viewing Parties</h3>
-<% @parties.each do |party| %>
-  <section id="party-<%= party.id %>">
-    <p><%= party.movie_title %><br>
-    <%= party.pretty_day %><br>
-    <%= party.start_time %><br><br></p>
-    <p><%= party.duration_in_hours_and_minutes %></p>
-    <p><%= party.long_hand_date %></p>
-    <p><%= party.when %></p>
-  </section>
+<% @user_parties.each do |user_party| %>
+  <div class="box">
+    <section id="party-<%= user_party.id %>">
+      <p><%= image_tag "https://image.tmdb.org/t/p/w500/#{MoviePosterFacade.new(user_party.party.movie_id).movie_poster.file_path}", width: "200" %>
+      <p><%= user_party.party.movie_title %><br>
+      <%= user_party.party.pretty_day %><br>
+      <%= user_party.party.start_time %><br><br></p>
+      <p><%= user_party.party.duration_in_hours_and_minutes %></p>
+      <% if user_party.hosting? == true %>
+        <p>Hosting</p>
+      <% else %>
+        <p>Invited</p>
+      <% end %>
+    </section>
+  </div>
 <% end %>
