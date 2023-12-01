@@ -12,6 +12,11 @@
   </head>
 
   <body>
+    <div class="container">
+        <% flash.each do |type, notice| %>
+          <h5 class="text-info"><b><%= notice %></b></h5>
+        <% end %>
+      </div>
     <%= yield %>
   </body>
 </html>
