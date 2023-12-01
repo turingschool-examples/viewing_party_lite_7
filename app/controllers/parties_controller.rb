@@ -16,10 +16,10 @@ class PartiesController < ApplicationController
 
     if new_party.duration < @movie.runtime
       flash[:notice] = "Party Duration Must Be Longer Than Movie Runtime"
-      redirect_to "/users/#{@user_id}/movies/(#{@movie_id})/viewing-party/new"
+      redirect_to "/users/#{@user.id}/movies/#{@movie.tmdb_id}/viewing-party/new"
     elsif new_party.date > Time.current == false
       flash[:notice] = "Party Date Must Be Set in the Future"
-      redirect_to "/users/#{@user_id}/movies/(#{@movie_id})/viewing-party/new"
+      redirect_to "/users/#{@user.id}/movies/#{@movie.tmdb_id}/viewing-party/new"
     else new_party.save
       UserParty.create!({
         user_id: @user.id,
