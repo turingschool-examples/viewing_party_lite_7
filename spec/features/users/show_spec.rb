@@ -54,14 +54,14 @@ RSpec.describe 'User show page', type: :feature do
     within('section.attending-parties') do
       expect(page).to have_css('h2', text: 'Attending Parties')
       expect(page).to have_content("Movie Title: The Lord of the Rings: The Fellowship of the Ring")
-      expect(page).to have_content("Date and Time: Starts on 2023-09-01 at 2000-01-01 11:00:00 UTC")
+      expect(page).to have_content("Date and Time: Starts on 2023-09-01 at 11:00:00 UTC")
       expect(page).to have_content("Hosted By: Jerry")
       expect(page).to have_content("Other users attending: Tom Bob")
     end
     within('section.hosting-parties') do
       expect(page).to have_css('h2', text: 'Hosting Parties')
       expect(page).to have_content("Movie Title: Star Wars")
-      expect(page).to have_content("Date and Time: Starts on 2023-08-01 at 2000-01-01 10:00:00 UTC")
+      expect(page).to have_content("Date and Time: Starts on 2023-08-01 at 10:00:00 UTC")
       expect(page).to have_content("Hosted By: Tom")
       expect(page).to have_content("Other users attending: Jerry Bob")
     end

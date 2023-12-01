@@ -10,8 +10,8 @@
           <% if party.movie_id == movie[:id] %>
             <li><strong>Movie Image: </strong><%= image_tag "https://image.tmdb.org/t/p/w92#{movie[:poster_path]}" %></li>
             <li><strong>Movie Title: </strong><%= link_to "#{movie[:title]}", "/users/#{@user.id}/movies/#{movie[:id]}" %></li>
-            <li><strong>Date and Time: </strong><%= "Starts on #{party.date} at #{party.start_time}" %></li>
-            <% party.user_parties.each do |us| %>
+            <li><strong>Date and Time: </strong><%= "Starts on #{party.date.strftime('%Y-%m-%d')} at #{party.start_time.strftime('%H:%M:%S')} UTC" %></li>           
+             <% party.user_parties.each do |us| %>
               <% if us.is_host == true %>
                 <li><strong>Hosted By: </strong><%= "#{us.get_user_name}" %></li>
               <% end %>
@@ -36,8 +36,8 @@
           <% if party.movie_id == movie[:id] %>
             <li><strong>Movie Image: </strong><%= image_tag "https://image.tmdb.org/t/p/w92#{movie[:poster_path]}" %></li>
             <li><strong>Movie Title: </strong><%= link_to "#{movie[:title]}", "/users/#{@user.id}/movies/#{movie[:id]}" %></li>
-            <li><strong>Date and Time: </strong><%= "Starts on #{party.date} at #{party.start_time}" %></li>
-            <% party.user_parties.each do |us| %>
+            <li><strong>Date and Time: </strong><%= "Starts on #{party.date.strftime('%Y-%m-%d')} at #{party.start_time.strftime('%H:%M:%S')} UTC" %></li>           
+             <% party.user_parties.each do |us| %>
               <% if us.is_host == true %>
                 <li><strong>Hosted By: </strong><%= "#{us.get_user_name}" %></li>
               <% end %>
