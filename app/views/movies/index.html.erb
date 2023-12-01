@@ -1,10 +1,10 @@
  <ul>
- <% @movies.each do |movie| %>
+ <% @facade.movies.each do |movie| %>
   <u><%= link_to "#{movie.title}", user_movie_path(@user, movie.id) %></u><br>
   Vote Average: <%= movie.vote_average %><br><br>
 <% end %>
 </ul>
 
-<h3><%= @movies.length %> Results</h3>
+<h3><%= @facade.movies.length %> Results</h3>
 
 <%= button_to "Return to Discover Page", user_discover_index_path(@user), method: :get%>

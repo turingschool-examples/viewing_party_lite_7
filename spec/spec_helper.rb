@@ -19,47 +19,57 @@ end
 
 def oppenheimer_test_data
   popular_movies_fixture = File.read("spec/fixtures/popular_movies.json")
-      oppenheimer_fixture = File.read("spec/fixtures/oppenheimer_movie_details.json")
-      oppenheimer_cast_fixture = File.read("spec/fixtures/oppenheimer_movie_cast.json")
-      oppenheimer_reviews_fixture = File.read("spec/fixtures/oppenheimer_movie_reviews.json")
+  search_movies_fixture = File.read("spec/fixtures/search_movies_fixture.json")
+  oppenheimer_fixture = File.read("spec/fixtures/oppenheimer_movie_details.json")
+  oppenheimer_cast_fixture = File.read("spec/fixtures/oppenheimer_movie_cast.json")
+  oppenheimer_reviews_fixture = File.read("spec/fixtures/oppenheimer_movie_reviews.json")
   
-      stub_request(:get, "https://api.themoviedb.org/3/movie/popular?api_key=#{ENV["API_KEY"]}").
-      with(
-        headers: {
-              'Accept'=>'*/*',
-              'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-              'User-Agent'=>'Faraday v2.7.12'
-        }).
-      to_return(status: 200, body: popular_movies_fixture, headers: {})
-  
-      stub_request(:get, "https://api.themoviedb.org/3/movie/872585?api_key=#{ENV["API_KEY"]}").
-      with(
-      headers: {
-            'Accept'=>'*/*',
-            'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-            'User-Agent'=>'Faraday v2.7.12'
-      }).
-      to_return(status: 200, body: oppenheimer_fixture, headers: {})
-  
-      stub_request(:get, "https://api.themoviedb.org/3/movie/872585/credits?api_key=#{ENV["API_KEY"]}").
-      with(
-        headers: {
-              'Accept'=>'*/*',
-              'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-              'User-Agent'=>'Faraday v2.7.12'
-        }).
-      to_return(status: 200, body: oppenheimer_cast_fixture, headers: {})
-  
-      stub_request(:get, "https://api.themoviedb.org/3/movie/872585/reviews?api_key=#{ENV["API_KEY"]}").
-      with(
-        headers: {
-              'Accept'=>'*/*',
-              'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-              'User-Agent'=>'Faraday v2.7.12'
-        }).
-      to_return(status: 200, body: oppenheimer_reviews_fixture, headers: {})
+  stub_request(:get, "https://api.themoviedb.org/3/movie/popular?api_key=#{ENV["API_KEY"]}").
+  with(
+    headers: {
+          'Accept'=>'*/*',
+          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'User-Agent'=>'Faraday v2.7.12'
+    }).
+  to_return(status: 200, body: popular_movies_fixture, headers: {})
 
-      @oppenheimer = MovieService.get_detailed_movie(872585)
+  stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV["API_KEY"]}&query=Trolls").
+  with(
+    headers: {
+    'Accept'=>'*/*',
+    'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+    'User-Agent'=>'Faraday v2.7.12'
+    }).
+  to_return(status: 200, body: search_movies_fixture, headers: {})
+
+  stub_request(:get, "https://api.themoviedb.org/3/movie/872585?api_key=#{ENV["API_KEY"]}").
+  with(
+  headers: {
+        'Accept'=>'*/*',
+        'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+        'User-Agent'=>'Faraday v2.7.12'
+  }).
+  to_return(status: 200, body: oppenheimer_fixture, headers: {})
+
+  stub_request(:get, "https://api.themoviedb.org/3/movie/872585/credits?api_key=#{ENV["API_KEY"]}").
+  with(
+    headers: {
+          'Accept'=>'*/*',
+          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'User-Agent'=>'Faraday v2.7.12'
+    }).
+  to_return(status: 200, body: oppenheimer_cast_fixture, headers: {})
+
+  stub_request(:get, "https://api.themoviedb.org/3/movie/872585/reviews?api_key=#{ENV["API_KEY"]}").
+  with(
+    headers: {
+          'Accept'=>'*/*',
+          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'User-Agent'=>'Faraday v2.7.12'
+    }).
+  to_return(status: 200, body: oppenheimer_reviews_fixture, headers: {})
+
+      @oppenheimer = DetailedMovieFacade.new(872585)
 end
 # Given that it is always loaded, you are encouraged to keep this file as
 # light-weight as possible. Requiring heavyweight dependencies from this file
