@@ -15,16 +15,7 @@ end
 describe 'Discover Movies Page' do
   before :each do
     test_data
-    
-    popular_movies_fixture = File.read("spec/fixtures/popular_movies.json")
-    stub_request(:get, "https://api.themoviedb.org/3/movie/popular?api_key=#{ENV["API_KEY"]}").
-    with(
-      headers: {
-            'Accept'=>'*/*',
-            'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-            'User-Agent'=>'Faraday v2.7.12'
-      }).
-    to_return(status: 200, body: popular_movies_fixture, headers: {})
+    oppenheimer_test_data
 
     visit user_discover_index_path(@user1)
   end
@@ -44,7 +35,16 @@ describe 'Discover Movies Page' do
   end
 
   it "when the user clicks the 'Search by Movie Title' button it takes the user to the movies results page" do
+    fill_in :query, with: "Trolls"
     click_button "Search by Movie Title"
     expect(current_path).to eq(user_results_path(@user1))
+  end
+
+  describe "sad path testing" do
+    it "stays on current page and gives error if no search terms are present" do
+      click_button "Search by Movie Title"
+      expect(current_path).to eq(user_discover_index_path(@user1))
+      expect(page).to have_content("No Search Terms Provided.")
+    end
   end
 end
