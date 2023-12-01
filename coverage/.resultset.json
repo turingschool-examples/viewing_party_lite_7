@@ -11,10 +11,9 @@
         "lines": [
           1,
           1,
-          0,
-          null,
-          null,
           1,
+          null,
+          null,
           1,
           1,
           1,
@@ -63,8 +62,6 @@
           0,
           0,
           0,
-          null,
-          null,
           0
         ],
         "branches": {
@@ -182,6 +179,6 @@
         }
       }
     },
-    "timestamp": 1701384757
+    "timestamp": 1701394589
   }
 }
