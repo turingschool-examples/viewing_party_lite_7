@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :create] do
     resources :discover, only: [:index]
     resources :movies, only: [:index, :show] do
-      resources :parties, only: [:new, :create]
+      resources :viewing_party, only: [:new], controller: 'user_parties'
+      post 'viewing_party', to: 'user_parties#create' # Handrolled, was adding a _index to prefix and idk why
     end
   end
 end
