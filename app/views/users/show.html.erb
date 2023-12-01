@@ -5,7 +5,9 @@
 <h3>Viewing Parties</h3>
 <% @parties.each do |party| %>
   <section id="party-<%= party.id %>">
-    <%= party.movie_title %>
+    <%= party.movie_title %><br>
+    <%= party.day %><br>
+    <%= party.start_time %><br><br>
   </section>
 <% end %>
 
