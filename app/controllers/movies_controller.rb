@@ -16,6 +16,7 @@ class MoviesController < ApplicationController
     @user = User.find(params[:user_id])
     @movie_facade = DetailedMovieFacade.new(params[:id])
     @cast_facade = MovieCastFacade.new(params[:id])
+    @movie_poster_facade = MoviePosterFacade.new(params[:id])
     @reviews_facade = MovieReviewsFacade.new(params[:id])
   end
 end

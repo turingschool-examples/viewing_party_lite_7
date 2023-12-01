@@ -1,8 +1,15 @@
+<%= render partial: 'landing/box' %>
+<%= render partial: 'landing/subheader' %>
+
 <%= button_to "Create New User", new_user_path, method: :get %>
 
-<h3><%= link_to "All Users", users_path %>
-<% @users.each do |user| %>
-  <section id="user-<%= user.id %>">
-    <%= user.name %>
-  </section>
-<% end %>
+<div class="box">
+<div class="subheader">
+<h3><%= link_to "All Users", users_path %></h3>
+</div>
+  <% @users.each do |user| %>
+    <section id="user-<%= user.id %>">
+      <h4><%= link_to "#{user.email}", user_path(user.id) %></h4>
+    </section>
+  <% end %>
+</div>
