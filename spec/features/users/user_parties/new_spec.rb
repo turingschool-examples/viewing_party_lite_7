@@ -69,7 +69,6 @@ describe 'New Viewing Party Page' do
       fill_in :start_time, with: "04:00 PM"
       fill_in :duration, with: "200"
 
-      save_and_open_page
       within("#invited_user-#{@user2.id}") do
         check("invitees[]")
       end
@@ -78,11 +77,17 @@ describe 'New Viewing Party Page' do
       end 
       click_button "Create Party"
 
-      expect(current_path).to eq(user_path(@user1))
+      visit user_path(@user2)
       expect(page).to have_content("Oppenheimer")
       expect(page).to have_content("January 1, 2024")
       expect(page).to have_content("4:00 PM")
-      expect(page).to have_content("Hosting")
+      expect(page).to have_content("Invited")
+
+      visit user_path(@user3)
+      expect(page).to have_content("Oppenheimer")
+      expect(page).to have_content("January 1, 2024")
+      expect(page).to have_content("4:00 PM")
+      expect(page).to have_content("Invited")
     end
   end
 end
