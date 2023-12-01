@@ -11,18 +11,15 @@
     <p><%= f.label :duration, "Duration of Party" %>
     <%= f.text_field :duration, value: @facade.single_movie_details.runtime, in: 1..300 %></p>
 
-    <!--<p><%= f.label :day, "Day" %>
-    <%= f.text_field :day, value: Date.today %></p>
-    -->
-
-    <p><%= f.label :time, "Start Date and Time" %>
-    <%= f.datetime_field :time %>
-    <!--<%= f.text_field :time, value: Time.new.strftime("%I:%M") %></p>-->
+    <p><%= f.label :date_time, "Start Date and Time" %>
+    <%= f.datetime_field :date_time %>
 
     <p><%= f.label :invite, "Invite Other Users" %>
       <% @users.each do |user| %><br>
-      <%= f.check_box :invite, params: { invite: user.email } %>
-      <%= user.email %>
+      <div id ="user-<%= user.id %>">
+        <%= f.check_box :invite, params: { invite: user.id } %>
+        <%= user.email %>
+      </div>
     <% end %>
     </p>
 
