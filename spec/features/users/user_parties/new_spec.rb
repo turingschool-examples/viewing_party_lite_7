@@ -43,6 +43,7 @@ describe 'New Viewing Party Page' do
 
       click_button "Create Party"
       expect(current_path).to eq(user_path(@user1))
+      save_and_open_page
       expect(page).to have_content("Oppenheimer")
       expect(page).to have_content("January 1, 2024")
       expect(page).to have_content("5:30 PM")
