@@ -35,6 +35,5 @@
 <p><%= @movie.cast.join(", ") %></p>
 <h3><%= @movie.reviews.count %> Reviews</h3>
 <% @movie.reviews.each do |review| %>
-<%# require "pry"; binding.pry %>
   <p><%= review %></p>
 <% end %>

@@ -6,4 +6,14 @@ class User < ApplicationRecord
 
   has_many :party_users
   has_many :viewing_parties, through: :party_users
+
+  # @return all OTHER users in the database
+  def friends
+    User.where.not(id: id)
+  end
+
+  # @return formatted string of name and email
+  def formatted
+    "#{name} (#{email})"
+  end
 end

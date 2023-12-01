@@ -1,6 +1,7 @@
 class MoviesController < ApplicationController
   def discover
     @user = User.find(params[:id])
+    @viewing_parties = @user.viewing_parties
   end
 
   def index
