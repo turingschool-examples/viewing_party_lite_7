@@ -17,6 +17,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import "button_pri.css";
 @import "search.css";
+@import "view_party_form.css";
 
 body {
     font-family: 'Roboto', sans-serif;

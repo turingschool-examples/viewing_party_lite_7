@@ -53,6 +53,7 @@ class MovieFacade
 
     if movie.nil?
       movie = Poro::Movie.new(TMDBService.get_movie(id))
+      movie = add_details(movie)
       @@movie_cache.append(movie)
     end
 

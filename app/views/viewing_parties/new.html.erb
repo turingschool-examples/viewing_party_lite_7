@@ -9,4 +9,28 @@
   params: nil
 } %>
 <br>
-<%= form_with  %>
+<div id="form-group" class="form-group" style="display: flex; justify-content: space-around">
+  <%= form_with url: "/users/#{@user.id}/movies/#{@movie.id}/viewing_parties", method: :post, data: { turbo: false } do |f| %>
+    <h6 style="text-align: center">Viewing Party Details</h6>
+    <%# require "pry"; binding.pry %>
+    <div class="form-group">
+      <%= f.label "Movie Title: " %>
+      <span><strong><%= "#{@movie.title}" %></strong></span></div>
+    <div class="form-group">
+      <%= f.label :duration_of_party %>
+      <%= f.text_field :duration_of_party, value: @movie.runtime %></div>
+    <div class="form-group">
+      <%= f.label :day %>
+      <%= f.date_field :day %></div>
+    <div class="form-group">
+      <%= f.label :start_time %>
+      <%= f.text_field :start_time, type: "time" %>
+    </div>
+    <h6 style="text-align: center">Invite Others</h6>
+    <div class="form-group">
+        <%= f.collection_check_boxes :user_id, @user.friends, :id, :formatted %>
+    </div>
+
+    <%= f.submit "Create Party", style: "flex: 1" %>
+  <% end %>
+</div>

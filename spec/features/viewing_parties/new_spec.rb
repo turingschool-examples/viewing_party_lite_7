@@ -27,25 +27,24 @@ RSpec.describe "New Viewing Party Page" do
 
   describe "new viewing party form" do
     it "displays the movie title above a form" do
-      within ".form" do
+      within "#form-group" do
         expect(page).to have_content(@movie.title)
       end
     end
 
     it "has a 'Duration of Party' field prefilled with the movie's runtime in minutes" do
-      expect(page).to have_field("Duration of Party", with: @movie.runtime)
+      expect(page).to have_field(:duration_of_party, with: @movie.runtime)
     end
 
     it "has date and time selection fields" do
       expect(page).to have_field("Day")
-      # <%= f.text_field :day, data:{ provide:'datepicker' } %>
     end
 
     it "has individual checkboxes to invite every other existing user" do
-      expect(page).to have_unchecked_field("#{@user2.name} (#{@user2.email})")
-      expect(page).to have_unchecked_field("#{@user3.name} (#{@user3.email})")
+      expect(page).to have_unchecked_field(@user2.formatted)
+      expect(page).to have_unchecked_field(@user3.formatted)
 
-      expect(page).to_not have_checked_field("#{@user1.name} (#{@user1.email})")
+      expect(page).to_not have_checked_field(@user1.formatted)
     end
 
     it "has a button to create a party" do
@@ -55,7 +54,7 @@ RSpec.describe "New Viewing Party Page" do
 
   describe "happy path" do
     it "redirects to the user's dashboard where the new event is shown" do
-      check(@user2.name_email)
+      check(@user2.formatted)
       click_button("Create Party")
 
       expect(current_path).to eq(user_path(@user1.id))
