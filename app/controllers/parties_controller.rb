@@ -38,8 +38,8 @@ class PartiesController < ApplicationController
 
   private
   def parties_params
-    params[:date] = "#{params["day(2i)"]} #{params["day(3i)"]}, #{params["day(1i)"]}"
-    params[:start_time] = "#{params["time(4i)"]}:#{params["time(5i)"]}"
+    params[:date] = Party.formatted_date(params)
+    params[:start_time] = Party.formatted_time(params)
     params[:name] = @movie.title
     params[:movie_id] = @movie.id
     params.permit(:start_time, :name, :duration, :date, :movie_id)

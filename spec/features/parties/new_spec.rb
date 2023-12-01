@@ -40,7 +40,6 @@ RSpec.describe "New Party" do
     click_button "Create Party"
     
     expect(current_path).to eq("/users/#{@user1.id}")
-    save_and_open_page
     expect(page).to have_content("Shrek")
     expect(page).to have_content("February 1, 2024")
     expect(page).to have_content("7:00 pm")
@@ -48,7 +47,7 @@ RSpec.describe "New Party" do
 
     visit "/users/#{@user3.id}"
     expect(page).to have_content("Shrek")
-    expect(page).to have_content("January 1, 2024")
+    expect(page).to have_content("February 1, 2024")
     expect(page).to have_content("7:00 pm")
     expect(page).to have_content("Invited")
 

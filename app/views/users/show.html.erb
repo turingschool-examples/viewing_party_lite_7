@@ -4,10 +4,9 @@
 
 <h4>Viewing Parties</h4>
 <% @user.parties.each do |party| %>
-<%# <% require 'pry'; binding.pry %>%
-  <%# <img src=<%= "#{party.image_api_call(party.movie_id)}" %> height="200" > %> %>
+  <img src= <%= "#{party.image_api_call}" %> height="200" > <br>
   <%= party.name %><br>
-  <%= party.date.strftime('%B %e, %Y')%><br>
+  <%= party.date%><br>
   <%= party.start_time%><br>
   <%= party.host(@user.id)%><br><br><br>
 <% end %>
