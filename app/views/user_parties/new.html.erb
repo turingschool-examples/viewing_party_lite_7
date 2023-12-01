@@ -6,12 +6,12 @@
 Movie Title   <b><%= @movie_facade.detailed_movie.title %></b>
 <%= form_with url: user_movie_viewing_party_index_path(@user, @movie_facade.detailed_movie.id), method: :post, local: :true do |f| %>
   <%= f.label "Duration of Party" %> <%= f.text_field :duration, value: @movie_facade.detailed_movie.runtime %><br>
-  <%= f.label "Day" %> <%= f.date_select :day, {order: [:month, :day, :year]}%><br>
-  <%= f.label "Start Time" %> <%= f.time_select :start_time %>
+  <%= f.label "Day" %> <%= f.date_field :day %><br>
+  <%= f.label "Start Time" %> <%= f.time_field :start_time %>
 
   <h4>Invite Other Users</h4>
    <% User.other_users(@user).each do |user| %>
-    <div id="invited_user-<%= user.id %>">
+    <div id ="invited_user-<%= user.id %>">
       <%= f.check_box :invite, params: {invite: user.id} %>
       <%= "#{user.name} (#{user.email})"%>
     </div>

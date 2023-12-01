@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'New Viewing Party Page' do
   before :each do
-    new_spec_test_data
+    test_data
     oppenheimer_test_data
 
     visit new_user_movie_viewing_party_path(@user1, 872585)
@@ -26,14 +26,11 @@ describe 'New Viewing Party Page' do
       expect(page).to have_content("Start time")
     end
     
-    xit "option to invite other users is displayed if there are other users" do
+    it "option to invite other users is displayed if there are other users" do
       expect(page).to have_content("Invite Other Users")
-      anthea = User.create!(name: "Anthea", email: "anthea@website.com")
-      within("#invited_user-#{anthea.id}") do
-        expect(page).to have_checkbox('Anthea (anthea@website.com)')
+      within("#invited_user-#{@user2.id}") do
+        check("invite")
       end
-      # xero =User.create!(name: "Xero", email: "xero@spooky.wow")
-      # expect(page).to have_field("Xero (xero@spooky.wow)", type: "checkbox", wait: 10)
     end
     
     xit "has expected functionality (Create Party)" do
