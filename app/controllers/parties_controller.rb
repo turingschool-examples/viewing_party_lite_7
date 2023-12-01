@@ -1,7 +1,7 @@
 class PartiesController < ApplicationController
   
   def new
-    @movie = Movie.details(params[:movie_id])
+    @movie = MovieFacade.new(params[:movie_id]).movie
     @user = User.find(params[:user_id])
   end
 
