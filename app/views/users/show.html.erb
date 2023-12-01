@@ -9,7 +9,7 @@
         <% @movies.each do |movie| %>
           <% if party.movie_id == movie[:id] %>
             <li><strong>Movie Image: </strong><%= image_tag "https://image.tmdb.org/t/p/w92#{movie[:poster_path]}" %></li>
-            <li><strong>Movie Title: </strong><%= "#{movie[:title]}" %></li>
+            <li><strong>Movie Title: </strong><%= link_to "#{movie[:title]}", "/users/#{@user.id}/movies/#{movie[:id]}" %></li>
             <li><strong>Date and Time: </strong><%= "Starts on #{party.date} at #{party.start_time}" %></li>
             <% party.user_parties.each do |us| %>
               <% if us.is_host == true %>
@@ -35,7 +35,7 @@
         <% @movies.each do |movie| %>
           <% if party.movie_id == movie[:id] %>
             <li><strong>Movie Image: </strong><%= image_tag "https://image.tmdb.org/t/p/w92#{movie[:poster_path]}" %></li>
-            <li><strong>Movie Title: </strong><%= "#{movie[:title]}" %></li>
+            <li><strong>Movie Title: </strong><%= link_to "#{movie[:title]}", "/users/#{@user.id}/movies/#{movie[:id]}" %></li>
             <li><strong>Date and Time: </strong><%= "Starts on #{party.date} at #{party.start_time}" %></li>
             <% party.user_parties.each do |us| %>
               <% if us.is_host == true %>

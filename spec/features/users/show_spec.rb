@@ -45,6 +45,11 @@ RSpec.describe 'User show page', type: :feature do
     expect(page).to have_button('Discover Movies')
   end
 
+  it "displays a 'Discover Movies' movie links" do
+    expect(page).to have_link('The Lord of the Rings: The Fellowship of the Ring')
+    expect(page).to have_link('Star Wars')
+  end
+
   it 'displays a section that lists viewing parties' do
     within('section.attending-parties') do
       expect(page).to have_css('h2', text: 'Attending Parties')
