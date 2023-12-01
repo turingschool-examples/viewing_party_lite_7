@@ -1,0 +1,18 @@
+<h1><u>Create a Viewing Party</u></h1>
+
+<h3><%= @movie %></h3>
+
+<%= form_with(model: @viewing_party, url: "/users/#{@user.id}/movies/#{@movie}/viewing-party/new" , method: :post) do |form| %>
+  <%= form.label :duration %>
+  <%= form.text_field :duration, value: @movie.duration, min: @movie.duration %>
+
+  <%= form.label :date %>
+  <%= form.date_field :date %>
+
+  <%@users.each do |user|%>
+    <%= form.label "add_#{user.name}", class: "checkbox-label" %>
+    <%= form.check_box "add_#{user.name}", class: "checkbox" %>
+  <%end%>
+
+  <%= form.submit 'Create a Party' %>
+<% end %>
