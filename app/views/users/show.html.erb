@@ -3,9 +3,19 @@
 
 <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %>
 
+<p> Attending Parties </p>
 <div id="user_parties">
   <h3>These are your Viewing Parties</h3>
   <% @user.parties.uniq.each do |party| %>
     <%= party.name %> <br>
+      <% @movies.each do |movie| %>
+        <% if party.movie_id == movie[:id] %>
+          <li><strong>Movie Image: </strong><%= image_tag "https://image.tmdb.org/t/p/w92#{movie[:poster_path]}" %></li>
+          <li><strong>Movie Title: </strong><%= "#{movie[:title]}" %></li>
+          <li><strong>Date and Time: </strong><%= "Starts on #{party.date} at #{party.start_time}" %></li>
+        <% end %>
+      <% end %>
   <% end %>
 </div>
+
+<p> Hosting Parties </p>

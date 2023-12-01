@@ -4,7 +4,7 @@ RSpec.describe 'User Dashboard Page' do
   before(:each) do
     load_test_data
   end
-  it "Show user's dashboard" do
+  it "Show user's dashboard", :vcr do
     visit user_path(@user3)
 
     expect(page).to have_content("#{@user3.name}'s Dashboard")
@@ -19,7 +19,7 @@ RSpec.describe 'User Dashboard Page' do
     end
   end
 
-  it "Has a button to discover movies" do
+  it "Has a button to discover movies", :vcr do
     visit user_path(@user3)
 
     expect(page).to have_button("Discover Movies")
