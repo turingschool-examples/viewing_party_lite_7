@@ -16,7 +16,7 @@ RSpec.describe 'new user movie party page', type: :feature do
       content: 'good stuff'
     }
     @user1 = User.create!(name: 'Joe', email: 'joe@gmail.com')
-    @user1 = User.create!(name: 'Mama', email: 'mama@gmail.com')
+    @user2 = User.create!(name: 'Mama', email: 'mama@gmail.com')
     @movie1 = Movie.new(movie_details)
   end
 
@@ -27,7 +27,6 @@ RSpec.describe 'new user movie party page', type: :feature do
 
   it 'has a form to create a new party, duration defaulting to movie runtime' do
     visit new_user_movie_party_path(@user1, @movie1)
-    save_and_open_page
     expect(page).to have_field(:duration, with: @movie1.runtime)
     expect(page).to have_field(:start_time)
     expect(page).to have_field(:date)
