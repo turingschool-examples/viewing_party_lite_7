@@ -38,6 +38,7 @@ RSpec.describe 'new user movie party page', type: :feature do
     it 'form submission creates a new party and redirects back to discover page' do
       visit "/users/#{@user1.id}/movies/#{@movie1.movie_id}/parties/new"
       fill_in :duration, with: 180
+      fill_in :date, with: Date.today
       fill_in :start_time, with: '12:00'
       check "#{@user1.name}"
       click_button 'Create Party'

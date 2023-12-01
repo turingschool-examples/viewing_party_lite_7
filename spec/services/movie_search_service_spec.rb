@@ -1,4 +1,4 @@
-require './services/movies_search_service'
+require 'rails_helper'
 
 RSpec.describe MoviesSearchService do
   before(:each) do

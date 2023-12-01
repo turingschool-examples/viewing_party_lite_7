@@ -27,14 +27,17 @@ class Movie
   end
 
   def genre_name 
-    @genre.map do |genre|
-      genre[:name]
+    if @genre.is_a?(String)
+      @genre
+    else
+      @genre.map do |genre|
+        genre[:name]
+      end
     end
   end
 
   def runtime_hrs_and_mins
     "#{@runtime/60}h #{@runtime % 60}min"
   end
-
 end
 

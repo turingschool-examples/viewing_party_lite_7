@@ -8,4 +8,8 @@ class MovieSearchFacade
       Movie.new(movie)
     end
   end
+
+  def search_movies(keyword)
+
+  end
 end
