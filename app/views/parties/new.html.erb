@@ -16,7 +16,7 @@
   <%=  "Start Time:" %>
   <%= f.time_select :time%>
   <p>Invite Other Users</p>
-  <% User.all.each do |user|%>
+  <% User.where.not(email: "#{@user.email}").each do |user|%>
     <%= f.check_box "#{user.id}" %>
     <%= "#{user.name} (#{user.email})"%>
   <% end %>

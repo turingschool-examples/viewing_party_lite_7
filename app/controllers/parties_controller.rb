@@ -13,7 +13,7 @@ class PartiesController < ApplicationController
     end
     @user = User.find(params[:user_id])
     new_party = Party.new(parties_params)
-    
+
     if new_party.duration < @movie.runtime
       flash[:notice] = "Party Duration Must Be Longer Than Movie Runtime"
       redirect_to "/users/#{@user_id}/movies/(#{@movie_id})/viewing-party/new"
@@ -35,8 +35,8 @@ class PartiesController < ApplicationController
 
       redirect_to "/users/#{@user.id}"
     else
-      flash[:notice] = "Party already created"
-      redirect_to "/users/#{@user.id}/movies/#{new_party.movie_id}/viewing-party/new"
+      # flash[:notice] = "Party already created"
+      # redirect_to "/users/#{@user.id}/movies/#{new_party.movie_id}/viewing-party/new"
     end
   end
 
