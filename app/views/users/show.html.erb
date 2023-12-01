@@ -1,7 +1,58 @@
-<%= @user.name %>'s Dashboard
+<%= @facade.user.name %>'s Dashboard
 
-<%= button_to 'Discover Movies', discover_user_path(@user.id), method: :get %>
+<%= button_to 'Discover Movies', discover_user_path(@facade.user), method: :get %>
 
-<section id="list viewing parties">
-  Viewing Parties
+<h2>~!Viewing Parties!~</h2>
+<section id="hosted-parties">
+  <h3>My Parties</h3>
+  <% @facade.user.hosted_parties.each do |party| %>
+    <section id="party-<%= party.id %>">
+      <%
+=begin%>
+ <img src="<%= @facade.movie_poster_link(party.movie_id) %>"> 
+<%
+=end%>
+      <p>
+        Movie Title: <%= link_to @facade.get_movie_title(party.movie_id), user_movie_path(@facade.user.id, party.movie_id) %><br>
+        Duration: <%= party.duration_of_party %> minutes<br>
+        Date: <%= party.party_date.strftime("%b %d, %Y") %><br>
+        Start Time: <%= party.start_time.strftime("%I:%M %p") %><br>
+        Host: <%= party.get_host_name %><br>
+        Guest List:
+          <% party.get_guest_names.each do |name| %>
+            <%= name == party.get_guest_names.last ? name : "#{name}, "%>
+          <% end %>
+        <br>
+      </p>
+    </section>
+  <% end %>
+</section>
+
+<section id="invited-parties">
+  <h3>My Party Invites</h3>
+  <% @facade.user.invited_parties.each do |party| %>
+    <section id="party-<%= party.id %>">
+      <%
+=begin%>
+ <img src="<%= @facade.movie_poster_link(party.movie_id) %>"> 
+<%
+=end%>
+      <p>
+        Movie Title: <%= link_to @facade.get_movie_title(party.movie_id), user_movie_path(@facade.user.id, party.movie_id) %><br>
+        Duration: <%= party.duration_of_party %> minutes<br>
+        Date: <%= party.party_date.strftime("%b %d, %Y") %><br>
+        Start Time: <%= party.start_time.strftime("%I:%M %p") %><br>
+        Host: <%= party.get_host_name %><br>
+        Guest List:
+          <% party.get_guest_names.each do |name| %>
+            <% if name == party.get_guest_names.last %>
+              <%= name == @facade.user.name ? "<strong>#{name}</strong>".html_safe : "#{name}" %>
+            <% else %>
+              <%= name == @facade.user.name ? "<strong>#{name}</strong>, ".html_safe : "#{name}, " %>
+            <% end %>
+          <% end %>
+        <br>
+      </p>
+    </section>
+  <% end %>
 </section>
