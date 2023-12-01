@@ -5,8 +5,8 @@ RSpec.describe 'new user movie party page', type: :feature do
     movie_details = {
       id: 238,
       vote_average: 8.200,
-      original_title: "Howl's Moving Castle",
-      runtime: 119,
+      original_title: "The Godfather",
+      runtime: 175,
       genres: 'animation',
       overview: 'When an unconfident young woman is cursed with an old body by a spiteful witch',
       name: 'Takuya Kimura',
@@ -21,12 +21,12 @@ RSpec.describe 'new user movie party page', type: :feature do
   end
 
   it 'lists the current movie title' do
-    visit new_user_movie_party_path(@user1, @movie1)
+    visit "/users/#{@user1.id}/movies/#{@movie1.movie_id}/parties/new"
     expect(page).to have_content(@movie1.title)
   end
 
   it 'has a form to create a new party, duration defaulting to movie runtime' do
-    visit new_user_movie_party_path(@user1, @movie1)
+    visit "/users/#{@user1.id}/movies/#{@movie1.movie_id}/parties/new"
     expect(page).to have_field(:duration, with: @movie1.runtime)
     expect(page).to have_field(:start_time)
     expect(page).to have_field(:date)
@@ -36,8 +36,8 @@ RSpec.describe 'new user movie party page', type: :feature do
 
   context 'when filled out with valid data' do
     it 'form submission creates a new party and redirects back to discover page' do
-      visit new_user_movie_party_path(@user1, @movie1)
-      fill_in :duration, with: 120
+      visit "/users/#{@user1.id}/movies/#{@movie1.movie_id}/parties/new"
+      fill_in :duration, with: 180
       fill_in :start_time, with: '12:00'
       check "#{@user1.name}"
       click_button 'Create Party'
@@ -58,7 +58,7 @@ RSpec.describe 'new user movie party page', type: :feature do
     # end
 
     it 'form submission pushes a flash error and redirects back (invalid duration)' do
-      visit new_user_movie_party_path(@user1, @movie1)
+      visit "/users/#{@user1.id}/movies/#{@movie1.movie_id}/parties/new"
       fill_in :duration, with: 90
       fill_in :start_time, with: '12:00'
       check "#{@user1.name}"

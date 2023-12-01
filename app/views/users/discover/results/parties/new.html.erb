@@ -1,7 +1,7 @@
 <h3><%= @movie.title %></h3>
 
 <section>
-  <%= form_with url: user_movie_parties_path(@host, @movie), method: :post, data: {turbo: false}, local: true do |form| %>
+  <%= form_with url: "/users/#{@host.id}/movies/#{@movie.movie_id}/parties", method: :post, data: {turbo: false}, local: true do |form| %>
     <%= form.label :duration %>
     <%= form.number_field :duration, value: @movie.runtime %>
 

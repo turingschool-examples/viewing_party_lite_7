@@ -8,9 +8,12 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :discover, controller: 'users/discover', only: :index
-    resources :movies, controller: 'users/discover/results', only: [:index, :show] do
-      resources :parties, controller: 'users/discover/results/parties', only: [:new, :create]
-    end
+    get '/movies', to: 'users/discover/results#index'
+    get '/movies/:id', to: 'users/discover/results#show'
+    get '/movies/:id/parties/new', to: 'users/discover/results/parties#new'
+    post '/movies/:id/parties', to: 'users/discover/results/parties#create'
+    # resources :movies, controller: 'users/discover/results', only: [:index, :show]
+      # resources :parties, controller: 'users/discover/results/parties', only: [:new, :create]
   end
 
   # resources :register, controller: 'registration', only: [:new, :create], path: 'register'

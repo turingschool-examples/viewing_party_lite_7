@@ -9,10 +9,15 @@ class Users::Discover::Results::PartiesController < ApplicationController
 
   # refactor, this is too fat
   def create
-    party = Party.new(party_params)
+    party = Party.new({
+      duration: ,
+      date: ,
+      start_time: ,
+      movie_id: 
+    })
     host = User.find(params[:user_id])
     movies_search = MoviesSearch.new
-    movie = movies_search.genre_runtime(params[:movie_id])
+    movie = movies_search.genre_runtime(params[:id])
     
     if movie.runtime > party.duration
       flash[:alert] = 'invalid duration'
