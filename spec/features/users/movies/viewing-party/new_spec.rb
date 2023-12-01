@@ -56,7 +56,7 @@ RSpec.describe 'New Viewing Party Page' do
     expect(current_path).to eq(user_path(@user1.id))
   end
 
-  it 'sad path for creating a party: Empty duration' do
+  it 'sad path for creating a party: Bad data' do
     visit "/users/#{@user1.id}/movies/268/viewing-party/new"
     expect(page).to have_field(:duration, with:126)
     expect(page).to have_field(:date)
@@ -67,9 +67,6 @@ RSpec.describe 'New Viewing Party Page' do
     expect(@user2.user_parties.count).to eq(3)
     expect(@user3.user_parties.count).to eq(2)
 
-    fill_in :duration, with: ""
-    fill_in :start_time, with: '10:00'
-    fill_in :date, with: '2023/08/01'
     check "#{@user2.name} (#{@user2.email})"
     check "#{@user3.name} (#{@user3.email})"
     click_button 'Create Party'

@@ -22,4 +22,12 @@ RSpec.describe 'User Registration', type: :feature do
     user = User.find_by(email: 'john@example.com')
     expect(current_path).to eq("/users/#{user.id}")
   end
+
+  it 'redirects user to create user page if bad data is entered' do
+    visit '/register'
+    fill_in 'Email', with: 'john@example.com'
+    fill_in 'Password', with: 'Sooners!2022'
+    click_button 'Register'
+    expect(current_path).to eq("/users")
+  end
 end
