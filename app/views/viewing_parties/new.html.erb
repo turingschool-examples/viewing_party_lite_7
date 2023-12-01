@@ -28,7 +28,7 @@
     </div>
     <h6 style="text-align: center">Invite Others</h6>
     <div class="form-group">
-        <%= f.collection_check_boxes :user_id, @user.friends, :id, :formatted %>
+        <%= f.collection_check_boxes :user_ids, @user.friends, :id, :formatted %>
     </div>
 
     <%= f.submit "Create Party", style: "flex: 1" %>

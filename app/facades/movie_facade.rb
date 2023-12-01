@@ -48,6 +48,7 @@ class MovieFacade
     movie
   end
 
+  # @return poro::movie with all details
   def self.movie(id)
     movie = @@movie_cache.find { |movie| movie.id == id }  # find it if it's there
 
