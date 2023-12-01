@@ -104,7 +104,7 @@ RSpec.describe 'Movie Details Page', type: :feature do
       expect(page).to have_content('Duration of Party')
       expect(page).to have_content('Start Date')
       expect(page).to have_content('Start Time')
-      expect(page).to have_field('duration', with: 125)
+      expect(page).to have_field('duration_of_party', with: 125)
     end
 
     it 'creates a new viewing party' do
@@ -124,8 +124,8 @@ RSpec.describe 'Movie Details Page', type: :feature do
 
       visit new_user_movie_viewing_party_path(@user, movie_id)
 
-      fill_in('date', with: '12/01/2023')
-      fill_in('time', with: '07:00')
+      fill_in('party_date', with: '2023-12-01')
+      fill_in('start_time', with: '07:00')
 
       within("#user-#{user1.id}") do
         check("invites[]")
@@ -138,6 +138,12 @@ RSpec.describe 'Movie Details Page', type: :feature do
       click_button('Create Party')
 
       expect(current_path).to eq(user_path(@user))
+      expect(page).to have_content('Movie Title: Spirited Away')
+      expect(page).to have_content('Duration: 125 minutes')
+      expect(page).to have_content('Date: Dec 01, 2023')
+      expect(page).to have_content('Start Time: 07:00 AM')
+      expect(page).to have_content('Host: Morgan')
+      expect(page).to have_content('Guest List: Sam, Susan')
     end
   end
 end

@@ -6,7 +6,18 @@ class ViewingPartyController < ApplicationController
   end
 
   def create
-    user = User.find(params[:id])
-    redirect_to user_path(user)
+    host = User.find(params[:id])
+    party = Party.create!(party_params)
+    PartyUser.create!(user_id: host.id, party_id: party.id, is_host: true)
+    attendees = params[:invites].map do |invite|
+      PartyUser.create!(user_id: invite, party_id: party.id)
+    end
+    redirect_to user_path(host)
+  end
+
+  private
+
+  def party_params
+    params.permit(:movie_id, :duration_of_party, :party_date, :start_time)
   end
 end
