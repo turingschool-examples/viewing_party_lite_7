@@ -5,7 +5,7 @@ class Movie
 
   def initialize(data)
     @backdrop_path = data[:backdrop_path]
-    @genres = data[:genre_ids]
+    @genres = data[:genres]
     @id = data[:id]
     @overview = data[:overview]
     @popularity = data[:popularity]
@@ -15,5 +15,12 @@ class Movie
     @vote_average = data[:vote_average]
     @vote_count = data[:vote_count]
     @runtime = data[:runtime]
+  end
+
+  def self.runtime_in_min(data)
+    runtime_minutes = data[:runtime].to_i
+    hours = runtime_minutes / 60
+    minutes = runtime_minutes % 60
+    "#{hours} hours #{minutes} minutes"
   end
 end
