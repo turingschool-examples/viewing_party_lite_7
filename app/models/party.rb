@@ -9,4 +9,6 @@ class Party < ApplicationRecord
   def pretty_time
     start_time.strftime("%l:%M %p")
   end
+
+  
 end
