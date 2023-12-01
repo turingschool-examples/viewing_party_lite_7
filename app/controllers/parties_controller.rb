@@ -1,7 +1,7 @@
 class PartiesController < ApplicationController
   def new
     @user = User.find(params[:user_id])
-    @movie = MovieFacade.movie_details(params[:movid_id])
+    @movie = MovieFacade.movie_details(params[:movie_id])
     @users = User.all
     # require 'pry'; binding.pry
   end
@@ -15,7 +15,7 @@ class PartiesController < ApplicationController
       redirect_back(fallback_location: "/users/#{params[:user_id]}/movies/#{movie[:id]}/new")
     else
       @party = Party.new({
-          movie_id: params[:movid_id],
+          movie_id: params[:movie_id],
           movie_title: movie[:title],
           duration: params[:duration],
           date: params[:date],
@@ -34,10 +34,10 @@ class PartiesController < ApplicationController
   private 
 
   def find_movie
-    MovieFacade.movie_details(params[:movid_id])
+    MovieFacade.movie_details(params[:movie_id])
   end
 
   def party_params
-    params.permit(:movid_id, :title, :duration, :date, :name)
+    params.permit(:movie_id, :title, :duration, :date, :name)
   end
 end
