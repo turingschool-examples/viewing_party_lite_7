@@ -8,6 +8,7 @@ RSpec.describe 'User Registration Page' do
     expect(page).to have_field(:name)
     expect(page).to have_field(:email)
     expect(page).to have_button('Register')
+    expect(page).to have_link("Home")
   end
   it 'will add a new User to the website' do
     visit '/register'
