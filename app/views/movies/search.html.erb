@@ -3,6 +3,8 @@
 <%= button_to "Discover Page", "/users/#{params[:id]}/discover", method: :get %>
 
 <% @facade.movies.each do |movie| %>
-  <li><%= link_to "#{movie.title}", "/users/#{params[:id]}/movies/#{movie.movie_id}", method: :get %></li>
-  <li><%= "Vote Average: #{movie.average}" %></li>
+  <section id="movie-<%= movie.movie_id %>">
+    <li><%= link_to "#{movie.title}", "/users/#{params[:id]}/movies/#{movie.movie_id}", method: :get %></li>
+    <li><%= "Vote Average: #{movie.average}" %></li>
+  </section>
 <% end %>
