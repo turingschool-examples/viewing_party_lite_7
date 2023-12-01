@@ -3,6 +3,6 @@
 <h3>Results</h3>
 
 <% @movies.each do |movie| %>
-  <%= link_to "#{movie.title}", "/users/#{params[:id]}/movie/#{movie.id}" %>
+  <%= link_to "#{movie.title}", "/users/#{params[:id]}/movies/#{movie.id}" %>
   <%= movie.vote_average.round(1) %><br>
 <% end %>
