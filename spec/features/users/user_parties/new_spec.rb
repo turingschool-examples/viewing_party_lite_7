@@ -21,7 +21,7 @@ describe 'New Viewing Party Page' do
     end
     
     it 'has the following fields' do
-      expect(page).to have_field(:duration)
+      expect(page).to have_field(:duration, with: @oppenheimer.detailed_movie.runtime)
       expect(page).to have_content("Day")
       expect(page).to have_content("Start time")
     end
@@ -41,20 +41,24 @@ describe 'New Viewing Party Page' do
       expect(page).to have_content("4:00 PM")
     end
     
-    xit "has expected functionality (Create Party)" do
-      expect(page).to have_field(:duration, with: @oppenheimer.detailed_movie.runtime)
-      select "2024", from: "user[day(1i)]"
-      fill_in :start_time, with: "5:30"
-
+    it "throws an error if the duration is less than the runtime" do
+      fill_in :day, with: "2024-01-01"
+      fill_in :start_time, with: "04:00 PM"
+      fill_in :duration, with: "1"
       click_button "Create Party"
-      expect(current_path).to eq(user_path(@user1))
-      save_and_open_page
-      expect(page).to have_content("Oppenheimer")
-      expect(page).to have_content("January 1, 2024")
-      expect(page).to have_content("5:30 PM")
-      expect(page).to have_content("Hosting")
 
-      #need to add the add users
+      expect(current_path).to eq(new_user_movie_viewing_party_path(@user1, 872585))
+      expect(page).to have_content("Error! Viewing party duration cannot be less than the movie runtime, please fill this out correctly.")
+      fill_in :day, with: "2024-01-01"
+      fill_in :start_time, with: "04:00 PM"
+      # fill_in :duration, with: "200"
+      # click_button "Create Party"
+
+      # expect(current_path).to eq(user_path(@user1))
+      # expect(page).to have_content("Oppenheimer")
+      # expect(page).to have_content("January 1, 2024")
+      # expect(page).to have_content("4:00 PM")
+      # expect(page).to have_content("Hosting")
     end
   end
 end
