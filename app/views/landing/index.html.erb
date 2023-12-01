@@ -4,8 +4,5 @@
 <h3> Existing Users </h3>
 
 <% @users.each do |user| %>
-  <%= user.email %><br>
+  <%= link_to user.email, "/users/#{user.id}" %><br>
 <% end %>
-
-
-
