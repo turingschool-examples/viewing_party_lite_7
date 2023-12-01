@@ -30,4 +30,11 @@ RSpec.describe Party, type: :model do
       end
     end
   end
+
+  describe '#pretty_time' do
+  it 'returns the time in a more readable form' do
+    test_data
+    expect(@party1.pretty_time).to eq(" 8:00 AM")
+  end
+end
 end
