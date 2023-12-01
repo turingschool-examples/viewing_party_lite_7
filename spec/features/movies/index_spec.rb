@@ -7,7 +7,7 @@ RSpec.describe 'Movie Results Index (/users/:user_id/movies)' do
       visit "/users/#{user.id}/discover"
       click_button 'Find Top Rated Movies'
       expect(current_path).to eq("/users/#{user.id}/movies")
-      expect(page).to have_content()
+      
     end
   end
 end
