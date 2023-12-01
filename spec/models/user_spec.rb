@@ -1,5 +1,4 @@
 require 'rails_helper'
-# test comment
 RSpec.describe User, type: :model do
   describe 'relationships' do
     it { should have_many(:party_users) }
