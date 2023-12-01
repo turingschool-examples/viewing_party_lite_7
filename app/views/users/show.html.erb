@@ -2,6 +2,6 @@
 
 <h2><%= @user.name %>'s Dashboard</h2>
 
-<p><%= button_to "Discover Movies" %><p>
+<p><%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %><p>
 
 <h4><p> Viewing Parties </p></h4>
