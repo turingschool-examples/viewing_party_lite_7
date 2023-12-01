@@ -1,0 +1,13 @@
+<h1>Create a New User</h1>
+
+<% if flash[:alert] %>
+  <%= flash[:alert] %><br>
+<% end %>
+
+<%= form_with url: users_path, method: :post, local: true, data: { turbo: false } do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :email %>
+  <%= form.text_field :email %>
+  <%= form.submit "Register"%>
+<% end %>
