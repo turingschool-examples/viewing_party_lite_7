@@ -42,7 +42,7 @@ RSpec.describe 'new user movie party page', type: :feature do
       check "#{@user1.name}"
       click_button 'Create Party'
       expect(current_path).to eq(user_path(@user1))
-      expect(page).to have_content('Duration: 120mins')
+      expect(page).to have_content('Duration: 03:00')
     end
   end
 
