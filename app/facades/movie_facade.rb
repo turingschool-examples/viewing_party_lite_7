@@ -1,16 +1,17 @@
 class MovieFacade
   attr_reader :search
+
   def initialize(search)
     @search = search
   end
 
-  def movies 
+  def movies
     service = MovieService.new
-    if !@search.nil? 
-      data = service.search(@search)
-    else
-      data = service.top_rated_20
-    end
+    data = if !@search.nil?
+             service.search(@search)
+           else
+             service.top_rated_20
+           end
 
     @movies = data[:results].map do |movie_data|
       Movie.new(movie_data)
@@ -18,7 +19,6 @@ class MovieFacade
   end
 
   def movie
-    
     data = service.get_movie(@search)
 
     Movie.new(data)
@@ -28,7 +28,6 @@ class MovieFacade
     data = service.get_cast_member(@search)
 
     data[:cast].map do |cast_data|
-      
       CastMember.new(cast_data)
     end.first(10)
   end

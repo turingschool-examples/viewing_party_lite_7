@@ -1,4 +1,4 @@
-class Movie 
+class Movie
   attr_reader :movie_id,
               :title,
               :average,
@@ -26,6 +26,6 @@ class Movie
     format = @genres.map do |genre|
       genre[:name]
     end
-    format.join(", ")
+    format.join(', ')
   end
 end

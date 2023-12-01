@@ -4,3 +4,4 @@ Metrics/BlockLength:
   IgnoredMethods:
     - RSpec.describe
     - describe
+    - context

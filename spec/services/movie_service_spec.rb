@@ -1,9 +1,9 @@
-require "rails_helper"
+require 'rails_helper'
 
 describe MovieService do
-  context "class methods" do
-    context "#top_rated_20" do
-      it "returns top 20 movies" do
+  context 'class methods' do
+    context '#top_rated_20' do
+      it 'returns top 20 movies' do
         search = MovieService.new.top_rated_20
         expect(search).to be_a(Hash)
         expect(search[:results]).to be_an(Array)
@@ -17,9 +17,9 @@ describe MovieService do
       end
     end
 
-    context "#search(movies)" do
-      it "searches for movies" do
-        movie = "Terminator"
+    context '#search(movies)' do
+      it 'searches for movies' do
+        movie = 'Terminator'
         search = MovieService.new.search(movie)
         expect(search).to be_a(Hash)
         expect(search[:results]).to be_an(Array)
@@ -33,12 +33,12 @@ describe MovieService do
       end
     end
 
-    context "#get_movie(movie_id)" do
-      it "gets movie" do
+    context '#get_movie(movie_id)' do
+      it 'gets movie' do
         movie_id = 155
         search = MovieService.new.get_movie(movie_id)
         expect(search).to be_a(Hash)
-        
+
         movie_data = search
 
         expect(movie_data).to have_key :original_title
@@ -55,12 +55,12 @@ describe MovieService do
       end
     end
 
-    context "#get_cast_member(movie_id)" do
-      it "gets the movies cast members" do
+    context '#get_cast_member(movie_id)' do
+      it 'gets the movies cast members' do
         movie_id = 155
         search = MovieService.new.get_cast_member(movie_id)
         expect(search).to be_a(Hash)
-        
+
         movie_data = search[:cast].first
 
         expect(movie_data).to have_key :name
@@ -71,12 +71,12 @@ describe MovieService do
       end
     end
 
-    context "#get_reviews(movie_id)" do
-      it "gets the movies reviews" do
+    context '#get_reviews(movie_id)' do
+      it 'gets the movies reviews' do
         movie_id = 155
         search = MovieService.new.get_reviews(movie_id)
         expect(search).to be_a(Hash)
-        
+
         movie_data = search[:results].first
 
         expect(movie_data).to have_key :author

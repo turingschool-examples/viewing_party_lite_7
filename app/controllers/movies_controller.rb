@@ -1,11 +1,9 @@
 class MoviesController < ApplicationController
-
   def search
     @facade = MovieFacade.new(params[:search])
   end
 
   def show
-    movie_id = params[:id]
     @movie = facade.movie
     @cast_members = facade.cast_members
     @reviews = facade.reviews
