@@ -1,0 +1,46 @@
+{
+  "page": 1,
+  "results": [
+      {
+          "adult": false,
+          "backdrop_path": "/xWT5F1DNxciNLEMXRl49iq8zvN7.jpg",
+          "genre_ids": [
+              14,
+              16,
+              10751
+          ],
+          "id": 9479,
+          "original_language": "en",
+          "original_title": "The Nightmare Before Christmas",
+          "overview": "Tired of scaring humans every October 31 with the same old bag of tricks, Jack Skellington, the spindly king of Halloween Town, kidnaps Santa Claus and plans to deliver shrunken heads and other ghoulish gifts to children on Christmas morning. But as Christmas approaches, Jack's rag-doll girlfriend, Sally, tries to foil his misguided plans.",
+          "popularity": 136.743,
+          "poster_path": "/oQffRNjK8e19rF7xVYEN8ew0j7b.jpg",
+          "release_date": "1993-10-09",
+          "title": "The Nightmare Before Christmas",
+          "video": false,
+          "vote_average": 7.842,
+          "vote_count": 8729
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+              16,
+              10751
+          ],
+          "id": 506726,
+          "original_language": "en",
+          "original_title": "The Nightmare Before Christmas: The Original Poem",
+          "overview": "Tim Burton's original poem narrated by Christopher Lee.",
+          "popularity": 2.486,
+          "poster_path": "/1XQr3yxrMZTFBp2jLuxlD1omHqB.jpg",
+          "release_date": "2008-08-26",
+          "title": "The Nightmare Before Christmas: The Original Poem",
+          "video": false,
+          "vote_average": 6.0,
+          "vote_count": 3
+      }
+  ],
+  "total_pages": 1,
+  "total_results": 2
+}
