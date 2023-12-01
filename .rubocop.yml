@@ -1,0 +1,7 @@
+Style/FrozenStringLiteralComment:
+  Enabled: false
+  
+Metrics/BlockLength:
+  IgnoredMethods:
+    - RSpec.describe
+    - RSpec.it

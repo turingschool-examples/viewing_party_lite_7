@@ -12,6 +12,7 @@ RSpec.describe 'User Registration Page' do
   end
   it 'will add a new User to the website' do
     visit '/register'
+    User.destroy_all
     fill_in :name, with: 'Xander Hendry'
     fill_in :email, with: 'xanders_fake_email@gmail.com'
     click_button('Register')
@@ -20,7 +21,7 @@ RSpec.describe 'User Registration Page' do
   end
   it 'will only register unique emails' do
     visit '/register'
-    User.create({ name: 'Xander Hendry', email: 'xanders_fake_email@gmail.com' })
+    User.create( name: 'Xander Hendry', email: 'xanders_fake_email@gmail.com' )
     fill_in :name, with: 'Xander Hendry'
     fill_in :email, with: 'xanders_fake_email@gmail.com'
     click_button('Register')

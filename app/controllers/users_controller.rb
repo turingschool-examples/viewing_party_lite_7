@@ -19,6 +19,10 @@ class UsersController < ApplicationController
     # @parties = @user.viewing_party ??- need table for viewing party and joins table for relation 
   end
 
+  def discover
+    @user = User.find(params[:id])
+  end
+
   private
 
   def user_params
