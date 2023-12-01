@@ -18,7 +18,6 @@ RSpec.describe DetailedMovie do
     @movie = DetailedMovie.new(attrs)
   end
   it "exists" do
-    #binding.pry
     expect(@movie).to be_a DetailedMovie
     expect(@movie.title).to eq("Trolls Band Together")
     expect(@movie.vote_average).to eq(7.181)
