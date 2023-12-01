@@ -1,6 +1,6 @@
 <%= link_to 'Home', '/', method: :get %>
 <h1> Viewing Party </h1>
-<%= button_to 'Find Top Rated Movies', "/users/#{@user.id}/movies?q=top%20rated" %>
+<%= button_to 'Find Top Rated Movies', "/users/#{@user.id}/movies?q=top%20rated", method: :get %>
 <%= form_with url: "/users/#{@user.id}/movies?q=keyword" , method: :get, data: { turbo: false } do |form|%>
 <%= form.label :search %>
 <%= form.text_field :search %>
