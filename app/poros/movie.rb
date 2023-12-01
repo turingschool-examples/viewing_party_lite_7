@@ -20,4 +20,11 @@ class Movie
     @vote_count = attributes[:vote_count]
     @review_info = attributes[:results]
   end
+
+  def convert_runtime_to_hours_and_minutes
+    hours = @runtime / 60
+    remaining_minutes = @runtime % 60
+
+    "#{hours} hours and #{remaining_minutes} minutes"
+  end
 end

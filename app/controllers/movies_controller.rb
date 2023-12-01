@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
   def index
+    @user = User.find(params[:id])
     if params[:q] == 'top-rated'
-      @user = User.find(params[:id])
 
       conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
         faraday.headers['authorization'] = Rails.application.credentials.TMDB[:authorization]
@@ -17,8 +17,6 @@ class MoviesController < ApplicationController
     end
 
     return unless params[:search].present?
-
-    @user = User.find(params[:id])
 
     search_term = params[:search]
 
@@ -52,12 +50,6 @@ class MoviesController < ApplicationController
     json_3 = JSON.parse(response_3.body, symbolize_names: true)
 
     combined_json = json_1.merge(json_2.merge(json_3))
-    #combined_json = json_1.merge(json_3)
     @movie = Movie.new(combined_json)
-
   end
-
-  private
-
-
 end

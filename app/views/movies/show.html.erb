@@ -4,7 +4,7 @@
 
 <p>Title: <%=@movie.title%></p>
 <p>Vote Average: <%=@movie.vote_average%></p>
-<p>Runtime Minutes: <%=@movie.runtime%></p>
+<p>Runtime: <%=@movie.convert_runtime_to_hours_and_minutes%></p>
 <p>Genres:</p>
 <%@movie.genre.each do |genre|%>
   <ol><%= genre[:name] %></ol>
@@ -12,7 +12,7 @@
 <p>Overview: <%=@movie.overview%></p>
 <p>Cast:</p>
 <%@movie.cast.take(10).each do |actor|%>
-  <ol><%= actor[:name] %></ol>
+  <ol>Actor <%= actor[:name] %> plays the character of <%=actor[:character]%></ol>
 <%end%>
 <p>Vote Count: <%=@movie.vote_count%></p>
 <%@movie.review_info.take(5).each do |review|%></p>
