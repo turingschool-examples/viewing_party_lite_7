@@ -7,8 +7,8 @@ RSpec.describe "New Viewing Party Page" do
       @user2 = User.create(name: "Charles", email: "charles@gmail.com")
       @user3 = User.create(name: "Chris", email: "chris@gmail.com")
 
-      mov = MovieFacade.new(TMDBService.get_movie(238))
-      @movie = MovieFacade.new(238).add_details # God Father ID
+      mov = MovieFacade.movie(238)
+      @movie = MovieFacade.add_details(mov)
 
       visit "/users/#{@user1.id}/movies/#{@movie.id}/viewing_parties/new"
     end
