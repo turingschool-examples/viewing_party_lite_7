@@ -23,7 +23,7 @@ RSpec.describe Party, type: :model do
 
     context "#duration_in_hours_and_minutes" do
       it "can find the duration in 0h 0min format" do
-        party = Party.create!(movie_title: "E.T.", duration: 90, when: "01-21-23", start_time: "2012-03-27 14:54:09")
+        party = Party.create!(movie_title: "E.T.", duration: 90, day: "01-21-23", start_time: "2012-03-27 14:54:09")
         expect(party.duration_in_hours_and_minutes).to eq("1h 30min")
       end
     end
