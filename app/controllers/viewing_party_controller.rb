@@ -7,6 +7,8 @@ class ViewingPartyController < ApplicationController
 
   def create
     user = User.find(params[:id])
+    
     redirect_to user_path(user)
+    require 'pry'; binding.pry
   end
 end

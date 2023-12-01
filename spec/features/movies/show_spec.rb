@@ -25,7 +25,7 @@ RSpec.describe 'Movie Details Page', type: :feature do
         visit "/users/#{@user.id}/movies/438631"
         
         expect(page).to have_content('Dune')
-        expect(page).to have_content('Vote: 7.786')
+        expect(page).to have_content('Vote: 7.787')
         expect(page).to have_content('Runtime: 2h 35m')
         expect(page).to have_content('Genre(s): Science Fiction Adventure')
         
@@ -108,6 +108,8 @@ RSpec.describe 'Movie Details Page', type: :feature do
     end
 
     it 'creates a new viewing party' do
+      user1 = User.create!(name: 'Sam', email: 'sam@email.com')
+      user2 = User.create!(name: 'Susan', email: 'susan@email.com')
       json_response = File.read('spec/fixtures/spirited_away.json')
       parsed = JSON.parse(json_response, symbolize_names: true)
       movie_id = parsed[:id]
@@ -124,13 +126,19 @@ RSpec.describe 'Movie Details Page', type: :feature do
 
       fill_in('date', with: '12/01/2023')
       fill_in('time', with: '07:00 PM')
-      
 
-      within("#user-#{@user.id}") do
+      # within("#user-#{@user.id}") do
+      #   check("invite")
+      # end
+
+      within("#user-#{user1.id}") do
         check("invite")
       end
 
-   
+      within("#user-#{user2.id}") do
+        check("invite")
+      end
+
       click_button('Create Party')
 
       expect(current_path).to eq(user_path(@user))

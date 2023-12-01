@@ -19,8 +19,9 @@
 
     <p><%= f.label :invite, "Invite Other Users" %>
       <% @users.each do |user| %><br>
+        
           <div id ="user-<%= user.id %>">
-            <%= f.check_box :invite, params: { invite: user.id } %>
+            <%= f.check_box :invite, params: { invite: user.email } %>
             <%= user.email %>
           </div>
 
