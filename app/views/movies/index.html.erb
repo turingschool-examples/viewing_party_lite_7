@@ -3,4 +3,5 @@
 <%= button_to 'Discover Page', "/users/#{@user.id}/discover" %>
 <% @facade.each do |preview| %>
   <%= link_to "#{preview.title}", "/users/#{@user.id}/movies/#{preview.id}", method: :get %>
+  <%= "Vote Average: #{preview.vote}" %>
 <% end %>
