@@ -16,5 +16,4 @@ Rails.application.routes.draw do
 
   get "/users/:user_id/movies/:movie_id/viewing_party/new", to: "parties#new"
   post "/users/:user_id/movies/:movie_id/viewing_party", to: "parties#create"
-  # get "/users/:user_id/movies/:movie_id/view_party", to: "parties#index"
 end

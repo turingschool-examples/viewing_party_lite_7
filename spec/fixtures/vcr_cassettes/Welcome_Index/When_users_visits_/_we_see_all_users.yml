@@ -31,26 +31,26 @@ http_interactions:
       X-Memc-Key:
       - 5dfd93b8685f3044b4e3a03ef882eddf
       X-Memc-Age:
-      - '11428'
+      - '1295'
       X-Memc-Expires:
-      - '14817'
+      - '22304'
       Date:
-      - Fri, 01 Dec 2023 20:57:41 GMT
+      - Fri, 01 Dec 2023 22:37:34 GMT
       Etag:
-      - W/"902c888248532f66a2e6488bbbf49ea5"
+      - W/"de6b8483b176e09dcd5936b00a3ffebd"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
       - RefreshHit from cloudfront
       Via:
-      - 1.1 51c49bddeb40b2d8ef4e452891b72e60.cloudfront.net (CloudFront)
+      - 1.1 dc11c8b7421c6da6c05e64d48aa3e898.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DFW57-P2
+      - SLC50-C1
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - ZZ8SXVYyQoAL3sFc0xGcwCyKFPFPFhqLq5T2s_NJasvEEFK5nzZaXQ==
+      - rCMko9rJ_jn_ODW2WfKE8-H5oqNeA52im6oD5z5AxF8U8SvfOCGrAg==
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/4qCqAdHcNKeAHcK8tJ8wNJZa9cx.jpg","belongs_to_collection":{"id":10,"name":"Star
@@ -64,8 +64,8 @@ http_interactions:
         Ltd.","origin_country":"US"},{"id":25,"logo_path":"/qZCc1lty5FzX30aOCVRBLzaVmcp.png","name":"20th
         Century Fox","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1977-05-25","revenue":775398007,"runtime":121,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"A
-        long time ago in a galaxy far, far away...","title":"Star Wars","video":false,"vote_average":8.204,"vote_count":19353}'
-  recorded_at: Fri, 01 Dec 2023 20:56:31 GMT
+        long time ago in a galaxy far, far away...","title":"Star Wars","video":false,"vote_average":8.204,"vote_count":19354}'
+  recorded_at: Fri, 01 Dec 2023 22:37:34 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/120?api_key=c5d87ff6f6c9e5b4d80f024fe25ecdf9
@@ -90,8 +90,6 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Date:
-      - Fri, 01 Dec 2023 20:57:41 GMT
       Server:
       - openresty
       X-Memc:
@@ -99,24 +97,26 @@ http_interactions:
       X-Memc-Key:
       - c08d8c0e8db4f65ba68fda321b06ca46
       X-Memc-Age:
-      - '5999'
+      - '9653'
       X-Memc-Expires:
-      - '22053'
+      - '18399'
+      Date:
+      - Fri, 01 Dec 2023 22:37:34 GMT
       Etag:
       - W/"a5391e7f50683ead8a9d5e83a571680d"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
-      - Miss from cloudfront
+      - RefreshHit from cloudfront
       Via:
-      - 1.1 7803d0a33bb1ff45f063e605070d32b6.cloudfront.net (CloudFront)
+      - 1.1 c28e90c09fe72af9ef5e45a1bf85f0fc.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DFW57-P2
+      - SLC50-C1
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - DZkCblUE8ozUCy5noKDS7y5qHA5USBV7-Irgukz730_GB3qVcQHGNg==
+      - w3gfwHm-C0sgjaHmdMbgAScZUN24veWYlI2ml1FjQYf-SgiP6Uex3g==
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/x2RS3uTcsJJ9IfjNPcgDmukoEcQ.jpg","belongs_to_collection":{"id":119,"name":"The
@@ -133,7 +133,7 @@ http_interactions:
         Zealand"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"2001-12-18","revenue":871368364,"runtime":179,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"One
         ring to rule them all","title":"The Lord of the Rings: The Fellowship of the
         Ring","video":false,"vote_average":8.405,"vote_count":23593}'
-  recorded_at: Fri, 01 Dec 2023 20:56:31 GMT
+  recorded_at: Fri, 01 Dec 2023 22:37:34 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/11?api_key=c5d87ff6f6c9e5b4d80f024fe25ecdf9
@@ -165,26 +165,26 @@ http_interactions:
       X-Memc-Key:
       - 5dfd93b8685f3044b4e3a03ef882eddf
       X-Memc-Age:
-      - '11428'
+      - '1295'
       X-Memc-Expires:
-      - '14817'
+      - '22304'
       Date:
-      - Fri, 01 Dec 2023 20:57:41 GMT
+      - Fri, 01 Dec 2023 22:37:34 GMT
       Etag:
-      - W/"902c888248532f66a2e6488bbbf49ea5"
+      - W/"de6b8483b176e09dcd5936b00a3ffebd"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
       - RefreshHit from cloudfront
       Via:
-      - 1.1 7803d0a33bb1ff45f063e605070d32b6.cloudfront.net (CloudFront)
+      - 1.1 42785c2f14671098509d558abb6814f0.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DFW57-P2
+      - SLC50-C1
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - aCO6zEE0ou4n5NDRsMRN-nBJjKo_beJgeF2FvSJwp1YAZ46irT9ydA==
+      - N9xzPFX63LCQFa8zQkfUz808pJRIQbJEYWy_hVCf4K9SsAOaEsz49Q==
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/4qCqAdHcNKeAHcK8tJ8wNJZa9cx.jpg","belongs_to_collection":{"id":10,"name":"Star
@@ -198,8 +198,8 @@ http_interactions:
         Ltd.","origin_country":"US"},{"id":25,"logo_path":"/qZCc1lty5FzX30aOCVRBLzaVmcp.png","name":"20th
         Century Fox","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1977-05-25","revenue":775398007,"runtime":121,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"A
-        long time ago in a galaxy far, far away...","title":"Star Wars","video":false,"vote_average":8.204,"vote_count":19353}'
-  recorded_at: Fri, 01 Dec 2023 20:56:31 GMT
+        long time ago in a galaxy far, far away...","title":"Star Wars","video":false,"vote_average":8.204,"vote_count":19354}'
+  recorded_at: Fri, 01 Dec 2023 22:37:34 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/120?api_key=c5d87ff6f6c9e5b4d80f024fe25ecdf9
@@ -231,11 +231,11 @@ http_interactions:
       X-Memc-Key:
       - c08d8c0e8db4f65ba68fda321b06ca46
       X-Memc-Age:
-      - '5999'
+      - '9653'
       X-Memc-Expires:
-      - '22053'
+      - '18399'
       Date:
-      - Fri, 01 Dec 2023 20:57:41 GMT
+      - Fri, 01 Dec 2023 22:37:34 GMT
       Etag:
       - W/"a5391e7f50683ead8a9d5e83a571680d"
       Vary:
@@ -244,13 +244,13 @@ http_interactions:
       X-Cache:
       - RefreshHit from cloudfront
       Via:
-      - 1.1 3869c2955783c2ad4b60833fbd021c9a.cloudfront.net (CloudFront)
+      - 1.1 ec99de6a8df96b4e008b942ab98e6594.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DFW57-P2
+      - SLC50-C1
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - kABcHfDWryUNM8yiVZP4x2ScZK3Jza11Ri7fUiuVVYOg_Lb-pDWRjA==
+      - enNtB4NrsLdVvHU3TMW1_NHX41JwHcPwJV3vfjFdmrwBym5WErRQYQ==
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/x2RS3uTcsJJ9IfjNPcgDmukoEcQ.jpg","belongs_to_collection":{"id":119,"name":"The
@@ -267,5 +267,5 @@ http_interactions:
         Zealand"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"2001-12-18","revenue":871368364,"runtime":179,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"One
         ring to rule them all","title":"The Lord of the Rings: The Fellowship of the
         Ring","video":false,"vote_average":8.405,"vote_count":23593}'
-  recorded_at: Fri, 01 Dec 2023 20:56:31 GMT
+  recorded_at: Fri, 01 Dec 2023 22:37:34 GMT
 recorded_with: VCR 6.2.0

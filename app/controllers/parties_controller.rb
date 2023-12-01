@@ -8,12 +8,12 @@ class PartiesController < ApplicationController
   def create
     movie = find_movie
     user_host = User.find(params[:user_id])
-    # require 'pry'; binding.pry
+
     if params[:duration].to_i < movie[:runtime]
       flash[:alert] = "Party must be as long or longer than movie"
       redirect_back(fallback_location: "/users/#{params[:user_id]}/movies/#{movie[:id]}/new")
     elsif params[:name].blank? || params[:date].blank?
-      flash[:alert] = "Please fill in all fields 123"
+      flash[:alert] = "Please fill in all fields"
       redirect_back(fallback_location: "/users/#{params[:user_id]}/movies/#{movie[:id]}/new")
     else
       @party = Party.new({
@@ -32,9 +32,6 @@ class PartiesController < ApplicationController
           UserParty.create(user_id: user.id, party_id: @party.id, host: false) if params[user.name] == "1"
         end
         redirect_to user_path(params[:user_id])
-      else
-        flash[:alert] = "Please fill in all fields"
-        redirect_back(fallback_location: "/users/#{params[:user_id]}/movies/#{movie[:id]}/new")
       end
     end
   end
@@ -43,10 +40,6 @@ class PartiesController < ApplicationController
 
   def find_movie
     MovieFacade.movie_details(params[:movie_id])
-  end
-
-  def party_params
-    params.permit(:movie_id, :title, :duration, :date, :name)
   end
 
   def format_time(hour, min)
