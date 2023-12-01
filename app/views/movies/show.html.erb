@@ -12,13 +12,13 @@
 
 <h3>Cast</h3>
 <ul>
-  <% @cast.each do |actor| %>
+  <% @cast_facade.movie_cast.each do |actor| %>
     <li><%= actor.name %> as <%= actor.character %></li>
   <% end %>
 </ul>
 
-<h3><%= @reviews.count %> Reviews</h3>
-  <% @reviews.each do |review| %>
+<h3><%= @reviews_facade.movie_reviews.count %> Reviews</h3>
+  <% @reviews_facade.movie_reviews.each do |review| %>
     <h4><%= review.author %></h4>
     <%= review.content %>
   <% end %>
