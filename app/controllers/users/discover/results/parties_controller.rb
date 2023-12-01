@@ -26,7 +26,7 @@ class Users::Discover::Results::PartiesController < ApplicationController
       party.save
       user_party = UserParty.create!(user: host, party: party, host: true)
       User.all.each do |user|
-        if user != host && params[:user.name] == 1
+        if user != host && params[user.name.to_s] == 1
           UserParty.create!(user: user, party: party, host: false)
         end
       end

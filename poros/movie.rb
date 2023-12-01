@@ -40,4 +40,3 @@ class Movie
     "#{@runtime/60}h #{@runtime % 60}min"
   end
 end
-
