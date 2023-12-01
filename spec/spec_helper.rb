@@ -23,6 +23,7 @@ def oppenheimer_test_data
   oppenheimer_fixture = File.read("spec/fixtures/oppenheimer_movie_details.json")
   oppenheimer_cast_fixture = File.read("spec/fixtures/oppenheimer_movie_cast.json")
   oppenheimer_reviews_fixture = File.read("spec/fixtures/oppenheimer_movie_reviews.json")
+  oppenheimer_movie_poster_fixture = File.read("spec/fixtures/oppenheimer_movie_poster.json")
   
   stub_request(:get, "https://api.themoviedb.org/3/movie/popular?api_key=#{ENV["API_KEY"]}").
   with(
@@ -68,6 +69,15 @@ def oppenheimer_test_data
           'User-Agent'=>'Faraday v2.7.12'
     }).
   to_return(status: 200, body: oppenheimer_reviews_fixture, headers: {})
+     
+  stub_request(:get, "https://api.themoviedb.org/3/movie/872585/images?api_key=#{ENV["API_KEY"]}").
+    with(
+      headers: {
+    'Accept'=>'*/*',
+    'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+    'User-Agent'=>'Faraday v2.7.12'
+      }).
+    to_return(status: 200, body: oppenheimer_movie_poster_fixture, headers: {})
 
       @oppenheimer = DetailedMovieFacade.new(872585)
 end
