@@ -27,6 +27,7 @@ RSpec.describe 'new user movie party page', type: :feature do
 
   it 'has a form to create a new party, duration defaulting to movie runtime' do
     visit "/users/#{@user1.id}/movies/#{@movie1.movie_id}/parties/new"
+    save_and_open_page
     expect(page).to have_field(:duration, with: @movie1.runtime)
     expect(page).to have_field(:start_time)
     expect(page).to have_field(:date)

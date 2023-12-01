@@ -2,22 +2,21 @@
 
 <section>
   <%= form_with url: "/users/#{@host.id}/movies/#{@movie.movie_id}/parties", method: :post, data: {turbo: false}, local: true do |form| %>
-    <%= form.label :duration %>
-    <%= form.number_field :duration, value: @movie.runtime %>
+    <p><%= form.label :duration %>
+    <%= form.number_field :duration, value: @movie.runtime %> minutes</p>
 
-    <%= form.label :date %>
-    <%= form.date_field :date, value: Date.today %>
+    <p><%= form.label :date %>
+    <%= form.date_field :date, value: Date.today %></p>
 
-    <%= form.label :start_time %>
-    <%# not currently displaying time %>
-    <%= form.time_field :start_time, value: Time.now %>
+    <p><%= form.label :start_time %>
+    <%= form.time_field :start_time, value: Time.now.utc.strftime('%H:%M') %></p>
 
     <%= form.hidden_field :movie_id, value: @movie.movie_id %>
 
     <% @all_users.each do |user| %>
       <%= form.label "#{user.name}" %>
-      <%= form.check_box "#{user.name}" %>
-    <% end %>
+      <%= form.check_box "#{user.name}" %><br>
+    <% end %><br>
 
     <%= form.submit 'Create Party' %>
   <% end %>
