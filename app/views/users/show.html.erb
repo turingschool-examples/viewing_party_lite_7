@@ -5,9 +5,8 @@
 <h3>Viewing Parties</h3>
 <% @parties.each do |party| %>
   <section id="party-<%= party.id %>">
-    <%= party.movie_title %>
+    <%= party.movie_title %><br>
+    <%= party.pretty_day %><br>
+    <%= party.start_time %><br><br>
   </section>
 <% end %>
-
-<h3>Registered User: <%= @user.name %></h3>
-<b>E-mail:</b> <%= @user.email %>

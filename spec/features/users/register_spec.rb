@@ -17,8 +17,6 @@ describe "Register Page" do
     fill_in :email, with: "janetlovescooking@aol.com"
     click_button "Register"
     expect(current_path).to eq(user_path(User.last))
-    expect(page).to have_content("Janet Love")
-    expect(page).to have_content("janetlovescooking@aol.com")
   end
 
   describe "sad path testing" do
