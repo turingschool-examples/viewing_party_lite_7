@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.themoviedb.org/3/movie/808
+    uri: https://api.themoviedb.org/3/movie//808
     body:
       encoding: US-ASCII
       string: ''
@@ -33,11 +33,11 @@ http_interactions:
       X-Memc-Key:
       - 1bdde716b8ccdf3e1a1b53e3dcdef291
       X-Memc-Age:
-      - '9697'
+      - '11003'
       X-Memc-Expires:
-      - '14589'
+      - '13283'
       Date:
-      - Fri, 01 Dec 2023 17:24:25 GMT
+      - Fri, 01 Dec 2023 17:24:27 GMT
       Etag:
       - W/"2ff9ee86d1c8de3a40144ab8045e346e"
       Vary:
@@ -46,13 +46,13 @@ http_interactions:
       X-Cache:
       - RefreshHit from cloudfront
       Via:
-      - 1.1 0493ac96db17aa3c2303a0a81e1a1ec8.cloudfront.net (CloudFront)
+      - 1.1 f3ddfa13c95148b404ddbc8398e73286.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - tPWYsmdC5T73KI2oov3ajfXj7UBL68EY1nsPdP_6qyE2G73hevH3ew==
+      - pZ2irRLtPrv8fBenyKs5QI67xrt7PS_AacwY1efHVIQAlt3nkCRjfw==
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/sRvXNDItGlWCqtO3j6wks52FmbD.jpg","belongs_to_collection":{"id":2150,"name":"Shrek
@@ -66,5 +66,5 @@ http_interactions:
         Animation","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"2001-05-18","revenue":487853320,"runtime":90,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"The
         greatest fairy tale never told.","title":"Shrek","video":false,"vote_average":7.731,"vote_count":15984}'
-  recorded_at: Fri, 01 Dec 2023 17:24:25 GMT
+  recorded_at: Fri, 01 Dec 2023 17:24:27 GMT
 recorded_with: VCR 6.2.0
