@@ -10,30 +10,28 @@ class Users::Discover::Results::PartiesController < ApplicationController
   # refactor, this is too fat
   def create
     party = Party.new({
-      duration: params,
-      date: ,
-      start_time: ,
-      movie_id: 
+      duration: params[:duration],
+      date: params[:date],
+      start_time: params[:start_time],
+      movie_id: params[:movie_id]
     })
     host = User.find(params[:user_id])
     movies_search = MoviesSearch.new
     movie = movies_search.genre_runtime(params[:id])
     
     if movie.runtime > party.duration
+      redirect_to "/users/#{host.id}/movies/#{movie.movie_id}/parties/new"
       flash[:alert] = 'invalid duration'
-      redirect_to new_user_movie_party_path(host, movie)
     else
       party.save
-    end
-    
-    user_party = UserParty.create!(user: host, party: party, host: true)
-    User.all.each do |user|
-      if user != host && params[:user.name] == 1
-        UserParty.create!(user: user, party: party, host: false)
+      user_party = UserParty.create!(user: host, party: party, host: true)
+      User.all.each do |user|
+        if user != host && params[:user.name] == 1
+          UserParty.create!(user: user, party: party, host: false)
+        end
       end
+      redirect_to user_path(host)
     end
-
-    redirect_to user_path(host)
   end
 
   private

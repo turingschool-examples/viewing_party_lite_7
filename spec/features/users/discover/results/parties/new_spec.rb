@@ -63,7 +63,7 @@ RSpec.describe 'new user movie party page', type: :feature do
       fill_in :start_time, with: '12:00'
       check "#{@user1.name}"
       click_button 'Create Party'
-      expect(current_path).to eq(new_user_movie_party_path(@user1, @movie1))
+      expect(current_path).to eq("/users/#{@user1.id}/movies/#{@movie1.movie_id}/parties/new")
       expect(page).to have_content('invalid duration')
     end
   end
