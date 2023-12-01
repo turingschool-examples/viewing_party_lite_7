@@ -1,22 +1,38 @@
 require 'rails_helper'
 
-RSpec.describe "Movie Details Page" do 
-  it "exists", :vcr do 
+RSpec.describe 'Movie Details Page' do 
+  it 'exists', :vcr do 
     user = User.last
-
     visit "/users/#{user.id}/movies/872585"
 
-    expect(page).to have_content("Viewing Party")
-    expect(page).to have_link("Home")
-    expect(page).to have_button("Discover Page")
-    expect(page).to have_button("Create Viewing Party for Oppenheimer")
+    expect(page).to have_content('Viewing Party')
+    expect(page).to have_link('Home')
+    expect(page).to have_button('Discover Page')
+    expect(page).to have_button('Create Viewing Party for Oppenheimer')
   end
 
-  it "has details particular to a given movie", :vcr do 
+  it 'has movie details for a particular movie', :vcr do 
     user = User.last
-
     visit "/users/#{user.id}/movies/872585"
 
-    expect(page).to have_content 
+    within '#movie_info' do 
+      expect(page).to have_content('Vote: 8.2')
+      expect(page).to have_content('Runtime: 3hr 2min')
+      expect(page).to have_content('Drama')
+      expect(page).to have_content('History')
+      expect(page).to have_content('morally conflicted about the nature of his creation')
+    end
+  end
+
+  it 'displays 10 cast members and their roles', :vcr do 
+    user = User.last
+    visit "/users/#{user.id}/movies/872585"
+
+    with '#cast' do 
+      expect(page).to have_content('Cillian Murphy as J. Robert Oppenheimer')
+      expect(page).to have_content('Emily Blunt as Kitty Oppenheimer')
+      expect(page).to have_content('Matt Damon as Leslie Groves')
+      expect(page).to have_content('Robert Downey Jr. as Lewis Strauss')
+    end
   end
 end
