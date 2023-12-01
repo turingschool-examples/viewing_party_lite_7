@@ -10,7 +10,7 @@ RSpec.describe 'Discover Movies' do
       expect(page).to have_field(:movie_title)
       expect(page).to have_button('Search by Movie Title')
     end
-    it 'redirects to the movie results page when a user searches for a move, or clicks the discover button' do
+    it 'redirects to the movie results page when a user searches for a movie, or clicks the discover button' do
       
     end
   end

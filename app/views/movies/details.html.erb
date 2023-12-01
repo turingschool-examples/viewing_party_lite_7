@@ -1,0 +1,28 @@
+<%= render partial: "app_partials/home_link" %>
+<p><%= render partial: "app_partials/viewing_header" %></p>
+
+<p><%= button_to "Discover Page", "/users/#{@user.id}/discover" %></p>
+
+<p><%= button_to "Create Viewing Party for #{@movie.name}", "/users/#{@user.id}/movies/#{@movie.id}/viewing_party/new" %></p>
+
+<div id='movie_info'>
+  <p> Vote: <%= @movie.vote_avg %></p> 
+  <p> Runtime: <%= @movie.formatted_runtime %></p>
+  <ul> Genre: <% @movie.genres.each do |genre| %>
+      <li><%= genre[:name] %></li>
+    <% end %>
+  </ul>
+  <p> Summary: <%= @movie.summary %></p>
+
+  <div id='cast'>
+    <p> Cast: <% @cast.each do |actor| %>
+      <%= actor %>
+    <% end %>
+  </div>
+
+  <div id='reviews'>
+    <p><%= @total_reviews %> Reviews: <% @reviews.each do |review| %>
+      <%= review.author %>
+      <%= review.content %>
+    <% end %></p>
+</div>

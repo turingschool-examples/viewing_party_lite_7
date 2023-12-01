@@ -1,7 +1,8 @@
 <%= render partial: "app_partials/home_link" %>
+<%= render partial: "app_partials/viewing_header" %>
 
 <h2><%= @user.name %>'s Dashboard</h2>
 
-<p><%= button_to "Discover Movies" %><p>
+<p><%= button_to "Discover Movies", "users/#{@user.id}/discover" %><p>
 
 <h4><p> Viewing Parties </p></h4>
