@@ -17,10 +17,10 @@ class MovieService
   end
 
   def get_credits(id)
-    get_url("3/movie/#{id}/credits")
+    get_url("/3/movie/#{id}/credits")
   end
 
   def get_reviews(id)
-    get_url("3/movie/#{id}/reviews")
+    get_url("/3/movie/#{id}/reviews")
   end
 end

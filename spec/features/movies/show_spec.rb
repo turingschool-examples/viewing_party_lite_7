@@ -106,7 +106,7 @@ RSpec.describe 'Movie Details Page', type: :feature do
 
     it 'creates a new viewing party' do
       json_response = File.read('spec/fixtures/spirited_away.json')
-      stub_request(:get, "https://api.themoviedb.org/3/movie/?api_key=#{Rails.application.credentials.tmdb[:key]}&language=en-US").
+      stub_request(:get, "https://api.themoviedb.org/3/movie/129?api_key=#{Rails.application.credentials.tmdb[:key]}&language=en-US").
         with(
           headers: {
         'Accept'=>'*/*',
@@ -120,7 +120,7 @@ RSpec.describe 'Movie Details Page', type: :feature do
       fill_in('Time', with: "07:00")
 
       expect(page).to have_field('Time')
-      check("#{@user.email}")
+      # check("invites_#{@user.email}")
       click_button('Create Party')
     end
   end
