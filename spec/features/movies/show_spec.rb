@@ -125,18 +125,14 @@ RSpec.describe 'Movie Details Page', type: :feature do
       visit new_user_movie_viewing_party_path(@user, movie_id)
 
       fill_in('date', with: '12/01/2023')
-      fill_in('time', with: '07:00 PM')
-
-      # within("#user-#{@user.id}") do
-      #   check("invite")
-      # end
+      fill_in('time', with: '07:00')
 
       within("#user-#{user1.id}") do
-        check("invite")
+        check("invites[]")
       end
 
       within("#user-#{user2.id}") do
-        check("invite")
+        check("invites[]")
       end
 
       click_button('Create Party')

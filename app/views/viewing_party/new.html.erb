@@ -19,13 +19,13 @@
 
     <p><%= f.label :invite, "Invite Other Users" %>
       <% @users.each do |user| %><br>
-        
+        <% if @user != user %>
           <div id ="user-<%= user.id %>">
-            <%= f.check_box :invite, params: { invite: user.email } %>
+            <%= f.check_box "invites[]", { mulitple: true }, user.id, nil %>
             <%= user.email %>
           </div>
-
-    <% end %>
+        <% end %>
+      <% end %>
     </p>
 
     <%= f.submit "Create Party" %>
