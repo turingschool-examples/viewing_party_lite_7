@@ -5,7 +5,7 @@ class MoviesController < ApplicationController
     @user = User.find(params[:user_id])
 
     if params[:top_movies] == 'top rated'
-      top20
+      @facade = Top20Facade.new(params[:top_movies])
     elsif !params[:search].nil?
       # search
       @facade = MovieSearchFacade.new(params[:search])
@@ -26,12 +26,9 @@ class MoviesController < ApplicationController
     response = conn.get('/3/movie/top_rated')
     json = JSON.parse(response.body, symbolize_names: true)
     @movies = json[:results]
-
   end
 
-  def search
-
-    
+  # def search
     # conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
     #   faraday.params['api_key'] = Rails.application.credentials.tmdb[:key]
     # end
@@ -41,6 +38,5 @@ class MoviesController < ApplicationController
     # json = JSON.parse(response.body, symbolize_names: true)
     # @movies = json[:results].take(20)
       # MovieSearch.new(search_term)
-  end
-
+  # end
 end
