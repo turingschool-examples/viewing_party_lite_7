@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       redirect_to user_path(new_user)
       flash.notice = "User Has Been Created."
     else
-      redirect_to new_user_path
+      redirect_to register_path
       flash[:alert] = "Error: #{error_message(new_user.errors)}"
     end
   end
