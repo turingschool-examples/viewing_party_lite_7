@@ -4,7 +4,8 @@ class Party < ApplicationRecord
   validates :duration, presence: true
   validates :date, presence: true
   validates :start_time, presence: true
-
+  validates :name, presence: true
+  
   has_many :user_parties
   has_many :users, through: :user_parties
 end
