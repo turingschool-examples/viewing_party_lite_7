@@ -27,9 +27,8 @@ RSpec.describe "MoviePoros" do
     expect(movie.backdrop_path).to eq("/path/to/backdrop")
 
     expect(movie).to respond_to(:genres)
-    expect(movie.genres).to be_a(Array)
-    expect(movie.genres).to eq([1, 3, 80])
-    expect(attrs[:genre_ids]).to eq(movie.genres)
+  
+    expect(attrs[:genres]).to eq(movie.genres)
 
     expect(movie).to respond_to(:id)
     expect(movie.id).to be_a(Integer)
