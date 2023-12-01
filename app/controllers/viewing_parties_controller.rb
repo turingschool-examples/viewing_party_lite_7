@@ -6,7 +6,7 @@ class ViewingPartiesController < ApplicationController
   end
 
   def create
-    require 'pry'; binding.pry
+    # require 'pry'; binding.pry
     mov = MovieFacade.movie(params[:movie_id])
 
     # convert poro::movie to ar::movie

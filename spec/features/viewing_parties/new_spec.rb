@@ -53,9 +53,9 @@ RSpec.describe "New Viewing Party Page" do
   end
 
   describe "happy path" do
-    it "redirects to the user's dashboard where the new event is shown" do
+    it "redirects to the user's dashboard where the new event is shown", :vcr do
       check(@user2.formatted)
-      require 'pry'; binding.pry
+
       click_button("Create Party")
 
       expect(current_path).to eq(user_path(@user1.id))
