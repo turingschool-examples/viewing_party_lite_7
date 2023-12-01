@@ -8,9 +8,9 @@ require 'webmock/rspec'
 def test_data
   @user1 = User.create!(name: "Shawn", email: "shawn@website.com")
   @user2 = User.create!(name: "Anthea", email: "anthea@website.com")
-  @party1 = @user1.parties.create!(movie_title: "E.T.", duration: 120, when: "01-21-23", start_time: "08:00")
-  @party2 = @user1.parties.create!(movie_title: "Eraserhead", duration: 150, when: "01-20-23", start_time: "07:00")
-  @party3 = @user2.parties.create!(movie_title: "Eternal Sunshine of the Spotless Mind", duration: 180, when: "02-20-23", start_time: "09:00")
+  @party1 = @user1.parties.create!(movie_title: "E.T.", duration: 120, day: "01-21-23", start_time: "08:00")
+  @party2 = @user1.parties.create!(movie_title: "Eraserhead", duration: 150, day: "01-20-23", start_time: "07:00")
+  @party3 = @user2.parties.create!(movie_title: "Eternal Sunshine of the Spotless Mind", duration: 180, day: "02-20-23", start_time: "09:00")
 end
 
 def new_spec_test_data

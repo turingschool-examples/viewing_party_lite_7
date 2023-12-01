@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     
     resources :movies, only: :index, as: 'results'
     resources :movies, only: :show do
-      resources :user_parties, only: :new, path: 'viewing_party', as: 'viewing_party'
+      resources :user_parties, only: [:new, :create], path: 'viewing_party', as: 'viewing_party'
     end
   end
 
