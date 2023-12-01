@@ -55,7 +55,7 @@ describe 'Movie Details Page' do
   end
 
   it "lists how many reviews are for this movie" do
-    reviews = MovieService.get_movie_reviews(872585)
+    reviews = MovieReviewsFacade.new(872585).movie_reviews
     expect(page).to have_content("#{reviews.count} Reviews")
   end
 
