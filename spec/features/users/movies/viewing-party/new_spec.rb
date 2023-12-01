@@ -94,4 +94,27 @@ RSpec.describe 'New Viewing Party Page' do
 
     expect(current_path).to eq("/users/#{@user1.id}/movies/268/viewing-party/new")
   end
+
+  it 'sets accepted to false for invited users when a party is created' do
+    visit "/users/#{@user1.id}/movies/268/viewing-party/new"
+
+    fill_in :duration, with: 180
+    fill_in :start_time, with: '10:00'
+    fill_in :date, with: '2023/08/01'
+    check "#{@user2.name} (#{@user2.email})"
+    check "#{@user3.name} (#{@user3.email})"
+    click_button 'Create Party'
+
+    expect(UserParty.where(party_id: Party.last.id, user_id: @user2.id).first.accepted).to eq(false)
+    expect(UserParty.where(party_id: Party.last.id, user_id: @user3.id).first.accepted).to eq(false)
+  end
+
+  it 'sets accepted to true for a user who accepts an invite' do
+      def accept_invite(user, party)
+        page.driver.submit :patch, "/users/#{user.id}/viewing-parties/#{party.id}/accept_invite", {}
+      end
+    accept_invite(@user2, Party.last)
+
+    expect(UserParty.where(party_id: Party.last.id, user_id: @user2.id).first.accepted).to eq(true)
+  end
 end

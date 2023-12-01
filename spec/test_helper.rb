@@ -14,3 +14,7 @@ def load_test_data
   @user_party6 = @user3.user_parties.create!(party_id: @party2.id)
 
 end
+
+def accept_invite(user, party)
+  page.driver.submit :patch, "/users/#{user.id}/viewing-parties/#{party.id}/accept_invite", {}
+end

@@ -5,4 +5,5 @@ class UserParty < ApplicationRecord
   def get_user_name
     User.find(self.user_id).name
   end
+  
 end

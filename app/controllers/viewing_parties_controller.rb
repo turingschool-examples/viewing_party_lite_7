@@ -1,4 +1,9 @@
 class ViewingPartiesController < ApplicationController
+
+  def index
+    @user = User.find(params[:user_id])
+    @user_parties = @user.user_parties
+  end
   def new
     facade = MovieFacade.new
     @user = User.find(params[:user_id])
@@ -21,7 +26,7 @@ class ViewingPartiesController < ApplicationController
         @user.user_parties.create!(user_id: @user.id, party_id: @party.id, is_host: true)
         @users.each do |other_user|
           if params[:"#{other_user.id}"].present?
-            other_user.user_parties.create!(party_id: @party.id)
+            other_user.user_parties.create!(party_id: @party.id, accepted: false) 
           end
         end
         redirect_to user_path(@user.id)
@@ -30,5 +35,11 @@ class ViewingPartiesController < ApplicationController
         redirect_to "/users/#{@user.id}/movies/#{@movie[:id]}/viewing-party/new"
       end
     end
+  end
+
+  def accept_invite
+    user_party = UserParty.find_by(user_id: params[:user_id], party_id: params[:party_id])
+    user_party.update(accepted: true)
+    redirect_to user_path(params[:user_id])
   end
 end
