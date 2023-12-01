@@ -15,8 +15,8 @@
   <% end %>
 </ul>
 
-<h3><%= @reviews.count %> Reviews</h3>
-  <% @reviews.each do |review| %>
+<h3><%= @reviews_facade.movie_reviews.count %> Reviews</h3>
+  <% @reviews_facade.movie_reviews.each do |review| %>
     <h4><%= review.author %></h4>
     <%= review.content %>
   <% end %>

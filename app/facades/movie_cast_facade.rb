@@ -7,6 +7,6 @@ class MovieCastFacade
     service = MovieService.new
 
     json = service.movie_cast(@movie_id)
-    @movie_cast = MovieCast.new(json)
+    @movie_cast = DetailedMovie.new(json)
   end
 end
