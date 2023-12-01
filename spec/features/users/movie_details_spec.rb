@@ -35,4 +35,15 @@ RSpec.describe 'Movie Details Page' do
       expect(page).to have_content('Robert Downey Jr. as Lewis Strauss')
     end
   end
+
+  it 'displays the number of reviews and reviews with authors', :vcr do 
+    user = User.last
+    visit "/users/#{user.id}/movies/872585"
+
+    with '#reviews' do 
+      expect(page).to have_content('14 Reviews')
+      expect(page).to have_content('Per Gunnar Jonsson')
+      expect(page).to have_content('US feared penetration by communism')
+    end
+  end
 end
