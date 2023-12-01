@@ -37,7 +37,7 @@ class MovieFacade
     data = service.get_reviews(@search)
 
     data[:results].map do |review|
-      Review.new(review, data[:total_results])
+      Review.new(review)
     end
   end
 
