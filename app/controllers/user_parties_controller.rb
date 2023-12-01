@@ -13,7 +13,7 @@ class UserPartiesController < ApplicationController
     user = User.find(params[:user_id])
     movie = DetailedMovieFacade.new(params[:movie_id]).detailed_movie
     party = Party.create!(user_parties_params)
-    party.update!(movie_title: movie.title)
+    party.update!(movie_title: movie.title, movie_id: movie.id)
 
     UserParty.create!(user_id: params[:user_id], party_id: party.id, host: true)
     redirect_to user_path(user)
