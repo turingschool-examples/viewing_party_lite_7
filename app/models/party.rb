@@ -6,7 +6,7 @@ class Party < ApplicationRecord
     start_time.to_fs(:long_ordinal)
   end
 
-  def runtime_in_hours_and_minutes
+  def duration_in_hours_and_minutes
     "#{duration/60}h #{duration % 60}min"
   end
 end

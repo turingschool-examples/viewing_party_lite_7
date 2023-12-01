@@ -6,7 +6,6 @@ class MoviesController < ApplicationController
       @facade = MovieSearchFacade.new(params[:query])
     else
       @facade =PopularMoviesFacade.new
-      # get_movies.first(20)
     end
   end
 
