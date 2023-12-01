@@ -1,10 +1,10 @@
 <h1><u>Create a Viewing Party</u></h1>
 
-<h3><%= @movie %></h3>
+<h3><%= @movie_title %></h3>
 
-<%= form_with(model: @viewing_party, url: "/users/#{@user.id}/movies/#{@movie}/viewing-party/new" , method: :post) do |form| %>
-  <%= form.label :duration %>
-  <%= form.text_field :duration, value: @movie.duration, min: @movie.duration %>
+<%= form_with(url: viewing_party_form_path(@user.id, @movie_id) , method: :post) do |form| %>
+  <%= form.label :party_duration %>
+  <%= form.text_field :party_duration, value: @movie_runtime, min: @movie_runtime %>
 
   <%= form.label :date %>
   <%= form.date_field :date %>
