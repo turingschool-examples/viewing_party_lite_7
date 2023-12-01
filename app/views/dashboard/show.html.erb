@@ -1,0 +1,5 @@
+<% @viewed.parties.each do |party| %>
+  <h3><%= party.movie_title %></h3>
+  <p><%= party.runtime_in_hours_and_minutes %></p>
+  <p><%= party.long_hand_date %></p>
+<% end %>

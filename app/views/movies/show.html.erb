@@ -8,6 +8,8 @@
 <p>Genres: <%= @movie_facade.detailed_movie.genres_as_list.to_sentence %></p>
 <p>Summary: <%= @movie_facade.detailed_movie.summary %></p>
 
+<p><%= image_tag "https://image.tmdb.org/t/p/w500/#{@movie_poster_facade.movie_poster.file_path}" %>
+
 <h3>Cast</h3>
 <ul>
   <% @cast.each do |actor| %>

@@ -15,5 +15,6 @@ class MoviesController < ApplicationController
     @movie_facade = DetailedMovieFacade.new(params[:id])
     @cast = MovieService.get_movie_cast(params[:id]).first(10)
     @reviews = MovieService.get_movie_reviews(params[:id])
+    @movie_poster_facade = MoviePosterFacade.new(params[:id])
   end
 end

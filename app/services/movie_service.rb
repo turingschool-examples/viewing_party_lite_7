@@ -10,6 +10,10 @@ class MovieService
     JSON.parse(response.body, symbolize_names: :true)
   end
   
+  def movie_poster(movie_id)
+    get_url("movie/#{movie_id}/images")
+  end
+
   def popular_movies
    get_url("movie/popular")
   end
