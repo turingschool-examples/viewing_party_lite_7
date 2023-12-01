@@ -39,8 +39,8 @@ class MovieService
       reviews: get_reviews(tmdb_id)[:results]}
   end
 
-  def self.details_api_call(url)
-    conn = Faraday.new(url: url) do |faraday|
+  def self.details_api_call(movie_id)
+    conn = Faraday.new(url: "https://api.themoviedb.org/3/movie/#{movie_id}") do |faraday|
       faraday.headers["Authorization"] = Rails.application.credentials.tmdb[:key]
     end
     
@@ -49,7 +49,25 @@ class MovieService
   end
 
   def self.image_api_call(movie_id)
-    data = MovieService.details_api_call("https://api.themoviedb.org/3/movie/#{movie_id}")
+    data = MovieService.details_api_call(movie_id)
     "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/#{data[:poster_path]}"
+  end
+
+  def self.top_movies
+    conn = Faraday.new(url: "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1") do |faraday|
+      faraday.headers["Authorization"] = Rails.application.credentials.tmdb[:key]
+    end
+    
+    response = conn.get
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.search(search_params)
+    conn = Faraday.new(url: "https://api.themoviedb.org/3/search/movie?query=#{search_params}&include_adult=false&language=en-US&page=1") do |faraday|
+      faraday.headers["Authorization"] = Rails.application.credentials.tmdb[:key]
+    end
+    
+    response = conn.get
+    data = JSON.parse(response.body, symbolize_names: true)
   end
 end
