@@ -4,7 +4,7 @@ class MovieSearchFacade
 
     parsed = movie_search.top_movies[:results]
 
-    @movies = parsed.map do |movie|
+    parsed.map do |movie|
       Movie.new(movie)
     end
   end
