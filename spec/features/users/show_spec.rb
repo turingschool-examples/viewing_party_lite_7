@@ -34,10 +34,7 @@ RSpec.describe User, type: :feature do
     describe "displays the viewing parties the user has been invited to" do
       it "should display the movie image, title as a redirect link," do
         visit user_path(@user_1)
-
-
       end
-
     end
   end
 end

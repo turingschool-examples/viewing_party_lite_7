@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "New Viewing Party Page" do
   before do
@@ -23,7 +23,6 @@ RSpec.describe "New Viewing Party Page" do
     end
 
     it "has date and time selection fields" do
-      
     end
 
     it "has individual checkboxes to invite every other existing user" do
@@ -40,7 +39,7 @@ RSpec.describe "New Viewing Party Page" do
 
   describe "happy path" do
     it "redirects to the user's dashboard where the new event is shown" do
-      check (@user2.name_email)
+      check(@user2.name_email)
       click_button("Create Party")
 
       expect(current_path).to eq(user_path(@user1.id))

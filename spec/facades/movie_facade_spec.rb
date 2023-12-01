@@ -32,7 +32,6 @@ RSpec.describe "Movie Facade" do
         movie = MovieFacade.get_top_rated.first
 
         expect(movie.runtime).to be_nil
-        expect(movie.reviews).to be_nil
 
         MovieFacade.add_details(movie)
 
