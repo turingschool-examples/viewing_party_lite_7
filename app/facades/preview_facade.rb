@@ -1,16 +1,15 @@
 class PreviewFacade
-  def self.discover_results
+  attr_reader :url
+
+  def initialize(query_params)
+    @query = query_params
+  end
+
+  def movie_previews
     service = MovieService.new
-    json = service.discover
+    json = service.return_results(@query)
     json[:results].map do |preview_data|
       Preview.new(preview_data)
     end
   end
-  # def self.search_results(movie_title)
-  #   service = MovieService.new
-  #   json = service.search(movie_title)
-  #   json[:results].map do |preview_data|
-  #     Preview.new(preview_data)
-  #   end
-  # end
 end
