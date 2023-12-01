@@ -20,7 +20,7 @@ class PartiesController < ApplicationController
     elsif new_party.date > Time.current == false
       flash[:notice] = "Party Date Must Be Set in the Future"
       redirect_to "/users/#{@user_id}/movies/(#{@movie_id})/viewing-party/new"
-    elsif new_party.save
+    else new_party.save
       UserParty.create!({
         user_id: @user.id,
         party_id: new_party.id,
@@ -37,9 +37,6 @@ class PartiesController < ApplicationController
       end
 
       redirect_to "/users/#{@user.id}"
-    else
-      # flash[:notice] = "Party already created"
-      # redirect_to "/users/#{@user.id}/movies/#{new_party.movie_id}/viewing-party/new"
     end
   end
 
