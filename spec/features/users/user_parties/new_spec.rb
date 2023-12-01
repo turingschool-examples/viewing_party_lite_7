@@ -32,6 +32,14 @@ describe 'New Viewing Party Page' do
         check("invite")
       end
     end
+
+    it "testing the selection of date and start time" do
+      fill_in :day, with: "2024-01-01"
+      fill_in :start_time, with: "04:00 PM"
+      click_button "Create Party"
+      expect(page).to have_content("January 1, 2024")
+      expect(page).to have_content("4:00 PM")
+    end
     
     xit "has expected functionality (Create Party)" do
       expect(page).to have_field(:duration, with: @oppenheimer.detailed_movie.runtime)
