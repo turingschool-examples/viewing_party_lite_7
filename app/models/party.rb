@@ -2,6 +2,10 @@ class Party < ApplicationRecord
   has_many :user_parties
   has_many :users, through: :user_parties
 
+  def pretty_day
+    day.strftime("%B %d, %Y")
+  end
+
   def long_hand_date
     start_time.to_fs(:long_ordinal)
   end

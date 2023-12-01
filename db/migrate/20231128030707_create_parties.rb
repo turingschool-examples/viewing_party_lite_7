@@ -3,7 +3,7 @@ class CreateParties < ActiveRecord::Migration[7.0]
     create_table :parties do |t|
       t.string :movie_title
       t.integer :duration
-      t.date :when
+      t.date :day
       t.time :start_time
 
       t.timestamps
