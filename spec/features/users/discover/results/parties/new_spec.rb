@@ -16,6 +16,7 @@ RSpec.describe 'new user movie party page', type: :feature do
       content: 'good stuff'
     }
     @user1 = User.create!(name: 'Joe', email: 'joe@gmail.com')
+    @user1 = User.create!(name: 'Mama', email: 'mama@gmail.com')
     @movie1 = Movie.new(movie_details)
   end
 
@@ -26,10 +27,11 @@ RSpec.describe 'new user movie party page', type: :feature do
 
   it 'has a form to create a new party, duration defaulting to movie runtime' do
     visit new_user_movie_party_path(@user1, @movie1)
+    save_and_open_page
     expect(page).to have_field(:duration, with: @movie1.runtime)
     expect(page).to have_field(:start_time)
     expect(page).to have_field(:date)
-    expect(page).to have_unchecked_field '#current_user'
+    expect(page).to have_unchecked_field "#{@user1.name}"
     expect(page).to have_button('Create Party')
   end
 
@@ -38,7 +40,7 @@ RSpec.describe 'new user movie party page', type: :feature do
       visit new_user_movie_party_path(@user1, @movie1)
       fill_in :duration, with: 120
       fill_in :start_time, with: '12:00'
-      check :current_user
+      check "#{@user1.name}"
       click_button 'Create Party'
       expect(current_path).to eq(user_path(@user1))
       expect(page).to have_content('Duration: 120mins')
@@ -60,7 +62,7 @@ RSpec.describe 'new user movie party page', type: :feature do
       visit new_user_movie_party_path(@user1, @movie1)
       fill_in :duration, with: 90
       fill_in :start_time, with: '12:00'
-      check :current_user
+      check "#{@user1.name}"
       click_button 'Create Party'
       expect(current_path).to eq(new_user_movie_party_path(@user1, @movie1))
       expect(page).to have_content('invalid duration')
