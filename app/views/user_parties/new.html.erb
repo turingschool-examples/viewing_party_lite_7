@@ -11,8 +11,10 @@ Movie Title   <b><%= @movie_facade.detailed_movie.title %></b>
 
   <h4>Invite Other Users</h4>
    <% User.other_users(@user).each do |user| %>
-    <%= f.check_box :invited_users, { multiple: true }, user.id, nil %>
-    <%= "#{user.name} (#{user.email})"%>
+    <div id="invited_user-<%= user.id %>">
+      <%= f.check_box :invite, params: {invite: user.id} %>
+      <%= "#{user.name} (#{user.email})"%>
+    </div>
   <% end %>
 
   <%= f.submit "Create Party" %>
