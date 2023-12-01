@@ -41,7 +41,7 @@ RSpec.describe 'Viewing Party Index Page' do
   it 'sets accepted to true for a user who accepts an invite' do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user2)
     visit user_viewing_parties_path(@user2)
-    save_and_open_page
+    
 
     within(first('.viewing-party')) do
       click_on 'Accept Invite'
