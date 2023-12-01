@@ -1,13 +1,23 @@
 class MovieData
+  attr_reader :id,
+              :title,
+              :runtime,
+              :vote_average,
+              :genre,
+              :summary,
+              :credits,
+              :reviews,
+              :review_count
   def initialize(data)
     @id = data[:details][:id]
     @title = data[:details][:title]
     @runtime = data[:details][:runtime]
     @vote_average = data[:details][:vote_average]
-    @genre = data[:details][:genres].map { |genre| genre[:name] }.join(', ')
+    @genre = genres(data[:details])
     @summary = data[:details][:overview]
-    @credits = credits(data[:credits])
-    @reviews = reviews(data[:reviews])
+    @credits = credits_maker(data[:credits])
+    @reviews = reviews_maker(data[:reviews])
+    @review_count = @reviews.count
   end
 
   def genres(details_data)
@@ -16,7 +26,7 @@ class MovieData
     end.join(', ')
   end
 
-  def credits(credits_data)
+  def credits_maker(credits_data)
     count = 0
     cast = Hash.new
     until count == 10
@@ -26,9 +36,15 @@ class MovieData
     cast
   end
 
-  def reviews(reviews_data)
+  def reviews_maker(reviews_data)
     reviews_data.map do |review|
       [review[:author], review[:content]]
     end
+  end
+
+  def hrmin
+    hr = runtime / 60
+    min = runtime % 60
+    "#{hr}hr #{min}min"
   end
 end

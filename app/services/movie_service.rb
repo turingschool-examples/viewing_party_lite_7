@@ -36,6 +36,6 @@ class MovieService
   def all_details(tmdb_id)
     { details: get_details(tmdb_id),
       credits: get_credits(tmdb_id)[:cast][0..9], 
-      reviews: get_reviews(tmdb_id)}
+      reviews: get_reviews(tmdb_id)[:results]}
   end
 end
