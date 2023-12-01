@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-12-01T15:39:56-07:00">2023-12-01T15:39:56-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-12-01T16:26:32-07:00">2023-12-01T16:26:32-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  90.55%
+  90.39%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         5.83
+         5.81
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>508</b> relevant lines,
-    <span class="green"><b>460</b> lines covered</span> and
-    <span class="red"><b>48</b> lines missed. </span>
+    <b>510</b> relevant lines,
+    <span class="green"><b>461</b> lines covered</span> and
+    <span class="red"><b>49</b> lines missed. </span>
     (<span class="green">
-  90.55%
+  90.39%
 </span>
 )
   </div>
@@ -105,12 +105,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#84645c76a72cf6a671051763a038a27369d47fb8" class="src_link" title="app/controllers/users/discover/results_controller.rb">app/controllers/users/discover/results_controller.rb</a></td>
-            <td class="yellow strong cell--number t-file__coverage">83.33 %</td>
-            <td class="cell--number">23</td>
-            <td class="cell--number">18</td>
-            <td class="cell--number">15</td>
-            <td class="cell--number">3</td>
-            <td class="cell--number">2.22</td>
+            <td class="red strong cell--number t-file__coverage">80.00 %</td>
+            <td class="cell--number">25</td>
+            <td class="cell--number">20</td>
+            <td class="cell--number">16</td>
+            <td class="cell--number">4</td>
+            <td class="cell--number">2.05</td>
             
           </tr>
         
@@ -1394,8 +1394,8 @@
   <div class="header">
     <h3>app/controllers/users/discover/results_controller.rb</h3>
     <h4>
-      <span class="yellow">
-  83.33%
+      <span class="red">
+  80.0%
 </span>
 
       lines covered
@@ -1404,9 +1404,9 @@
     
 
     <div class="t-line-summary">
-      <b>18</b> relevant lines.
-      <span class="green"><b>15</b> lines covered</span> and
-      <span class="red"><b>3</b> lines missed.</span>
+      <b>20</b> relevant lines.
+      <span class="green"><b>16</b> lines covered</span> and
+      <span class="red"><b>4</b> lines missed.</span>
     </div>
 
     
@@ -1445,7 +1445,7 @@
 
             
 
-            <code class="ruby">class Users::Discover::ResultsController &lt; ApplicationController</code>
+            <code class="ruby">require &#39;./services/movies_search_service&#39;</code>
           </li>
         </div>
       
@@ -1456,18 +1456,18 @@
 
             
 
-            <code class="ruby">  def index</code>
+            <code class="ruby">class Users::Discover::ResultsController &lt; ApplicationController</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="5">
-            <span class="hits">5</span>
+          <li class="covered" data-hits="1" data-linenumber="5">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    @user = User.find(params[:user_id])</code>
+            <code class="ruby">  def index</code>
           </li>
         </div>
       
@@ -1478,7 +1478,7 @@
 
             
 
-            <code class="ruby">    movie_search = MovieSearchFacade.new</code>
+            <code class="ruby">    @user = User.find(params[:user_id])</code>
           </li>
         </div>
       
@@ -1489,7 +1489,7 @@
 
             
 
-            <code class="ruby">    movies_search = MoviesSearchService.new</code>
+            <code class="ruby">    movie_search = MovieSearchFacade.new</code>
           </li>
         </div>
       
@@ -1500,12 +1500,23 @@
 
             
 
+            <code class="ruby">    movies_search = MoviesSearchService.new</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="9">
+            <span class="hits">5</span>
+            
+
+            
+
             <code class="ruby">    if params[:top_rated].present?</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="9">
+          <li class="covered" data-hits="4" data-linenumber="10">
             <span class="hits">4</span>
             
 
@@ -1516,7 +1527,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="10">
+          <li class="covered" data-hits="1" data-linenumber="11">
             <span class="hits">1</span>
             
 
@@ -1527,7 +1538,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="11">
+          <li class="covered" data-hits="1" data-linenumber="12">
             <span class="hits">1</span>
             
 
@@ -1538,7 +1549,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="12">
+          <li class="never" data-hits="" data-linenumber="13">
             
             
 
@@ -1549,7 +1560,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="13">
+          <li class="never" data-hits="" data-linenumber="14">
             
             
 
@@ -1560,7 +1571,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="14">
+          <li class="never" data-hits="" data-linenumber="15">
             
             
 
@@ -1571,7 +1582,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="15">
+          <li class="covered" data-hits="1" data-linenumber="16">
             <span class="hits">1</span>
             
 
@@ -1582,7 +1593,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="16">
+          <li class="covered" data-hits="3" data-linenumber="17">
             <span class="hits">3</span>
             
 
@@ -1593,7 +1604,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="17">
+          <li class="covered" data-hits="3" data-linenumber="18">
             <span class="hits">3</span>
             
 
@@ -1604,7 +1615,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="18">
+          <li class="covered" data-hits="3" data-linenumber="19">
             <span class="hits">3</span>
             
 
@@ -1615,24 +1626,13 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="19">
-            
-            
-
-            
-
-            <code class="ruby">    @cast_members = movies_search.movie_cast(params[:id])</code>
-          </li>
-        </div>
-      
-        <div>
           <li class="missed" data-hits="0" data-linenumber="20">
             
             
 
             
 
-            <code class="ruby">    @reviews = movies_search.movie_reviews(params[:id])</code>
+            <code class="ruby">    require &#39;pry&#39;; binding.pry</code>
           </li>
         </div>
       
@@ -1643,12 +1643,34 @@
 
             
 
+            <code class="ruby">    @cast_members = movies_search.movie_cast(params[:id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="22">
+            
+            
+
+            
+
+            <code class="ruby">    @reviews = movies_search.movie_reviews(params[:id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="23">
+            
+            
+
+            
+
             <code class="ruby">    @reviews_count = movies_search.movie_review_count(params[:id]) # had to add this bc i couldnt figure out how to pull from outside hash</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="22">
+          <li class="never" data-hits="" data-linenumber="24">
             
             
 
@@ -1659,7 +1681,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="23">
+          <li class="never" data-hits="" data-linenumber="25">
             
             
 
