@@ -1,5 +1,6 @@
-class MoviesController < ApplicationRecord
+class MoviesController < ApplicationController
   def index
-    @facade = DiscoverFacade.top_rated_movies
+    @user = User.find(params[:user_id])
+    @facade = PreviewFacade.discover_results
   end
 end
