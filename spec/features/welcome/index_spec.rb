@@ -5,7 +5,7 @@ RSpec.describe "Welcome Index" do
     load_test_data
   end
 
-  it "When users visits '/' we see all users" do
+  it "When users visits '/' we see all users", :vcr do
     visit "/"
 
     expect(page).to have_content("ViewingPartyLite7")
