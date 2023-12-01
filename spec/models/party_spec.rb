@@ -17,4 +17,8 @@ RSpec.describe Party, type: :model do
     it { should have_many(:user_parties) }
     it { should have_many(:users).through(:user_parties) }
   end
+
+  it "#get_host_name" do
+    expect(@party1.get_host_name).to eq("Capitainlearyo")
+  end
 end

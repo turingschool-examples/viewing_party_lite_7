@@ -19,12 +19,26 @@ RSpec.describe 'User Dashboard Page' do
     end
   end
 
-  it "Has a button to discover movies", :vcr do
-    visit user_path(@user3)
+  it "I should see the viewing parties that the user has been invited to with the following details:", :vcr do
+    visit user_path(@user1.id)
+    
 
-    expect(page).to have_button("Discover Movies")
-    click_button("Discover Movies")
+    expect(page).to have_content("Attending Parties")
 
-    expect(current_path).to eq("/users/#{@user3.id}/discover")
+    expect(page).to have_content("party1")
+    expect(page).to have_content("Movie Title: Star Wars")
+    expect(page).to have_content("Date and Time: Starts on 2023/08/01 at 10:00")
+    expect(page).to have_content("Hosted By: Capitainlearyo")
+    expect(page).to have_content("Attending:")
+    expect(page).to have_content("Slick Ric Bob")
+
+    expect(page).to have_content("party2")
+    expect(page).to have_content("Movie Title: The Lord of the Rings: The Fellowship of the Ring")
+    expect(page).to have_content("Date and Time: Starts on 2023/09/01 at 11:00")
+    expect(page).to have_content("Hosted By: Capitainlearyo")
+    expect(page).to have_content("Attending:")
+    expect(page).to have_content("Capitainlearyo Slick Ric Capitainlearyo Bob")
+
+    expect(page).to have_content("Hosting Parties")
   end
 end
