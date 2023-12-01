@@ -7,8 +7,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    new_user = User.create!(name: params[:name], email: params[:email])
-    redirect_to user_path(new_user)
+    new_user = User.new(name: params[:name], email: params[:email])
+    if new_user.save
+      redirect_to user_path(new_user)
+      flash.notice = "User Has Been Created."
+    else
+      redirect_to new_user_path
+      flash[:alert] = "Error: #{error_message(new_user.errors)}"
+    end
   end
 
   def show
