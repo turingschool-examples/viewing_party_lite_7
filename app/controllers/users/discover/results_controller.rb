@@ -1,5 +1,6 @@
 require './poros/movie'
 require './facades/movie_search_facade'
+require './services/movies_search_service'
 class Users::Discover::ResultsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
