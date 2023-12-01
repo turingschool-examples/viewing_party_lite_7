@@ -17,7 +17,7 @@ describe "the User Registration Page" do
     
     click_on("Register")
     
-    x = User.find_by(name: "Thomas Smith")
+    x = User.find_by(email: "tsmith11@turing.edu")
 
     expect(current_path).to eq(user_dashboard_path(x.id))
     expect(page).to have_content("Thomas Smith's Dashboard")
