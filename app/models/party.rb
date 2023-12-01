@@ -18,7 +18,7 @@ class Party < ApplicationRecord
 
   def image_api_call
     if movie.tmdb_id
-      Movie.image_api_call(movie.tmdb_id)
+      MovieService.image_api_call(movie.tmdb_id)
     end
   end
 

@@ -38,4 +38,18 @@ class MovieService
       credits: get_credits(tmdb_id)[:cast][0..9], 
       reviews: get_reviews(tmdb_id)[:results]}
   end
+
+  def self.details_api_call(url)
+    conn = Faraday.new(url: url) do |faraday|
+      faraday.headers["Authorization"] = Rails.application.credentials.tmdb[:key]
+    end
+    
+    response = conn.get
+    data = JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.image_api_call(movie_id)
+    data = MovieService.details_api_call("https://api.themoviedb.org/3/movie/#{movie_id}")
+    "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/#{data[:poster_path]}"
+  end
 end
