@@ -10,7 +10,7 @@ class Users::Discover::Results::PartiesController < ApplicationController
   # refactor, this is too fat
   def create
     party = Party.new({
-      duration: ,
+      duration: params,
       date: ,
       start_time: ,
       movie_id: 
