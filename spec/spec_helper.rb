@@ -8,6 +8,9 @@ require 'webmock/rspec'
 def test_data
   @user1 = User.create!(name: "Shawn", email: "shawn@website.com")
   @user2 = User.create!(name: "Anthea", email: "anthea@website.com")
+end
+
+def party_test_data
   @party1 = @user1.parties.create!(movie_title: "E.T.", duration: 120, day: Date.new(2023, 1, 23), start_time: "08:00")
   @party2 = @user1.parties.create!(movie_title: "Eraserhead", duration: 150, day: Date.new(2023, 1, 23), start_time: "07:00")
 end

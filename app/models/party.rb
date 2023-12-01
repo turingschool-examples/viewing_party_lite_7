@@ -6,11 +6,15 @@ class Party < ApplicationRecord
     day.strftime("%B %d, %Y")
   end
 
-  def long_hand_date
-    start_time.to_fs(:long_ordinal)
+  def pretty_time
+    start_time.strftime("%I:%M %p")
   end
 
   def duration_in_hours_and_minutes
     "#{duration/60}h #{duration % 60}min"
+  end
+
+  def host
+    User.where("#{self.id} = user_party.party_id and user_party.host = true")
   end
 end

@@ -6,18 +6,20 @@ RSpec.describe Party, type: :model do
     it { should have_many(:users).through(:user_parties) }
   end
 
-  describe '#pretty_day' do
-    it 'returns the day in a more readable form' do
-      test_data
-      expect(@party1.pretty_day).to eq("January 23, 2023")
-    end
-  end
-
+  
   describe "#methods" do
-    context "#long_hand_date" do
-      it "can find the date in longhand format" do
-        party = Party.create!(movie_title: "E.T.", duration: 120, start_time: "2001-01-01 8:00:00")
-        expect(party.long_hand_date).to eq("January 1st, 2000 08:00")
+    context '#pretty_day' do
+      it 'returns the day in a more readable form' do
+        test_data
+        party_test_data
+        expect(@party1.pretty_day).to eq("January 23, 2023")
+      end
+    end
+
+    context "#pretty_time" do
+      it "can find the date in readable format" do
+        party = Party.create!(movie_title: "E.T.", duration: 120, start_time: "8:00:00")
+        expect(party.pretty_time).to eq("08:00 AM")
       end
     end
 

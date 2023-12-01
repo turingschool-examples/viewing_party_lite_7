@@ -8,10 +8,12 @@
 <% @user_parties.each do |user_party| %>
   <div class="box">
     <section id="party-<%= user_party.id %>">
-      <p><%= image_tag "https://image.tmdb.org/t/p/w500/#{MoviePosterFacade.new(user_party.party.movie_id).movie_poster.file_path}", width: "200" %>
+      <div class="img">
+        <p><%= image_tag "https://image.tmdb.org/t/p/w500/#{MoviePosterFacade.new(user_party.party.movie_id).movie_poster.file_path}", width: "200" %>
+      </div>
       <p><%= link_to "#{user_party.party.movie_title}", user_movie_path(@user, user_party.party.movie_id) %><br>
       <%= user_party.party.pretty_day %><br>
-      <%= user_party.party.start_time %><br><br></p>
+      <%= user_party.party.pretty_time %><br><br></p>
       <p><%= user_party.party.duration_in_hours_and_minutes %></p>
       <% if user_party.hosting? == true %>
         <p>Hosting</p>
