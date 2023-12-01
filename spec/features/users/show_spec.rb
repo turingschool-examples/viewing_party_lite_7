@@ -18,7 +18,6 @@ RSpec.describe "Show" do
     @userparty2 = UserParty.create(user_id: @user2.id, party_id: @party1.id, creator: false)
 
     visit "/users/#{@user1.id}"
-    save_and_open_page
 
     expect(page).to have_content("#{@user1.name}'s Dashboard")
     expect(page).to have_content("Viewing Parties")
