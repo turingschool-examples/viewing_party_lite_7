@@ -1,6 +1,6 @@
 class Top20
 
-  def initialize
-    
+  def initialize(movie)
+    require 'pry'; binding.pry
   end
 end
