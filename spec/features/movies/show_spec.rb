@@ -63,33 +63,65 @@ RSpec.describe 'Movie Details Page', type: :feature do
       end
     end
   end
-
-end
-
-RSpec.describe  do
-  before(:each) do
-    @user1 = User.create!(name: 'Brendan', email: 'brendan@turing.edu')
-    @user2 = User.create!(name: 'Paul', email: 'paul@turing.edu')
-    @user3 = User.create!(name: 'Sooyung', email: 'sooyung@turing.edu')
-  end
-
+  
   describe 'when I visit /users/:user_id/movies/:movies_id/viewing-party/new' do
     it 'shows the title of the movie' do
-
-      json_response = File.read("spec/fixtures/top_rated.json")
-      # parsed = JSON.parse(json_response, symbolize_names: true)
-      # movies = parsed[:results]
-      stub_request(:get, "https://api.themoviedb.org/3/movie/?api_key=#{Rails.application.credentials.tmdb[:key]}").
+      json_response = File.read('spec/fixtures/spirited_away.json')
+      stub_request(:get, "https://api.themoviedb.org/3/movie/?api_key=#{Rails.application.credentials.tmdb[:key]}&language=en-US").
         with(
           headers: {
-            'Accept' => '*/*',
-            'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-            'User-Agent' => 'Faraday v2.7.12'
+        'Accept'=>'*/*',
+        'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+        'User-Agent'=>'Faraday v2.7.12'
           }).
         to_return(status: 200, body: json_response, headers: {})
 
-      visit "/users/#{@user1.id}/movies/:movies_id/viewing-party/new"
-      expect().to eq()
+      visit "/users/#{@user.id}/movies/129/viewing-party/new"
+
+      expect(page).to have_content('Create a Movie Party for Spirited Away')
+    end
+
+    it 'shows viewing party details, including movie title, duration of party, day and start time' do
+      json_response = File.read('spec/fixtures/spirited_away.json')
+      stub_request(:get, "https://api.themoviedb.org/3/movie/?api_key=#{Rails.application.credentials.tmdb[:key]}&language=en-US").
+        with(
+          headers: {
+        'Accept'=>'*/*',
+        'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+        'User-Agent'=>'Faraday v2.7.12'
+          }).
+        to_return(status: 200, body: json_response, headers: {})
+
+      visit "/users/#{@user.id}/movies/129/viewing-party/new"
+
+      expect(page).to have_content('Viewing Party Details')
+      expect(page).to have_content('Movie Title')
+      expect(page).to have_content('Spirited Away')
+      expect(page).to have_content('Duration of Party')
+      expect(page).to have_content('Day')
+      expect(page).to have_content('Start Time')
+      expect(page).to have_field('duration', with: 125)
+      expect(page).to have_field('Time')
+    end
+
+    it 'creates a new viewing party' do
+      json_response = File.read('spec/fixtures/spirited_away.json')
+      stub_request(:get, "https://api.themoviedb.org/3/movie/?api_key=#{Rails.application.credentials.tmdb[:key]}&language=en-US").
+        with(
+          headers: {
+        'Accept'=>'*/*',
+        'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+        'User-Agent'=>'Faraday v2.7.12'
+          }).
+        to_return(status: 200, body: json_response, headers: {})
+
+      visit "/users/#{@user.id}/movies/129/viewing-party/new"
+
+      fill_in('Time', with: "07:00")
+
+      expect(page).to have_field('Time')
+      check("#{@user.email}")
+      click_button('Create Party')
     end
   end
 end
