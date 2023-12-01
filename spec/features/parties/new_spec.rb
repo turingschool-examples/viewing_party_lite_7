@@ -53,6 +53,66 @@ RSpec.describe "New Party" do
 
     visit "/users/#{@user2.id}"
     expect(page).to_not have_content("Shrek")
+  end
 
+  it "can will not create a party with a duration lower than the movie runtime", :vcr do
+    visit "/users/#{@user1.id}/movies/808/viewing-party/new"
+
+    fill_in :duration, with: 80
+
+
+    select "2024", from: "_day_1i"
+    select "February", from: "_day_2i"
+    select "1", from: "_day_3i"  
+    
+    select "19", from: "_time_4i"
+    select "00", from: "_time_5i"
+    
+    page.check "#{@user3.id}"
+
+    click_button("Create Party")
+
+    expect(current_path).to eq("/users/#{@user1.id}/movies/808/viewing-party/new")
+
+    expect(page).to have_content("Party Duration Must Be Longer Than Movie Runtime")
+
+  end
+  
+  it "can will not create a party set in the past", :vcr do
+    visit "/users/#{@user1.id}/movies/808/viewing-party/new"
+
+    fill_in :duration, with: 100
+
+
+    select "2022", from: "_day_1i"
+    select "February", from: "_day_2i"
+    select "1", from: "_day_3i"  
+    
+    select "19", from: "_time_4i"
+    select "00", from: "_time_5i"
+    
+    click_button("Create Party")
+    
+    expect(current_path).to eq("/users/#{@user1.id}/movies/808/viewing-party/new")
+
+    expect(page).to have_content("Party Date Must Be Set in the Future")
+  end
+
+  it "Only creates a new db object if it doesn't exist", :vcr do
+    visit "/users/#{@user1.id}/movies/808/viewing-party/new"
+    
+    select "2024", from: "_day_1i"
+    
+    click_button("Create Party")
+
+    expect(Movie.where(tmdb_id: 808).count).to eq(1)
+    
+    visit "/users/#{@user2.id}/movies/808/viewing-party/new"
+    
+    select "2024", from: "_day_1i"
+    
+    click_button("Create Party")
+
+    expect(Movie.where(tmdb_id: 808).count).to eq(1)
   end
 end
