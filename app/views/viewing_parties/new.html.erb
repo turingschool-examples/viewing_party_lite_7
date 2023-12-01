@@ -2,17 +2,20 @@
 
 <h3><%= @movie_title %></h3>
 
-<%= form_with(url: viewing_party_form_path(@user.id, @movie_id) , method: :post) do |form| %>
+<%= form_with(model: @viewing_party, url: viewing_party_form_path(@user.id, @movie_id) , method: :post) do |form| %>
   <%= form.label :party_duration %>
   <%= form.text_field :party_duration, value: @movie_runtime, min: @movie_runtime %>
 
-  <%= form.label :date %>
-  <%= form.date_field :date %>
+  <p><%= form.label :start_time %>
+  <%= form.time_field :start_time %></p>
 
   <%@users.each do |user|%>
-    <%= form.label "add_#{user.name}", class: "checkbox-label" %>
-    <%= form.check_box "add_#{user.name}", class: "checkbox" %>
+   <p><%= form.label "add_#{user.name}", class: "checkbox-label" %>
+    <%= form.check_box "add_#{user.name}", class: "checkbox" %></p>
   <%end%>
 
-  <%= form.submit 'Create a Party' %>
+  <%= form.hidden_field :movie_title, value: @movie_title %>
+
+  <p><%= form.submit 'Create a Viewing Party' %></p>
 <% end %>
+

@@ -9,6 +9,7 @@ class ViewingPartiesController < ApplicationController
 
   def create
     @viewing_party = ViewingParty.new(viewing_party_params)
+    @user = User.find(params[:id])
 
     if @viewing_party.save
       redirect_to user_dashboard_path(@user.id)
@@ -20,6 +21,6 @@ class ViewingPartiesController < ApplicationController
   private
 
   def viewing_party_params
-    params.permit(:movie_id, :party_duration, :movie_title, :date)
+    params.require(:viewing_party).permit(:movie_id, :party_duration, :movie_title, :start_time, :id)
   end
 end
