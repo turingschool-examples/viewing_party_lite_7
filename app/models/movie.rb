@@ -92,4 +92,10 @@ class Movie < ApplicationRecord
     })
   end
 
+  def self.image_api_call(movie_id)
+    data = Movie.details_api_call("https://api.themoviedb.org/3/movie/#{movie_id}")
+    "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/#{data[:poster_path]}"
+  end
+
 end
+

@@ -20,18 +20,19 @@ def test_data
   @user2 = User.create(name: "Macbeth", email: "Blurp@gmail.com")
   @user3 = User.create(name: "Jerry", email: "Moogoo@gmail.com")
 
-  @movie1 = Movie.create(title: "The Lion Bling", runtime: 150)
-  @movie2 = Movie.create(title: "Leroy Jenkins", runtime: 90)
-  @movie3 = Movie.create(title: "Why Your Mom Moved Out", runtime: 220)
+  # @movie1 = Movie.create(id: 2, title: "Ariel", runtime: 73, tmdb_id: 2)
+  # @movie2 = Movie.create(id: 3, title: "Shadows in Paradise", runtime: 74, tmdb_id: 3)
+  # @movie3 = Movie.create(id: 5, title: "Four Rooms ", runtime: 98, tmdb_id: 5)
 
-  @party1 = Party.create(duration: 200, name: "The Lion Bling Watch Party", date: "1/22/2024", start_time: 1800, movie_id: @movie1.id)
-  @party2 = Party.create(duration: 100, name: "Leroy Jenkins Watch Party", date: "10/2/1999", start_time: 1400, movie_id: @movie2.id)
-  @party3 = Party.create(duration: 250, name: "Why Your Mom Moved Out Watch Party", date: "7/15/2008", start_time: 1900, movie_id: @movie3.id)
+  # @party1 = Party.create(duration: 200, name: "Ariel", date: "January 1, 2024", start_time: "6:00 pm", movie_id: @movie1.id)
+  # @party2 = Party.create(duration: 100, name: "Shadows in Paradise", date: "October 2, 2025", start_time: "2:00 pm", movie_id: @movie2.id)
+  # @party3 = Party.create(duration: 98, name: "Four Rooms ", date: "July 15, 2026", start_time: "5:00 pm", movie_id: @movie3.id)
 
-  @userparty1 = UserParty.create(user_id: @user1.id, party_id: @party1.id)
-  @userparty2 = UserParty.create(user_id: @user2.id, party_id: @party1.id)
+  # @userparty1 = UserParty.create(user_id: @user1.id, party_id: @party1.id, creator: true)
+  # @userparty2 = UserParty.create(user_id: @user2.id, party_id: @party1.id, creator: false)
 
 end
+
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
