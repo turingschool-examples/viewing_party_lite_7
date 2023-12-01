@@ -1,0 +1,11 @@
+<% @user_parties.each do |user_party| %>
+  <div class="viewing-party">
+    <% party = user_party.party %>
+    <% if party && !user_party.accepted && current_user %>
+      <p>Movie Title: <%= party.movie_title %></p>
+      <p>Duration: <%= party.duration %></p>
+      <li><strong>Date and Time: </strong><%= "Starts on #{party.date.strftime('%Y-%m-%d')} at #{party.start_time.strftime('%H:%M:%S')} UTC" %></li>
+      <%= button_to 'Accept Invite', "/users/#{current_user.id}/viewing-parties/#{party.id}/accept_invite", method: :patch %>
+    <% end %>
+  </div>
+<% end %>

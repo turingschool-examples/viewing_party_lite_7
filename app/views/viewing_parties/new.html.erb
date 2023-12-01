@@ -1,0 +1,15 @@
+<h1><%= @movie[:title] %></h1>
+
+<%= form_with url: "/users/#{@user.id}/movies/#{@movie[:id]}/viewing-party/create", method: :post, local: true do |form| %>
+  <%= form.number_field :duration, value: @movie[:runtime], min: @movie[:runtime] %>
+  <%= form.label "Duration of Party in minutes" %>
+  <%= form.date_field :date, data: {provide: "datepicker"}  %>
+  <%= form.label :date, "Date of Party" %>
+  <%= form.time_field :start_time %>
+  <%= form.label :start_time, "Start of Party" %>
+  <%= form.hidden_field :status, value: "host" %>
+  <% @users.each do |user| %>
+      <p><%= check_box_tag(user.id, hidden_field: :status, value: "attending #{user.id}") %> <%= form.label "#{user.id}", "#{user.name} (#{user.email})" %></p>
+    <% end %><br>
+  <%= form.submit "Create Party" %>
+<% end%>
