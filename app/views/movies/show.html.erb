@@ -1,0 +1,21 @@
+<%= render partial: "shared/nav" %>
+<%= button_to "Discover", user_discover_path(@user.id), params: { value: "top-rated" }, method: :get, data: { turbo: false }, local: true %>
+<%= button_to "Create a Viewing Party", "/users/#{@user.id}/movies/#{@movie.movie_id}/viewing-party/new", method: :get, data: { turbo: false }, local: true %>
+
+<p>Title: <%=@movie.title%></p>
+<p>Vote Average: <%=@movie.vote_average%></p>
+<p>Runtime Minutes: <%=@movie.runtime%></p>
+<p>Genres:</p>
+<%@movie.genre.each do |genre|%>
+  <ol><%= genre[:name] %></ol>
+<%end%>
+<p>Overview: <%=@movie.overview%></p>
+<p>Cast:</p>
+<%@movie.cast.take(10).each do |actor|%>
+  <ol><%= actor[:name] %></ol>
+<%end%>
+<p>Vote Count: <%=@movie.vote_count%></p>
+<%@movie.review_info.take(5).each do |review|%></p>
+  <p>Review Author: <%= review[:author] %></p>
+  <p>Review Text: <%= review[:content] %></p>
+<%end%>
