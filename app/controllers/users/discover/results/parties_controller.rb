@@ -1,9 +1,9 @@
-require './services/movies_search'
+require './services/movies_search_service'
 class Users::Discover::Results::PartiesController < ApplicationController
   def new
     @all_users = User.all
     @host = User.find(params[:user_id])
-    movies_search = MoviesSearch.new
+    movies_search = MoviesSearchService.new
     @movie = movies_search.genre_runtime(params[:id])
   end
 
@@ -16,7 +16,7 @@ class Users::Discover::Results::PartiesController < ApplicationController
       movie_id: params[:movie_id]
     })
     host = User.find(params[:user_id])
-    movies_search = MoviesSearch.new
+    movies_search = MoviesSearchService.new
     movie = movies_search.genre_runtime(params[:id])
     
     if movie.runtime > party.duration

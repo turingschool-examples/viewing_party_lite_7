@@ -1,14 +1,18 @@
-require './services/movies_search'
+require './services/movies_search_service'
 
-RSpec.describe MoviesSearch do
+RSpec.describe MoviesSearchService do
   before(:each) do
-    @movies_search = MoviesSearch.new
+    @movies_search = MoviesSearchService.new
   end
 
   describe '#top_movies' do
     it 'returns an array movie objects which are the top rated movies' do
-      expect(@movies_search.top_movies).to be_a(Array)
-      expect(@movies_search.top_movies[0]).to be_a(Movie)
+      expect(@movies_search.top_movies).to be_a(Hash)
+      expect(@movies_search.top_movies[:results]).to be_a(Array)
+
+      results = @movies_search.top_movies[:results]
+      expect(results[0]).to be_a(Hash)
+      expect(results[0][:vote_average]).to be_a(Float)
     end
   end
 
