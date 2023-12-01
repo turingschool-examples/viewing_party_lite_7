@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to user_path(@user)
     else
+      flash[:alert] = "Error: something is wrong with credentials"
       render :new
     end
   end
