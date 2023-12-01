@@ -60,6 +60,5 @@ RSpec.describe 'discover movies' do
       expect(page).to have_content('Star Wars')
       expect(page).to have_content('Star Wars Holiday Special')
       expect(page).to have_css('section.movie', count: 20)
-      save_and_open_page
     end
 end
