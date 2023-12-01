@@ -6,7 +6,7 @@
 <% @parties.each do |party| %>
   <section id="party-<%= party.id %>">
     <%= party.movie_title %><br>
-    <%= party.day %><br>
+    <%= party.pretty_day %><br>
     <%= party.start_time %><br><br>
   </section>
 <% end %>

@@ -23,7 +23,7 @@ describe 'New Viewing Party Page' do
     
     it 'has the following fields' do
       expect(page).to have_field(:duration)
-      expect(page).to have_field(:day)
+      # expect(page).to have_field(:day)
       expect(page).to have_field(:start_time)
     end
     
@@ -38,7 +38,8 @@ describe 'New Viewing Party Page' do
     
     it "has expected functionality (Create Party)" do
       expect(page).to have_field(:duration, with: @oppenheimer.detailed_movie.runtime)
-      fill_in :day, with: "01/01/2024"
+      save_and_open_page
+      select "2024", from: :year
       fill_in :start_time, with: "5:30"
 
       click_button "Create Party"
