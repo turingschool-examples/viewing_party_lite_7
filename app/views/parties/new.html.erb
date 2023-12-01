@@ -1,0 +1,15 @@
+<h1><%= @movie[:title] %></h3>
+
+<%= form_with url: "/users/#{@user.id}/movies/#{@movie[:id]}/viewing-party", method: :post, data: { turbo: false } do |f| %>
+  <p>When: <%= f.date_field :date, min: Date.today %></p>
+  <p>Time: <%= f.time_select :start_time, :ampm => true, :minute_step => 15, default: { hour: 19,min: 0 } %></p>
+  <p>Duration: <%= f.select :duration, options_for_select((0..360).step(15), default: @movie[:runtime]) %> minutes</p>
+  <h3>Invite Friends!</h3>
+  <% @users.each do |user| %>
+    <p><%= f.check_box user.name%>
+    <%= user.name%></p>
+  <% end %>
+  <p><%= f.submit "Create Party" %></p>
+<% end %>
+
+
