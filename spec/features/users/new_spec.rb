@@ -4,6 +4,14 @@ describe 'the User Registration Page' do
   before(:each) do
   end
 
+  it 'has a link to the landing page' do
+    visit '/'
+
+    expect(page).to have_link('Viewing Party Landing Page')
+    click_link('Viewing Party Landing Page')
+    expect(current_path).to eq(root_path)
+  end
+  
   it 'shows the fields to enter new user information' do
     visit register_path
     expect(page).to have_content('Register an Account')

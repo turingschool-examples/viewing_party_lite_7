@@ -1,6 +1,6 @@
 <%= render partial: "shared/nav" %>
 <%= button_to "Discover", user_discover_path(@user.id), params: { value: "top-rated" }, method: :get, data: { turbo: false }, local: true %>
-<%= button_to "Create a Viewing Party", "/users/#{@user.id}/movies/#{@movie.movie_id}/viewing-party/new", params: { movie_id: @movie.movie_id, movie_title: @movie.title, movie_runtime: @movie.runtime }, method: :get, data: { turbo: false }, local: true %>
+<%= button_to "Create a Viewing Party", "/users/#{@user.id}/movies/#{@movie.movie_id}/viewing-party/new", params: { movie_id: @movie.movie_id, movie_title: @movie.title, movie_runtime: @movie.runtime }, method: :get %>
 
 <p>Title: <%=@movie.title%></p>
 <p>Vote Average: <%=@movie.vote_average%></p>
