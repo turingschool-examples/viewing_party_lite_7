@@ -17,7 +17,7 @@ RSpec.describe MovieService do
     end
     describe '#return_results(query)' do
       it 'can return a list of movies from the API, ordered by popularity', :vcr do
-        discover = MovieService.new.return_results('discover/movie?q=top%20rated')
+        discover = MovieService.new.discover_results
         expect(discover).to be_a(Hash)
         expect(discover[:results]).to be_an(Array)
         movie_data = discover[:results].first
@@ -27,7 +27,7 @@ RSpec.describe MovieService do
         expect(movie_data[:title]).to be_a(String)
       end
       it 'can return a list of movies from the API, searching by title', :vcr do
-        searching = MovieService.new.return_results('search/movie?query=barbie')
+        searching = MovieService.new.search_results('barbie')
         expect(searching).to be_a(Hash)
         expect(searching[:results]).to be_an(Array)
         movie_data = searching[:results].first
