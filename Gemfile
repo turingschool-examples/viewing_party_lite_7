@@ -77,5 +77,5 @@ group :test do
   gem 'shoulda-matchers'
   gem 'vcr'
   gem 'webmock'
-  # gem 'simplecov'
+  gem 'simplecov'
 end
