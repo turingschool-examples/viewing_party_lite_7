@@ -13,7 +13,7 @@ class ViewingPartiesController < ApplicationController
       m = MovieFacade.movie(params[:movie_id])
       model.title = m.title
       model.poster_path = m.poster_path
-      model.duration = m.runtime
+      model.runtime = m.runtime
     end
 
     vp = ViewingParty.create!(
