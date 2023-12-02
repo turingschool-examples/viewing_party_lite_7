@@ -5,8 +5,6 @@ class MovieService
 
   def search_results(query)
     result = json_from_url("/3/search/movie?query=#{query}&page=1")
-    require 'pry'; binding.pry
-    result
   end
 
   def json_from_url(url)
