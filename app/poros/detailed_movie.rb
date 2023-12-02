@@ -1,5 +1,5 @@
 class DetailedMovie
-  attr_reader :title, :vote_average, :id, :runtime, :genres, :summary
+  attr_reader :title, :vote_average, :id, :runtime, :genres, :summary, :poster_path
 
   def initialize(movie_data)
     @title = movie_data[:title]
@@ -8,6 +8,7 @@ class DetailedMovie
     @runtime = movie_data[:runtime]
     @genres = movie_data[:genres]
     @summary = movie_data[:overview]
+    @poster_path = movie_data[:poster_path]
     # still need cast members, total reviews, review's information
   end
 
