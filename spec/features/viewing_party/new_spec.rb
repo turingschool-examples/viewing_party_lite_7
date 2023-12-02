@@ -4,6 +4,8 @@ RSpec.describe 'Movie Results Page', type: :feature do
   before(:each) do
     @user1 = User.create!(name: 'Scott DeVoss', email: 'scottd@gmail.com')
     @user2 = User.create!(name: 'Cory Powell', email: 'coryp@yahoo.com')
+    @user3 = User.create!(name: 'Tony the Tiger', email: 'tonyt@gmail.com')
+    @user4 = User.create!(name: 'Santa the Claus', email: 'santabb@gmail.com')
   end
   # Button to create a party
   # Details When the party is created, the user should be redirected back to the dashboard where the new event
@@ -17,10 +19,16 @@ RSpec.describe 'Movie Results Page', type: :feature do
       end
     end
 
-    xit 'I should see a form with fields to create a party with: Duration of Party, When, Start Time, 
+    it 'I should see a form with fields to create a party with: Duration of Party, When, Start Time, 
     Checkboxes to each existing user, Button to create a party and when clicked should take you back to the dashboard' do
       VCR.use_cassette('batman_details') do
+        visit "/users/#{@user1.id}/movies/155/viewing-party/new"
 
+        expect(page).to have_field(:duration)
+        expect(page).to have_field(:when)
+        expect(page).to have_field(:start_time)
+        expect(page).to have_field(:start_time)
+        expect(page).to have_button('Create A Party')
       end
     end
 
