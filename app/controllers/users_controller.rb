@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    new_user = User.new(name: params[:name], email: params[:email])
+    new_user = User.new(user_params)
     if new_user.save
       redirect_to user_path(new_user)
       flash.notice = "User Has Been Created."
@@ -21,4 +21,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user_parties = @user.user_parties
   end
+
+  private
+    def user_params
+      params.permit(:name, :email, :password)
+    end
 end
