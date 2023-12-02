@@ -12,7 +12,7 @@ RSpec.describe 'Movie show page' do
     click_link('Viewing Party Landing Page')
     expect(current_path).to eq(root_path)
   end
-  
+
   it 'shows the details of a movie' do
     VCR.use_cassette('Pulp Fiction') do
       visit("/users/#{@user_1.id}/movies/680")

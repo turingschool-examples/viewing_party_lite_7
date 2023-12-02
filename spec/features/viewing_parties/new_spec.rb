@@ -13,7 +13,7 @@ RSpec.describe 'new viewing party page', type: :feature do
     click_link('Viewing Party Landing Page')
     expect(current_path).to eq(root_path)
   end
-  
+
   it 'has a form to create a new viewing party', :vcr do
     visit user_discover_path(@user_1.id)
     click_button 'Find Top Rated Movies'

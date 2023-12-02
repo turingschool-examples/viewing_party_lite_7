@@ -1,7 +1,6 @@
 class MovieService
-
   def self.conn
-    Faraday.new(url: "https://api.themoviedb.org") do |faraday|
+    Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
       faraday.params['api_key'] = Rails.application.credentials.TMDB[:key]
     end
   end

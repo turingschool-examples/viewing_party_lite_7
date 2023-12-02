@@ -1,5 +1,4 @@
 class MovieFacade
-  
   def self.top_rated
     json_response = MovieService.top_rated
     json_response[:results].map do |movie|
