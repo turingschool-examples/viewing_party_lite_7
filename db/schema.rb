@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_01_083147) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_01_223802) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -30,6 +30,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_01_083147) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "host", default: true
+    t.integer "host_id"
     t.index ["party_id"], name: "index_user_parties_on_party_id"
     t.index ["user_id"], name: "index_user_parties_on_user_id"
   end
