@@ -17,9 +17,9 @@ RSpec.describe 'new viewing party page', type: :feature do
 
     expect(page).to have_field('time', type: 'time')
     fill_in('time', with: '20:00')
-    expect(page).to have_field('kam kennedy')
+    expect(page).to have_content('kam kennedy')
     expect(page).to have_button('Create a Viewing Party')
     click_on('Create a Viewing Party')
-    expect current_path.to eq(user_dashboard(@user_1.id))
+    expect(current_path).to eq("/users/#{@user_1.id}")
   end
 end

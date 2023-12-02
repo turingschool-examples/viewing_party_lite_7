@@ -22,9 +22,11 @@ class ViewingPartiesController < ApplicationController
 
     #write the helper method
     #goes through the params[:user_ids] (which is everyone who is checked off), find the user related to that user_id, and add them to the VP.users
-    @attendees.each do |id|
-      x = User.find_by(id: id)
-        @viewing_party.users << x
+    if @attendees != nil
+      @attendees.each do |id|
+        x = User.find_by(id: id)
+          @viewing_party.users << x
+      end
     end
 
     #adds in the user who created the viewing party
@@ -37,7 +39,6 @@ class ViewingPartiesController < ApplicationController
       @user_viewing_party.update(host: true)
     else
     end
-    require 'pry'; binding.pry
 
     if @viewing_party.save
       #write a flash message here saying VP was created
@@ -47,12 +48,3 @@ class ViewingPartiesController < ApplicationController
     end
   end
 end
-
-# def add_selected_user_to_VP
-#   @users.each do |user|
-#     if params[:add_"#{@user.name}"] == "1"
-#       @viewing_party.users  << user
-#     else
-#     end
-#   end
-# end
