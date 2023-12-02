@@ -13,7 +13,9 @@ Rails.application.routes.draw do
       get 'discover'
     end
     resources :movies, only: %i[index show] do
-      resources :viewing_party, only: [:new]
+      resources :viewing_parties, only: [:new, :create] do
+        resources :party_guests, only: [:create]
+      end
     end
   end
 end
