@@ -1,7 +1,8 @@
 class Movie
   attr_reader :title, 
               :vote_average, 
-              :id, :summary, 
+              :id, 
+              :summary, 
               :reviews, 
               :runtime, 
               :image
