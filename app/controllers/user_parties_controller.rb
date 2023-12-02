@@ -24,11 +24,11 @@ class UserPartiesController < ApplicationController
 
     if params[:invitees]
       params[:invitees].each do |id|
-        UserParty.create!(user_id: id.to_i, party_id: party.id, host: false)
+        UserParty.create!(user_id: id.to_i, party_id: party.id, host: false, host_id: user.id)
       end
     end
 
-    UserParty.create!(user_id: params[:user_id], party_id: party.id, host: true)
+    UserParty.create!(user_id: params[:user_id], party_id: party.id, host: true, host_id: params[:user_id])
     redirect_to user_path(user)
   end
 
