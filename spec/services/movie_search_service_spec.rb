@@ -19,4 +19,13 @@ RSpec.describe MovieSearchService, type: :service do
       expect(conn.params['api_key']).to eq(Rails.application.credentials.tmdb[:key])
     end
   end
+  describe 'get url' do
+    it 'gets a url' do
+      VCR.use_cassette('movie search') do
+        service = MovieSearchService.new
+        search_term = 'Star Wars'
+        expect(service.get_url("/3/search/movie?query=#{search_term}")).to be_a Hash
+      end
+    end
+  end
 end

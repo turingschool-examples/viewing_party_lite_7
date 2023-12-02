@@ -16,4 +16,12 @@ RSpec.describe Top20Service, type: :service do
       expect(conn.params['api_key']).to eq(Rails.application.credentials.tmdb[:key])
     end
   end
+  describe 'get url' do
+    it 'gets a url' do
+      VCR.use_cassette('20 url') do
+      service = Top20Service.new
+        expect(service.get_url('/3/movie/top_rated')).to be_a Hash
+      end
+    end
+  end
 end
