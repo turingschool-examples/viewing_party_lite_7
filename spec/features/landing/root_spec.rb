@@ -23,9 +23,9 @@ describe "landing page" do
   end
   
   it "has link to users index" do
-    expect(page).to have_link("All Users")
+    expect(page).to have_link("Existing Users")
 
-    click_link("All Users")
+    click_link("Existing Users")
 
     expect(current_path).to eq(users_path)
   end

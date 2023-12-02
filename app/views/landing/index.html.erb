@@ -4,21 +4,22 @@
 
 <%= render partial: 'landing/subheader' %>
 
-<br>
-<%= button_to "Create New User", new_user_path, method: :get %>
-<br>
-
 <div class="center">
+  <br>
+  <%= button_to "Create New User", new_user_path, method: :get %>
+  <br>
+
   <div class="sectionheader">
-    <%= link_to "All Users", users_path %>
+    <%= link_to "Existing Users", users_path %>
   </div>
 
   <br>
   <% @users.each do |user| %>
     <section id="user-<%= user.id %>">
-      <button class="nav">
+      <button class="nav_button">
         <h4><%= link_to "#{user.email}", user_path(user.id) %></h4>
       </button>
     </section>
+    <br>
   <% end %>
 </div>
