@@ -2,7 +2,7 @@
 
 <%= button_to "Discover Page", "/users/#{params[:id]}/discover", method: :get %>
 
-<% @facade.movies.each do |movie| %>
+<% @facade.discover_search.each do |movie| %>
   <section id="movie-<%= movie.movie_id %>">
     <li><%= link_to "#{movie.title}", "/users/#{params[:id]}/movies/#{movie.movie_id}", method: :get %></li>
     <li><%= "Vote Average: #{movie.average}" %></li>
