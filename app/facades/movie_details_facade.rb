@@ -11,4 +11,10 @@ class MovieDetailsFacade
     reviews = service.get_reviews(@movie_id)
     MovieDetails.new(details, credits, reviews)
   end
+
+  def single_movie_details
+    service = MovieService.new
+    details = service.movie_details(@movie_id)
+    SingleMovieDetails.new(details)
+  end
 end
