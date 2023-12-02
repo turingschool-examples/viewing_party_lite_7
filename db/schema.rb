@@ -42,7 +42,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_27_230600) do
   create_table "viewing_parties", force: :cascade do |t|
     t.integer "duration"
     t.date "day"
-    t.integer "time"
+    t.time "time"
     t.bigint "host_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

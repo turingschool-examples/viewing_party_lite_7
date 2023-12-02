@@ -15,7 +15,7 @@ class ViewingPartiesController < ApplicationController
       model.poster_path = m.poster_path
       model.duration = m.runtime
     end
-
+    
     vp = ViewingParty.create!(
       duration: params[:duration_of_party],
       day: params[:day],
@@ -32,6 +32,6 @@ class ViewingPartiesController < ApplicationController
       PartyUser.create!(viewing_party_id: vp.id, user_id: user_id)
     end
 
-    redirect_to discover_user_path(params[:user_id])
+    redirect_to user_path(params[:user_id])
   end
 end

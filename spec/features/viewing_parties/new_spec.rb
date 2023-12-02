@@ -60,7 +60,7 @@ RSpec.describe "New Viewing Party Page" do
 
       click_button("Create Party")
 
-      expect(current_path).to eq(user_path(@user1.id))
+      expect(current_path).to eq(user_path(@user1))
       within ".parties" do
         expect(page).to have_content(@movie.title)
       end

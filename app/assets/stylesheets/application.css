@@ -18,6 +18,7 @@
 @import "button_pri.css";
 @import "search.css";
 @import "view_party_form.css";
+@import "parties.css";
 
 body {
     font-family: 'Roboto', sans-serif;
