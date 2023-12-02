@@ -5,7 +5,22 @@
 
 <section id = "viewing-parties">
   <h3>Parties I'm Hosting</h3>
-
+    <% @user.viewing_parties.uniq.each do |party| %>
+      <% @movie_info.uniq.each do |movie| %>
+      <ol>
+        <u>Title:</u> <%= movie.title %><br>
+        <u>Date and Time:</u> <%= party.start_time %>
+      </ol>
+      <% end %>
+    <% end %>
+      
   <h3>Parties I'm Invited To</h3>
-  
+    <% @user.viewing_parties.each do |party| %>
+      <% @movie_info.each do |movie| %>
+      <ol>
+        <u>Title:</u> <%= movie.title %><br>
+        <u>Date and Time:</u> <%= party.start_time %>
+      </ol>
+      <% end %>
+    <% end %>
 </section>

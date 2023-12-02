@@ -30,8 +30,9 @@ class ViewingPartiesController < ApplicationController
     end
 
     #adds in the user who created the viewing party
-    @viewing_party.users << @user
-
+    unless @viewing_party.users.include?(@user)
+      @viewing_party.users << @user
+    end
     #find the host in the UserViewingParty table
     @user_viewing_party = UserViewingParty.find_by(user_id: @user.id, viewing_party_id: @viewing_party.id)
 
@@ -39,7 +40,7 @@ class ViewingPartiesController < ApplicationController
       @user_viewing_party.update(host: true)
     else
     end
-
+    
     if @viewing_party.save
       flash[:alert] = "Viewing Party Created!"
       redirect_to user_dashboard_path(@user.id)
