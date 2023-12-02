@@ -1,0 +1,8 @@
+<%= link_to "Return to Discover Page", "/users/#{params[:id]}/discover"  %><br>
+
+<h3>Results</h3>
+
+<% @movies.each do |movie| %>
+  <%= link_to "#{movie.title}", "/users/#{params[:id]}/movies/#{movie.id}" %>
+  <%= movie.vote_average.round(1) %><br>
+<% end %>
