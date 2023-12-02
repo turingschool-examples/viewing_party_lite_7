@@ -2,27 +2,34 @@
 
 <%= button_to "Discover Page", user_discover_index_path(@user), method: :get%>
 <%= button_to "Create Viewing Party for #{@movie_facade.detailed_movie.title}", new_user_movie_viewing_party_path(@user, @movie_facade.detailed_movie.id), method: :get %>
+<% cache("#{@movie_facade.detailed_movie.title}movie-details") do %>
+  <p>Vote: <%= @movie_facade.detailed_movie.vote_average %></p>
+  <p>Runtime: <%= @movie_facade.detailed_movie.runtime_in_hours_and_minutes %></p>
+  <p>Genres: <%= @movie_facade.detailed_movie.genres_as_list.to_sentence %></p>
+  <p>Summary: <%= @movie_facade.detailed_movie.summary %></p>
+<% end %>
 
-<p>Vote: <%= @movie_facade.detailed_movie.vote_average %></p>
-<p>Runtime: <%= @movie_facade.detailed_movie.runtime_in_hours_and_minutes %></p>
-<p>Genres: <%= @movie_facade.detailed_movie.genres_as_list.to_sentence %></p>
-<p>Summary: <%= @movie_facade.detailed_movie.summary %></p>
+<% cache("#{@movie_facade.detailed_movie.title}image-tag") do %>
+  <%= image_tag "https://image.tmdb.org/t/p/w500/#{@movie_poster_facade.movie_poster.file_path}", width: "200" %>
+<% end %>
 
-<%= image_tag "https://image.tmdb.org/t/p/w500/#{@movie_poster_facade.movie_poster.file_path}", width: "200" %>
+<% cache("#{@movie_facade.detailed_movie.title}cast-list") do %>
+  <h3>Cast</h3>
+  <ul>
+    <% @cast_facade.movie_cast.each do |actor| %>
+      <li><%= actor.name %> as <%= actor.character %></li>
+    <% end %>
+  </ul>
+<% end %>
 
-<h3>Cast</h3>
-<ul>
-  <% @cast_facade.movie_cast.each do |actor| %>
-    <li><%= actor.name %> as <%= actor.character %></li>
-  <% end %>
-</ul>
-
-<h3><%= @reviews_facade.movie_reviews.count %> Reviews</h3>
-  <% @reviews_facade.movie_reviews.each do |review| %>
-    <h4>
-      <%= image_tag "https://image.tmdb.org/t/p/w500/#{review.avatar_path}", width: "20" %>
-      <%= review.name %> (<%= review.username %>): 
-      <%= review.rating %> stars
-    </h4>
-    <p><%= review.content %></p>
-  <% end %>
+<% cache("#{@movie_facade.detailed_movie.title}reviews") do %>
+  <h3><%= @reviews_facade.movie_reviews.count %> Reviews</h3>
+    <% @reviews_facade.movie_reviews.each do |review| %>
+      <h4>
+        <%= image_tag "https://image.tmdb.org/t/p/w500/#{review.avatar_path}", width: "20" %>
+        <%= review.name %> (<%= review.username %>): 
+        <%= review.rating %> stars
+      </h4>
+      <p><%= review.content %></p>
+    <% end %>
+<% end %>
