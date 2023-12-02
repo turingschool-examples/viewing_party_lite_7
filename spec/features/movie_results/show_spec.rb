@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Movie Results Page', type: :feature do
-  before (:each) do
+  before(:each) do
     @user1 = User.create!(name: 'Scott DeVoss', email: 'scottd@gmail.com')
     @user2 = User.create!(name: 'Cory Powell', email: 'coryp@yahoo.com')
   end
