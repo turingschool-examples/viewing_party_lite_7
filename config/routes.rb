@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   get '/users/:id/discover', to: 'users/discover#index', as: :user_discover
   get '/users/:id/movies', to: 'movies#index', as: :top_rated_movies
   get '/users/:id/movies/:movie_id', to: 'movies#show', as: :movie_show
+  get '/users/:id/movies/:movie_id/viewing-party/new', to: 'viewing_parties#new'
+  post '/users/:id/movies/:movie_id/viewing-party/new', to: 'viewing_parties#create', as: :viewing_party_form
 end
