@@ -10,8 +10,10 @@
   <%= form.time_field :start_time %></p>
 
   <%@users.each do |user|%>
+  <% unless user.id == @user.id %>
    <p><%= form.label "add_#{user.name}", class: "checkbox-label" %>
-    <%= form.check_box "add_#{user.name}", class: "checkbox" %></p>
+    <%= form.check_box "user_ids", { multiple: true }, user.id, nil %></p>
+  <%end%>
   <%end%>
 
   <%= form.hidden_field :movie_title, value: @movie_title %>
