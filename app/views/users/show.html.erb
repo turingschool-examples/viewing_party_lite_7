@@ -13,6 +13,7 @@
   <br>
 
   <% @user_parties.each do |user_party| %>
+    <% cache("#{user_party.id}image-tag") do %>
     <div class="box">
       <section id="party-<%= user_party.id %>">
 
@@ -48,6 +49,7 @@
         <% end %>
       <% end %>
     </div>
+  <% end %>
   <% end %>
 
 </div>

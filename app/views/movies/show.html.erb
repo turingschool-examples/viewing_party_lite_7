@@ -8,7 +8,9 @@
   <div class="subheader">
   <h2><%= @movie_facade.detailed_movie.title %></h2>
   </div>
+  <% cache("#{@movie_facade.detailed_movie.title}image-tag") do %>
   <%= image_tag "https://image.tmdb.org/t/p/w500/#{@movie_poster_facade.movie_poster.file_path}", width: "200" %>
+  <% end %>
   <br><br>
   <%= button_to "Discover Page", user_discover_index_path(@user), method: :get%>
   <%= button_to "Create Viewing Party for #{@movie_facade.detailed_movie.title}", new_user_movie_viewing_party_path(@user, @movie_facade.detailed_movie.id), method: :get %>
@@ -21,24 +23,12 @@
 
   <p>Summary: <%= @movie_facade.detailed_movie.summary %></p>
 
-<% cache("#{@movie_facade.detailed_movie.title}image-tag") do %>
-  <%= image_tag "https://image.tmdb.org/t/p/w500/#{@movie_poster_facade.movie_poster.file_path}", width: "200" %>
-<% end %>
-
 <% cache("#{@movie_facade.detailed_movie.title}cast-list") do %>
   <h3>Cast</h3>
-  <ul>
     <% @cast_facade.movie_cast.each do |actor| %>
-      <li><%= actor.name %> as <%= actor.character %></li>
+      <%= actor.name %> as <%= actor.character %><br>
     <% end %>
-  </ul>
 <% end %>
-  <h3>Cast</h3>
-  <ul>
-    <% @cast_facade.movie_cast.each do |actor| %>
-      <li><%= actor.name %> as <%= actor.character %></li>
-    <% end %>
-  </ul>
 
 <% cache("#{@movie_facade.detailed_movie.title}reviews") do %>
   <h3><%= @reviews_facade.movie_reviews.count %> Reviews</h3>
