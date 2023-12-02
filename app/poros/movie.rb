@@ -1,5 +1,11 @@
 class Movie
-  attr_reader :title, :vote_average, :id, :summary, :reviews, :runtime, :image
+  attr_reader :title, 
+              :vote_average, 
+              :id, 
+              :summary, 
+              :reviews, 
+              :runtime, 
+              :image
 
   def initialize(data)
     @title = data[:original_title]
@@ -19,6 +25,7 @@ class Movie
     "#{hours}:#{remaining_min}"
   end
 
+  # Refactor in future, encapsulate in private method similar to other #_details methods
   def all_genres
     genres_names = @genres.map do |genre|
       genre[:name]
@@ -26,6 +33,17 @@ class Movie
     genres_names.join(', ')
   end
 
+  # Refactor in future, change to #cast_details similar to other methods
+  # Probably better to provide @cast as object usable for FE View work
+  def all_cast
+    cast = @cast.map do |c|
+      "#{c[:character]} Played by: #{c[:actor]}"
+    end
+  end
+
+  private 
+  # These two methods are only used here to setup instance variables
+  # Can encapsulate them in private method block
   def actor_details(data)
     if data[:cast]
       cast = data[:cast].first(10).map do |actor|
@@ -33,12 +51,6 @@ class Movie
       end
     else
       return nil
-    end
-  end
-
-  def all_cast
-    cast = @cast.map do |c|
-      "#{c[:character]} Played by: #{c[:actor]}"
     end
   end
 
