@@ -5,6 +5,15 @@ RSpec.describe 'new viewing party page', type: :feature do
     @user_1 = User.create!(name: 'Joseph Lee', email: 'jlee230@turing.edu')
     @user_2 = User.create!(name: 'Kam Kennedy', email: 'kkennedy230@turing.edu')
   end
+
+  it 'has a link to the landing page' do
+    visit '/'
+
+    expect(page).to have_link('Viewing Party Landing Page')
+    click_link('Viewing Party Landing Page')
+    expect(current_path).to eq(root_path)
+  end
+  
   it 'has a form to create a new viewing party', :vcr do
     visit user_discover_path(@user_1.id)
     click_button 'Find Top Rated Movies'

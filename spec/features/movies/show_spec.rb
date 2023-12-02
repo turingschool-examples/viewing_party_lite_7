@@ -4,6 +4,15 @@ RSpec.describe 'Movie show page' do
   before(:each) do
     @user_1 = User.create!(name: 'Joseph Lee', email: 'jlee230@turing.edu')
   end
+
+  it 'has a link to the landing page' do
+    visit '/'
+
+    expect(page).to have_link('Viewing Party Landing Page')
+    click_link('Viewing Party Landing Page')
+    expect(current_path).to eq(root_path)
+  end
+  
   it 'shows the details of a movie' do
     VCR.use_cassette('Pulp Fiction') do
       visit("/users/#{@user_1.id}/movies/680")

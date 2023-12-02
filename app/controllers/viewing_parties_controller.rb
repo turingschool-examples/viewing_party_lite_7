@@ -41,9 +41,10 @@ class ViewingPartiesController < ApplicationController
     end
 
     if @viewing_party.save
-      #write a flash message here saying VP was created
+      flash[:alert] = "Viewing Party Created!"
       redirect_to user_dashboard_path(@user.id)
     else
+      flash[:alert] = "Error: Please fill out all fields"
       render :new
     end
   end
