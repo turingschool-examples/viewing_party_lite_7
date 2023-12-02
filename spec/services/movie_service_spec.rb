@@ -15,12 +15,22 @@ RSpec.describe MovieService do
         expect(parsed_response[:results]).to be_an(Array)
       end
     end
-    describe '#discover' do
-      it 'returns a list of movies from the API, ordered by popularity', :vcr do
-        discover = MovieService.new.discover
+    describe '#return_results(query)' do
+      it 'can return a list of movies from the API, ordered by popularity', :vcr do
+        discover = MovieService.new.discover_results
         expect(discover).to be_a(Hash)
         expect(discover[:results]).to be_an(Array)
         movie_data = discover[:results].first
+        expect(movie_data).to have_key(:title)
+        expect(movie_data[:title]).to be_a(String)
+        expect(movie_data).to have_key(:vote_average)
+        expect(movie_data[:title]).to be_a(String)
+      end
+      it 'can return a list of movies from the API, searching by title', :vcr do
+        searching = MovieService.new.search_results('barbie')
+        expect(searching).to be_a(Hash)
+        expect(searching[:results]).to be_an(Array)
+        movie_data = searching[:results].first
         expect(movie_data).to have_key(:title)
         expect(movie_data[:title]).to be_a(String)
         expect(movie_data).to have_key(:vote_average)

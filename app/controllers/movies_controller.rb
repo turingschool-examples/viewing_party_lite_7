@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
-  def discover
-    response = conn.get('/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc')
+  def index
+    @user = User.find(params[:user_id])
+    @facade = PreviewFacade.new(params[:query]).movie_previews
   end
 end
