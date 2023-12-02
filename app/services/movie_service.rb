@@ -1,9 +1,9 @@
 class MovieService
-  def discover_results
+  def self.discover_results
     result = json_from_url('/3/discover/movie?q=top%20rated&page=1')
   end
 
-  def search_results(query)
+  def self.search_results(query)
     result = json_from_url("/3/search/movie?query=#{query}&page=1")
   end
 

@@ -5,11 +5,13 @@ class MoviesController < ApplicationController
   end
 
   def show 
-    @movie = MovieFacade.get_movie(params[:movie_id])
-    @cast = MovieFacade.get_cast(params[:movie_id])
-    @reviews = MovieFacade.get_reviews(params[:movie_id])
-    @review_count = MovieFacade.count_reviews(params[:movie_id])
-    # @user = User.find(params[:id])
+    # require 'pry'; binding.pry
+    facade = MovieFacade.new(params[:id])
+    @movie = facade.get_movie
+    @cast = facade.get_cast
+    @reviews = facade.get_reviews
+    @review_count = @reviews.count
+    @user = User.find(params[:user_id])
     # require 'pry'; binding.pry
   end
 end

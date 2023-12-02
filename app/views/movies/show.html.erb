@@ -1,9 +1,9 @@
 <%= render partial: "app_partials/home_link" %>
 <p><%= render partial: "app_partials/viewing_header" %></p>
 
-<p><%= button_to "Discover Page", "/users/#{@user.id}/discover" %></p>
+<p><%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %></p>
 
-<p><%= button_to "Create Viewing Party for #{@movie.name}", "/users/#{@user.id}/movies/#{@movie.id}/viewing_party/new" %></p>
+<p><%= button_to "Create Viewing Party for #{@movie.title}", "/users/#{@user.id}/movies/#{@movie.id}/viewing_party/new", method: :get %></p>
 
 <div id='movie_info'>
   <p> Vote: <%= @movie.vote_avg %></p> 
@@ -21,7 +21,7 @@
   </div>
 
   <div id='reviews'>
-    <p><%= @total_reviews %> Reviews: <% @reviews.each do |review| %>
+    <p><%= @review_count %> Reviews: <% @reviews.each do |review| %>
       <%= review.author %>
       <%= review.content %>
     <% end %></p>

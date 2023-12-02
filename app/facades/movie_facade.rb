@@ -6,6 +6,7 @@ class MovieFacade
 
   def get_movie
     movie_data = MovieService.movie_data(@id)
+    # require 'pry'; binding.pry
     Movie.new(movie_data)
   end
 
