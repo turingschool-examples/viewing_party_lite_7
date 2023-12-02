@@ -5,7 +5,7 @@ class MovieFacade
     @search = search
   end
 
-  def movies
+  def discover_search
     service = MovieService.new
     data = if !@search.nil?
              service.search(@search)
