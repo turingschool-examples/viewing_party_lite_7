@@ -2,10 +2,7 @@ class UsersController < ApplicationController
   def new; end
 
   def create
-    new_user = User.create(
-      name: params[:name],
-      email: params[:email]
-    )
+    new_user = User.create(user_params)
     if new_user.valid?
       redirect_to "/users/#{new_user.id}"
     else
@@ -16,7 +13,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    # @parties = @user.viewing_party ??- need table for viewing party and joins table for relation 
+    facade = MovieFacade.new(params[:movie_id])
+    @movie = facade.get_movie
   end
 
   def discover

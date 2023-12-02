@@ -21,4 +21,12 @@ RSpec.describe 'User Dashboard Page' do
     click_button 'Discover Movies'
     expect(current_path).to eq("/users/#{kam.id}/discover")
   end
+  it 'shows viewing party invites on a user dashboard', :vcr do
+    kam = User.create!(name: 'Kam', email: 'doofus23@gmail.com')
+    noelle = User.create!(name: 'Noelle', email: 'lofi_nowhale@gmail.com')
+    op = Movie.create!( )
+
+    ViewingParty.create!(user_id: kam.id, movie_id: duration: date: start_time: )
+    PartyGuest.create!(user_id: noelle.id, viewing_party_id: )
+  end
 end
