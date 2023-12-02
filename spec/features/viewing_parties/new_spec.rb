@@ -55,6 +55,8 @@ RSpec.describe "New Viewing Party Page" do
   describe "happy path" do
     it "redirects to the user's dashboard where the new event is shown", :vcr do
       check(@user2.formatted)
+      fill_in :day, with: "12/01/2023"
+      fill_in :start_time, with: "03:00 PM"
 
       click_button("Create Party")
 
