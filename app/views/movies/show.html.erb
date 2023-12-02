@@ -15,6 +15,7 @@
   <ol><%= actor.name %> plays the character of "<%=actor.character%>"</ol>
 <%end%>
 <p><u>Vote Count</u>: <%=@movie_info.vote_count%></p>
+<h3><u>Reviews</u></h3>
 <%@reviews.each do |review|%></p>
 <ol>
   <p><u>Review Author</u>: <%= review.author %></p>
