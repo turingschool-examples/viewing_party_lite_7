@@ -15,6 +15,7 @@ describe "Register Page" do
   it 'can register the user' do
     fill_in :name, with: "Janet Love"
     fill_in :email, with: "janetlovescooking@aol.com"
+    fill_in :password, with: "1234"
     click_button "Create New User"
     expect(current_path).to eq(user_path(User.last))
     expect(page).to have_content("Janet Love's Dashboard")
@@ -33,10 +34,12 @@ describe "Register Page" do
     it "cannot use an email that has already been used" do
       fill_in :name, with: "Janet Love"
       fill_in :email, with: "janetlovescooking@aol.com"
+      fill_in :password, with: "janetpassword"
       click_button "Create New User"
       visit register_path
       fill_in :name, with: "Jackson"
       fill_in :email, with: "janetlovescooking@aol.com"
+      fill_in :password, with: "jacksonpassword"
       click_button "Create New User"
 
       expect(current_path).to eq(register_path)
@@ -47,7 +50,7 @@ describe "Register Page" do
       click_button "Create New User"
 
       expect(current_path).to eq(register_path)
-      expect(page).to have_content("Error: Name can't be blank, Email is invalid, Email can't be blank")
+      expect(page).to have_content("Error: Name can't be blank, Password can't be blank, Email is invalid, Email can't be blank")
     end
   end
 end

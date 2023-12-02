@@ -6,9 +6,9 @@
 require 'webmock/rspec'
 
 def test_data
-  @user1 = User.create!(name: "Shawn", email: "shawn@website.com")
-  @user2 = User.create!(name: "Anthea", email: "anthea@website.com")
-  @user3 = User.create!(name: "Xero", email: "xero@spooky.com")
+  @user1 = User.create!(name: "Shawn", email: "shawn@website.com", password: "1234")
+  @user2 = User.create!(name: "Anthea", email: "anthea@website.com", password: "1234")
+  @user3 = User.create!(name: "Xero", email: "xero@spooky.com", password: "1234")
   
 end
 
@@ -18,15 +18,15 @@ def party_test_data
 end
 
 def new_spec_test_data
-  @user1 = User.create!(name: "Shawn", email: "shawn@website.com")
+  @user1 = User.create!(name: "Shawn", email: "shawn@website.com", password: "1234")
   @party1 = @user1.parties.create!(movie_title: "E.T.", duration: 120, day: Date.new(2023, 1, 23), start_time: "08:00")
   @party2 = @user1.parties.create!(movie_title: "Eraserhead", duration: 150, day: Date.new(2023, 1, 23), start_time: "07:00")
 end
 
 def invited_data
-  @user1 = User.create!(name: "Shawn", email: "shawn@website.com")
-  @user2 = User.create!(name: "Anthea", email: "anthea@website.com")
-  @user3 = User.create!(name: "Xero", email: "xero@spooky.com")
+  @user1 = User.create!(name: "Shawn", email: "shawn@website.com", password: "1234")
+  @user2 = User.create!(name: "Anthea", email: "anthea@website.com", password: "1234")
+  @user3 = User.create!(name: "Xero", email: "xero@spooky.com", password: "1234")
   @party1 = @user1.parties.create!(movie_title: "E.T.", duration: 120, day: Date.new(2023, 1, 23), start_time: "08:00")
   
   @test = UserParty.create(user_id:@user1.id, party_id:@party1.id, host: true)

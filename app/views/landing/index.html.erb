@@ -8,6 +8,11 @@
   <br>
   <%= button_to "Create New User", new_user_path, method: :get %>
   <br>
+<% if current_user %>
+    <%= button_to 'Logout', '/logout', method: :delete %>
+<% else %>
+    <%= link_to 'Login', '/login' %>
+<% end %>
 
   <div class="sectionheader">
     <%= link_to "Existing Users", users_path %>
