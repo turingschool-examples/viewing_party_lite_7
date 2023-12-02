@@ -4,7 +4,7 @@ class MovieReviewsFacade
   end
 
   def movie_reviews
-    service = MovieService.new
+    service = MovieReviewService.new
 
     json = service.movie_reviews(@movie_id)
 

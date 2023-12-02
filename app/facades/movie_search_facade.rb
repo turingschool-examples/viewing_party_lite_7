@@ -4,7 +4,7 @@ class MovieSearchFacade
   end
 
   def movies
-    service = MovieService.new
+    service = MovieSearchService.new
 
     json = service.search_movies(@search_params)
     movies = json[:results].map do |movie_data|

@@ -1,7 +1,6 @@
 class MoviesController < ApplicationController
-
+  before_action :find_user
   def index
-    @user = User.find(params[:user_id])
     if params[:query] == ""
       redirect_to user_discover_index_path(@user)
       flash.notice = "No Search Terms Provided."
@@ -13,10 +12,14 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:user_id])
     @movie_facade = DetailedMovieFacade.new(params[:id])
     @cast_facade = MovieCastFacade.new(params[:id])
     @movie_poster_facade = MoviePosterFacade.new(params[:id])
     @reviews_facade = MovieReviewsFacade.new(params[:id])
+  end
+
+  private
+  def find_user
+    @user = User.find(params[:user_id])
   end
 end

@@ -1,11 +1,11 @@
 class UserPartiesController < ApplicationController
+  before_action :find_user, only: [:new, :index]
+
   def index
-    @user = User.find(params[:user_id])
     @parties = @user.user_parties
   end
 
   def new
-    @user = User.find(params[:user_id])
     @movie_facade = DetailedMovieFacade.new(params[:movie_id])
   end
 
@@ -35,5 +35,9 @@ class UserPartiesController < ApplicationController
   private 
   def user_parties_params
     params.permit(:duration, :day, :start_time)
+  end
+
+  def find_user
+    @user = User.find(params[:user_id])
   end
 end
