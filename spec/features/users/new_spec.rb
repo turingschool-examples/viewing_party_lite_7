@@ -24,4 +24,17 @@ describe 'the User Registration Page' do
     expect(page).to have_content("Parties I'm Invited To")
     expect(page).to have_button('Discover Movies')
   end
+
+  it 'prevents users with non-unique emails' do
+    visit register_path
+    fill_in 'user[name]', with: 'Thomas Smith'
+    fill_in 'user[email]', with: 'tsmith11@turing.edu'
+    click_on('Register')
+    visit register_path
+    fill_in 'user[name]', with: 'Thomas Smith'
+    fill_in 'user[email]', with: 'tsmith11@turing.edu'
+    click_on('Register')
+
+    expect(current_path).to eq(register_path)
+  end
 end
