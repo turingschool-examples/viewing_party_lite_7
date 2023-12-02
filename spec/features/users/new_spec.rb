@@ -50,7 +50,7 @@ describe "Register Page" do
       click_button "Create New User"
 
       expect(current_path).to eq(register_path)
-      expect(page).to have_content("Error: Name can't be blank, Email is invalid, Email can't be blank")
+      expect(page).to have_content("Error: Name can't be blank, Password can't be blank, Email is invalid, Email can't be blank")
     end
   end
 end
