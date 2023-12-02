@@ -1,0 +1,15 @@
+<%= button_to 'Back to Discover Page', user_discover_index_path(@user), method: :get, data: { turbo: false }, local: true %><br>
+
+<section>
+  <% if @top_rated.present? %>
+    <% @top_rated.take(20).each do |movie| %>
+      <%= link_to movie.title, "/users/#{@user.id}/movies/#{movie.movie_id}" %>
+      <p>Average Rating: <%= movie.vote_avg %></p>
+    <% end %>
+  <% elsif @search_result.present? %>
+    <% @search_result.take(20).each do |movie| %>
+      <%= link_to movie.title, "/users/#{@user.id}/movies/#{movie.movie_id}" %>
+      <p>Average Rating: <%= movie.vote_avg %></p>
+    <% end %>
+  <% end %>
+</section>

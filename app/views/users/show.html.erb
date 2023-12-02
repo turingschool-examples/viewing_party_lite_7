@@ -1,0 +1,17 @@
+<h1> <%= @user.name %>'s Dashboard </h1>
+
+<p><b>Name: </b><%= @user.name %></p>
+<p><b>Email:</b> <%= @user.email %></p>
+
+<p><%= button_to "Discover Movies", user_discover_index_path(@user), method: :get, data: { turbo: false }, local: true %></p>
+  
+<section>
+  Viewing Parties: 
+  <% @user.user_parties.each_with_index do |user_party, index| %>
+    <p>Party #<%= index + 1 %>.</p>
+    <%# this needs to be put in a model method %>
+    <p>Duration: <%= Time.at(user_party.party.duration * 60).utc.strftime('%H:%M') %></p>
+    <p>Date: <%= user_party.party.date %></p>
+    <p>Start Time: <%= user_party.party.start_time %></p>
+  <% end %>
+</section>

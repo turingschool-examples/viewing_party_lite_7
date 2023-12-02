@@ -11,6 +11,10 @@
   </head>
 
   <body>
+    <% flash.each do |type, message| %>
+      <p><%= message %></p>
+    <% end %>
+    <%= link_to 'Back to Welcome Page', root_path %><br>
     <%= yield %>
   </body>
 </html>
