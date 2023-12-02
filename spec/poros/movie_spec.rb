@@ -7,7 +7,8 @@ RSpec.describe Movie do
       vote_average: 9.23,
       runtime: 200,
       genres: "Drama",
-      overview: "Nothing, just nothing"
+      overview: "Nothing, just nothing",
+      backdrop_path: "/a_path"
     }
 
     movie = Movie.new(data)
@@ -18,6 +19,7 @@ RSpec.describe Movie do
     expect(movie.instance_variable_get(:@runtime)).to eq(200)
     expect(movie.instance_variable_get(:@genres)).to eq("Drama")
     expect(movie.summary).to eq("Nothing, just nothing")
+    expect(movie.image).to eq("/a_path")
   end
 
   describe "instance methods" do
@@ -99,13 +101,13 @@ RSpec.describe Movie do
       }
 
       movie = Movie.new(data)
-      
       expected_results = [
           { actor: "Marlon Brando", character: "Don Vito Corleone" },
           { actor: "Al Pacino", character: "Michael Corleone" }
         ]
       
-      expect(@movie.actor_details(data)).to eq(expected_results)
+      # expect(@movie.actor_details(data)).to eq(expected_results)
+      expect(movie.instance_variable_get(:@cast)).to eq(expected_results)
     end
 
     it "#actor_details, when cast is not present" do
@@ -128,7 +130,7 @@ RSpec.describe Movie do
 
       movie = Movie.new(data)
 
-      expect(movie.actor_details(data)).to eq(nil)
+      expect(movie.instance_variable_get(:@cast)).to eq(nil)
     end
 
     it '#all_cast' do
@@ -229,7 +231,7 @@ RSpec.describe Movie do
         { author: "Suresh Chidurala", content: "Great Movie **Ever**" },
       ]
 
-      expect(movie.review_details(data)).to eq(expected_result)
+      expect(movie.instance_variable_get(:@reviews)).to eq(expected_result)
     end
   end
 end
