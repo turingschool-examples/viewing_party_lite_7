@@ -7,9 +7,7 @@ RSpec.describe 'Movie Results Page', type: :feature do
     @user3 = User.create!(name: 'Tony the Tiger', email: 'tonyt@gmail.com')
     @user4 = User.create!(name: 'Santa the Claus', email: 'santabb@gmail.com')
   end
-  # Button to create a party
-  # Details When the party is created, the user should be redirected back to the dashboard where the new event
-  #  is shown. The event should also be listed on any other user's dashbaords that were also invited to the party.
+
   describe "When I visit '/users/:user_id/movies/:movid_id/viewing_parties/new'" do
     it 'I should have the name of the movie title above a form' do
       VCR.use_cassette('batman_details') do
@@ -28,10 +26,22 @@ RSpec.describe 'Movie Results Page', type: :feature do
         expect(page).to have_field(:when)
         expect(page).to have_field(:start_time)
         expect(page).to have_field(:start_time)
+        expect(page).to have_content('Invite Other Users!')
+        expect(page).to_not have_unchecked_field(@user1.name)
         expect(page).to have_unchecked_field(@user2.name)
         expect(page).to have_unchecked_field(@user3.name)
         expect(page).to have_unchecked_field(@user4.name)
         expect(page).to have_button('Create A Party')
+
+        fill_in(:when, with: '2023-12-15')
+        fill_in(:start_time, with: '12:00:00 UTC')
+        check(@user2.name.to_s, allow_label_click: true)
+
+        click_button('Create A Party')
+
+        expect(current_path).to eq("/users/#{@user1.id}")
+        expect(page).to have_content('When: 2023-12-15')
+        expect(page).to have_content('Start Time: 12:00:00 UTC')
       end
     end
 
@@ -39,9 +49,6 @@ RSpec.describe 'Movie Results Page', type: :feature do
     length of the movie ' do
       VCR.use_cassette('batman_details') do
         #  a viewing party should NOT be created if set to a value less than the duration of the movie
-              # expect(page).to have_field(:name)
-              # expect(page).to have_field(:email)
-              # expect(page).to have_button('Create New User')
       end
     end
   end
