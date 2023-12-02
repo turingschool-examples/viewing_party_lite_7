@@ -5,15 +5,17 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   root 'welcome#index'
-    get '/register', to: 'users#new'
-    post '/register', to: 'users#create'
-    # get '/users/:id', to: 'users#show'
-    # get '/users/:id/discover', to: 'users#discover'
+  get '/register', to: 'users#new'
+  post '/register', to: 'users#create'
 
-    resources :users do
-      member do
-        get 'discover'
+  resources :users, only: [:show] do
+    member do
+      get 'discover'
+    end
+    resources :movies, only: %i[index show] do
+      resources :viewing_parties, only: [:new, :create] do
+        resources :party_guests, only: [:create]
       end
-      resources :movies
+    end
   end
 end
