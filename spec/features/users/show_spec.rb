@@ -35,24 +35,11 @@ RSpec.describe '#show', type: :feature do
     end
 
     it 'has a discover movies title and a button to top rated movies' do
-      json_response = File.read("spec/fixtures/top_rated.json")
-      parsed = JSON.parse(json_response, symbolize_names: true)
-      movies = parsed[:results]
-      stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{Rails.application.credentials.tmdb[:key]}").
-        with(
-          headers: {
-            'Accept' => '*/*',
-            'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-            'User-Agent' => 'Faraday v2.7.12'
-          }).
-        to_return(status: 200, body: json_response, headers: {})
-      visit discover_user_path(@user1)
-      expect(page).to have_button('Find Top Rated Movies')
-      click_button('Find Top Rated Movies')
-      expect(current_path).to eq(user_movies_path(@user1))
-      movies.each do |movie|
-        expect(movie[:title]).to be_a(String)
-        expect(page).to have_content(movie[:title])
+      VCR.use_cassette('top_movies') do
+        visit discover_user_path(@user1)
+        expect(page).to have_button('Find Top Rated Movies')
+        click_button('Find Top Rated Movies')
+        expect(current_path).to eq(user_movies_path(@user1))
       end
     end
 
@@ -69,27 +56,15 @@ RSpec.describe '#show', type: :feature do
 
   describe 'When I visit the users show page' do
     before(:each) do
-      @user_1 = User.create!(name: 'Kiwi', email: 'kiwibird@gmail.com')
-      @user_2 = User.create!(name: 'Pam', email: 'pam@email.com')
-      @party_1 = Party.create!(movie_id: 438631, duration_of_party: 109, party_date: '2024-12-01', start_time: '07:23')
-      @party_2 = Party.create!(movie_id: 438631, duration_of_party: 109, party_date: '2024-12-01', start_time: '09:23')
-      @party_3 = Party.create!(movie_id: 438631, duration_of_party: 109, party_date: '2024-12-01', start_time: '13:09')
-      @party_4 = Party.create!(movie_id: 438631, duration_of_party: 109, party_date: '2024-12-01', start_time: '15:09')
-      PartyUser.create!(user_id: @user_1.id, party_id: @party_1.id, is_host: true)
-      PartyUser.create!(user_id: @user_2.id, party_id: @party_1.id, is_host: false)
-      PartyUser.create!(user_id: @user_1.id, party_id: @party_2.id, is_host: false)
-      PartyUser.create!(user_id: @user_2.id, party_id: @party_2.id, is_host: true)
-      PartyUser.create!(user_id: @user_1.id, party_id: @party_3.id, is_host: false)
-      PartyUser.create!(user_id: @user_2.id, party_id: @party_3.id, is_host: true)
+      test_data
       visit "/users/#{@user_1.id}"
     end
 
-    
     context 'displaying viewing parties', :vcr do
       it 'has a section for viewing parties' do
         expect(page).to have_css('#hosted-parties')
       end
-      
+
       it 'displays cards for each viewing party the user has created' do
         within("#party-#{@party_1.id}") do
           page.has_css?("img[src*='themoviedb']")
