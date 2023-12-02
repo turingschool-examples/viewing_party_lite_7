@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Movie Details Page' do 
   it 'exists', :vcr do 
-    user = User.last
+    user = User.create!({ name: "Karl", email: "lokis_email@gmail.com" })
     visit "/users/#{user.id}/movies/872585"
 
     expect(page).to have_content('Viewing Party')
