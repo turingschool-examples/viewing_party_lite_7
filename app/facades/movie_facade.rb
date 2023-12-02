@@ -6,7 +6,6 @@ class MovieFacade
 
   def get_movie
     movie_data = MovieService.movie_data(@id)
-    # require 'pry'; binding.pry
     Movie.new(movie_data)
   end
 
@@ -21,10 +20,4 @@ class MovieFacade
       Review.new(review_data)
     end
   end
-
-  # def count_reviews
-  #   MovieService.reviews(@id)[:results].map do |review_data|
-  #     Review.new(review_data)
-  #   end.count
-  # end
 end
