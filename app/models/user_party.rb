@@ -15,4 +15,8 @@ class UserParty < ApplicationRecord
     end
     @movie_poster_facade.movie_poster.file_path
   end
+
+  def invited_users
+    party.users.where.not(id: user.id)
+  end
 end
