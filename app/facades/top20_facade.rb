@@ -1,6 +1,6 @@
 
 class Top20Facade
-  attr_reader :top20, :top_movies
+  attr_reader :top_movies
 
   def initialize(top_movies)
     @top_movies = top_movies
