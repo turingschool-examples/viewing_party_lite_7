@@ -19,6 +19,10 @@
 
 <h3><%= @reviews_facade.movie_reviews.count %> Reviews</h3>
   <% @reviews_facade.movie_reviews.each do |review| %>
-    <h4><%= review.author %></h4>
-    <%= review.content %>
+    <h4>
+      <%= image_tag "https://image.tmdb.org/t/p/w500/#{review.avatar_path}", width: "20" %>
+      <%= review.name %> (<%= review.username %>): 
+      <%= review.rating %> stars
+    </h4>
+    <p><%= review.content %></p>
   <% end %>

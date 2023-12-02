@@ -33,6 +33,7 @@ class UserPartiesController < ApplicationController
   end
 
   private 
+  
   def user_parties_params
     params.permit(:duration, :day, :start_time)
   end
