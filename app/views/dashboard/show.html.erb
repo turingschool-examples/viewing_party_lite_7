@@ -8,15 +8,25 @@
       <div class="img">
         <p><%= image_tag "https://image.tmdb.org/t/p/w500/#{MoviePosterFacade.new(user_party.party.movie_id).movie_poster.file_path}", width: "200" %>
       </div>
+      <h4>Host: <%= user_party.host.name %>
       <p><%= link_to "#{user_party.party.movie_title}", user_movie_path(@primary, user_party.party.movie_id) %><br>
       <%= user_party.party.pretty_day %><br>
       <%= user_party.party.pretty_time %><br><br></p>
       <p><%= user_party.party.duration_in_hours_and_minutes %></p>
-      <% if user_party.hosting? == true %>
+      <% if user_party.host_id == @viewed.id %>
         <p>Hosting</p>
       <% else %>
         <p>Invited</p>
       <% end %>
     </section>
+    <ul>
+      <% user_party.party.users.each do |user| %>
+        <% if user.id == user_party.user_id %>
+          <b><li><%= user.name %></li></b>
+        <% else %>
+          <li><%= user.name %></li>
+        <% end %>
+      <% end %>
+      </ul>
   </div>
 <% end %>
