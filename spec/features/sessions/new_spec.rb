@@ -14,7 +14,7 @@ describe 'New Viewing Party Page' do
 
   it "can log in a user" do
     click_link("Login")
-    fill_in :name, with: "Jennifer"
+    fill_in :email, with: "Jenn@jen.com"
     fill_in :password, with: "1234"
     click_button("Log In")
 
@@ -23,11 +23,11 @@ describe 'New Viewing Party Page' do
 
   it "can log out a user" do
     click_link("Login")
-    fill_in :name, with: "Jennifer"
+    fill_in :email, with: "Jenn@jen.com"
     fill_in :password, with: "1234"
     click_button("Log In")
     click_button("Logout")
-    
+
     expect(current_path).to eq("/login")
     expect(page).to have_content("Logged Out")
   end
@@ -39,27 +39,27 @@ describe 'New Viewing Party Page' do
       click_button("Log In")
   
       expect(current_path).to eq("/login")
-      expect(page).to have_content("Invalid name or Password")
+      expect(page).to have_content("Invalid Email or Password")
     end
 
     it "must have correct password" do
       click_link("Login")
-      fill_in :name, with: "Jennifer"
+      fill_in :email, with: "Jenn@jen.com"
       fill_in :password, with: "123456"
       click_button("Log In")
   
       expect(current_path).to eq("/login")
-      expect(page).to have_content("Invalid name or Password")
+      expect(page).to have_content("Invalid Email or Password")
     end
 
-    it "must match user's name" do
+    it "must match user's email" do
       click_link("Login")
-      fill_in :name, with: "1234"
+      fill_in :email, with: "Jenn@jea.com"
       fill_in :password, with: "1234"
       click_button("Log In")
 
       expect(current_path).to eq("/login")
-      expect(page).to have_content("Invalid name or Password")
+      expect(page).to have_content("Invalid Email or Password")
     end
   end
 end

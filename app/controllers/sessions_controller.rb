@@ -3,24 +3,24 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if User.where(name: params[:name]) != []
-      user = User.where(name: params[:name]).first
+    if User.where(email: params[:email]) != []
+      user = User.where(email: params[:email]).first
       if user && user.authenticate(params[:password])
         session[:user_id] = user.id
         flash[:notice]="Login successful"
         redirect_to '/'
       else
-        flash[:notice]="Invalid name or Password"
+        flash[:notice]="Invalid Email or Password"
         redirect_to '/login'
       end
     else
-      flash[:notice]="Invalid name or Password"
+      flash[:notice]="Invalid Email or Password"
       redirect_to '/login'
     end
   end
 
   def destroy
-    session[:name] = nil
+    session[:email] = nil
     flash[:notice]="Logged Out"
     redirect_to '/login'
   end
