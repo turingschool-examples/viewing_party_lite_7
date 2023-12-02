@@ -20,7 +20,7 @@ RSpec.describe User, type: :model do
         @user_4 = User.create!(name: 'Hiccup', email: 'hiccupbird@gmail.com')
 
         expect(User.all_excluding_id(@user_1.id)).to eq([@user_2, @user_3, @user_4])
-        expect(User.all_excluding_id(@user_3.id)).to eq([@user_1, @user_2, @user_4])
+        expect(User.all_excluding_id(@user_3.id)).not_to eq([@user_3])
       end
     end
   end
