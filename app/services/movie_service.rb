@@ -16,22 +16,22 @@ class MovieService
   end
 
   def self.top_rated_movies
-    json_from_url('movie/top_rated')
+    json_from_url('/3/movie/top_rated')
   end
 
   def self.search_by_title(title)
-    json_from_url("search/movie?query=#{title}")
+    json_from_url("/3/search/movie?query=#{title}")
   end
 
-  def self.find_by_id(id)
-    json_from_url("movie/#{id}")
+  def self.movie_data(id)
+    json_from_url("/3/movie/#{id}")
   end
 
   def self.cast(id)
-    json_from_url("movie/#{id}/credits")
+    json_from_url("/3/movie/#{id}/credits")
   end
 
   def self.reviews(id)
-    json_from_url("movie/#{id}/reviews")
+    json_from_url("/3/movie/#{id}/reviews")
   end
 end

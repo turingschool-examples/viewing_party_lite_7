@@ -4,8 +4,6 @@ class MoviesController < ApplicationController
   end
 
   def show 
-    response = conn.get('https://api.themoviedb.org/3/movie/872585?language=en-US&append_to_response=credits,reviews')
-
     @movie = MovieFacade.get_movie(params[:movie_id])
     @cast = MovieFacade.get_cast(params[:movie_id])
     @reviews = MovieFacade.get_reviews(params[:movie_id])
