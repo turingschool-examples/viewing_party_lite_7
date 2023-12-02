@@ -15,7 +15,7 @@ class ViewingPartiesController < ApplicationController
       model.poster_path = m.poster_path
       model.duration = m.runtime
     end
-    
+
     vp = ViewingParty.create!(
       duration: params[:duration_of_party],
       day: params[:day],

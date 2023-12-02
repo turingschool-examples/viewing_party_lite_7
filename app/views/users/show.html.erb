@@ -12,7 +12,7 @@
   <% @parties.each do | party | %>
     <div class="party-card">
 <!--        movie poster-->
-      <p class="party-card-heading"><%= party.movie.title %></p>
+      <%= link_to party.movie.title, user_movie_path(@user, party.movie.id), class: "party-card-heading"%>
       <p><%= party.day %></p>
       <p>Start Time: <%= party.time_formatted %></p>
       <p><%= party.user_status(@user.id) %></p>

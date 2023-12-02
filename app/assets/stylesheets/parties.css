@@ -49,6 +49,8 @@
     font-size: 20px;
     text-transform: capitalize;
     font-weight: 700;
+    text-decoration: none;
+    color: inherit;
 }
 
 .party-card p:not(.heading) {
