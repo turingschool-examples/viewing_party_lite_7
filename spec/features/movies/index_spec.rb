@@ -5,6 +5,14 @@ describe 'the User Discover Dashboard page' do
     @user = User.create!(name: 'Joseph Lee', email: 'jlee230@turing.edu')
   end
 
+  it 'has a link to the landing page' do
+    visit '/'
+
+    expect(page).to have_link('Viewing Party Landing Page')
+    click_link('Viewing Party Landing Page')
+    expect(current_path).to eq(root_path)
+  end
+  
   it "tests the 'Find Top Rated Movies' function", :vcr do
     VCR.use_cassette('top_rated_movies') do
       visit user_discover_path(@user.id)

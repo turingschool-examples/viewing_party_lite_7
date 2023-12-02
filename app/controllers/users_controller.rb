@@ -17,6 +17,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to user_dashboard_path(@user)
     else
+      flash[:alert] = "Error: Please fill out all fields and use a unique email"
       render :new
     end
   end
