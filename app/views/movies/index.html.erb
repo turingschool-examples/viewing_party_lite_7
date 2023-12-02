@@ -1,8 +1,8 @@
 
 <% if params[:top_movies].present?%>
-  <% @movies.each do |movie| %>
-    <section class="movie">
-    Movie: <%= link_to movie[:title], "/users/#{@user.id}/movies/#{movie[:id]}" %>     Vote Average - <%= movie[:vote_average] %>
+  <% @facade.top20.each do |movie| %>
+    <section class="top movie">
+    Movie: <%= link_to "#{movie.title}", user_movie_path(@user.id, movie.id) %>     Vote Average - <%= movie.vote_average %>
     </section>
   <% end %>
 <% end %>
@@ -10,7 +10,7 @@
 <% if params[:search].present? %>
   <% @facade.movies.each do |movie| %>
     <section class="movie search">
-    Movie: <%= movie.title %>     Vote Average - <%= movie.vote_average %>
+    Movie: <%= link_to "#{movie.title}", user_movie_path(@user.id, movie.id) %>     Vote Average - <%= movie.vote_average %>
     </section>
   <% end %>
 <% end %>
