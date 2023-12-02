@@ -13,6 +13,5 @@ class Top20Service
   def get_url(url)
     response = conn.get(url)
     json = JSON.parse(response.body, symbolize_names: true)
-    # @movies = json[:results]
   end
 end

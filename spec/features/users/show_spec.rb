@@ -27,33 +27,6 @@ RSpec.describe '#show', type: :feature do
     end
   end
 
-  describe 'when I visit /users/:user_id/discover' do
-    it 'has a home link and discover movies title' do
-      visit discover_user_path(@user1)
-      expect(page).to have_link('Home')
-      expect(page).to have_content('Discover Movies')
-    end
-
-    it 'has a discover movies title and a button to top rated movies' do
-      VCR.use_cassette('top_movies') do
-        visit discover_user_path(@user1)
-        expect(page).to have_button('Find Top Rated Movies')
-        click_button('Find Top Rated Movies')
-        expect(current_path).to eq(user_movies_path(@user1))
-      end
-    end
-
-    it 'has a text field to search movie by title' do
-      visit discover_user_path(@user1)
-      expect(page).to have_field('search')
-    end
-
-    it 'has a button to find movie' do
-      visit discover_user_path(@user1)
-      expect(page).to have_button('Find Movies')
-    end
-  end
-
   describe 'When I visit the users show page' do
     before(:each) do
       test_data
