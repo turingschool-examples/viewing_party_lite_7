@@ -1,3 +1,0 @@
-class DiscoverFacade
-  
-end

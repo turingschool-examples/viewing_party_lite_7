@@ -1,7 +1,11 @@
 class MovieService
-  # def discover
-  #   json_from_url('/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc')
-  # end
+  def discover_results
+    result = json_from_url('/3/discover/movie?q=top%20rated&page=1')
+  end
+
+  def search_results(query)
+    result = json_from_url("/3/search/movie?query=#{query}&page=1")
+  end
 
   def self.json_from_url(url)
     response = conn.get(url)
@@ -9,7 +13,7 @@ class MovieService
   end
 
   def self.conn
-    conn = Faraday.new(url: 'https://api.themoviedb.org/3') do |faraday|
+    conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
       faraday.headers['authorization'] =
         Rails.application.credentials.tmdb[:access_token]
     end
