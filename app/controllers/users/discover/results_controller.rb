@@ -1,11 +1,13 @@
 require './poros/movie'
-require './services/movies_search'
+require './facades/movie_search_facade'
+require './services/movies_search_service'
 class Users::Discover::ResultsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    movies_search = MoviesSearch.new
+    movie_search = MovieSearchFacade.new
+    movies_search = MoviesSearchService.new
     if params[:top_rated].present?
-      @top_rated = movies_search.top_movies
+      @top_rated = movie_search.top_rated_movies
     elsif params[:title].present?
       @search_result = movies_search.search_movies(params[:title])
     end
@@ -13,7 +15,7 @@ class Users::Discover::ResultsController < ApplicationController
 
   def show 
     @user = User.find(params[:user_id])
-    movies_search = MoviesSearch.new
+    movies_search = MoviesSearchService.new
     @movie = movies_search.genre_runtime(params[:id])
     @cast_members = movies_search.movie_cast(params[:id])
     @reviews = movies_search.movie_reviews(params[:id])
