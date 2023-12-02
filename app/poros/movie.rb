@@ -4,9 +4,8 @@ class Movie
               :vote_avg,
               :runtime, 
               :genres, 
-              :summary,
-              :image 
-
+              :summary
+              
   def initialize(movie_data)
     @id = movie_data[:id]
     @title = movie_data[:original_title]
@@ -14,7 +13,6 @@ class Movie
     @runtime = movie_data[:runtime]
     @genres = movie_data[:genres]
     @summary = movie_data[:overview]
-    @image = movie_data[:poster_path]
   end
 
   def formatted_runtime

@@ -16,7 +16,7 @@ RSpec.describe 'Movie Details Page' do
     visit "/users/#{kam.id}/movies/872585"
 
     within '#movie_info' do 
-      expect(page).to have_content('Vote: 8.155')
+      expect(page).to have_content('Vote: 8.156')
       expect(page).to have_content('Runtime: 3hr 1min')
       expect(page).to have_content('Drama')
       expect(page).to have_content('History')
