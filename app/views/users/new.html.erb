@@ -1,4 +1,12 @@
-<h3>Register a New User </h3>
+<%= render partial: 'layouts/box' %>
+<%= render partial: 'layouts/button' %>
+<%= render partial: 'layouts/centerframe' %>
+
+<%= render partial: 'landing/subheader' %>
+<div class="center">
+  <div class="sectionheader">
+  <h3>Register a New User </h3>
+  </div>
 
 <%= form_with url: users_path, method: :post, local: :true do |f| %>
 <%= f.label "Name:" %>

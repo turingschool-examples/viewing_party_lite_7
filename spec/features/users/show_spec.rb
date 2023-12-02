@@ -44,8 +44,8 @@ describe 'User Dashboard Page' do
       expect(page).to have_content("Hosting")
     end
 
-    it "has the host listed" do
-      expect(page).to have_content("Host: Shawn")
+    it "host only shows if user is not host" do
+      expect(page).to_not have_content("Host: Shawn")
     end
 
     it "has the users who are invited" do
@@ -54,8 +54,8 @@ describe 'User Dashboard Page' do
       expect(page).to have_content(@user3.name)
     end
 
-    it "has my name in bold" do
-      expect(html).to include('<b><li>Shawn</li></b>')
+    it "has Invited Guests in bold" do
+      expect(html).to include('<b>Invited Guests</b>')
     end
   end
 

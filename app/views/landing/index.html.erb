@@ -1,20 +1,30 @@
 <%= render partial: 'layouts/box' %>
+<%= render partial: 'layouts/button' %>
+<%= render partial: 'layouts/centerframe' %>
+
 <%= render partial: 'landing/subheader' %>
 
-<%= button_to "Create New User", new_user_path, method: :get %>
+<div class="center">
+  <br>
+  <%= button_to "Create New User", new_user_path, method: :get %>
+  <br>
 <% if current_user %>
     <%= button_to 'Logout', '/logout', method: :delete %>
 <% else %>
     <%= link_to 'Login', '/login' %>
 <% end %>
 
-<div class="box">
-<div class="subheader">
-<h3><%= link_to "All Users", users_path %></h3>
-</div>
+  <div class="sectionheader">
+    <%= link_to "Existing Users", users_path %>
+  </div>
+
+  <br>
   <% @users.each do |user| %>
     <section id="user-<%= user.id %>">
-      <h4><%= link_to "#{user.email}", user_path(user.id) %></h4>
+      <button class="nav_button">
+        <h4><%= link_to "#{user.email}", user_path(user.id) %></h4>
+      </button>
     </section>
+    <br>
   <% end %>
 </div>
