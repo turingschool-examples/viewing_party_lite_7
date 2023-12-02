@@ -15,8 +15,14 @@ describe "landing page" do
   end
 
   it "has a list of existing users which links to the users dashboard" do
-    expect(page).to have_content(@user1.name)
-    expect(page).to have_content(@user2.name)
+    expect(page).to have_link(@user1.email)
+    expect(page).to have_link(@user2.email)
+    click_link(@user1.email)
+
+    expect(current_path).to eq(user_path(@user1))
+  end
+  
+  it "has link to users index" do
     expect(page).to have_link("All Users")
 
     click_link("All Users")

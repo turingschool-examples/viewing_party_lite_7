@@ -3,7 +3,7 @@ class PopularMoviesFacade
   end
 
   def movies
-    service = MovieService.new
+    service = PopularMoviesService.new
 
     json = service.popular_movies
     movies = json[:results].map do |movie_data|

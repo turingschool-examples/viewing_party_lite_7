@@ -4,7 +4,7 @@ class DetailedMovieFacade
   end
 
   def detailed_movie
-    service = MovieService.new
+    service = DetailedMovieService.new
 
     json = service.detailed_movie(@movie_id)
     @detailed_movie = DetailedMovie.new(json)

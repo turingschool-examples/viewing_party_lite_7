@@ -10,5 +10,7 @@ class Party < ApplicationRecord
     start_time.strftime("%l:%M %p")
   end
 
-  
+  def duration_in_hours_and_minutes
+    "#{duration/60}h #{duration % 60}min"
+  end
 end
