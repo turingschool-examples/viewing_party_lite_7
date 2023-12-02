@@ -1,10 +1,28 @@
- <ul>
- <% @facade.movies.each do |movie| %>
-  <u><%= link_to "#{movie.title}", user_movie_path(@user, movie.id) %></u><br>
-  Vote Average: <%= movie.vote_average %><br><br>
-<% end %>
-</ul>
+<%= render partial: 'layouts/box' %>
+<%= render partial: 'layouts/button' %>
+<%= render partial: 'layouts/centerframe' %>
+<%= render partial: 'separatetext' %>
 
-<h3><%= @facade.movies.length %> Results</h3>
+<%= render partial: 'landing/subheader' %>
 
-<%= button_to "Return to Discover Page", user_discover_index_path(@user), method: :get%>
+<div class="center">
+
+  <%= button_to "Discover Page", user_discover_index_path(@user), method: :get%><br>
+
+  <div class="movie-list">
+    <% @facade.movies.each do |movie| %>
+      <div class="movie">
+        <div class="title">
+          <u><%= link_to "#{movie.title}", user_movie_path(@user, movie.id) %></u>
+        </div>
+        <div class="vote-average">
+          Vote Average: <%= movie.vote_average %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <h3><%= @facade.movies.length %> Results</h3>
+
+  <%= button_to "Return to Discover Page", user_discover_index_path(@user), method: :get%>
+</div>
