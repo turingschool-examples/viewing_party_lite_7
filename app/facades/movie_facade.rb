@@ -50,15 +50,20 @@ class MovieFacade
 
   # @return poro::movie with all details
   def self.movie(id)
-    movie = @@movie_cache.find { |movie| movie.id == id }  # find it if it's there
-
-    if movie.nil?
-      movie = Poro::Movie.new(TMDBService.get_movie(id))
-      movie = add_details(movie)
-      @@movie_cache.append(movie)
+    # require "byebug"; byebug
+    Rails.cache.fetch("movie_#{id}") do
+      m = Poro::Movie.new(TMDBService.get_movie(id))
+      add_details(m)
     end
+    # movie = @@movie_cache.find { |movie| movie.id == id }  # find it if it's there
+    #
+    # if movie.nil?
+    #   movie = Poro::Movie.new(TMDBService.get_movie(id))
+    #   movie = add_details(movie)
+    #   @@movie_cache.append(movie)
+    # end
 
-    movie
+    
   end
 
   def self.top_rated

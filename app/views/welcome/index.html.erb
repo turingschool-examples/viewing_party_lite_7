@@ -5,7 +5,8 @@
 </div>
 <br>
 <div class="container">
+  <h3>Existing Users</h3>
   <% @users.each do | user | %>
-      <%= link_to "#{user.email}", user_path(user) %>
+    <div><%= link_to "#{user.email}", user_path(user) %></div>
   <% end %>
 </div>
