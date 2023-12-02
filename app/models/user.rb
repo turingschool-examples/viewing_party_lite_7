@@ -18,5 +18,4 @@ class User < ApplicationRecord
   def self.all_excluding_id(id)
     User.where.not('id = ?', id)
   end
-
 end

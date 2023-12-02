@@ -63,10 +63,9 @@ RSpec.describe 'Movie Details Page', type: :feature do
           expect(page).to have_content('Review by: Habenula')
           expect(page).to have_content("The worst movie I've ever seen. Don't waste your time.")
           expect(page).to have_content('Review by: tahmid_007')
-          expect(page).to have_content("Great movie with excellent BG music and visual effects. Waiting for part two.")
+          expect(page).to have_content('Great movie with excellent BG music and visual effects. Waiting for part two.')
         end
       end
     end
   end
-  
 end

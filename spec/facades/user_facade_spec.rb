@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe UserFacade do
-  describe "facade returns details", :vcr do
+  describe 'facade returns details', :vcr do
     before(:each) do
       @user = User.create!(name: 'Kiwi', email: 'kiwibird@gmail.com')
       @facade = UserFacade.new(@user.id)
@@ -36,7 +36,7 @@ RSpec.describe UserFacade do
     it 'finds the host and guest name' do
       user1 = User.create!(name: 'Sam', email: 'sam@email.com')
       user2 = User.create!(name: 'Susan', email: 'susan@email.com')
-      party_params = { movie_id: 129, duration_of_party: 155, party_date: "2020/12/12", start_time: "12:12" }
+      party_params = { movie_id: 129, duration_of_party: 155, party_date: '2020/12/12', start_time: '12:12' }
       party = Party.create!(party_params)
       PartyUser.create!(user_id: user1.id, party_id: party.id, is_host: true)
       user2.parties << party
