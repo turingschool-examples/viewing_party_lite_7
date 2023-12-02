@@ -49,8 +49,9 @@ RSpec.describe 'Users show page', type: :feature do
     # Date and Time of Event
     # That I am the host of the party
     # List of friends invited to the viewing party
-    xit 'I should see the viewing parties that the user has been invited to with the details: Movie Image, Movie Title(link to movie
-    show page), Date and Time of event, that the user is the host of the party, and list of friends invited to the viewing party' do
+    xit 'I should see the viewing parties that the user has been invited to with the details: Movie Image, Movie Title
+    (link to movie show page), Date and Time of event, that the user is the host of the party, and list of friends
+    invited to the viewing party' do
 
     end
   end

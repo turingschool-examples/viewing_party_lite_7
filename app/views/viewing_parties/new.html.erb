@@ -7,6 +7,11 @@
   <%= form.date_field :when %>
   <%= form.label 'What time does it start?' %>
   <%= form.time_field :start_time %>
-
+  <%= @users.each do |user| %>
+    <% if user.id != @user.id %>
+      <%= form.label "#{user.name}" %>
+      <%= form.check_box "#{user.name}" %>
+    <% end %>
+  <% end %>
   <%= form.submit 'Create A Party' %>
 <% end %>

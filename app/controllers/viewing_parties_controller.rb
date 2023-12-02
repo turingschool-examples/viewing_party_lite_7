@@ -1,8 +1,9 @@
-class ViewingPartyController < ApplicationController
+class ViewingPartiesController < ApplicationController
   before_action :find_movie, only: [:new]
   before_action :find_user, only: [:new]
   def new
-    
+    @users = User.all
+    # require 'pry';binding.pry
   end
   def create
   end

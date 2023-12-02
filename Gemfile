@@ -75,7 +75,7 @@ group :test do
   gem 'orderly'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
+  # gem 'simplecov'
   gem 'vcr'
   gem 'webmock'
-  gem 'simplecov'
 end
