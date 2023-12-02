@@ -7,7 +7,8 @@ class Movie
               :overview,
               :cast,
               :vote_count,
-              :review_info
+              :review_info,
+              :image_url
 
   def initialize(attributes)
     @movie_id      = attributes[:id]
@@ -17,6 +18,7 @@ class Movie
     @genre = attributes[:genres]
     @overview = attributes[:overview]
     @vote_count = attributes[:vote_count]
+    @image_url = attributes[:poster_path]
   end
 
   def convert_runtime_to_hours_and_minutes

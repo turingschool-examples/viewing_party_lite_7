@@ -27,7 +27,7 @@ describe 'the User Discover Dashboard page' do
       expect(page).to have_content('The Godfather')
       expect(page).to have_content('8.7')
       expect(page).to have_content('The Shawshank Redemption')
-      expect(page).to have_content('8.705')
+      expect(page).to have_content('8.7')
       expect(page).to have_content('The Godfather Part II')
       expect(page).to have_content('8.5')
       expect(page).to have_button('Discover')

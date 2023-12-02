@@ -7,6 +7,7 @@ class CreateViewingParties < ActiveRecord::Migration[7.0]
       t.datetime :start_time
       t.string :movie_title
       t.string :movie_id
+      t.string :host_id
 
       t.timestamps
     end

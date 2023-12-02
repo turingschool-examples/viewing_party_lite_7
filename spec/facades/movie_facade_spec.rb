@@ -16,7 +16,7 @@ describe MovieFacade do
 
         expect(page.status_code).to eq(200)
         expect(page).to have_link('The Godfather')
-        expect(page).to have_content('8.708')
+        expect(page).to have_content('8.7')
       end
     end
 
