@@ -4,8 +4,8 @@ class Party < ApplicationRecord
   
   validates_presence_of :duration, :date, :start_time, :movie_id
 
-  def self.create_with_checks(params, host, movie)
-    party = new({
+  def self.create_with_checks(params, movie)
+    party = Party.new({
       duration: params[:duration],
       date: params[:date],
       start_time: params[:start_time],

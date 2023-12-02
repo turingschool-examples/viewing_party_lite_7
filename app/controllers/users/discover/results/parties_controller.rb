@@ -11,7 +11,7 @@ class Users::Discover::Results::PartiesController < ApplicationController
     host = User.find(params[:user_id])
     movies_search = MoviesSearchService.new
     movie = movies_search.genre_runtime(params[:id])
-    success, party = Party.create_with_checks(params, host, movie)
+    success, party = Party.create_with_checks(params, movie)
     if success
       user_party = UserParty.create!(user: host, party: party, host: true)
       User.all.each do |user|

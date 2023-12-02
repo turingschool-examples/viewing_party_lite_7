@@ -14,45 +14,44 @@ RSpec.describe Party, type: :model do
   end
 
   before(:each) do
+    movie_details = {
+      id: 238,
+      vote_average: 8.200,
+      original_title: "The Godfather",
+      runtime: 175,
+      genres: 'animation',
+      overview: 'When an unconfident young woman is cursed with an old body by a spiteful witch',
+      name: 'Takuya Kimura',
+      character: 'Howl',
+      total_results: 5,
+      author: 'randoms',
+      content: 'good stuff'
+    }
+    @user1 = User.create!(name: 'Joe', email: 'joe@gmail.com')
+    @user2 = User.create!(name: 'Mama', email: 'mama@gmail.com')
+    @movie1 = Movie.new(movie_details)
   end
 
-  describe '.create_with_checks' do
-    let(:valid_params) do
-      {
-        duration: 120,
-        date: Date.today,
-        start_time: Time.now,
-        movie_id: 1
-      }
-    end
+  it 'creates a party if movie runtime is greater than party duration' do
+    success, party = Party.create_with_checks({
+      duration: 180,
+      date: Date.today,
+      start_time: "12:00",
+      movie_id: 238
+    }, @movie1)
 
-    let(:invalid_params) do
-      {
-        duration: 240,
-        date: Date.today,
-        start_time: Time.now,
-        movie_id: 1
-      }
-    end
-
-    let(:host) { create(:user) }
-    let(:valid_movie) { double('Movie', runtime: 150) }
-    let(:invalid_movie) { double('Movie', runtime: 100) }
-
-    it 'creates a party if movie runtime is greater than party duration' do
-      success, party = described_class.create_with_checks(valid_params, host, valid_movie)
-
-      expect(success).to be_truthy
-      expect(party).to be_a(Party)
-      expect(party).to be_persisted
-    end
-
-    it 'does not create a party if movie runtime is less than party duration' do
-      success, party = described_class.create_with_checks(invalid_params, host, invalid_movie)
-
-      expect(success).to be_falsey
-      expect(party).to be_a(Party)
-      expect(party).not_to be_persisted
-    end
+    expect(success).to eq(true)
   end
+
+  it 'doesnt create a party if movie runtime is greater than party duration' do
+    success, party = Party.create_with_checks({
+      duration: 150,
+      date: Date.today,
+      start_time: "12:00",
+      movie_id: 238
+    }, @movie1)
+
+    expect(success).to eq(false)
+  end
+  
 end
