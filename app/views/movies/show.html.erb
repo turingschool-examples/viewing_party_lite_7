@@ -1,21 +1,23 @@
 <%= render partial: "shared/nav" %>
 <%= button_to "Discover", user_discover_path(@user.id), params: { value: "top-rated" }, method: :get, data: { turbo: false }, local: true %>
-<%= button_to "Create a Viewing Party", "/users/#{@user.id}/movies/#{@movie.movie_id}/viewing-party/new", params: { movie_id: @movie.movie_id, movie_title: @movie.title, movie_runtime: @movie.runtime }, method: :get, data: { turbo: false }, local: true %>
+<%# <%= button_to "Create a Viewing Party", "/users/#{@user.id}/movies/#{@movie.movie_id}/viewing-party/new", params: { movie_id: @movie.movie_id, movie_title: @movie.title, movie_runtime: @movie.runtime }, method: :get, data: { turbo: false }, local: true %>
 
-<p>Title: <%=@movie.title%></p>
-<p>Vote Average: <%=@movie.vote_average%></p>
-<p>Runtime: <%=@movie.convert_runtime_to_hours_and_minutes%></p>
-<p>Genres:</p>
-<%@movie.genre.each do |genre|%>
+<p><u>Title</u>: <%=@movie_info.title%></p>
+<p><u>Vote Average</u>: <%=@movie_info.vote_average%></p>
+<p><u>Runtime</u>: <%=@movie_info.convert_runtime_to_hours_and_minutes%></p>
+<p><u>Genres</u>:</p>
+<%@movie_info.genre.each do |genre|%>
   <ol><%= genre[:name] %></ol>
 <%end%>
-<p>Overview: <%=@movie.overview%></p>
-<p>Cast:</p>
-<%@movie.cast.take(10).each do |actor|%>
-  <ol>Actor <%= actor[:name] %> plays the character of <%=actor[:character]%></ol>
+<p><u>Overview</u>: <%=@movie_info.overview%></p>
+<h3><u>Cast</u>:</h3>
+<%@cast.each do |actor|%>
+  <ol><%= actor.name %> plays the character of "<%=actor.character%>"</ol>
 <%end%>
-<p>Vote Count: <%=@movie.vote_count%></p>
-<%@movie.review_info.take(5).each do |review|%></p>
-  <p>Review Author: <%= review[:author] %></p>
-  <p>Review Text: <%= review[:content] %></p>
+<p><u>Vote Count</u>: <%=@movie_info.vote_count%></p>
+<%@reviews.each do |review|%></p>
+<ol>
+  <p><u>Review Author</u>: <%= review.author %></p>
+  <p><u>Review Text</u>: <%= review.content %></p>
+</oL>
 <%end%>
