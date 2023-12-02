@@ -88,6 +88,13 @@ RSpec.describe 'Viewing Party Page', type: :feature do
         expect(page).to have_content('Host: Morgan')
         expect(page).to have_content('Guest List: Sam, Susan')
       end
+      it 'excludes host id' do 
+        user1 = User.create!(name: 'Sam', email: 'sam@email.com')
+        user2 = User.create!(name: 'Susan', email: 'susan@email.com')
+        people = User.all
+        expect(people).to eq([@user, user1, user2])
+        expect(people.all_excluding_id(@user.id)).to eq([user1, user2])
+      end
     end
   end
 end
