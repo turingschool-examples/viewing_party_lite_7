@@ -31,11 +31,11 @@ http_interactions:
       X-Memc-Key:
       - 4f4d3badf3c9d576e4abc7160d5da6a0
       X-Memc-Age:
-      - '6778'
+      - '1355'
       X-Memc-Expires:
-      - '15737'
+      - '22870'
       Date:
-      - Fri, 01 Dec 2023 22:36:14 GMT
+      - Sat, 02 Dec 2023 00:19:24 GMT
       Etag:
       - W/"571ab4f4b50d676093ea10eaf4708063"
       Vary:
@@ -44,13 +44,13 @@ http_interactions:
       X-Cache:
       - RefreshHit from cloudfront
       Via:
-      - 1.1 3460152017718aa24664bf5b7ddf58de.cloudfront.net (CloudFront)
+      - 1.1 cc6ceb31b4cbecfe6f32c9ec7a5f2bf8.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - SLC50-C1
+      - DFW57-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - siVhgmNQfkXrtEffPtpo7YK2jaD3r7NgaADoNK64CkcG3p9kp9V3ZQ==
+      - utYODgN3s84i8tflVihR1aSKQ5a505m7g8W3Hiuokvx8QUS4On3x0w==
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
@@ -63,7 +63,7 @@ http_interactions:
         Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
         offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.708,"vote_count":19034}'
-  recorded_at: Fri, 01 Dec 2023 22:36:14 GMT
+  recorded_at: Sat, 02 Dec 2023 00:18:13 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/238?api_key=c5d87ff6f6c9e5b4d80f024fe25ecdf9
@@ -95,11 +95,11 @@ http_interactions:
       X-Memc-Key:
       - 4f4d3badf3c9d576e4abc7160d5da6a0
       X-Memc-Age:
-      - '6778'
+      - '1355'
       X-Memc-Expires:
-      - '15737'
+      - '22870'
       Date:
-      - Fri, 01 Dec 2023 22:36:14 GMT
+      - Sat, 02 Dec 2023 00:19:24 GMT
       Etag:
       - W/"571ab4f4b50d676093ea10eaf4708063"
       Vary:
@@ -108,13 +108,13 @@ http_interactions:
       X-Cache:
       - RefreshHit from cloudfront
       Via:
-      - 1.1 3beac575dd806b6224c0825634a28bc8.cloudfront.net (CloudFront)
+      - 1.1 3d0244d93468697e8191825e8571d06c.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - SLC50-C1
+      - DFW57-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 03nPgrJyZS61Rw1G8Zbeboc8jDqsW6FfllPKiJ769ISkWS_9by7q3A==
+      - XEXLBcvLSnF9ur_--ZEHQ_lbsVzp_xTEcAKPLqvf2JuOf3Vf9Mog6A==
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
@@ -127,7 +127,7 @@ http_interactions:
         Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
         offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.708,"vote_count":19034}'
-  recorded_at: Fri, 01 Dec 2023 22:36:14 GMT
+  recorded_at: Sat, 02 Dec 2023 00:18:13 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/238?api_key=c5d87ff6f6c9e5b4d80f024fe25ecdf9
@@ -159,11 +159,11 @@ http_interactions:
       X-Memc-Key:
       - 4f4d3badf3c9d576e4abc7160d5da6a0
       X-Memc-Age:
-      - '6778'
+      - '1355'
       X-Memc-Expires:
-      - '15737'
+      - '22870'
       Date:
-      - Fri, 01 Dec 2023 22:36:14 GMT
+      - Sat, 02 Dec 2023 00:19:24 GMT
       Etag:
       - W/"571ab4f4b50d676093ea10eaf4708063"
       Vary:
@@ -172,13 +172,13 @@ http_interactions:
       X-Cache:
       - RefreshHit from cloudfront
       Via:
-      - 1.1 3460152017718aa24664bf5b7ddf58de.cloudfront.net (CloudFront)
+      - 1.1 3cb6f3f47d56232df6d6c959bb4ba486.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - SLC50-C1
+      - DFW57-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - TKXSmpFisLEYZ3DnfMd-NwPr8pDF8ZuiVL6syk1OtwM5OTTt_14Dcg==
+      - H4JoWU_JEpe4lX81F0WV-FP6mG-u4wFkvkBCNMGVz_yJLnIuwOtj5w==
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
@@ -191,5 +191,5 @@ http_interactions:
         Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
         offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.708,"vote_count":19034}'
-  recorded_at: Fri, 01 Dec 2023 22:36:14 GMT
+  recorded_at: Sat, 02 Dec 2023 00:18:14 GMT
 recorded_with: VCR 6.2.0
