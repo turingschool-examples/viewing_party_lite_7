@@ -1,5 +1,6 @@
-class MovieSearchService
+# frozen_string_literal: true
 
+class MovieSearchService
 # def movie_search(search)
 #   conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
 #     faraday.params['api_key'] = Rails.application.credentials.tmdb[:key]
