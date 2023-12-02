@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/603?api_key=93b46ea8d36479e03d86f173959a1760
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.12
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Sat, 02 Dec 2023 19:02:20 GMT
+      Server:
+      - openresty
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - d7b46d06efc0d5211baefb1f3169818c
+      X-Memc-Age:
+      - '4147'
+      X-Memc-Expires:
+      - '23715'
+      Etag:
+      - W/"5f8bd830b717984ae7ae7c8fdb20a228"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 bd96da9a6020f2a5d5499cedf78d68f2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - Rl6WDBK_k5nGCppt9P_kBNbFhdWzaCIk_ykjzwwUiYDDD-mqKurjgA==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/giBJ0ezYNEobFBfB8H4JNTjmll.jpg","belongs_to_collection":{"id":2344,"name":"The
+        Matrix Collection","poster_path":"/bV9qTVHTVf0gkW0j7p7M0ILD4pG.jpg","backdrop_path":"/bRm2DEgUiYciDw3myHuYFInD7la.jpg"},"budget":63000000,"genres":[{"id":28,"name":"Action"},{"id":878,"name":"Science
+        Fiction"}],"homepage":"http://www.warnerbros.com/matrix","id":603,"imdb_id":"tt0133093","original_language":"en","original_title":"The
+        Matrix","overview":"Set in the 22nd century, The Matrix tells the story of
+        a computer hacker who joins a group of underground insurgents fighting the
+        vast and powerful computers who now rule the earth.","popularity":89.809,"poster_path":"/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg","production_companies":[{"id":79,"logo_path":"/at4uYdwAAgNRKhZuuFX8ShKSybw.png","name":"Village
+        Roadshow Pictures","origin_country":"US"},{"id":372,"logo_path":null,"name":"Groucho
+        II Film Partnership","origin_country":""},{"id":1885,"logo_path":"/xlvoOZr4s1PygosrwZyolIFe5xs.png","name":"Silver
+        Pictures","origin_country":"US"},{"id":174,"logo_path":"/IuAlhI9eVC9Z8UQWOIDdWRKSEJ.png","name":"Warner
+        Bros. Pictures","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1999-03-30","revenue":463517383,"runtime":136,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Welcome
+        to the Real World.","title":"The Matrix","video":false,"vote_average":8.209,"vote_count":24135}'
+  recorded_at: Sat, 02 Dec 2023 19:02:20 GMT
+recorded_with: VCR 6.2.0
