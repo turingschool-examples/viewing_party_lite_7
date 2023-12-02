@@ -16,11 +16,11 @@ RSpec.describe 'Movie Results Index (/users/:user_id/movies)' do
     it 'displays the top movies, by vote average, limited to 20 results', :vcr do
       user = User.last
       visit "/users/#{user.id}/discover"
-      fill_in :search, with: 'Barbie'
+      fill_in :query, with: 'Barbie'
       click_button 'Find Movies'
       expect(page).to have_button('Discover Page')
-      # expect(page).to have_link("Leo")
-      # expect(page).to have_content("Vote Average: 7.7")
+      expect(page).to have_link("Barbie")
+      expect(page).to have_content("Vote Average: 7.185")
     end
   end
 end
