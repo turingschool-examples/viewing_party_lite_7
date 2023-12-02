@@ -61,4 +61,15 @@ RSpec.describe MovieService do
       end
     end
   end
+
+  describe `#movie_images` do
+    it 'gets an image' do
+      VCR.use_cassette('dune_image') do
+        image = MovieService.new.movie_images(438631)
+        expect(image[:backdrops]).to be_a Array
+        expect(image[:logos]).to be_a Array
+        expect(image[:posters]).to be_a Array
+      end
+    end
+  end
 end

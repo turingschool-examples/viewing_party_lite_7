@@ -27,5 +27,4 @@ class MovieService
   def movie_images(id)
     get_url("/3/movie/#{id}/images")
   end
-
 end
