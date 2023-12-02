@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= render partial: 'layouts/header' %>
     <title>ViewingPartyLite7</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
@@ -11,6 +12,16 @@
   </head>
 
   <body>
+    <div class="container">
+        <% flash.each do |type, notice| %>
+          <h5 class="text-info"><b><%= notice %></b></h5>
+        <% end %>
+      </div>
     <%= yield %>
+    
+  <style>
+
+ </style>
+
   </body>
 </html>

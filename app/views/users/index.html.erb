@@ -1,0 +1,21 @@
+<%= render partial: 'layouts/centerframe' %>
+<%= render partial: 'layouts/button' %>
+
+<%= render partial: 'landing/subheader' %>
+
+<div class="center">
+  <div class="subheader">
+    <h3>All Users</h3>
+  </div>
+
+<% @users.each do |user| %>
+  <button class="nav">
+    <section id="user-<%= user.id %>">
+      <%= user.name %>
+      <%= link_to "#{user.email}", user_path(user.id) %>
+    </section>
+  </button>
+  <br><br>
+<% end %>
+
+</div>

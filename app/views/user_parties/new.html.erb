@@ -1,0 +1,30 @@
+<%= render partial: 'layouts/box' %>
+<%= render partial: 'layouts/button' %>
+<%= render partial: 'layouts/centerframe' %>
+
+<%= render partial: 'landing/subheader' %>
+
+<div class="center">
+  <h2>Create a Movie Party for <%= @movie_facade.detailed_movie.title %></h2>
+
+  <%= button_to "Discover Page", user_discover_index_path(@user), method: :get%>
+
+  <h3>Viewing Party Details</h3>
+  Movie Title   <b><%= @movie_facade.detailed_movie.title %></b>
+  <%= form_with url: user_movie_viewing_party_index_path(@user, @movie_facade.detailed_movie.id), method: :post, local: :true do |f| %>
+    <%= f.label "Duration of Party" %> <%= f.text_field :duration, value: @movie_facade.detailed_movie.runtime %><br>
+    <%= f.label "Day" %> <%= f.date_field :day %><br>
+    <%= f.label "Start Time" %> <%= f.time_field :start_time %>
+
+    <h4>Invite Other Users</h4>
+    <% User.other_users(@user).each do |user| %>
+      <div id ="invited_user-<%= user.id %>">
+        <%= f.check_box "invitees", { multiple: true }, user.id, nil %>
+        <%= "#{user.name} (#{user.email})"%>
+      </div>
+    <% end %>
+
+    <%= f.submit "Create Party" %>
+
+  <% end %>
+</div>
