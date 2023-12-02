@@ -11,7 +11,7 @@ describe 'the User Registration Page' do
     click_link('Viewing Party Landing Page')
     expect(current_path).to eq(root_path)
   end
-  
+
   it 'shows the fields to enter new user information' do
     visit register_path
     expect(page).to have_content('Register an Account')

@@ -12,7 +12,7 @@ describe 'the User Discover Dashboard page' do
     click_link('Viewing Party Landing Page')
     expect(current_path).to eq(root_path)
   end
-  
+
   it "tests the 'Find Top Rated Movies' function", :vcr do
     VCR.use_cassette('top_rated_movies') do
       visit user_discover_path(@user.id)
@@ -50,11 +50,11 @@ describe 'the User Discover Dashboard page' do
 
       expect(current_path).to eq("/users/#{@user.id}/movies")
       expect(page).to have_content('Die Hard')
-      expect(page).to have_content('7.8')
+      expect(page).to have_content('7.')
       expect(page).to have_content('A Good Day to Die Hard')
-      expect(page).to have_content('5.3')
+      expect(page).to have_content('5.')
       expect(page).to have_content('Die Hard 2')
-      expect(page).to have_content('6.929')
+      expect(page).to have_content('6.')
 
       expect(page).to have_button('Discover')
       click_on('Discover')

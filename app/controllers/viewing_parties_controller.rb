@@ -20,31 +20,21 @@ class ViewingPartiesController < ApplicationController
 
     @viewing_party = ViewingParty.create!(viewing_party_params)
 
-    #write the helper method
-    #goes through the params[:user_ids] (which is everyone who is checked off), find the user related to that user_id, and add them to the VP.users
-    if @attendees != nil
-      @attendees.each do |id|
-        x = User.find_by(id: id)
-          @viewing_party.users << x
-      end
-    end
+    @viewing_party.add_attendees(@attendees)
 
-    #adds in the user who created the viewing party
+    # adds in the user who created the viewing party
     @viewing_party.users << @user
 
-    #find the host in the UserViewingParty table
+    # find the host in the UserViewingParty table
     @user_viewing_party = UserViewingParty.find_by(user_id: @user.id, viewing_party_id: @viewing_party.id)
 
-    if @user_viewing_party
-      @user_viewing_party.update(host: true)
-    else
-    end
+    @user_viewing_party&.update(host: true)
 
     if @viewing_party.save
-      flash[:alert] = "Viewing Party Created!"
+      flash[:alert] = 'Viewing Party Created!'
       redirect_to user_dashboard_path(@user.id)
     else
-      flash[:alert] = "Error: Please fill out all fields"
+      flash[:alert] = 'Error: Please fill out all fields'
       render :new
     end
   end
