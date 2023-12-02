@@ -1,0 +1,9 @@
+Style/FrozenStringLiteralComment:
+  Enabled: false
+  
+Metrics/BlockLength:
+  IgnoredMethods:
+    - RSpec.context
+    - RSpec.describe
+    - RSpec.it
+  Max: 50

@@ -1,0 +1,13 @@
+<%= render partial: "app_partials/home_link" %>
+
+<h1> Viewing Party </h1>
+
+<p><%= button_to "Create a New User", "/register", method: :get, data: { turbo: false } %></p>
+
+<p><h2> Existing Users </h2></p>
+
+  <section id="users">
+  <% @users.each do |user| %>
+    <li><%= link_to "#{user.email}", "/users/#{user.id}" %></li>
+    <% end %>
+  </section> 

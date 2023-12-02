@@ -1,0 +1,8 @@
+<%= render partial: "app_partials/home_link" %>
+<%= render partial: "app_partials/viewing_header" %>
+
+<p><h2><%= @user.name %>'s Dashboard</h2></p>
+
+<p><%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %><p>
+
+<h4><p> Viewing Parties </p></h4>

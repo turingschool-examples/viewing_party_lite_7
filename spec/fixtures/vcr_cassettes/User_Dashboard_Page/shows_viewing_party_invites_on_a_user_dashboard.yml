@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/872585
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - "<TMDB_ACCESS_TOKEN>"
+      User-Agent:
+      - Faraday v2.7.12
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 2cfa2a01a4401ed8303de759c11f95f2
+      X-Memc-Age:
+      - '4828'
+      X-Memc-Expires:
+      - '22711'
+      Date:
+      - Sat, 02 Dec 2023 20:47:33 GMT
+      Etag:
+      - W/"398c2f6641595c480e214f4000d90fc0"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - RefreshHit from cloudfront
+      Via:
+      - 1.1 f21e3e9a304f8d928ae6a7ae28c35ce8.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - CMH68-P4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - jbANMYWgO9ULJOJX6PZ_AoEdVEoUioDtY98xXDVPSWCvW1WrErADvw==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/fm6KqXpk3M2HVveHwCrBSSBaO0V.jpg","belongs_to_collection":null,"budget":100000000,"genres":[{"id":18,"name":"Drama"},{"id":36,"name":"History"}],"homepage":"http://www.oppenheimermovie.com","id":872585,"imdb_id":"tt15398776","original_language":"en","original_title":"Oppenheimer","overview":"The
+        story of J. Robert Oppenheimer''s role in the development of the atomic bomb
+        during World War II.","popularity":1020.836,"poster_path":"/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg","production_companies":[{"id":9996,"logo_path":"/3tvBqYsBhxWeHlu62SIJ1el93O7.png","name":"Syncopy","origin_country":"GB"},{"id":33,"logo_path":"/8lvHyhjr8oUKOOy2dKXoALWKdp0.png","name":"Universal
+        Pictures","origin_country":"US"},{"id":507,"logo_path":"/aRmHe6GWxYMRCQljF75rn2B9Gv8.png","name":"Atlas
+        Entertainment","origin_country":"US"}],"production_countries":[{"iso_3166_1":"GB","name":"United
+        Kingdom"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"2023-07-19","revenue":950200000,"runtime":181,"spoken_languages":[{"english_name":"Dutch","iso_639_1":"nl","name":"Nederlands"},{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"The
+        world forever changes.","title":"Oppenheimer","video":false,"vote_average":8.157,"vote_count":5095}'
+  recorded_at: Sat, 02 Dec 2023 20:47:33 GMT
+recorded_with: VCR 6.2.0
