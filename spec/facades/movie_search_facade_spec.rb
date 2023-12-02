@@ -13,10 +13,10 @@ RSpec.describe MovieSearchFacade do
   end
   describe 'search results' do 
     it 'returns search results' do 
-      VCR.use_cassette("star_wars_search") do
+      VCR.use_cassette("star_wars_search_results") do
         search = 'Star Wars'
         facade = MovieSearchFacade.new(search)
-        expect(facade)
+        expect(facade.search_results).to be_instance_of(Array)
       end
     end
   end
