@@ -6,8 +6,7 @@ class PreviewFacade
   end
 
   def movie_previews
-    service = MovieService.new
-    json = @query != 'top_rated' ? service.search_results(@query) : service.discover_results
+    json = @query != 'top_rated' ? MovieService.search_results(@query) : MovieService.discover_results
     json[:results].map do |preview_data|
       Preview.new(preview_data)
     end

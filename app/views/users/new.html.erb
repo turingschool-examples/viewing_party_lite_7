@@ -1,5 +1,5 @@
 <%= render partial: "app_partials/home_link" %>
-<h1> Viewing Party </h1>
+<%= render partial: "app_partials/viewing_header" %>
 <h6> Register a New User </h6>
 
 <%=form_with url: '/register', method: :post, data: { turbo: false } do |form| %>
