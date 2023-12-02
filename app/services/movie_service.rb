@@ -8,7 +8,6 @@ class MovieService
   end
 
   def get_movie(movie_id)
-    # require 'pry';binding.pry
     get_url("/3/movie/#{movie_id}")
   end
 
