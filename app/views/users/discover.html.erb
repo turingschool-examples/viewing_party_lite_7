@@ -1,8 +1,8 @@
 <%= link_to 'Home', '/', method: :get %>
 <h1> Viewing Party </h1>
-<%= button_to 'Find Top Rated Movies', "/users/#{@user.id}/movies?q=top%20rated", method: :get %>
+<%= button_to 'Find Top Rated Movies', "/users/#{@user.id}/movies?q=top%20rated", params: { query: 'top_rated' }, method: :get  %>
 <%= form_with url: "/users/#{@user.id}/movies?q=keyword" , method: :get, data: { turbo: false } do |form|%>
-<%= form.label :search %>
-<%= form.text_field :search %>
+<%= form.label :query %>
+<%= form.text_field :query %>
 <%= form.submit "Find Movies" %>
 <% end %>
