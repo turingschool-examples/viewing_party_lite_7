@@ -9,7 +9,7 @@
   <div class="box">
     <section id="party-<%= user_party.id %>">
       <div class="img">
-        <p><%= image_tag "https://image.tmdb.org/t/p/w500/#{MoviePosterFacade.new(user_party.party.movie_id).movie_poster.file_path}", width: "200" %>
+        <p><%= image_tag "https://image.tmdb.org/t/p/w500/#{user_party.movie_poster_file_path}", width: "200" %>
       </div>
       <h4>Host: <%= user_party.host.name %>
       <p><%= link_to "#{user_party.party.movie_title}", user_movie_path(@user, user_party.party.movie_id) %><br>

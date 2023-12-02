@@ -4,7 +4,8 @@ describe 'Movie Details Page' do
   before :each do
     test_data
     oppenheimer_test_data
-
+    missing_poster_test_data
+    placeholder_poster_test_data
     visit user_movie_path(@user1, 872585)
   end
 
@@ -61,4 +62,12 @@ describe 'Movie Details Page' do
     expect(page).to have_content("#{reviews.count} Reviews")
   end
 
+  describe "sad path" do
+    it "will still load page if no poster is available" do
+      visit user_movie_path(@user1, 1209375)
+      expect(page).to have_content("The Creator")
+      expect(page).to have_content("Vote: 0.0")
+      expect(page).to have_content("Summary: Amid a future war")
+    end
+  end
 end

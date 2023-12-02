@@ -4,6 +4,8 @@ describe 'User Dashboard Page' do
   before :each do
     test_data
     oppenheimer_test_data
+    missing_poster_test_data
+    placeholder_poster_test_data
     visit new_user_movie_viewing_party_path(@user1, 872585)
     host_id = @user1.id
     fill_in :day, with: "2024-01-01"
@@ -54,6 +56,15 @@ describe 'User Dashboard Page' do
 
     it "has my name in bold" do
       expect(html).to include('<b><li>Shawn</li></b>')
+    end
+  end
+
+  describe "sad path" do
+    it "will still load page if no poster is available" do
+      visit user_movie_path(@user1, 1209375)
+      expect(page).to have_content("The Creator")
+      expect(page).to have_content("Vote: 0.0")
+      expect(page).to have_content("Summary: Amid a future war")
     end
   end
 end

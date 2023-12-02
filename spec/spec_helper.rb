@@ -23,6 +23,50 @@ def new_spec_test_data
   @party2 = @user1.parties.create!(movie_title: "Eraserhead", duration: 150, day: Date.new(2023, 1, 23), start_time: "07:00")
 end
 
+def missing_poster_test_data
+  movie_without_poster_fixture = File.read("spec/fixtures/movie_without_poster.json")
+  movie_credits_without_poster_fixture = File.read("spec/fixtures/movie_credits_without_poster.json")
+  movie_reviews_without_poster_fixture = File.read("spec/fixtures/movie_reviews_without_poster.json")
+  stub_request(:get, "https://api.themoviedb.org/3/movie/1209375?api_key=#{ENV["API_KEY"]}").
+  with(
+    headers: {
+   'Accept'=>'*/*',
+   'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+   'User-Agent'=>'Faraday v2.7.12'
+    }).
+  to_return(status: 200, body: movie_without_poster_fixture, headers: {})
+
+  stub_request(:get, "https://api.themoviedb.org/3/movie/1209375/credits?api_key=#{ENV["API_KEY"]}").
+         with(
+           headers: {
+          'Accept'=>'*/*',
+          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'User-Agent'=>'Faraday v2.7.12'
+           }).
+         to_return(status: 200, body: movie_credits_without_poster_fixture, headers: {})
+  
+  stub_request(:get, "https://api.themoviedb.org/3/movie/1209375/reviews?api_key=#{ENV["API_KEY"]}").
+  with(
+    headers: {
+  'Accept'=>'*/*',
+  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+  'User-Agent'=>'Faraday v2.7.12'
+    }).
+  to_return(status: 200, body: movie_reviews_without_poster_fixture, headers: {})
+end
+
+def placeholder_poster_test_data
+  placeholder_poster_fixture = File.read("spec/fixtures/placeholder_poster.json")
+  stub_request(:get, "https://api.themoviedb.org/3/movie/1132679/images?api_key=#{ENV["API_KEY"]}").
+         with(
+           headers: {
+          'Accept'=>'*/*',
+          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'User-Agent'=>'Faraday v2.7.12'
+           }).
+         to_return(status: 200, body: placeholder_poster_fixture, headers: {})
+end
+
 def oppenheimer_test_data
   popular_movies_fixture = File.read("spec/fixtures/popular_movies.json")
   search_movies_fixture = File.read("spec/fixtures/search_movies_fixture.json")
