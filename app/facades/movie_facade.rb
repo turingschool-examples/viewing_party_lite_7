@@ -21,7 +21,6 @@ class MovieFacade
 
   def self.cast(movie)
     json_response = MovieService.cast(movie)
-    #cast placeholder is going to be hash
     json_response[:cast].map do |cast|
       Cast.new(cast)
     end.first(10)
