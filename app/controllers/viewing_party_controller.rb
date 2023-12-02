@@ -6,7 +6,7 @@ class ViewingPartyController < ApplicationController
 
   def create
     if params[:duration].to_i >= params[:movie_duration].to_i
-      create_parties
+      create_user_parties
       redirect_to user_path(params[:user_id])
     else
       flash[:alert] = "Not enough time"
@@ -16,12 +16,13 @@ class ViewingPartyController < ApplicationController
 
   private
 
-  def create_parties
+  def create_user_parties
     party = Party.create(movie_id: params[:movie_id], movie_title: params[:title], start_time: params[:start_time], date: params[:date], image_path: params[:image], duration: params[:duration])
     UserParty.create!(user_id: params[:user_id], party_id: party.id, host: true)
-    params[:invitees].each do |key, value|
-      if value == "1"
-        UserParty.create!(user_id: key.to_i, party_id: party.id, host: false)
+
+    params[:invitees].each do |user_id, checkbox_value|
+      if checkbox_value == "1"
+        UserParty.create!(user_id: user_id.to_i, party_id: party.id, host: false)
       end
     end
   end
