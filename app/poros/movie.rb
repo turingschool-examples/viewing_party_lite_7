@@ -1,5 +1,5 @@
 class Movie
-  attr_reader :title, :vote_average, :id, :summary, :reviews, :runtime
+  attr_reader :title, :vote_average, :id, :summary, :reviews, :runtime, :image
 
   def initialize(data)
     @title = data[:original_title]
@@ -9,7 +9,8 @@ class Movie
     @genres = data[:genres]
     @summary = data[:overview]
     @cast = actor_details(data)
-    @reviews = review_details(data) 
+    @reviews = review_details(data)
+    @image = data[:backdrop_path]
   end
 
   def convert_runtime
