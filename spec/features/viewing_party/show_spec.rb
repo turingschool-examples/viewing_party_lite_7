@@ -6,7 +6,6 @@ RSpec.describe 'Viewing Party Page', type: :feature do
       @user = User.create!(name: 'Morgan', email: 'morgan@email.com')
     end
 
-
     describe 'when I visit /users/:user_id/movies/:movies_id/viewing_party/new' do
       it 'shows the title of the movie' do
         json_response = File.read('spec/fixtures/spirited_away.json')
