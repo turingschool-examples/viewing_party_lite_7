@@ -7,11 +7,7 @@
   <h3>My Parties</h3>
   <% @facade.user.hosted_parties.each do |party| %>
     <section id="party-<%= party.id %>">
-      <%
-=begin%>
- <img src="<%= @facade.movie_poster_link(party.movie_id) %>"> 
-<%
-=end%>
+      <img src="<%= @facade.movie_poster_link(party.movie_id) %>"> 
       <p>
         Movie Title: <%= link_to @facade.get_movie_title(party.movie_id), user_movie_path(@facade.user.id, party.movie_id) %><br>
         Duration: <%= party.duration_of_party %> minutes<br>
@@ -32,11 +28,7 @@
   <h3>My Party Invites</h3>
   <% @facade.user.invited_parties.each do |party| %>
     <section id="party-<%= party.id %>">
-      <%
-=begin%>
- <img src="<%= @facade.movie_poster_link(party.movie_id) %>"> 
-<%
-=end%>
+      <img src="<%= @facade.movie_poster_link(party.movie_id) %>"> 
       <p>
         Movie Title: <%= link_to @facade.get_movie_title(party.movie_id), user_movie_path(@facade.user.id, party.movie_id) %><br>
         Duration: <%= party.duration_of_party %> minutes<br>
