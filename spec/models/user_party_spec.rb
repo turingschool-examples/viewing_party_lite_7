@@ -29,5 +29,14 @@ RSpec.describe UserParty, type: :model do
         end
       end
     end
+
   end
+
+  describe '#invited_user method' do
+    it 'only returns the invited users and not the host' do
+      invited_data
+      expect(@test.invited_users).to eq([@user2, @user3])
+    end
+  end
+
 end
