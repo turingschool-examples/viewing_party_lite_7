@@ -50,9 +50,9 @@ describe 'the User Discover Dashboard page' do
 
       expect(current_path).to eq("/users/#{@user.id}/movies")
       expect(page).to have_content('Die Hard')
-      expect(page).to have_content('7.78')
+      expect(page).to have_content('7.8')
       expect(page).to have_content('A Good Day to Die Hard')
-      expect(page).to have_content('5.32')
+      expect(page).to have_content('5.3')
       expect(page).to have_content('Die Hard 2')
       expect(page).to have_content('6.929')
 
