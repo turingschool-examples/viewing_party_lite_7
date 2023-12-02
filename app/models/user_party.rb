@@ -2,7 +2,7 @@ class UserParty < ApplicationRecord
   belongs_to :user
   belongs_to :party
 
-  def hosting?
-    host == true
+  def host
+    User.find(host_id)
   end
 end
