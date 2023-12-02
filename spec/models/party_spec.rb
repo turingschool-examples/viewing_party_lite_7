@@ -6,7 +6,6 @@ RSpec.describe Party, type: :model do
     it { should have_many(:users).through(:user_parties) }
   end
 
-  
   describe "#methods" do
     context '#pretty_day' do
       it 'returns the day in a more readable form' do
@@ -19,7 +18,7 @@ RSpec.describe Party, type: :model do
     context "#pretty_time" do
       it "can find the date in readable format" do
         party = Party.create!(movie_title: "E.T.", duration: 120, start_time: "8:00:00")
-        expect(party.pretty_time).to eq("08:00 AM")
+        expect(party.pretty_time).to eq(" 8:00 AM")
       end
     end
 
@@ -30,11 +29,4 @@ RSpec.describe Party, type: :model do
       end
     end
   end
-
-  describe '#pretty_time' do
-  it 'returns the time in a more readable form' do
-    test_data
-    expect(@party1.pretty_time).to eq(" 8:00 AM")
-  end
-end
 end
