@@ -1,6 +1,5 @@
+
 class Top20Service
-  
-  
   def top20
     get_url('/3/movie/top_rated')
   end
@@ -12,8 +11,8 @@ class Top20Service
   end
 
   def get_url(url)
-  response = conn.get(url)
-  json = JSON.parse(response.body, symbolize_names: true)
-  # @movies = json[:results]
+    response = conn.get(url)
+    json = JSON.parse(response.body, symbolize_names: true)
+    # @movies = json[:results]
   end
 end

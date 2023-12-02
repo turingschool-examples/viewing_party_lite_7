@@ -1,6 +1,7 @@
-class Top20
+# frozen_string_literal: true
 
+class Top20
   def initialize(movie)
-    require 'pry'; binding.pry
+    @movie = movie
   end
 end
