@@ -33,5 +33,26 @@ RSpec.describe 'Users show page', type: :feature do
 
       expect(current_path).to eq("/users/#{@user1.id}/discover")
     end
+    # As a user,
+    # When I visit a user dashboard,
+    # I should see the viewing parties that the user has been invited to with the following details:
+
+    # Movie Image
+    # Movie Title, which links to the movie show page
+    # Date and Time of Event
+    # who is hosting the event
+    # list of users invited, with my name in bold
+    # I should also see the viewing parties that the user has created with the following details:
+
+    # Movie Image
+    # Movie Title, which links to the movie show page
+    # Date and Time of Event
+    # That I am the host of the party
+    # List of friends invited to the viewing party
+    xit 'I should see the viewing parties that the user has been invited to with the details: Movie Image, Movie Title
+    (link to movie show page), Date and Time of event, that the user is the host of the party, and list of friends
+    invited to the viewing party' do
+
+    end
   end
 end

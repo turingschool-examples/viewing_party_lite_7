@@ -3,6 +3,10 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
   def create
     @user = User.new({name: params[:name], email: params[:email] })
 
@@ -14,7 +18,4 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-    @user = User.find(params[:id])
-  end
 end

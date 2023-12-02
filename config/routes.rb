@@ -7,15 +7,16 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   # root "users#index"
-  get "/", to: "users#index"
-  get "/users/:id", to: "users#show"
-  get "/users/:id/discover", to: "discover#index"
-  # get "/users/:id/movies", to: "movies#top_movies"
-  get "/users/:id/movies", to: "movies#search"
-  get "/users/:id/movies/:movies_id", to: "movies#show"
-  get "/users/:id/movies/:movies_id/viewing-party/new", to: "viewing_party#new"
-  get "/register", to: "users#new"
-  # get "/new", to: "users#new"
-  post "/users/:id", to: "users#create"
-  post "/register", to: "users#create"
+  get '/', to: 'users#index'
+  get '/users/:id', to: 'users#show'
+  get '/users/:id/discover', to: 'discover#index'
+  # get '/users/:id/movies', to: 'movies#top_movies'
+  get '/users/:id/movies', to: 'movies#search'
+  get '/users/:id/movies/:movies_id', to: 'movies#show'
+  get '/users/:id/movies/:movies_id/viewing_parties/new', to: 'viewing_parties#new'
+  post '/users/:id/movies/:movies_id/viewing_parties', to: 'viewing_parties#create'
+  get '/register', to: 'users#new'
+  # get '/new', to: 'users#new'
+  post '/users/:id', to: 'users#create'
+  post '/register', to: 'users#create'
 end

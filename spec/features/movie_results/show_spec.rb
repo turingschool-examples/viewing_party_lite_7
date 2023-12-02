@@ -16,7 +16,7 @@ RSpec.describe 'Movie Results Page', type: :feature do
 
         click_button('Create a Viewing Party')
 
-        expect(current_path).to eq("/users/#{@user1.id}/movies/155/viewing-party/new")
+        expect(current_path).to eq("/users/#{@user1.id}/movies/155/viewing_parties/new")
 
         visit "/users/#{@user1.id}/movies/155"
         expect(page).to have_button('Discover Page')
