@@ -14,7 +14,6 @@ describe 'the User Discover Dashboard page' do
       expect(page).to have_button('Find Movies')
 
       click_on 'Find Top Rated Movies'
-      save_and_open_page
 
       expect(current_path).to eq("/users/#{@user.id}/movies")
       expect(page).to have_content('The Godfather')
