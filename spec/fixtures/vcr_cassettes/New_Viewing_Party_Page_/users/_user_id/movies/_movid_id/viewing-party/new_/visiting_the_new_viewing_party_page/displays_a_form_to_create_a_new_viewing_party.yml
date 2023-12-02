@@ -26,8 +26,6 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Date:
-      - Sat, 02 Dec 2023 19:25:29 GMT
       Server:
       - openresty
       X-Memc:
@@ -38,21 +36,23 @@ http_interactions:
       - '9817'
       X-Memc-Expires:
       - '17722'
+      Date:
+      - Sat, 02 Dec 2023 20:39:07 GMT
       Etag:
       - W/"398c2f6641595c480e214f4000d90fc0"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
-      - Miss from cloudfront
+      - RefreshHit from cloudfront
       Via:
-      - 1.1 35ccb6cc125c2f90120be4104c394baa.cloudfront.net (CloudFront)
+      - 1.1 167aa95f2f064fbc0c7566b3d55cc1ca.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - ATL58-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 83qGkj4XFFDPluKYQRKNcc0461RfpKgYFjOrN8jfLRvf_5FtHsREiw==
+      - tLKgXTnyR9FgfBgHwjhoJ5GG15HrdGrTnMjxs2rIrUj1WAWiZPyKTQ==
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/fm6KqXpk3M2HVveHwCrBSSBaO0V.jpg","belongs_to_collection":null,"budget":100000000,"genres":[{"id":18,"name":"Drama"},{"id":36,"name":"History"}],"homepage":"http://www.oppenheimermovie.com","id":872585,"imdb_id":"tt15398776","original_language":"en","original_title":"Oppenheimer","overview":"The
@@ -62,5 +62,5 @@ http_interactions:
         Entertainment","origin_country":"US"}],"production_countries":[{"iso_3166_1":"GB","name":"United
         Kingdom"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"2023-07-19","revenue":950200000,"runtime":181,"spoken_languages":[{"english_name":"Dutch","iso_639_1":"nl","name":"Nederlands"},{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"The
         world forever changes.","title":"Oppenheimer","video":false,"vote_average":8.157,"vote_count":5095}'
-  recorded_at: Sat, 02 Dec 2023 19:25:29 GMT
+  recorded_at: Sat, 02 Dec 2023 20:39:07 GMT
 recorded_with: VCR 6.2.0

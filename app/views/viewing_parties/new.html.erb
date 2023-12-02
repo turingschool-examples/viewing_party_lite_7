@@ -2,7 +2,7 @@
 <%= render partial: "app_partials/viewing_header" %>
 <h6> Create a new Viewing Party </h6>
 
-<%=form_with url: "/users/#{@user.id}/movies/#{@movie.id}/viewing_parties/create", method: :post, data: { turbo: false } do |form| %>
+<%=form_with url: "/users/#{@user.id}/movies/#{@movie.id}/viewing_parties", method: :post, data: { turbo: false } do |form| %>
   <%= form.label :duration, "Duration:"%>
   <%= form.number_field :duration, min: @movie.runtime %><br>
   <%= form.label :when, "When" %>
@@ -11,8 +11,8 @@
   <%= form.time_field :start_time %><br>
   <section id="potential_guests">
     <% @potential_guests.each do |guest| %>
-    <%= form.label :invite, "Invite #{guest.name}" %>
-    <%= form.check_box :invite %><br>
+      <%= form.label :invite, "Invite #{guest.name}" %>
+    <%= form.check_box :invite, params: { invite: guest.id }%><br>
     <% end %>
   </section>
   <%= form.submit "Create Viewing Party" %>
