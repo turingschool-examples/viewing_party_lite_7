@@ -16,9 +16,7 @@ class Movie
     @runtime = attributes[:runtime]
     @genre = attributes[:genres]
     @overview = attributes[:overview]
-    @cast = attributes[:cast]
     @vote_count = attributes[:vote_count]
-    @review_info = attributes[:results]
   end
 
   def convert_runtime_to_hours_and_minutes

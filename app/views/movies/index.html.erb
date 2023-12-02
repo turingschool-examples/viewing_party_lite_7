@@ -2,7 +2,7 @@
 <%= button_to "Discover", user_discover_path(@user.id), params: { value: "top-rated" }, method: :get, data: { turbo: false }, local: true %>
 
 <% if params[:q] == "top-rated" %>
-  <% @movies.take(20).each do |movie| %>
+  <% @movies.each do |movie| %>
   <ol>
     <%= link_to "#{movie.title}", "/users/#{@user.id}/movies/#{movie.movie_id}" %> 
     <%= movie.vote_average %>
@@ -11,7 +11,7 @@
 <% end %>
 
 <% if params[:search].present? %>
-  <% @movies.take(20).each do |movie| %>
+  <% @movies.each do |movie| %>
   <ol>
     <%= link_to "#{movie.title}", "/users/#{@user.id}/movies/#{movie.movie_id}" %>
     <%= movie.vote_average %>
