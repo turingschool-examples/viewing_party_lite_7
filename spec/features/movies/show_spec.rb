@@ -70,5 +70,4 @@ describe 'Movie Details Page' do
       expect(page).to have_content("Summary: Amid a future war")
     end
   end
-
 end
