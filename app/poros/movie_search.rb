@@ -5,8 +5,5 @@ class MovieSearch
     @title = search_term[:title]
     @vote_average = search_term[:vote_average]
     @id = search_term[:id]
-
   end
-
-
 end

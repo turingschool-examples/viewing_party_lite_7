@@ -1,6 +1,5 @@
 
 require 'rails_helper'
-  # require 'movie_search_service'
 
 RSpec.describe MovieSearchService, type: :service do
   describe '#movie_search' do

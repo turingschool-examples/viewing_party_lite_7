@@ -9,7 +9,7 @@ class MovieSearchFacade
     @search_term = search_term
     @movies = search_results
   end
-  
+
   def search_results
     service = MovieSearchService.new
     json = service.movie_search(@search_term)
@@ -17,6 +17,4 @@ class MovieSearchFacade
       MovieSearch.new(movie)
     end
   end
-
-# require 'pry'; binding.pry
 end

@@ -3,3 +3,4 @@ Metrics/BlockLength:
     - RSpec.describe
     - describe
     - it
+    - context

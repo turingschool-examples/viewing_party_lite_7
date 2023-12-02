@@ -6,9 +6,14 @@ RSpec.describe 'Movie Details Page', type: :feature do
   end
 
   describe "When I visit a movie's details page '/users/:user_id/movies/:id'" do
-
-    # Need test for create viewing party button
-
+    it 'has a create viewing party button' do
+      VCR.use_cassette('dune_details') do
+        visit "/users/#{@user.id}/movies/438631"
+        expect(page).to have_button('Create Viewing Party for Dune')
+        click_button('Create Viewing Party for Dune')
+        expect(current_path).to eq("/users/#{@user.id}/movies/438631/viewing_party/new")
+      end
+    end
     
     it 'I can see a button to return to the discover page' do
       VCR.use_cassette('dune_details') do
@@ -58,10 +63,9 @@ RSpec.describe 'Movie Details Page', type: :feature do
           expect(page).to have_content('Review by: Habenula')
           expect(page).to have_content("The worst movie I've ever seen. Don't waste your time.")
           expect(page).to have_content('Review by: tahmid_007')
-          expect(page).to have_content("Great movie with excellent BG music and visual effects. Waiting for part two.")
+          expect(page).to have_content('Great movie with excellent BG music and visual effects. Waiting for part two.')
         end
       end
     end
   end
-  
 end
