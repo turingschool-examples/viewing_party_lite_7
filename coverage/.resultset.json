@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/config/environment.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/config/environment.rb": {
         "lines": [
           null,
           1,
@@ -10,7 +10,7 @@
           1
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/config/application.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/config/application.rb": {
         "lines": [
           1,
           null,
@@ -51,7 +51,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/config/boot.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/config/boot.rb": {
         "lines": [
           1,
           null,
@@ -59,7 +59,7 @@
           1
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/config/environments/test.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/config/environments/test.rb": {
         "lines": [
           1,
           null,
@@ -123,7 +123,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/config/initializers/assets.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -139,7 +139,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/config/initializers/content_security_policy.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/config/initializers/content_security_policy.rb": {
         "lines": [
           null,
           null,
@@ -150,38 +150,6 @@
           null,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/config/initializers/filter_parameter_logging.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/config/initializers/inflections.rb": {
-        "lines": [
           null,
           null,
           null,
@@ -200,7 +168,39 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/config/initializers/permissions_policy.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/config/initializers/filter_parameter_logging.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/config/initializers/inflections.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/config/initializers/permissions_policy.rb": {
         "lines": [
           null,
           null,
@@ -215,7 +215,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/config/routes.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/config/routes.rb": {
         "lines": [
           1,
           null,
@@ -242,13 +242,13 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/app/helpers/application_helper.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/poros/movie.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/poros/movie.rb": {
         "lines": [
           1,
           1,
@@ -294,7 +294,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/facades/movie_search_facade.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/facades/movie_search_facade.rb": {
         "lines": [
           1,
           1,
@@ -339,7 +339,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/services/movies_search_service.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/services/movies_search_service.rb": {
         "lines": [
           1,
           1,
@@ -410,7 +410,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/spec/features/registrations/index_spec.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/spec/features/registrations/index_spec.rb": {
         "lines": [
           1,
           null,
@@ -455,7 +455,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/spec/features/users/discover/index_spec.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/spec/features/users/discover/index_spec.rb": {
         "lines": [
           1,
           null,
@@ -518,7 +518,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/spec/features/users/discover/results/index_spec.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/spec/features/users/discover/results/index_spec.rb": {
         "lines": [
           1,
           null,
@@ -561,7 +561,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/spec/features/users/discover/results/parties/new_spec.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/spec/features/users/discover/results/parties/new_spec.rb": {
         "lines": [
           1,
           null,
@@ -676,7 +676,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/spec/features/users/discover/results/show_spec.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/spec/features/users/discover/results/show_spec.rb": {
         "lines": [
           1,
           null,
@@ -750,7 +750,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/spec/features/users/show_spec.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/spec/features/users/show_spec.rb": {
         "lines": [
           1,
           null,
@@ -783,7 +783,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/spec/features/welcome/index_spec.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/spec/features/welcome/index_spec.rb": {
         "lines": [
           1,
           null,
@@ -819,7 +819,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/spec/models/party_spec.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/spec/models/party_spec.rb": {
         "lines": [
           1,
           null,
@@ -880,7 +880,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/app/models/party.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/app/models/party.rb": {
         "lines": [
           1,
           1,
@@ -906,14 +906,14 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/app/models/application_record.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/spec/models/user_party_spec.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/spec/models/user_party_spec.rb": {
         "lines": [
           1,
           null,
@@ -932,7 +932,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/app/models/user_party.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/app/models/user_party.rb": {
         "lines": [
           1,
           1,
@@ -942,7 +942,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/spec/models/user_spec.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/spec/models/user_spec.rb": {
         "lines": [
           1,
           null,
@@ -966,7 +966,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/app/models/user.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -977,7 +977,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/spec/poros/movie_spec.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/spec/poros/movie_spec.rb": {
         "lines": [
           1,
           null,
@@ -1059,7 +1059,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/spec/services/movie_search_service_spec.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/spec/services/movie_search_service_spec.rb": {
         "lines": [
           1,
           null,
@@ -1198,7 +1198,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/app/controllers/registration_controller.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/app/controllers/registration_controller.rb": {
         "lines": [
           1,
           1,
@@ -1224,7 +1224,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/app/controllers/application_controller.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
@@ -1237,7 +1237,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/app/controllers/users_controller.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/app/controllers/users_controller.rb": {
         "lines": [
           1,
           1,
@@ -1252,7 +1252,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/app/controllers/users/discover_controller.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/app/controllers/users/discover_controller.rb": {
         "lines": [
           1,
           1,
@@ -1261,7 +1261,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/app/controllers/users/discover/results_controller.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/app/controllers/users/discover/results_controller.rb": {
         "lines": [
           1,
           1,
@@ -1289,7 +1289,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/app/controllers/users/discover/results/parties_controller.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/app/controllers/users/discover/results/parties_controller.rb": {
         "lines": [
           1,
           1,
@@ -1327,7 +1327,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod3/projects/pair_project/viewing_party_lite_7/app/controllers/welcome_controller.rb": {
+      "/Users/kzolman/3mod/projects/viewing_party_lite_7/app/controllers/welcome_controller.rb": {
         "lines": [
           1,
           null,
@@ -1339,6 +1339,6 @@
         ]
       }
     },
-    "timestamp": 1701476355
+    "timestamp": 1701475319
   }
 }
