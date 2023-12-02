@@ -15,7 +15,8 @@ class ViewingPartiesController < ApplicationController
       party_duration: params[:party_duration],
       start_time: params[:start_time],
       movie_title: params[:movie_title],
-      movie_id: params[:movie_id]
+      movie_id: params[:movie_id],
+      host_id: @user.id
     }
 
     @viewing_party = ViewingParty.create!(viewing_party_params)

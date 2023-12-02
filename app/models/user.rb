@@ -11,6 +11,8 @@ class User < ApplicationRecord
     movies = []
     viewing_parties.uniq.each do |party|
       movies << MovieFacade.movie_details(party.movie_id)
+      movies << MovieFacade.cast(party.movie_id)
+      movies << MovieFacade.reviews(party.movie_id)
     end
     movies
   end

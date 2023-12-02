@@ -6,21 +6,37 @@
 <section id = "viewing-parties">
   <h3>Parties I'm Hosting</h3>
     <% @user.viewing_parties.uniq.each do |party| %>
-      <% @movie_info.uniq.each do |movie| %>
-      <ol>
-        <u>Title:</u> <%= movie.title %><br>
-        <u>Date and Time:</u> <%= party.start_time %>
-      </ol>
-      <% end %>
+        <ol>
+        <% if party.host_id.to_i == @user.id %>
+          <u>Title:</u> <%= party.movie_title %><br>
+          <u>Date and Time:</u> <%= party.start_time %><br>
+          <% party.user_viewing_parties.each do |uvp| %>  
+            <% if uvp.user_id == @user.id %>
+              <u>Users Attending:</u> 
+              <% party.users.uniq.each do |user| %>
+                <%= user.name %>,
+              <% end %>
+            <% end %>
+            <% end %>
+          <% end %>
+        </ol>
     <% end %>
       
   <h3>Parties I'm Invited To</h3>
-    <% @user.viewing_parties.each do |party| %>
-      <% @movie_info.each do |movie| %>
-      <ol>
-        <u>Title:</u> <%= movie.title %><br>
-        <u>Date and Time:</u> <%= party.start_time %>
-      </ol>
-      <% end %>
+  <% @user.viewing_parties.uniq.each do |party| %>
+        <ol>
+        <% if party.host_id.to_i != @user.id %>
+          <u>Title:</u> <%= party.movie_title %><br>
+          <u>Date and Time:</u> <%= party.start_time %><br>
+          <% party.user_viewing_parties.each do |uvp| %>  
+            <% if uvp.user_id == @user.id %>
+              <u>Users Attending:</u> 
+              <% party.users.uniq.each do |user| %>
+                <%= user.name %>,
+              <% end %>
+            <% end %>
+            <% end %>
+          <% end %>
+        </ol>
     <% end %>
 </section>
