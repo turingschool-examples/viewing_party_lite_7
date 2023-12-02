@@ -15,7 +15,7 @@ class ViewingPartyController < ApplicationController
       redirect_to user_path(host)
     else
       redirect_to new_user_movie_viewing_party_path(host, params[:movie_id])
-      flash[:error] = 'Please fill out time and date of the party'
+      flash[:error] = 'Please fill out all field, duration, time and date of the party'
     end
   end
 

@@ -17,6 +17,4 @@ class MovieSearchFacade
       MovieSearch.new(movie)
     end
   end
-
-# require 'pry'; binding.pry
 end
