@@ -2,34 +2,25 @@ require_relative "../services/tmdb_service"
 require_relative "../poros/movie"
 
 class MovieFacade
-  @@top_rated = []
-  @@movie_cache = []
-
   def self.get_top_rated
-    return @@top_rated unless @@top_rated.length == 0
-    # require "pry"; binding.pry
     data = TMDBService.top_rated
 
-    data.each do |d|
-      movie = Poro::Movie.new(d)
-      @@top_rated.append(movie)
-    end
-
-    @@top_rated
+    make_movies(data)
   end
 
   def self.movie_search(query)
     data = TMDBService.search_movies(query)
 
+    make_movies(data)
+  end
+
+  def self.make_movies(data)
     results = []
 
     data.each do |d|
-      # require "pry"; binding.pry
-      movie = @@movie_cache.find { |movie| movie.id == d[:id] }  # find it if it's there
-
-      if movie.nil?  # if it's not, create the new object
-        movie = Poro::Movie.new(d)
-        @@movie_cache.append(movie)
+      movie = Rails.cache.fetch("movie_#{d[:id]}") do
+        m = Poro::Movie.new(d)
+        add_details(m)
       end
 
       results.append(movie)
@@ -38,6 +29,8 @@ class MovieFacade
     results
   end
 
+  # @param movie: a Poro::Movie object; lives outside the AR Model
+  # @return poro::movie with all details
   def self.add_details(movie)
     details = TMDBService.get_movie(movie.id)
     movie.set_genres_and_runtime(details)
@@ -55,18 +48,5 @@ class MovieFacade
       m = Poro::Movie.new(TMDBService.get_movie(id))
       add_details(m)
     end
-    # movie = @@movie_cache.find { |movie| movie.id == id }  # find it if it's there
-    #
-    # if movie.nil?
-    #   movie = Poro::Movie.new(TMDBService.get_movie(id))
-    #   movie = add_details(movie)
-    #   @@movie_cache.append(movie)
-    # end
-
-    
-  end
-
-  def self.top_rated
-    @@top_rated
   end
 end

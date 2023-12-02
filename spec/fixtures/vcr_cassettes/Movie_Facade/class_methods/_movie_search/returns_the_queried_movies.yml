@@ -26,8 +26,6 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Date:
-      - Sat, 02 Dec 2023 22:07:11 GMT
       Server:
       - openresty
       X-Memc:
@@ -38,24 +36,426 @@ http_interactions:
       - '14380'
       X-Memc-Expires:
       - '10931'
+      Date:
+      - Sat, 02 Dec 2023 22:26:36 GMT
       Etag:
       - W/"79b28e6ed912e788c2a99fe6bdf742e7"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
-      - Miss from cloudfront
+      - RefreshHit from cloudfront
       Via:
-      - 1.1 e0a0043c26183d67f99a46bb7af410e2.cloudfront.net (CloudFront)
+      - 1.1 81750baaeda3b00efa861517fed1eb6c.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - PHX50-P1
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - c3kAicVhzy4WEVIjtTDfhbj0Z408bWQ00GEm6Opc_NNVMMz__-YuKQ==
+      - h1fjqjiD9QgftN6DD_Rz8T3WODpBJjPsxu1PGXRxvrl1j-crj9b69w==
     body:
       encoding: ASCII-8BIT
       string: !binary |-
         eyJwYWdlIjoxLCJyZXN1bHRzIjpbeyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvd3ZCdVhnQTc3RmFDVkt5MmllanI0d3V4YThHLmpwZyIsImdlbnJlX2lkcyI6Wzk5XSwiaWQiOjMzMDA2OCwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiRmFzdGJhbGwiLCJvdmVydmlldyI6IlNpbmNlIDE5MTIsIGJhc2ViYWxsIGhhcyBiZWVuIGEgZ2FtZSBvYnNlc3NlZCB3aXRoIHN0YXRpc3RpY3MgYW5kIHNwZWVkLiBUaHJvd24gYXQgdXB3YXJkcyBvZiAxMDAgbWlsZXMgcGVyIGhvdXIsIGEgZmFzdGJhbGwgbW92ZXMgdG9vIHF1aWNrbHkgZm9yIGh1bWFuIGNvZ25pdGlvbiBhbmQgYWNjZWxlcmF0ZXMgaW50byB0aGUgcmVhbG0gb2YgaW50dWl0aW9uLiBGYXN0YmFsbCBpcyBhIGxvb2sgYXQgaG93IHRoZSBnYW1lIGF0IGl0cyBoaWdoZXN0IGxldmVscyBvZiBhY2hpZXZlbWVudCB0cmFuc2NlbmRzIGxvZ2ljIGFuZCBldmVuIHNraWxsLCBiZWNvbWluZyB0aGUgcHJpbWFsIHN0cnVnZ2xlIGZvciBtYW4gdG8gY29udHJvbCB0aGUgdW5jb250cm9sbGFibGUuIiwicG9wdWxhcml0eSI6My41MTcsInBvc3Rlcl9wYXRoIjoiL3YwUEkyWFVQcnNlOHBOaHUyTVdsdWw2dTFTNy5qcGciLCJyZWxlYXNlX2RhdGUiOiIyMDE2LTAzLTI1IiwidGl0bGUiOiJGYXN0YmFsbCIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo3LjE3NCwidm90ZV9jb3VudCI6NDN9LHsiYWR1bHQiOmZhbHNlLCJiYWNrZHJvcF9wYXRoIjpudWxsLCJnZW5yZV9pZHMiOls5OV0sImlkIjozMzM3NzUsIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF90aXRsZSI6IlVuaGl0dGFibGU6IFNpZGQgRmluY2ggYW5kIHRoZSBUaWJldGFuIEZhc3RiYWxsIiwib3ZlcnZpZXciOiJJbiB0aGUgc3ByaW5nIG9mIDE5ODUsIFNwb3J0cyBJbGx1c3RyYXRlZCBwcm9maWxlZCB0aGUgbGF0ZXN0IHByb3NwZWN0IG9mIHRoZSBOZXcgWW9yayBNZXRzIGZhcm0gc3lzdGVtOiBTaWRkIEZpbmNoLCBhIEhhcnZhcmQgZHJvcG91dCB3aG8gc3Bva2UgMTAgbGFuZ3VhZ2VzLCBwbGF5ZWQgdGhlIEZyZW5jaCBob3JuLCB3b3JlIG9uZSBoaWtpbmcgYm9vdCDigKYgYW5kIHRocmV3IDE2OCBtcGguIElmIGl0IHNvdW5kcyB0b28gZ29vZCB0byBiZSB0cnVlLCB0aGF04oCZcyBiZWNhdXNlIGl0IHdhcy4gRmluY2ggd2FzIGFuIGVsYWJvcmF0ZSBob2F4IGNvbnN0cnVjdGVkIGJ5IHRoZSBsYXRlIEdlb3JnZSBQbGltcHRvbiBmb3IgU0nigJlzIEFwcmlsIDEgaXNzdWUuIFVuaGl0dGFibGUgYnJpbmdzIGJhY2sgYWxsIG9mIHRoZSBwZW9wbGUgd2hvIG1hZGUgdGhpcyBob2F4IHBvc3NpYmxlLCBpbmNsdWRpbmcgSm9lIEJlcnRvbiwgdGhlIGJlc3BlY3RhY2xlZCBtaWRkbGUgc2Nob29sIHRlYWNoZXIgd2hvIHRydWx5IGJyb3VnaHQgU2lkZCB0byBsaWZlLiIsInBvcHVsYXJpdHkiOjAuNiwicG9zdGVyX3BhdGgiOiIva2hscWlOQjJTb3pMdGVzdm14YkZBNzZLczVKLmpwZyIsInJlbGVhc2VfZGF0ZSI6IjIwMTUtMDQtMDEiLCJ0aXRsZSI6IlVuaGl0dGFibGU6IFNpZGQgRmluY2ggYW5kIHRoZSBUaWJldGFuIEZhc3RiYWxsIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjAuMCwidm90ZV9jb3VudCI6MH1dLCJ0b3RhbF9wYWdlcyI6MSwidG90YWxfcmVzdWx0cyI6Mn0=
-  recorded_at: Sat, 02 Dec 2023 22:07:11 GMT
+  recorded_at: Sat, 02 Dec 2023 22:26:36 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/330068
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0NjJkMDg0ZTBiMjJlNGNhZTZiYTUwNTA4YzU2MmUwNyIsInN1YiI6IjY1NjRkZWNlZDk1NTRiMDEzYWYyZjIwMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.F15rqbrDY3vz4g1F9BHHdPGdyOjkGfBpjuf4w5E-dSY
+      User-Agent:
+      - Faraday v2.7.12
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 21c472d649479995e58c7324472ca60d
+      X-Memc-Age:
+      - '1868'
+      X-Memc-Expires:
+      - '20320'
+      Date:
+      - Sat, 02 Dec 2023 22:26:36 GMT
+      Etag:
+      - W/"fc36414263b8e3cadc15e8f4242f815f"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - RefreshHit from cloudfront
+      Via:
+      - 1.1 4892b1ac8a5bf76f6f3908b66c300c8c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - PHX50-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - M0btlRaOPC84rZssuyZFpjqI0Ca6ghB52G8FX46hbdi7xsBnJtNA5Q==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/wvBuXgA77FaCVKy2iejr4wuxa8G.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":99,"name":"Documentary"}],"homepage":"","id":330068,"imdb_id":"tt5434972","original_language":"en","original_title":"Fastball","overview":"Since
+        1912, baseball has been a game obsessed with statistics and speed. Thrown
+        at upwards of 100 miles per hour, a fastball moves too quickly for human cognition
+        and accelerates into the realm of intuition. Fastball is a look at how the
+        game at its highest levels of achievement transcends logic and even skill,
+        becoming the primal struggle for man to control the uncontrollable.","popularity":3.517,"poster_path":"/v0PI2XUPrse8pNhu2MWlul6u1S7.jpg","production_companies":[{"id":923,"logo_path":"/5UQsZrfbfG2dYJbx8DxfoTr2Bvu.png","name":"Legendary
+        Pictures","origin_country":"US"},{"id":62472,"logo_path":null,"name":"Hock
+        Films","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2016-03-25","revenue":0,"runtime":87,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"","title":"Fastball","video":false,"vote_average":7.174,"vote_count":43}'
+  recorded_at: Sat, 02 Dec 2023 22:26:36 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/330068/credits
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0NjJkMDg0ZTBiMjJlNGNhZTZiYTUwNTA4YzU2MmUwNyIsInN1YiI6IjY1NjRkZWNlZDk1NTRiMDEzYWYyZjIwMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.F15rqbrDY3vz4g1F9BHHdPGdyOjkGfBpjuf4w5E-dSY
+      User-Agent:
+      - Faraday v2.7.12
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - ebd33e307e5b175fa745f70cea089920
+      X-Memc-Age:
+      - '5049'
+      X-Memc-Expires:
+      - '17577'
+      Date:
+      - Sat, 02 Dec 2023 22:26:36 GMT
+      Etag:
+      - W/"1323b5937a17e4fef3ecbe0fafe474c0"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - RefreshHit from cloudfront
+      Via:
+      - 1.1 25ad32b45015b92d33a50547ecf52758.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - PHX50-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - h10vhnGG1n7eRp8_PVa5gIiNJ-sLA2Qpj8A_-pHSJJy-sa9RbYI1oA==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":330068,"cast":[{"adult":false,"gender":2,"id":1269,"known_for_department":"Acting","name":"Kevin
+        Costner","original_name":"Kevin Costner","popularity":111.721,"profile_path":"/q3hiVpXW1kyQldu0w0oPVOrkGmD.jpg","cast_id":1,"character":"Narrator","credit_id":"56c61a0ec3a3680d41003800","order":0},{"adult":false,"gender":2,"id":1219050,"known_for_department":"Acting","name":"Hank
+        Aaron","original_name":"Hank Aaron","popularity":2.373,"profile_path":"/nxwkA89oLA3N6SvvMUwUFGVCZY0.jpg","cast_id":2,"character":"Self
+        (archive footage)","credit_id":"56f5d18dc3a3686a5e000d07","order":1},{"adult":false,"gender":2,"id":1596331,"known_for_department":"Acting","name":"Nolan
+        Ryan","original_name":"Nolan Ryan","popularity":0.6,"profile_path":null,"cast_id":3,"character":"Self
+        (archive footage)","credit_id":"56f5d19e92514125d6000421","order":2},{"adult":false,"gender":2,"id":147445,"known_for_department":"Acting","name":"Derek
+        Jeter","original_name":"Derek Jeter","popularity":2.829,"profile_path":"/zPuiq4sz76ZfTcCUq2pJ7tcagJ3.jpg","cast_id":4,"character":"Self","credit_id":"56f5d1abc3a3686a59000c70","order":3},{"adult":false,"gender":0,"id":1653850,"known_for_department":"Acting","name":"Denard
+        Span","original_name":"Denard Span","popularity":0.6,"profile_path":null,"cast_id":9,"character":"Self","credit_id":"57906239c3a368671a006683","order":4},{"adult":false,"gender":0,"id":1653851,"known_for_department":"Acting","name":"Craig
+        Kimbrel","original_name":"Craig Kimbrel","popularity":0.6,"profile_path":null,"cast_id":10,"character":"Self
+        (archive footage)","credit_id":"579062489251410c06003939","order":5},{"adult":false,"gender":0,"id":1653852,"known_for_department":"Acting","name":"Justin
+        Verlander","original_name":"Justin Verlander","popularity":0.612,"profile_path":null,"cast_id":11,"character":"Self
+        (archive footage)","credit_id":"5790625dc3a3685b260081e5","order":6},{"adult":false,"gender":0,"id":4026202,"known_for_department":"Acting","name":"Bryce
+        Harper","original_name":"Bryce Harper","popularity":0.6,"profile_path":null,"cast_id":30,"character":"Self
+        (archive footage)","credit_id":"64466f66c8f3c404c94513ab","order":7},{"adult":false,"gender":2,"id":2955,"known_for_department":"Acting","name":"Chris
+        Cooper","original_name":"Chris Cooper","popularity":10.477,"profile_path":"/j0sQDzaDlnNAdaYhy6HRRAFi22.jpg","cast_id":13,"character":"Clifford
+        Blankenship (voice)","credit_id":"579062889251414b03001ef6","order":8},{"adult":false,"gender":2,"id":1315816,"known_for_department":"Acting","name":"George
+        Brett","original_name":"George Brett","popularity":0.6,"profile_path":null,"cast_id":14,"character":"Self
+        (archive footage)","credit_id":"579062a29251411cd8006200","order":9},{"adult":false,"gender":0,"id":1214284,"known_for_department":"Acting","name":"Joe
+        Morgan","original_name":"Joe Morgan","popularity":0.6,"profile_path":null,"cast_id":15,"character":"Self
+        (archive footage)","credit_id":"579062afc3a3684e95001cf4","order":10},{"adult":false,"gender":0,"id":1243289,"known_for_department":"Acting","name":"Johnny
+        Bench","original_name":"Johnny Bench","popularity":0.85,"profile_path":null,"cast_id":16,"character":"Self
+        (archive footage)","credit_id":"579062bbc3a3684e95001d00","order":11},{"adult":false,"gender":0,"id":1653854,"known_for_department":"Acting","name":"Tony
+        Gwynn","original_name":"Tony Gwynn","popularity":0.6,"profile_path":"/vHj7FONWGXQpToMY9p15ZImWoXc.jpg","cast_id":17,"character":"Self
+        (archive footage)","credit_id":"579062ca9251410c0600397e","order":12},{"adult":false,"gender":0,"id":590335,"known_for_department":"Acting","name":"Ernie
+        Banks","original_name":"Ernie Banks","popularity":1.4,"profile_path":null,"cast_id":18,"character":"Self
+        (archive footage)","credit_id":"579062d9c3a3684a8c0022f8","order":13},{"adult":false,"gender":0,"id":1653855,"known_for_department":"Acting","name":"Rich
+        Gossage","original_name":"Rich Gossage","popularity":0.6,"profile_path":null,"cast_id":19,"character":"Self
+        (archive footage)","credit_id":"5790630f9251411cd800622d","order":14},{"adult":false,"gender":0,"id":1573622,"known_for_department":"Acting","name":"Mike
+        Schmidt","original_name":"Mike Schmidt","popularity":0.6,"profile_path":null,"cast_id":20,"character":"Self
+        (archive footage)","credit_id":"5790631dc3a3684a130024b0","order":15},{"adult":false,"gender":0,"id":1653856,"known_for_department":"Acting","name":"Arnoldis
+        Chapman","original_name":"Arnoldis Chapman","popularity":0.6,"profile_path":null,"cast_id":21,"character":"Self
+        (archive footage)","credit_id":"5790632b9251414aef001f83","order":16},{"adult":false,"gender":0,"id":1249562,"known_for_department":"Acting","name":"Al
+        Kaline","original_name":"Al Kaline","popularity":0.6,"profile_path":null,"cast_id":22,"character":"Self
+        (archive footage)","credit_id":"57906377c3a3684a8c00233d","order":17},{"adult":false,"gender":0,"id":1653857,"known_for_department":"Acting","name":"David
+        Price","original_name":"David Price","popularity":0.6,"profile_path":null,"cast_id":23,"character":"Self
+        (archive footage)","credit_id":"579063bbc3a3684a13002502","order":18},{"adult":false,"gender":0,"id":1249462,"known_for_department":"Acting","name":"Bob
+        Gibson","original_name":"Bob Gibson","popularity":1.96,"profile_path":null,"cast_id":24,"character":"Self
+        (archive footage)","credit_id":"579063c79251411cd800627a","order":19}],"crew":[{"adult":false,"gender":2,"id":53178,"known_for_department":"Directing","name":"Michael
+        Tollin","original_name":"Michael Tollin","popularity":4.327,"profile_path":"/zZEUZh2Oh20wFBXaEfGvwqCBWmv.jpg","credit_id":"628e54d9ed2ac2758dfe1e73","department":"Production","job":"Producer"},{"adult":false,"gender":2,"id":54211,"known_for_department":"Production","name":"Thomas
+        Tull","original_name":"Thomas Tull","popularity":2.682,"profile_path":"/5UG4FK7rsmhzJDYxpU28acqfxtu.jpg","credit_id":"56f5d1c092514155f5000c01","department":"Production","job":"Producer"},{"adult":false,"gender":2,"id":92936,"known_for_department":"Directing","name":"Jonathan
+        Hock","original_name":"Jonathan Hock","popularity":2.143,"profile_path":"/1qzxg46cetSmRGqL6unAt9f20Ia.jpg","credit_id":"56f5d209925141560a000c11","department":"Writing","job":"Screenplay"},{"adult":false,"gender":2,"id":92936,"known_for_department":"Directing","name":"Jonathan
+        Hock","original_name":"Jonathan Hock","popularity":2.143,"profile_path":"/1qzxg46cetSmRGqL6unAt9f20Ia.jpg","credit_id":"550099679251413da8001d06","department":"Directing","job":"Director"},{"adult":false,"gender":0,"id":1106729,"known_for_department":"Editing","name":"Steven
+        Pilgrim","original_name":"Steven Pilgrim","popularity":0.694,"profile_path":null,"credit_id":"6147d1d91689350064edc7ff","department":"Editing","job":"Editor"},{"adult":false,"gender":2,"id":1130319,"known_for_department":"Sound","name":"Tony
+        Morales","original_name":"Tony Morales","popularity":1.342,"profile_path":null,"credit_id":"6147d1cb168935008f0c975a","department":"Sound","job":"Original
+        Music Composer"},{"adult":false,"gender":0,"id":1596332,"known_for_department":"Production","name":"Philip
+        Aromando","original_name":"Philip Aromando","popularity":1.4,"profile_path":null,"credit_id":"56f5d1e5c3a3686a6b000c77","department":"Production","job":"Producer"},{"adult":false,"gender":0,"id":2166956,"known_for_department":"Editing","name":"Pete
+        Panagoulias","original_name":"Pete Panagoulias","popularity":0.6,"profile_path":null,"credit_id":"6147d1d2e55937006179a7a8","department":"Editing","job":"Editor"},{"adult":false,"gender":0,"id":2194380,"known_for_department":"Production","name":"David
+        Check","original_name":"David Check","popularity":0.6,"profile_path":null,"credit_id":"628e54c47d5db510a6558743","department":"Production","job":"Co-Executive
+        Producer"}]}'
+  recorded_at: Sat, 02 Dec 2023 22:26:36 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/330068/reviews
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0NjJkMDg0ZTBiMjJlNGNhZTZiYTUwNTA4YzU2MmUwNyIsInN1YiI6IjY1NjRkZWNlZDk1NTRiMDEzYWYyZjIwMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.F15rqbrDY3vz4g1F9BHHdPGdyOjkGfBpjuf4w5E-dSY
+      User-Agent:
+      - Faraday v2.7.12
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 138e048d065a91f26eabdfab789f742c
+      X-Memc-Age:
+      - '8119'
+      X-Memc-Expires:
+      - '20205'
+      Date:
+      - Sat, 02 Dec 2023 22:26:37 GMT
+      Etag:
+      - W/"3b796a67694707f2c12cacf3ce981616"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - RefreshHit from cloudfront
+      Via:
+      - 1.1 962d5e462d98b7ff1b8a2361adb83eee.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - PHX50-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - e4ACPl9sec9u5aew_zOT2PKdTPU7wyDn6VoqZqi7DV5ZV5cRpFGNyA==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":330068,"page":1,"results":[],"total_pages":0,"total_results":0}'
+  recorded_at: Sat, 02 Dec 2023 22:26:37 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/333775
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0NjJkMDg0ZTBiMjJlNGNhZTZiYTUwNTA4YzU2MmUwNyIsInN1YiI6IjY1NjRkZWNlZDk1NTRiMDEzYWYyZjIwMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.F15rqbrDY3vz4g1F9BHHdPGdyOjkGfBpjuf4w5E-dSY
+      User-Agent:
+      - Faraday v2.7.12
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Sat, 02 Dec 2023 22:26:37 GMT
+      Server:
+      - openresty
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 54856e796f75d953c2e7460cd685d115
+      X-Memc-Age:
+      - '10572'
+      X-Memc-Expires:
+      - '14562'
+      Etag:
+      - W/"9f4bbf680e098ec2db05a27fcf74c918"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 77bc1ffb296c0481de483f3c16355b6e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - PHX50-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - Ksbec7HBGwUPuVH0YvMI_naBK7ydtSStqhLq5BygWafAQLEOuzC4Xg==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOm51bGwsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjowLCJnZW5yZXMiOlt7ImlkIjo5OSwibmFtZSI6IkRvY3VtZW50YXJ5In1dLCJob21lcGFnZSI6Imh0dHA6Ly9ncmFudGxhbmQuY29tL2ZlYXR1cmVzLzMwLWZvci0zMC1zaG9ydHMtdW5oaXR0YWJsZS1zaWRkLWZpbmNoLWFuZC10aGUtdGliZXRhbi1mYXN0YmFsbC8iLCJpZCI6MzMzNzc1LCJpbWRiX2lkIjpudWxsLCJvcmlnaW5hbF9sYW5ndWFnZSI6ImVuIiwib3JpZ2luYWxfdGl0bGUiOiJVbmhpdHRhYmxlOiBTaWRkIEZpbmNoIGFuZCB0aGUgVGliZXRhbiBGYXN0YmFsbCIsIm92ZXJ2aWV3IjoiSW4gdGhlIHNwcmluZyBvZiAxOTg1LCBTcG9ydHMgSWxsdXN0cmF0ZWQgcHJvZmlsZWQgdGhlIGxhdGVzdCBwcm9zcGVjdCBvZiB0aGUgTmV3IFlvcmsgTWV0cyBmYXJtIHN5c3RlbTogU2lkZCBGaW5jaCwgYSBIYXJ2YXJkIGRyb3BvdXQgd2hvIHNwb2tlIDEwIGxhbmd1YWdlcywgcGxheWVkIHRoZSBGcmVuY2ggaG9ybiwgd29yZSBvbmUgaGlraW5nIGJvb3Qg4oCmIGFuZCB0aHJldyAxNjggbXBoLiBJZiBpdCBzb3VuZHMgdG9vIGdvb2QgdG8gYmUgdHJ1ZSwgdGhhdOKAmXMgYmVjYXVzZSBpdCB3YXMuIEZpbmNoIHdhcyBhbiBlbGFib3JhdGUgaG9heCBjb25zdHJ1Y3RlZCBieSB0aGUgbGF0ZSBHZW9yZ2UgUGxpbXB0b24gZm9yIFNJ4oCZcyBBcHJpbCAxIGlzc3VlLiBVbmhpdHRhYmxlIGJyaW5ncyBiYWNrIGFsbCBvZiB0aGUgcGVvcGxlIHdobyBtYWRlIHRoaXMgaG9heCBwb3NzaWJsZSwgaW5jbHVkaW5nIEpvZSBCZXJ0b24sIHRoZSBiZXNwZWN0YWNsZWQgbWlkZGxlIHNjaG9vbCB0ZWFjaGVyIHdobyB0cnVseSBicm91Z2h0IFNpZGQgdG8gbGlmZS4iLCJwb3B1bGFyaXR5IjowLjYsInBvc3Rlcl9wYXRoIjoiL2tobHFpTkIyU296THRlc3ZteGJGQTc2S3M1Si5qcGciLCJwcm9kdWN0aW9uX2NvbXBhbmllcyI6W3siaWQiOjE4NTk1LCJsb2dvX3BhdGgiOiIvMks4a281Vlg2SzJKVExteWN0RHB2SDdTZ2s5LnBuZyIsIm5hbWUiOiJFU1BOIEZpbG1zIiwib3JpZ2luX2NvdW50cnkiOiJVUyJ9XSwicHJvZHVjdGlvbl9jb3VudHJpZXMiOlt7Imlzb18zMTY2XzEiOiJVUyIsIm5hbWUiOiJVbml0ZWQgU3RhdGVzIG9mIEFtZXJpY2EifV0sInJlbGVhc2VfZGF0ZSI6IjIwMTUtMDQtMDEiLCJyZXZlbnVlIjowLCJydW50aW1lIjoyMywic3Bva2VuX2xhbmd1YWdlcyI6W10sInN0YXR1cyI6IlJlbGVhc2VkIiwidGFnbGluZSI6IiIsInRpdGxlIjoiVW5oaXR0YWJsZTogU2lkZCBGaW5jaCBhbmQgdGhlIFRpYmV0YW4gRmFzdGJhbGwiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6MC4wLCJ2b3RlX2NvdW50IjowfQ==
+  recorded_at: Sat, 02 Dec 2023 22:26:37 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/333775/credits
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0NjJkMDg0ZTBiMjJlNGNhZTZiYTUwNTA4YzU2MmUwNyIsInN1YiI6IjY1NjRkZWNlZDk1NTRiMDEzYWYyZjIwMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.F15rqbrDY3vz4g1F9BHHdPGdyOjkGfBpjuf4w5E-dSY
+      User-Agent:
+      - Faraday v2.7.12
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Sat, 02 Dec 2023 22:26:37 GMT
+      Server:
+      - openresty
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - ca608d33ee7186e57eb5a3ae60d144a6
+      X-Memc-Age:
+      - '11034'
+      X-Memc-Expires:
+      - '14937'
+      Etag:
+      - W/"7519b858a775f75a9b246f708bec4c50"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 6f9d1169f2bd8d5941d08b66c4e041a6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - PHX50-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - HilE0H2_UIB1Jx7M0KI351GNc6vVlTJRTousMnBw4U1QmfwxtC3XJQ==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":333775,"cast":[],"crew":[{"adult":false,"gender":2,"id":1111756,"known_for_department":"Directing","name":"Peter
+        Sillen","original_name":"Peter Sillen","popularity":1.4,"profile_path":null,"credit_id":"551c1042c3a3681f2b000068","department":"Directing","job":"Director"}]}'
+  recorded_at: Sat, 02 Dec 2023 22:26:37 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/333775/reviews
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0NjJkMDg0ZTBiMjJlNGNhZTZiYTUwNTA4YzU2MmUwNyIsInN1YiI6IjY1NjRkZWNlZDk1NTRiMDEzYWYyZjIwMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.F15rqbrDY3vz4g1F9BHHdPGdyOjkGfBpjuf4w5E-dSY
+      User-Agent:
+      - Faraday v2.7.12
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Sat, 02 Dec 2023 22:26:37 GMT
+      Server:
+      - openresty
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 7924aece59582966a2fb28f7040abc53
+      X-Memc-Age:
+      - '10573'
+      X-Memc-Expires:
+      - '11814'
+      Etag:
+      - W/"4b0dc0975a12ff93d51acc5ddc83c5e0"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 ea9117ea813694fc6f724c5d6906cc7a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - PHX50-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - KoUK87l8m-foCe1DQVYGlONt_4cOXBbfMvF2a97JIPnrXPMRqs3nZw==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":333775,"page":1,"results":[],"total_pages":0,"total_results":0}'
+  recorded_at: Sat, 02 Dec 2023 22:26:37 GMT
 recorded_with: VCR 6.2.0
