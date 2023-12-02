@@ -82,6 +82,20 @@ describe MovieService do
       end
     end
 
+    context "movie_reviews" do
+      it "can return a list of movie reviews" do
+        reviews = MovieService.new.movie_reviews(872585)
+        review = reviews[:results].first
+        expect(reviews).to be_a Hash
+
+        expect(review).to have_key :author
+        expect(review[:author]).to be_a String
+
+        expect(review).to have_key :content
+        expect(review[:content]).to be_a String
+      end
+    end
+
     context "get_url" do
       it "returns parsed json data" do
         url = "movie/popular"
