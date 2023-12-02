@@ -52,6 +52,8 @@ describe 'Movie Details Page' do
     expect(page).to have_content("Reviews")
     expect(page).to have_content("Manuel São Bento")
     expect(page).to have_content("Oppenheimer is a true masterclass in how to build extreme",)
+    expect(page).to have_content("msbreviews")
+    expect(page).to have_content("8.0 stars")
   end
 
   it "lists how many reviews are for this movie" do
