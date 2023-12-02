@@ -21,22 +21,38 @@ RSpec.describe 'User Show Page', type: :feature do
 
       expect(current_path).to eq(user_discover_index_path(@user))
     end
+  end
 
-    it 'displays a section which contains a list of viewing parties' do
-      party_1 = create(:party)
-      party_2 = create(:party)
-      party_3 = create(:party)
+  describe 'When user visits "/users/:user_id/movies/:movie_id/parties/new"', :vcr do
+    before(:each) do
+      @user_1 = User.create!(name: 'Sam', email: 'sam_t@email.com')
+      @user_2 = User.create!(name: 'Tommy', email: 'Tommy_t@email.com')
+  
+      @movie_facade = MoviesFacade.new.find_movie(238)
 
-      UserParty.create(user: @user, party: party_1, host: true)
-      UserParty.create(user: @user, party: party_2, host: true)
-      UserParty.create(user: @user, party: party_3, host: true)
-
-      visit user_path(@user.id)
-
-      expect(page).to have_content(party_1.movie_id)
-      expect(page).to have_content(party_2.movie_id)
-      expect(page).to have_content(party_3.movie_id)
+      visit  "/users/#{@user_1.id}/movies/#{@movie_facade.id}/viewing_party/new"
     end
+
+    it 'displays a section which contains a list of viewing parties including their movie image, title, date & time, and who is hosting/invited' do
+      fill_in 'Duration', with: 175
+      fill_in 'Date', with: "2023-12-01"
+      fill_in 'Start Time', with: "07:25"
+      check "[invitees][#{@user_2.id}]"
+      click_button 'Create Party'
+
+      expect(current_path).to eq(user_path(@user_1))
+      expect(page).to have_content("Sam's Dashboard")
+      expect(page).to have_content("The Godfather")
+      expect(page).to have_content("December 1, 2023 07:25")
+      expect(page).to have_content("Hosting")
+
+      visit user_path(@user_2)
+
+      expect(page).to have_content("Tommy's Dashboard")
+      expect(page).to have_content("The Godfather")
+      expect(page).to have_content("December 1, 2023 07:25")
+      expect(page).to have_content("Invited")
+    end 
   end
 end
 

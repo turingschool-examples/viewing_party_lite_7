@@ -11,6 +11,9 @@
     <%= f.time_field :start_time %><br>
 
     <%= f.hidden_field :movie_duration, value: @movie_facade.runtime %>
+    <%= f.hidden_field :title, value: @movie_facade.title %>
+    <%= f.hidden_field :image, value: @movie_facade.image %>
+
 
     <h2>Add Other Users</h2>
     <%= f.fields_for :invitees do |invitee| %>
