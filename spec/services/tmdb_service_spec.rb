@@ -12,6 +12,15 @@ RSpec.describe TMDBService do
       end
     end
 
+    describe "::poster_conn" do
+      it "establishes valid poster connection with auth token" do
+        conn = TMDBService.poster_conn
+
+        expect(conn).to be_a Faraday::Connection
+        expect(conn.headers.keys).to include "Authorization"
+      end
+    end
+
     describe "::json_from_url" do
       it "parses url path to base url and returns the json body", :vcr do
         json = TMDBService.json_from_url("discover/movies")
@@ -66,6 +75,17 @@ RSpec.describe TMDBService do
         cast_reviews = TMDBService.get_cast_and_reviews_for_movie(238)
         expect(cast_reviews[:cast].length).to be <= 10
         expect(cast_reviews[:reviews]).to be_an Array
+      end
+    end
+
+    describe "::get_poster" do
+      it "gets the media at a poster path", :vcr do
+
+        poster_path = "/v0PI2XUPrse8pNhu2MWlul6u1S7.jpg"
+        media_status = TMDBService.get_poster(poster_path)
+
+        expect(media_status).to eq 200
+        expect(File).to exist "app/assets/images" + poster_path
       end
     end
   end

@@ -11,7 +11,7 @@
 <div class="parties">
   <% @parties.each do | party | %>
     <div class="party-card" id="party-<%= party.id %>">
-<!--        movie poster-->
+      <%= image_tag url_for(party.movie.poster), class: "party-card-image" %>
       <%= link_to party.movie.title, user_movie_path(@user, party.movie.id), class: "party-card-heading"%>
       <p><%= party.day %></p>
       <p>Start Time: <%= party.time_formatted %></p>

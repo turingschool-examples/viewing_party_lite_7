@@ -27,14 +27,14 @@ RSpec.describe User, type: :feature do
 
     @viewing_party1 = create(
       :viewing_party,
-      duration: @movie_1.runtime,
+      duration: 120,
       time: "12:30:00",
       host_id: @user_1.id,
       movie_id: @movie_1.id
     )
     @viewing_party2 = create(
       :viewing_party,
-      duration: @movie_2.runtime,
+      duration: 120,
       time: "17:15:00",
       host_id: @user_2.id,
       movie_id: @movie_2.id

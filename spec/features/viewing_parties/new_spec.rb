@@ -2,14 +2,12 @@ require "rails_helper"
 
 RSpec.describe "New Viewing Party Page" do
   before do
+    @user1 = User.create(name: "TP", email: "tp@gmail.com")
+    @user2 = User.create(name: "Charles", email: "charles@gmail.com")
+    @user3 = User.create(name: "Chris", email: "chris@gmail.com")
+
     VCR.use_cassette("godfather-movie-details") do
-      @user1 = User.create(name: "TP", email: "tp@gmail.com")
-      @user2 = User.create(name: "Charles", email: "charles@gmail.com")
-      @user3 = User.create(name: "Chris", email: "chris@gmail.com")
-
-      mov = MovieFacade.movie(238)
-      @movie = MovieFacade.add_details(mov)
-
+      @movie = MovieFacade.movie(238)
       visit "/users/#{@user1.id}/movies/#{@movie.id}/viewing_parties/new"
     end
   end
