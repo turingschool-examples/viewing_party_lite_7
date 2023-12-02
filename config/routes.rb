@@ -6,9 +6,12 @@ Rails.application.routes.draw do
 
   root "application#index"
   get '/register', to: 'users#new'
+  post '/users/:id', to: 'viewing_party#create'
 
   resources :users, only: [:show, :create] do
-    resources :movies, only: [:index, :show], on: :member
+    resources :movies, only: [:index, :show], on: :member do
+      resources :viewing_party, only: [:new]
+    end
     get 'discover', on: :member
   end
 
