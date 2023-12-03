@@ -13,6 +13,14 @@ RSpec.describe User, type: :feature do
         runtime: m.runtime,
         poster_path: m.poster_path
       )
+
+      @viewing_party1 = create(
+        :viewing_party,
+        duration: 120,
+        time: "12:30:00",
+        host_id: @user_1.id,
+        movie_id: @movie_1.id
+      )
     end
 
     VCR.use_cassette("fastball-movie-details") do
@@ -23,22 +31,15 @@ RSpec.describe User, type: :feature do
         runtime: m.runtime,
         poster_path: m.poster_path
       )
-    end
 
-    @viewing_party1 = create(
-      :viewing_party,
-      duration: 120,
-      time: "12:30:00",
-      host_id: @user_1.id,
-      movie_id: @movie_1.id
-    )
-    @viewing_party2 = create(
-      :viewing_party,
-      duration: 120,
-      time: "17:15:00",
-      host_id: @user_2.id,
-      movie_id: @movie_2.id
-    )
+      @viewing_party2 = create(
+        :viewing_party,
+        duration: 120,
+        time: "17:15:00",
+        host_id: @user_2.id,
+        movie_id: @movie_2.id
+      )
+    end
 
     PartyUser.create!(user: @user_1, viewing_party: @viewing_party1)
     PartyUser.create!(user: @user_1, viewing_party: @viewing_party2)
