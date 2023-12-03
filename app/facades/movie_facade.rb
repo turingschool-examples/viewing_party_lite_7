@@ -19,8 +19,7 @@ class MovieFacade
 
     data.each do |d|
       movie = Rails.cache.fetch("movie_#{d[:id]}") do
-        m = Poro::Movie.new(d)
-        add_details(m)
+        Poro::Movie.new(d)
       end
 
       results.append(movie)
@@ -30,10 +29,10 @@ class MovieFacade
   end
 
   # @param movie: a Poro::Movie object; lives outside the AR Model
+  # @param movie_page: the json response from the details page
   # @return poro::movie with all details
-  def self.add_details(movie)
-    details = TMDBService.get_movie(movie.id)
-    movie.set_genres_and_runtime(details)
+  def self.add_details(movie, movie_page)
+    movie.set_genres_and_runtime(movie_page)
 
     cast_reviews = TMDBService.get_cast_and_reviews_for_movie(movie.id)
     movie.set_cast_and_reviews(cast_reviews)
@@ -43,10 +42,19 @@ class MovieFacade
 
   # @return poro::movie with all details
   def self.movie(id)
-    # require "byebug"; byebug
-    Rails.cache.fetch("movie_#{id}") do
-      m = Poro::Movie.new(TMDBService.get_movie(id))
-      add_details(m)
+    movie = Rails.cache.read("movie_#{id}")
+
+    if movie.nil? || movie.runtime.nil?  # nonexistent or incomplete movie
+      movie_page = TMDBService.get_movie(id)
+
+      if movie.nil?
+        movie = Poro::Movie.new(movie_page)
+      end
+
+      add_details(movie, movie_page)
+      Rails.cache.write("movie_#{id}", movie)
     end
+
+    movie
   end
 end

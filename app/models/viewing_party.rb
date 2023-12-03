@@ -6,6 +6,8 @@ class ViewingParty < ApplicationRecord
   belongs_to :movie
   has_many :party_users
 
+  after_create :attach_movie_poster
+
   def user_status(id)
     if id == host_id
       return "Hosting"
@@ -16,5 +18,18 @@ class ViewingParty < ApplicationRecord
 
   def time_formatted
     time.strftime("%H:%M")
+  end
+
+  private
+
+  def attach_movie_poster
+    # Call your API service to retrieve the poster
+    TMDBService.get_poster(movie.poster_path)
+
+    self.movie.poster.attach(
+      io: File.open("app/assets/images" + movie.poster_path),
+      filename: movie.poster_path.delete("/"),
+      content_type: "image/jpeg"
+    )
   end
 end
