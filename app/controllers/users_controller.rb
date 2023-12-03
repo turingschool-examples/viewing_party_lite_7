@@ -15,6 +15,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    # conduct api call to get movie poster here
+    @parties = @user.viewing_parties
   end
 
   private

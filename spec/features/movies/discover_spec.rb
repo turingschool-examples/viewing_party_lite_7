@@ -44,7 +44,7 @@ RSpec.describe "Discover Movies", type: :feature do
 
       expect(page).to have_current_path user_movies_path(@user) + "?q=top+rated"
 
-      movies = MovieFacade.top_rated  # should be available because of controller object-instantiation
+      movies = MovieFacade.get_top_rated
 
       movies.each do |movie|
         expect(page).to have_content movie.title

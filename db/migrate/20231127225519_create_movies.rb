@@ -1,13 +1,10 @@
 class CreateMovies < ActiveRecord::Migration[7.0]
   def change
-    create_table :movies do |t|
+    create_table :movies, id: false do |t|
+      t.primary_key :id
       t.string :title
-      t.integer :duration
-      t.string :genre
-      t.float :vote
-      t.string :summary
-      t.string :cast  # , array: true
-      t.string :reviews  # , array: true
+      t.integer :runtime
+      t.string :poster_path
 
       t.timestamps
     end

@@ -20,6 +20,20 @@ class TMDBService
     }
   end
 
+  def self.get_poster(path)
+    # Since this path starts with a /, Faraday replaces "/t/p/w500" with path
+    # the image size needs to be extracted to this #get call
+    media = poster_conn.get("w500" + path)
+    # require 'pry'; binding.pry
+    if media.success?
+      File.binwrite("app/assets/images" + path, media.body)  # images must be handled with binary write
+    else
+      # Handle error
+    end
+
+    media.status
+  end
+
   def self.json_from_url(url)
     response = conn.get(url)
     JSON.parse(response.body, symbolize_names: true)
@@ -27,7 +41,17 @@ class TMDBService
 
   def self.conn
     Faraday.new(url: "https://api.themoviedb.org/3") do |faraday|
-      faraday.headers["Authorization"] = "Bearer " + Rails.application.credentials.tmdb[:auth]
+      faraday.headers["Authorization"] = auth_token
     end
+  end
+
+  def self.poster_conn
+    Faraday.new(url: "https://image.tmdb.org/t/p/") do |faraday|
+      faraday.headers["Authorization"] = auth_token
+    end
+  end
+
+  def self.auth_token
+    "Bearer " + Rails.application.credentials.tmdb[:auth]
   end
 end

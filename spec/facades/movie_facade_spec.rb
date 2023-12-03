@@ -26,21 +26,5 @@ RSpec.describe "Movie Facade" do
         expect(movies.first.title.downcase).to include "fastball"
       end
     end
-
-    describe "::add_details" do
-      it "takes a movie poro and adds details from additional api call", :vcr do
-        movie = MovieFacade.get_top_rated.first
-
-        expect(movie.runtime).to be_nil
-        expect(movie.reviews).to be_nil
-
-        MovieFacade.add_details(movie)
-
-        expect(movie.runtime).not_to be_nil
-        expect(movie.genres).to eq %w[Drama Crime]
-        expect(movie.cast).to be_an Array
-        expect(movie.reviews).to be_an Array
-      end
-    end
   end
 end

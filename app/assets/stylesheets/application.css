@@ -17,6 +17,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import "button_pri.css";
 @import "search.css";
+@import "view_party_form.css";
+@import "parties.css";
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -33,6 +35,7 @@ body {
 
 .container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
