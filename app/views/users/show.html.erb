@@ -5,6 +5,14 @@
 <h3>Viewing Parties:</h3>
 
 <% @user.viewing_parties.each do |viewing_party| %>
+  <% if viewing_party.id == @user.id %>
+    <p>Your Parties:</p>
     <li><%= "When: #{viewing_party.when}" %></li>
     <li><%= "Start Time: #{viewing_party.start_time}" %></li>
   <% end %>
+  <% if viewing_party.id != @user.id %>
+    <p>Other User's Parties You're Invited to:</p>
+    <li><%= "When: #{viewing_party.when}" %></li>
+    <li><%= "Start Time: #{viewing_party.start_time}" %></li>
+  <% end %>
+<% end %>

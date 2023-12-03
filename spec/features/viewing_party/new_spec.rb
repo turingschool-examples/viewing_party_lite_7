@@ -33,6 +33,7 @@ RSpec.describe 'Movie Results Page', type: :feature do
         expect(page).to have_unchecked_field(@user4.name)
         expect(page).to have_button('Create A Party')
 
+        fill_in(:duration, with: '152')
         fill_in(:when, with: '2023-12-15')
         fill_in(:start_time, with: '12:00:00 UTC')
         check(@user2.name.to_s, allow_label_click: true)

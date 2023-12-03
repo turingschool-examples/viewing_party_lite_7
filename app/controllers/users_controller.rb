@@ -17,5 +17,4 @@ class UsersController < ApplicationController
       redirect_to '/register'
     end
   end
-
 end

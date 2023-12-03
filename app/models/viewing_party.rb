@@ -4,4 +4,5 @@ class ViewingParty < ApplicationRecord
   validates :duration, presence: true
   validates :when, presence: true
   validates :start_time, presence: true
+  validates :movie_id, presence: true
 end
