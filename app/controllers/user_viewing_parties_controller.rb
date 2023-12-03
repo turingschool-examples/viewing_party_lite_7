@@ -1,22 +1,18 @@
-class ViewingPartiesController < ApplicationController
-  before_action :find_movie, only: [:new]
-  before_action :find_user, only: %i[new create]
-  def new
-    @users = User.where.not(id: @user.id)
-  end
+class UserViewingPartiesController < ApplicationController
+  before_action :find_movie, only: [:create]
+  before_action :find_user, only: [:create]
 
   def create
     @viewing_party = ViewingParty.new(viewing_party_params)
     if @viewing_party.save
-      UserViewingParty.create(user: @user.id, viewing_party: @viewing_party.id)
-
-      # User.all.each do |user|
-      #   UserViewingParty.create(user: user.id, viewing_party: viewing_party[:id])
-      # end
-      redirect_to "/users/#{@user.id}"
+      @users.each do |user|
+        if params[user.name] == '1'
+          @viewing_party.users << user
+        end
+      end
+      redirect_to "/users/#{params[:id]}"
     else
       flash.notice = 'Please Fill in All Fields'
-      # require 'pry';binding.pry
       redirect_to "/users/#{params[:id]}/movies/#{params[:movies_id]}/viewing_parties/new"
     end
   end
@@ -29,6 +25,10 @@ class ViewingPartiesController < ApplicationController
 
   def find_user
     @user = User.find(params[:id])
+  end
+
+  def find_users
+    @users = User.all
   end
 
   def viewing_party_params
