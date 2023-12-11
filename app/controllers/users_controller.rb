@@ -8,11 +8,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    new_user = User.new(users_params)
-    if new_user.save
+    begin
+      new_user = User.create!(users_params)
       redirect_to "/users/#{new_user.id}"
-    else
-      flash[:notice] = "This email is already registered"
+    rescue ActiveRecord::RecordInvalid => exception
+      flash[:notice] = "#{exception.message}"
       redirect_to "/register"
     end
   end
