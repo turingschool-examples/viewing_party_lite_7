@@ -1,17 +1,11 @@
-# As a visitor 
-# When I visit `/register`
-# I see a form to fill in my name, email, password, and password confirmation.
-# When I fill in that form with my name, email, and matching passwords,
-# I'm taken to my dashboard page `/users/:id`
-
 require 'rails_helper'
 
 RSpec.describe 'new viewing party page', type: :feature do
   describe 'When user visits "/users/:user_id/movies/:movie_id/parties/new"', :vcr do
     before(:each) do
-      @user_1 = User.create!(name: 'Sam', email: 'sam_t@email.com')
-      @user_2 = User.create!(name: 'Tommy', email: 'Tommy_t@email.com')
-
+      @user_1 = User.create!(name: 'Sam', email: 'sam_t@email.com', password: 'elmoonfire12', password_confirmation: 'elmoonfire12')
+      @user_2 = User.create!(name: 'Tommy', email: 'tommy_t@gmail.com', password:  'pegmel0715', password_confirmation:  'pegmel0715')
+      
       @movie_facade = MoviesFacade.new.find_movie(238)
 
       visit  "/users/#{@user_1.id}/movies/#{@movie_facade.id}/viewing_party/new"
