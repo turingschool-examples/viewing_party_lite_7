@@ -9,10 +9,10 @@ class UsersController < ApplicationController
   def create
     new_user = User.new(user_params)
     if new_user.save
-      flash[:notice] = 'Successfully Added New User'
+      flash[:success] = 'Successfully Added New User'
       redirect_to user_path(new_user)
     else
-      flash[:alert] = "Error: #{error_message(new_user.errors)}"
+      flash[:error] = "#{error_message(new_user.errors)}"
       redirect_to register_user_path
     end
   end
