@@ -12,13 +12,16 @@ RSpec.describe 'User Registration', type: :feature do
       expect(page).to have_content('Register a New User')
       expect(page).to have_field('Name')
       expect(page).to have_field('Email')
+      expect(page).to have_field('Password')
       expect(page).to have_button('Create New User')
     end
 
     it 'creates a new user and redirects to the dashboard' do
       visit register_path
-      fill_in('Name', with: 'River')
-      fill_in('Email', with: 'riversong@tardis.net')
+
+      fill_in(:user_name, with: 'River')
+      fill_in(:user_email, with: 'riversong@tardis.net')
+      fill_in(:user_password, with: 'test_password')
 
       click_button 'Create New User'
       expect(current_path).to eq(user_path(User.last.id))
