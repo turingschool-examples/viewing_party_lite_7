@@ -22,8 +22,10 @@ RSpec.describe 'User Registration', type: :feature do
       fill_in(:user_name, with: 'River')
       fill_in(:user_email, with: 'riversong@tardis.net')
       fill_in(:user_password, with: 'test_password')
-
+      fill_in(:user_password_confirmation, with: 'test_password')
+      
       click_button 'Create New User'
+
       expect(current_path).to eq(user_path(User.last.id))
       expect(page).to have_content('Welcome, River!')
       expect(page).to have_content("River's Dashboard")

@@ -13,9 +13,9 @@ RSpec.describe Party, type: :model do
 
   describe 'instance methods' do
     before(:each) do
-      @user_1 = User.create!(name: 'Kiwi', email: 'kiwibird@gmail.com', password: 'test')
-      @user_2 = User.create!(name: 'Chicken', email: 'chickenbird@gmail.com', password: 'test')
-      @user_3 = User.create!(name: 'Coco', email: 'cocobird@gmail.com', password: 'test')
+      @user_1 = User.create!(name: 'Kiwi', email: 'kiwibird@gmail.com', password: 'test', password_confirmation: 'test')
+      @user_2 = User.create!(name: 'Chicken', email: 'chickenbird@gmail.com', password: 'test', password_confirmation: 'test')
+      @user_3 = User.create!(name: 'Coco', email: 'cocobird@gmail.com', password: 'test', password_confirmation: 'test')
       @party_1 = Party.create!(movie_id: 926_393, duration_of_party: 109, party_date: '2024-10-10', start_time: '07:23')
       PartyUser.create!(user_id: @user_1.id, party_id: @party_1.id, is_host: true)
       PartyUser.create!(user_id: @user_2.id, party_id: @party_1.id, is_host: false)

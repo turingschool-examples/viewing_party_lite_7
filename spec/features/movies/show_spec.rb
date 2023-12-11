@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Movie Details Page', type: :feature do
   before(:each) do
-    @user = User.create!(name: 'Morgan', email: 'morgan@email.com')
+    @user = User.create!(name: 'Morgan', email: 'morgan@email.com', password: 'test', password_confirmation: 'test')
   end
 
   describe "When I visit a movie's details page '/users/:user_id/movies/:id'" do
