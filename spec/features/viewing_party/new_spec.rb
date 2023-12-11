@@ -3,24 +3,13 @@ require 'rails_helper'
 RSpec.describe 'new viewing party page', type: :feature do
   describe 'When user visits "/users/:user_id/movies/:movie_id/parties/new"', :vcr do
     before(:each) do
-      @user_1 = User.create!(name: 'Sam', email: 'sam_t@email.com')
-      @user_2 = User.create!(name: 'Tommy', email: 'Tommy_t@email.com')
-
+      @user_1 = User.create!(name: 'Sam', email: 'sam_t@email.com', password: 'elmoonfire12', password_confirmation: 'elmoonfire12')
+      @user_2 = User.create!(name: 'Tommy', email: 'tommy_t@gmail.com', password:  'pegmel0715', password_confirmation:  'pegmel0715')
+      
       @movie_facade = MoviesFacade.new.find_movie(238)
 
-      # @party = Party.create!(duration: @movie_facade.runtime, date: Date.today, start_time: "7:00" , movie_id: @movie_facade.id)
-      # UserParty.create!(user_id: @user_1.id, party_id: @party.id, host: true)
-
-      # visit  new_user_movie_party(@user_1, @movie_facade.id, @party)
-      # WHY did this have to be handrolled
       visit  "/users/#{@user_1.id}/movies/#{@movie_facade.id}/viewing_party/new"
     end
-
-    # it 'They see a Home link that redirects to landing page' do
-    #   expect(page).to have_link('Home')
-    #   click_link "Home"
-    #   expect(current_path).to eq(landing_path)
-    # end
 
     it 'They see movie title at top of page above a form' do
       expect(page).to have_content('The Godfather')
