@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "welcome#index"
-  # root to: 'welcome#index', as: 'landing'
 
   get '/register', to: 'users#new', as: 'register_user'
 
@@ -13,4 +12,7 @@ Rails.application.routes.draw do
       resources :viewing_party, only: [:new, :create]
     end
   end
+
+  get "/login", to: "users#login_form"
+  post "/login", to: "users#login"
 end
