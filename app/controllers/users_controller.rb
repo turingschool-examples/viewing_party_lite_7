@@ -7,7 +7,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    new_user = User.new(user_params)
+    user = user_params
+    user[:email] = user[:email].downcase
+    new_user = User.new(user)
     if new_user.save
       flash[:success] = 'Successfully Added New User'
       redirect_to user_path(new_user)
