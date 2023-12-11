@@ -39,7 +39,7 @@ RSpec.describe 'Create New User', type: :feature do
       expect(page).to have_content('Successfully Added New User')
     end
 
-    it 'They fill in form with information, email (non-unique), submit, redirects to user show page' do
+    it 'when they fill in form with information, email (non-unique), submit, redirects to user show page' do
       fill_in 'Name', with: 'Tommy'
       fill_in 'Email', with: 'tommy_t@gmail.com'
       fill_in 'Password', with: 'pegmel0715'
@@ -48,10 +48,10 @@ RSpec.describe 'Create New User', type: :feature do
       click_button 'Create New User'
 
       expect(current_path).to eq(register_user_path)
-      expect(page).to have_content('Error: Email has already been taken')
+      expect(page).to have_content('Email has already been taken')
     end
 
-    it 'They fill in form with missing information' do
+    it 'when they fill in form with missing information' do
       fill_in 'Name', with: ""
       fill_in 'Email', with: ""
       fill_in 'Password', with: ""
@@ -59,7 +59,7 @@ RSpec.describe 'Create New User', type: :feature do
       click_button 'Create New User'
 
       expect(current_path).to eq(register_user_path)
-      expect(page).to have_content("Error: Name can't be blank, Email can't be blank")
+      expect(page).to have_content("Name can't be blank, Email can't be blank, Email is invalid, Password digest can't be blank, Password can't be blank")
     end
 
     it 'They fill in form with invalid email format (only somethng@something.something)' do # Probably more invalid examples
@@ -70,7 +70,7 @@ RSpec.describe 'Create New User', type: :feature do
       click_button 'Create New User'
 
       expect(current_path).to eq(register_user_path)
-      expect(page).to have_content('Error: Email is invalid')
+      expect(page).to have_content('Email is invalid')
 
       fill_in 'Name', with: "Sammy"
       fill_in 'Email', with: "sam@email..com"
@@ -79,7 +79,7 @@ RSpec.describe 'Create New User', type: :feature do
       click_button 'Create New User'
 
       expect(current_path).to eq(register_user_path)
-      expect(page).to have_content('Error: Email is invalid')
+      expect(page).to have_content('Email is invalid')
 
       fill_in 'Name', with: "Sammy"
       fill_in 'Email', with: "sam@emailcom."
@@ -88,7 +88,7 @@ RSpec.describe 'Create New User', type: :feature do
       click_button 'Create New User'
 
       expect(current_path).to eq(register_user_path)
-      expect(page).to have_content('Error: Email is invalid')
+      expect(page).to have_content('Email is invalid')
 
       fill_in 'Name', with: "Sammy"
       fill_in 'Email', with: "sam@emailcom@"
@@ -97,7 +97,18 @@ RSpec.describe 'Create New User', type: :feature do
       click_button 'Create New User'
 
       expect(current_path).to eq(register_user_path)
-      expect(page).to have_content('Error: Email is invalid')
+      expect(page).to have_content('Email is invalid')
+    end
+
+    it 'When they fill in form with mismatching password and password confirmation, they are then directed back to the "/register" path and a flash message pops up' do
+      fill_in 'Name', with: 'Sammy'
+      fill_in 'Email', with: 'Sammy_t@gmail.com'
+      fill_in 'Password', with: 'pegmel0715'
+      fill_in 'Password confirmation', with: 'pegmel071'
+      click_button 'Create New User'
+
+      expect(current_path).to eq(register_user_path)
+      expect(page).to have_content("Password confirmation doesn't match Password")
     end
   end
 end
