@@ -16,11 +16,11 @@ class UsersController < ApplicationController
     user[:email] = user[:email].downcase
     new_user = User.new(user)
     if new_user.save
-      flash[:success] = "Welcome, #{new_user.name}!"
-      redirect_to user_path(new_user.id)
-    else
-      redirect_to register_path
-      flash[:error] = 'Please fill out BOTH name and email to create an account'
+      create_welcome(new_user)
+    elsif user.values.any?(&:empty?)
+      empty_values
+    elsif new_user.password != new_user.password_confirmation
+      password_not_match
     end
   end
 
@@ -28,5 +28,20 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def create_welcome(new_user)
+    flash[:success] = "Welcome, #{new_user.name}!"
+    redirect_to user_path(new_user.id)
+  end
+
+  def empty_values
+    redirect_to register_path
+    flash[:error] = 'Please fill out all the information to create an account'
+  end
+
+  def password_not_match
+    redirect_to register_path
+    flash[:error] = 'Please make sure password and password confirmation matches'
   end
 end
