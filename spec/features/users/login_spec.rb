@@ -51,8 +51,10 @@ RSpec.describe "New" do
     expect(page).to_not have_button("Login")
     expect(page).to have_button("Log out")
 
-    visit "/login"
+    visit "/"
     expect(page).to_not have_button("Login")
+    expect(page).to_not have_button("Create New User")
+    expect(page).to_not have_link("Log in")
     expect(page).to have_button("Log out")
 
     visit "/users/#{@user3.id}/discover"
