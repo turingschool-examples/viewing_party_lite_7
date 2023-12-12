@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     user[:email] = user[:email].downcase
     new_user = User.new(user_params)
     if new_user.save
+      session[:new_user_id] = new_user.id
       flash[:success] = 'Successfully Added New User'
       redirect_to user_path(new_user)
     else
@@ -24,7 +25,8 @@ class UsersController < ApplicationController
 
   def login
     user = User.find_by(email: params[:email])
-    if user.authenticate(params[:password])
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
       flash[:success] = "Welcome, #{user.name}!"
       redirect_to user_path(user)
     else
