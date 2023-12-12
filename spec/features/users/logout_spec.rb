@@ -17,8 +17,41 @@ RSpec.describe 'User Logout', type: :feature do
       click_button 'Log In'
 
       visit '/'
-      expect(page).to_not have_content('Log In')
-      expect(page).to_not have_content('Create New User')
+      expect(page).to_not have_link('Log In')
+      expect(page).to_not have_button('Create New User')
+    end
+
+    it 'has a link to log out' do
+      visit '/'
+      click_link 'Log In'
+
+      fill_in(:email, with: 'sooyung@turing.edu')
+      fill_in(:password, with: 'test')
+      
+      click_button 'Log In'
+
+      visit '/'
+
+      expect(page).to have_link('Log Out')
+    end
+
+    it 'logs you out when you click log out, and you see log in or create account link' do
+      visit '/'
+      click_link 'Log In'
+
+      fill_in(:email, with: 'sooyung@turing.edu')
+      fill_in(:password, with: 'test')
+      
+      click_button 'Log In'
+
+      visit '/'
+
+      expect(page).to have_link('Log Out')
+      click_link('Log Out')
+      
+      expect(page).to have_button('Create New User')
+      expect(page).to have_link('Log In')
+      expect(page).to_not have_link('Log Out')
     end
   end
 end
