@@ -57,7 +57,22 @@ RSpec.describe 'root page, welcome index', type: :feature do
       click_on 'Log In'
 
       expect(current_path).to eq(user_path(@user_1))
+      expect(page).to have_content("Welcome, #{@user_1.name}!")
       expect(page).to have_content("#{@user_1.name}'s Dashboard")
+    end
+    
+    it 'When a user is directed to the Log In page, they can input their unique email and password, and fail to fill in their correct credentials, then they are taken back to the Log In page where they can see a flash message telling them that they entered incorrect credentials' do
+      click_on 'Log In'
+      
+      expect(current_path).to eq(login_path)
+      
+      fill_in :email, with: @user_1.email
+      fill_in :password, with: 'wrongemail123'
+      
+      click_on 'Log In'
+
+      expect(current_path).to eq(login_path)
+      expect(page).to have_content('Sorry, your credentials are bad.')
     end
   end
 end
