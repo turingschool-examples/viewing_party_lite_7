@@ -11,6 +11,11 @@
   </head>
 
   <body>
+      <% if session[:user_id] %>
+        <p><%= button_to "Log out", "/logout", method: :post %></p><br>
+      <% else %>
+        <p><%= button_to "Login", "/login", method: :get %></p><br>
+      <% end %>
       <% if flash.now[:notice] %>
         <p><%= "#{flash.notice}" %></p>
       <% end %>

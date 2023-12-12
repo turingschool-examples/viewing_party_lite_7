@@ -22,9 +22,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def log_out_user
+    user = User.find(session[:user_id])
+    session[:user_id] = nil
+    redirect_to "/"
+  end
+
   def create
     begin
       new_user = User.create!(users_params)
+      session[:user_id] = new_user.id
       redirect_to "/users/#{new_user.id}"
     rescue ActiveRecord::RecordInvalid => exception
       flash[:notice] = "#{exception.message}"
