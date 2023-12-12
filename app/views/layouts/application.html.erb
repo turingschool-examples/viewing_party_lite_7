@@ -14,6 +14,12 @@
       <% if flash.now[:notice] %>
         <p><%= "#{flash.notice}" %></p>
       <% end %>
+      <% if flash.now[:success] %>
+        <p><%= "#{flash[:success]}" %></p>
+      <% end %>
+      <% if flash.now[:error] %>
+        <p><%= "#{flash[:error]}" %></p>
+      <% end %>
      <div> <%= link_to "Home", "/" %> </div>
      <h3> Viewing Party Lite </h3>
 
