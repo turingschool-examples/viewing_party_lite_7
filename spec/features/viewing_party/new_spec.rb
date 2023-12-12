@@ -6,6 +6,21 @@ RSpec.describe 'new viewing party page', type: :feature do
       @user_1 = User.create!(name: 'Sam', email: 'sam_t@email.com', password: 'elmoonfire12', password_confirmation: 'elmoonfire12')
       @user_2 = User.create!(name: 'Tommy', email: 'tommy_t@gmail.com', password:  'pegmel0715', password_confirmation:  'pegmel0715')
       
+      visit root_path
+
+      click_on 'Log In'
+
+      expect(current_path).to eq(login_path)
+      expect(page).to have_content('Email')
+      expect(page).to have_content('Password')
+
+      fill_in :email, with: @user_1.email
+      fill_in :password, with: @user_1.password
+      
+      click_on 'Log In'
+
+      expect(current_path).to eq(user_path(@user_1))
+
       @movie_facade = MoviesFacade.new.find_movie(238)
 
       visit  "/users/#{@user_1.id}/movies/#{@movie_facade.id}/viewing_party/new"
@@ -33,7 +48,6 @@ RSpec.describe 'new viewing party page', type: :feature do
 
       expect(current_path).to eq(user_path(@user_1))
       expect(page).to have_content("Sam's Dashboard")
-
     end
 
     it 'They fill in form with duration < runtime, date, start time, a user, submit, redirects users dashboard' do

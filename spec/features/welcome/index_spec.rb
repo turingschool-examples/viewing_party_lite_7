@@ -26,10 +26,35 @@ RSpec.describe 'root page, welcome index', type: :feature do
       expect(current_path).to eq(login_path)
     end
 
-    it 'They see list of existing Users, which links to users dashboard, each dashboard has link back to root page' do
+    it 'When they are logged in, they see list of existing Users, which links to users dashboard, each dashboard has link back to root page' do
+      expect(page).to_not have_content('Existing Users')
+      expect(page).to_not have_link('sam_t@email.com')
+      expect(page).to_not have_link('tommy_t@gmail.com')
+      expect(page).to have_selector(:link_or_button, 'Log In')
+      expect(page).to have_selector(:link_or_button, 'Create New User')
+
+      click_on 'Log In'
+
+      expect(current_path).to eq(login_path)
+      expect(page).to have_content('Email')
+      expect(page).to have_content('Password')
+
+      fill_in :email, with: @user_1.email
+      fill_in :password, with: @user_1.password
+      
+      click_on 'Log In'
+
+      expect(current_path).to eq(user_path(@user_1))
+
+      click_on 'Home'
+
+      expect(current_path).to eq(root_path)
       expect(page).to have_content('Existing Users')
       expect(page).to have_link('sam_t@email.com')
       expect(page).to have_link('tommy_t@gmail.com')
+      expect(page).to have_selector(:link_or_button, 'Log Out')
+      expect(page).to_not have_selector(:link_or_button, 'Log In')
+      expect(page).to_not have_selector(:link_or_button, 'Create New User')
 
       click_link 'sam_t@email.com'
 
@@ -99,12 +124,20 @@ RSpec.describe 'root page, welcome index', type: :feature do
       expect(page).not_to have_selector(:link_or_button, 'Create New User')
       
       expect(page).to have_selector(:link_or_button, 'Log Out')
- save_and_open_page
+
       click_on 'Log Out'
 
       expect(page).to have_content("You've been logged out!")
       expect(page).to have_selector(:link_or_button, 'Log In')
       expect(page).to have_selector(:link_or_button, 'Create New User')
+    end
+
+    it "When a visitor visits the landing page, they should not see a list of existing users" do
+      expect(page).to have_selector(:link_or_button, 'Log In')
+      expect(page).to have_selector(:link_or_button, 'Create New User')
+      expect(page).to_not have_content('Existing Users')
+      expect(page).to_not have_link('sam_t@email.com')
+      expect(page).to_not have_link('tommy_t@gmail.com')
     end
   end
 end
