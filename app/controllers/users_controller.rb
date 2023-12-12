@@ -16,6 +16,7 @@ class UsersController < ApplicationController
     user[:email] = user[:email].downcase
     new_user = User.new(user)
     if new_user.save
+      session[:user_id] = new_user.id
       create_welcome(new_user)
     else
       redirect_to register_path
@@ -31,6 +32,7 @@ class UsersController < ApplicationController
     if user == nil
       no_user
     elsif user.authenticate(params[:password])
+      session[:user_id] = user.id
       create_welcome(user)
     else
       bad_credential

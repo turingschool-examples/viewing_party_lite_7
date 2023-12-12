@@ -60,7 +60,7 @@ RSpec.describe 'application (/)' do
         fill_in(:email, with: 'sooyung@turing.edu')
         fill_in(:password, with: 'test')
 
-        click_button "Log In"
+        click_button 'Log In'
 
         expect(current_path).to eq(user_path(@user3))
       end
