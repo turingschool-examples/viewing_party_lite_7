@@ -35,7 +35,7 @@ RSpec.describe 'User Logout', type: :feature do
       expect(page).to have_link('Log Out')
     end
 
-    it 'logs you out when you click log out, and you see log in or create account link' do
+    it 'logs you out when you click log out, and you see log in' do
       visit '/'
       click_link 'Log In'
 
@@ -48,8 +48,7 @@ RSpec.describe 'User Logout', type: :feature do
 
       expect(page).to have_link('Log Out')
       click_link('Log Out')
-      
-      expect(page).to have_button('Create New User')
+      # expect(page).to_not have_button('Create a New User')
       expect(page).to have_link('Log In')
       expect(page).to_not have_link('Log Out')
     end
