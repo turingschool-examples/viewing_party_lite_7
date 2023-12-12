@@ -26,9 +26,9 @@ RSpec.describe 'Create New User', type: :feature do
     end
     
     it 'When they fill in the form with their name, email, and matching passwords, then they are taken to their dashboard page "/users/:id"' do
-      fill_in 'Name', with: 'Tommy'
-      fill_in 'Email', with: 'tommy_t@email.com'
-      fill_in 'Password', with: 'pegmel0715'
+      fill_in :name, with: 'Tommy'
+      fill_in :email, with: 'tommy_t@email.com'
+      fill_in :password, with: 'pegmel0715'
       fill_in 'Password confirmation', with: 'pegmel0715'
 
       click_button 'Create New User'
@@ -40,10 +40,10 @@ RSpec.describe 'Create New User', type: :feature do
     end
 
     it 'when they fill in form with information, email (non-unique), submit, redirects to user show page' do
-      fill_in 'Name', with: 'Tommy'
-      fill_in 'Email', with: 'tommy_t@gmail.com'
-      fill_in 'Password', with: 'pegmel0715'
-      fill_in 'Password confirmation', with: 'pegmel0715'
+      fill_in :name, with: 'Tommy'
+      fill_in :email, with: 'tommy_t@gmail.com'
+      fill_in :password, with: 'pegmel0715'
+      fill_in :password_confirmation, with: 'pegmel0715'
 
       click_button 'Create New User'
 
@@ -52,10 +52,10 @@ RSpec.describe 'Create New User', type: :feature do
     end
 
     it 'when they fill in form with missing information' do
-      fill_in 'Name', with: ""
-      fill_in 'Email', with: ""
-      fill_in 'Password', with: ""
-      fill_in 'Password confirmation', with: ""
+      fill_in :name, with: ""
+      fill_in :email, with: ""
+      fill_in :password, with: ""
+      fill_in :password_confirmation, with: ""
       click_button 'Create New User'
 
       expect(current_path).to eq(register_user_path)
@@ -63,37 +63,37 @@ RSpec.describe 'Create New User', type: :feature do
     end
 
     it 'They fill in form with invalid email format (only somethng@something.something)' do # Probably more invalid examples
-      fill_in 'Name', with: "Sammy"
-      fill_in 'Email', with: "sam sam@email.co.uk"
-      fill_in 'Password', with: 'pegmel0715'
-      fill_in 'Password confirmation', with: 'pegmel0715'
+      fill_in :name, with: "Sammy"
+      fill_in :email, with: "sam sam@email.co.uk"
+      fill_in :password, with: 'pegmel0715'
+      fill_in :password_confirmation, with: 'pegmel0715'
       click_button 'Create New User'
 
       expect(current_path).to eq(register_user_path)
       expect(page).to have_content('Email is invalid')
 
-      fill_in 'Name', with: "Sammy"
-      fill_in 'Email', with: "sam@email..com"
-      fill_in 'Password', with: 'pegmel0715'
-      fill_in 'Password confirmation', with: 'pegmel0715'
+      fill_in :name, with: "Sammy"
+      fill_in :email, with: "sam@email..com"
+      fill_in :password, with: 'pegmel0715'
+      fill_in :password_confirmation, with: 'pegmel0715'
       click_button 'Create New User'
 
       expect(current_path).to eq(register_user_path)
       expect(page).to have_content('Email is invalid')
 
-      fill_in 'Name', with: "Sammy"
-      fill_in 'Email', with: "sam@emailcom."
-      fill_in 'Password', with: 'pegmel0715'
-      fill_in 'Password confirmation', with: 'pegmel0715'
+      fill_in :name, with: "Sammy"
+      fill_in :email, with: "sam@emailcom."
+      fill_in :password, with: 'pegmel0715'
+      fill_in :password_confirmation, with: 'pegmel0715'
       click_button 'Create New User'
 
       expect(current_path).to eq(register_user_path)
       expect(page).to have_content('Email is invalid')
 
-      fill_in 'Name', with: "Sammy"
-      fill_in 'Email', with: "sam@emailcom@"
-      fill_in 'Password', with: 'pegmel0715'
-      fill_in 'Password confirmation', with: 'pegmel0715'
+      fill_in :name, with: "Sammy"
+      fill_in :email, with: "sam@emailcom@"
+      fill_in :password, with: 'pegmel0715'
+      fill_in :password_confirmation, with: 'pegmel0715'
       click_button 'Create New User'
 
       expect(current_path).to eq(register_user_path)
@@ -101,10 +101,10 @@ RSpec.describe 'Create New User', type: :feature do
     end
 
     it 'When they fill in form with mismatching password and password confirmation, they are then directed back to the "/register" path and a flash message pops up' do
-      fill_in 'Name', with: 'Sammy'
-      fill_in 'Email', with: 'Sammy_t@gmail.com'
-      fill_in 'Password', with: 'pegmel0715'
-      fill_in 'Password confirmation', with: 'pegmel071'
+      fill_in :name, with: 'Sammy'
+      fill_in :email, with: 'Sammy_t@gmail.com'
+      fill_in :password, with: 'pegmel0715'
+      fill_in :password_confirmation, with: 'pegmel071'
       click_button 'Create New User'
 
       expect(current_path).to eq(register_user_path)
