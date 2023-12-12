@@ -46,6 +46,51 @@ RSpec.describe 'application (/)' do
         click_link('Home')
         expect(current_path).to eq('/')
       end
+
+      it 'has a link to log in' do
+        visit '/'
+        expect(page).to have_link('Log In')
+
+        click_link('Log In')
+
+        expect(current_path).to eq('/login')
+        expect(page).to have_field(:email)
+        expect(page).to have_field(:password)
+
+        fill_in(:email, with: 'sooyung@turing.edu')
+        fill_in(:password, with: 'test')
+
+        click_button "Log In"
+
+        expect(current_path).to eq(user_path(@user3))
+      end
+
+      it 'does not log in with incorrect credentials' do
+        visit '/'
+        click_link 'Log In'
+
+        fill_in(:email, with: 'sooyung@turing.edu')
+        fill_in(:password, with: 'wrong_password')
+
+        click_button 'Log In'
+
+        expect(current_path).to eq('/login')
+
+        expect(page).to have_content("Sorry, your credentials are bad.")
+      end
+
+      it 'does not log in with incorrect credentials' do
+        visit '/'
+        click_link 'Log In'
+
+        fill_in(:email, with: '')
+        fill_in(:password, with: '')
+
+        click_button 'Log In'
+
+        expect(current_path).to eq('/login')
+        expect(page).to have_content("Please enter correct email and password")
+      end
     end
   end
 end

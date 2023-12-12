@@ -38,7 +38,7 @@ RSpec.describe 'User Registration', type: :feature do
       click_button 'Create New User'
 
       expect(current_path).to eq(register_path)
-      expect(page).to have_content('Please fill out all the information to create an account')
+      expect(page).to have_content("Name can't be blank, Password can't be blank, and Password confirmation can't be blank")
     end
 
     it 'shows an error if the email is blank' do
@@ -48,7 +48,7 @@ RSpec.describe 'User Registration', type: :feature do
       click_button 'Create New User'
 
       expect(current_path).to eq(register_path)
-      expect(page).to have_content('Please fill out all the information to create an account')
+      expect(page).to have_content("Email can't be blank, Password can't be blank, and Password confirmation can't be blank")
     end
 
     it 'shows an error if password confirmation does not match' do
@@ -61,7 +61,7 @@ RSpec.describe 'User Registration', type: :feature do
       click_button 'Create New User'
 
       expect(current_path).to eq(register_path)
-      expect(page).to have_content('Please make sure password and password confirmation matches')
+      expect(page).to have_content("Password confirmation doesn't match Password")
     end
   end
 end
