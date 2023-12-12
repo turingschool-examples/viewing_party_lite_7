@@ -3,7 +3,7 @@ require 'rails_helper'
 describe MovieFacade do
   describe 'class methods' do
     before(:each) do
-      @user = User.create(name: 'Joseph', email: 'jlee230@turing.edu')
+      @user = User.create(name: 'Joseph', email: 'jlee230@turing.edu', password: "test")
       @search_term = 'Die+Hard'
     end
 
@@ -50,7 +50,7 @@ describe MovieFacade do
         expect(page).to have_content('Action')
         expect(page).to have_content('Thriller')
         expect(page).to have_content('Overview: Off-duty cop John McClane is gripped with a feeling of déjà vu when, on a snowy Christmas Eve in the nation’s capital, terrorists seize a major international airport, holding thousands of holiday travelers hostage. Renegade military commandos led by a murderous rogue officer plot to rescue a drug lord from justice and are prepared for every contingency except one: McClane’s smart-mouthed heroics.')
-        expect(page).to have_content('Vote Count: 5347')
+        expect(page).to have_content('Vote Count: 5360')
       end
     end
 

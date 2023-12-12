@@ -8,8 +8,8 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-User.create!(name: 'Joseph Lee', email: 'joseph@turing.edu')
-User.create!(name: 'Kam', email: 'kam@turing.edu')
-User.create!(name: 'Jamison', email: 'jamison@turing.edu')
-User.create!(name: 'Chris', email: 'chris@turing.edu')
-User.create!(name: 'Eric', email: 'eric@turing.edu')
+User.create!(name: 'Joseph Lee', email: 'joseph@turing.edu', password: 'test')
+User.create!(name: 'Kam', email: 'kam@turing.edu', password: 'test')
+User.create!(name: 'Jamison', email: 'jamison@turing.edu', password: 'test')
+User.create!(name: 'Chris', email: 'chris@turing.edu', password: 'test')
+User.create!(name: 'Eric', email: 'eric@turing.edu', password: 'test')

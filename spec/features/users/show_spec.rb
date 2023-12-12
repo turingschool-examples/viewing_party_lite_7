@@ -11,7 +11,7 @@ RSpec.describe 'user dashboard page', type: :feature do
   end
 
   it 'lists the users name' do
-    user = User.create(name: 'Kam', email: 'kameronk013@gmail.com')
+    user = User.create(name: 'Kam', email: 'kameronk013@gmail.com', password: 'test')
 
     visit "/users/#{user.id}"
 
@@ -24,7 +24,7 @@ RSpec.describe 'user dashboard page', type: :feature do
   end
 
   it 'has a button to the Discover Movies page' do
-    user = User.create(name: 'Kam', email: 'kameronk013@gmail.com')
+    user = User.create(name: 'Kam', email: 'kameronk013@gmail.com', password: "test")
 
     visit "/users/#{user.id}"
 

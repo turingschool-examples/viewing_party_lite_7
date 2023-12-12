@@ -25,8 +25,8 @@ RSpec.describe 'landing page', type: :feature do
   end
 
   it 'has a list of existing users' do
-    user_1 = User.create(name: 'Kam', email: 'kameron@turing.edu')
-    user_2 = User.create(name: 'Joseph', email: 'joseph@turing.edu')
+    user_1 = User.create(name: 'Kam', email: 'kameron@turing.edu', password: "test")
+    user_2 = User.create(name: 'Joseph', email: 'joseph@turing.edu', password: "test")
 
     visit '/'
 
