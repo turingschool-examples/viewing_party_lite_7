@@ -25,19 +25,15 @@ class UsersController < ApplicationController
 
   def login_form
   end
-  
+
   def login_user
     user = User.find_by(email: params[:email])
     if user == nil
-      redirect_to '/login'
-      flash[:error] = "Please enter correct email and password"
+      no_user
     elsif user.authenticate(params[:password])
-      flash[:success] = "Welcome, #{user.name}!"
-      redirect_to user_path(user.id)
+      create_welcome(user)
     else
-
-      redirect_to '/login'
-      flash[:error] = "Sorry, your credentials are bad."
+      bad_credential
     end
   end
 
@@ -47,8 +43,18 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 
-  def create_welcome(new_user)
-    flash[:success] = "Welcome, #{new_user.name}!"
-    redirect_to user_path(new_user.id)
+  def create_welcome(user)
+    flash[:success] = "Welcome, #{user.name}!"
+    redirect_to user_path(user.id)
+  end
+
+  def bad_credential
+    redirect_to '/login'
+    flash[:error] = "Sorry, your credentials are bad."
+  end
+
+  def no_user
+    redirect_to '/login'
+    flash[:error] = "Please enter correct email and password"
   end
 end
