@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'root page, welcome index', type: :feature do
+RSpec.describe 'Root Page, Welcome Index', type: :feature do
   describe 'When a user visits the root path "/"' do
     before(:each) do
       @user_1 = User.create!(name: 'Sam', email: 'sam_t@email.com', password: 'elmoonfire12', password_confirmation: 'elmoonfire12')
@@ -100,7 +100,7 @@ RSpec.describe 'root page, welcome index', type: :feature do
       expect(page).to have_content('Sorry, your credentials are bad.')
     end
 
-    it "Once a user is looged in and redirected to the landing page, they will no longer see a link to Log In or Create an account, but see a link to Log Out and once they click the link to Log out, then they are redirected to the landing page where the Log In link is now visible again" do
+    it 'Once a user is looged in and redirected to the landing page, they will no longer see a link to Log In or Create an account, but see a link to Log Out and once they click the link to Log out, then they are redirected to the landing page where the Log In link is now visible again' do
       expect(page).to have_selector(:link_or_button, 'Log In')
       expect(page).to have_selector(:link_or_button, 'Create New User')
 
@@ -132,12 +132,20 @@ RSpec.describe 'root page, welcome index', type: :feature do
       expect(page).to have_selector(:link_or_button, 'Create New User')
     end
 
-    it "When a visitor visits the landing page, they should not see a list of existing users" do
+    it 'When a visitor visits the landing page, they should not see a list of existing users' do
       expect(page).to have_selector(:link_or_button, 'Log In')
       expect(page).to have_selector(:link_or_button, 'Create New User')
       expect(page).to_not have_content('Existing Users')
       expect(page).to_not have_link('sam_t@email.com')
       expect(page).to_not have_link('tommy_t@gmail.com')
+    end
+
+
+    it 'When a visitor visits the landing page, and they try to visit "/dashboard", they should remain on the landing page with a flash error' do
+      visit user_path(@user_1)
+
+      expect(current_path).to eq(root_path)
+      expect(page).to have_content('You must log in to view the dashboard')
     end
   end
 end

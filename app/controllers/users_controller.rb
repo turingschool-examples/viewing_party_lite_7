@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     if session[:user_id]
       @user = User.find(params[:id])
     else
-      flash[:error] = "You must log in to view the dashboard"
+      flash[:error] = 'You must log in to view the dashboard'
       redirect_to root_path
     end
   end
