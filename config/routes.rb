@@ -15,4 +15,5 @@ Rails.application.routes.draw do
 
   get "/login", to: "users#login_form"
   post "/login", to: "users#login"
+  delete "/", to: "users#log_out"
 end
