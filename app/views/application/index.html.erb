@@ -17,7 +17,3 @@
   <%= link_to "Log Out", logout_path, method: :delete, data: {turbo_method: :delete} %>
 <% end %> -->
 
-<h2>Existing Users</h2>
-<% @users.each do |user| %>
-  <p><%= link_to "#{user.email}", "/users/#{user.id}" %></p>
-<% end %>

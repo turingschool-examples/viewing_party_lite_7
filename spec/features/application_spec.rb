@@ -25,18 +25,18 @@ RSpec.describe 'application (/)' do
         expect(current_path).to eq(register_path)
       end
 
-      it 'has a list of existing users and links to their dashboard' do
-        visit '/'
+      # xit 'has a list of existing users and links to their dashboard' do
+      #   visit '/'
 
-        expect(page).to have_content('Existing Users')
-        expect(page).to have_link(@user1.email)
-        expect(page).to have_link(@user2.email)
-        expect(page).to have_link(@user3.email)
+      #   expect(page).to have_content('Existing Users')
+      #   expect(page).to have_link(@user1.email)
+      #   expect(page).to have_link(@user2.email)
+      #   expect(page).to have_link(@user3.email)
 
-        click_link(@user3.email)
+      #   click_link(@user3.email)
 
-        expect(current_path).to eq(user_path(@user3))
-      end
+      #   expect(current_path).to eq(user_path(@user3))
+      # end
 
       it 'has a link that takes you back to the landing page' do
         visit '/'
@@ -76,7 +76,7 @@ RSpec.describe 'application (/)' do
 
         expect(current_path).to eq('/login')
 
-        expect(page).to have_content("Sorry, your credentials are bad.")
+        expect(page).to have_content('Sorry, your credentials are bad.')
       end
 
       it 'does not log in with incorrect credentials' do
@@ -89,7 +89,13 @@ RSpec.describe 'application (/)' do
         click_button 'Log In'
 
         expect(current_path).to eq('/login')
-        expect(page).to have_content("Please enter correct email and password")
+        expect(page).to have_content('Please enter correct email and password')
+      end
+
+      it 'does not show existing users' do
+        visit '/'
+
+        expect(page).to_not have_content('Existing Users')
       end
     end
   end
