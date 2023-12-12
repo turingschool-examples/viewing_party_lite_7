@@ -74,5 +74,37 @@ RSpec.describe 'root page, welcome index', type: :feature do
       expect(current_path).to eq(login_path)
       expect(page).to have_content('Sorry, your credentials are bad.')
     end
+
+    it "Once a user is looged in and redirected to the landing page, they will no longer see a link to Log In or Create an account, but see a link to Log Out and once they click the link to Log out, then they are redirected to the landing page where the Log In link is now visible again" do
+      expect(page).to have_selector(:link_or_button, 'Log In')
+      expect(page).to have_selector(:link_or_button, 'Create New User')
+
+      click_on 'Log In'
+
+      expect(current_path).to eq(login_path)
+      expect(page).to have_content('Email')
+      expect(page).to have_content('Password')
+
+      fill_in :email, with: @user_1.email
+      fill_in :password, with: @user_1.password
+      
+      click_on 'Log In'
+
+      expect(current_path).to eq(user_path(@user_1))
+      expect(page).to have_content("Welcome, #{@user_1.name}")
+
+      visit root_path
+
+      expect(page).not_to have_selector(:link_or_button, 'Log In')
+      expect(page).not_to have_selector(:link_or_button, 'Create New User')
+      
+      expect(page).to have_selector(:link_or_button, 'Log Out')
+ save_and_open_page
+      click_on 'Log Out'
+
+      expect(page).to have_content("You've been logged out!")
+      expect(page).to have_selector(:link_or_button, 'Log In')
+      expect(page).to have_selector(:link_or_button, 'Create New User')
+    end
   end
 end
