@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'new viewing party page', type: :feature do
   before(:each) do
-    @user_1 = User.create!(name: 'Joseph Lee', email: 'jlee230@turing.edu')
-    @user_2 = User.create!(name: 'Kam Kennedy', email: 'kkennedy230@turing.edu')
+    @user_1 = User.create!(name: 'Joseph Lee', email: 'jlee230@turing.edu', password: "test")
+    @user_2 = User.create!(name: 'Kam Kennedy', email: 'kkennedy230@turing.edu', password: "test")
   end
 
   it 'has a link to the landing page' do

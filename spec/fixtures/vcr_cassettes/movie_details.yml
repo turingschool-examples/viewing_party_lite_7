@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Sat, 02 Dec 2023 19:40:36 GMT
+      - Mon, 11 Dec 2023 23:48:33 GMT
       Server:
       - openresty
       X-Memc:
@@ -33,24 +33,24 @@ http_interactions:
       X-Memc-Key:
       - d7b46d06efc0d5211baefb1f3169818c
       X-Memc-Age:
-      - '6002'
+      - '4300'
       X-Memc-Expires:
-      - '21860'
+      - '22061'
       Etag:
-      - W/"5f8bd830b717984ae7ae7c8fdb20a228"
+      - W/"da7f3e3b400aacf3e733608efc07e6b9"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 61ff1927788a811372346b5470412a78.cloudfront.net (CloudFront)
+      - 1.1 402032e48d13c4b7217c7a59235bf8cc.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN52-P2
+      - DEN52-C1
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 2HTuIZkkg2Vl5GyNWBhsFlbg0RZejWA-lZsCy9OMH6d6hsDsWtv0TQ==
+      - Xba8uMBc1J6MHWJ5csTpsW2SBZGoYJ4lT-dcOk2d0LBaKFqBmLgORA==
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/giBJ0ezYNEobFBfB8H4JNTjmll.jpg","belongs_to_collection":{"id":2344,"name":"The
@@ -58,12 +58,12 @@ http_interactions:
         Fiction"}],"homepage":"http://www.warnerbros.com/matrix","id":603,"imdb_id":"tt0133093","original_language":"en","original_title":"The
         Matrix","overview":"Set in the 22nd century, The Matrix tells the story of
         a computer hacker who joins a group of underground insurgents fighting the
-        vast and powerful computers who now rule the earth.","popularity":89.809,"poster_path":"/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg","production_companies":[{"id":79,"logo_path":"/at4uYdwAAgNRKhZuuFX8ShKSybw.png","name":"Village
+        vast and powerful computers who now rule the earth.","popularity":131.626,"poster_path":"/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg","production_companies":[{"id":79,"logo_path":"/at4uYdwAAgNRKhZuuFX8ShKSybw.png","name":"Village
         Roadshow Pictures","origin_country":"US"},{"id":372,"logo_path":null,"name":"Groucho
         II Film Partnership","origin_country":""},{"id":1885,"logo_path":"/xlvoOZr4s1PygosrwZyolIFe5xs.png","name":"Silver
         Pictures","origin_country":"US"},{"id":174,"logo_path":"/IuAlhI9eVC9Z8UQWOIDdWRKSEJ.png","name":"Warner
         Bros. Pictures","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"1999-03-30","revenue":463517383,"runtime":136,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Welcome
-        to the Real World.","title":"The Matrix","video":false,"vote_average":8.209,"vote_count":24135}'
-  recorded_at: Sat, 02 Dec 2023 19:40:36 GMT
+        States of America"}],"release_date":"1999-03-30","revenue":463517383,"runtime":136,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"The
+        fight for the future begins.","title":"The Matrix","video":false,"vote_average":8.2,"vote_count":24170}'
+  recorded_at: Mon, 11 Dec 2023 23:48:33 GMT
 recorded_with: VCR 6.2.0

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Movie show page' do
   before(:each) do
-    @user_1 = User.create!(name: 'Joseph Lee', email: 'jlee230@turing.edu')
+    @user_1 = User.create!(name: 'Joseph Lee', email: 'jlee230@turing.edu', password: "test")
   end
 
   it 'has a link to the landing page' do

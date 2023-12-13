@@ -17,10 +17,12 @@ describe 'the User Registration Page' do
     expect(page).to have_content('Register an Account')
     expect(page).to have_field('user[name]', type: 'text')
     expect(page).to have_field('user[email]', type: 'email')
+    expect(page).to have_field('user[password]', type: 'password')
     expect(page).to have_button('Register')
 
     fill_in 'user[name]', with: 'Thomas Smith'
     fill_in 'user[email]', with: 'tsmith11@turing.edu'
+    fill_in 'user[password]', with: 'test'
 
     click_on('Register')
 
@@ -37,10 +39,12 @@ describe 'the User Registration Page' do
     visit register_path
     fill_in 'user[name]', with: 'Thomas Smith'
     fill_in 'user[email]', with: 'tsmith11@turing.edu'
+    fill_in 'user[password]', with: 'test'
     click_on('Register')
     visit register_path
     fill_in 'user[name]', with: 'Thomas Smith'
     fill_in 'user[email]', with: 'tsmith11@turing.edu'
+    fill_in 'user[password]', with: 'test'
     click_on('Register')
 
     expect(current_path).to eq(register_path)

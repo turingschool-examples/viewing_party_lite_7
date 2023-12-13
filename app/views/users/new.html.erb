@@ -1,12 +1,15 @@
 <%= render partial: "shared/nav" %>
 <h1><u>Register an Account</u></h1>
 
-<%= form_with(model: @user, url: register_path, method: :post, data: { turbo: false } ) do |form| %>
+<%= form_with model: @user, local: true do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name %>
 
   <%= form.label :email %>
   <%= form.email_field :email %>
+
+  <%= form.label :password %>
+  <%= form.password_field :password %>
 
   <%= form.submit 'Register' %>
 <% end %>
