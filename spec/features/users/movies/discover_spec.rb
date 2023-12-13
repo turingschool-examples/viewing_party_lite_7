@@ -6,6 +6,12 @@ RSpec.describe "Movies" do
   end
 
   it "A user's show page has button to discover movies, links to an index of all movies" do
+    visit "/login"
+
+    fill_in :email, with: "Bungie123@gmail.com"
+    fill_in :password, with: "Hello123!"
+
+    click_on "Log In"
     visit "/users/#{@user1.id}"
 
     click_button "Discover Movies"

@@ -6,6 +6,13 @@ RSpec.describe "New Party" do
   end
 
   it "can create a new party with all attributes", :vcr do
+    visit "/login"
+
+    fill_in :email, with: "Bungie123@gmail.com"
+    fill_in :password, with: "Hello123!"
+
+    click_on "Log In"
+    
     visit "/users/#{@user1.id}/movies/808"
 
     click_button "Create Viewing Party for Shrek"

@@ -17,6 +17,13 @@ RSpec.describe "Show" do
     @userparty1 = UserParty.create(user_id: @user1.id, party_id: @party1.id, creator: true)
     @userparty2 = UserParty.create(user_id: @user2.id, party_id: @party1.id, creator: false)
 
+    visit "/login"
+
+    fill_in :email, with: "Bungie123@gmail.com"
+    fill_in :password, with: "Hello123!"
+
+    click_on "Log In"
+
     visit "/users/#{@user1.id}"
 
     expect(page).to have_content("#{@user1.name}'s Dashboard")
@@ -31,6 +38,13 @@ RSpec.describe "Show" do
     visit "/users/#{@user2.id}"
 
     expect(page).to have_content("#{@user2.name}'s Dashboard")
+  end
+
+  it "can't visit show page without logging in first" do
+    visit "/users/#{@user1.id}"
+    expect(current_path).to eq("/")
+
+    expect(page).to have_content("You must be logged in or registered to access your dashboard")
   end
 
 end
