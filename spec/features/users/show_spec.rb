@@ -33,7 +33,7 @@ RSpec.describe "Show" do
     expect(page).to_not have_content("Four Rooms")
     
     click_button "Discover Movies"
-    expect(current_path).to eq("/users/#{@user1.id}/discover")
+    expect(current_path).to eq("/discover")
     click_button("Log out")
     visit "/login"
 

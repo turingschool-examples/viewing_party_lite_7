@@ -48,15 +48,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 12e4fc9256386a4cd8f000b9caa3e012.cloudfront.net (CloudFront)
+      - 1.1 5539e869b7b6ea60eddee5f69c9a0d9c.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-C1
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - KMmVayZdoZ7asmI-hRSvrZQg77hZ9dC1P1L0xbC9T3jsC9w42ppPQQ==
+      - katN-54bJivjRnqFMkL3KwzxKwK-AaBp9z_Pg-w0TXO6TqW_fl1E2Q==
       Age:
-      - '2522'
+      - '3767'
     body:
       encoding: ASCII-8BIT
       string: '{"id":808,"cast":[{"adult":false,"gender":2,"id":12073,"known_for_department":"Acting","name":"Mike
@@ -648,5 +648,5 @@ http_interactions:
         Effects","job":"Rotoscoping Artist"},{"adult":false,"gender":0,"id":2243150,"known_for_department":"Visual
         Effects","name":"Shane Jackson","original_name":"Shane Jackson","popularity":1.38,"profile_path":null,"credit_id":"5c674033c3a36847bbdb190b","department":"Visual
         Effects","job":"Stereoscopic Technical Director"}]}'
-  recorded_at: Wed, 13 Dec 2023 05:37:16 GMT
+  recorded_at: Wed, 13 Dec 2023 05:58:01 GMT
 recorded_with: VCR 6.2.0

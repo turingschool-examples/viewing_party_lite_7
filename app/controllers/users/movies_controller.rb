@@ -1,12 +1,12 @@
 class Users::MoviesController < ApplicationController
 
   def discover
-    @user = User.find(params[:user_id])
+    @user = User.find(session[:user_id])
     @movies = Movie.all
   end
 
   def index
-    @user = User.find(params[:user_id])
+    @user = User.find(session[:user_id])
 
     if params[:top_movies]
       @movies = MovieFacade.top_movies
@@ -17,7 +17,7 @@ class Users::MoviesController < ApplicationController
 
   def show
     @movie = MovieFacade.new(params[:movie_id]).movie
-    @user = User.find(params[:user_id])
+    @user = User.find(session[:user_id])
   end
 
 end
