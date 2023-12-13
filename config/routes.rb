@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   post "/logout", to: "users#log_out_user"
   
   get "/dashboard", to: "users#show"
+  get "/admin/dashboard", to: "admin#index"
+  get "/admin/users/:user_id", to: "admin/users#show"
 
   get "/discover", to: "users/movies#discover"
   get "/movies", to: "users/movies#index"

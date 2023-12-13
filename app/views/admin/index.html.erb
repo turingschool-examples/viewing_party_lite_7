@@ -1,0 +1,8 @@
+
+<h3> Existing Users </h3>
+
+<% if session[:user_id] %>
+  <% @users.each do |user| %>
+    <%= link_to user.email, "/admin/users/#{user.id}"%><br>
+  <% end %>
+<% end %> 

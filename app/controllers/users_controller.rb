@@ -20,7 +20,8 @@ class UsersController < ApplicationController
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
       flash[:success] = "Welcome, #{user.name}!"
-      redirect_to "/dashboard"
+      redirect_to "/dashboard" if user.default?
+      redirect_to "/admin/dashboard" if user.admin?
     else
       flash[:error] = "You have entered the incorrect credentials"
       render :login_form

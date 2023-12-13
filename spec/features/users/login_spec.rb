@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "New" do
+RSpec.describe "login" do
   before :each do
     test_data 
   end
