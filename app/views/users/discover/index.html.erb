@@ -1,8 +1,8 @@
 <%= render partial: "shared/nav" %>
 
-<%= button_to "Find Top Rated Movies", top_rated_movies_path(@user.id), method: :get, params: { q: "top-rated"}, data: { turbo: false }, local: true %>
+<%= button_to "Find Top Rated Movies", top_rated_movies_path, method: :get, params: { q: "top-rated"}, data: { turbo: false }, local: true %>
 
-<%= form_with url:"/users/#{@user.id}/movies", method: :get, local: :true do |f| %>
+<%= form_with url:"/movies", method: :get, local: :true do |f| %>
     <%= f.label "Search for a movie:" %>
     <%= f.text_field :search %>
     <%= f.submit "Find Movies" %>

@@ -1,10 +1,8 @@
 <%= render partial: "shared/nav" %>
 
-<p><%= button_to "New User", register_path, method: :get %></p>
-
-<h3>User Index</h3>
-<%@users.each do |user|%>
-<ol>
-  <%= link_to "#{user.name}", "users/#{user.id}"%>
-</ol>
-<%end%>
+<% if current_user %>
+  <h3>User Index</h3>
+  <% @users.each do |user| %>
+    <%= "#{user.email}"%> <br>
+  <% end %>
+<% end %>

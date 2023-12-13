@@ -1,10 +1,10 @@
 <%= render partial: "shared/nav" %>
-<%= button_to "Discover", user_discover_path(@user.id), params: { value: "top-rated" }, method: :get, data: { turbo: false }, local: true %>
+<%= button_to "Discover", user_discover_path, params: { value: "top-rated" }, method: :get, data: { turbo: false }, local: true %>
 
 <% if params[:q] == "top-rated" %>
   <% @movies.each do |movie| %>
   <ol>
-    <%= link_to "#{movie.title}", "/users/#{@user.id}/movies/#{movie.movie_id}" %> 
+    <%= link_to "#{movie.title}", "/movies/#{movie.movie_id}" %> 
     <%= movie.vote_average %>
   </ol>
   <% end %>
@@ -13,7 +13,7 @@
 <% if params[:search].present? %>
   <% @movies.each do |movie| %>
   <ol>
-    <%= link_to "#{movie.title}", "/users/#{@user.id}/movies/#{movie.movie_id}" %>
+    <%= link_to "#{movie.title}", "/movies/#{movie.movie_id}" %>
     <%= movie.vote_average %>
   </ol>
   <% end %>
