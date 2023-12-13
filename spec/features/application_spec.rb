@@ -97,6 +97,19 @@ RSpec.describe 'application (/)' do
 
         expect(page).to_not have_content('Existing Users')
       end
+
+      it 'shows list of users if you are a registered user' do
+        visit '/'
+        click_link('Log In')
+        fill_in(:email, with: 'sooyung@turing.edu')
+        fill_in(:password, with: 'test')
+        click_button('Log In')
+        visit '/'
+
+        expect(page).to have_content('brendan@turing.edu')
+        expect(page).to have_content('paul@turing.edu')
+        expect(page).to have_content('sooyung@turing.edu')
+      end
     end
   end
 end
