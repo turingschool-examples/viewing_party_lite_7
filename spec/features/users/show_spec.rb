@@ -64,6 +64,12 @@ RSpec.describe '#show', type: :feature do
           expect(page).to have_content("Guest List: #{@user_1.name}")
         end
       end
+
+      it 'shows error message if you have not logged in and visit /user/id' do
+        visit "/users/#{@user3.id}"
+        expect(current_path).to eq('/')
+        expect(page).to have_content('You must be logged in or registered to access the dashboard')
+      end
     end
   end
 end

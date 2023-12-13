@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :require_login, only: :show
+  
   def new
     @user = User.new
   end
@@ -58,5 +60,12 @@ class UsersController < ApplicationController
   def no_user
     redirect_to '/login'
     flash[:error] = "Please enter correct email and password"
+  end
+
+  def require_login
+    unless current_user
+      flash[:error] = 'You must be logged in or registered to access the dashboard' 
+      redirect_to '/'
+    end
   end
 end
