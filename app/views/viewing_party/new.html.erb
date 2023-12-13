@@ -1,0 +1,29 @@
+<section class="partyForm">
+  <h2><%= @movie_facade.title %></h2>
+  <%= form_with url:"/users/#{@user.id}/movies/#{@movie_facade.id}/viewing_party", method: :post, data: { turbo: false } do |f| %>
+    <%= f.label :duration, "Duration of Party" %>
+    <%= f.text_field :duration, value: @movie_facade.runtime %><br>
+
+    <%= f.label :date, "Date" %>
+    <%= f.date_field :date, value: Date.today %><br>
+
+    <%= f.label :start_time, "Start Time" %>
+    <%= f.time_field :start_time %><br>
+
+    <%= f.hidden_field :movie_duration, value: @movie_facade.runtime %>
+    <%= f.hidden_field :title, value: @movie_facade.title %>
+    <%= f.hidden_field :image, value: @movie_facade.image %>
+
+    <h2>Add Other Users</h2>
+    <%= f.fields_for :invitees do |invitee| %>
+      <% User.all.each do |user| %>
+        <% if user.id != @user.id %>
+          <p><%= invitee.label user.id, "#{user.name} (#{user.email})" %>
+          <%= invitee.check_box user.id %></p>
+        <% end %>
+      <% end %>
+    <% end %>
+
+    <%= f.submit "Create Party" %>
+  <% end %>
+</section>

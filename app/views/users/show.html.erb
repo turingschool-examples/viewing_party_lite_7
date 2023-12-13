@@ -1,0 +1,21 @@
+<%= render partial: "shared/nav" %>
+
+<h1><%= "#{@user.name}'s Dashboard" %></h1><br>
+
+<%= button_to "Discover Movies", user_discover_index_path(@user), method: :get, data: { turbo: false } %><br>
+
+<section class = "viewing_parties">
+  <% @user.parties.each do |party| %>
+    <div style="border:solid; width:342px">
+      <%= image_tag("https://image.tmdb.org/t/p/w342/" + "#{party.image_path}") %><br>
+      <%= party.movie_title %><br>
+        Party Time: <%= party.date_and_time %><br>
+        Your Status: <%= party.host?(@user) %><br>
+        Who's Coming? <% party.attendees.each do |attendee| %><br>
+          <div class=<%= "#{attendee.name}"%>>
+            <li><%= attendee.name %> </li><br>
+          </div>
+        <% end %>
+    </div><br>
+  <% end %>
+</section>
