@@ -14,9 +14,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = user_params
-    user[:email] = user[:email].downcase
-    new_user = User.new(user)
+    new_user = User.new(user_params)
     if new_user.save
       session[:user_id] = new_user.id
       create_welcome(new_user)
