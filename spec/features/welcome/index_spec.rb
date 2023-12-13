@@ -26,10 +26,10 @@ RSpec.describe 'Root Page, Welcome Index', type: :feature do
       expect(current_path).to eq(login_path)
     end
 
-    it 'When they are logged in, they see list of existing Users, which links to users dashboard, each dashboard has link back to root page' do
+    it 'When they are logged in, they see list of existing Users emails' do
       expect(page).to_not have_content('Existing Users')
-      expect(page).to_not have_link('sam_t@email.com')
-      expect(page).to_not have_link('tommy_t@gmail.com')
+      expect(page).to_not have_content('sam_t@email.com')
+      expect(page).to_not have_content('tommy_t@gmail.com')
       expect(page).to have_selector(:link_or_button, 'Log In')
       expect(page).to have_selector(:link_or_button, 'Create New User')
 
@@ -50,25 +50,11 @@ RSpec.describe 'Root Page, Welcome Index', type: :feature do
 
       expect(current_path).to eq(root_path)
       expect(page).to have_content('Existing Users')
-      expect(page).to have_link('sam_t@email.com')
-      expect(page).to have_link('tommy_t@gmail.com')
+      expect(page).to have_content('sam_t@email.com')
+      expect(page).to have_content('tommy_t@gmail.com')
       expect(page).to have_selector(:link_or_button, 'Log Out')
       expect(page).to_not have_selector(:link_or_button, 'Log In')
       expect(page).to_not have_selector(:link_or_button, 'Create New User')
-
-      click_link 'sam_t@email.com'
-
-      expect(current_path).to eq(user_path(@user_1))
-      expect(page).to have_link('Home')
-
-      click_link "Home"
-
-      expect(current_path).to eq(root_path)
-
-      click_link 'tommy_t@gmail.com'
-
-      expect(current_path).to eq(user_path(@user_2))
-      expect(page).to have_link('Home')
     end
 
     it 'When a user is directed to the Log In page, they can input their unique email and password, and when they enter their unique email and correct password, they are taken to their dashboard page' do      
@@ -138,6 +124,27 @@ RSpec.describe 'Root Page, Welcome Index', type: :feature do
       expect(page).to_not have_content('Existing Users')
       expect(page).to_not have_link('sam_t@email.com')
       expect(page).to_not have_link('tommy_t@gmail.com')
+    end
+
+    it 'When a registered user visits the landing page, they should no longer see the list of existing users as links, but just a list of their emails' do
+      click_on 'Log In'
+
+      expect(current_path).to eq(login_path)
+      expect(page).to have_content('Email')
+      expect(page).to have_content('Password')
+
+      fill_in :email, with: @user_1.email
+      fill_in :password, with: @user_1.password
+      
+      click_on 'Log In'
+
+      expect(current_path).to eq(user_path(@user_1))
+      expect(page).to have_content("Welcome, #{@user_1.name}")
+
+      visit root_path
+
+      expect(page).to have_content('sam_t@email.com')
+      expect(page).to have_content('tommy_t@gmail.com')
     end
 
 
