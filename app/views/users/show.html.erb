@@ -1,0 +1,48 @@
+<%= render partial: "shared/nav" %>
+
+<h1><%="#{current_user.name}'s Dashboard"%></h1>
+<%= button_to "Discover Movies", user_discover_path, method: :get, data: { turbo: false }, local: true %>
+
+<section id = "viewing-parties">
+  <h3>Parties I'm Hosting</h3>
+    <% current_user.viewing_parties.each do |party| %>
+        <ol>
+        <% if party.host_id.to_i == current_user.id %>
+          <%# <%= image_tag "https://image.tmdb.org/t/p/w92#{@image}" %><br>
+          <img src="https://tmdb.com/<%= @image %>"><br>
+          <u>Title:</u> <%= party.movie_title %><br>
+          <u>Date and Time:</u> <%= party.start_time %><br>
+          <% party.user_viewing_parties.each do |uvp| %>  
+            <% if uvp.user_id == current_user.id %>
+              <u>Users Attending:</u> 
+              <% party.users.uniq.each do |user| %>
+                <%= user.name %>,
+              <% end %>
+            <% end %>
+            <% end %>
+          <% end %>
+        </ol>
+    <% end %>
+      
+  <h3>Parties I'm Invited To</h3>
+  <% current_user.viewing_parties.uniq.each do |party| %>
+        <ol>
+        <% if party.host_id.to_i != current_user.id %>
+          <u>Title:</u> <%= party.movie_title %><br>
+          <u>Date and Time:</u> <%= party.start_time %><br>
+          <% party.user_viewing_parties.each do |uvp| %>  
+            <% if uvp.user_id == current_user.id %>
+              <u>Users Attending:</u> 
+              <% party.users.each do |user| %>
+                <% if user.id == uvp.user_id %>
+                  <strong><%= user.name %>,</strong>
+                <% else %>
+                  <%= user.name %>,
+                <%end%>
+              <% end %>
+            <% end %>
+            <% end %>
+          <% end %>
+        </ol>
+    <% end %>
+</section>

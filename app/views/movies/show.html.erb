@@ -1,0 +1,24 @@
+<%= render partial: "shared/nav" %>
+<%= button_to "Discover", user_discover_path, params: { value: "top-rated" }, method: :get, data: { turbo: false }, local: true %>
+<%= button_to "Create a Viewing Party", "/movies/#{@movie_info.movie_id}/viewing-party/new", params: { movie_id: @movie_info.movie_id, movie_title: @movie_info.title, movie_runtime: @movie_info.runtime }, method: :get, data: { turbo: false }, local: true %>
+
+<p><u>Title</u>: <%=@movie_info.title%></p>
+<p><u>Vote Average</u>: <%=@movie_info.vote_average%></p>
+<p><u>Runtime</u>: <%=@movie_info.convert_runtime_to_hours_and_minutes%></p>
+<p><u>Genres</u>:</p>
+<%@movie_info.genre.each do |genre|%>
+  <ol><%= genre[:name] %></ol>
+<%end%>
+<p><u>Overview</u>: <%=@movie_info.overview%></p>
+<h3><u>Cast</u>:</h3>
+<%@cast.each do |actor|%>
+  <ol><%= actor.name %> plays the character of "<%=actor.character%>"</ol>
+<%end%>
+<p><u>Vote Count</u>: <%=@movie_info.vote_count%></p>
+<h3><u>Reviews</u></h3>
+<%@reviews.each do |review|%></p>
+<ol>
+  <p><u>Review Author</u>: <%= review.author %></p>
+  <p><u>Review Text</u>: <%= review.content %></p>
+</oL>
+<%end%>
