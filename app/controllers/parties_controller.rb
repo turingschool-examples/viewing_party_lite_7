@@ -40,7 +40,7 @@ class PartiesController < ApplicationController
           end
         end
   
-        redirect_to "/users/#{@user.id}"
+        redirect_to "/dashboard"
       end
     end
     

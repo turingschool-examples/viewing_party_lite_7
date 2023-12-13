@@ -14,8 +14,9 @@ RSpec.describe "New" do
     fill_in :password_confirmation, with: "Hello123!"
   
     click_button "Create New User"
-
-    expect(current_path).to eq("/users/#{User.all.last.id}")
+    user = User.all.last
+    expect(current_path).to eq("/dashboard")
+    expect(user.name).to eq("Name")
   end
 
   it "rejects repeat emails" do

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   post "/login", to: "users#login_user"
   post "/logout", to: "users#log_out_user"
   
-  get "/users/:user_id", to: "users#show"
+  get "/dashboard", to: "users#show"
 
   get "/users/:user_id/discover", to: "users/movies#discover"
   get "/users/:user_id/movies", to: "users/movies#index"

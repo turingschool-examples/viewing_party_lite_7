@@ -12,7 +12,9 @@ RSpec.describe "New" do
     fill_in :password, with: "Hello123!"
 
     click_on "Log In"
-    expect(current_path).to eq("/users/#{@user3.id}")
+    user = @user3
+    expect(current_path).to eq("/dashboard")
+    expect(page).to have_content("#{@user3.name}")
 
   end
 
@@ -43,10 +45,10 @@ RSpec.describe "New" do
 
     expect(page).to_not have_button("Log out")
     expect(page).to have_button("Login")
-
+    user = @user3
     click_on "Log In"
 
-    expect(current_path).to eq("/users/#{@user3.id}")
+    expect(current_path).to eq("/dashboard")
 
     expect(page).to_not have_button("Login")
     expect(page).to have_button("Log out")

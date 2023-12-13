@@ -46,19 +46,32 @@ RSpec.describe "New Party" do
     
     click_button "Create Party"
     
-    expect(current_path).to eq("/users/#{@user1.id}")
+    expect(current_path).to eq("/dashboard")
+    expect(page).to have_content("#{@user1.name}")
     expect(page).to have_content("Shrek")
     expect(page).to have_content("February 1, 2024")
     expect(page).to have_content("7:00 pm")
     expect(page).to have_content("Hosting")
+    visit "/login"
 
-    visit "/users/#{@user3.id}"
+    fill_in :email, with: "#{@user3.email}"
+    fill_in :password, with: "Hello123!"
+
+    click_on "Log In"
+    visit "/dashboard"
+    expect(page).to have_content("#{@user3.name}")
     expect(page).to have_content("Shrek")
     expect(page).to have_content("February 1, 2024")
     expect(page).to have_content("7:00 pm")
     expect(page).to have_content("Invited")
+    visit "/login"
 
-    visit "/users/#{@user2.id}"
+    fill_in :email, with: "#{@user2.email}"
+    fill_in :password, with: "Hello123!"
+
+    click_on "Log In"
+    visit "/dashboard"
+    expect(page).to have_content("#{@user2.name}")
     expect(page).to_not have_content("Shrek")
   end
 
@@ -106,21 +119,36 @@ RSpec.describe "New Party" do
 
     
 
-    visit "/users/#{@user1.id}"
+    visit "/dashboard"
 
-    expect(current_path).to eq("/users/#{@user1.id}")
+    expect(page).to have_content("#{@user1.name}")
     expect(page).to_not have_content("Shrek")
     expect(page).to_not have_content("February 1, 2024")
     expect(page).to_not have_content("7:00 pm")
     expect(page).to_not have_content("Hosting")
 
-    visit "/users/#{@user3.id}"
+    click_on("Log out")
+    visit "/login"
+
+    fill_in :email, with: "#{@user3.email}"
+    fill_in :password, with: "Hello123!"
+
+    click_on "Log In"
+
+    expect(page).to have_content("#{@user3.name}")
     expect(page).to_not have_content("Shrek")
     expect(page).to_not have_content("February 1, 2024")
     expect(page).to_not have_content("7:00 pm")
     expect(page).to_not have_content("Invited")
+    click_on("Log out")
+    visit "/login"
 
-    visit "/users/#{@user2.id}"
+    fill_in :email, with: "#{@user2.email}"
+    fill_in :password, with: "Hello123!"
+
+    click_on "Log In"
+
+    expect(page).to have_content("#{@user2.name}")
     expect(page).to_not have_content("Shrek")
   end
 

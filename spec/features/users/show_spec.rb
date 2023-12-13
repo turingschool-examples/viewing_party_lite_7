@@ -24,7 +24,7 @@ RSpec.describe "Show" do
 
     click_on "Log In"
 
-    visit "/users/#{@user1.id}"
+    visit "/dashboard"
 
     expect(page).to have_content("#{@user1.name}'s Dashboard")
     expect(page).to have_content("Viewing Parties")
@@ -34,14 +34,20 @@ RSpec.describe "Show" do
     
     click_button "Discover Movies"
     expect(current_path).to eq("/users/#{@user1.id}/discover")
-    
-    visit "/users/#{@user2.id}"
+    click_button("Log out")
+    visit "/login"
+
+    fill_in :email, with: "#{@user2.email}"
+    fill_in :password, with: "Hello123!"
+
+    click_on "Log In"
+    visit "/dashboard"
 
     expect(page).to have_content("#{@user2.name}'s Dashboard")
   end
 
   it "can't visit show page without logging in first" do
-    visit "/users/#{@user1.id}"
+    visit "/dashboard"
     expect(current_path).to eq("/")
 
     expect(page).to have_content("You must be logged in or registered to access your dashboard")

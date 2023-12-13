@@ -26,12 +26,8 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Date:
-      - Tue, 12 Dec 2023 23:58:13 GMT
       Server:
       - openresty
-      Cache-Control:
-      - public, max-age=2118
       X-Memc:
       - HIT
       X-Memc-Key:
@@ -40,6 +36,10 @@ http_interactions:
       - '24779'
       X-Memc-Expires:
       - '2118'
+      Date:
+      - Wed, 13 Dec 2023 04:55:14 GMT
+      Cache-Control:
+      - public, max-age=12273
       Etag:
       - W/"73956ca7a57962349ecca16018c8c9d0"
       Vary:
@@ -48,15 +48,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 a7bf7cf3a377b5000ee61eea3824eb74.cloudfront.net (CloudFront)
+      - 1.1 12e4fc9256386a4cd8f000b9caa3e012.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-C1
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 8lvVd44x2jWuZoDHgqw9l_4JwYtMMgnq3dF8NhJftxaFDSKT93IrEw==
+      - KMmVayZdoZ7asmI-hRSvrZQg77hZ9dC1P1L0xbC9T3jsC9w42ppPQQ==
       Age:
-      - '718'
+      - '2522'
     body:
       encoding: ASCII-8BIT
       string: '{"id":808,"cast":[{"adult":false,"gender":2,"id":12073,"known_for_department":"Acting","name":"Mike
@@ -648,5 +648,5 @@ http_interactions:
         Effects","job":"Rotoscoping Artist"},{"adult":false,"gender":0,"id":2243150,"known_for_department":"Visual
         Effects","name":"Shane Jackson","original_name":"Shane Jackson","popularity":1.38,"profile_path":null,"credit_id":"5c674033c3a36847bbdb190b","department":"Visual
         Effects","job":"Stereoscopic Technical Director"}]}'
-  recorded_at: Wed, 13 Dec 2023 00:10:11 GMT
+  recorded_at: Wed, 13 Dec 2023 05:37:16 GMT
 recorded_with: VCR 6.2.0

@@ -12,7 +12,7 @@ RSpec.describe "Movies" do
     fill_in :password, with: "Hello123!"
 
     click_on "Log In"
-    visit "/users/#{@user1.id}"
+    visit "/dashboard"
 
     click_button "Discover Movies"
     expect(current_path).to eq("/users/#{@user1.id}/discover")

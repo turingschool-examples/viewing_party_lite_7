@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def show
     if session[:user_id]
-      @user = User.find(params[:user_id])
+      @user = User.find(session[:user_id])
     else
       flash[:notice] = "You must be logged in or registered to access your dashboard"
       redirect_to "/"
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
       flash[:success] = "Welcome, #{user.name}!"
-      redirect_to "/users/#{user.id}"
+      redirect_to "/dashboard"
     else
       flash[:error] = "You have entered the incorrect credentials"
       render :login_form
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
     begin
       new_user = User.create!(users_params)
       session[:user_id] = new_user.id
-      redirect_to "/users/#{new_user.id}"
+      redirect_to "/dashboard"
     rescue ActiveRecord::RecordInvalid => exception
       flash[:notice] = "#{exception.message}"
       redirect_to "/register"
