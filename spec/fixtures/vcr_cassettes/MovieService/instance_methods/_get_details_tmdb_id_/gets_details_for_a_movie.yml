@@ -48,15 +48,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 39c272e966ab7a6f8a68d2222276a954.cloudfront.net (CloudFront)
+      - 1.1 15e4f26e891877d8d585dc5a26acc46e.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-C1
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - QzrBK_A2b0mgkA2ow-1Q_gzLutfqVFNimqHrLUtYt5gaFgBZnwCkqQ==
+      - _77QmACMDbQLmQ22d1oVHgnHZo6E3kUDcs7gBRxpuPBP2GtzPKJNeQ==
       Age:
-      - '10'
+      - '719'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/sRvXNDItGlWCqtO3j6wks52FmbD.jpg","belongs_to_collection":{"id":2150,"name":"Shrek
@@ -70,5 +70,5 @@ http_interactions:
         Animation","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"2001-05-18","revenue":487900000,"runtime":90,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"The
         greatest fairy tale never told.","title":"Shrek","video":false,"vote_average":7.731,"vote_count":16022}'
-  recorded_at: Tue, 12 Dec 2023 23:58:23 GMT
+  recorded_at: Wed, 13 Dec 2023 00:10:12 GMT
 recorded_with: VCR 6.2.0
