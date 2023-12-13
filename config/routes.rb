@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root "application#index"
   get "/login", to: "users#login_form"
   post "/login", to: "users#login_user"
+  delete "/logout", to: "sessions#destroy", as: :logout
   get '/register', to: 'users#new'
   post '/users/:id', to: 'viewing_party#create'
 

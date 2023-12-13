@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :require_login, only: :show
+  
   def new
     @user = User.new
   end
@@ -12,10 +14,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = user_params
-    user[:email] = user[:email].downcase
-    new_user = User.new(user)
+    new_user = User.new(user_params)
     if new_user.save
+      session[:user_id] = new_user.id
       create_welcome(new_user)
     else
       redirect_to register_path
@@ -31,6 +32,7 @@ class UsersController < ApplicationController
     if user == nil
       no_user
     elsif user.authenticate(params[:password])
+      session[:user_id] = user.id
       create_welcome(user)
     else
       bad_credential
@@ -56,5 +58,12 @@ class UsersController < ApplicationController
   def no_user
     redirect_to '/login'
     flash[:error] = "Please enter correct email and password"
+  end
+
+  def require_login
+    unless current_user
+      flash[:error] = 'You must be logged in or registered to access the dashboard' 
+      redirect_to '/'
+    end
   end
 end

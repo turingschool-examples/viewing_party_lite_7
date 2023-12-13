@@ -8,6 +8,7 @@ RSpec.describe 'Movie Details Page', type: :feature do
   describe "When I visit a movie's details page '/users/:user_id/movies/:id'" do
     it 'has a create viewing party button' do
       VCR.use_cassette('dune_details') do
+        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
         visit "/users/#{@user.id}/movies/438631"
         expect(page).to have_button('Create Viewing Party for Dune')
         click_button('Create Viewing Party for Dune')
@@ -17,6 +18,7 @@ RSpec.describe 'Movie Details Page', type: :feature do
     
     it 'I can see a button to return to the discover page' do
       VCR.use_cassette('dune_details') do
+        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
         visit "/users/#{@user.id}/movies/438631"
 
         expect(page).to have_button('Discover Movies')
@@ -27,6 +29,7 @@ RSpec.describe 'Movie Details Page', type: :feature do
     
     it 'shows movie title, vote average, runtime in hours and minutes, genre(s), and a summary description' do
       VCR.use_cassette('dune_details') do
+        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
         visit "/users/#{@user.id}/movies/438631"
         
         expect(page).to have_content('Dune')
@@ -43,6 +46,7 @@ RSpec.describe 'Movie Details Page', type: :feature do
 
     it 'shows a list of the first 10 cast members' do
       VCR.use_cassette('dune_details') do
+        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
         visit "/users/#{@user.id}/movies/438631"
 
         within('#cast') do
@@ -56,6 +60,7 @@ RSpec.describe 'Movie Details Page', type: :feature do
 
     it 'should have a count of total reviews, with each author and their information' do
       VCR.use_cassette('dune_details') do
+        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
         visit "/users/#{@user.id}/movies/438631"
 
         within('#reviews') do
@@ -66,6 +71,13 @@ RSpec.describe 'Movie Details Page', type: :feature do
           expect(page).to have_content('Great movie with excellent BG music and visual effects. Waiting for part two.')
         end
       end
+    end
+
+    it 'gives you an error message to log in or register to create viewing party', :vcr do
+        visit "/users/#{@user.id}/movies/438631"
+        click_button('Create Viewing Party for Dune')
+        expect(current_path).to eq("/users/#{@user.id}/movies/438631")
+        expect(page).to have_content('You must be logged in or registered to create a movie party')
     end
   end
 end
