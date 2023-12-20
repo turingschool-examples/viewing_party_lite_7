@@ -6,10 +6,17 @@ RSpec.describe "New Party" do
   end
 
   it "can create a new party with all attributes", :vcr do
-    visit "/users/#{@user1.id}/movies/808"
+    visit "/login"
+
+    fill_in :email, with: "Bungie123@gmail.com"
+    fill_in :password, with: "Hello123!"
+
+    click_on "Log In"
+
+    visit "/movies/808"
 
     click_button "Create Viewing Party for Shrek"
-    expect(current_path).to eq("/users/#{@user1.id}/movies/808/viewing-party/new")
+    expect(current_path).to eq("/movies/808/viewing-party/new")
     
     expect(page).to have_content("Create a Movie Party for Shrek")
     expect(page).to have_button("Discover Page")
@@ -39,24 +46,91 @@ RSpec.describe "New Party" do
     
     click_button "Create Party"
     
-    expect(current_path).to eq("/users/#{@user1.id}")
+    expect(current_path).to eq("/dashboard")
+    expect(page).to have_content("#{@user1.name}")
     expect(page).to have_content("Shrek")
     expect(page).to have_content("February 1, 2024")
     expect(page).to have_content("7:00 pm")
     expect(page).to have_content("Hosting")
+    visit "/login"
 
-    visit "/users/#{@user3.id}"
+    fill_in :email, with: "#{@user3.email}"
+    fill_in :password, with: "Hello123!"
+
+    click_on "Log In"
+    visit "/dashboard"
+    expect(page).to have_content("#{@user3.name}")
     expect(page).to have_content("Shrek")
     expect(page).to have_content("February 1, 2024")
     expect(page).to have_content("7:00 pm")
     expect(page).to have_content("Invited")
+    visit "/login"
 
-    visit "/users/#{@user2.id}"
+    fill_in :email, with: "#{@user2.email}"
+    fill_in :password, with: "Hello123!"
+
+    click_on "Log In"
+    visit "/dashboard"
+    expect(page).to have_content("#{@user2.name}")
+    expect(page).to_not have_content("Shrek")
+  end
+
+  it "cannot create a viewing party without logging in first", :vcr do
+    visit "/movies/808/viewing-party/new"
+    
+    expect(current_path).to eq("/")
+    
+    visit "/login"
+
+    fill_in :email, with: "Bungie123@gmail.com"
+    fill_in :password, with: "Hello123!"
+
+    click_on "Log In"
+
+    
+
+    visit "/dashboard"
+
+    expect(page).to have_content("#{@user1.name}")
+    expect(page).to_not have_content("Shrek")
+    expect(page).to_not have_content("February 1, 2024")
+    expect(page).to_not have_content("7:00 pm")
+    expect(page).to_not have_content("Hosting")
+
+    click_on("Log out")
+    visit "/login"
+
+    fill_in :email, with: "#{@user3.email}"
+    fill_in :password, with: "Hello123!"
+
+    click_on "Log In"
+
+    expect(page).to have_content("#{@user3.name}")
+    expect(page).to_not have_content("Shrek")
+    expect(page).to_not have_content("February 1, 2024")
+    expect(page).to_not have_content("7:00 pm")
+    expect(page).to_not have_content("Invited")
+    click_on("Log out")
+    visit "/login"
+
+    fill_in :email, with: "#{@user2.email}"
+    fill_in :password, with: "Hello123!"
+
+    click_on "Log In"
+
+    expect(page).to have_content("#{@user2.name}")
     expect(page).to_not have_content("Shrek")
   end
 
   it "can will not create a party with a duration lower than the movie runtime", :vcr do
-    visit "/users/#{@user1.id}/movies/808/viewing-party/new"
+    visit "/login"
+
+    fill_in :email, with: "Bungie123@gmail.com"
+    fill_in :password, with: "Hello123!"
+
+    click_on "Log In"
+
+    visit "/movies/808/viewing-party/new"
 
     fill_in :duration, with: 80
 
@@ -72,14 +146,21 @@ RSpec.describe "New Party" do
 
     click_button("Create Party")
 
-    expect(current_path).to eq("/users/#{@user1.id}/movies/808/viewing-party/new")
+    expect(current_path).to eq("/movies/808/viewing-party/new")
 
     expect(page).to have_content("Party Duration Must Be Longer Than Movie Runtime")
 
   end
   
   it "can will not create a party set in the past", :vcr do
-    visit "/users/#{@user1.id}/movies/808/viewing-party/new"
+    visit "/login"
+
+    fill_in :email, with: "Bungie123@gmail.com"
+    fill_in :password, with: "Hello123!"
+
+    click_on "Log In"
+
+    visit "/movies/808/viewing-party/new"
 
     fill_in :duration, with: 100
 
@@ -93,13 +174,20 @@ RSpec.describe "New Party" do
     
     click_button("Create Party")
     
-    expect(current_path).to eq("/users/#{@user1.id}/movies/808/viewing-party/new")
+    expect(current_path).to eq("/movies/808/viewing-party/new")
 
     expect(page).to have_content("Party Date Must Be Set in the Future")
   end
 
   it "Only creates a new db object if it doesn't exist", :vcr do
-    visit "/users/#{@user1.id}/movies/808/viewing-party/new"
+    visit "/login"
+
+    fill_in :email, with: "Bungie123@gmail.com"
+    fill_in :password, with: "Hello123!"
+
+    click_on "Log In"
+
+    visit "/movies/808/viewing-party/new"
     
     select "2024", from: "_day_1i"
     
@@ -107,7 +195,7 @@ RSpec.describe "New Party" do
 
     expect(Movie.where(tmdb_id: 808).count).to eq(1)
     
-    visit "/users/#{@user2.id}/movies/808/viewing-party/new"
+    visit "/movies/808/viewing-party/new"
     
     select "2024", from: "_day_1i"
     

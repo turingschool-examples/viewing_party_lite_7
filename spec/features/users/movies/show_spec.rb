@@ -6,16 +6,22 @@ RSpec.describe "Movies Show" do
   end
 
   it "It should have a button to create a viewing party and a button to return to the discover page", :vcr do
-    visit "/users/#{@user1.id}/discover"
+    visit "/login"
+
+    fill_in :email, with: "Bungie123@gmail.com"
+    fill_in :password, with: "Hello123!"
+
+    click_on "Log In"
+    visit "/discover"
 
     fill_in :movie_title, with: "Shrek"
     click_button "Find Movies"
     click_link("Shrek", match: :first)
-    expect(current_path).to eq("/users/#{@user1.id}/movies/808")
+    expect(current_path).to eq("/movies/808")
     
     expect(page).to have_button("Create Viewing Party for Shrek")
     click_button "Discover Page"
-    expect(current_path).to eq("/users/#{@user1.id}/discover")
+    expect(current_path).to eq("/discover")
   end
 
   it "It should have Movie Title
@@ -26,8 +32,13 @@ RSpec.describe "Movies Show" do
   List the first 10 cast members (characters&actress/actors)
   Count of total reviews
   Each review's author and information", :vcr do
+    visit "/login"
 
-    visit "/users/#{@user1.id}/movies/808"
+    fill_in :email, with: "Bungie123@gmail.com"
+    fill_in :password, with: "Hello123!"
+
+    click_on "Log In"
+    visit "/movies/808"
     
     expect(page).to have_content("Shrek")
     expect(page).to have_content("Vote Average: 7.7")

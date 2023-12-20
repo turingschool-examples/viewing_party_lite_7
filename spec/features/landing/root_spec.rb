@@ -18,11 +18,26 @@ RSpec.describe "Root" do
     end
 
     it "has list of existing users which links to user dashboard" do
+      visit "/login"
+
+      fill_in :email, with: "Moogoo@gmail.com"
+      fill_in :password, with: "Hello123!"
+  
+      click_on "Log In"
       visit "/"
       expect(page).to have_content("Existing Users")
       expect(page).to have_content(@user1.email)
       expect(page).to have_content(@user2.email)
       expect(page).to have_content(@user3.email)
+    end
+
+    it "will not show list if user is not logged in" do
+
+      visit "/"
+      expect(page).to have_content("Existing Users")
+      expect(page).to_not have_content(@user1.email)
+      expect(page).to_not have_content(@user2.email)
+      expect(page).to_not have_content(@user3.email)
     end
 
     it "has link to go to landing page" do

@@ -9,4 +9,6 @@ class User < ApplicationRecord
   validates_presence_of :password_confirmation
 
   has_secure_password
+
+  enum account_level: [:default, :admin]
 end

@@ -6,14 +6,26 @@ RSpec.describe "Movies" do
   end
 
   it "A user's show page has button to discover movies, links to an index of all movies" do
-    visit "/users/#{@user1.id}"
+    visit "/login"
+
+    fill_in :email, with: "Bungie123@gmail.com"
+    fill_in :password, with: "Hello123!"
+
+    click_on "Log In"
+    visit "/dashboard"
 
     click_button "Discover Movies"
-    expect(current_path).to eq("/users/#{@user1.id}/discover")
+    expect(current_path).to eq("/discover")
   end
 
   it "A user's show page has button to discover movies, links to an index of all movies" do
-    visit "/users/#{@user1.id}/discover"
+    visit "/login"
+
+    fill_in :email, with: "Bungie123@gmail.com"
+    fill_in :password, with: "Hello123!"
+
+    click_on "Log In"
+    visit "/discover"
 
     expect(page).to have_content("Viewing Party Lite")
     expect(page).to have_content("Discover Movies")
@@ -22,9 +34,4 @@ RSpec.describe "Movies" do
     expect(page).to have_button("Find Movies")
     expect(page).to have_field(:movie_title)
   end
-
-  # it "A user's show page has button to discover movies, links to an index of all movies" do
-  #   visit "/users/#{@user1.id}/discover"
-
-  # end
 end

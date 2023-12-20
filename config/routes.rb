@@ -11,13 +11,16 @@ Rails.application.routes.draw do
   
   get "/login", to: "users#login_form"
   post "/login", to: "users#login_user"
+  post "/logout", to: "users#log_out_user"
   
-  get "/users/:user_id", to: "users#show"
+  get "/dashboard", to: "users#show"
+  get "/admin/dashboard", to: "admin#index"
+  get "/admin/users/:user_id", to: "admin/users#show"
 
-  get "/users/:user_id/discover", to: "users/movies#discover"
-  get "/users/:user_id/movies", to: "users/movies#index"
-  get "/users/:user_id/movies/:movie_id", to: "users/movies#show"
+  get "/discover", to: "users/movies#discover"
+  get "/movies", to: "users/movies#index"
+  get "/movies/:movie_id", to: "users/movies#show"
 
-  get "/users/:user_id/movies/:movie_id/viewing-party/new", to: "parties#new"
-  post "/users/:user_id/movies/:movie_id/viewing-party", to: "parties#create"
+  get "/movies/:movie_id/viewing-party/new", to: "parties#new"
+  post "/movies/:movie_id/viewing-party", to: "parties#create"
 end
