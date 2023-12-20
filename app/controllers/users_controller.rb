@@ -7,19 +7,34 @@ class UsersController < ApplicationController
   def new
   end
 
-  def create
-    new_user = User.new(users_params)
-    if new_user.save
-      redirect_to "/users/#{new_user.id}"
+  def login_form
+  end
+
+  def login_user
+    user = User.find_by(email: params[:email])
+    if user&.authenticate(params[:password])
+      session[:user_id] = user.id
+      flash[:success] = "Welcome, #{user.name}!"
+      redirect_to "/users/#{user.id}"
     else
-      flash[:notice] = "This email is already registered"
+      flash[:error] = "You have entered the incorrect credentials"
+      render :login_form
+    end
+  end
+
+  def create
+    begin
+      new_user = User.create!(users_params)
+      redirect_to "/users/#{new_user.id}"
+    rescue ActiveRecord::RecordInvalid => exception
+      flash[:notice] = "#{exception.message}"
       redirect_to "/register"
     end
   end
 
   private
   def users_params
-    params.permit(:email, :name)
+    params.permit(:email, :name, :password, :password_confirmation)
   end
 
 end

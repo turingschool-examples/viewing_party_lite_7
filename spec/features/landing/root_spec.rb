@@ -30,5 +30,11 @@ RSpec.describe "Root" do
       click_link("Home")
       expect(current_path).to eq("/")
     end
+
+    it "has button to create a new user" do
+      visit "/"
+      click_link("Log In")
+      expect(current_path).to eq("/login")
+    end
   end
 end
