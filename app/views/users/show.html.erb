@@ -1,0 +1,12 @@
+<h2><%= "#{@user.name}'s Dashboard" %></h2>
+
+<p><%= button_to "Discover Movies", "/discover", method: :get %></p><br><br>
+
+<h4>Viewing Parties</h4>
+<% @user.parties.each do |party| %>
+  <img src= <%= "#{party.image_api_call}" %> height="200" > <br>
+  <%= party.name %><br>
+  <%= party.date%><br>
+  <%= party.start_time%><br>
+  <%= party.host(@user.id)%><br><br><br>
+<% end %>

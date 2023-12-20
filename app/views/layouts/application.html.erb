@@ -11,6 +11,23 @@
   </head>
 
   <body>
+      <% if session[:user_id] %>
+        <p><%= button_to "Log out", "/logout", method: :post %></p><br>
+      <% else %>
+        <p><%= button_to "Login", "/login", method: :get %></p><br>
+      <% end %>
+      <% if flash.now[:notice] %>
+        <p><%= "#{flash.notice}" %></p>
+      <% end %>
+      <% if flash.now[:success] %>
+        <p><%= "#{flash[:success]}" %></p>
+      <% end %>
+      <% if flash.now[:error] %>
+        <p><%= "#{flash[:error]}" %></p>
+      <% end %>
+     <div> <%= link_to "Home", "/" %> </div>
+     <h3> Viewing Party Lite </h3>
+
     <%= yield %>
   </body>
 </html>

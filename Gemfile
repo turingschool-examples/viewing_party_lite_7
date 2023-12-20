@@ -34,7 +34,7 @@ gem "jbuilder"
 # gem "kredis"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
+gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
@@ -51,6 +51,14 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "pry"
+  gem "rspec-rails"
+  gem "capybara"
+  gem "launchy"
+  gem "shoulda-matchers"
+  gem "simplecov"
+  gem "orderly"
+  gem "webmock"
+  gem "vcr"
 end
 
 group :development do
@@ -62,12 +70,17 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-  gem "rubocop-rails"
+  gem "rubocop-rails", require: false
 end
 
 group :test do
-  gem "rspec-rails"
-  gem "capybara"
-  gem "launchy"
-  gem "simplecov"
+  # gem "rspec-rails"
+  # gem "capybara"
+  # gem "launchy"
+  # gem "simplecov"
+  # gem "orderly"
+  # gem "shoulda-matchers"
 end
+
+gem "faraday"
+gem "figaro"

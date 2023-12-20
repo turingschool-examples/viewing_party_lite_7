@@ -1,0 +1,14 @@
+
+<% unless session[:user_id] %>
+  <p><%= button_to "Create New User", "/register", method: :get %></p><br>
+  <p><%= link_to "Log In", "/login", method: :get %></p><br>
+<% end %>
+
+<h3> Existing Users </h3>
+
+<% if session[:user_id] %>
+  <% @users.each do |user| %>
+    <%= user.email %>
+    <%# <%= link_to user.email, "/users/#{user.id}" %><br>
+  <% end %>
+<% end %> 
