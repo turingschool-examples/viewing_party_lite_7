@@ -1,0 +1,8 @@
+<h2>Discover Movies</h2>
+
+<%= button_to "Find Top Rated Movies", "/users/#{@user.id}/movies", method: :get , params: { :top_movies => "top rated" } %>
+
+<%= form_tag(user_movies_path(@user.id), method: :get) do %>
+  <%= text_field_tag(:search, params[:search], placeholder: 'search') %>
+  <%= submit_tag("Find Movies") %>
+<% end %>

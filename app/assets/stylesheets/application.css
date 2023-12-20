@@ -1,0 +1,119 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+  background-image: url("https://img.freepik.com/free-photo/popcorn-blue-background-with-copy-space-center_23-2148416768.jpg?w=1800&t=st=1703030364~exp=1703030964~hmac=8a5429783ee6c2d616aa56435bef0b37f943a80fa1d1cc07a4d74cd009da3891");
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+  margin: 0; /* Optional: Remove default body margin */
+  height: 100vh;
+
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgb(46, 30, 29);
+  height: 100vh;
+  margin: 0;
+}
+
+
+table {
+  width: 100%;
+  border: 1px solid;
+}
+
+html * {
+  font-family: monospace;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.register-container {
+  max-width: 600px; /* Adjust the maximum width as needed */
+  justify-content: center;
+  margin-left: 290px;
+}
+
+.register-form {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.register-form h2 {
+  grid-column: span 2; /* Make the heading span both columns */
+  text-align: center;
+}
+
+.register-form label {
+  display: block;
+}
+
+.register-form input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.register-form br {
+  display: none; /* Hide line breaks to make styling consistent */
+}
+
+.register-form button {
+  grid-column: span 2; /* Make the button span both columns */
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.flash_message {
+  font-size:15px;
+  border: 2px solid #f50a0a;
+  font-weight: bold;
+  background-color: #f8cef7;
+  padding: 5px;
+  text-align: center;
+}
