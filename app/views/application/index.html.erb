@@ -1,3 +1,10 @@
+<ul>
+  <li><a class="active" href="/">Home</a></li>
+  <% if current_user %>
+    <li><a href="<%= "/users/#{current_user.id}/discover" %>">Discover Page</a></li>
+  <% end %>
+</ul>
+
 <div class="content">
   <h1>Viewing Party</h1>
   <% if current_user %>

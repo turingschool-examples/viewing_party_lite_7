@@ -15,13 +15,12 @@
  */
 
 body {
-  background-image: url("https://img.freepik.com/free-photo/popcorn-blue-background-with-copy-space-center_23-2148416768.jpg?w=1800&t=st=1703030364~exp=1703030964~hmac=8a5429783ee6c2d616aa56435bef0b37f943a80fa1d1cc07a4d74cd009da3891");
+  background-image: url("https://lh3.googleusercontent.com/pw/ABLVV84PLXUfscLThhTp4w2GrynFBEp-irSktOb0i84Lz4h7CxMkN84USU45ZJ3Z8KdsrNm9I7873Ro6DS4Tk31u7D1tPR4SVI2KzVaMRJGooB4_LWJcik_6uvWsAGThIBrLzsn5eC2SHSi7CbB_Z7lsTSSeJw=w1494-h834-s-no-gm?authuser=0");
   background-repeat: no-repeat;
   background-attachment: fixed;  
   background-size: cover;
   margin: 0; /* Optional: Remove default body margin */
   height: 100vh;
-
 }
 
 .content {
@@ -67,7 +66,6 @@ li a {
 li a:hover {
   background-color: #111;
 }
-
 .register-container {
   max-width: 600px; /* Adjust the maximum width as needed */
   justify-content: center;
@@ -111,9 +109,11 @@ li a:hover {
 
 .flash_message {
   font-size:15px;
-  border: 2px solid #f50a0a;
+  border: 2px solid #0a54f5;
   font-weight: bold;
-  background-color: #f8cef7;
+  background-color: #80e1f6;
   padding: 5px;
   text-align: center;
 }
+
+

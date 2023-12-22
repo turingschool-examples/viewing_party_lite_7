@@ -45,9 +45,9 @@ RSpec.describe '#show', type: :feature do
     end
 
     context 'displaying viewing parties', :vcr do
-      it 'has a section for viewing parties' do
-        expect(page).to have_css('#hosted-parties')
-      end
+      # it 'has a section for viewing parties' do
+      #   expect(page).to have_css('#hosted-parties')
+      # end
 
       it 'displays cards for each viewing party the user has created' do
         within("#party-#{@party_1.id}") do

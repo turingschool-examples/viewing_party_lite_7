@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'discover movies' do
+RSpec.describe 'discover movies', :vcr do
   before(:each) do
     @user1 = User.create!(name: 'Brendan', email: 'brendan@turing.edu', password: 'test', password_confirmation: 'test')
     @user2 = User.create!(name: 'Paul', email: 'paul@turing.edu', password: 'test', password_confirmation: 'test')
@@ -55,5 +55,12 @@ RSpec.describe 'discover movies' do
     fill_in('search', with: 'Star Wars')
     click_button 'Find Movies'
     expect(current_path).to eq(user_movies_path(@user1.id))
+  end
+
+  it 'cant search with empty title' do
+    visit discover_user_path(@user1.id)
+    click_button 'Find Movies'
+    expect(current_path).to eq(discover_user_path(@user1.id))
+    expect(page).to have_content("Please fill in with a movie title")
   end
 end
