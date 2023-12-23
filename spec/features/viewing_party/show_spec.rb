@@ -50,7 +50,6 @@ RSpec.describe 'Viewing Party Page', type: :feature do
       expect(page).to have_content('Date: Dec 01, 2023')
       expect(page).to have_content('Start Time: 07:00 AM')
       expect(page).to have_content('Host: Morgan')
-      save_and_open_page
       expect(page).to have_content('Guest List: Sam, Susan')
     end
     
