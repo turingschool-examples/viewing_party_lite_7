@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Viewing Party Page', type: :feature do
   describe 'viewing party details', :vcr do
-    before (:each) do # rubocop:disable Metrics/BlockLength
+    before(:each) do
       @user = User.create!(name: 'Morgan', email: 'morgan@email.com', password: 'test', password_confirmation: 'test')
       @user1 = User.create!(name: 'Sam', email: 'sam@email.com', password: 'test', password_confirmation: 'test')
       @user2 = User.create!(name: 'Susan', email: 'susan@email.com', password: 'test', password_confirmation: 'test')
