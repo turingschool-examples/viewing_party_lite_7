@@ -20,3 +20,12 @@ Viewing Party Lite is an application in which users can explore movie options an
 - Rails 7.0.6
 
 Example wireframes to follow are found [here](https://backend.turing.edu/module3/projects/viewing_party_lite/wireframes)
+
+
+## Contributors
+
+- Brendan Bondurant
+- Paul Bennett
+- Sooyung Kim
+
+

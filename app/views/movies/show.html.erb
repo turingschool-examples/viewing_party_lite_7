@@ -1,3 +1,7 @@
+<ul>
+  <li><a class="active" href="/">Home</a></li>
+  <li><a href="<%= "/users/#{@user.id}/discover" %>">Discover Page</a></li>
+</ul>
 
 <h2><%= @facade.full_details.title %></h2>
 <%= button_to 'Discover Movies', discover_user_path(params[:user_id]), method: :get %>
