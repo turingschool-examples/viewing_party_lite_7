@@ -1,0 +1,28 @@
+
+<ul>
+  <li><a class="active" href="/">Home</a></li>
+  <li><a href="<%= "/users/#{@user.id}/discover" %>">Discover Page</a></li>
+</ul>
+
+
+
+<div class="content">
+  <% if params[:top_movies].present?%>
+  <h2>Top Movies</h2>
+    <% @facade.top20.each do |movie| %>
+      <section class="top movie">
+      Movie: <%= link_to "#{movie.title}", user_movie_path(@user.id, movie.id) %>     Vote Average - <%= movie.vote_average %>
+      </section>
+    <% end %>
+  <% end %>
+
+  <% if params[:search].present? %>
+    <h2>Search Movies</h2>
+    <% @facade.movies.each do |movie| %>
+      <section class="movie search">
+      Movie: <%= link_to "#{movie.title}", user_movie_path(@user.id, movie.id) %>     Vote Average - <%= movie.vote_average %>
+      </section>
+    <% end %>
+  <% end %>
+  
+</div>

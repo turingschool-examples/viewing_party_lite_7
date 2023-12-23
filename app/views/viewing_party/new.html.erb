@@ -1,0 +1,42 @@
+<ul>
+  <li><a class="active" href="/">Home</a></li>
+  <li><a href="<%= "/users/#{@user.id}/discover" %>">Discover Page</a></li>
+</ul>
+
+<div class="content">
+  <h2>Create a Movie Party for <%= @facade.single_movie_details.movie_title %></h2>
+
+  <%= button_to 'Discover Movies', discover_user_path(params[:user_id]), method: :get %>
+
+
+  <h2>Viewing Party Details</h2>
+  <%= form_with url: "/users/#{@user.id}", method: :post, data: {turbo: false}, local: true do |f| %>
+    <p><%= f.label :title, "Movie Title" %>
+    <%= f.text_field :title, :value => @facade.single_movie_details.movie_title, readonly: true %></p>
+    <%= f.hidden_field :movie_id, :value => @facade.single_movie_details.id %>
+
+    <p><%= f.label :duration_of_party, "Duration of Party" %>
+    <%= f.text_field :duration_of_party, value: @facade.single_movie_details.runtime, in: 1..300 %></p>
+
+    <p><%= f.label :party_date, "Start Date" %>
+    <%= f.date_field :party_date %>
+
+    <p><%= f.label :start_time, "Start Time" %>
+    <%= f.time_field :start_time %>
+
+    <p><%= f.label :invite, "Invite Other Users" %>
+      <% @users.each do |user| %><br>
+        <% if @user != user %>
+          <div id ="user-<%= user.id %>">
+            <%= f.check_box "invites[]", { mulitple: true }, user.id, nil %>
+            <%= user.email %>
+          </div>
+        <% end %>
+      <% end %>
+    </p>
+
+    <%= f.submit "Create Party" %>
+  <% end %>
+</div>
+
+

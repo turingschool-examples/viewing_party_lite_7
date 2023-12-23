@@ -13,3 +13,114 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background-image: url("https://lh3.googleusercontent.com/pw/ABLVV84PLXUfscLThhTp4w2GrynFBEp-irSktOb0i84Lz4h7CxMkN84USU45ZJ3Z8KdsrNm9I7873Ro6DS4Tk31u7D1tPR4SVI2KzVaMRJGooB4_LWJcik_6uvWsAGThIBrLzsn5eC2SHSi7CbB_Z7lsTSSeJw=w1494-h834-s-no-gm?authuser=0");
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+  margin: 0; /* Optional: Remove default body margin */
+  height: 100vh;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgb(46, 30, 29);
+  height: 100vh;
+  margin: 0;
+}
+
+
+table {
+  width: 100%;
+  border: 1px solid;
+}
+
+html * {
+  font-family: monospace;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+.register-container {
+  max-width: 600px; /* Adjust the maximum width as needed */
+  justify-content: center;
+  margin-left: 290px;
+}
+
+.register-form {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.register-form h2 {
+  grid-column: span 2; /* Make the heading span both columns */
+  text-align: center;
+}
+
+.register-form label {
+  display: block;
+}
+
+.register-form input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.register-form br {
+  display: none; /* Hide line breaks to make styling consistent */
+}
+
+.register-form button {
+  grid-column: span 2; /* Make the button span both columns */
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.flash_message {
+  font-size:15px;
+  border: 2px solid #0a54f5;
+  font-weight: bold;
+  background-color: #80e1f6;
+  padding: 5px;
+  text-align: center;
+}
+
+.column {
+  display: flex;
+}
+
+.column {
+  width: 50%;
+  padding: 1rem;
+}

@@ -1,0 +1,37 @@
+<ul>
+  <li><a class="active" href="/">Home</a></li>
+  <li><a href="<%= "/users/#{@user.id}/discover" %>">Discover Page</a></li>
+</ul>
+
+<h2><%= @facade.full_details.title %></h2>
+<%= button_to 'Discover Movies', discover_user_path(params[:user_id]), method: :get %>
+<%= button_to "Create Viewing Party for #{@facade.full_details.title}", "/users/#{@user.id}/movies/#{@facade.single_movie_details.id}/viewing_party/new", method: :get %>
+
+<section id="details">
+  <p><b>Vote:</b> <%= @facade.full_details.vote_average %></p>
+  <p><b>Runtime:</b> <%= @facade.full_details.format_runtime %></p>
+  <p>
+    <b>Genre(s):</b> 
+    <% @facade.full_details.genres.each do |genre| %>
+      <%= genre[:name] %>
+    <% end %>
+  </p>
+</section>
+<hr>
+<section id="summary">
+  <p><b>Summary:</b></p>
+  <p><%= @facade.full_details.summary %></p>
+</section>
+<section id="cast">
+  <p><b>Cast:</b></p>
+    <% @facade.full_details.cast.each do |cast| %>
+      <p><%= cast[:name] %> - <%= cast[:character] %></p>
+    <% end %>
+</section>
+<section id="reviews">
+  <p><b><%= @facade.full_details.total_reviews %> Reviews:</b></p>
+    <% @facade.full_details.reviews.each do |review| %>
+      <p>Review by: <%= review[:author] %></p>
+      <p>"<%= review[:content] %>"</p>
+    <% end %>
+</section>
