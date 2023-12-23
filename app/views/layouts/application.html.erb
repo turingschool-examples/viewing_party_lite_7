@@ -8,16 +8,16 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+
   </head>
 
   <body>
-  <%= link_to "Home", "/" %>
-  <h1>Viewing Party</h1>
-    <% flash.each do |type, msg| %>
-      <div class="alert-info">
-        <%= msg %>
-      </div>
-    <% end %>
+      <% flash.each do |type, msg| %>
+        <div class="flash_message">
+          <%= msg %>
+        </div>
+      <% end %>
     <%= yield %>
   </body>
 </html>

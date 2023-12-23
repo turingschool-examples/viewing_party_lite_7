@@ -49,9 +49,9 @@ RSpec.describe 'application (/)' do
 
       it 'has a link to log in' do
         visit '/'
-        expect(page).to have_link('Log In')
+        expect(page).to have_button('Log In')
 
-        click_link('Log In')
+        click_button('Log In')
 
         expect(current_path).to eq('/login')
         expect(page).to have_field(:email)
@@ -67,7 +67,7 @@ RSpec.describe 'application (/)' do
 
       it 'does not log in with incorrect credentials' do
         visit '/'
-        click_link 'Log In'
+        click_button 'Log In'
 
         fill_in(:email, with: 'sooyung@turing.edu')
         fill_in(:password, with: 'wrong_password')
@@ -81,7 +81,7 @@ RSpec.describe 'application (/)' do
 
       it 'does not log in with incorrect credentials' do
         visit '/'
-        click_link 'Log In'
+        click_button 'Log In'
 
         fill_in(:email, with: '')
         fill_in(:password, with: '')
@@ -100,7 +100,7 @@ RSpec.describe 'application (/)' do
 
       it 'shows list of users if you are a registered user' do
         visit '/'
-        click_link('Log In')
+        click_button('Log In')
         fill_in(:email, with: 'sooyung@turing.edu')
         fill_in(:password, with: 'test')
         click_button('Log In')

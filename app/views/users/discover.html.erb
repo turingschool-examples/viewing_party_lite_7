@@ -1,8 +1,16 @@
-<h2>Discover Movies</h2>
+<ul>
+  <li><a class="active" href="/">Home</a></li>
+  <li><a href="<%= "/users/#{@user.id}/discover" %>">Discover Page</a></li>
+</ul>
 
-<%= button_to "Find Top Rated Movies", "/users/#{@user.id}/movies", method: :get , params: { :top_movies => "top rated" } %>
+<div class="content">
+  <h2>Discover Movies</h2>
 
-<%= form_tag(user_movies_path(@user.id), method: :get) do %>
-  <%= text_field_tag(:search, params[:search], placeholder: 'search') %>
-  <%= submit_tag("Find Movies") %>
-<% end %>
+  <%= button_to "Find Top Rated Movies", "/users/#{@user.id}/movies", method: :get , params: { :top_movies => "top rated" } %>
+
+  <%= form_tag(user_movies_path(@user.id), method: :get) do %>
+    <%= text_field_tag(:search, params[:search], placeholder: 'search') %>
+    <%= submit_tag("Find Movies") %>
+  <% end %>
+</div>
+

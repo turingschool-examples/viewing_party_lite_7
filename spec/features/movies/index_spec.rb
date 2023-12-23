@@ -43,8 +43,8 @@ RSpec.describe 'discover movies' do
   
   it 'has a button to return to discover' do
     visit user_movies_path(@user2)
-    expect(page).to have_button('Discover Page')
-    click_button 'Discover Page'
+    expect(page).to have_link('Discover Page')
+    click_link 'Discover Page'
     expect(current_path).to eq(discover_user_path(@user2))
   end
 

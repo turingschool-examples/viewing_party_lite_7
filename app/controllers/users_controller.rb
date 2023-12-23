@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 
   def show
     @facade = UserFacade.new(params[:id])
+    @user = User.find(params[:id])
   end
 
   def create
@@ -46,7 +47,7 @@ class UsersController < ApplicationController
   end
 
   def create_welcome(user)
-    flash[:success] = "Welcome, #{user.name}!"
+    flash[:success] = "Welcome, #{user.name.titleize}!"
     redirect_to user_path(user.id)
   end
 

@@ -10,7 +10,6 @@ class ViewingPartyController < ApplicationController
   def create
     host = User.find(params[:id])
     party = Party.new(party_params)
-
     if party.save
       host_of_party(host, party)
       attendees_of_party(party)
@@ -32,8 +31,10 @@ class ViewingPartyController < ApplicationController
   end
 
   def attendees_of_party(party)
-    params[:invites].map do |invite|
-      PartyUser.create!(user_id: invite, party_id: party.id)
+    unless params[:invites].nil?
+      params[:invites].map do |invite|
+        PartyUser.create!(user_id: invite, party_id: party.id)
+      end
     end
   end
 
