@@ -1,6 +1,7 @@
 <ul>
   <li><a class="active" href="/">Home</a></li>
   <% if current_user %>
+    <li><a href="<%= "/users/#{current_user.id}" %>">My Page</a></li>
     <li><a href="<%= "/users/#{current_user.id}/discover" %>">Discover Page</a></li>
   <% end %>
 </ul>
