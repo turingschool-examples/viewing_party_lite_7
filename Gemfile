@@ -42,6 +42,8 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+gem "faraday"
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
@@ -50,7 +52,13 @@ gem "bootsnap", require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem "factory_bot_rails"
   gem "pry"
+
+    #Vulnerability Check for CI
+  gem "brakeman"
+  gem "bundler-audit"
+  gem "ruby_audit"
 end
 
 group :development do
@@ -62,7 +70,6 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-  gem "rubocop-rails"
 end
 
 group :test do
@@ -70,4 +77,9 @@ group :test do
   gem "capybara"
   gem "launchy"
   gem "simplecov"
+  gem "faker"
+  gem "orderly"
+  gem "shoulda-matchers"
+  gem "vcr"
+  gem "webmock"
 end
